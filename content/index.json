@@ -70,6 +70,7 @@
     { "id": "voidscar-arena/charonus/gravitic-orbs-1223298", "path": "mythic-plus/midnight-season-2/voidscar-arena/mechanics/charonus-gravitic-orbs.json", "status": "draft" },
     { "id": "voidscar-arena/charonus/void-cascade-1222755", "path": "mythic-plus/midnight-season-2/voidscar-arena/mechanics/charonus-void-cascade.json", "status": "draft" },
     { "id": "kings-rest/overview", "path": "mythic-plus/midnight-season-2/kings-rest/strategy/overview.json", "status": "corroborated" },
+    { "id": "kings-rest/pug-10-15-baseline", "path": "mythic-plus/midnight-season-2/kings-rest/routes/pug-10-15.json", "status": "draft" },
     { "id": "kings-rest/the-golden-serpent/serpentine-gust-1311987", "path": "mythic-plus/midnight-season-2/kings-rest/mechanics/golden-serpent-serpentine-gust.json", "status": "draft" },
     { "id": "kings-rest/the-golden-serpent/spit-gold-265773", "path": "mythic-plus/midnight-season-2/kings-rest/mechanics/golden-serpent-spit-gold.json", "status": "draft" },
     { "id": "kings-rest/the-golden-serpent/lucres-call-265923", "path": "mythic-plus/midnight-season-2/kings-rest/mechanics/golden-serpent-lucres-call.json", "status": "draft" },
