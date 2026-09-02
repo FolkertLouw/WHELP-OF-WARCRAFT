@@ -47,7 +47,15 @@ export function querySpecMatrix(matrices, capabilities, filters = {}) {
           rating: entry.ratings[axis.id],
           tools: (axis.toolIds ?? []).map((toolId) => {
             const tool = tools.get(toolId);
-            return { id: tool.id, name: tool.name, spellId: tool.spellId, availability: tool.availability, limitations: tool.limitations };
+            return {
+              id: tool.id,
+              name: tool.name,
+              spellId: tool.spellId,
+              actions: tool.actions,
+              availability: tool.availability,
+              availabilityByAction: Object.fromEntries(tool.actions.map((action) => [action, tool.actionAvailability?.[action] ?? tool.availability])),
+              limitations: tool.limitations,
+            };
           }),
         })),
     })),

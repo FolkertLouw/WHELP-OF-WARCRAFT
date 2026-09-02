@@ -10,8 +10,10 @@
   "tools": [
     { "id": "wind-shear", "name": "Wind Shear", "spellId": 57994, "actions": ["interrupt"], "availability": "talent", "scope": "enemy", "limitations": ["Single target", "Requires an interruptible cast"] },
     { "id": "purge", "name": "Purge", "spellId": 370, "actions": ["purge"], "availability": "talent", "scope": "enemy", "limitations": ["Removes one beneficial Magic effect"] },
-    { "id": "purify-spirit", "name": "Purify Spirit", "spellId": 254420, "actions": ["cleanse-magic", "cleanse-curse"], "availability": "specialization", "scope": "friendly-single", "limitations": ["Eight-second cooldown"] },
+    { "id": "purify-spirit", "name": "Purify Spirit", "spellId": 254420, "actions": ["cleanse-magic", "cleanse-curse"], "availability": "specialization", "actionAvailability": { "cleanse-curse": "talent" }, "scope": "friendly-single", "requirements": [{ "kind": "talent", "value": "Improved Purify Spirit is required for Curse removal" }], "limitations": ["Eight-second cooldown", "Curse removal requires Improved Purify Spirit (spell 383016)"] },
     { "id": "poison-cleansing-totem", "name": "Poison Cleansing Totem", "spellId": 383013, "actions": ["cleanse-poison"], "availability": "talent", "scope": "friendly-periodic-area", "limitations": ["Cleanses one nearby ally every 1.5 seconds for 6 seconds", "Two-minute cooldown"] },
+    { "id": "tremor-totem", "name": "Tremor Totem", "spellId": 8143, "actions": ["cleanse-fear", "cleanse-charm", "cleanse-sleep"], "availability": "talent", "scope": "friendly-area", "limitations": ["Removes eligible control effects from party or raid members within 30 yards", "One-minute cooldown"] },
+    { "id": "spirit-walk", "name": "Spirit Walk", "spellId": 58875, "actions": ["cleanse-snare", "cleanse-root"], "availability": "talent", "scope": "self", "limitations": ["Personal movement-impairment removal", "One-minute cooldown"] },
     { "id": "capacitor-totem", "name": "Capacitor Totem", "spellId": 192058, "actions": ["crowd-control"], "availability": "talent", "scope": "area-enemy", "limitations": ["Two-second arming delay", "Only affects stunnable enemies"] },
     { "id": "bloodlust-heroism", "name": "Bloodlust / Heroism", "spellId": 2825, "alternateSpellIds": [32182], "actions": ["bloodlust"], "availability": "baseline", "scope": "friendly-area", "limitations": ["Spell name and ID vary by faction", "Applies the ten-minute Sated or Exhaustion lockout"] },
     { "id": "astral-shift", "name": "Astral Shift", "spellId": 108271, "actions": ["defensive"], "availability": "talent", "scope": "self", "limitations": ["Personal mitigation only"] }
@@ -19,6 +21,9 @@
   "provenance": [
     { "kind": "external-reference", "description": "Current Restoration Shaman dungeon utility recommendations and tool selection.", "url": "https://www.wowhead.com/guide/classes/shaman/restoration/mythic-plus-dungeon-tips", "retrievedAt": "2026-09-02T15:40:00+02:00" },
     { "kind": "external-reference", "description": "Current Purify Spirit record confirms friendly Curse and Magic removal.", "url": "https://www.wowhead.com/spell=254420/purify-spirit", "retrievedAt": "2026-09-02T15:40:00+02:00" },
-    { "kind": "external-reference", "description": "Current Bloodlust and Heroism records confirm the faction variants and shared raid-wide haste lockout.", "url": "https://www.wowhead.com/spell=2825/bloodlust", "retrievedAt": "2026-09-02T16:30:00+02:00" }
+    { "kind": "external-reference", "description": "Current Bloodlust and Heroism records confirm the faction variants and shared raid-wide haste lockout.", "url": "https://www.wowhead.com/spell=2825/bloodlust", "retrievedAt": "2026-09-02T16:30:00+02:00" },
+    { "kind": "external-reference", "description": "Current Improved Purify Spirit record confirms that Curse removal is a talent-dependent extension of Purify Spirit.", "url": "https://www.wowhead.com/spell=383016/improved-purify-spirit", "retrievedAt": "2026-09-02T17:25:00+02:00" },
+    { "kind": "external-reference", "description": "Current Tremor Totem record confirms its fear, charm, and sleep removal behavior.", "url": "https://www.wowhead.com/spell=8143/tremor-totem", "retrievedAt": "2026-09-02T17:25:00+02:00" },
+    { "kind": "external-reference", "description": "Current Spirit Walk record confirms personal movement-impairment removal.", "url": "https://www.wowhead.com/spell=58875/spirit-walk", "retrievedAt": "2026-09-02T17:25:00+02:00" }
   ]
 }

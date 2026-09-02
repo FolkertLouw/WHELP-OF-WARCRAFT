@@ -11,6 +11,10 @@ const frostMatrix = await loadJson("content", "mythic-plus", "midnight-season-2"
 const frostCapabilities = await loadJson("data", "specs", "death-knight", "frost.json");
 const bloodMatrix = await loadJson("content", "mythic-plus", "midnight-season-2", "specs", "blood-death-knight-utility-matrix.json");
 const bloodCapabilities = await loadJson("data", "specs", "death-knight", "blood.json");
+const restorationMatrix = await loadJson("content", "mythic-plus", "midnight-season-2", "specs", "restoration-shaman-utility-matrix.json");
+const restorationCapabilities = await loadJson("data", "specs", "shaman", "restoration.json");
+const enhancementMatrix = await loadJson("content", "mythic-plus", "midnight-season-2", "specs", "enhancement-shaman-utility-matrix.json");
+const enhancementCapabilities = await loadJson("data", "specs", "shaman", "enhancement.json");
 const season = await loadJson("data", "seasons", "midnight-season-2.json");
 
 test("Unholy matrix covers every Midnight Season 2 dungeon exactly once", () => {
@@ -87,4 +91,38 @@ test("Blood matrix keeps positional grip stops distinct from school lockouts", (
   const grip = bloodCapabilities.tools.find((tool) => tool.id === "death-grip");
   assert.deepEqual(grip.actions, ["enemy-reposition"]);
   assert.match(bloodMatrix.dungeons.find((entry) => entry.dungeonId === "murder-row").notes.join(" "), /rather than interrupt coverage/);
+});
+
+test("Restoration Shaman matrix covers the season and resolves every utility axis", () => {
+  assert.deepEqual(new Set(restorationMatrix.dungeons.map((entry) => entry.dungeonId)), new Set(season.dungeons.map((entry) => entry.id)));
+  const tools = new Map(restorationCapabilities.tools.map((tool) => [tool.id, tool]));
+  for (const axis of restorationMatrix.axes) {
+    for (const toolId of axis.toolIds) {
+      const tool = tools.get(toolId);
+      assert.ok(tool, `${axis.id} should resolve ${toolId}`);
+      assert.ok(axis.abilityNames.includes(tool.name));
+      assert.ok(axis.spellIds.includes(tool.spellId));
+    }
+  }
+});
+
+test("Restoration Shaman models Curse removal as talent-dependent", () => {
+  const purify = restorationCapabilities.tools.find((tool) => tool.id === "purify-spirit");
+  assert.equal(purify.availability, "specialization");
+  assert.equal(purify.actionAvailability["cleanse-curse"], "talent");
+  assert.match(purify.limitations.join(" "), /Improved Purify Spirit/);
+  const tremor = restorationCapabilities.tools.find((tool) => tool.id === "tremor-totem");
+  assert.deepEqual(tremor.actions, ["cleanse-fear", "cleanse-charm", "cleanse-sleep"]);
+});
+
+test("Enhancement Shaman matrix resolves distinct personal and group snare tools", () => {
+  assert.deepEqual(new Set(enhancementMatrix.dungeons.map((entry) => entry.dungeonId)), new Set(season.dungeons.map((entry) => entry.id)));
+  const tools = new Map(enhancementCapabilities.tools.map((tool) => [tool.id, tool]));
+  const snare = enhancementMatrix.axes.find((axis) => axis.id === "snare-removal");
+  assert.deepEqual(snare.toolIds, ["thunderous-paws", "spirit-walk", "wind-rush-totem"]);
+  for (const toolId of snare.toolIds) {
+    assert.ok(tools.has(toolId));
+    assert.ok(tools.get(toolId).actions.includes("cleanse-snare"));
+  }
+  assert.match(tools.get("wind-rush-totem").limitations.join(" "), /Jet Stream/);
 });

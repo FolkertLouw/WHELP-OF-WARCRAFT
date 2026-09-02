@@ -36,3 +36,19 @@ test("rejects absent matrices and invalid filters explicitly", () => {
   assert.throws(() => querySpecMatrix(matrices, capabilities, { spec: "frost-death-knight", dungeon: "not-a-dungeon" }), /has no dungeon/);
   assert.throws(() => querySpecMatrix(matrices, capabilities, { spec: "frost-death-knight", rating: "best" }), /unknown utility rating/);
 });
+
+test("surfaces action-level talent availability for Restoration Shaman", () => {
+  const report = querySpecMatrix(matrices, capabilities, { spec: "restoration-shaman", dungeon: "den-of-nalorakk" });
+  const purify = report.dungeons[0].utilities.find((entry) => entry.axisId === "improved-purify-spirit").tools[0];
+  assert.deepEqual(purify.actions, ["cleanse-magic", "cleanse-curse"]);
+  assert.equal(purify.availability, "specialization");
+  assert.equal(purify.availabilityByAction["cleanse-curse"], "talent");
+  assert.ok(report.dungeons[0].mechanicSpellIds.includes(1238801));
+});
+
+test("returns Enhancement Shaman's exact snare-removal options", () => {
+  const report = querySpecMatrix(matrices, capabilities, { spec: "enhancement-shaman", dungeon: "altar-of-fangs", rating: "always" });
+  const snare = report.dungeons[0].utilities.find((entry) => entry.axisId === "snare-removal");
+  assert.deepEqual(snare.tools.map((tool) => tool.id), ["thunderous-paws", "spirit-walk", "wind-rush-totem"]);
+  assert.ok(report.dungeons[0].mechanicSpellIds.includes(1294569));
+});
