@@ -1,0 +1,77 @@
+{
+  "$schema": "../../../../schemas/spec-dungeon-matrix.schema.json",
+  "schemaVersion": 1,
+  "recordType": "spec-dungeon-matrix",
+  "id": "midnight-season-2/unholy-death-knight-utility-matrix",
+  "status": "corroborated",
+  "validity": { "fromBuild": "12.1.0.69587", "untilBuild": null, "seasonId": null, "seasonSlug": "midnight-season-2" },
+  "spec": { "classId": 6, "className": "Death Knight", "specId": 252, "specName": "Unholy" },
+  "axes": [
+    { "id": "cast-control", "label": "Cast control", "abilityNames": ["Mind Freeze", "Death Grip", "Blinding Sleet"], "spellIds": [47528, 49576, 207167], "toolIds": ["mind-freeze", "death-grip", "blinding-sleet"] },
+    { "id": "enemy-reposition", "label": "Enemy repositioning", "abilityNames": ["Death Grip"], "spellIds": [49576], "toolIds": ["death-grip"] },
+    { "id": "personal-magic", "label": "Personal magic prevention", "abilityNames": ["Anti-Magic Shell"], "spellIds": [48707], "toolIds": ["anti-magic-shell"] },
+    { "id": "movement-control", "label": "Forced-movement immunity and root escape", "abilityNames": ["Death's Advance", "Wraith Walk"], "spellIds": [48265, 212552], "toolIds": ["deaths-advance", "wraith-walk"] },
+    { "id": "party-magic", "label": "Party magic mitigation", "abilityNames": ["Anti-Magic Zone"], "spellIds": [51052], "toolIds": ["anti-magic-zone"] },
+    { "id": "battle-resurrection", "label": "Combat resurrection", "abilityNames": ["Raise Ally"], "spellIds": [61999], "toolIds": ["raise-ally"] }
+  ],
+  "dungeons": [
+    {
+      "dungeonId": "altar-of-fangs", "instanceMapId": 2993,
+      "ratings": { "cast-control": "always", "enemy-reposition": "niche", "personal-magic": "always", "movement-control": "always", "party-magic": "always", "battle-resurrection": "always" },
+      "mechanicSpellIds": [1296220, 1307567],
+      "notes": ["Pre-cast Anti-Magic Shell for targeted poison effects such as Triple Shot; reserve Death's Advance for the Uncoiled Writhe knockback.", "Anti-Magic Zone can cover coordinated group damage including Mass Envenom when its cast is not stopped."]
+    },
+    {
+      "dungeonId": "the-blinding-vale", "instanceMapId": 2859,
+      "ratings": { "cast-control": "always", "enemy-reposition": "niche", "personal-magic": "always", "movement-control": "always", "party-magic": "niche", "battle-resurrection": "always" },
+      "mechanicSpellIds": [1235564, 1259365],
+      "notes": ["Anti-Magic Shell reduces Lightblossom Beam damage and can prevent Bloodthorn Roots when timed before application.", "Wraith Walk is the recovery option for an existing Bloodthorn root; Death's Advance does not remove it."]
+    },
+    {
+      "dungeonId": "den-of-nalorakk", "instanceMapId": 2825,
+      "ratings": { "cast-control": "always", "enemy-reposition": "niche", "personal-magic": "niche", "movement-control": "always", "party-magic": "niche", "battle-resurrection": "always" },
+      "mechanicSpellIds": [1235656],
+      "notes": ["Activate Death's Advance during Frozen Tempest to resist its outward push while remaining in the safe eye."]
+    },
+    {
+      "dungeonId": "murder-row", "instanceMapId": 2813,
+      "ratings": { "cast-control": "always", "enemy-reposition": "niche", "personal-magic": "always", "movement-control": "none", "party-magic": "always", "battle-resurrection": "always" },
+      "mechanicSpellIds": [1228198, 474197],
+      "notes": ["Pre-cast Anti-Magic Shell to prevent Corroding Spittle's damage-over-time effect and reduce Demonic Rage damage.", "Plan Anti-Magic Zone on boss-wide magic damage rather than holding it indefinitely for a perfect full-party stack."]
+    },
+    {
+      "dungeonId": "voidscar-arena", "instanceMapId": 2923,
+      "ratings": { "cast-control": "always", "enemy-reposition": "niche", "personal-magic": "always", "movement-control": "always", "party-magic": "niche", "battle-resurrection": "always" },
+      "mechanicSpellIds": [1262497, 1222755, 1227197],
+      "notes": ["Death's Advance answers Black Hole, Monstrous Roar, and Void Cascade forced movement; Anti-Magic Shell can prevent Cosmic Crash's damage-over-time effect.", "Treat Death Grip as displacement for susceptible enemies, not as a normal spell-school interrupt."]
+    },
+    {
+      "dungeonId": "temple-of-sethraliss", "instanceMapId": 1877,
+      "ratings": { "cast-control": "always", "enemy-reposition": "always", "personal-magic": "always", "movement-control": "always", "party-magic": "niche", "battle-resurrection": "always" },
+      "mechanicSpellIds": [1289062, 274006],
+      "notes": ["Use Death's Advance to ignore Gale Force's push and Anti-Magic Shell to extend a safe Lightning Spire soak.", "Death Grip helps cluster Avatar adds; it does not replace Mind Freeze on interruptible casts."]
+    },
+    {
+      "dungeonId": "kings-rest", "instanceMapId": 1762,
+      "ratings": { "cast-control": "always", "enemy-reposition": "always", "personal-magic": "niche", "movement-control": "none", "party-magic": "niche", "battle-resurrection": "always" },
+      "mechanicSpellIds": [265923],
+      "notes": ["Grip Animated Gold away from the Golden Serpent and group Mchimba's mummies for efficient cleave.", "Control Undead is generally a poor Unholy choice because it dismisses the permanent ghoul; Frost or Blood can exploit that niche more safely."]
+    },
+    {
+      "dungeonId": "ruby-life-pools", "instanceMapId": 2521,
+      "ratings": { "cast-control": "always", "enemy-reposition": "niche", "personal-magic": "none", "movement-control": "none", "party-magic": "niche", "battle-resurrection": "always" },
+      "mechanicSpellIds": [],
+      "notes": ["The source lists no dungeon-specific Unholy trick here; retain baseline cast control, mob grouping, Anti-Magic Zone, and Raise Ally without claiming a special interaction."]
+    }
+  ],
+  "affixes": [
+    { "affixSlug": "xalataths-bargain-ascendant", "recommendations": ["Use Mind Freeze first; Blinding Sleet or Death Grip can stop a remaining susceptible cast in an emergency."] },
+    { "affixSlug": "xalataths-bargain-voidbound", "recommendations": ["There is no dedicated utility answer; preserve priority damage for the emissary spawn."] },
+    { "affixSlug": "xalataths-bargain-pulsar", "recommendations": ["Death's Advance helps reach and intercept orbiting orbs without a talent swap."] },
+    { "affixSlug": "xalataths-bargain-devour", "recommendations": ["Anti-Magic Shell can prevent the effect, but doing so also forfeits its positive benefit; use it only when group removal will not arrive.", "Unyielding Will can let Anti-Magic Shell remove an existing effect, while Death Strike can help meet the healing requirement."] }
+  ],
+  "provenance": [
+    { "kind": "external-reference", "description": "Original structured summary of current Unholy Death Knight utility, eight dungeon-specific interactions, and affix advice. Talent strings and guide prose are intentionally excluded.", "url": "https://www.wowhead.com/guide/classes/death-knight/unholy/mythic-plus-dungeon-tips", "retrievedAt": "2026-09-02T16:51:00+02:00" },
+    { "kind": "curated", "description": "Every mechanicSpellId is cross-linked to WHELP's versioned dungeon mechanics, routes, or ability-response data for Midnight Season 2.", "recordId": "midnight-season-2/flagged-abilities" }
+  ]
+}

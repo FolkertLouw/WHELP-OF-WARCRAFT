@@ -24,6 +24,8 @@ For party-composition questions such as Bloodlust, combat resurrection, external
 
 Preserve `enemy-reposition` as displacement. Death Grip can stop some casts by moving a susceptible enemy, but it is not equivalent to an interrupt with a spell-school lockout and must not be reported as guaranteed interrupt coverage.
 
+For specialization-specific dungeon advice, prefer a matching `spec-dungeon-matrix` when present. Resolve `axes[].toolIds` through that specialization's capability record and treat `dungeons[].mechanicSpellIds` as the auditable bridge to canonical dungeon data. Preserve `always`, `niche`, and `none` ratings; do not generalize one dungeon's interaction to the whole season.
+
 Capability coverage is partial until `data/specs/coverage.json` says `isComplete: true`. An unknown or absent specialization means WHELP has not modeled it yet; it never proves that the specialization lacks the requested utility.
 
 Before relying on time-sensitive records, run `npm run query:freshness --`. Preserve its separate `evidenceStatus` and `buildStatus`: recent retrieval does not revive an expired build range, and a carried-forward build does not prove its sources are still fresh. Review `needsReview` records before presenting them as current.

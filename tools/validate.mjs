@@ -479,11 +479,45 @@ const affixDefinitions = new Set(
 );
 for (const { file, value } of records.filter(({ value }) => value.recordType === "spec-dungeon-matrix")) {
   if (file.includes(`${path.sep}examples${path.sep}`)) continue;
+  const capability = records.find(({ value: candidate }) => candidate.recordType === "spec-capabilities"
+    && candidate.spec?.classId === value.spec?.classId && candidate.spec?.specId === value.spec?.specId)?.value;
+  if (value.axes?.some((axis) => axis.toolIds?.length) && !capability) {
+    fail(file, `matrix toolIds cannot resolve because spec ${value.spec?.specId} has no capability record`);
+  }
+  const toolsById = new Map((capability?.tools ?? []).map((tool) => [tool.id, tool]));
+  for (const axis of value.axes ?? []) {
+    for (const toolId of axis.toolIds ?? []) {
+      const tool = toolsById.get(toolId);
+      if (!tool) {
+        fail(file, `utility axis ${axis.id} references unknown spec tool ${toolId}`);
+        continue;
+      }
+      if (!(axis.abilityNames ?? []).includes(tool.name)) fail(file, `utility axis ${axis.id} omits the name of tool ${toolId}`);
+      if (!(axis.spellIds ?? []).includes(tool.spellId)) fail(file, `utility axis ${axis.id} omits the spell ID of tool ${toolId}`);
+    }
+  }
   for (const entry of value.dungeons ?? []) {
     const dungeon = dungeons.find(({ value: candidate }) => candidate.id === entry.dungeonId);
     if (!dungeon) fail(file, `matrix references unknown dungeon ${entry.dungeonId}`);
     else if (dungeon.value.instanceMapId !== entry.instanceMapId) {
       fail(file, `${entry.dungeonId} instanceMapId ${entry.instanceMapId} does not match dungeon record ${dungeon.value.instanceMapId}`);
+    }
+    const knownMechanicSpellIds = new Set();
+    for (const { value: candidate } of records) {
+      if (candidate.recordType === "route" && candidate.dungeonId === entry.dungeonId) {
+        for (const pull of candidate.pulls ?? []) for (const spellId of pull.dangerousSpellIds ?? []) knownMechanicSpellIds.add(spellId);
+      } else if (candidate.recordType === "mechanic" && candidate.id?.startsWith(`${entry.dungeonId}/`)) {
+        if (candidate.mechanic?.spellId) knownMechanicSpellIds.add(candidate.mechanic.spellId);
+      } else if (candidate.recordType === "ability-response" && candidate.dungeonId === entry.dungeonId) {
+        for (const response of candidate.entries ?? []) knownMechanicSpellIds.add(response.spellId);
+      } else if (candidate.recordType === "ability-index") {
+        for (const ability of candidate.abilities ?? []) {
+          if ((ability.contexts ?? []).some((context) => context.dungeonId === entry.dungeonId)) knownMechanicSpellIds.add(ability.spellId);
+        }
+      }
+    }
+    for (const spellId of entry.mechanicSpellIds ?? []) {
+      if (!knownMechanicSpellIds.has(spellId)) fail(file, `${entry.dungeonId} references unknown mechanic spell ${spellId}`);
     }
   }
   for (const affix of value.affixes ?? []) {
