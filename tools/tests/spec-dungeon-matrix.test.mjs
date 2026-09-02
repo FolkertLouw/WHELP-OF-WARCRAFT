@@ -40,6 +40,12 @@ const holyPriestMatrix = await loadJson("content", "mythic-plus", "midnight-seas
 const holyPriestCapabilities = await loadJson("data", "specs", "priest", "holy.json");
 const shadowPriestMatrix = await loadJson("content", "mythic-plus", "midnight-season-2", "specs", "shadow-priest-utility-matrix.json");
 const shadowPriestCapabilities = await loadJson("data", "specs", "priest", "shadow.json");
+const havocDemonHunterMatrix = await loadJson("content", "mythic-plus", "midnight-season-2", "specs", "havoc-demon-hunter-utility-matrix.json");
+const havocDemonHunterCapabilities = await loadJson("data", "specs", "demon-hunter", "havoc.json");
+const vengeanceDemonHunterMatrix = await loadJson("content", "mythic-plus", "midnight-season-2", "specs", "vengeance-demon-hunter-utility-matrix.json");
+const vengeanceDemonHunterCapabilities = await loadJson("data", "specs", "demon-hunter", "vengeance.json");
+const devourerDemonHunterMatrix = await loadJson("content", "mythic-plus", "midnight-season-2", "specs", "devourer-demon-hunter-utility-matrix.json");
+const devourerDemonHunterCapabilities = await loadJson("data", "specs", "demon-hunter", "devourer.json");
 const season = await loadJson("data", "seasons", "midnight-season-2.json");
 
 test("Unholy matrix covers every Midnight Season 2 dungeon exactly once", () => {
@@ -376,4 +382,34 @@ test("Shadow Priest separates Disease, Magic, movement, and creature restriction
   const kingsRest = shadowPriestMatrix.dungeons.find((entry) => entry.dungeonId === "kings-rest");
   assert.equal(kingsRest.ratings["mind-control"], "none");
   assert.equal(kingsRest.ratings["detection-reduction"], "none");
+});
+
+test("all three current Demon Hunter matrices cover the complete season and resolve their axes", () => {
+  const expected = new Set(season.dungeons.map((entry) => entry.id));
+  for (const [demonHunterMatrix, demonHunterCapabilities] of [
+    [havocDemonHunterMatrix, havocDemonHunterCapabilities],
+    [vengeanceDemonHunterMatrix, vengeanceDemonHunterCapabilities],
+    [devourerDemonHunterMatrix, devourerDemonHunterCapabilities],
+  ]) {
+    assert.deepEqual(new Set(demonHunterMatrix.dungeons.map((entry) => entry.dungeonId)), expected);
+    const tools = new Map(demonHunterCapabilities.tools.map((tool) => [tool.id, tool]));
+    for (const axis of demonHunterMatrix.axes) {
+      for (const toolId of axis.toolIds) assert.ok(tools.has(toolId), `${axis.id} should resolve ${toolId}`);
+    }
+  }
+  assert.equal(devourerDemonHunterCapabilities.spec.specId, 1480);
+});
+
+test("Demon Hunter matrices preserve self-cleanse and stop boundaries", () => {
+  for (const capabilitiesRecord of [havocDemonHunterCapabilities, vengeanceDemonHunterCapabilities, devourerDemonHunterCapabilities]) {
+    const disease = capabilitiesRecord.tools.find((tool) => tool.id === "burn-it-out");
+    const curse = capabilitiesRecord.tools.find((tool) => tool.id === "soul-cleanse");
+    assert.equal(disease.scope, "self");
+    assert.equal(curse.scope, "self");
+    assert.ok(!capabilitiesRecord.tools.find((tool) => tool.id === "vengeful-retreat").actions.includes("cleanse-root"));
+  }
+  assert.deepEqual(devourerDemonHunterCapabilities.tools.find((tool) => tool.id === "void-nova").actions, ["crowd-control"]);
+  assert.ok(!havocDemonHunterCapabilities.tools.find((tool) => tool.id === "chaos-nova").actions.includes("interrupt"));
+  const vengeanceInterrupts = vengeanceDemonHunterCapabilities.tools.filter((tool) => tool.actions.includes("interrupt"));
+  assert.deepEqual(vengeanceInterrupts.map((tool) => tool.id), ["disrupt", "sigil-of-silence"]);
 });

@@ -106,7 +106,10 @@
     { "id": "warlock/destruction/capabilities", "record": "specs/warlock/destruction.json", "status": "corroborated" },
     { "id": "monk/brewmaster/capabilities", "record": "specs/monk/brewmaster.json", "status": "corroborated" },
     { "id": "monk/mistweaver/capabilities", "record": "specs/monk/mistweaver.json", "status": "corroborated" },
-    { "id": "monk/windwalker/capabilities", "record": "specs/monk/windwalker.json", "status": "corroborated" }
+    { "id": "monk/windwalker/capabilities", "record": "specs/monk/windwalker.json", "status": "corroborated" },
+    { "id": "demon-hunter/havoc/capabilities", "record": "specs/demon-hunter/havoc.json", "status": "corroborated" },
+    { "id": "demon-hunter/vengeance/capabilities", "record": "specs/demon-hunter/vengeance.json", "status": "corroborated" },
+    { "id": "demon-hunter/devourer/capabilities", "record": "specs/demon-hunter/devourer.json", "status": "corroborated" }
   ],
   "specCapabilityCoverage": {
     "id": "retail/spec-capability-coverage",

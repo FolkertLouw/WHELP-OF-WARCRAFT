@@ -1,0 +1,24 @@
+{
+  "$schema": "../../../schemas/spec-capabilities.schema.json", "schemaVersion": 1, "recordType": "spec-capabilities",
+  "id": "demon-hunter/havoc/capabilities", "matrixRecordId": "midnight-season-2/havoc-demon-hunter-utility-matrix", "status": "corroborated",
+  "validity": { "fromBuild": "12.1.0.69587", "untilBuild": null, "seasonId": null, "seasonSlug": "midnight-season-2" },
+  "spec": { "classId": 12, "className": "Demon Hunter", "specId": 577, "specName": "Havoc", "slug": "havoc-demon-hunter" },
+  "tools": [
+    { "id": "disrupt", "name": "Disrupt", "spellId": 183752, "actions": ["interrupt"], "availability": "baseline", "scope": "enemy", "limitations": ["Single target", "Requires an interruptible cast"] },
+    { "id": "consume-magic", "name": "Consume Magic", "spellId": 278326, "actions": ["purge"], "availability": "talent", "scope": "enemy", "limitations": ["Removes one beneficial Magic effect", "Ten-second cooldown"] },
+    { "id": "imprison", "name": "Imprison", "spellId": 217832, "actions": ["crowd-control"], "availability": "talent", "scope": "enemy", "limitations": ["Only affects Demons, Beasts, and Humanoids", "Damage may break the incapacitate", "Not a spell-school lockout"] },
+    { "id": "chaos-nova", "name": "Chaos Nova", "spellId": 179057, "actions": ["crowd-control"], "availability": "talent", "scope": "area-enemy", "limitations": ["Only affects stunnable enemies", "Forty-five-second cooldown"] },
+    { "id": "sigil-of-misery", "name": "Sigil of Misery", "spellId": 207684, "actions": ["crowd-control"], "availability": "talent", "scope": "area-enemy", "limitations": ["Two-second activation delay", "Damage can break the disorient"] },
+    { "id": "vengeful-retreat", "name": "Vengeful Retreat", "spellId": 198793, "actions": ["cleanse-snare"], "availability": "talent", "scope": "self", "limitations": ["Removes snares but not roots", "Forced backward movement can be dangerous"] },
+    { "id": "burn-it-out", "name": "Burn It Out", "spellId": 1266316, "actions": ["cleanse-disease"], "availability": "talent", "scope": "self", "requirements": [{ "kind": "talent", "value": "Triggered by activating Immolation Aura" }], "limitations": ["Self-only", "Removes one Disease effect"] },
+    { "id": "soul-cleanse", "name": "Soul Cleanse", "spellId": 1266496, "actions": ["cleanse-curse"], "availability": "talent", "scope": "self", "requirements": [{ "kind": "talent", "value": "Triggered by activating Immolation Aura" }], "limitations": ["Self-only", "Removes one Curse effect"] },
+    { "id": "spectral-sight", "name": "Spectral Sight", "spellId": 188501, "actions": ["reveal-stealth"], "availability": "baseline", "scope": "self", "limitations": ["Reveals stealthed and invisible enemies to the Demon Hunter", "Loss of control ends the effect"] },
+    { "id": "darkness", "name": "Darkness", "spellId": 196718, "actions": ["party-damage-reduction"], "availability": "talent", "scope": "friendly-area", "limitations": ["Positional and chance-based avoidance", "Five-minute cooldown"] },
+    { "id": "chaos-brand", "name": "Chaos Brand", "spellId": 255260, "actions": ["enemy-damage-taken-increase"], "availability": "baseline", "scope": "enemy", "limitations": ["Increases Magic damage taken by 3%", "Applied through the Demon Hunter's damage"] }
+  ],
+  "provenance": [
+    { "kind": "external-reference", "description": "Current Havoc dungeon utility and affix guidance for Patch 12.1.0.", "url": "https://www.wowhead.com/guide/classes/demon-hunter/havoc/mythic-plus-dungeon-tips", "retrievedAt": "2026-09-02T20:25:00+02:00" },
+    { "kind": "external-reference", "description": "Current spell records establish Consume Magic, Imprison, Vengeful Retreat, Soul Cleanse, Darkness, Disrupt, and Chaos Brand semantics.", "url": "https://www.wowhead.com/spell=183752/disrupt", "retrievedAt": "2026-09-02T20:25:00+02:00" },
+    { "kind": "external-reference", "description": "Current Chaos Brand record confirms the 3% Magic damage taken debuff.", "url": "https://www.wowhead.com/spell=255260/chaos-brand", "retrievedAt": "2026-09-02T20:25:00+02:00" }
+  ]
+}

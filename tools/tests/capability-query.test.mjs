@@ -271,6 +271,38 @@ test("does not turn Demonology Fel Ravager or Axe Toss into school-lockout cover
   assert.match(axe.limitations.join(" "), /school lockout/);
 });
 
+test("models Chaos Brand as a hostile damage-taken debuff across all Demon Hunter specs", () => {
+  const specs = ["havoc-demon-hunter", "vengeance-demon-hunter", "devourer-demon-hunter"];
+  const brands = queryCapabilities(capabilities, { specs, action: "enemy-damage-taken-increase", scope: "enemy" });
+  assert.equal(brands.resultCount, 3);
+  assert.ok(brands.results.every((entry) => entry.tool.id === "chaos-brand" && entry.tool.spellId === 255260));
+  assert.equal(queryCapabilities(capabilities, { specs, action: "group-buff" }).resultCount, 0);
+});
+
+test("keeps Demon Hunter disease and curse removal self-only", () => {
+  const specs = ["havoc-demon-hunter", "vengeance-demon-hunter", "devourer-demon-hunter"];
+  for (const action of ["cleanse-disease", "cleanse-curse"]) {
+    const cleanses = queryCapabilities(capabilities, { specs, action });
+    assert.equal(cleanses.resultCount, 3);
+    assert.ok(cleanses.results.every((entry) => entry.tool.scope === "self"));
+  }
+  assert.equal(queryCapabilities(capabilities, { specs, action: "cleanse-root" }).resultCount, 0);
+  assert.equal(queryCapabilities(capabilities, { specs, action: "cleanse-magic", scope: "friendly-single" }).resultCount, 0);
+});
+
+test("preserves Vengeance area utility and current Fiery Brand semantics", () => {
+  const interrupts = queryCapabilities(capabilities, { specs: ["vengeance-demon-hunter"], action: "interrupt" });
+  assert.deepEqual(interrupts.results.map((entry) => entry.tool.id).sort(), ["disrupt", "sigil-of-silence"]);
+  const reposition = queryCapabilities(capabilities, { specs: ["vengeance-demon-hunter"], action: "enemy-reposition" });
+  assert.deepEqual(reposition.results.map((entry) => entry.tool.id), ["sigil-of-chains"]);
+  const defensive = queryCapabilities(capabilities, { specs: ["vengeance-demon-hunter"], action: "defensive" });
+  const fieryBrand = defensive.results.find((entry) => entry.tool.id === "fiery-brand").tool;
+  assert.equal(fieryBrand.scope, "self");
+  assert.ok(!fieryBrand.actions.includes("enemy-damage-reduction"));
+  const devourerInterrupts = queryCapabilities(capabilities, { specs: ["devourer-demon-hunter"], action: "interrupt" });
+  assert.deepEqual(devourerInterrupts.results.map((entry) => entry.tool.id), ["disrupt"]);
+});
+
 test("rejects unknown actions and scopes instead of returning misleading empty reports", () => {
   assert.throws(() => queryCapabilities(capabilities, { action: "battle-rez" }), /unknown capability action/);
   assert.throws(() => queryCapabilities(capabilities, { scope: "the-whole-party" }), /unknown capability scope/);

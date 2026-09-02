@@ -288,3 +288,22 @@ test("joins Elemental Shaman displacement and control cleanses without calling t
   assert.ok(!displacement.actions.includes("interrupt"));
   assert.deepEqual(controlCleanse.actions, ["cleanse-fear", "cleanse-charm", "cleanse-sleep"]);
 });
+
+test("joins Devourer utility without widening its self-only cleanses", () => {
+  const report = querySpecMatrix(matrices, capabilities, { spec: "devourer-demon-hunter", dungeon: "kings-rest", rating: "always" });
+  const disease = report.dungeons[0].utilities.find((entry) => entry.axisId === "self-disease-cleanse").tools[0];
+  const curse = report.dungeons[0].utilities.find((entry) => entry.axisId === "self-curse-cleanse").tools[0];
+  assert.equal(report.spec.specId, 1480);
+  assert.equal(disease.scope, "self");
+  assert.equal(curse.scope, "self");
+  assert.ok(report.dungeons[0].mechanicSpellIds.includes(1296671));
+});
+
+test("joins Vengeance silence and displacement as distinct Temple answers", () => {
+  const report = querySpecMatrix(matrices, capabilities, { spec: "vengeance-demon-hunter", dungeon: "temple-of-sethraliss" });
+  const silence = report.dungeons[0].utilities.find((entry) => entry.axisId === "area-interrupt").tools[0];
+  const chains = report.dungeons[0].utilities.find((entry) => entry.axisId === "enemy-reposition").tools[0];
+  assert.deepEqual(silence.actions, ["interrupt"]);
+  assert.deepEqual(chains.actions, ["enemy-reposition", "crowd-control"]);
+  assert.match(report.dungeons[0].notes.join(" "), /displacement rather than a school lockout/);
+});

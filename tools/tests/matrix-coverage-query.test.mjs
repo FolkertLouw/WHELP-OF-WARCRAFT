@@ -12,9 +12,9 @@ const season = JSON.parse(await readFile(path.join(root, "data", "seasons", "mid
 
 test("reports explicit full-matrix and capability-only coverage", () => {
   const report = queryMatrixCoverage(capabilities, matrices, season);
-  assert.equal(report.summary.modeledSpecCount, 34);
-  assert.equal(report.summary.matrixSpecCount, 34);
-  assert.equal(report.summary.fullMatrixSpecCount, 34);
+  assert.equal(report.summary.modeledSpecCount, 37);
+  assert.equal(report.summary.matrixSpecCount, 37);
+  assert.equal(report.summary.fullMatrixSpecCount, 37);
   assert.equal(report.summary.capabilityOnlySpecCount, 0);
   const beastMastery = report.entries.find((entry) => entry.spec.slug === "beast-mastery-hunter");
   assert.equal(beastMastery.completeSeasonCoverage, true);
@@ -61,6 +61,11 @@ test("reports explicit full-matrix and capability-only coverage", () => {
   }
   for (const slug of ["brewmaster-monk", "mistweaver-monk", "windwalker-monk"]) {
     assert.equal(report.entries.find((entry) => entry.spec.slug === slug).completeSeasonCoverage, true);
+  }
+  for (const slug of ["havoc-demon-hunter", "vengeance-demon-hunter", "devourer-demon-hunter"]) {
+    const demonHunter = report.entries.find((entry) => entry.spec.slug === slug);
+    assert.equal(demonHunter.completeSeasonCoverage, true);
+    assert.deepEqual(demonHunter.missingDungeonIds, []);
   }
   const elemental = report.entries.find((entry) => entry.spec.slug === "elemental-shaman");
   assert.equal(elemental.completeSeasonCoverage, true);
