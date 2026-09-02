@@ -112,6 +112,14 @@ function validateRecord(file, value) {
         if (!requirement.kind?.trim() || !requirement.value?.trim()) fail(file, `spec tool ${tool.id} has an invalid requirement`);
       }
     }
+  } else if (value.recordType === "spec-capability-coverage") {
+    requireFields(file, value, ["id", "status", "validity", "isComplete", "entries", "missingDataMeaning", "provenance"]);
+    const specIds = (value.entries ?? []).map((entry) => entry.specId);
+    const slugs = (value.entries ?? []).map((entry) => entry.slug);
+    const recordIds = (value.entries ?? []).map((entry) => entry.recordId);
+    if (new Set(specIds).size !== specIds.length) fail(file, "capability coverage spec IDs must be unique");
+    if (new Set(slugs).size !== slugs.length) fail(file, "capability coverage slugs must be unique");
+    if (new Set(recordIds).size !== recordIds.length) fail(file, "capability coverage record IDs must be unique");
   } else if (value.recordType === "spec-dungeon-matrix") {
     requireFields(file, value, ["id", "status", "validity", "spec", "axes", "dungeons", "affixes", "provenance"]);
     if (!Number.isInteger(value.spec?.classId) || value.spec.classId < 1) fail(file, "spec.classId must be a positive integer");
@@ -535,6 +543,24 @@ for (const capability of index.specCapabilities ?? []) {
     if (record.status !== capability.status) fail(indexPath, `${capability.record} has status ${record.status}, expected ${capability.status}`);
   } catch (error) {
     fail(indexPath, `cannot read spec capability ${capability.record}: ${error.message}`);
+  }
+}
+if (index.specCapabilityCoverage) {
+  const coveragePath = path.join(root, "data", index.specCapabilityCoverage.record);
+  try {
+    const coverage = JSON.parse(await readFile(coveragePath, "utf8"));
+    if (coverage.id !== index.specCapabilityCoverage.id) fail(indexPath, `${index.specCapabilityCoverage.record} has id ${coverage.id}, expected ${index.specCapabilityCoverage.id}`);
+    if (coverage.status !== index.specCapabilityCoverage.status) fail(indexPath, `${index.specCapabilityCoverage.record} has status ${coverage.status}, expected ${index.specCapabilityCoverage.status}`);
+    const expected = (index.specCapabilities ?? []).map((entry) => entry.id).sort();
+    const actual = (coverage.entries ?? []).map((entry) => entry.recordId).sort();
+    if (JSON.stringify(actual) !== JSON.stringify(expected)) fail(coveragePath, "coverage entries must exactly match indexed spec capability records");
+    for (const entry of coverage.entries ?? []) {
+      const capability = records.find(({ value }) => value.recordType === "spec-capabilities" && value.id === entry.recordId)?.value;
+      if (!capability) continue;
+      if (capability.spec.specId !== entry.specId || capability.spec.slug !== entry.slug) fail(coveragePath, `coverage identity does not match ${entry.recordId}`);
+    }
+  } catch (error) {
+    fail(indexPath, `cannot read spec capability coverage ${index.specCapabilityCoverage.record}: ${error.message}`);
   }
 }
 const indexedDungeons = new Map((index.dungeons ?? []).map((entry) => [entry.id, entry]));

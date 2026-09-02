@@ -2,10 +2,18 @@ import assert from "node:assert/strict";
 import path from "node:path";
 import test from "node:test";
 import { queryCapabilities } from "../lib/capability-query.mjs";
-import { loadSpecCapabilities } from "../lib/load-query-data.mjs";
+import { loadSpecCapabilities, loadSpecCapabilityCoverage } from "../lib/load-query-data.mjs";
 
 const root = path.resolve(import.meta.dirname, "..", "..");
 const capabilities = await loadSpecCapabilities(root);
+const coverage = await loadSpecCapabilityCoverage(root);
+
+test("declares the current capability catalog partial and covers every loaded record", () => {
+  assert.equal(coverage.isComplete, false);
+  assert.equal(coverage.entries.length, capabilities.length);
+  assert.deepEqual(new Set(coverage.entries.map((entry) => entry.recordId)), new Set(capabilities.map((record) => record.id)));
+  assert.match(coverage.missingDataMeaning, /not yet modeled/);
+});
 
 test("queries composition utility across selected specializations", () => {
   const result = queryCapabilities(capabilities, {

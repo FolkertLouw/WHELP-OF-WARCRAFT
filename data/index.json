@@ -86,6 +86,11 @@
     { "id": "druid/guardian/capabilities", "record": "specs/druid/guardian.json", "status": "corroborated" },
     { "id": "druid/restoration/capabilities", "record": "specs/druid/restoration.json", "status": "corroborated" }
   ],
+  "specCapabilityCoverage": {
+    "id": "retail/spec-capability-coverage",
+    "record": "specs/coverage.json",
+    "status": "verified"
+  },
   "builds": [
     {
       "version": "12.1.0.69587",

@@ -11,3 +11,9 @@ export async function loadSpecCapabilities(root) {
   const index = JSON.parse(await readFile(path.join(root, "data", "index.json"), "utf8"));
   return Promise.all((index.specCapabilities ?? []).map(async (entry) => JSON.parse(await readFile(path.join(root, "data", entry.record), "utf8"))));
 }
+
+export async function loadSpecCapabilityCoverage(root) {
+  const index = JSON.parse(await readFile(path.join(root, "data", "index.json"), "utf8"));
+  if (!index.specCapabilityCoverage) return null;
+  return JSON.parse(await readFile(path.join(root, "data", index.specCapabilityCoverage.record), "utf8"));
+}

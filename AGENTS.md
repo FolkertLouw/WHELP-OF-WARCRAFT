@@ -22,4 +22,6 @@ For dungeon preparation, use `npm run query:loadout --` to obtain deduplicated t
 
 For party-composition questions such as Bloodlust, combat resurrection, external defenses, persistent group buffs, or party-wide mitigation, use `npm run query:capabilities --`. Preserve `availabilityByAction`, `requirements`, and `alternateSpellIds`; one spell can provide baseline behavior while a talent adds another response type, and some utility depends on faction or character configuration.
 
+Capability coverage is partial until `data/specs/coverage.json` says `isComplete: true`. An unknown or absent specialization means WHELP has not modeled it yet; it never proves that the specialization lacks the requested utility.
+
 The repository validator is run with `npm test`.

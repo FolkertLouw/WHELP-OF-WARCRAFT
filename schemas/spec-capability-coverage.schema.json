@@ -1,0 +1,32 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://whelp.dev/schemas/spec-capability-coverage.schema.json",
+  "title": "WHELP specialization capability catalog coverage",
+  "type": "object",
+  "required": ["schemaVersion", "recordType", "id", "status", "validity", "isComplete", "entries", "missingDataMeaning", "provenance"],
+  "properties": {
+    "$schema": { "type": "string" },
+    "schemaVersion": { "const": 1 },
+    "recordType": { "const": "spec-capability-coverage" },
+    "id": { "type": "string" },
+    "status": { "enum": ["draft", "corroborated", "verified", "deprecated"] },
+    "validity": { "$ref": "validity.schema.json" },
+    "isComplete": { "type": "boolean" },
+    "entries": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["specId", "slug", "recordId"],
+        "properties": {
+          "specId": { "type": "integer", "minimum": 1 },
+          "slug": { "type": "string", "minLength": 1 },
+          "recordId": { "type": "string", "minLength": 1 }
+        },
+        "additionalProperties": false
+      }
+    },
+    "missingDataMeaning": { "type": "string", "minLength": 1 },
+    "provenance": { "type": "array", "minItems": 1, "items": { "$ref": "provenance.schema.json" } }
+  },
+  "additionalProperties": false
+}

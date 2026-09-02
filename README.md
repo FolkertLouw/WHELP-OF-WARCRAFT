@@ -62,6 +62,8 @@ npm run query:capabilities -- --specs balance-druid,restoration-druid --action g
 
 Capability results preserve action-specific availability, alternate faction spell IDs, and configuration requirements, so a talent-gated extension or pet-dependent group tool remains visible.
 
+The capability catalog is intentionally marked partial in `data/specs/coverage.json`. Query output includes that completeness state and the number of modeled specs; an absent spec means “not modeled yet,” never “has no utility.”
+
 To test the collector locally, copy `addon/WHELPCollector` into Retail's `Interface/AddOns` directory, restart WoW or run `/reload`, then use `/whelp status`.
 
 To inspect a locally installed Mythic Dungeon Tools module without copying its implementation into WHELP:

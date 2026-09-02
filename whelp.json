@@ -3,7 +3,7 @@
   "schemaVersion": 1,
   "name": "WHELP-OF-WARCRAFT",
   "acronym": "World-data Hub for Encounters, Loadouts & Progression",
-  "datasetVersion": "0.3.6",
+  "datasetVersion": "0.3.7",
   "currentBuild": "12.1.0.69587",
   "currentSeason": "midnight-season-2",
   "entrypoints": {
@@ -13,6 +13,7 @@
     "flaggedAbilities": "data/abilities/midnight-season-2.json",
     "curatedAbilityResponses": "content/mythic-plus/midnight-season-2/abilities/response-index.json",
     "specCapabilities": "data/index.json",
+    "specCapabilityCoverage": "data/specs/coverage.json",
     "pugRoutes": "content/mythic-plus/midnight-season-2/routes/catalog.json",
     "trustModel": "docs/TRUST_MODEL.md"
   },

@@ -1,7 +1,7 @@
 import path from "node:path";
 import process from "node:process";
 import { queryCapabilities } from "./lib/capability-query.mjs";
-import { loadSpecCapabilities } from "./lib/load-query-data.mjs";
+import { loadSpecCapabilities, loadSpecCapabilityCoverage } from "./lib/load-query-data.mjs";
 
 const root = path.resolve(import.meta.dirname, "..");
 const args = process.argv.slice(2);
@@ -20,4 +20,13 @@ const report = queryCapabilities(await loadSpecCapabilities(root), {
   action: options.get("--action"),
   scope: options.get("--scope")
 });
-console.log(JSON.stringify(report, null, 2));
+const coverage = await loadSpecCapabilityCoverage(root);
+console.log(JSON.stringify({
+  ...report,
+  catalog: coverage ? {
+    recordId: coverage.id,
+    isComplete: coverage.isComplete,
+    coveredSpecCount: coverage.entries.length,
+    missingDataMeaning: coverage.missingDataMeaning
+  } : null
+}, null, 2));
