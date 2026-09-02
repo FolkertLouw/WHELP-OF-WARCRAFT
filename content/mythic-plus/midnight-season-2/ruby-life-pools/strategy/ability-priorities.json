@@ -1,0 +1,27 @@
+{
+  "$schema": "../../../../../schemas/ability-response.schema.json",
+  "schemaVersion": 1,
+  "recordType": "ability-response",
+  "id": "ruby-life-pools/ability-response-priorities",
+  "status": "corroborated",
+  "validity": { "fromBuild": "12.1.0.69587", "untilBuild": null, "seasonId": null, "seasonSlug": "midnight-season-2" },
+  "dungeonId": "ruby-life-pools",
+  "instanceMapId": 2521,
+  "entries": [
+    { "spellId": 372743, "name": "Ice Shield", "npcIds": [188067], "targetDisposition": "enemy-cast", "actions": ["interrupt"], "priority": "high", "evidenceStatus": "source-confirmed", "rationale": "Stop the Flashfrost Chillweaver shield cast before it creates extra removal or damage requirements." },
+    { "spellId": 384933, "name": "Ice Shield", "npcIds": [188067], "targetDisposition": "enemy-cast", "actions": ["interrupt"], "priority": "high", "evidenceStatus": "source-confirmed", "rationale": "Alternate indexed Ice Shield variant for the same Flashfrost Chillweaver priority." },
+    { "spellId": 372808, "name": "Frigid Shard", "npcIds": [188252], "targetDisposition": "enemy-cast", "actions": ["interrupt"], "priority": "critical", "evidenceStatus": "source-confirmed", "rationale": "Interrupt Melidrussa's repeatable tank hit once Frost Overload's shield has been broken." },
+    { "spellId": 1305955, "name": "Fiery Blast", "npcIds": [190034], "targetDisposition": "enemy-cast", "actions": ["interrupt"], "priority": "high", "evidenceStatus": "source-confirmed", "rationale": "A named important interrupt from Blazebound Destroyers." },
+    { "spellId": 373017, "name": "Blaze Volley", "npcIds": [189886], "targetDisposition": "enemy-cast", "actions": ["interrupt"], "priority": "critical", "evidenceStatus": "source-confirmed", "rationale": "Stop the Blazebound Firestorm's group-damage cast during Kokia Blazehoof." },
+    { "spellId": 1305234, "name": "Cold Claws", "npcIds": [187894, 189893], "targetDisposition": "player-debuff", "actions": ["cleanse-magic", "crowd-control"], "priority": "high", "evidenceStatus": "source-confirmed", "rationale": "Remove the Magic debuff and control Infused Whelps to limit repeated melee applications." },
+    { "spellId": 392641, "name": "Rolling Thunder", "npcIds": [197698], "targetDisposition": "player-debuff", "actions": ["cleanse-magic"], "priority": "high", "evidenceStatus": "source-confirmed", "rationale": "Plan Magic dispels for the Thunderhead debuff." },
+    { "spellId": 381515, "name": "Stormslam", "npcIds": [190485], "targetDisposition": "player-debuff", "actions": ["cleanse-magic", "defensive"], "priority": "critical", "evidenceStatus": "source-confirmed", "rationale": "Use a tank defensive for the hit, then dispel the stacking Magic vulnerability." },
+    { "spellId": 373972, "name": "Blaze of Glory", "npcIds": [190206], "targetDisposition": "enemy-buff", "actions": ["purge"], "priority": "critical", "evidenceStatus": "source-confirmed", "rationale": "Offensively remove the Ashseer Flamelasher's large Magic buff; do not treat it as a friendly cleanse." },
+    { "spellId": 391031, "name": "Stormcloud Barrier", "npcIds": [197509], "targetDisposition": "enemy-buff", "actions": ["purge"], "priority": "critical", "evidenceStatus": "source-confirmed", "rationale": "Offensively remove the Primal Thundercloud barrier, especially when multiple clouds amplify nearby shield pressure." }
+  ],
+  "provenance": [
+    { "kind": "external-reference", "description": "Current interrupt, dispel, purge, and boss-response priorities were independently summarized from Wowhead's Midnight Season 2 dungeon overview.", "url": "https://www.wowhead.com/guide/midnight/ruby-life-pools-dungeon-overview-mythic-plus", "retrievedAt": "2026-09-02T15:05:00+02:00" },
+    { "kind": "external-reference", "description": "Restoration Shaman guidance corroborates Purge usage on Blaze of Glory and Stormcloud Barrier.", "url": "https://www.wowhead.com/guide/classes/shaman/restoration/mythic-plus-dungeon-tips", "retrievedAt": "2026-09-02T15:05:00+02:00" },
+    { "kind": "game-data", "description": "Spell IDs, NPC contexts, and low-level response flags are linked to the generated Midnight Season 2 ability index.", "recordId": "midnight-season-2/flagged-abilities", "retrievedAt": "2026-09-02T15:05:00+02:00" }
+  ]
+}

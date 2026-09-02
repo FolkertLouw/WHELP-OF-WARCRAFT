@@ -1,0 +1,25 @@
+{
+  "$schema": "../../../../../schemas/ability-response.schema.json",
+  "schemaVersion": 1,
+  "recordType": "ability-response",
+  "id": "voidscar-arena/ability-response-priorities",
+  "status": "corroborated",
+  "validity": { "fromBuild": "12.1.0.69587", "untilBuild": null, "seasonId": null, "seasonSlug": "midnight-season-2" },
+  "dungeonId": "voidscar-arena",
+  "instanceMapId": 2923,
+  "entries": [
+    { "spellId": 1298899, "name": "Demoralizing Shout", "npcIds": [238883], "targetDisposition": "enemy-cast", "actions": ["interrupt"], "priority": "high", "evidenceStatus": "source-confirmed", "rationale": "A named important interrupt from Dominated Brawlers in the opening section." },
+    { "spellId": 1299938, "name": "Shadowbolt Volley", "npcIds": [252072], "targetDisposition": "enemy-cast", "actions": ["interrupt"], "priority": "critical", "evidenceStatus": "source-confirmed", "rationale": "Stop the Voidtouched Magi group-damage cast." },
+    { "spellId": 1249621, "name": "Violent Sand", "npcIds": [249590], "targetDisposition": "enemy-cast", "actions": ["interrupt"], "priority": "high", "evidenceStatus": "source-confirmed", "rationale": "A named important interrupt from Angry Krolusks." },
+    { "spellId": 1233398, "name": "Mad Shriek", "npcIds": [243766], "targetDisposition": "enemy-cast", "actions": ["interrupt"], "priority": "critical", "evidenceStatus": "source-confirmed", "rationale": "Stop the Kilivore Screamer cast before it disrupts the group." },
+    { "spellId": 1310324, "name": "Mending Void", "npcIds": [244708], "targetDisposition": "enemy-cast", "actions": ["interrupt"], "priority": "critical", "evidenceStatus": "source-confirmed", "rationale": "Interrupt the Voidminder heal instead of extending the final trash section." },
+    { "spellId": 1250043, "name": "Melt Armor", "npcIds": [243983], "targetDisposition": "player-debuff", "actions": ["cleanse-magic"], "priority": "high", "evidenceStatus": "source-confirmed", "rationale": "Remove the Sycophantic Tarasek's Magic armor debuff from the tank." },
+    { "spellId": 1289258, "name": "Corrosive Essence", "npcIds": [263228], "targetDisposition": "player-debuff", "actions": ["cleanse-poison"], "priority": "high", "evidenceStatus": "source-confirmed", "rationale": "Cleanse the Poison applied by Agitated Voidscythes." },
+    { "spellId": 1263971, "name": "Mind-Numbing Poison", "npcIds": [239008], "targetDisposition": "player-debuff", "actions": ["cleanse-poison"], "priority": "situational", "evidenceStatus": "source-confirmed", "rationale": "This is recovery for a failed Atroxus mechanic; avoid the application first, then cleanse affected players." },
+    { "spellId": 1310319, "name": "Bolster", "npcIds": [243985], "targetDisposition": "enemy-buff", "actions": ["soothe"], "priority": "high", "evidenceStatus": "source-confirmed", "rationale": "Remove the Longtooth Tuskarr's Enrage; its low-level Enrage flag makes soothe the precise response." }
+  ],
+  "provenance": [
+    { "kind": "external-reference", "description": "Interrupt, dispel, purge, and boss priorities were independently summarized from Wowhead's Patch 12.1 dungeon overview.", "url": "https://www.wowhead.com/guide/midnight/voidscar-arena-dungeon-overview-location-rewards", "retrievedAt": "2026-09-02T15:05:00+02:00" },
+    { "kind": "game-data", "description": "Spell IDs, NPC contexts, dispel types, and Enrage flags are linked to the generated Midnight Season 2 ability index.", "recordId": "midnight-season-2/flagged-abilities", "retrievedAt": "2026-09-02T15:05:00+02:00" }
+  ]
+}

@@ -26,9 +26,21 @@
       "status": "corroborated"
     },
     {
+      "dungeonId": "ruby-life-pools",
+      "recordId": "ruby-life-pools/ability-response-priorities",
+      "path": "../ruby-life-pools/strategy/ability-priorities.json",
+      "status": "corroborated"
+    },
+    {
       "dungeonId": "the-blinding-vale",
       "recordId": "the-blinding-vale/ability-response-priorities",
       "path": "../the-blinding-vale/strategy/ability-priorities.json",
+      "status": "corroborated"
+    },
+    {
+      "dungeonId": "voidscar-arena",
+      "recordId": "voidscar-arena/ability-response-priorities",
+      "path": "../voidscar-arena/strategy/ability-priorities.json",
       "status": "corroborated"
     }
   ],

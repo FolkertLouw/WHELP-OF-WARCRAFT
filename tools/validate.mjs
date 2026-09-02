@@ -327,16 +327,32 @@ for (const { file, value } of records.filter(({ value }) => value.recordType ===
       continue;
     }
     if (indexed.name !== entry.name) fail(file, `response spell ${entry.spellId} name does not match the ability index`);
-    const indexedNpcIds = new Set(
-      indexed.contexts
-        .filter((context) => context.dungeonId === value.dungeonId)
-        .map((context) => context.npcId),
-    );
+    const indexedContexts = indexed.contexts.filter((context) => context.dungeonId === value.dungeonId);
+    const indexedNpcIds = new Set(indexedContexts.map((context) => context.npcId));
     for (const npcId of entry.npcIds ?? []) {
       if (!knownNpcIds.has(npcId)) fail(file, `response spell ${entry.spellId} references unknown NPC ${npcId}`);
       if (!indexedNpcIds.has(npcId)) fail(file, `response spell ${entry.spellId} is not indexed for NPC ${npcId}`);
     }
     const actions = new Set(entry.actions ?? []);
+    const selectedContexts = indexedContexts.filter((context) => (entry.npcIds ?? []).includes(context.npcId));
+    if (actions.has("interrupt") && !selectedContexts.some((context) => context.interruptible === true)) {
+      fail(file, `response spell ${entry.spellId} claims interrupt without an interruptible indexed context`);
+    }
+    if (actions.has("soothe") && !selectedContexts.some((context) => context.enrage === true)) {
+      fail(file, `response spell ${entry.spellId} claims soothe without an Enrage indexed context`);
+    }
+    const requiredDispelTypes = new Map([
+      ["purge", "magic"],
+      ["cleanse-magic", "magic"],
+      ["cleanse-curse", "curse"],
+      ["cleanse-disease", "disease"],
+      ["cleanse-poison", "poison"],
+    ]);
+    for (const [action, dispelType] of requiredDispelTypes) {
+      if (actions.has(action) && !selectedContexts.some((context) => context.dispelType === dispelType)) {
+        fail(file, `response spell ${entry.spellId} claims ${action} without an indexed ${dispelType} flag`);
+      }
+    }
     if (entry.targetDisposition === "enemy-buff" && [...actions].some((action) => action.startsWith("cleanse-"))) {
       fail(file, `response spell ${entry.spellId} uses a friendly cleanse on an enemy buff`);
     }
