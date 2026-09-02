@@ -109,10 +109,11 @@ test("preserves Death Knight combat resurrection, magic zone, and displacement d
   const grips = queryCapabilities(capabilities, { specs, action: "enemy-reposition" });
   assert.equal(resurrections.resultCount, 3);
   assert.equal(zones.resultCount, 3);
-  assert.equal(grips.resultCount, 3);
+  assert.equal(grips.resultCount, 4);
   assert.ok(resurrections.results.every((entry) => entry.tool.name === "Raise Ally" && entry.tool.availabilityByAction["battle-resurrection"] === "baseline"));
   assert.ok(zones.results.every((entry) => entry.tool.name === "Anti-Magic Zone" && entry.tool.availabilityByAction["party-damage-reduction"] === "talent"));
-  assert.ok(grips.results.every((entry) => entry.tool.name === "Death Grip"));
+  assert.equal(grips.results.filter((entry) => entry.tool.name === "Death Grip").length, 3);
+  assert.deepEqual(grips.results.find((entry) => entry.tool.name === "Gorefiend's Grasp").spec.slug, "blood-death-knight");
 });
 
 test("retains Unholy Control Undead's permanent-pet conflict", () => {

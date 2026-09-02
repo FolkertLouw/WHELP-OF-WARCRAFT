@@ -1,0 +1,79 @@
+{
+  "$schema": "../../../../schemas/spec-dungeon-matrix.schema.json",
+  "schemaVersion": 1,
+  "recordType": "spec-dungeon-matrix",
+  "id": "midnight-season-2/blood-death-knight-utility-matrix",
+  "status": "corroborated",
+  "validity": { "fromBuild": "12.1.0.69587", "untilBuild": null, "seasonId": null, "seasonSlug": "midnight-season-2" },
+  "spec": { "classId": 6, "className": "Death Knight", "specId": 250, "specName": "Blood" },
+  "axes": [
+    { "id": "cast-control", "label": "Cast control", "abilityNames": ["Mind Freeze", "Death Grip", "Blinding Sleet", "Gorefiend's Grasp"], "spellIds": [47528, 49576, 207167, 108199], "toolIds": ["mind-freeze", "death-grip", "blinding-sleet", "gorefiends-grasp"] },
+    { "id": "enemy-reposition", "label": "Enemy repositioning", "abilityNames": ["Death Grip", "Gorefiend's Grasp"], "spellIds": [49576, 108199], "toolIds": ["death-grip", "gorefiends-grasp"] },
+    { "id": "personal-magic", "label": "Personal magic prevention", "abilityNames": ["Anti-Magic Shell"], "spellIds": [48707], "toolIds": ["anti-magic-shell"] },
+    { "id": "movement-control", "label": "Forced-movement immunity", "abilityNames": ["Death's Advance"], "spellIds": [48265], "toolIds": ["deaths-advance"] },
+    { "id": "party-magic", "label": "Party magic mitigation", "abilityNames": ["Anti-Magic Zone"], "spellIds": [51052], "toolIds": ["anti-magic-zone"] },
+    { "id": "control-undead", "label": "Undead enemy control", "abilityNames": ["Control Undead"], "spellIds": [111673], "toolIds": ["control-undead"] },
+    { "id": "self-sustain", "label": "Reactive tank recovery", "abilityNames": ["Death Strike", "Vampiric Blood"], "spellIds": [49998, 55233], "toolIds": ["death-strike", "vampiric-blood"] },
+    { "id": "battle-resurrection", "label": "Combat resurrection", "abilityNames": ["Raise Ally"], "spellIds": [61999], "toolIds": ["raise-ally"] }
+  ],
+  "dungeons": [
+    {
+      "dungeonId": "altar-of-fangs", "instanceMapId": 2993,
+      "ratings": { "cast-control": "always", "enemy-reposition": "always", "personal-magic": "always", "movement-control": "always", "party-magic": "always", "control-undead": "none", "self-sustain": "always", "battle-resurrection": "always" },
+      "mechanicSpellIds": [1300876, 1294845],
+      "notes": ["Grip High Evolutionists during Tempest Stormshield and pre-cast Anti-Magic Shell for predictable magic or poison effects.", "Anti-Magic Zone covers planned group pulses such as Ritual of the Fang; Death's Advance helps with repeated knockbacks and targeted slows."]
+    },
+    {
+      "dungeonId": "the-blinding-vale", "instanceMapId": 2859,
+      "ratings": { "cast-control": "always", "enemy-reposition": "always", "personal-magic": "always", "movement-control": "niche", "party-magic": "niche", "control-undead": "none", "self-sustain": "always", "battle-resurrection": "always" },
+      "mechanicSpellIds": [1235564],
+      "notes": ["Use Death Grip to reposition susceptible casters and cancel channels, while keeping Mind Freeze for true school lockouts.", "Anti-Magic Shell is valuable on the first boss trio and Ziekket even where the encounter damage is presented as Nature, Physical, or Holy."]
+    },
+    {
+      "dungeonId": "den-of-nalorakk", "instanceMapId": 2825,
+      "ratings": { "cast-control": "always", "enemy-reposition": "always", "personal-magic": "always", "movement-control": "niche", "party-magic": "niche", "control-undead": "none", "self-sustain": "always", "battle-resurrection": "always" },
+      "mechanicSpellIds": [1234233],
+      "notes": ["Track armor-reduction stacks before combining packs; intermittent Frostfang magic damage still gives Anti-Magic Shell value.", "Control boss positioning deliberately around Hoardmonger resources and Nalorakk's Onslaught shelter rather than leaving either sequence to chance."]
+    },
+    {
+      "dungeonId": "murder-row", "instanceMapId": 2813,
+      "ratings": { "cast-control": "always", "enemy-reposition": "always", "personal-magic": "always", "movement-control": "none", "party-magic": "niche", "control-undead": "none", "self-sustain": "always", "battle-resurrection": "always" },
+      "mechanicSpellIds": [1228198],
+      "notes": ["Death Grip can cancel susceptible channels such as Health Funnel and Seduction, but it remains displacement rather than interrupt coverage.", "Pre-cast Anti-Magic Shell for Envenom or Corroding Spittle and track physical bleeds and parry-punishing attacks separately."]
+    },
+    {
+      "dungeonId": "voidscar-arena", "instanceMapId": 2923,
+      "ratings": { "cast-control": "always", "enemy-reposition": "always", "personal-magic": "always", "movement-control": "niche", "party-magic": "niche", "control-undead": "none", "self-sustain": "always", "battle-resurrection": "always" },
+      "mechanicSpellIds": [1250043, 1222098],
+      "notes": ["Pre-cast Anti-Magic Shell for Melt Armor and selected boss debuffs, but keep it aligned with the planned Void Blast defensive cycle.", "Use Death Grip for susceptible non-interrupt stops; positioning and route choice remain the primary tank responsibilities."]
+    },
+    {
+      "dungeonId": "temple-of-sethraliss", "instanceMapId": 1877,
+      "ratings": { "cast-control": "always", "enemy-reposition": "niche", "personal-magic": "always", "movement-control": "niche", "party-magic": "niche", "control-undead": "none", "self-sustain": "always", "battle-resurrection": "always" },
+      "mechanicSpellIds": [1289602],
+      "notes": ["Pre-cast Anti-Magic Shell for magic trash debuffs and the new magic-compatible tankbusters on Merektha and the Avatar guardians.", "Do not assume every visually elemental hit is magical; keep ordinary tank mitigation for physical events."]
+    },
+    {
+      "dungeonId": "kings-rest", "instanceMapId": 1762,
+      "ratings": { "cast-control": "always", "enemy-reposition": "always", "personal-magic": "niche", "movement-control": "niche", "party-magic": "niche", "control-undead": "always", "self-sustain": "always", "battle-resurrection": "always" },
+      "mechanicSpellIds": [265923],
+      "notes": ["Use Gorefiend's Grasp, Death Grip, and slows to keep Animated Gold away from the Golden Serpent.", "Control Undead can retain a Royal Berserker or Hex Priest; refresh before five minutes and plan for control to break on death."]
+    },
+    {
+      "dungeonId": "ruby-life-pools", "instanceMapId": 2521,
+      "ratings": { "cast-control": "always", "enemy-reposition": "always", "personal-magic": "always", "movement-control": "niche", "party-magic": "niche", "control-undead": "none", "self-sustain": "always", "battle-resurrection": "always" },
+      "mechanicSpellIds": [372743, 372858],
+      "notes": ["Death Grip cancels a susceptible Ice Shield channel so Mind Freeze can remain available for Frostbolt or Frigid Shard.", "Use Blinding Sleet to reset stacking Tectonic Strike and Anti-Magic Shell to mitigate Kokia's Searing Blows damage-over-time component."]
+    }
+  ],
+  "affixes": [
+    { "affixSlug": "xalataths-bargain-ascendant", "recommendations": ["Blinding Sleet supplies an area stop; Gorefiend's Grasp can gather susceptible targets, while Abomination Limb is less predictable."] },
+    { "affixSlug": "xalataths-bargain-voidbound", "recommendations": ["There is no dedicated Blood utility answer; commit normal priority damage."] },
+    { "affixSlug": "xalataths-bargain-pulsar", "recommendations": ["Move toward the group early; March of Darkness is only a minor optional mobility improvement."] },
+    { "affixSlug": "xalataths-bargain-devour", "recommendations": ["Do not pre-immune with Anti-Magic Shell; allow application and use Death Strike to satisfy the healing requirement.", "Blood's base kit does not remove the associated snare outright."] }
+  ],
+  "provenance": [
+    { "kind": "external-reference", "description": "Original structured summary of current Blood Death Knight tank utility, positioning, eight dungeon-specific interactions, and affix advice. Placeholder guide fields and guide prose are intentionally excluded.", "url": "https://www.wowhead.com/guide/classes/death-knight/blood/mythic-plus-dungeon-tips", "retrievedAt": "2026-09-02T17:08:00+02:00" },
+    { "kind": "curated", "description": "Every asserted mechanicSpellId is cross-linked to WHELP's versioned dungeon mechanics, routes, or ability-response data for Midnight Season 2.", "recordId": "midnight-season-2/flagged-abilities" }
+  ]
+}

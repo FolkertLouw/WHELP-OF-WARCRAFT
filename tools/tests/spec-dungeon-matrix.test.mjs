@@ -9,6 +9,8 @@ const matrix = await loadJson("content", "mythic-plus", "midnight-season-2", "sp
 const capabilities = await loadJson("data", "specs", "death-knight", "unholy.json");
 const frostMatrix = await loadJson("content", "mythic-plus", "midnight-season-2", "specs", "frost-death-knight-utility-matrix.json");
 const frostCapabilities = await loadJson("data", "specs", "death-knight", "frost.json");
+const bloodMatrix = await loadJson("content", "mythic-plus", "midnight-season-2", "specs", "blood-death-knight-utility-matrix.json");
+const bloodCapabilities = await loadJson("data", "specs", "death-knight", "blood.json");
 const season = await loadJson("data", "seasons", "midnight-season-2.json");
 
 test("Unholy matrix covers every Midnight Season 2 dungeon exactly once", () => {
@@ -63,4 +65,26 @@ test("Frost matrix preserves the unresolved Ruby Life Pools spell-ID caveat", ()
   const ruby = frostMatrix.dungeons.find((entry) => entry.dungeonId === "ruby-life-pools");
   assert.deepEqual(ruby.mechanicSpellIds, []);
   assert.match(ruby.notes.join(" "), /no spell ID is asserted/);
+});
+
+test("Blood matrix covers the season and resolves tank-specific tools", () => {
+  assert.deepEqual(new Set(bloodMatrix.dungeons.map((entry) => entry.dungeonId)), new Set(season.dungeons.map((entry) => entry.id)));
+  const tools = new Map(bloodCapabilities.tools.map((tool) => [tool.id, tool]));
+  for (const axis of bloodMatrix.axes) {
+    for (const toolId of axis.toolIds) assert.ok(tools.has(toolId), `${axis.id} should resolve ${toolId}`);
+  }
+  assert.ok(tools.has("gorefiends-grasp"));
+  assert.ok(tools.has("death-strike"));
+});
+
+test("Blood affix advice does not incorrectly pre-immune Devour", () => {
+  const devour = bloodMatrix.affixes.find((entry) => entry.affixSlug === "xalataths-bargain-devour");
+  assert.match(devour.recommendations.join(" "), /Do not pre-immune/);
+  assert.match(devour.recommendations.join(" "), /Death Strike/);
+});
+
+test("Blood matrix keeps positional grip stops distinct from school lockouts", () => {
+  const grip = bloodCapabilities.tools.find((tool) => tool.id === "death-grip");
+  assert.deepEqual(grip.actions, ["enemy-reposition"]);
+  assert.match(bloodMatrix.dungeons.find((entry) => entry.dungeonId === "murder-row").notes.join(" "), /rather than interrupt coverage/);
 });

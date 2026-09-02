@@ -2,7 +2,7 @@
 ## Title: WHELP Collector
 ## Notes: Privacy-safe run observations for the World-data Hub for Encounters, Loadouts & Progression.
 ## Author: WHELP contributors
-## Version: 0.4.3
+## Version: 0.4.4
 ## SavedVariables: WHELPCollectorDB
 
 Namespace.lua
