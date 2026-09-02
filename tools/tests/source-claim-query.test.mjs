@@ -6,6 +6,8 @@ import { querySourceClaims, summarizeSourceClaims } from "../lib/source-claim-qu
 
 const root = path.resolve(import.meta.dirname, "../..");
 const audits = await Promise.all([
+  "augmentation-evoker-midnight-season-2-wowhead-utility-panel.json",
+  "devastation-evoker-midnight-season-2-wowhead-utility-panel.json",
   "evoker-midnight-season-2-wowhead-dungeon-tips.json",
   "evoker-midnight-season-2-wowhead-cross-dungeon-sections.json",
   "elemental-shaman-midnight-season-2-wowhead-placeholders.json",
@@ -16,9 +18,9 @@ const audits = await Promise.all([
 
 test("claim audit exposes rejected and unresolved source assertions", () => {
   assert.deepEqual(summarizeSourceClaims(audits), {
-    auditCount: 6,
-    claimCount: 144,
-    byDisposition: { accepted: 106, "rejected-cross-dungeon": 28, "rejected-placeholder": 9, unresolved: 1 },
+    auditCount: 8,
+    claimCount: 208,
+    byDisposition: { accepted: 170, "rejected-cross-dungeon": 28, "rejected-placeholder": 9, unresolved: 1 },
   });
   assert.equal(querySourceClaims(audits, { dungeonId: "maisara-caverns" }).length, 5);
   assert.equal(querySourceClaims(audits, { dungeonId: "windrunner-spire" }).length, 4);
@@ -35,6 +37,16 @@ test("Elemental utility mentions bind to non-none axes without inventing ratings
   for (const dungeonId of ["voidscar-arena", "kings-rest"]) {
     assert.equal(matrix.dungeons.find((dungeon) => dungeon.dungeonId === dungeonId).ratings["root-removal"], "none");
     assert.equal(querySourceClaims(audits, { claimType: "utility-mention", specSlug: "elemental-shaman", dungeonId, axisId: "root-removal" }).length, 0);
+  }
+});
+
+test("Devastation and Augmentation utility panels cover four named tools in every dungeon", () => {
+  for (const specSlug of ["devastation-evoker", "augmentation-evoker"]) {
+    const mentions = querySourceClaims(audits, { claimType: "utility-mention", specSlug });
+    assert.equal(mentions.length, 32);
+    assert.deepEqual([...new Set(mentions.map(({ axisId }) => axisId))].sort(), ["ally-movement", "area-control", "interrupt", "party-defense"]);
+    assert.equal(new Set(mentions.map(({ canonicalDungeonId }) => canonicalDungeonId)).size, 8);
+    assert.equal(mentions.every(({ assertedRating }) => assertedRating === undefined), true);
   }
 });
 
@@ -74,6 +86,15 @@ test("Evoker matrices cannot reintroduce rejected Blinding Vale claims", async (
     for (const rejected of [1266480, 1246666, 1255765, 1256047, 1259887]) {
       assert.equal(vale.mechanicSpellIds.includes(rejected), false);
     }
+  }
+});
+
+test("Devastation and Augmentation retain canonical Blinding Vale Poison cleansing", async () => {
+  for (const spec of ["augmentation", "devastation"]) {
+    const matrix = JSON.parse(await readFile(path.join(root, "content", "mythic-plus", "midnight-season-2", "specs", `${spec}-evoker-utility-matrix.json`), "utf8"));
+    const vale = matrix.dungeons.find(({ dungeonId }) => dungeonId === "the-blinding-vale");
+    assert.equal(vale.ratings["toxin-cleanse"], "always");
+    assert.equal(vale.mechanicSpellIds.includes(1250937), true);
   }
 });
 

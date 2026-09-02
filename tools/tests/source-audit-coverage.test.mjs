@@ -21,8 +21,8 @@ test("keeps source-audit coverage reproducible across all specialization matrice
   assert.deepEqual(coverage.summary, {
     specializationCount: 40,
     fullyAudited: 0,
-    partiallyAudited: 4,
-    provenanceOnly: 36,
+    partiallyAudited: 6,
+    provenanceOnly: 34,
     noSource: 0,
   });
 });
@@ -30,11 +30,13 @@ test("keeps source-audit coverage reproducible across all specialization matrice
 test("reports exact audited scopes without treating provenance as claim review", () => {
   const partial = querySourceAuditCoverage(coverage, { level: "partially-audited" });
   assert.deepEqual(partial.map((entry) => entry.specSlug), [
-    "elemental-shaman", "enhancement-shaman", "preservation-evoker", "restoration-shaman",
+    "augmentation-evoker", "devastation-evoker", "elemental-shaman", "enhancement-shaman", "preservation-evoker", "restoration-shaman",
   ]);
+  assert.equal(querySourceAuditCoverage(coverage, { specSlug: "augmentation-evoker" })[0].claimCount, 32);
+  assert.equal(querySourceAuditCoverage(coverage, { specSlug: "devastation-evoker" })[0].claimCount, 32);
   assert.equal(querySourceAuditCoverage(coverage, { specSlug: "elemental-shaman" })[0].claimCount, 46);
   assert.equal(querySourceAuditCoverage(coverage, { specSlug: "preservation-evoker" })[0].claimCount, 29);
-  assert.equal(querySourceAuditCoverage(coverage, { specSlug: "augmentation-evoker" })[0].coverageLevel, "provenance-only");
+  assert.equal(querySourceAuditCoverage(coverage, { specSlug: "augmentation-evoker" })[0].coverageLevel, "partially-audited");
 });
 
 test("rejects invalid coverage filters", () => {

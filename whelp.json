@@ -3,7 +3,7 @@
   "schemaVersion": 1,
   "name": "WHELP-OF-WARCRAFT",
   "acronym": "World-data Hub for Encounters, Loadouts & Progression",
-  "datasetVersion": "1.13.0",
+  "datasetVersion": "1.14.0",
   "currentBuild": "12.1.0.69587",
   "currentSeason": "midnight-season-2",
   "entrypoints": {

@@ -14,7 +14,7 @@ The repository is the reviewable public knowledge layer. Raw high-volume telemet
 
 ## Current status
 
-Version 1.13 is a validated, queryable foundation. It includes:
+Version 1.14 is a validated, queryable foundation. It includes:
 
 - the WHELP data and trust model;
 - JSON schemas and synthetic examples;
@@ -56,7 +56,7 @@ Evoker completes the current Retail specialization catalog at 40 full matrices. 
 
 Source claims now have their own auditable record layer. Each extracted claim records its type, disposition, evidence, and independently established canonical context. The current audits quarantine 28 cross-dungeon claims from seven mislabeled Evoker-guide sections, retain one unresolved claim, positively corroborate 29 Restoration Shaman mechanics, bind all 40 cells of Enhancement's eight-by-five utility cheat sheet to its matrix, and preserve 37 Elemental utility mentions without inventing exact ratings. Nine Elemental source artifacts—including seven literal tips tokens and two internal implementation labels—are explicitly rejected instead of being treated as strategy. Accepted spell claims must resolve to their dungeon in the generated ability index; accepted utility ratings must equal the corresponding matrix cell; accepted utility mentions must map to a non-`none` axis. Inspect the evidence with `npm run query:source-claims`, filtering by `--disposition`, `--type`, `--spec`, `--axis`, `--dungeon`, or `--spell`.
 
-An independently generated audit-coverage catalog reports how deeply each specialization's guide sources have been checked. Across all 40 current specs, four are partially audited and 36 are provenance-only; none are yet labeled fully audited, and every matrix has at least one source URL. This is deliberately stricter than matrix completeness: provenance-only means WHELP knows where guidance came from, not that every source claim has been independently corroborated. Run `npm run query:source-audit-coverage`, optionally filtering by `--level` or `--spec`, and see `docs/SOURCE_AUDITS.md` for promotion rules.
+An independently generated audit-coverage catalog reports how deeply each specialization's guide sources have been checked. Across all 40 current specs, six are partially audited and 34 are provenance-only; none are yet labeled fully audited, and every matrix has at least one source URL. Devastation and Augmentation Evoker now each preserve 32 current Wowhead utility-panel mentions across all eight dungeons without inventing numerical ratings. Their Blinding Vale matrices also restore Poison cleansing against canonical Toxic Spew while retaining the rejection of unrelated Maisara Caverns claims. Provenance-only means WHELP knows where guidance came from, not that every source claim has been independently corroborated. Run `npm run query:source-audit-coverage`, optionally filtering by `--level` or `--spec`, and see `docs/SOURCE_AUDITS.md` for promotion rules.
 
 Source maintenance is machine-readable. `npm run query:freshness` compares every canonical provenance-bearing record with the current build and the checked-in freshness policy. It reports source age separately from build validity and returns an actionable review queue; use `--as-of <ISO-date> --include all` for a reproducible full audit. See `docs/FRESHNESS.md`.
 

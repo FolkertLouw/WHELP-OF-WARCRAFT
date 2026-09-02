@@ -14,8 +14,8 @@
   "summary": {
     "specializationCount": 40,
     "fullyAudited": 0,
-    "partiallyAudited": 4,
-    "provenanceOnly": 36,
+    "partiallyAudited": 6,
+    "provenanceOnly": 34,
     "noSource": 0
   },
   "entries": [
@@ -127,26 +127,28 @@
       "specId": 1473,
       "specSlug": "augmentation-evoker",
       "matrixId": "midnight-season-2/augmentation-evoker-utility-matrix",
-      "coverageLevel": "provenance-only",
+      "coverageLevel": "partially-audited",
       "sourceUrls": [
         "https://www.wowhead.com/guide/classes/evoker/augmentation/mythic-plus-dungeon-tips"
       ],
-      "auditIds": [],
-      "claimCount": 0,
+      "auditIds": [
+        "midnight-season-2/augmentation-evoker-wowhead-utility-panel-audit"
+      ],
+      "claimCount": 32,
       "claimsByType": {
         "mechanic-location": 0,
         "utility-rating": 0,
-        "utility-mention": 0,
+        "utility-mention": 32,
         "placeholder": 0
       },
       "claimsByDisposition": {
-        "accepted": 0,
+        "accepted": 32,
         "rejected-cross-dungeon": 0,
         "rejected-placeholder": 0,
         "unresolved": 0
       },
       "limitations": [
-        "The matrix cites a specialization guide, but WHELP has not created a claim-level audit for it yet."
+        "Claim-level review exists, but no audit declares complete coverage of every relevant source section."
       ]
     },
     {
@@ -309,26 +311,28 @@
       "specId": 1467,
       "specSlug": "devastation-evoker",
       "matrixId": "midnight-season-2/devastation-evoker-utility-matrix",
-      "coverageLevel": "provenance-only",
+      "coverageLevel": "partially-audited",
       "sourceUrls": [
         "https://www.wowhead.com/guide/classes/evoker/devastation/mythic-plus-dungeon-tips"
       ],
-      "auditIds": [],
-      "claimCount": 0,
+      "auditIds": [
+        "midnight-season-2/devastation-evoker-wowhead-utility-panel-audit"
+      ],
+      "claimCount": 32,
       "claimsByType": {
         "mechanic-location": 0,
         "utility-rating": 0,
-        "utility-mention": 0,
+        "utility-mention": 32,
         "placeholder": 0
       },
       "claimsByDisposition": {
-        "accepted": 0,
+        "accepted": 32,
         "rejected-cross-dungeon": 0,
         "rejected-placeholder": 0,
         "unresolved": 0
       },
       "limitations": [
-        "The matrix cites a specialization guide, but WHELP has not created a claim-level audit for it yet."
+        "Claim-level review exists, but no audit declares complete coverage of every relevant source section."
       ]
     },
     {
@@ -1076,7 +1080,7 @@
       "kind": "curated",
       "description": "Generated deterministically from all seasonal specialization matrices and indexed source-claim audits.",
       "recordId": "data/index.json",
-      "retrievedAt": "2026-09-02T21:35:00+02:00"
+      "retrievedAt": "2026-09-02T21:40:00+02:00"
     }
   ]
 }

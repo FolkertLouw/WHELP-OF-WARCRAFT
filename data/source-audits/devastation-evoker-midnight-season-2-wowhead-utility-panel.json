@@ -1,0 +1,674 @@
+{
+  "$schema": "../../schemas/source-claim-audit.schema.json",
+  "schemaVersion": 1,
+  "recordType": "source-claim-audit",
+  "id": "midnight-season-2/devastation-evoker-wowhead-utility-panel-audit",
+  "status": "corroborated",
+  "validity": {
+    "fromBuild": "12.1.0.69587",
+    "untilBuild": null,
+    "seasonId": null,
+    "seasonSlug": "midnight-season-2"
+  },
+  "source": {
+    "title": "Devastation Evoker Mythic+ Dungeon Tips",
+    "url": "https://www.wowhead.com/guide/classes/evoker/devastation/mythic-plus-dungeon-tips",
+    "retrievedAt": "2026-09-02T21:40:00+02:00"
+  },
+  "coverageCompleteness": "partial",
+  "coverageNote": "Complete for the repeated Quell, Sleep Walk, Zephyr, and Rescue rows in all eight dungeon utility panels. Excludes talent imports, examples, Cauterizing Flame, Overawe, free-form tips, and damage guidance.",
+  "claims": [
+    {
+      "claimId": "altar-of-fangs-quell-mention",
+      "claimType": "utility-mention",
+      "assertedDungeonId": "altar-of-fangs",
+      "sectionLabel": "Altar of Fangs Utility Options",
+      "subjectName": "Quell",
+      "specSlug": "devastation-evoker",
+      "axisId": "interrupt",
+      "disposition": "accepted",
+      "canonicalDungeonId": "altar-of-fangs",
+      "reason": "The guide identifies Quell as expected interrupt coverage in every Mythic+ dungeon.",
+      "evidence": [
+        {
+          "kind": "external-reference",
+          "description": "Preheat's current Devastation Evoker guide lists Quell in the Altar of Fangs utility panel.",
+          "url": "https://www.wowhead.com/guide/classes/evoker/devastation/mythic-plus-dungeon-tips",
+          "retrievedAt": "2026-09-02T21:40:00+02:00"
+        }
+      ]
+    },
+    {
+      "claimId": "altar-of-fangs-sleep-walk-mention",
+      "claimType": "utility-mention",
+      "assertedDungeonId": "altar-of-fangs",
+      "sectionLabel": "Altar of Fangs Utility Options",
+      "subjectName": "Sleep Walk",
+      "specSlug": "devastation-evoker",
+      "axisId": "area-control",
+      "disposition": "accepted",
+      "canonicalDungeonId": "altar-of-fangs",
+      "reason": "The guide presents Sleep Walk as long-duration control and a backup stop against eligible non-Lieutenant enemies.",
+      "evidence": [
+        {
+          "kind": "external-reference",
+          "description": "Preheat's current Devastation Evoker guide lists Sleep Walk in the Altar of Fangs utility panel.",
+          "url": "https://www.wowhead.com/guide/classes/evoker/devastation/mythic-plus-dungeon-tips",
+          "retrievedAt": "2026-09-02T21:40:00+02:00"
+        }
+      ]
+    },
+    {
+      "claimId": "altar-of-fangs-zephyr-mention",
+      "claimType": "utility-mention",
+      "assertedDungeonId": "altar-of-fangs",
+      "sectionLabel": "Altar of Fangs Utility Options",
+      "subjectName": "Zephyr",
+      "specSlug": "devastation-evoker",
+      "axisId": "party-defense",
+      "disposition": "accepted",
+      "canonicalDungeonId": "altar-of-fangs",
+      "reason": "The guide recommends Zephyr for eligible group-wide area damage in every dungeon.",
+      "evidence": [
+        {
+          "kind": "external-reference",
+          "description": "Preheat's current Devastation Evoker guide lists Zephyr in the Altar of Fangs utility panel.",
+          "url": "https://www.wowhead.com/guide/classes/evoker/devastation/mythic-plus-dungeon-tips",
+          "retrievedAt": "2026-09-02T21:40:00+02:00"
+        }
+      ]
+    },
+    {
+      "claimId": "altar-of-fangs-rescue-mention",
+      "claimType": "utility-mention",
+      "assertedDungeonId": "altar-of-fangs",
+      "sectionLabel": "Altar of Fangs Utility Options",
+      "subjectName": "Rescue",
+      "specSlug": "devastation-evoker",
+      "axisId": "ally-movement",
+      "disposition": "accepted",
+      "canonicalDungeonId": "altar-of-fangs",
+      "reason": "The guide presents Rescue as ally mobility support and notes its movement-impairing-effect removal.",
+      "evidence": [
+        {
+          "kind": "external-reference",
+          "description": "Preheat's current Devastation Evoker guide lists Rescue in the Altar of Fangs utility panel.",
+          "url": "https://www.wowhead.com/guide/classes/evoker/devastation/mythic-plus-dungeon-tips",
+          "retrievedAt": "2026-09-02T21:40:00+02:00"
+        }
+      ]
+    },
+    {
+      "claimId": "the-blinding-vale-quell-mention",
+      "claimType": "utility-mention",
+      "assertedDungeonId": "the-blinding-vale",
+      "sectionLabel": "The Blinding Vale Utility Options",
+      "subjectName": "Quell",
+      "specSlug": "devastation-evoker",
+      "axisId": "interrupt",
+      "disposition": "accepted",
+      "canonicalDungeonId": "the-blinding-vale",
+      "reason": "The guide identifies Quell as expected interrupt coverage in every Mythic+ dungeon.",
+      "evidence": [
+        {
+          "kind": "external-reference",
+          "description": "Preheat's current Devastation Evoker guide lists Quell in the Blinding Vale utility panel.",
+          "url": "https://www.wowhead.com/guide/classes/evoker/devastation/mythic-plus-dungeon-tips",
+          "retrievedAt": "2026-09-02T21:40:00+02:00"
+        }
+      ]
+    },
+    {
+      "claimId": "the-blinding-vale-sleep-walk-mention",
+      "claimType": "utility-mention",
+      "assertedDungeonId": "the-blinding-vale",
+      "sectionLabel": "The Blinding Vale Utility Options",
+      "subjectName": "Sleep Walk",
+      "specSlug": "devastation-evoker",
+      "axisId": "area-control",
+      "disposition": "accepted",
+      "canonicalDungeonId": "the-blinding-vale",
+      "reason": "The guide presents Sleep Walk as long-duration control and a backup stop against eligible non-Lieutenant enemies.",
+      "evidence": [
+        {
+          "kind": "external-reference",
+          "description": "Preheat's current Devastation Evoker guide lists Sleep Walk in the Blinding Vale utility panel.",
+          "url": "https://www.wowhead.com/guide/classes/evoker/devastation/mythic-plus-dungeon-tips",
+          "retrievedAt": "2026-09-02T21:40:00+02:00"
+        }
+      ]
+    },
+    {
+      "claimId": "the-blinding-vale-zephyr-mention",
+      "claimType": "utility-mention",
+      "assertedDungeonId": "the-blinding-vale",
+      "sectionLabel": "The Blinding Vale Utility Options",
+      "subjectName": "Zephyr",
+      "specSlug": "devastation-evoker",
+      "axisId": "party-defense",
+      "disposition": "accepted",
+      "canonicalDungeonId": "the-blinding-vale",
+      "reason": "The guide recommends Zephyr for eligible group-wide area damage in every dungeon.",
+      "evidence": [
+        {
+          "kind": "external-reference",
+          "description": "Preheat's current Devastation Evoker guide lists Zephyr in the Blinding Vale utility panel.",
+          "url": "https://www.wowhead.com/guide/classes/evoker/devastation/mythic-plus-dungeon-tips",
+          "retrievedAt": "2026-09-02T21:40:00+02:00"
+        }
+      ]
+    },
+    {
+      "claimId": "the-blinding-vale-rescue-mention",
+      "claimType": "utility-mention",
+      "assertedDungeonId": "the-blinding-vale",
+      "sectionLabel": "The Blinding Vale Utility Options",
+      "subjectName": "Rescue",
+      "specSlug": "devastation-evoker",
+      "axisId": "ally-movement",
+      "disposition": "accepted",
+      "canonicalDungeonId": "the-blinding-vale",
+      "reason": "The guide presents Rescue as ally mobility support and notes its movement-impairing-effect removal.",
+      "evidence": [
+        {
+          "kind": "external-reference",
+          "description": "Preheat's current Devastation Evoker guide lists Rescue in the Blinding Vale utility panel.",
+          "url": "https://www.wowhead.com/guide/classes/evoker/devastation/mythic-plus-dungeon-tips",
+          "retrievedAt": "2026-09-02T21:40:00+02:00"
+        }
+      ]
+    },
+    {
+      "claimId": "den-of-nalorakk-quell-mention",
+      "claimType": "utility-mention",
+      "assertedDungeonId": "den-of-nalorakk",
+      "sectionLabel": "Den of Nalorakk Utility Options",
+      "subjectName": "Quell",
+      "specSlug": "devastation-evoker",
+      "axisId": "interrupt",
+      "disposition": "accepted",
+      "canonicalDungeonId": "den-of-nalorakk",
+      "reason": "The guide identifies Quell as expected interrupt coverage in every Mythic+ dungeon.",
+      "evidence": [
+        {
+          "kind": "external-reference",
+          "description": "Preheat's current Devastation Evoker guide lists Quell in the Den of Nalorakk utility panel.",
+          "url": "https://www.wowhead.com/guide/classes/evoker/devastation/mythic-plus-dungeon-tips",
+          "retrievedAt": "2026-09-02T21:40:00+02:00"
+        }
+      ]
+    },
+    {
+      "claimId": "den-of-nalorakk-sleep-walk-mention",
+      "claimType": "utility-mention",
+      "assertedDungeonId": "den-of-nalorakk",
+      "sectionLabel": "Den of Nalorakk Utility Options",
+      "subjectName": "Sleep Walk",
+      "specSlug": "devastation-evoker",
+      "axisId": "area-control",
+      "disposition": "accepted",
+      "canonicalDungeonId": "den-of-nalorakk",
+      "reason": "The guide presents Sleep Walk as long-duration control and a backup stop against eligible non-Lieutenant enemies.",
+      "evidence": [
+        {
+          "kind": "external-reference",
+          "description": "Preheat's current Devastation Evoker guide lists Sleep Walk in the Den of Nalorakk utility panel.",
+          "url": "https://www.wowhead.com/guide/classes/evoker/devastation/mythic-plus-dungeon-tips",
+          "retrievedAt": "2026-09-02T21:40:00+02:00"
+        }
+      ]
+    },
+    {
+      "claimId": "den-of-nalorakk-zephyr-mention",
+      "claimType": "utility-mention",
+      "assertedDungeonId": "den-of-nalorakk",
+      "sectionLabel": "Den of Nalorakk Utility Options",
+      "subjectName": "Zephyr",
+      "specSlug": "devastation-evoker",
+      "axisId": "party-defense",
+      "disposition": "accepted",
+      "canonicalDungeonId": "den-of-nalorakk",
+      "reason": "The guide recommends Zephyr for eligible group-wide area damage in every dungeon.",
+      "evidence": [
+        {
+          "kind": "external-reference",
+          "description": "Preheat's current Devastation Evoker guide lists Zephyr in the Den of Nalorakk utility panel.",
+          "url": "https://www.wowhead.com/guide/classes/evoker/devastation/mythic-plus-dungeon-tips",
+          "retrievedAt": "2026-09-02T21:40:00+02:00"
+        }
+      ]
+    },
+    {
+      "claimId": "den-of-nalorakk-rescue-mention",
+      "claimType": "utility-mention",
+      "assertedDungeonId": "den-of-nalorakk",
+      "sectionLabel": "Den of Nalorakk Utility Options",
+      "subjectName": "Rescue",
+      "specSlug": "devastation-evoker",
+      "axisId": "ally-movement",
+      "disposition": "accepted",
+      "canonicalDungeonId": "den-of-nalorakk",
+      "reason": "The guide presents Rescue as ally mobility support and notes its movement-impairing-effect removal.",
+      "evidence": [
+        {
+          "kind": "external-reference",
+          "description": "Preheat's current Devastation Evoker guide lists Rescue in the Den of Nalorakk utility panel.",
+          "url": "https://www.wowhead.com/guide/classes/evoker/devastation/mythic-plus-dungeon-tips",
+          "retrievedAt": "2026-09-02T21:40:00+02:00"
+        }
+      ]
+    },
+    {
+      "claimId": "murder-row-quell-mention",
+      "claimType": "utility-mention",
+      "assertedDungeonId": "murder-row",
+      "sectionLabel": "Murder Row Utility Options",
+      "subjectName": "Quell",
+      "specSlug": "devastation-evoker",
+      "axisId": "interrupt",
+      "disposition": "accepted",
+      "canonicalDungeonId": "murder-row",
+      "reason": "The guide identifies Quell as expected interrupt coverage in every Mythic+ dungeon.",
+      "evidence": [
+        {
+          "kind": "external-reference",
+          "description": "Preheat's current Devastation Evoker guide lists Quell in the Murder Row utility panel.",
+          "url": "https://www.wowhead.com/guide/classes/evoker/devastation/mythic-plus-dungeon-tips",
+          "retrievedAt": "2026-09-02T21:40:00+02:00"
+        }
+      ]
+    },
+    {
+      "claimId": "murder-row-sleep-walk-mention",
+      "claimType": "utility-mention",
+      "assertedDungeonId": "murder-row",
+      "sectionLabel": "Murder Row Utility Options",
+      "subjectName": "Sleep Walk",
+      "specSlug": "devastation-evoker",
+      "axisId": "area-control",
+      "disposition": "accepted",
+      "canonicalDungeonId": "murder-row",
+      "reason": "The guide presents Sleep Walk as long-duration control and a backup stop against eligible non-Lieutenant enemies.",
+      "evidence": [
+        {
+          "kind": "external-reference",
+          "description": "Preheat's current Devastation Evoker guide lists Sleep Walk in the Murder Row utility panel.",
+          "url": "https://www.wowhead.com/guide/classes/evoker/devastation/mythic-plus-dungeon-tips",
+          "retrievedAt": "2026-09-02T21:40:00+02:00"
+        }
+      ]
+    },
+    {
+      "claimId": "murder-row-zephyr-mention",
+      "claimType": "utility-mention",
+      "assertedDungeonId": "murder-row",
+      "sectionLabel": "Murder Row Utility Options",
+      "subjectName": "Zephyr",
+      "specSlug": "devastation-evoker",
+      "axisId": "party-defense",
+      "disposition": "accepted",
+      "canonicalDungeonId": "murder-row",
+      "reason": "The guide recommends Zephyr for eligible group-wide area damage in every dungeon.",
+      "evidence": [
+        {
+          "kind": "external-reference",
+          "description": "Preheat's current Devastation Evoker guide lists Zephyr in the Murder Row utility panel.",
+          "url": "https://www.wowhead.com/guide/classes/evoker/devastation/mythic-plus-dungeon-tips",
+          "retrievedAt": "2026-09-02T21:40:00+02:00"
+        }
+      ]
+    },
+    {
+      "claimId": "murder-row-rescue-mention",
+      "claimType": "utility-mention",
+      "assertedDungeonId": "murder-row",
+      "sectionLabel": "Murder Row Utility Options",
+      "subjectName": "Rescue",
+      "specSlug": "devastation-evoker",
+      "axisId": "ally-movement",
+      "disposition": "accepted",
+      "canonicalDungeonId": "murder-row",
+      "reason": "The guide presents Rescue as ally mobility support and notes its movement-impairing-effect removal.",
+      "evidence": [
+        {
+          "kind": "external-reference",
+          "description": "Preheat's current Devastation Evoker guide lists Rescue in the Murder Row utility panel.",
+          "url": "https://www.wowhead.com/guide/classes/evoker/devastation/mythic-plus-dungeon-tips",
+          "retrievedAt": "2026-09-02T21:40:00+02:00"
+        }
+      ]
+    },
+    {
+      "claimId": "voidscar-arena-quell-mention",
+      "claimType": "utility-mention",
+      "assertedDungeonId": "voidscar-arena",
+      "sectionLabel": "Voidscar Arena Utility Options",
+      "subjectName": "Quell",
+      "specSlug": "devastation-evoker",
+      "axisId": "interrupt",
+      "disposition": "accepted",
+      "canonicalDungeonId": "voidscar-arena",
+      "reason": "The guide identifies Quell as expected interrupt coverage in every Mythic+ dungeon.",
+      "evidence": [
+        {
+          "kind": "external-reference",
+          "description": "Preheat's current Devastation Evoker guide lists Quell in the Voidscar Arena utility panel.",
+          "url": "https://www.wowhead.com/guide/classes/evoker/devastation/mythic-plus-dungeon-tips",
+          "retrievedAt": "2026-09-02T21:40:00+02:00"
+        }
+      ]
+    },
+    {
+      "claimId": "voidscar-arena-sleep-walk-mention",
+      "claimType": "utility-mention",
+      "assertedDungeonId": "voidscar-arena",
+      "sectionLabel": "Voidscar Arena Utility Options",
+      "subjectName": "Sleep Walk",
+      "specSlug": "devastation-evoker",
+      "axisId": "area-control",
+      "disposition": "accepted",
+      "canonicalDungeonId": "voidscar-arena",
+      "reason": "The guide presents Sleep Walk as long-duration control and a backup stop against eligible non-Lieutenant enemies.",
+      "evidence": [
+        {
+          "kind": "external-reference",
+          "description": "Preheat's current Devastation Evoker guide lists Sleep Walk in the Voidscar Arena utility panel.",
+          "url": "https://www.wowhead.com/guide/classes/evoker/devastation/mythic-plus-dungeon-tips",
+          "retrievedAt": "2026-09-02T21:40:00+02:00"
+        }
+      ]
+    },
+    {
+      "claimId": "voidscar-arena-zephyr-mention",
+      "claimType": "utility-mention",
+      "assertedDungeonId": "voidscar-arena",
+      "sectionLabel": "Voidscar Arena Utility Options",
+      "subjectName": "Zephyr",
+      "specSlug": "devastation-evoker",
+      "axisId": "party-defense",
+      "disposition": "accepted",
+      "canonicalDungeonId": "voidscar-arena",
+      "reason": "The guide recommends Zephyr for eligible group-wide area damage in every dungeon.",
+      "evidence": [
+        {
+          "kind": "external-reference",
+          "description": "Preheat's current Devastation Evoker guide lists Zephyr in the Voidscar Arena utility panel.",
+          "url": "https://www.wowhead.com/guide/classes/evoker/devastation/mythic-plus-dungeon-tips",
+          "retrievedAt": "2026-09-02T21:40:00+02:00"
+        }
+      ]
+    },
+    {
+      "claimId": "voidscar-arena-rescue-mention",
+      "claimType": "utility-mention",
+      "assertedDungeonId": "voidscar-arena",
+      "sectionLabel": "Voidscar Arena Utility Options",
+      "subjectName": "Rescue",
+      "specSlug": "devastation-evoker",
+      "axisId": "ally-movement",
+      "disposition": "accepted",
+      "canonicalDungeonId": "voidscar-arena",
+      "reason": "The guide presents Rescue as ally mobility support and notes its movement-impairing-effect removal.",
+      "evidence": [
+        {
+          "kind": "external-reference",
+          "description": "Preheat's current Devastation Evoker guide lists Rescue in the Voidscar Arena utility panel.",
+          "url": "https://www.wowhead.com/guide/classes/evoker/devastation/mythic-plus-dungeon-tips",
+          "retrievedAt": "2026-09-02T21:40:00+02:00"
+        }
+      ]
+    },
+    {
+      "claimId": "temple-of-sethraliss-quell-mention",
+      "claimType": "utility-mention",
+      "assertedDungeonId": "temple-of-sethraliss",
+      "sectionLabel": "Temple of Sethraliss Utility Options",
+      "subjectName": "Quell",
+      "specSlug": "devastation-evoker",
+      "axisId": "interrupt",
+      "disposition": "accepted",
+      "canonicalDungeonId": "temple-of-sethraliss",
+      "reason": "The guide identifies Quell as expected interrupt coverage in every Mythic+ dungeon.",
+      "evidence": [
+        {
+          "kind": "external-reference",
+          "description": "Preheat's current Devastation Evoker guide lists Quell in the Temple of Sethraliss utility panel.",
+          "url": "https://www.wowhead.com/guide/classes/evoker/devastation/mythic-plus-dungeon-tips",
+          "retrievedAt": "2026-09-02T21:40:00+02:00"
+        }
+      ]
+    },
+    {
+      "claimId": "temple-of-sethraliss-sleep-walk-mention",
+      "claimType": "utility-mention",
+      "assertedDungeonId": "temple-of-sethraliss",
+      "sectionLabel": "Temple of Sethraliss Utility Options",
+      "subjectName": "Sleep Walk",
+      "specSlug": "devastation-evoker",
+      "axisId": "area-control",
+      "disposition": "accepted",
+      "canonicalDungeonId": "temple-of-sethraliss",
+      "reason": "The guide presents Sleep Walk as long-duration control and a backup stop against eligible non-Lieutenant enemies.",
+      "evidence": [
+        {
+          "kind": "external-reference",
+          "description": "Preheat's current Devastation Evoker guide lists Sleep Walk in the Temple of Sethraliss utility panel.",
+          "url": "https://www.wowhead.com/guide/classes/evoker/devastation/mythic-plus-dungeon-tips",
+          "retrievedAt": "2026-09-02T21:40:00+02:00"
+        }
+      ]
+    },
+    {
+      "claimId": "temple-of-sethraliss-zephyr-mention",
+      "claimType": "utility-mention",
+      "assertedDungeonId": "temple-of-sethraliss",
+      "sectionLabel": "Temple of Sethraliss Utility Options",
+      "subjectName": "Zephyr",
+      "specSlug": "devastation-evoker",
+      "axisId": "party-defense",
+      "disposition": "accepted",
+      "canonicalDungeonId": "temple-of-sethraliss",
+      "reason": "The guide recommends Zephyr for eligible group-wide area damage in every dungeon.",
+      "evidence": [
+        {
+          "kind": "external-reference",
+          "description": "Preheat's current Devastation Evoker guide lists Zephyr in the Temple of Sethraliss utility panel.",
+          "url": "https://www.wowhead.com/guide/classes/evoker/devastation/mythic-plus-dungeon-tips",
+          "retrievedAt": "2026-09-02T21:40:00+02:00"
+        }
+      ]
+    },
+    {
+      "claimId": "temple-of-sethraliss-rescue-mention",
+      "claimType": "utility-mention",
+      "assertedDungeonId": "temple-of-sethraliss",
+      "sectionLabel": "Temple of Sethraliss Utility Options",
+      "subjectName": "Rescue",
+      "specSlug": "devastation-evoker",
+      "axisId": "ally-movement",
+      "disposition": "accepted",
+      "canonicalDungeonId": "temple-of-sethraliss",
+      "reason": "The guide presents Rescue as ally mobility support and notes its movement-impairing-effect removal.",
+      "evidence": [
+        {
+          "kind": "external-reference",
+          "description": "Preheat's current Devastation Evoker guide lists Rescue in the Temple of Sethraliss utility panel.",
+          "url": "https://www.wowhead.com/guide/classes/evoker/devastation/mythic-plus-dungeon-tips",
+          "retrievedAt": "2026-09-02T21:40:00+02:00"
+        }
+      ]
+    },
+    {
+      "claimId": "kings-rest-quell-mention",
+      "claimType": "utility-mention",
+      "assertedDungeonId": "kings-rest",
+      "sectionLabel": "Kings' Rest Utility Options",
+      "subjectName": "Quell",
+      "specSlug": "devastation-evoker",
+      "axisId": "interrupt",
+      "disposition": "accepted",
+      "canonicalDungeonId": "kings-rest",
+      "reason": "The guide identifies Quell as expected interrupt coverage in every Mythic+ dungeon.",
+      "evidence": [
+        {
+          "kind": "external-reference",
+          "description": "Preheat's current Devastation Evoker guide lists Quell in the Kings' Rest utility panel.",
+          "url": "https://www.wowhead.com/guide/classes/evoker/devastation/mythic-plus-dungeon-tips",
+          "retrievedAt": "2026-09-02T21:40:00+02:00"
+        }
+      ]
+    },
+    {
+      "claimId": "kings-rest-sleep-walk-mention",
+      "claimType": "utility-mention",
+      "assertedDungeonId": "kings-rest",
+      "sectionLabel": "Kings' Rest Utility Options",
+      "subjectName": "Sleep Walk",
+      "specSlug": "devastation-evoker",
+      "axisId": "area-control",
+      "disposition": "accepted",
+      "canonicalDungeonId": "kings-rest",
+      "reason": "The guide presents Sleep Walk as long-duration control and a backup stop against eligible non-Lieutenant enemies.",
+      "evidence": [
+        {
+          "kind": "external-reference",
+          "description": "Preheat's current Devastation Evoker guide lists Sleep Walk in the Kings' Rest utility panel.",
+          "url": "https://www.wowhead.com/guide/classes/evoker/devastation/mythic-plus-dungeon-tips",
+          "retrievedAt": "2026-09-02T21:40:00+02:00"
+        }
+      ]
+    },
+    {
+      "claimId": "kings-rest-zephyr-mention",
+      "claimType": "utility-mention",
+      "assertedDungeonId": "kings-rest",
+      "sectionLabel": "Kings' Rest Utility Options",
+      "subjectName": "Zephyr",
+      "specSlug": "devastation-evoker",
+      "axisId": "party-defense",
+      "disposition": "accepted",
+      "canonicalDungeonId": "kings-rest",
+      "reason": "The guide recommends Zephyr for eligible group-wide area damage in every dungeon.",
+      "evidence": [
+        {
+          "kind": "external-reference",
+          "description": "Preheat's current Devastation Evoker guide lists Zephyr in the Kings' Rest utility panel.",
+          "url": "https://www.wowhead.com/guide/classes/evoker/devastation/mythic-plus-dungeon-tips",
+          "retrievedAt": "2026-09-02T21:40:00+02:00"
+        }
+      ]
+    },
+    {
+      "claimId": "kings-rest-rescue-mention",
+      "claimType": "utility-mention",
+      "assertedDungeonId": "kings-rest",
+      "sectionLabel": "Kings' Rest Utility Options",
+      "subjectName": "Rescue",
+      "specSlug": "devastation-evoker",
+      "axisId": "ally-movement",
+      "disposition": "accepted",
+      "canonicalDungeonId": "kings-rest",
+      "reason": "The guide presents Rescue as ally mobility support and notes its movement-impairing-effect removal.",
+      "evidence": [
+        {
+          "kind": "external-reference",
+          "description": "Preheat's current Devastation Evoker guide lists Rescue in the Kings' Rest utility panel.",
+          "url": "https://www.wowhead.com/guide/classes/evoker/devastation/mythic-plus-dungeon-tips",
+          "retrievedAt": "2026-09-02T21:40:00+02:00"
+        }
+      ]
+    },
+    {
+      "claimId": "ruby-life-pools-quell-mention",
+      "claimType": "utility-mention",
+      "assertedDungeonId": "ruby-life-pools",
+      "sectionLabel": "Ruby Life Pools Utility Options",
+      "subjectName": "Quell",
+      "specSlug": "devastation-evoker",
+      "axisId": "interrupt",
+      "disposition": "accepted",
+      "canonicalDungeonId": "ruby-life-pools",
+      "reason": "The guide identifies Quell as expected interrupt coverage in every Mythic+ dungeon.",
+      "evidence": [
+        {
+          "kind": "external-reference",
+          "description": "Preheat's current Devastation Evoker guide lists Quell in the Ruby Life Pools utility panel.",
+          "url": "https://www.wowhead.com/guide/classes/evoker/devastation/mythic-plus-dungeon-tips",
+          "retrievedAt": "2026-09-02T21:40:00+02:00"
+        }
+      ]
+    },
+    {
+      "claimId": "ruby-life-pools-sleep-walk-mention",
+      "claimType": "utility-mention",
+      "assertedDungeonId": "ruby-life-pools",
+      "sectionLabel": "Ruby Life Pools Utility Options",
+      "subjectName": "Sleep Walk",
+      "specSlug": "devastation-evoker",
+      "axisId": "area-control",
+      "disposition": "accepted",
+      "canonicalDungeonId": "ruby-life-pools",
+      "reason": "The guide presents Sleep Walk as long-duration control and a backup stop against eligible non-Lieutenant enemies.",
+      "evidence": [
+        {
+          "kind": "external-reference",
+          "description": "Preheat's current Devastation Evoker guide lists Sleep Walk in the Ruby Life Pools utility panel.",
+          "url": "https://www.wowhead.com/guide/classes/evoker/devastation/mythic-plus-dungeon-tips",
+          "retrievedAt": "2026-09-02T21:40:00+02:00"
+        }
+      ]
+    },
+    {
+      "claimId": "ruby-life-pools-zephyr-mention",
+      "claimType": "utility-mention",
+      "assertedDungeonId": "ruby-life-pools",
+      "sectionLabel": "Ruby Life Pools Utility Options",
+      "subjectName": "Zephyr",
+      "specSlug": "devastation-evoker",
+      "axisId": "party-defense",
+      "disposition": "accepted",
+      "canonicalDungeonId": "ruby-life-pools",
+      "reason": "The guide recommends Zephyr for eligible group-wide area damage in every dungeon.",
+      "evidence": [
+        {
+          "kind": "external-reference",
+          "description": "Preheat's current Devastation Evoker guide lists Zephyr in the Ruby Life Pools utility panel.",
+          "url": "https://www.wowhead.com/guide/classes/evoker/devastation/mythic-plus-dungeon-tips",
+          "retrievedAt": "2026-09-02T21:40:00+02:00"
+        }
+      ]
+    },
+    {
+      "claimId": "ruby-life-pools-rescue-mention",
+      "claimType": "utility-mention",
+      "assertedDungeonId": "ruby-life-pools",
+      "sectionLabel": "Ruby Life Pools Utility Options",
+      "subjectName": "Rescue",
+      "specSlug": "devastation-evoker",
+      "axisId": "ally-movement",
+      "disposition": "accepted",
+      "canonicalDungeonId": "ruby-life-pools",
+      "reason": "The guide presents Rescue as ally mobility support and notes its movement-impairing-effect removal.",
+      "evidence": [
+        {
+          "kind": "external-reference",
+          "description": "Preheat's current Devastation Evoker guide lists Rescue in the Ruby Life Pools utility panel.",
+          "url": "https://www.wowhead.com/guide/classes/evoker/devastation/mythic-plus-dungeon-tips",
+          "retrievedAt": "2026-09-02T21:40:00+02:00"
+        }
+      ]
+    }
+  ],
+  "provenance": [
+    {
+      "kind": "external-reference",
+      "description": "Claim-level review of Preheat's current Patch 12.1.0 Devastation Evoker guide utility panels.",
+      "url": "https://www.wowhead.com/guide/classes/evoker/devastation/mythic-plus-dungeon-tips",
+      "retrievedAt": "2026-09-02T21:40:00+02:00"
+    },
+    {
+      "kind": "curated",
+      "description": "WHELP maps source mentions to independently modeled utility axes without converting mentions into exact ratings."
+    }
+  ]
+}

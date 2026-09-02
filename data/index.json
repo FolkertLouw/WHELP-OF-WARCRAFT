@@ -131,6 +131,16 @@
   },
   "sourceClaimAudits": [
     {
+      "id": "midnight-season-2/augmentation-evoker-wowhead-utility-panel-audit",
+      "record": "source-audits/augmentation-evoker-midnight-season-2-wowhead-utility-panel.json",
+      "status": "corroborated"
+    },
+    {
+      "id": "midnight-season-2/devastation-evoker-wowhead-utility-panel-audit",
+      "record": "source-audits/devastation-evoker-midnight-season-2-wowhead-utility-panel.json",
+      "status": "corroborated"
+    },
+    {
       "id": "midnight-season-2/elemental-shaman-wowhead-utility-mentions-audit",
       "record": "source-audits/elemental-shaman-midnight-season-2-wowhead-utility-mentions.json",
       "status": "corroborated"
