@@ -66,6 +66,24 @@ function validateRecord(file, value) {
       const contexts = (ability.contexts ?? []).map((context) => `${context.dungeonId}:${context.npcId}`);
       if (new Set(contexts).size !== contexts.length) fail(file, `indexed spell ${ability.spellId} has duplicate NPC contexts`);
     }
+  } else if (value.recordType === "ability-response") {
+    requireFields(file, value, ["id", "status", "validity", "dungeonId", "instanceMapId", "entries", "provenance"]);
+    const spellIds = (value.entries ?? []).map((entry) => entry.spellId);
+    if (new Set(spellIds).size !== spellIds.length) fail(file, "ability response spell IDs must be unique");
+    const allowedActions = new Set(["interrupt", "purge", "cleanse-magic", "cleanse-curse", "cleanse-disease", "cleanse-poison", "soothe", "defensive", "avoid", "line-of-sight", "crowd-control"]);
+    for (const entry of value.entries ?? []) {
+      requireFields(file, entry, ["spellId", "name", "npcIds", "targetDisposition", "actions", "priority", "evidenceStatus", "rationale"]);
+      if (!(entry.actions ?? []).length) fail(file, `response spell ${entry.spellId} has no actions`);
+      for (const action of entry.actions ?? []) {
+        if (!allowedActions.has(action)) fail(file, `response spell ${entry.spellId} has unknown action ${action}`);
+      }
+    }
+  } else if (value.recordType === "ability-response-index") {
+    requireFields(file, value, ["id", "status", "validity", "seasonSlug", "entries", "provenance"]);
+    const dungeonIds = (value.entries ?? []).map((entry) => entry.dungeonId);
+    const recordIds = (value.entries ?? []).map((entry) => entry.recordId);
+    if (new Set(dungeonIds).size !== dungeonIds.length) fail(file, "response index dungeon IDs must be unique");
+    if (new Set(recordIds).size !== recordIds.length) fail(file, "response index record IDs must be unique");
   } else if (value.recordType === "spec-note") {
     requireFields(file, value, ["id", "status", "validity", "context", "specIds", "summary", "recommendations", "provenance"]);
   } else if (value.recordType === "spec-dungeon-matrix") {
@@ -284,6 +302,68 @@ for (const { file, value } of records.filter(({ value }) => value.recordType ===
   const knownNpcIds = new Set(dungeon.value.enemies.map((enemy) => enemy.npcId));
   for (const enemy of value.enemies ?? []) {
     if (!knownNpcIds.has(enemy.npcId)) fail(file, `unknown NPC ${enemy.npcId} for ${dungeon.value.id}`);
+  }
+}
+const indexedAbilities = new Map(
+  records
+    .filter(({ value }) => value.recordType === "ability-index")
+    .flatMap(({ value }) => (value.abilities ?? []).map((ability) => [ability.spellId, ability])),
+);
+for (const { file, value } of records.filter(({ value }) => value.recordType === "ability-response")) {
+  if (file.includes(`${path.sep}examples${path.sep}`)) continue;
+  const dungeon = dungeons.find(({ value: candidate }) => candidate.id === value.dungeonId);
+  if (!dungeon) {
+    fail(file, `ability response references unknown dungeon ${value.dungeonId}`);
+    continue;
+  }
+  if (dungeon.value.instanceMapId !== value.instanceMapId) {
+    fail(file, `instanceMapId ${value.instanceMapId} does not match ${value.dungeonId}`);
+  }
+  const knownNpcIds = new Set(dungeon.value.enemies.map((enemy) => enemy.npcId));
+  for (const entry of value.entries ?? []) {
+    const indexed = indexedAbilities.get(entry.spellId);
+    if (!indexed) {
+      fail(file, `response spell ${entry.spellId} is absent from the ability index`);
+      continue;
+    }
+    if (indexed.name !== entry.name) fail(file, `response spell ${entry.spellId} name does not match the ability index`);
+    const indexedNpcIds = new Set(
+      indexed.contexts
+        .filter((context) => context.dungeonId === value.dungeonId)
+        .map((context) => context.npcId),
+    );
+    for (const npcId of entry.npcIds ?? []) {
+      if (!knownNpcIds.has(npcId)) fail(file, `response spell ${entry.spellId} references unknown NPC ${npcId}`);
+      if (!indexedNpcIds.has(npcId)) fail(file, `response spell ${entry.spellId} is not indexed for NPC ${npcId}`);
+    }
+    const actions = new Set(entry.actions ?? []);
+    if (entry.targetDisposition === "enemy-buff" && [...actions].some((action) => action.startsWith("cleanse-"))) {
+      fail(file, `response spell ${entry.spellId} uses a friendly cleanse on an enemy buff`);
+    }
+    if (entry.targetDisposition === "player-debuff" && (actions.has("purge") || actions.has("soothe"))) {
+      fail(file, `response spell ${entry.spellId} uses offensive removal on a player debuff`);
+    }
+    if (entry.targetDisposition === "positional" && actions.has("interrupt")) {
+      fail(file, `response spell ${entry.spellId} turns a positional response into interrupt advice`);
+    }
+  }
+}
+const abilityResponsesById = new Map(
+  records.filter(({ value }) => value.recordType === "ability-response").map(({ value }) => [value.id, value]),
+);
+for (const { file, value } of records.filter(({ value }) => value.recordType === "ability-response-index")) {
+  if (value.validity?.seasonSlug !== value.seasonSlug) fail(file, "response index seasonSlug does not match validity");
+  for (const entry of value.entries ?? []) {
+    const response = abilityResponsesById.get(entry.recordId);
+    if (!response) {
+      fail(file, `response index references unknown record ${entry.recordId}`);
+      continue;
+    }
+    if (response.dungeonId !== entry.dungeonId) fail(file, `${entry.recordId} belongs to ${response.dungeonId}, not ${entry.dungeonId}`);
+    if (response.status !== entry.status) fail(file, `${entry.recordId} status is stale`);
+    const resolvedPath = path.resolve(path.dirname(file), entry.path);
+    const responseFile = records.find(({ value: candidate }) => candidate.id === entry.recordId)?.file;
+    if (resolvedPath !== responseFile) fail(file, `${entry.recordId} path does not resolve to its record`);
   }
 }
 for (const { file, value } of records.filter(({ value }) => ["spec-note", "strategy-note"].includes(value.recordType))) {

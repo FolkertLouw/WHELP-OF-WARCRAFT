@@ -1,0 +1,163 @@
+{
+  "$schema": "../../../../../schemas/ability-response.schema.json",
+  "schemaVersion": 1,
+  "recordType": "ability-response",
+  "id": "murder-row/ability-response-priorities",
+  "status": "corroborated",
+  "validity": { "fromBuild": "12.1.0.69587", "untilBuild": null, "seasonId": null, "seasonSlug": "midnight-season-2" },
+  "dungeonId": "murder-row",
+  "instanceMapId": 2813,
+  "entries": [
+    {
+      "spellId": 1216571,
+      "name": "Fel Missiles",
+      "npcIds": [236084],
+      "targetDisposition": "enemy-cast",
+      "actions": ["interrupt"],
+      "priority": "critical",
+      "evidenceStatus": "source-confirmed",
+      "rationale": "The Felonious Mage cast creates dangerous pulsing clones and is a top interrupt target."
+    },
+    {
+      "spellId": 1201554,
+      "name": "Seduction",
+      "npcIds": [236082, 255604],
+      "targetDisposition": "mixed",
+      "actions": ["interrupt", "cleanse-magic"],
+      "priority": "critical",
+      "evidenceStatus": "source-confirmed",
+      "rationale": "Interrupt the Sayaad cast; if it completes, remove the resulting Magic control effect."
+    },
+    {
+      "spellId": 1264106,
+      "name": "Felstorm",
+      "npcIds": [255050],
+      "targetDisposition": "enemy-cast",
+      "actions": ["interrupt"],
+      "priority": "critical",
+      "evidenceStatus": "source-confirmed",
+      "rationale": "Kystia's mirror images must be interrupted while the group burns them down."
+    },
+    {
+      "spellId": 1264110,
+      "name": "Felstorm",
+      "npcIds": [255050],
+      "targetDisposition": "enemy-cast",
+      "actions": ["interrupt"],
+      "priority": "critical",
+      "evidenceStatus": "source-confirmed",
+      "rationale": "Alternate Felstorm spell variant used by Kystia's mirror images; handle it with the same interrupt assignment."
+    },
+    {
+      "spellId": 1214922,
+      "name": "Fel Rage",
+      "npcIds": [235267],
+      "targetDisposition": "mixed",
+      "actions": ["interrupt", "soothe"],
+      "priority": "high",
+      "evidenceStatus": "source-confirmed",
+      "rationale": "Interrupt the cast because it heavily reduces damage into the mob; soothe the Enrage only as recovery after a missed stop."
+    },
+    {
+      "spellId": 1214980,
+      "name": "Health Funnel",
+      "npcIds": [235268],
+      "targetDisposition": "enemy-cast",
+      "actions": ["interrupt"],
+      "priority": "critical",
+      "evidenceStatus": "source-confirmed",
+      "rationale": "Stop the Fel Invoker from restoring enemy health and extending the pull."
+    },
+    {
+      "spellId": 474375,
+      "name": "Chaos Bolt",
+      "npcIds": [234763],
+      "targetDisposition": "enemy-cast",
+      "actions": ["interrupt"],
+      "priority": "high",
+      "evidenceStatus": "source-confirmed",
+      "rationale": "A named important interrupt during Lithiel Cinderfury."
+    },
+    {
+      "spellId": 1217633,
+      "name": "Corroding Spittle",
+      "npcIds": [236902],
+      "targetDisposition": "player-debuff",
+      "actions": ["cleanse-magic"],
+      "priority": "high",
+      "evidenceStatus": "source-confirmed",
+      "rationale": "Remove the Magic debuff applied by a Massive Felwyrm."
+    },
+    {
+      "spellId": 1228198,
+      "name": "Corroding Spittle",
+      "npcIds": [234660],
+      "targetDisposition": "player-debuff",
+      "actions": ["cleanse-magic"],
+      "priority": "high",
+      "evidenceStatus": "source-confirmed",
+      "rationale": "Remove the boss-context Magic debuff rather than treating its neutral dispel flag as an enemy purge."
+    },
+    {
+      "spellId": 474515,
+      "name": "Heartstop Poison",
+      "npcIds": [234649],
+      "targetDisposition": "player-debuff",
+      "actions": ["cleanse-poison"],
+      "priority": "high",
+      "evidenceStatus": "source-confirmed",
+      "rationale": "Cleanse Zaen's Poison debuff promptly."
+    },
+    {
+      "spellId": 1217973,
+      "name": "Curse of Doom",
+      "npcIds": [235265],
+      "targetDisposition": "player-debuff",
+      "actions": ["cleanse-curse"],
+      "priority": "critical",
+      "evidenceStatus": "source-confirmed",
+      "rationale": "Remove the Corrupted Warlock's Curse before its delayed punishment."
+    },
+    {
+      "spellId": 1216970,
+      "name": "Back to Work!",
+      "npcIds": [236893, 236897],
+      "targetDisposition": "enemy-buff",
+      "actions": ["soothe"],
+      "priority": "high",
+      "evidenceStatus": "source-confirmed",
+      "rationale": "Remove the Enrage from affected workers; this is an offensive Enrage removal, not a friendly dispel."
+    },
+    {
+      "spellId": 734276,
+      "name": "Murder in a Row",
+      "npcIds": [234649],
+      "targetDisposition": "positional",
+      "actions": ["line-of-sight", "defensive"],
+      "priority": "critical",
+      "evidenceStatus": "source-confirmed",
+      "rationale": "Hide behind the preserved Fel Barrel before Zaen fires. The associated channel is unbreakable, so the raw interrupt flag must not become interrupt advice.",
+      "relatedSpellIds": [1218347]
+    }
+  ],
+  "provenance": [
+    {
+      "kind": "external-reference",
+      "description": "Interrupt, dispel, purge, and boss-response priorities were independently summarized from Wowhead's Patch 12.1 dungeon overview.",
+      "url": "https://www.wowhead.com/guide/midnight/murder-row-dungeon-overview-location-rewards",
+      "retrievedAt": "2026-09-02T14:35:33+02:00"
+    },
+    {
+      "kind": "external-reference",
+      "description": "Spell details identify Murder in a Row as line-of-sight damage and its related channel as unbreakable.",
+      "url": "https://www.wowhead.com/spell=1218347/murder-in-a-row",
+      "retrievedAt": "2026-09-02T14:35:33+02:00"
+    },
+    {
+      "kind": "game-data",
+      "description": "Spell IDs, NPC contexts, interruptibility, dispel flags, and Enrage flags are linked to the generated Midnight Season 2 ability index.",
+      "recordId": "midnight-season-2/flagged-abilities",
+      "retrievedAt": "2026-09-02T14:35:33+02:00"
+    }
+  ]
+}

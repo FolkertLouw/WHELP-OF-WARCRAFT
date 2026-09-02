@@ -1,0 +1,43 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://whelp.dev/schemas/ability-response.schema.json",
+  "title": "WHELP curated ability responses",
+  "type": "object",
+  "required": ["schemaVersion", "recordType", "id", "status", "validity", "dungeonId", "instanceMapId", "entries", "provenance"],
+  "properties": {
+    "schemaVersion": { "const": 1 },
+    "recordType": { "const": "ability-response" },
+    "id": { "type": "string", "pattern": "^[a-z0-9][a-z0-9./_-]+$" },
+    "status": { "enum": ["draft", "corroborated", "verified", "deprecated"] },
+    "validity": { "$ref": "validity.schema.json" },
+    "dungeonId": { "type": "string", "pattern": "^[a-z0-9][a-z0-9-]+$" },
+    "instanceMapId": { "type": "integer", "minimum": 1 },
+    "entries": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["spellId", "name", "npcIds", "targetDisposition", "actions", "priority", "evidenceStatus", "rationale"],
+        "properties": {
+          "spellId": { "type": "integer", "minimum": 1 },
+          "name": { "type": "string", "minLength": 1 },
+          "npcIds": { "type": "array", "minItems": 1, "uniqueItems": true, "items": { "type": "integer", "minimum": 1 } },
+          "targetDisposition": { "enum": ["enemy-cast", "enemy-buff", "player-debuff", "positional", "mixed"] },
+          "actions": {
+            "type": "array",
+            "minItems": 1,
+            "uniqueItems": true,
+            "items": { "enum": ["interrupt", "purge", "cleanse-magic", "cleanse-curse", "cleanse-disease", "cleanse-poison", "soothe", "defensive", "avoid", "line-of-sight", "crowd-control"] }
+          },
+          "priority": { "enum": ["critical", "high", "routine", "situational"] },
+          "evidenceStatus": { "enum": ["source-confirmed", "mechanically-derived", "inferred"] },
+          "rationale": { "type": "string", "minLength": 1 },
+          "relatedSpellIds": { "type": "array", "uniqueItems": true, "items": { "type": "integer", "minimum": 1 } }
+        },
+        "additionalProperties": false
+      }
+    },
+    "provenance": { "type": "array", "minItems": 1, "items": { "$ref": "provenance.schema.json" } }
+  },
+  "additionalProperties": false
+}

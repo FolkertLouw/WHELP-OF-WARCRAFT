@@ -1,0 +1,86 @@
+{
+  "$schema": "../../../../../schemas/ability-response.schema.json",
+  "schemaVersion": 1,
+  "recordType": "ability-response",
+  "id": "the-blinding-vale/ability-response-priorities",
+  "status": "corroborated",
+  "validity": { "fromBuild": "12.1.0.69587", "untilBuild": null, "seasonId": null, "seasonSlug": "midnight-season-2" },
+  "dungeonId": "the-blinding-vale",
+  "instanceMapId": 2859,
+  "entries": [
+    {
+      "spellId": 1301834,
+      "name": "Light Bolt Volley",
+      "npcIds": [245336],
+      "targetDisposition": "enemy-cast",
+      "actions": ["interrupt"],
+      "priority": "critical",
+      "evidenceStatus": "source-confirmed",
+      "rationale": "An important group-damage cast from Radiant Spellsowers; assign an interrupt rather than healing through it."
+    },
+    {
+      "spellId": 1235616,
+      "name": "Light Bolt",
+      "npcIds": [243029],
+      "targetDisposition": "enemy-cast",
+      "actions": ["interrupt"],
+      "priority": "high",
+      "evidenceStatus": "source-confirmed",
+      "rationale": "Kezkitt's repeatable cast is listed among the dungeon's important interrupts."
+    },
+    {
+      "spellId": 1238294,
+      "name": "Disorienting Screech",
+      "npcIds": [245484],
+      "targetDisposition": "enemy-cast",
+      "actions": ["interrupt"],
+      "priority": "high",
+      "evidenceStatus": "source-confirmed",
+      "rationale": "Stop the Lightfeather Petalwing cast to prevent its group disruption."
+    },
+    {
+      "spellId": 1239821,
+      "name": "Warden's Wrath",
+      "npcIds": [245912],
+      "targetDisposition": "enemy-cast",
+      "actions": ["interrupt"],
+      "priority": "critical",
+      "evidenceStatus": "source-confirmed",
+      "rationale": "A named boss interrupt on Lightwarden Ruia and a higher-priority use of the group's interrupt rotation."
+    },
+    {
+      "spellId": 1247669,
+      "name": "Lightspore Shot",
+      "npcIds": [247755],
+      "targetDisposition": "enemy-cast",
+      "actions": ["interrupt"],
+      "priority": "high",
+      "evidenceStatus": "source-confirmed",
+      "rationale": "A named important interrupt during Ziekket's add phase."
+    },
+    {
+      "spellId": 1259365,
+      "name": "Bloodthorn Roots",
+      "npcIds": [253571],
+      "targetDisposition": "player-debuff",
+      "actions": ["cleanse-magic"],
+      "priority": "situational",
+      "evidenceStatus": "source-confirmed",
+      "rationale": "The root aura is a Magic debuff, but destroying the root is the planned mechanic; treat a magic dispel as recovery when that plan fails."
+    }
+  ],
+  "provenance": [
+    {
+      "kind": "external-reference",
+      "description": "Interrupt and dispel priorities were independently summarized from Wowhead's Patch 12.1 dungeon overview.",
+      "url": "https://www.wowhead.com/guide/midnight/the-blinding-vale-dungeon-overview-location-rewards",
+      "retrievedAt": "2026-09-02T14:35:33+02:00"
+    },
+    {
+      "kind": "game-data",
+      "description": "Spell IDs, NPC contexts, interruptibility, and dispel flags are linked to the generated Midnight Season 2 ability index.",
+      "recordId": "midnight-season-2/flagged-abilities",
+      "retrievedAt": "2026-09-02T14:35:33+02:00"
+    }
+  ]
+}

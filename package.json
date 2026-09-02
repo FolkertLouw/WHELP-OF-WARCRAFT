@@ -14,6 +14,7 @@
     "generate:addon-knowledge": "node tools/generate-addon-knowledge.mjs",
     "generate:ability-index": "node tools/generate-ability-index.mjs",
     "query:abilities": "node tools/query-abilities.mjs",
+    "query:responses": "node tools/query-ability-responses.mjs",
     "import:savedvariables": "node tools/import-savedvariables.mjs",
     "compare:route": "node tools/compare-run-to-route.mjs"
   },

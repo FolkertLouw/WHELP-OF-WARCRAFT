@@ -1,0 +1,30 @@
+{
+  "$schema": "../../../../schemas/ability-response-index.schema.json",
+  "schemaVersion": 1,
+  "recordType": "ability-response-index",
+  "id": "midnight-season-2/ability-response-index",
+  "status": "draft",
+  "validity": { "fromBuild": "12.1.0.69587", "untilBuild": null, "seasonId": null, "seasonSlug": "midnight-season-2" },
+  "seasonSlug": "midnight-season-2",
+  "entries": [
+    {
+      "dungeonId": "murder-row",
+      "recordId": "murder-row/ability-response-priorities",
+      "path": "../murder-row/strategy/ability-priorities.json",
+      "status": "corroborated"
+    },
+    {
+      "dungeonId": "the-blinding-vale",
+      "recordId": "the-blinding-vale/ability-response-priorities",
+      "path": "../the-blinding-vale/strategy/ability-priorities.json",
+      "status": "corroborated"
+    }
+  ],
+  "provenance": [
+    {
+      "kind": "curated",
+      "description": "Machine-readable discovery index for source-backed tactical response records.",
+      "retrievedAt": "2026-09-02T14:35:33+02:00"
+    }
+  ]
+}
