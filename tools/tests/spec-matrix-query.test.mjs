@@ -184,3 +184,25 @@ test("surfaces Guardian positional stops without calling them school interrupts"
   assert.ok(control.tools.find((tool) => tool.id === "typhoon").actions.includes("enemy-reposition"));
   assert.match(report.dungeons[0].notes.join(" "), /not spell-school lockouts/);
 });
+
+test("joins Warrior matrices to dedicated reflection and party-health semantics", () => {
+  const arms = querySpecMatrix(matrices, capabilities, { spec: "arms-warrior", dungeon: "voidscar-arena", rating: "niche" });
+  const reflection = arms.dungeons[0].utilities.find((entry) => entry.axisId === "spell-reflection").tools[0];
+  assert.deepEqual(reflection.actions, ["defensive", "spell-reflection"]);
+  assert.equal(reflection.scope, "self");
+  const protection = querySpecMatrix(matrices, capabilities, { spec: "protection-warrior", dungeon: "altar-of-fangs", rating: "always" });
+  const interrupt = protection.dungeons[0].utilities.find((entry) => entry.axisId === "interrupt");
+  assert.deepEqual(interrupt.tools.map((tool) => tool.id), ["pummel", "disrupting-shout"]);
+  const rally = protection.dungeons[0].utilities.find((entry) => entry.axisId === "party-health-increase").tools[0];
+  assert.deepEqual(rally.actions, ["party-health-increase"]);
+});
+
+test("does not promote Warrior self cleansing to party coverage or root removal", () => {
+  const vale = querySpecMatrix(matrices, capabilities, { spec: "fury-warrior", dungeon: "the-blinding-vale" });
+  const cleanse = vale.dungeons[0].utilities.find((entry) => entry.axisId === "self-toxin-curse-cleanse").tools[0];
+  assert.equal(cleanse.scope, "self");
+  assert.ok(!cleanse.actions.includes("cleanse-magic"));
+  const rage = vale.dungeons[0].utilities.find((entry) => entry.axisId === "self-fear-snare-removal").tools[0];
+  assert.ok(!rage.actions.includes("cleanse-root"));
+  assert.match(vale.dungeons[0].notes.join(" "), /not Bloodthorn Roots/);
+});

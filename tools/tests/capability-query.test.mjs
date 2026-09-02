@@ -65,6 +65,27 @@ test("keeps Druid shapeshifting self-only and positional control distinct", () =
   assert.equal(reposition.resultCount, 8);
 });
 
+test("distinguishes Warrior temporary health, reflection, and self-cleanses", () => {
+  const specs = ["arms-warrior", "fury-warrior", "protection-warrior"];
+  const cries = queryCapabilities(capabilities, { specs, action: "party-health-increase" });
+  assert.equal(cries.resultCount, 3);
+  assert.ok(cries.results.every((entry) => entry.tool.name === "Rallying Cry"));
+  const reflections = queryCapabilities(capabilities, { specs, action: "spell-reflection" });
+  assert.equal(reflections.resultCount, 3);
+  assert.ok(reflections.results.every((entry) => entry.tool.scope === "self"));
+  const cleanses = queryCapabilities(capabilities, { specs, action: "cleanse-poison" });
+  assert.equal(cleanses.resultCount, 3);
+  assert.ok(cleanses.results.every((entry) => entry.tool.name === "Bitter Immunity" && entry.tool.scope === "self"));
+});
+
+test("keeps Protection Warrior area lockout separate from crowd-control stops", () => {
+  const interrupts = queryCapabilities(capabilities, { specs: ["arms-warrior", "fury-warrior", "protection-warrior"], action: "interrupt" });
+  assert.equal(interrupts.resultCount, 4);
+  assert.equal(interrupts.results.filter((entry) => entry.tool.name === "Disrupting Shout").length, 1);
+  const control = queryCapabilities(capabilities, { specs: ["protection-warrior"], action: "crowd-control" });
+  assert.ok(control.results.every((entry) => entry.tool.name !== "Disrupting Shout"));
+});
+
 test("distinguishes Priest healer dispels from Shadow dispels", () => {
   const healerMagic = queryCapabilities(capabilities, { specs: ["discipline-priest", "holy-priest"], action: "cleanse-magic" });
   const shadowMagic = queryCapabilities(capabilities, { specs: ["shadow-priest"], action: "cleanse-magic" });

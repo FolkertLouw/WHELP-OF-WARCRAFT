@@ -93,7 +93,10 @@
     { "id": "mage/frost/capabilities", "record": "specs/mage/frost.json", "status": "corroborated" },
     { "id": "death-knight/blood/capabilities", "record": "specs/death-knight/blood.json", "status": "corroborated" },
     { "id": "death-knight/frost/capabilities", "record": "specs/death-knight/frost.json", "status": "corroborated" },
-    { "id": "death-knight/unholy/capabilities", "record": "specs/death-knight/unholy.json", "status": "corroborated" }
+    { "id": "death-knight/unholy/capabilities", "record": "specs/death-knight/unholy.json", "status": "corroborated" },
+    { "id": "warrior/arms/capabilities", "record": "specs/warrior/arms.json", "status": "corroborated" },
+    { "id": "warrior/fury/capabilities", "record": "specs/warrior/fury.json", "status": "corroborated" },
+    { "id": "warrior/protection/capabilities", "record": "specs/warrior/protection.json", "status": "corroborated" }
   ],
   "specCapabilityCoverage": {
     "id": "retail/spec-capability-coverage",

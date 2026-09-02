@@ -154,6 +154,9 @@
     { "id": "midnight-season-2/balance-druid-utility-matrix", "path": "mythic-plus/midnight-season-2/specs/balance-druid-utility-matrix.json", "status": "corroborated" },
     { "id": "midnight-season-2/feral-druid-utility-matrix", "path": "mythic-plus/midnight-season-2/specs/feral-druid-utility-matrix.json", "status": "corroborated" },
     { "id": "midnight-season-2/guardian-druid-utility-matrix", "path": "mythic-plus/midnight-season-2/specs/guardian-druid-utility-matrix.json", "status": "corroborated" },
-    { "id": "midnight-season-2/restoration-druid-utility-matrix", "path": "mythic-plus/midnight-season-2/specs/restoration-druid-utility-matrix.json", "status": "corroborated" }
+    { "id": "midnight-season-2/restoration-druid-utility-matrix", "path": "mythic-plus/midnight-season-2/specs/restoration-druid-utility-matrix.json", "status": "corroborated" },
+    { "id": "midnight-season-2/arms-warrior-utility-matrix", "path": "mythic-plus/midnight-season-2/specs/arms-warrior-utility-matrix.json", "status": "corroborated" },
+    { "id": "midnight-season-2/fury-warrior-utility-matrix", "path": "mythic-plus/midnight-season-2/specs/fury-warrior-utility-matrix.json", "status": "corroborated" },
+    { "id": "midnight-season-2/protection-warrior-utility-matrix", "path": "mythic-plus/midnight-season-2/specs/protection-warrior-utility-matrix.json", "status": "corroborated" }
   ]
 }

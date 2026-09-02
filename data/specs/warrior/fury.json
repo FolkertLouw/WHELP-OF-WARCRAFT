@@ -1,0 +1,27 @@
+{
+  "$schema": "../../../schemas/spec-capabilities.schema.json",
+  "schemaVersion": 1,
+  "recordType": "spec-capabilities",
+  "id": "warrior/fury/capabilities",
+  "matrixRecordId": "midnight-season-2/fury-warrior-utility-matrix",
+  "status": "corroborated",
+  "validity": { "fromBuild": "12.1.0.69587", "untilBuild": null, "seasonId": null, "seasonSlug": "midnight-season-2" },
+  "spec": { "classId": 1, "className": "Warrior", "specId": 72, "specName": "Fury", "slug": "fury-warrior" },
+  "tools": [
+    { "id": "pummel", "name": "Pummel", "spellId": 6552, "actions": ["interrupt"], "availability": "baseline", "scope": "enemy", "limitations": ["Melee range", "Fifteen-second cooldown", "Only interrupts interruptible casts"] },
+    { "id": "spell-reflection", "name": "Spell Reflection", "spellId": 23920, "actions": ["defensive", "spell-reflection"], "availability": "baseline", "scope": "self", "limitations": ["Self-only", "Reflectability varies by mechanic", "Magic damage reduction still applies while active even when a spell cannot be reflected"] },
+    { "id": "rallying-cry", "name": "Rallying Cry", "spellId": 97462, "actions": ["party-health-increase"], "availability": "talent", "scope": "friendly-area", "limitations": ["Temporarily increases current and maximum health rather than reducing damage", "Forty-yard radius", "Three-minute cooldown"] },
+    { "id": "shockwave", "name": "Shockwave", "spellId": 46968, "actions": ["crowd-control"], "availability": "talent", "scope": "area-enemy", "limitations": ["Frontal cone", "Only stuns susceptible enemies", "Forty-second cooldown before modifiers"] },
+    { "id": "storm-bolt", "name": "Storm Bolt", "spellId": 107570, "actions": ["crowd-control"], "availability": "talent", "scope": "enemy", "limitations": ["Single-target ranged stun", "Only stuns susceptible enemies"] },
+    { "id": "intimidating-shout", "name": "Intimidating Shout", "spellId": 5246, "actions": ["crowd-control"], "availability": "talent", "scope": "area-enemy", "limitations": ["Fear breaks from damage", "Only affects susceptible enemies"] },
+    { "id": "berserker-rage", "name": "Berserker Rage", "spellId": 18499, "actions": ["cleanse-fear", "cleanse-snare"], "availability": "baseline", "actionAvailability": { "cleanse-fear": "baseline", "cleanse-snare": "talent" }, "scope": "self", "requirements": [{ "kind": "talent", "value": "Fearless is required for snare removal" }], "limitations": ["Self-only", "Baseline removes Fear, Sap, and some Incapacitate effects", "Snare removal requires Fearless"] },
+    { "id": "bitter-immunity", "name": "Bitter Immunity", "spellId": 383762, "actions": ["cleanse-curse", "cleanse-disease", "cleanse-poison"], "availability": "talent", "scope": "self", "limitations": ["Self-only", "Three-minute cooldown", "Also restores health"] },
+    { "id": "battle-shout", "name": "Battle Shout", "spellId": 6673, "actions": ["group-buff"], "availability": "baseline", "scope": "friendly-area", "limitations": ["Increases melee and ranged attack power, not spell power", "Does not stack with another Warrior's Battle Shout"] }
+  ],
+  "provenance": [
+    { "kind": "external-reference", "description": "Patch 12.1.0 Fury Warrior Mythic+ guide identifies the current reusable dungeon utility and affix responses.", "url": "https://www.wowhead.com/guide/classes/warrior/fury/mythic-plus-dungeon-tips", "retrievedAt": "2026-09-02T19:14:00+02:00" },
+    { "kind": "external-reference", "description": "Current Pummel record confirms melee interrupt range, lockout, and cooldown.", "url": "https://www.wowhead.com/spell=6552/pummel", "retrievedAt": "2026-09-02T19:14:00+02:00" },
+    { "kind": "external-reference", "description": "Current Rallying Cry record confirms party-wide temporary current and maximum health rather than damage reduction.", "url": "https://www.wowhead.com/spell=97462/rallying-cry", "retrievedAt": "2026-09-02T19:14:00+02:00" },
+    { "kind": "external-reference", "description": "Current Bitter Immunity and Berserker Rage records establish self-only cleanse domains and talent-dependent snare removal.", "url": "https://www.wowhead.com/spell=383762/bitter-immunity", "retrievedAt": "2026-09-02T19:14:00+02:00" }
+  ]
+}
