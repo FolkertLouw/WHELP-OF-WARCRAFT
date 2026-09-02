@@ -124,6 +124,11 @@
     "record": "policies/source-freshness.json",
     "status": "verified"
   },
+  "sourceAuditCoverage": {
+    "id": "midnight-season-2/spec-source-audit-coverage",
+    "record": "source-audits/coverage.json",
+    "status": "verified"
+  },
   "sourceClaimAudits": [
     {
       "id": "midnight-season-2/elemental-shaman-wowhead-utility-mentions-audit",

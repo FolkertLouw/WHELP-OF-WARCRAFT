@@ -1,0 +1,51 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://whelp.dev/schemas/source-audit-coverage.schema.json",
+  "title": "WHELP specialization source-audit coverage",
+  "type": "object",
+  "required": ["schemaVersion", "recordType", "id", "status", "validity", "isCatalogComplete", "summary", "entries", "missingAuditMeaning", "provenance"],
+  "properties": {
+    "$schema": { "type": "string" },
+    "schemaVersion": { "const": 1 },
+    "recordType": { "const": "source-audit-coverage" },
+    "id": { "type": "string", "minLength": 1 },
+    "status": { "enum": ["draft", "corroborated", "verified", "deprecated"] },
+    "validity": { "$ref": "validity.schema.json" },
+    "isCatalogComplete": { "type": "boolean" },
+    "summary": {
+      "type": "object",
+      "required": ["specializationCount", "fullyAudited", "partiallyAudited", "provenanceOnly", "noSource"],
+      "properties": {
+        "specializationCount": { "type": "integer", "minimum": 0 },
+        "fullyAudited": { "type": "integer", "minimum": 0 },
+        "partiallyAudited": { "type": "integer", "minimum": 0 },
+        "provenanceOnly": { "type": "integer", "minimum": 0 },
+        "noSource": { "type": "integer", "minimum": 0 }
+      },
+      "additionalProperties": false
+    },
+    "entries": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["specId", "specSlug", "matrixId", "coverageLevel", "sourceUrls", "auditIds", "claimCount", "claimsByType", "claimsByDisposition", "limitations"],
+        "properties": {
+          "specId": { "type": "integer", "minimum": 1 },
+          "specSlug": { "type": "string", "pattern": "^[a-z0-9][a-z0-9-]+$" },
+          "matrixId": { "type": "string", "minLength": 1 },
+          "coverageLevel": { "enum": ["fully-audited", "partially-audited", "provenance-only", "no-source"] },
+          "sourceUrls": { "type": "array", "items": { "type": "string", "format": "uri" }, "uniqueItems": true },
+          "auditIds": { "type": "array", "items": { "type": "string", "minLength": 1 }, "uniqueItems": true },
+          "claimCount": { "type": "integer", "minimum": 0 },
+          "claimsByType": { "type": "object", "additionalProperties": { "type": "integer", "minimum": 0 } },
+          "claimsByDisposition": { "type": "object", "additionalProperties": { "type": "integer", "minimum": 0 } },
+          "limitations": { "type": "array", "items": { "type": "string", "minLength": 1 }, "uniqueItems": true }
+        },
+        "additionalProperties": false
+      }
+    },
+    "missingAuditMeaning": { "type": "string", "minLength": 1 },
+    "provenance": { "type": "array", "minItems": 1, "items": { "$ref": "provenance.schema.json" } }
+  },
+  "additionalProperties": false
+}

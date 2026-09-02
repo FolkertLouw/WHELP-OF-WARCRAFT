@@ -233,6 +233,25 @@ function validateRecord(file, value) {
         fail(file, `placeholder claim ${claim.claimId} cannot assert a canonical dungeon`);
       }
     }
+  } else if (value.recordType === "source-audit-coverage") {
+    requireFields(file, value, ["id", "status", "validity", "isCatalogComplete", "summary", "entries", "missingAuditMeaning", "provenance"]);
+    requireFields(file, value.summary ?? {}, ["specializationCount", "fullyAudited", "partiallyAudited", "provenanceOnly", "noSource"]);
+    const levels = ["fully-audited", "partially-audited", "provenance-only", "no-source"];
+    const specSlugs = (value.entries ?? []).map((entry) => entry.specSlug);
+    const matrixIds = (value.entries ?? []).map((entry) => entry.matrixId);
+    if (new Set(specSlugs).size !== specSlugs.length) fail(file, "source audit coverage spec slugs must be unique");
+    if (new Set(matrixIds).size !== matrixIds.length) fail(file, "source audit coverage matrix IDs must be unique");
+    for (const entry of value.entries ?? []) {
+      requireFields(file, entry, ["specId", "specSlug", "matrixId", "coverageLevel", "sourceUrls", "auditIds", "claimCount", "claimsByType", "claimsByDisposition", "limitations"]);
+      if (!levels.includes(entry.coverageLevel)) fail(file, `unknown source audit coverage level ${entry.coverageLevel}`);
+      if (entry.claimCount !== Object.values(entry.claimsByDisposition ?? {}).reduce((sum, count) => sum + count, 0)) {
+        fail(file, `source audit coverage claim count disagrees for ${entry.specSlug}`);
+      }
+    }
+    const summaryTotal = value.summary.fullyAudited + value.summary.partiallyAudited + value.summary.provenanceOnly + value.summary.noSource;
+    if (summaryTotal !== value.entries.length || value.summary.specializationCount !== value.entries.length) {
+      fail(file, "source audit coverage summary does not match entries");
+    }
   } else if (value.recordType === "run-observation") {
     requireFields(file, value, ["collector", "game", "run", "player", "group", "privacy"]);
     if (value.privacy?.containsNames !== false || value.privacy?.containsChat !== false) {
@@ -699,6 +718,17 @@ const indexedAuditIds = new Set((index.sourceClaimAudits ?? []).map((entry) => e
 for (const { file, value } of records.filter(({ value }) => value.recordType === "source-claim-audit")) {
   if (file.includes(`${path.sep}examples${path.sep}`)) continue;
   if (!indexedAuditIds.has(value.id)) fail(file, `source claim audit ${value.id} is absent from data/index.json`);
+}
+if (index.sourceAuditCoverage) {
+  const coveragePath = path.join(root, "data", index.sourceAuditCoverage.record);
+  try {
+    const coverage = JSON.parse(await readFile(coveragePath, "utf8"));
+    if (coverage.recordType !== "source-audit-coverage") fail(indexPath, `${index.sourceAuditCoverage.record} is not a source-audit-coverage record`);
+    if (coverage.id !== index.sourceAuditCoverage.id) fail(indexPath, `${index.sourceAuditCoverage.record} has id ${coverage.id}, expected ${index.sourceAuditCoverage.id}`);
+    if (coverage.status !== index.sourceAuditCoverage.status) fail(indexPath, `${index.sourceAuditCoverage.record} has status ${coverage.status}, expected ${index.sourceAuditCoverage.status}`);
+  } catch (error) {
+    fail(indexPath, `cannot read source audit coverage ${index.sourceAuditCoverage.record}: ${error.message}`);
+  }
 }
 if (index.specCapabilityCoverage) {
   const coveragePath = path.join(root, "data", index.specCapabilityCoverage.record);

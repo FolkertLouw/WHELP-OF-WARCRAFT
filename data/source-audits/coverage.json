@@ -1,0 +1,1082 @@
+{
+  "$schema": "../../schemas/source-audit-coverage.schema.json",
+  "schemaVersion": 1,
+  "recordType": "source-audit-coverage",
+  "id": "midnight-season-2/spec-source-audit-coverage",
+  "status": "verified",
+  "validity": {
+    "fromBuild": "12.1.0.69587",
+    "untilBuild": null,
+    "seasonId": null,
+    "seasonSlug": "midnight-season-2"
+  },
+  "isCatalogComplete": true,
+  "summary": {
+    "specializationCount": 40,
+    "fullyAudited": 0,
+    "partiallyAudited": 4,
+    "provenanceOnly": 36,
+    "noSource": 0
+  },
+  "entries": [
+    {
+      "specId": 265,
+      "specSlug": "affliction-warlock",
+      "matrixId": "midnight-season-2/affliction-warlock-utility-matrix",
+      "coverageLevel": "provenance-only",
+      "sourceUrls": [
+        "https://www.wowhead.com/guide/classes/warlock/affliction/mythic-plus-dungeon-tips"
+      ],
+      "auditIds": [],
+      "claimCount": 0,
+      "claimsByType": {
+        "mechanic-location": 0,
+        "utility-rating": 0,
+        "utility-mention": 0,
+        "placeholder": 0
+      },
+      "claimsByDisposition": {
+        "accepted": 0,
+        "rejected-cross-dungeon": 0,
+        "rejected-placeholder": 0,
+        "unresolved": 0
+      },
+      "limitations": [
+        "The matrix cites a specialization guide, but WHELP has not created a claim-level audit for it yet."
+      ]
+    },
+    {
+      "specId": 62,
+      "specSlug": "arcane-mage",
+      "matrixId": "midnight-season-2/arcane-mage-utility-matrix",
+      "coverageLevel": "provenance-only",
+      "sourceUrls": [
+        "https://www.wowhead.com/guide/classes/mage/arcane/mythic-plus-dungeon-tips"
+      ],
+      "auditIds": [],
+      "claimCount": 0,
+      "claimsByType": {
+        "mechanic-location": 0,
+        "utility-rating": 0,
+        "utility-mention": 0,
+        "placeholder": 0
+      },
+      "claimsByDisposition": {
+        "accepted": 0,
+        "rejected-cross-dungeon": 0,
+        "rejected-placeholder": 0,
+        "unresolved": 0
+      },
+      "limitations": [
+        "The matrix cites a specialization guide, but WHELP has not created a claim-level audit for it yet."
+      ]
+    },
+    {
+      "specId": 71,
+      "specSlug": "arms-warrior",
+      "matrixId": "midnight-season-2/arms-warrior-utility-matrix",
+      "coverageLevel": "provenance-only",
+      "sourceUrls": [
+        "https://www.wowhead.com/guide/classes/warrior/arms/mythic-plus-dungeon-tips"
+      ],
+      "auditIds": [],
+      "claimCount": 0,
+      "claimsByType": {
+        "mechanic-location": 0,
+        "utility-rating": 0,
+        "utility-mention": 0,
+        "placeholder": 0
+      },
+      "claimsByDisposition": {
+        "accepted": 0,
+        "rejected-cross-dungeon": 0,
+        "rejected-placeholder": 0,
+        "unresolved": 0
+      },
+      "limitations": [
+        "The matrix cites a specialization guide, but WHELP has not created a claim-level audit for it yet."
+      ]
+    },
+    {
+      "specId": 259,
+      "specSlug": "assassination-rogue",
+      "matrixId": "midnight-season-2/assassination-rogue-utility-matrix",
+      "coverageLevel": "provenance-only",
+      "sourceUrls": [
+        "https://www.wowhead.com/guide/classes/rogue/assassination/mythic-plus-dungeon-tips"
+      ],
+      "auditIds": [],
+      "claimCount": 0,
+      "claimsByType": {
+        "mechanic-location": 0,
+        "utility-rating": 0,
+        "utility-mention": 0,
+        "placeholder": 0
+      },
+      "claimsByDisposition": {
+        "accepted": 0,
+        "rejected-cross-dungeon": 0,
+        "rejected-placeholder": 0,
+        "unresolved": 0
+      },
+      "limitations": [
+        "The matrix cites a specialization guide, but WHELP has not created a claim-level audit for it yet."
+      ]
+    },
+    {
+      "specId": 1473,
+      "specSlug": "augmentation-evoker",
+      "matrixId": "midnight-season-2/augmentation-evoker-utility-matrix",
+      "coverageLevel": "provenance-only",
+      "sourceUrls": [
+        "https://www.wowhead.com/guide/classes/evoker/augmentation/mythic-plus-dungeon-tips"
+      ],
+      "auditIds": [],
+      "claimCount": 0,
+      "claimsByType": {
+        "mechanic-location": 0,
+        "utility-rating": 0,
+        "utility-mention": 0,
+        "placeholder": 0
+      },
+      "claimsByDisposition": {
+        "accepted": 0,
+        "rejected-cross-dungeon": 0,
+        "rejected-placeholder": 0,
+        "unresolved": 0
+      },
+      "limitations": [
+        "The matrix cites a specialization guide, but WHELP has not created a claim-level audit for it yet."
+      ]
+    },
+    {
+      "specId": 102,
+      "specSlug": "balance-druid",
+      "matrixId": "midnight-season-2/balance-druid-utility-matrix",
+      "coverageLevel": "provenance-only",
+      "sourceUrls": [
+        "https://www.wowhead.com/guide/classes/druid/balance/mythic-plus-dungeon-tips"
+      ],
+      "auditIds": [],
+      "claimCount": 0,
+      "claimsByType": {
+        "mechanic-location": 0,
+        "utility-rating": 0,
+        "utility-mention": 0,
+        "placeholder": 0
+      },
+      "claimsByDisposition": {
+        "accepted": 0,
+        "rejected-cross-dungeon": 0,
+        "rejected-placeholder": 0,
+        "unresolved": 0
+      },
+      "limitations": [
+        "The matrix cites a specialization guide, but WHELP has not created a claim-level audit for it yet."
+      ]
+    },
+    {
+      "specId": 253,
+      "specSlug": "beast-mastery-hunter",
+      "matrixId": "midnight-season-2/beast-mastery-hunter-utility-matrix",
+      "coverageLevel": "provenance-only",
+      "sourceUrls": [
+        "https://www.wowhead.com/guide/classes/hunter/beast-mastery/mythic-plus-dungeon-tips"
+      ],
+      "auditIds": [],
+      "claimCount": 0,
+      "claimsByType": {
+        "mechanic-location": 0,
+        "utility-rating": 0,
+        "utility-mention": 0,
+        "placeholder": 0
+      },
+      "claimsByDisposition": {
+        "accepted": 0,
+        "rejected-cross-dungeon": 0,
+        "rejected-placeholder": 0,
+        "unresolved": 0
+      },
+      "limitations": [
+        "The matrix cites a specialization guide, but WHELP has not created a claim-level audit for it yet."
+      ]
+    },
+    {
+      "specId": 250,
+      "specSlug": "blood-death-knight",
+      "matrixId": "midnight-season-2/blood-death-knight-utility-matrix",
+      "coverageLevel": "provenance-only",
+      "sourceUrls": [
+        "https://www.wowhead.com/guide/classes/death-knight/blood/mythic-plus-dungeon-tips"
+      ],
+      "auditIds": [],
+      "claimCount": 0,
+      "claimsByType": {
+        "mechanic-location": 0,
+        "utility-rating": 0,
+        "utility-mention": 0,
+        "placeholder": 0
+      },
+      "claimsByDisposition": {
+        "accepted": 0,
+        "rejected-cross-dungeon": 0,
+        "rejected-placeholder": 0,
+        "unresolved": 0
+      },
+      "limitations": [
+        "The matrix cites a specialization guide, but WHELP has not created a claim-level audit for it yet."
+      ]
+    },
+    {
+      "specId": 268,
+      "specSlug": "brewmaster-monk",
+      "matrixId": "midnight-season-2/brewmaster-monk-utility-matrix",
+      "coverageLevel": "provenance-only",
+      "sourceUrls": [
+        "https://www.wowhead.com/guide/classes/monk/brewmaster/mythic-plus-dungeon-tips"
+      ],
+      "auditIds": [],
+      "claimCount": 0,
+      "claimsByType": {
+        "mechanic-location": 0,
+        "utility-rating": 0,
+        "utility-mention": 0,
+        "placeholder": 0
+      },
+      "claimsByDisposition": {
+        "accepted": 0,
+        "rejected-cross-dungeon": 0,
+        "rejected-placeholder": 0,
+        "unresolved": 0
+      },
+      "limitations": [
+        "The matrix cites a specialization guide, but WHELP has not created a claim-level audit for it yet."
+      ]
+    },
+    {
+      "specId": 266,
+      "specSlug": "demonology-warlock",
+      "matrixId": "midnight-season-2/demonology-warlock-utility-matrix",
+      "coverageLevel": "provenance-only",
+      "sourceUrls": [
+        "https://www.wowhead.com/guide/classes/warlock/demonology/mythic-plus-dungeon-tips"
+      ],
+      "auditIds": [],
+      "claimCount": 0,
+      "claimsByType": {
+        "mechanic-location": 0,
+        "utility-rating": 0,
+        "utility-mention": 0,
+        "placeholder": 0
+      },
+      "claimsByDisposition": {
+        "accepted": 0,
+        "rejected-cross-dungeon": 0,
+        "rejected-placeholder": 0,
+        "unresolved": 0
+      },
+      "limitations": [
+        "The matrix cites a specialization guide, but WHELP has not created a claim-level audit for it yet."
+      ]
+    },
+    {
+      "specId": 267,
+      "specSlug": "destruction-warlock",
+      "matrixId": "midnight-season-2/destruction-warlock-utility-matrix",
+      "coverageLevel": "provenance-only",
+      "sourceUrls": [
+        "https://www.wowhead.com/guide/classes/warlock/destruction/mythic-plus-dungeon-tips"
+      ],
+      "auditIds": [],
+      "claimCount": 0,
+      "claimsByType": {
+        "mechanic-location": 0,
+        "utility-rating": 0,
+        "utility-mention": 0,
+        "placeholder": 0
+      },
+      "claimsByDisposition": {
+        "accepted": 0,
+        "rejected-cross-dungeon": 0,
+        "rejected-placeholder": 0,
+        "unresolved": 0
+      },
+      "limitations": [
+        "The matrix cites a specialization guide, but WHELP has not created a claim-level audit for it yet."
+      ]
+    },
+    {
+      "specId": 1467,
+      "specSlug": "devastation-evoker",
+      "matrixId": "midnight-season-2/devastation-evoker-utility-matrix",
+      "coverageLevel": "provenance-only",
+      "sourceUrls": [
+        "https://www.wowhead.com/guide/classes/evoker/devastation/mythic-plus-dungeon-tips"
+      ],
+      "auditIds": [],
+      "claimCount": 0,
+      "claimsByType": {
+        "mechanic-location": 0,
+        "utility-rating": 0,
+        "utility-mention": 0,
+        "placeholder": 0
+      },
+      "claimsByDisposition": {
+        "accepted": 0,
+        "rejected-cross-dungeon": 0,
+        "rejected-placeholder": 0,
+        "unresolved": 0
+      },
+      "limitations": [
+        "The matrix cites a specialization guide, but WHELP has not created a claim-level audit for it yet."
+      ]
+    },
+    {
+      "specId": 1480,
+      "specSlug": "devourer-demon-hunter",
+      "matrixId": "midnight-season-2/devourer-demon-hunter-utility-matrix",
+      "coverageLevel": "provenance-only",
+      "sourceUrls": [
+        "https://www.wowhead.com/guide/classes/demon-hunter/devourer/mythic-plus-dungeon-tips"
+      ],
+      "auditIds": [],
+      "claimCount": 0,
+      "claimsByType": {
+        "mechanic-location": 0,
+        "utility-rating": 0,
+        "utility-mention": 0,
+        "placeholder": 0
+      },
+      "claimsByDisposition": {
+        "accepted": 0,
+        "rejected-cross-dungeon": 0,
+        "rejected-placeholder": 0,
+        "unresolved": 0
+      },
+      "limitations": [
+        "The matrix cites a specialization guide, but WHELP has not created a claim-level audit for it yet."
+      ]
+    },
+    {
+      "specId": 256,
+      "specSlug": "discipline-priest",
+      "matrixId": "midnight-season-2/discipline-priest-utility-matrix",
+      "coverageLevel": "provenance-only",
+      "sourceUrls": [
+        "https://www.wowhead.com/guide/classes/priest/discipline/mythic-plus-dungeon-tips"
+      ],
+      "auditIds": [],
+      "claimCount": 0,
+      "claimsByType": {
+        "mechanic-location": 0,
+        "utility-rating": 0,
+        "utility-mention": 0,
+        "placeholder": 0
+      },
+      "claimsByDisposition": {
+        "accepted": 0,
+        "rejected-cross-dungeon": 0,
+        "rejected-placeholder": 0,
+        "unresolved": 0
+      },
+      "limitations": [
+        "The matrix cites a specialization guide, but WHELP has not created a claim-level audit for it yet."
+      ]
+    },
+    {
+      "specId": 262,
+      "specSlug": "elemental-shaman",
+      "matrixId": "midnight-season-2/elemental-shaman-utility-matrix",
+      "coverageLevel": "partially-audited",
+      "sourceUrls": [
+        "https://www.wowhead.com/guide/classes/shaman/elemental/mythic-plus-dungeon-tips"
+      ],
+      "auditIds": [
+        "midnight-season-2/elemental-shaman-wowhead-placeholder-audit",
+        "midnight-season-2/elemental-shaman-wowhead-utility-mentions-audit"
+      ],
+      "claimCount": 46,
+      "claimsByType": {
+        "mechanic-location": 0,
+        "utility-rating": 0,
+        "utility-mention": 37,
+        "placeholder": 9
+      },
+      "claimsByDisposition": {
+        "accepted": 37,
+        "rejected-cross-dungeon": 0,
+        "rejected-placeholder": 9,
+        "unresolved": 0
+      },
+      "limitations": [
+        "Claim-level review exists, but no audit declares complete coverage of every relevant source section."
+      ]
+    },
+    {
+      "specId": 263,
+      "specSlug": "enhancement-shaman",
+      "matrixId": "midnight-season-2/enhancement-shaman-utility-matrix",
+      "coverageLevel": "partially-audited",
+      "sourceUrls": [
+        "https://www.wowhead.com/guide/classes/shaman/enhancement/mythic-plus-dungeon-tips"
+      ],
+      "auditIds": [
+        "midnight-season-2/enhancement-shaman-wowhead-utility-ratings-audit"
+      ],
+      "claimCount": 40,
+      "claimsByType": {
+        "mechanic-location": 0,
+        "utility-rating": 40,
+        "utility-mention": 0,
+        "placeholder": 0
+      },
+      "claimsByDisposition": {
+        "accepted": 40,
+        "rejected-cross-dungeon": 0,
+        "rejected-placeholder": 0,
+        "unresolved": 0
+      },
+      "limitations": [
+        "Claim-level review exists, but no audit declares complete coverage of every relevant source section."
+      ]
+    },
+    {
+      "specId": 103,
+      "specSlug": "feral-druid",
+      "matrixId": "midnight-season-2/feral-druid-utility-matrix",
+      "coverageLevel": "provenance-only",
+      "sourceUrls": [
+        "https://www.wowhead.com/guide/classes/druid/feral/mythic-plus-dungeon-tips"
+      ],
+      "auditIds": [],
+      "claimCount": 0,
+      "claimsByType": {
+        "mechanic-location": 0,
+        "utility-rating": 0,
+        "utility-mention": 0,
+        "placeholder": 0
+      },
+      "claimsByDisposition": {
+        "accepted": 0,
+        "rejected-cross-dungeon": 0,
+        "rejected-placeholder": 0,
+        "unresolved": 0
+      },
+      "limitations": [
+        "The matrix cites a specialization guide, but WHELP has not created a claim-level audit for it yet."
+      ]
+    },
+    {
+      "specId": 63,
+      "specSlug": "fire-mage",
+      "matrixId": "midnight-season-2/fire-mage-utility-matrix",
+      "coverageLevel": "provenance-only",
+      "sourceUrls": [
+        "https://www.wowhead.com/guide/classes/mage/fire/mythic-plus-dungeon-tips"
+      ],
+      "auditIds": [],
+      "claimCount": 0,
+      "claimsByType": {
+        "mechanic-location": 0,
+        "utility-rating": 0,
+        "utility-mention": 0,
+        "placeholder": 0
+      },
+      "claimsByDisposition": {
+        "accepted": 0,
+        "rejected-cross-dungeon": 0,
+        "rejected-placeholder": 0,
+        "unresolved": 0
+      },
+      "limitations": [
+        "The matrix cites a specialization guide, but WHELP has not created a claim-level audit for it yet."
+      ]
+    },
+    {
+      "specId": 251,
+      "specSlug": "frost-death-knight",
+      "matrixId": "midnight-season-2/frost-death-knight-utility-matrix",
+      "coverageLevel": "provenance-only",
+      "sourceUrls": [
+        "https://www.wowhead.com/guide/classes/death-knight/frost/mythic-plus-dungeon-tips"
+      ],
+      "auditIds": [],
+      "claimCount": 0,
+      "claimsByType": {
+        "mechanic-location": 0,
+        "utility-rating": 0,
+        "utility-mention": 0,
+        "placeholder": 0
+      },
+      "claimsByDisposition": {
+        "accepted": 0,
+        "rejected-cross-dungeon": 0,
+        "rejected-placeholder": 0,
+        "unresolved": 0
+      },
+      "limitations": [
+        "The matrix cites a specialization guide, but WHELP has not created a claim-level audit for it yet."
+      ]
+    },
+    {
+      "specId": 64,
+      "specSlug": "frost-mage",
+      "matrixId": "midnight-season-2/frost-mage-utility-matrix",
+      "coverageLevel": "provenance-only",
+      "sourceUrls": [
+        "https://www.wowhead.com/guide/classes/mage/frost/mythic-plus-dungeon-tips"
+      ],
+      "auditIds": [],
+      "claimCount": 0,
+      "claimsByType": {
+        "mechanic-location": 0,
+        "utility-rating": 0,
+        "utility-mention": 0,
+        "placeholder": 0
+      },
+      "claimsByDisposition": {
+        "accepted": 0,
+        "rejected-cross-dungeon": 0,
+        "rejected-placeholder": 0,
+        "unresolved": 0
+      },
+      "limitations": [
+        "The matrix cites a specialization guide, but WHELP has not created a claim-level audit for it yet."
+      ]
+    },
+    {
+      "specId": 72,
+      "specSlug": "fury-warrior",
+      "matrixId": "midnight-season-2/fury-warrior-utility-matrix",
+      "coverageLevel": "provenance-only",
+      "sourceUrls": [
+        "https://www.wowhead.com/guide/classes/warrior/fury/mythic-plus-dungeon-tips"
+      ],
+      "auditIds": [],
+      "claimCount": 0,
+      "claimsByType": {
+        "mechanic-location": 0,
+        "utility-rating": 0,
+        "utility-mention": 0,
+        "placeholder": 0
+      },
+      "claimsByDisposition": {
+        "accepted": 0,
+        "rejected-cross-dungeon": 0,
+        "rejected-placeholder": 0,
+        "unresolved": 0
+      },
+      "limitations": [
+        "The matrix cites a specialization guide, but WHELP has not created a claim-level audit for it yet."
+      ]
+    },
+    {
+      "specId": 104,
+      "specSlug": "guardian-druid",
+      "matrixId": "midnight-season-2/guardian-druid-utility-matrix",
+      "coverageLevel": "provenance-only",
+      "sourceUrls": [
+        "https://www.wowhead.com/guide/classes/druid/guardian/mythic-plus-dungeon-tips"
+      ],
+      "auditIds": [],
+      "claimCount": 0,
+      "claimsByType": {
+        "mechanic-location": 0,
+        "utility-rating": 0,
+        "utility-mention": 0,
+        "placeholder": 0
+      },
+      "claimsByDisposition": {
+        "accepted": 0,
+        "rejected-cross-dungeon": 0,
+        "rejected-placeholder": 0,
+        "unresolved": 0
+      },
+      "limitations": [
+        "The matrix cites a specialization guide, but WHELP has not created a claim-level audit for it yet."
+      ]
+    },
+    {
+      "specId": 577,
+      "specSlug": "havoc-demon-hunter",
+      "matrixId": "midnight-season-2/havoc-demon-hunter-utility-matrix",
+      "coverageLevel": "provenance-only",
+      "sourceUrls": [
+        "https://www.wowhead.com/guide/classes/demon-hunter/havoc/mythic-plus-dungeon-tips"
+      ],
+      "auditIds": [],
+      "claimCount": 0,
+      "claimsByType": {
+        "mechanic-location": 0,
+        "utility-rating": 0,
+        "utility-mention": 0,
+        "placeholder": 0
+      },
+      "claimsByDisposition": {
+        "accepted": 0,
+        "rejected-cross-dungeon": 0,
+        "rejected-placeholder": 0,
+        "unresolved": 0
+      },
+      "limitations": [
+        "The matrix cites a specialization guide, but WHELP has not created a claim-level audit for it yet."
+      ]
+    },
+    {
+      "specId": 65,
+      "specSlug": "holy-paladin",
+      "matrixId": "midnight-season-2/holy-paladin-utility-matrix",
+      "coverageLevel": "provenance-only",
+      "sourceUrls": [
+        "https://www.wowhead.com/guide/classes/paladin/holy/mythic-plus-dungeon-tips"
+      ],
+      "auditIds": [],
+      "claimCount": 0,
+      "claimsByType": {
+        "mechanic-location": 0,
+        "utility-rating": 0,
+        "utility-mention": 0,
+        "placeholder": 0
+      },
+      "claimsByDisposition": {
+        "accepted": 0,
+        "rejected-cross-dungeon": 0,
+        "rejected-placeholder": 0,
+        "unresolved": 0
+      },
+      "limitations": [
+        "The matrix cites a specialization guide, but WHELP has not created a claim-level audit for it yet."
+      ]
+    },
+    {
+      "specId": 257,
+      "specSlug": "holy-priest",
+      "matrixId": "midnight-season-2/holy-priest-utility-matrix",
+      "coverageLevel": "provenance-only",
+      "sourceUrls": [
+        "https://www.wowhead.com/guide/classes/priest/holy/mythic-plus-dungeon-tips"
+      ],
+      "auditIds": [],
+      "claimCount": 0,
+      "claimsByType": {
+        "mechanic-location": 0,
+        "utility-rating": 0,
+        "utility-mention": 0,
+        "placeholder": 0
+      },
+      "claimsByDisposition": {
+        "accepted": 0,
+        "rejected-cross-dungeon": 0,
+        "rejected-placeholder": 0,
+        "unresolved": 0
+      },
+      "limitations": [
+        "The matrix cites a specialization guide, but WHELP has not created a claim-level audit for it yet."
+      ]
+    },
+    {
+      "specId": 254,
+      "specSlug": "marksmanship-hunter",
+      "matrixId": "midnight-season-2/marksmanship-hunter-utility-matrix",
+      "coverageLevel": "provenance-only",
+      "sourceUrls": [
+        "https://www.wowhead.com/guide/classes/hunter/marksmanship/mythic-plus-dungeon-tips"
+      ],
+      "auditIds": [],
+      "claimCount": 0,
+      "claimsByType": {
+        "mechanic-location": 0,
+        "utility-rating": 0,
+        "utility-mention": 0,
+        "placeholder": 0
+      },
+      "claimsByDisposition": {
+        "accepted": 0,
+        "rejected-cross-dungeon": 0,
+        "rejected-placeholder": 0,
+        "unresolved": 0
+      },
+      "limitations": [
+        "The matrix cites a specialization guide, but WHELP has not created a claim-level audit for it yet."
+      ]
+    },
+    {
+      "specId": 270,
+      "specSlug": "mistweaver-monk",
+      "matrixId": "midnight-season-2/mistweaver-monk-utility-matrix",
+      "coverageLevel": "provenance-only",
+      "sourceUrls": [
+        "https://www.wowhead.com/guide/classes/monk/mistweaver/mythic-plus-dungeon-tips"
+      ],
+      "auditIds": [],
+      "claimCount": 0,
+      "claimsByType": {
+        "mechanic-location": 0,
+        "utility-rating": 0,
+        "utility-mention": 0,
+        "placeholder": 0
+      },
+      "claimsByDisposition": {
+        "accepted": 0,
+        "rejected-cross-dungeon": 0,
+        "rejected-placeholder": 0,
+        "unresolved": 0
+      },
+      "limitations": [
+        "The matrix cites a specialization guide, but WHELP has not created a claim-level audit for it yet."
+      ]
+    },
+    {
+      "specId": 260,
+      "specSlug": "outlaw-rogue",
+      "matrixId": "midnight-season-2/outlaw-rogue-utility-matrix",
+      "coverageLevel": "provenance-only",
+      "sourceUrls": [
+        "https://www.wowhead.com/guide/classes/rogue/outlaw/mythic-plus-dungeon-tips"
+      ],
+      "auditIds": [],
+      "claimCount": 0,
+      "claimsByType": {
+        "mechanic-location": 0,
+        "utility-rating": 0,
+        "utility-mention": 0,
+        "placeholder": 0
+      },
+      "claimsByDisposition": {
+        "accepted": 0,
+        "rejected-cross-dungeon": 0,
+        "rejected-placeholder": 0,
+        "unresolved": 0
+      },
+      "limitations": [
+        "The matrix cites a specialization guide, but WHELP has not created a claim-level audit for it yet."
+      ]
+    },
+    {
+      "specId": 1468,
+      "specSlug": "preservation-evoker",
+      "matrixId": "midnight-season-2/preservation-evoker-utility-matrix",
+      "coverageLevel": "partially-audited",
+      "sourceUrls": [
+        "https://www.wowhead.com/guide/classes/evoker/preservation/mythic-plus-dungeon-tips"
+      ],
+      "auditIds": [
+        "midnight-season-2/evoker-wowhead-cross-dungeon-sections-audit",
+        "midnight-season-2/evoker-wowhead-dungeon-tips-audit"
+      ],
+      "claimCount": 29,
+      "claimsByType": {
+        "mechanic-location": 29,
+        "utility-rating": 0,
+        "utility-mention": 0,
+        "placeholder": 0
+      },
+      "claimsByDisposition": {
+        "accepted": 0,
+        "rejected-cross-dungeon": 28,
+        "rejected-placeholder": 0,
+        "unresolved": 1
+      },
+      "limitations": [
+        "Claim-level review exists, but no audit declares complete coverage of every relevant source section."
+      ]
+    },
+    {
+      "specId": 66,
+      "specSlug": "protection-paladin",
+      "matrixId": "midnight-season-2/protection-paladin-utility-matrix",
+      "coverageLevel": "provenance-only",
+      "sourceUrls": [
+        "https://www.wowhead.com/guide/classes/paladin/protection/mythic-plus-dungeon-tips"
+      ],
+      "auditIds": [],
+      "claimCount": 0,
+      "claimsByType": {
+        "mechanic-location": 0,
+        "utility-rating": 0,
+        "utility-mention": 0,
+        "placeholder": 0
+      },
+      "claimsByDisposition": {
+        "accepted": 0,
+        "rejected-cross-dungeon": 0,
+        "rejected-placeholder": 0,
+        "unresolved": 0
+      },
+      "limitations": [
+        "The matrix cites a specialization guide, but WHELP has not created a claim-level audit for it yet."
+      ]
+    },
+    {
+      "specId": 73,
+      "specSlug": "protection-warrior",
+      "matrixId": "midnight-season-2/protection-warrior-utility-matrix",
+      "coverageLevel": "provenance-only",
+      "sourceUrls": [
+        "https://www.wowhead.com/guide/classes/warrior/protection/mythic-plus-dungeon-tips"
+      ],
+      "auditIds": [],
+      "claimCount": 0,
+      "claimsByType": {
+        "mechanic-location": 0,
+        "utility-rating": 0,
+        "utility-mention": 0,
+        "placeholder": 0
+      },
+      "claimsByDisposition": {
+        "accepted": 0,
+        "rejected-cross-dungeon": 0,
+        "rejected-placeholder": 0,
+        "unresolved": 0
+      },
+      "limitations": [
+        "The matrix cites a specialization guide, but WHELP has not created a claim-level audit for it yet."
+      ]
+    },
+    {
+      "specId": 105,
+      "specSlug": "restoration-druid",
+      "matrixId": "midnight-season-2/restoration-druid-utility-matrix",
+      "coverageLevel": "provenance-only",
+      "sourceUrls": [
+        "https://www.wowhead.com/guide/classes/druid/restoration/mythic-plus-dungeon-tips"
+      ],
+      "auditIds": [],
+      "claimCount": 0,
+      "claimsByType": {
+        "mechanic-location": 0,
+        "utility-rating": 0,
+        "utility-mention": 0,
+        "placeholder": 0
+      },
+      "claimsByDisposition": {
+        "accepted": 0,
+        "rejected-cross-dungeon": 0,
+        "rejected-placeholder": 0,
+        "unresolved": 0
+      },
+      "limitations": [
+        "The matrix cites a specialization guide, but WHELP has not created a claim-level audit for it yet."
+      ]
+    },
+    {
+      "specId": 264,
+      "specSlug": "restoration-shaman",
+      "matrixId": "midnight-season-2/restoration-shaman-utility-matrix",
+      "coverageLevel": "partially-audited",
+      "sourceUrls": [
+        "https://www.wowhead.com/guide/classes/shaman/restoration/mythic-plus-dungeon-tips"
+      ],
+      "auditIds": [
+        "midnight-season-2/restoration-shaman-wowhead-dungeon-tips-audit"
+      ],
+      "claimCount": 29,
+      "claimsByType": {
+        "mechanic-location": 29,
+        "utility-rating": 0,
+        "utility-mention": 0,
+        "placeholder": 0
+      },
+      "claimsByDisposition": {
+        "accepted": 29,
+        "rejected-cross-dungeon": 0,
+        "rejected-placeholder": 0,
+        "unresolved": 0
+      },
+      "limitations": [
+        "Claim-level review exists, but no audit declares complete coverage of every relevant source section."
+      ]
+    },
+    {
+      "specId": 70,
+      "specSlug": "retribution-paladin",
+      "matrixId": "midnight-season-2/retribution-paladin-utility-matrix",
+      "coverageLevel": "provenance-only",
+      "sourceUrls": [
+        "https://www.wowhead.com/guide/classes/paladin/retribution/mythic-plus-dungeon-tips"
+      ],
+      "auditIds": [],
+      "claimCount": 0,
+      "claimsByType": {
+        "mechanic-location": 0,
+        "utility-rating": 0,
+        "utility-mention": 0,
+        "placeholder": 0
+      },
+      "claimsByDisposition": {
+        "accepted": 0,
+        "rejected-cross-dungeon": 0,
+        "rejected-placeholder": 0,
+        "unresolved": 0
+      },
+      "limitations": [
+        "The matrix cites a specialization guide, but WHELP has not created a claim-level audit for it yet."
+      ]
+    },
+    {
+      "specId": 258,
+      "specSlug": "shadow-priest",
+      "matrixId": "midnight-season-2/shadow-priest-utility-matrix",
+      "coverageLevel": "provenance-only",
+      "sourceUrls": [
+        "https://www.wowhead.com/guide/classes/priest/shadow/mythic-plus-dungeon-tips"
+      ],
+      "auditIds": [],
+      "claimCount": 0,
+      "claimsByType": {
+        "mechanic-location": 0,
+        "utility-rating": 0,
+        "utility-mention": 0,
+        "placeholder": 0
+      },
+      "claimsByDisposition": {
+        "accepted": 0,
+        "rejected-cross-dungeon": 0,
+        "rejected-placeholder": 0,
+        "unresolved": 0
+      },
+      "limitations": [
+        "The matrix cites a specialization guide, but WHELP has not created a claim-level audit for it yet."
+      ]
+    },
+    {
+      "specId": 261,
+      "specSlug": "subtlety-rogue",
+      "matrixId": "midnight-season-2/subtlety-rogue-utility-matrix",
+      "coverageLevel": "provenance-only",
+      "sourceUrls": [
+        "https://www.wowhead.com/guide/classes/rogue/subtlety/mythic-plus-dungeon-tips"
+      ],
+      "auditIds": [],
+      "claimCount": 0,
+      "claimsByType": {
+        "mechanic-location": 0,
+        "utility-rating": 0,
+        "utility-mention": 0,
+        "placeholder": 0
+      },
+      "claimsByDisposition": {
+        "accepted": 0,
+        "rejected-cross-dungeon": 0,
+        "rejected-placeholder": 0,
+        "unresolved": 0
+      },
+      "limitations": [
+        "The matrix cites a specialization guide, but WHELP has not created a claim-level audit for it yet."
+      ]
+    },
+    {
+      "specId": 255,
+      "specSlug": "survival-hunter",
+      "matrixId": "midnight-season-2/survival-hunter-utility-matrix",
+      "coverageLevel": "provenance-only",
+      "sourceUrls": [
+        "https://www.wowhead.com/guide/classes/hunter/survival/mythic-plus-dungeon-tips"
+      ],
+      "auditIds": [],
+      "claimCount": 0,
+      "claimsByType": {
+        "mechanic-location": 0,
+        "utility-rating": 0,
+        "utility-mention": 0,
+        "placeholder": 0
+      },
+      "claimsByDisposition": {
+        "accepted": 0,
+        "rejected-cross-dungeon": 0,
+        "rejected-placeholder": 0,
+        "unresolved": 0
+      },
+      "limitations": [
+        "The matrix cites a specialization guide, but WHELP has not created a claim-level audit for it yet."
+      ]
+    },
+    {
+      "specId": 252,
+      "specSlug": "unholy-death-knight",
+      "matrixId": "midnight-season-2/unholy-death-knight-utility-matrix",
+      "coverageLevel": "provenance-only",
+      "sourceUrls": [
+        "https://www.wowhead.com/guide/classes/death-knight/unholy/mythic-plus-dungeon-tips"
+      ],
+      "auditIds": [],
+      "claimCount": 0,
+      "claimsByType": {
+        "mechanic-location": 0,
+        "utility-rating": 0,
+        "utility-mention": 0,
+        "placeholder": 0
+      },
+      "claimsByDisposition": {
+        "accepted": 0,
+        "rejected-cross-dungeon": 0,
+        "rejected-placeholder": 0,
+        "unresolved": 0
+      },
+      "limitations": [
+        "The matrix cites a specialization guide, but WHELP has not created a claim-level audit for it yet."
+      ]
+    },
+    {
+      "specId": 581,
+      "specSlug": "vengeance-demon-hunter",
+      "matrixId": "midnight-season-2/vengeance-demon-hunter-utility-matrix",
+      "coverageLevel": "provenance-only",
+      "sourceUrls": [
+        "https://www.wowhead.com/guide/classes/demon-hunter/vengeance/mythic-plus-dungeon-tips"
+      ],
+      "auditIds": [],
+      "claimCount": 0,
+      "claimsByType": {
+        "mechanic-location": 0,
+        "utility-rating": 0,
+        "utility-mention": 0,
+        "placeholder": 0
+      },
+      "claimsByDisposition": {
+        "accepted": 0,
+        "rejected-cross-dungeon": 0,
+        "rejected-placeholder": 0,
+        "unresolved": 0
+      },
+      "limitations": [
+        "The matrix cites a specialization guide, but WHELP has not created a claim-level audit for it yet."
+      ]
+    },
+    {
+      "specId": 269,
+      "specSlug": "windwalker-monk",
+      "matrixId": "midnight-season-2/windwalker-monk-utility-matrix",
+      "coverageLevel": "provenance-only",
+      "sourceUrls": [
+        "https://www.wowhead.com/guide/classes/monk/windwalker/mythic-plus-dungeon-tips"
+      ],
+      "auditIds": [],
+      "claimCount": 0,
+      "claimsByType": {
+        "mechanic-location": 0,
+        "utility-rating": 0,
+        "utility-mention": 0,
+        "placeholder": 0
+      },
+      "claimsByDisposition": {
+        "accepted": 0,
+        "rejected-cross-dungeon": 0,
+        "rejected-placeholder": 0,
+        "unresolved": 0
+      },
+      "limitations": [
+        "The matrix cites a specialization guide, but WHELP has not created a claim-level audit for it yet."
+      ]
+    }
+  ],
+  "missingAuditMeaning": "Provenance-only means a matrix has a linked source but its individual claims have not yet been audited; it must not be interpreted as independent claim-level verification.",
+  "provenance": [
+    {
+      "kind": "curated",
+      "description": "Generated deterministically from all seasonal specialization matrices and indexed source-claim audits.",
+      "recordId": "data/index.json",
+      "retrievedAt": "2026-09-02T21:35:00+02:00"
+    }
+  ]
+}

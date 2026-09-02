@@ -3,7 +3,7 @@
   "schemaVersion": 1,
   "name": "WHELP-OF-WARCRAFT",
   "acronym": "World-data Hub for Encounters, Loadouts & Progression",
-  "datasetVersion": "1.12.0",
+  "datasetVersion": "1.13.0",
   "currentBuild": "12.1.0.69587",
   "currentSeason": "midnight-season-2",
   "entrypoints": {
@@ -16,6 +16,7 @@
     "specCapabilityCoverage": "data/specs/coverage.json",
     "sourceFreshnessPolicy": "data/policies/source-freshness.json",
     "sourceClaimAudits": "data/index.json",
+    "sourceAuditCoverage": "data/source-audits/coverage.json",
     "pugRoutes": "content/mythic-plus/midnight-season-2/routes/catalog.json",
     "trustModel": "docs/TRUST_MODEL.md"
   },
@@ -31,6 +32,8 @@
     "queryPartyGaps": "npm run query:party-gaps -- --specs <spec-slug,spec-slug> --dungeon <id>",
     "queryFreshness": "npm run query:freshness -- --as-of <ISO-date> --include <review|all>",
     "querySourceClaims": "npm run query:source-claims -- --disposition <accepted|rejected-cross-dungeon|rejected-placeholder|unresolved> --type <mechanic-location|utility-rating|utility-mention|placeholder> --spec <slug> --axis <id> --dungeon <id> --spell <id>",
+    "querySourceAuditCoverage": "npm run query:source-audit-coverage -- --level <fully-audited|partially-audited|provenance-only|no-source> --spec <slug>",
+    "regenerateSourceAuditCoverage": "npm run generate:source-audit-coverage",
     "regenerateAbilityIndex": "npm run generate:ability-index"
   }
 }
