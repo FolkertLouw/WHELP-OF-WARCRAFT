@@ -18,14 +18,14 @@
       "abilities": [
         {
           "spellId": 1241214,
-          "name": null,
+          "name": "Earth Bolt",
           "interruptible": true,
           "dispelType": "none",
           "enrage": false
         },
         {
           "spellId": 1297696,
-          "name": null,
+          "name": "Healing Breeze",
           "interruptible": true,
           "dispelType": "magic",
           "enrage": false
@@ -38,7 +38,7 @@
       "abilities": [
         {
           "spellId": 1297699,
-          "name": null,
+          "name": "Rotten Supplies",
           "interruptible": false,
           "dispelType": "disease",
           "enrage": false
@@ -51,7 +51,7 @@
       "abilities": [
         {
           "spellId": 1238053,
-          "name": null,
+          "name": "Mother's Wrath",
           "interruptible": false,
           "dispelType": "none",
           "enrage": true
@@ -64,7 +64,7 @@
       "abilities": [
         {
           "spellId": 1309919,
-          "name": null,
+          "name": "Frigid Roar",
           "interruptible": true,
           "dispelType": "none",
           "enrage": false
@@ -77,7 +77,7 @@
       "abilities": [
         {
           "spellId": 1239860,
-          "name": null,
+          "name": "Cryo Surge",
           "interruptible": false,
           "dispelType": "magic",
           "enrage": false
@@ -90,14 +90,14 @@
       "abilities": [
         {
           "spellId": 1246687,
-          "name": null,
+          "name": "Lightning Bolt",
           "interruptible": true,
           "dispelType": "none",
           "enrage": false
         },
         {
           "spellId": 1297778,
-          "name": null,
+          "name": "Arc Lightning",
           "interruptible": true,
           "dispelType": "none",
           "enrage": false
@@ -110,14 +110,14 @@
       "abilities": [
         {
           "spellId": 1246847,
-          "name": null,
+          "name": "Shoot",
           "interruptible": true,
           "dispelType": "none",
           "enrage": false
         },
         {
           "spellId": 1246865,
-          "name": null,
+          "name": "Bestial Wrath",
           "interruptible": false,
           "dispelType": "none",
           "enrage": true
@@ -130,7 +130,7 @@
       "abilities": [
         {
           "spellId": 1238053,
-          "name": null,
+          "name": "Mother's Wrath",
           "interruptible": false,
           "dispelType": "none",
           "enrage": true
@@ -143,7 +143,7 @@
       "abilities": [
         {
           "spellId": 1234846,
-          "name": null,
+          "name": "Toxic Spores",
           "interruptible": false,
           "dispelType": "poison",
           "enrage": false
@@ -156,7 +156,7 @@
       "abilities": [
         {
           "spellId": 1235549,
-          "name": null,
+          "name": "Glacial Torment",
           "interruptible": false,
           "dispelType": "magic",
           "enrage": false
@@ -169,7 +169,7 @@
       "abilities": [
         {
           "spellId": 1235829,
-          "name": null,
+          "name": "Winter's Shroud",
           "interruptible": true,
           "dispelType": "none",
           "enrage": false
@@ -182,7 +182,7 @@
       "abilities": [
         {
           "spellId": 1290205,
-          "name": null,
+          "name": "Lightning Bolt",
           "interruptible": true,
           "dispelType": "none",
           "enrage": false
@@ -195,7 +195,7 @@
       "abilities": [
         {
           "spellId": 1246865,
-          "name": null,
+          "name": "Bestial Wrath",
           "interruptible": false,
           "dispelType": "none",
           "enrage": true
@@ -208,7 +208,7 @@
       "abilities": [
         {
           "spellId": 1238801,
-          "name": null,
+          "name": "Insatiable Hunger",
           "interruptible": false,
           "dispelType": "curse",
           "enrage": false
@@ -221,7 +221,7 @@
       "abilities": [
         {
           "spellId": 1239394,
-          "name": null,
+          "name": "Scavenge",
           "interruptible": true,
           "dispelType": "none",
           "enrage": false
@@ -232,9 +232,25 @@
   "provenance": [
     {
       "kind": "game-data",
-      "description": "Ability flags extracted by WHELP from Mythic Dungeon Tools 6.2.10; names remain null until independently corroborated.",
+      "description": "Ability flags extracted by WHELP from Mythic Dungeon Tools 6.2.10; names are independently corroborated below.",
       "url": "https://github.com/Nnoggie/MythicDungeonTools",
       "retrievedAt": "2026-09-02T11:15:00+02:00"
-    }
+    },
+    { "kind": "external-reference", "description": "Spell 1241214 name corroborated against Wowhead's Earth Bolt record.", "url": "https://www.wowhead.com/spell=1241214/earth-bolt", "retrievedAt": "2026-09-02T14:12:00+02:00" },
+    { "kind": "external-reference", "description": "Spell 1297696 name corroborated against Wowhead's Healing Breeze record.", "url": "https://www.wowhead.com/spell=1297696/healing-breeze", "retrievedAt": "2026-09-02T14:12:00+02:00" },
+    { "kind": "external-reference", "description": "Spell 1297699 name corroborated against Wowhead's Rotten Supplies record.", "url": "https://www.wowhead.com/spell=1297699/rotten-supplies", "retrievedAt": "2026-09-02T14:12:00+02:00" },
+    { "kind": "external-reference", "description": "Spell 1238053 name corroborated against Wowhead's Mother's Wrath record.", "url": "https://www.wowhead.com/spell=1238053/mothers-wrath", "retrievedAt": "2026-09-02T14:12:00+02:00" },
+    { "kind": "external-reference", "description": "Spell 1309919 name corroborated against Wowhead's Frigid Roar record.", "url": "https://www.wowhead.com/spell=1309919/frigid-roar", "retrievedAt": "2026-09-02T14:12:00+02:00" },
+    { "kind": "external-reference", "description": "Spell 1239860 name corroborated against Wowhead's Cryo Surge record.", "url": "https://www.wowhead.com/spell=1239860/cryo-surge", "retrievedAt": "2026-09-02T14:12:00+02:00" },
+    { "kind": "external-reference", "description": "Spell 1246687 name corroborated against Wowhead's Lightning Bolt record.", "url": "https://www.wowhead.com/spell=1246687/lightning-bolt", "retrievedAt": "2026-09-02T14:12:00+02:00" },
+    { "kind": "external-reference", "description": "Spell 1297778 name corroborated against Wowhead's Arc Lightning record.", "url": "https://www.wowhead.com/spell=1297778/arc-lightning", "retrievedAt": "2026-09-02T14:12:00+02:00" },
+    { "kind": "external-reference", "description": "Spell 1246847 name corroborated against Wowhead's Shoot record.", "url": "https://www.wowhead.com/spell=1246847/shoot", "retrievedAt": "2026-09-02T14:12:00+02:00" },
+    { "kind": "external-reference", "description": "Spell 1246865 name corroborated against Wowhead's Bestial Wrath record.", "url": "https://www.wowhead.com/spell=1246865/bestial-wrath", "retrievedAt": "2026-09-02T14:12:00+02:00" },
+    { "kind": "external-reference", "description": "Spell 1234846 name corroborated against Wowhead's Toxic Spores record.", "url": "https://www.wowhead.com/spell=1234846/toxic-spores", "retrievedAt": "2026-09-02T14:12:00+02:00" },
+    { "kind": "external-reference", "description": "Spell 1235549 name corroborated against Wowhead's Glacial Torment record.", "url": "https://www.wowhead.com/spell=1235549/glacial-torment", "retrievedAt": "2026-09-02T14:12:00+02:00" },
+    { "kind": "external-reference", "description": "Spell 1235829 name corroborated against Wowhead's Winter's Shroud record.", "url": "https://www.wowhead.com/spell=1235829/winters-shroud", "retrievedAt": "2026-09-02T14:12:00+02:00" },
+    { "kind": "external-reference", "description": "Spell 1290205 name corroborated against Wowhead's Lightning Bolt record.", "url": "https://www.wowhead.com/spell=1290205/lightning-bolt", "retrievedAt": "2026-09-02T14:12:00+02:00" },
+    { "kind": "external-reference", "description": "Spell 1238801 name corroborated against Wowhead's Insatiable Hunger record.", "url": "https://www.wowhead.com/spell=1238801/insatiable-hunger", "retrievedAt": "2026-09-02T14:12:00+02:00" },
+    { "kind": "external-reference", "description": "Spell 1239394 name corroborated against Wowhead's Scavenge record.", "url": "https://www.wowhead.com/spell=1239394/scavenge", "retrievedAt": "2026-09-02T14:12:00+02:00" }
   ]
 }
