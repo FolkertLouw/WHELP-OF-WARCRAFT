@@ -109,7 +109,10 @@
     { "id": "monk/windwalker/capabilities", "record": "specs/monk/windwalker.json", "status": "corroborated" },
     { "id": "demon-hunter/havoc/capabilities", "record": "specs/demon-hunter/havoc.json", "status": "corroborated" },
     { "id": "demon-hunter/vengeance/capabilities", "record": "specs/demon-hunter/vengeance.json", "status": "corroborated" },
-    { "id": "demon-hunter/devourer/capabilities", "record": "specs/demon-hunter/devourer.json", "status": "corroborated" }
+    { "id": "demon-hunter/devourer/capabilities", "record": "specs/demon-hunter/devourer.json", "status": "corroborated" },
+    { "id": "evoker/devastation/capabilities", "record": "specs/evoker/devastation.json", "status": "corroborated" },
+    { "id": "evoker/preservation/capabilities", "record": "specs/evoker/preservation.json", "status": "corroborated" },
+    { "id": "evoker/augmentation/capabilities", "record": "specs/evoker/augmentation.json", "status": "corroborated" }
   ],
   "specCapabilityCoverage": {
     "id": "retail/spec-capability-coverage",

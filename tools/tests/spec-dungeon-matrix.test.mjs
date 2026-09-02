@@ -46,6 +46,12 @@ const vengeanceDemonHunterMatrix = await loadJson("content", "mythic-plus", "mid
 const vengeanceDemonHunterCapabilities = await loadJson("data", "specs", "demon-hunter", "vengeance.json");
 const devourerDemonHunterMatrix = await loadJson("content", "mythic-plus", "midnight-season-2", "specs", "devourer-demon-hunter-utility-matrix.json");
 const devourerDemonHunterCapabilities = await loadJson("data", "specs", "demon-hunter", "devourer.json");
+const devastationEvokerMatrix = await loadJson("content", "mythic-plus", "midnight-season-2", "specs", "devastation-evoker-utility-matrix.json");
+const devastationEvokerCapabilities = await loadJson("data", "specs", "evoker", "devastation.json");
+const preservationEvokerMatrix = await loadJson("content", "mythic-plus", "midnight-season-2", "specs", "preservation-evoker-utility-matrix.json");
+const preservationEvokerCapabilities = await loadJson("data", "specs", "evoker", "preservation.json");
+const augmentationEvokerMatrix = await loadJson("content", "mythic-plus", "midnight-season-2", "specs", "augmentation-evoker-utility-matrix.json");
+const augmentationEvokerCapabilities = await loadJson("data", "specs", "evoker", "augmentation.json");
 const season = await loadJson("data", "seasons", "midnight-season-2.json");
 
 test("Unholy matrix covers every Midnight Season 2 dungeon exactly once", () => {
@@ -412,4 +418,39 @@ test("Demon Hunter matrices preserve self-cleanse and stop boundaries", () => {
   assert.ok(!havocDemonHunterCapabilities.tools.find((tool) => tool.id === "chaos-nova").actions.includes("interrupt"));
   const vengeanceInterrupts = vengeanceDemonHunterCapabilities.tools.filter((tool) => tool.actions.includes("interrupt"));
   assert.deepEqual(vengeanceInterrupts.map((tool) => tool.id), ["disrupt", "sigil-of-silence"]);
+});
+
+test("all three Evoker matrices cover the season and resolve every utility axis", () => {
+  const expected = new Set(season.dungeons.map((entry) => entry.id));
+  for (const [evokerMatrix, evokerCapabilities] of [
+    [devastationEvokerMatrix, devastationEvokerCapabilities],
+    [preservationEvokerMatrix, preservationEvokerCapabilities],
+    [augmentationEvokerMatrix, augmentationEvokerCapabilities],
+  ]) {
+    assert.deepEqual(new Set(evokerMatrix.dungeons.map((entry) => entry.dungeonId)), expected);
+    const tools = new Map(evokerCapabilities.tools.map((tool) => [tool.id, tool]));
+    for (const axis of evokerMatrix.axes) {
+      for (const toolId of axis.toolIds) assert.ok(tools.has(toolId), `${axis.id} should resolve ${toolId}`);
+    }
+  }
+});
+
+test("Evoker matrices preserve dispel, stop, and choice-node boundaries", () => {
+  for (const evokerCapabilities of [devastationEvokerCapabilities, preservationEvokerCapabilities, augmentationEvokerCapabilities]) {
+    const cauterizing = evokerCapabilities.tools.find((tool) => tool.id === "cauterizing-flame");
+    assert.deepEqual(cauterizing.actions, ["cleanse-bleed", "cleanse-poison", "cleanse-curse", "cleanse-disease"]);
+    assert.ok(!cauterizing.actions.includes("cleanse-magic"));
+    assert.deepEqual(evokerCapabilities.tools.find((tool) => tool.id === "tail-swipe").actions, ["crowd-control"]);
+    assert.match(evokerCapabilities.tools.find((tool) => tool.id === "time-spiral").requirements[0].value, /Spatial Paradox/);
+  }
+  assert.deepEqual(preservationEvokerCapabilities.tools.find((tool) => tool.id === "naturalize").actions, ["cleanse-magic", "cleanse-poison"]);
+  assert.ok(!devastationEvokerCapabilities.tools.some((tool) => tool.actions.includes("cleanse-magic")));
+  assert.ok(!augmentationEvokerCapabilities.tools.some((tool) => tool.actions.includes("cleanse-magic")));
+  assert.deepEqual(augmentationEvokerCapabilities.tools.find((tool) => tool.id === "blistering-scales").actions, ["external-defensive"]);
+});
+
+test("Evoker guide contamination is rejected instead of creating cross-dungeon joins", () => {
+  assert.deepEqual(devastationEvokerMatrix.dungeons.find((entry) => entry.dungeonId === "ruby-life-pools").mechanicSpellIds, []);
+  assert.match(preservationEvokerMatrix.dungeons.find((entry) => entry.dungeonId === "altar-of-fangs").notes.join(" "), /stale unrelated examples/);
+  assert.match(augmentationEvokerMatrix.dungeons.find((entry) => entry.dungeonId === "temple-of-sethraliss").notes.join(" "), /Unrelated mechanics/);
 });

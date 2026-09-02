@@ -1,0 +1,28 @@
+{
+  "$schema": "../../../schemas/spec-capabilities.schema.json", "schemaVersion": 1, "recordType": "spec-capabilities",
+  "id": "evoker/preservation/capabilities", "matrixRecordId": "midnight-season-2/preservation-evoker-utility-matrix", "status": "corroborated",
+  "validity": { "fromBuild": "12.1.0.69587", "untilBuild": null, "seasonId": null, "seasonSlug": "midnight-season-2" },
+  "spec": { "classId": 13, "className": "Evoker", "specId": 1468, "specName": "Preservation", "slug": "preservation-evoker" },
+  "tools": [
+    { "id": "quell", "name": "Quell", "spellId": 351338, "actions": ["interrupt"], "availability": "talent", "scope": "enemy", "limitations": ["Twenty-second cooldown", "Requires an interruptible cast", "Twenty-five-yard range"] },
+    { "id": "naturalize", "name": "Naturalize", "spellId": 360823, "actions": ["cleanse-magic", "cleanse-poison"], "availability": "specialization", "scope": "friendly-single", "limitations": ["Thirty-yard range", "Eight-second cooldown"] },
+    { "id": "cauterizing-flame", "name": "Cauterizing Flame", "spellId": 374251, "actions": ["cleanse-bleed", "cleanse-poison", "cleanse-curse", "cleanse-disease"], "availability": "talent", "scope": "friendly-single", "limitations": ["Does not remove Magic effects", "One-minute cooldown", "Removes all eligible effects from one ally"] },
+    { "id": "oppressing-roar-overawe", "name": "Oppressing Roar with Overawe", "spellId": 372048, "alternateSpellIds": [374346], "actions": ["soothe"], "availability": "talent", "scope": "area-enemy", "requirements": [{ "kind": "talent", "value": "Overawe" }], "limitations": ["Frontal cone", "Removes one Enrage from each affected enemy", "Not a generic Magic purge"] },
+    { "id": "sleep-walk", "name": "Sleep Walk", "spellId": 360806, "actions": ["crowd-control"], "availability": "talent", "scope": "enemy", "limitations": ["Damage can end the incapacitate", "A control stop rather than a spell-school interrupt"] },
+    { "id": "tail-swipe", "name": "Tail Swipe", "spellId": 368970, "actions": ["crowd-control"], "availability": "baseline", "scope": "area-enemy", "limitations": ["Only affects susceptible enemies", "Knock-up is not a spell-school lockout"] },
+    { "id": "wing-buffet", "name": "Wing Buffet", "spellId": 357214, "actions": ["enemy-reposition", "crowd-control"], "availability": "baseline", "scope": "area-enemy", "limitations": ["Frontal knockback", "Only moves susceptible enemies"] },
+    { "id": "zephyr", "name": "Zephyr", "spellId": 374227, "actions": ["party-damage-reduction", "group-movement"], "availability": "talent", "scope": "friendly-area", "limitations": ["Affects the Evoker and four nearest allies within twenty yards", "Reduces area-of-effect damage only", "Two-minute cooldown"] },
+    { "id": "rescue", "name": "Rescue", "spellId": 370665, "actions": ["external-movement"], "availability": "talent", "scope": "friendly-single", "limitations": ["Moves the target ally with the Evoker", "Requires a valid landing location"] },
+    { "id": "time-spiral", "name": "Time Spiral", "spellId": 374968, "actions": ["group-movement"], "availability": "talent", "scope": "friendly-area", "requirements": [{ "kind": "configuration", "value": "Choice node alternative to Spatial Paradox" }], "limitations": ["Enables one major movement ability use even when that ability is on cooldown", "Does not itself reposition allies"] },
+    { "id": "spatial-paradox", "name": "Spatial Paradox", "spellId": 406732, "actions": ["external-movement"], "availability": "talent", "scope": "friendly-single", "requirements": [{ "kind": "configuration", "value": "Choice node alternative to Time Spiral" }], "limitations": ["Allows casting while moving and increases range", "Does not physically reposition the ally"] },
+    { "id": "time-dilation", "name": "Time Dilation", "spellId": 357170, "actions": ["external-defensive"], "availability": "specialization", "scope": "friendly-single", "limitations": ["Staggers a portion of incoming damage instead of preventing it", "One-minute cooldown"] },
+    { "id": "fury-of-the-aspects", "name": "Fury of the Aspects", "spellId": 390386, "actions": ["bloodlust"], "availability": "baseline", "scope": "friendly-area", "limitations": ["Applies the standard ten-minute exhaustion effect"] },
+    { "id": "blessing-of-the-bronze", "name": "Blessing of the Bronze", "spellId": 364342, "actions": ["group-buff"], "availability": "baseline", "scope": "friendly-area", "limitations": ["Reduces the cooldown of a major movement ability by 15%", "Does not directly increase movement speed"] }
+  ],
+  "provenance": [
+    { "kind": "external-reference", "description": "Current Patch 12.1.0 Preservation dungeon and affix utility guidance, selectively transcribed after rejecting misplaced dungeon fragments.", "url": "https://www.wowhead.com/guide/classes/evoker/preservation/mythic-plus-dungeon-tips", "retrievedAt": "2026-09-02T20:35:00+02:00" },
+    { "kind": "external-reference", "description": "Current Naturalize record confirms friendly Magic and Poison removal.", "url": "https://www.wowhead.com/spell=360823/naturalize", "retrievedAt": "2026-09-02T20:35:00+02:00" },
+    { "kind": "external-reference", "description": "Current Cauterizing Flame record confirms Bleed, Poison, Curse, and Disease removal but no Magic removal.", "url": "https://www.wowhead.com/spell=374251/cauterizing-flame", "retrievedAt": "2026-09-02T20:35:00+02:00" },
+    { "kind": "external-reference", "description": "Current Zephyr record confirms five-player range, AoE-only mitigation, and movement-speed semantics.", "url": "https://www.wowhead.com/spell=374227/zephyr", "retrievedAt": "2026-09-02T20:35:00+02:00" }
+  ]
+}

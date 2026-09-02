@@ -307,3 +307,31 @@ test("joins Vengeance silence and displacement as distinct Temple answers", () =
   assert.deepEqual(chains.actions, ["enemy-reposition", "crowd-control"]);
   assert.match(report.dungeons[0].notes.join(" "), /displacement rather than a school lockout/);
 });
+
+test("joins Preservation Magic dispel separately from Cauterizing Flame", () => {
+  const report = querySpecMatrix(matrices, capabilities, { spec: "preservation-evoker", dungeon: "voidscar-arena", rating: "always" });
+  const dispels = report.dungeons[0].utilities.find((entry) => entry.axisId === "magic-toxin-cleanse").tools;
+  const naturalize = dispels.find((tool) => tool.id === "naturalize");
+  const cauterizing = dispels.find((tool) => tool.id === "cauterizing-flame");
+  assert.ok(naturalize.actions.includes("cleanse-magic"));
+  assert.ok(!cauterizing.actions.includes("cleanse-magic"));
+  assert.ok(report.dungeons[0].mechanicSpellIds.includes(1250043));
+});
+
+test("joins Augmentation offensive and defensive support without conflation", () => {
+  const report = querySpecMatrix(matrices, capabilities, { spec: "augmentation-evoker", dungeon: "altar-of-fangs", rating: "always" });
+  const offense = report.dungeons[0].utilities.find((entry) => entry.axisId === "ally-offense").tools;
+  const tankSupport = report.dungeons[0].utilities.find((entry) => entry.axisId === "tank-support").tools[0];
+  assert.deepEqual(offense.map((tool) => tool.id), ["ebon-might", "prescience"]);
+  assert.ok(offense.every((tool) => tool.actions.includes("external-offensive")));
+  assert.deepEqual(tankSupport.actions, ["external-defensive"]);
+});
+
+test("joins Evoker crowd control without promoting it to school interrupts", () => {
+  const report = querySpecMatrix(matrices, capabilities, { spec: "devastation-evoker", dungeon: "temple-of-sethraliss", rating: "always" });
+  const interrupt = report.dungeons[0].utilities.find((entry) => entry.axisId === "interrupt").tools[0];
+  const control = report.dungeons[0].utilities.find((entry) => entry.axisId === "area-control").tools;
+  assert.equal(interrupt.id, "quell");
+  assert.ok(control.every((tool) => !tool.actions.includes("interrupt")));
+  assert.ok(control.find((tool) => tool.id === "wing-buffet").actions.includes("enemy-reposition"));
+});

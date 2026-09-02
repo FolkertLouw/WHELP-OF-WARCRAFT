@@ -8,11 +8,11 @@ const root = path.resolve(import.meta.dirname, "..", "..");
 const capabilities = await loadSpecCapabilities(root);
 const coverage = await loadSpecCapabilityCoverage(root);
 
-test("declares the current capability catalog partial and covers every loaded record", () => {
-  assert.equal(coverage.isComplete, false);
+test("declares the current capability catalog complete and covers every loaded record", () => {
+  assert.equal(coverage.isComplete, true);
   assert.equal(coverage.entries.length, capabilities.length);
   assert.deepEqual(new Set(coverage.entries.map((entry) => entry.recordId)), new Set(capabilities.map((record) => record.id)));
-  assert.match(coverage.missingDataMeaning, /not yet modeled/);
+  assert.match(coverage.missingDataMeaning, /catalog drift/);
 });
 
 test("queries composition utility across selected specializations", () => {
@@ -301,6 +301,34 @@ test("preserves Vengeance area utility and current Fiery Brand semantics", () =>
   assert.ok(!fieryBrand.actions.includes("enemy-damage-reduction"));
   const devourerInterrupts = queryCapabilities(capabilities, { specs: ["devourer-demon-hunter"], action: "interrupt" });
   assert.deepEqual(devourerInterrupts.results.map((entry) => entry.tool.id), ["disrupt"]);
+});
+
+test("models complete Evoker composition utility and Bleed cleansing", () => {
+  const specs = ["devastation-evoker", "preservation-evoker", "augmentation-evoker"];
+  assert.equal(queryCapabilities(capabilities, { specs, action: "bloodlust" }).resultCount, 3);
+  assert.equal(queryCapabilities(capabilities, { specs, action: "group-buff" }).resultCount, 3);
+  const bleeds = queryCapabilities(capabilities, { specs, action: "cleanse-bleed" });
+  assert.equal(bleeds.resultCount, 3);
+  assert.ok(bleeds.results.every((entry) => entry.tool.id === "cauterizing-flame" && entry.tool.scope === "friendly-single"));
+  const magic = queryCapabilities(capabilities, { specs, action: "cleanse-magic" });
+  assert.equal(magic.resultCount, 1);
+  assert.equal(magic.results[0].spec.slug, "preservation-evoker");
+  assert.equal(magic.results[0].tool.id, "naturalize");
+});
+
+test("keeps Evoker movement, AoE defense, stops, and support effects distinct", () => {
+  const specs = ["devastation-evoker", "preservation-evoker", "augmentation-evoker"];
+  const partyDefense = queryCapabilities(capabilities, { specs, action: "party-damage-reduction" });
+  assert.equal(partyDefense.resultCount, 3);
+  assert.ok(partyDefense.results.every((entry) => entry.tool.id === "zephyr"));
+  const interrupts = queryCapabilities(capabilities, { specs, action: "interrupt" });
+  assert.equal(interrupts.resultCount, 3);
+  assert.ok(interrupts.results.every((entry) => entry.tool.id === "quell"));
+  const movement = queryCapabilities(capabilities, { specs, action: "external-movement" });
+  assert.equal(movement.resultCount, 6);
+  assert.ok(movement.results.every((entry) => ["rescue", "spatial-paradox"].includes(entry.tool.id)));
+  const augOffense = queryCapabilities(capabilities, { specs: ["augmentation-evoker"], action: "external-offensive" });
+  assert.deepEqual(augOffense.results.map((entry) => entry.tool.id), ["ebon-might", "prescience"]);
 });
 
 test("rejects unknown actions and scopes instead of returning misleading empty reports", () => {

@@ -5,7 +5,7 @@
   "id": "retail/spec-capability-coverage",
   "status": "verified",
   "validity": { "fromBuild": "12.1.0.69587", "untilBuild": null, "seasonId": null, "seasonSlug": "midnight-season-2" },
-  "isComplete": false,
+  "isComplete": true,
   "entries": [
     { "specId": 262, "slug": "elemental-shaman", "recordId": "shaman/elemental/capabilities" },
     { "specId": 264, "slug": "restoration-shaman", "recordId": "shaman/restoration/capabilities" },
@@ -43,10 +43,13 @@
     { "specId": 270, "slug": "mistweaver-monk", "recordId": "monk/mistweaver/capabilities" },
     { "specId": 577, "slug": "havoc-demon-hunter", "recordId": "demon-hunter/havoc/capabilities" },
     { "specId": 581, "slug": "vengeance-demon-hunter", "recordId": "demon-hunter/vengeance/capabilities" },
-    { "specId": 1480, "slug": "devourer-demon-hunter", "recordId": "demon-hunter/devourer/capabilities" }
+    { "specId": 1480, "slug": "devourer-demon-hunter", "recordId": "demon-hunter/devourer/capabilities" },
+    { "specId": 1467, "slug": "devastation-evoker", "recordId": "evoker/devastation/capabilities" },
+    { "specId": 1468, "slug": "preservation-evoker", "recordId": "evoker/preservation/capabilities" },
+    { "specId": 1473, "slug": "augmentation-evoker", "recordId": "evoker/augmentation/capabilities" }
   ],
-  "missingDataMeaning": "A specialization absent from this partial catalog is not yet modeled. Absence must never be interpreted as evidence that the specialization lacks a capability.",
+  "missingDataMeaning": "This current-build catalog is intended to cover every Retail specialization. A missing specialization indicates catalog drift or a validation defect, not evidence that the specialization lacks a capability.",
   "provenance": [
-    { "kind": "curated", "description": "Generated from and cross-checked against every specialization capability entry in data/index.json.", "recordId": "data/index.json", "retrievedAt": "2026-09-02T20:25:00+02:00" }
+    { "kind": "curated", "description": "Generated from and cross-checked against every current Retail specialization capability entry in data/index.json.", "recordId": "data/index.json", "retrievedAt": "2026-09-02T20:35:00+02:00" }
   ]
 }

@@ -1,6 +1,6 @@
 {
   "name": "whelp-of-warcraft",
-  "version": "1.6.0",
+  "version": "1.7.0",
   "private": true,
   "description": "World-data Hub for Encounters, Loadouts & Progression",
   "scripts": {
