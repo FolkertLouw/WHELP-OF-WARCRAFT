@@ -11,6 +11,7 @@ const responses = await Promise.all(responseIndex.entries.map(async (entry) => J
 const restoration = JSON.parse(await readFile(path.join(root, "data", "specs", "shaman", "restoration.json"), "utf8"));
 const enhancement = JSON.parse(await readFile(path.join(root, "data", "specs", "shaman", "enhancement.json"), "utf8"));
 const beastMastery = JSON.parse(await readFile(path.join(root, "data", "specs", "hunter", "beast-mastery.json"), "utf8"));
+const frostDeathKnight = JSON.parse(await readFile(path.join(root, "data", "specs", "death-knight", "frost.json"), "utf8"));
 
 test("distinguishes Restoration and Enhancement friendly Magic removal", () => {
   const resto = querySpecResponses(responses, restoration, { spellId: 381515 });
@@ -39,4 +40,12 @@ test("preserves universal positional responses", () => {
   assert.equal(result.results[0].actionCoverage.find((entry) => entry.action === "line-of-sight").support, "universal");
   assert.equal(result.results[0].actionCoverage.find((entry) => entry.action === "defensive").tools[0].name, "Astral Shift");
   assert.equal(result.results[0].actionCoverage.find((entry) => entry.action === "defensive").support, "conditional-self");
+});
+
+test("maps Death Knight personal magic defensives without claiming party coverage", () => {
+  const result = querySpecResponses(responses, frostDeathKnight, { spellId: 734276 });
+  const defensive = result.results[0].actionCoverage.find((entry) => entry.action === "defensive");
+  assert.equal(defensive.support, "conditional-self");
+  assert.ok(defensive.tools.some((tool) => tool.name === "Anti-Magic Shell"));
+  assert.ok(defensive.tools.every((tool) => tool.scope === "self"));
 });

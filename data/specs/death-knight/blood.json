@@ -1,0 +1,25 @@
+{
+  "$schema": "../../../schemas/spec-capabilities.schema.json",
+  "schemaVersion": 1,
+  "recordType": "spec-capabilities",
+  "id": "death-knight/blood/capabilities",
+  "status": "corroborated",
+  "validity": { "fromBuild": "12.1.0.69587", "untilBuild": null, "seasonId": null, "seasonSlug": "midnight-season-2" },
+  "spec": { "classId": 6, "className": "Death Knight", "specId": 250, "specName": "Blood", "slug": "blood-death-knight" },
+  "tools": [
+    { "id": "mind-freeze", "name": "Mind Freeze", "spellId": 47528, "actions": ["interrupt"], "availability": "talent", "scope": "enemy", "limitations": ["Fifteen-yard range", "Fifteen-second cooldown before Coldthirst", "Single target"] },
+    { "id": "death-grip", "name": "Death Grip", "spellId": 49576, "actions": ["enemy-reposition"], "availability": "baseline", "scope": "enemy", "limitations": ["Pulls a susceptible enemy to the Death Knight", "Does not provide a spell-school lockout", "Taunts when used by Blood"] },
+    { "id": "chains-of-ice", "name": "Chains of Ice", "spellId": 45524, "actions": ["crowd-control"], "availability": "baseline", "scope": "enemy", "limitations": ["Movement slow only unless Ice Prison is selected", "Costs one Rune"] },
+    { "id": "blinding-sleet", "name": "Blinding Sleet", "spellId": 207167, "actions": ["crowd-control"], "availability": "talent", "scope": "area-enemy", "limitations": ["Damage can break the disorient", "Only affects susceptible enemies"] },
+    { "id": "control-undead", "name": "Control Undead", "spellId": 111673, "actions": ["crowd-control"], "availability": "talent", "scope": "enemy", "limitations": ["Undead enemies only", "Controlled enemy becomes a temporary pet for five minutes"] },
+    { "id": "raise-ally", "name": "Raise Ally", "spellId": 61999, "actions": ["battle-resurrection"], "availability": "baseline", "scope": "friendly-single", "limitations": ["Requires a dead ally", "Costs Runic Power", "Uses the shared combat-resurrection limit"] },
+    { "id": "anti-magic-zone", "name": "Anti-Magic Zone", "spellId": 51052, "actions": ["party-damage-reduction"], "availability": "talent", "scope": "friendly-area", "limitations": ["Reduces magical damage only", "Allies must remain inside the stationary zone", "Does not stack with another Anti-Magic Zone"] },
+    { "id": "anti-magic-shell", "name": "Anti-Magic Shell", "spellId": 48707, "actions": ["defensive"], "availability": "baseline", "scope": "self", "limitations": ["Personal magic absorb and debuff prevention only", "Does not remove existing effects without Unyielding Will"] },
+    { "id": "vampiric-blood", "name": "Vampiric Blood", "spellId": 55233, "actions": ["defensive"], "availability": "specialization", "scope": "self", "limitations": ["Personal survivability cooldown only"] }
+  ],
+  "provenance": [
+    { "kind": "external-reference", "description": "Current Midnight Blood guide identifies Raise Ally, Death Grip, Anti-Magic Shell, Mind Freeze, control talents, and Anti-Magic Zone.", "url": "https://www.wowhead.com/guide/classes/death-knight/blood/abilities-talents-pve-tank", "retrievedAt": "2026-09-02T16:38:00+02:00" },
+    { "kind": "external-reference", "description": "Current Raise Ally record confirms its instant combat resurrection, Runic Power cost, and enforced encounter limit.", "url": "https://www.wowhead.com/spell=61999/raise-ally", "retrievedAt": "2026-09-02T16:38:00+02:00" },
+    { "kind": "external-reference", "description": "Current Mind Freeze record confirms talent availability, fifteen-yard range, and base cooldown.", "url": "https://www.wowhead.com/spell=47528/mind-freeze", "retrievedAt": "2026-09-02T16:38:00+02:00" }
+  ]
+}

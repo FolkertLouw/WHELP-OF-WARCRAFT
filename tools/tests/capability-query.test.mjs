@@ -102,6 +102,25 @@ test("queries shared Mage composition utility across all specializations", () =>
   assert.ok(purges.results.every((entry) => entry.tool.name === "Spellsteal"));
 });
 
+test("preserves Death Knight combat resurrection, magic zone, and displacement distinctions", () => {
+  const specs = ["blood-death-knight", "frost-death-knight", "unholy-death-knight"];
+  const resurrections = queryCapabilities(capabilities, { specs, action: "battle-resurrection" });
+  const zones = queryCapabilities(capabilities, { specs, action: "party-damage-reduction" });
+  const grips = queryCapabilities(capabilities, { specs, action: "enemy-reposition" });
+  assert.equal(resurrections.resultCount, 3);
+  assert.equal(zones.resultCount, 3);
+  assert.equal(grips.resultCount, 3);
+  assert.ok(resurrections.results.every((entry) => entry.tool.name === "Raise Ally" && entry.tool.availabilityByAction["battle-resurrection"] === "baseline"));
+  assert.ok(zones.results.every((entry) => entry.tool.name === "Anti-Magic Zone" && entry.tool.availabilityByAction["party-damage-reduction"] === "talent"));
+  assert.ok(grips.results.every((entry) => entry.tool.name === "Death Grip"));
+});
+
+test("retains Unholy Control Undead's permanent-pet conflict", () => {
+  const control = queryCapabilities(capabilities, { specs: ["unholy-death-knight"], action: "crowd-control" });
+  const tool = control.results.find((entry) => entry.tool.name === "Control Undead").tool;
+  assert.ok(tool.limitations.some((limitation) => limitation.includes("permanent ghoul")));
+});
+
 test("rejects unknown specialization slugs", () => {
   assert.throws(() => queryCapabilities(capabilities, { specs: ["not-a-real-spec"] }), /unknown spec/);
 });
