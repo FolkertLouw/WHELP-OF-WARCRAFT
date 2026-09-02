@@ -359,11 +359,22 @@ for (const file of files.filter((candidate) => candidate.endsWith(".json"))) {
 }
 
 const dungeons = records.filter(({ value }) => value.recordType === "dungeon");
+const abilityIndexes = records.filter(({ value }) => value.recordType === "ability-index");
 for (const { file, value } of records.filter(({ value }) => value.recordType === "source-claim-audit")) {
   if (file.includes(`${path.sep}examples${path.sep}`)) continue;
   for (const claim of value.claims ?? []) {
     if (!dungeons.some(({ value: dungeon }) => dungeon.id === claim.assertedDungeonId)) {
       fail(file, `claim ${claim.claimId} asserts unknown dungeon ${claim.assertedDungeonId}`);
+    }
+    if (claim.disposition === "accepted" && claim.spellId) {
+      const matchingAbilities = abilityIndexes.flatMap(({ value: index }) => (index.abilities ?? [])
+        .filter((ability) => ability.spellId === claim.spellId));
+      if (!matchingAbilities.length) {
+        fail(file, `accepted claim ${claim.claimId} references spell ${claim.spellId}, which is absent from ability indexes`);
+      } else if (!matchingAbilities.some((ability) => (ability.contexts ?? [])
+        .some((context) => context.dungeonId === claim.canonicalDungeonId))) {
+        fail(file, `accepted claim ${claim.claimId} has no ability-index context for ${claim.canonicalDungeonId}`);
+      }
     }
     if (!claim.spellId || claim.disposition === "accepted") continue;
     for (const { file: matrixFile, value: matrix } of records.filter(({ value: candidate }) => candidate.recordType === "spec-dungeon-matrix")) {

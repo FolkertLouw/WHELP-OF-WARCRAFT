@@ -8,19 +8,31 @@ const root = path.resolve(import.meta.dirname, "../..");
 const audits = await Promise.all([
   "evoker-midnight-season-2-wowhead-dungeon-tips.json",
   "evoker-midnight-season-2-wowhead-cross-dungeon-sections.json",
+  "restoration-shaman-midnight-season-2-wowhead-dungeon-tips.json",
 ].map(async (file) => JSON.parse(await readFile(path.join(root, "data", "source-audits", file), "utf8"))));
 
 test("claim audit exposes rejected and unresolved source assertions", () => {
   assert.deepEqual(summarizeSourceClaims(audits), {
-    auditCount: 2,
-    claimCount: 29,
-    byDisposition: { accepted: 0, "rejected-cross-dungeon": 28, unresolved: 1 },
+    auditCount: 3,
+    claimCount: 58,
+    byDisposition: { accepted: 29, "rejected-cross-dungeon": 28, unresolved: 1 },
   });
   assert.equal(querySourceClaims(audits, { dungeonId: "maisara-caverns" }).length, 5);
   assert.equal(querySourceClaims(audits, { dungeonId: "windrunner-spire" }).length, 4);
   assert.equal(querySourceClaims(audits, { dungeonId: "algethar-academy" }).length, 5);
   assert.equal(querySourceClaims(audits, { spellId: 1281636 })[0].canonicalDungeonId, "nexus-point-xenas");
   assert.equal(querySourceClaims(audits, { disposition: "unresolved" })[0].subjectName, "Dreadbellow");
+});
+
+test("Restoration Shaman accepted claims span every seasonal dungeon", () => {
+  const accepted = querySourceClaims(audits, { disposition: "accepted" });
+  assert.equal(accepted.length, 29);
+  assert.deepEqual(
+    [...new Set(accepted.map(({ canonicalDungeonId }) => canonicalDungeonId))].sort(),
+    ["altar-of-fangs", "den-of-nalorakk", "kings-rest", "murder-row", "ruby-life-pools", "temple-of-sethraliss", "the-blinding-vale", "voidscar-arena"],
+  );
+  assert.equal(querySourceClaims(audits, { spellId: 1217973 })
+    .some(({ disposition, canonicalDungeonId }) => disposition === "accepted" && canonicalDungeonId === "murder-row"), true);
 });
 
 test("Evoker matrices cannot reintroduce rejected Blinding Vale claims", async () => {
