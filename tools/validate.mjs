@@ -108,6 +108,13 @@ function validateRecord(file, value) {
       fail(file, "public observations must explicitly exclude names and chat");
     }
     const pulls = value.pulls ?? [];
+    if (value.run?.pullDataStatus === "progress-only"
+      && value.collector?.knowledgeBuild !== `${value.game?.version}.${value.game?.build}`) {
+      fail(file, "progress telemetry knowledgeBuild must match the observed game build");
+    }
+    if (value.run?.pullDataStatus === "progress-only" && !/^[a-f0-9]{64}$/.test(value.collector?.knowledgeRevision ?? "")) {
+      fail(file, "progress telemetry requires a generated knowledge revision");
+    }
     const pullOrders = pulls.map((pull) => pull.order);
     if (new Set(pullOrders).size !== pullOrders.length) fail(file, "observed pull order values must be unique");
     for (let index = 0; index < pullOrders.length; index += 1) {
@@ -140,6 +147,19 @@ function validateRecord(file, value) {
         if (completedAt !== null && completedAt !== undefined && pull.completedAt > completedAt) fail(file, `observed pull ${pull.order} completes after the run`);
       } else if (pull.durationMs !== null) {
         fail(file, `observed pull ${pull.order} has durationMs without completedAt`);
+      }
+      if (pull.enemyForcesSource === "scenario-progress") {
+        if (!Number.isInteger(pull.enemyForcesStart) || !Number.isInteger(pull.enemyForcesEnd)
+          || pull.enemyForcesEnd < pull.enemyForcesStart
+          || pull.enemyForces !== pull.enemyForcesEnd - pull.enemyForcesStart) {
+          fail(file, `observed pull ${pull.order} scenario progress is inconsistent`);
+        }
+        if (pull.enemyIdentityStatus !== "unavailable-secret-values" || pull.enemies?.length !== 0) {
+          fail(file, `observed pull ${pull.order} cannot claim enemy identities from scenario-only progress`);
+        }
+      } else if (pull.enemyForcesSource === "unavailable"
+        && (pull.enemyForces !== 0 || pull.enemyForcesStart != null || pull.enemyForcesEnd != null)) {
+        fail(file, `observed pull ${pull.order} unavailable progress fields are inconsistent`);
       }
     }
     if (attributedDeaths > (value.run?.deathCount ?? 0)) fail(file, "pull-attributed deaths exceed the run death count");
@@ -417,7 +437,9 @@ for (const { file, value } of records.filter(({ value }) => value.recordType ===
       if (!canonical) fail(file, `observed pull ${pull.order} references unknown NPC ${enemy.npcId}`);
       else enemyForces += canonical.enemyForces * enemy.count;
     }
-    if (pull.enemyForces !== enemyForces) fail(file, `observed pull ${pull.order} enemyForces does not match its enemies`);
+    if ((!pull.enemyForcesSource || pull.enemyForcesSource === "canonical-npc-sum") && pull.enemyForces !== enemyForces) {
+      fail(file, `observed pull ${pull.order} enemyForces does not match its enemies`);
+    }
   }
   for (const encounter of value.encounters ?? []) {
     if (!knownEncounters.has(encounter.encounterId)) fail(file, `unknown observed encounter ${encounter.encounterId} for ${dungeon.value.id}`);

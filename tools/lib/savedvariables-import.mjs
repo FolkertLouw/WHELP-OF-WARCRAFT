@@ -160,7 +160,7 @@ export function sanitizeRun(input, audit = { strippedFieldCount: 0 }) {
   if (input.schemaVersion !== 1 || input.recordType !== "run-observation") reject("unsupported-observation", "Unsupported observation record version or type");
 
   const collector = object(input.collector, "collector");
-  dropUnknown(collector, ["name", "version"], audit);
+  dropUnknown(collector, ["name", "version", "knowledgeBuild", "knowledgeRevision"], audit);
   if (collector.name !== "WHELP Collector") reject("unknown-collector", "Observation was not produced by WHELP Collector");
 
   const game = object(input.game, "game");
@@ -173,7 +173,7 @@ export function sanitizeRun(input, audit = { strippedFieldCount: 0 }) {
   optionalProperty(sanitizedGame, "region", string(game.region, "game.region", { pattern: /^[A-Z]{2,4}$/, maximum: 4, nullable: true, optional: true }));
 
   const run = object(input.run, "run");
-  dropUnknown(run, ["challengeMapId", "routePlanId", "keystoneLevel", "affixIds", "startedAt", "completedAt", "durationMs", "deathCount", "deathTimeLostMs", "status"], audit);
+  dropUnknown(run, ["challengeMapId", "routePlanId", "keystoneLevel", "affixIds", "startedAt", "completedAt", "durationMs", "deathCount", "deathTimeLostMs", "pullDataStatus", "status"], audit);
   const affixIds = array(run.affixIds ?? [], "run.affixIds", 16).map((id, index) => integer(id, `run.affixIds[${index}]`, { minimum: 1, maximum: 100000 }));
   if (new Set(affixIds).size !== affixIds.length) reject("invalid-record", "run.affixIds contains duplicates");
   const sanitizedRun = {
@@ -186,6 +186,7 @@ export function sanitizeRun(input, audit = { strippedFieldCount: 0 }) {
     status: enumeration(run.status, ["started", "completed", "abandoned"], "run.status"),
   };
   optionalProperty(sanitizedRun, "routePlanId", string(run.routePlanId, "run.routePlanId", { pattern: SAFE_ID, maximum: 256, nullable: true, optional: true }));
+  optionalProperty(sanitizedRun, "pullDataStatus", run.pullDataStatus === undefined ? undefined : enumeration(run.pullDataStatus, ["progress-only", "build-mismatch", "dungeon-unknown", "knowledge-unavailable"], "run.pullDataStatus"));
   optionalProperty(sanitizedRun, "completedAt", integer(run.completedAt, "run.completedAt", { minimum: 1, nullable: true, optional: true }));
   optionalProperty(sanitizedRun, "durationMs", integer(run.durationMs, "run.durationMs", { maximum: 864000000, nullable: true, optional: true }));
 
@@ -205,7 +206,7 @@ export function sanitizeRun(input, audit = { strippedFieldCount: 0 }) {
   if (input.pulls !== undefined) {
     pulls = array(input.pulls, "pulls", 1000).map((candidate, index) => {
       const pull = object(candidate, `pulls[${index}]`);
-      dropUnknown(pull, ["order", "plannedPullId", "startedAt", "completedAt", "durationMs", "enemies", "enemyForces", "deaths"], audit);
+      dropUnknown(pull, ["order", "plannedPullId", "startedAt", "completedAt", "durationMs", "enemies", "enemyForces", "enemyForcesSource", "enemyForcesStart", "enemyForcesEnd", "enemyIdentityStatus", "deaths"], audit);
       const enemies = array(pull.enemies, `pulls[${index}].enemies`, 100).map((candidateEnemy, enemyIndex) => {
         const enemy = object(candidateEnemy, `pulls[${index}].enemies[${enemyIndex}]`);
         dropUnknown(enemy, ["npcId", "count"], audit);
@@ -224,6 +225,10 @@ export function sanitizeRun(input, audit = { strippedFieldCount: 0 }) {
         deaths: integer(pull.deaths, `pulls[${index}].deaths`, { maximum: 100000 }),
       };
       optionalProperty(sanitizedPull, "plannedPullId", string(pull.plannedPullId, `pulls[${index}].plannedPullId`, { pattern: /^[a-z0-9][a-z0-9-]+$/, maximum: 128, nullable: true, optional: true }));
+      optionalProperty(sanitizedPull, "enemyForcesSource", pull.enemyForcesSource === undefined ? undefined : enumeration(pull.enemyForcesSource, ["scenario-progress", "canonical-npc-sum", "unavailable"], `pulls[${index}].enemyForcesSource`));
+      optionalProperty(sanitizedPull, "enemyForcesStart", integer(pull.enemyForcesStart, `pulls[${index}].enemyForcesStart`, { maximum: 1000000, nullable: true, optional: true }));
+      optionalProperty(sanitizedPull, "enemyForcesEnd", integer(pull.enemyForcesEnd, `pulls[${index}].enemyForcesEnd`, { maximum: 1000000, nullable: true, optional: true }));
+      optionalProperty(sanitizedPull, "enemyIdentityStatus", pull.enemyIdentityStatus === undefined ? undefined : enumeration(pull.enemyIdentityStatus, ["available", "unavailable-secret-values"], `pulls[${index}].enemyIdentityStatus`));
       return sanitizedPull;
     });
   }
@@ -245,6 +250,8 @@ export function sanitizeRun(input, audit = { strippedFieldCount: 0 }) {
     group,
     privacy: { containsNames: false, containsChat: false },
   };
+  optionalProperty(result.collector, "knowledgeBuild", string(collector.knowledgeBuild, "collector.knowledgeBuild", { pattern: /^\d+\.\d+\.\d+\.\d+$/, maximum: 48, nullable: true, optional: true }));
+  optionalProperty(result.collector, "knowledgeRevision", string(collector.knowledgeRevision, "collector.knowledgeRevision", { pattern: /^[a-f0-9]{64}$/, maximum: 64, nullable: true, optional: true }));
   if (pulls !== undefined) result.pulls = pulls;
   validateObservationConsistency(result);
   return result;
@@ -252,6 +259,13 @@ export function sanitizeRun(input, audit = { strippedFieldCount: 0 }) {
 
 function validateObservationConsistency(observation) {
   const { run } = observation;
+  if (run.pullDataStatus === "progress-only"
+    && observation.collector.knowledgeBuild !== `${observation.game.version}.${observation.game.build}`) {
+    reject("inconsistent-knowledge-build", "Progress telemetry requires knowledge matching the observed game build");
+  }
+  if (run.pullDataStatus === "progress-only" && !/^[a-f0-9]{64}$/.test(observation.collector.knowledgeRevision ?? "")) {
+    reject("inconsistent-knowledge-build", "Progress telemetry requires a generated knowledge revision");
+  }
   const finished = ["completed", "abandoned"].includes(run.status);
   if (finished && (!Number.isInteger(run.completedAt) || !Number.isInteger(run.durationMs))) reject("inconsistent-time", "Finished run is missing completion timing");
   if (!finished && (run.completedAt != null || run.durationMs != null)) reject("inconsistent-time", "Started run contains completion timing");
@@ -266,6 +280,18 @@ function validateObservationConsistency(observation) {
       reject("inconsistent-time", "Pull duration does not match its timestamps");
     }
     if (finished && pull.completedAt !== null && pull.completedAt > run.completedAt) reject("inconsistent-time", "Pull timing falls outside the run");
+    if (pull.enemyForcesSource === "scenario-progress") {
+      if (!Number.isInteger(pull.enemyForcesStart) || !Number.isInteger(pull.enemyForcesEnd)
+        || pull.enemyForcesEnd < pull.enemyForcesStart
+        || pull.enemyForces !== pull.enemyForcesEnd - pull.enemyForcesStart) {
+        reject("inconsistent-forces", "Scenario progress does not match the pull enemy-forces delta");
+      }
+      if (pull.enemyIdentityStatus !== "unavailable-secret-values" || pull.enemies.length !== 0) {
+        reject("inconsistent-forces", "Scenario-only pull must not claim enemy identities");
+      }
+    } else if (pull.enemyForcesSource === "unavailable" && (pull.enemyForces !== 0 || pull.enemyForcesStart != null || pull.enemyForcesEnd != null)) {
+      reject("inconsistent-forces", "Unavailable enemy forces must use zero with null progress snapshots");
+    }
     deaths += pull.deaths;
   }
   if (deaths > run.deathCount) reject("inconsistent-deaths", "Pull deaths exceed the run death count");

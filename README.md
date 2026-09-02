@@ -68,6 +68,8 @@ npm run import:savedvariables -- --input <WHELPCollector.lua> [--output <sanitiz
 
 The importer strips unknown fields, excludes active state, quarantines malformed runs, and hashes sanitized observations for duplicate detection. Raw SavedVariables stay private; see `docs/SAVEDVARIABLES_IMPORT.md`.
 
+The addon now compiles build-stamped dungeon totals from canonical JSON and records Patch 12-safe pull segments using banked scenario progress. It explicitly does not collect secret enemy identities or use the protected combat log. See `docs/COLLECTOR.md`.
+
 To regenerate the seven season-wide dungeon packages described by the checked-in import manifest:
 
 ```bash

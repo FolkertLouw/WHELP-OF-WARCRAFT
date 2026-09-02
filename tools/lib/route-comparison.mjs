@@ -95,7 +95,9 @@ export function compareRunToRoute(route, observation) {
       enemyForcesDelta: observed.enemyForces - planned.enemyForces,
       durationMs: observed.durationMs,
       deaths: observed.deaths,
-      enemyCountDrift: compareEnemies(planned.enemies, observed.enemies),
+      enemyCountDrift: observed.enemyIdentityStatus === "unavailable-secret-values"
+        ? null
+        : compareEnemies(planned.enemies, observed.enemies),
     };
   });
 
@@ -114,6 +116,9 @@ export function compareRunToRoute(route, observation) {
 
   if (inferredMatches > 0) {
     warnings.push(`${inferredMatches} pull match(es) were inferred by order; plannedPullId is more reliable when pulls split, merge, or reorder.`);
+  }
+  if ((observation.pulls ?? []).some((pull) => pull.enemyIdentityStatus === "unavailable-secret-values")) {
+    warnings.push("Enemy identities were unavailable under Patch 12 secret-value restrictions; count drift is omitted for those pulls.");
   }
   if (!observation.pulls?.length) warnings.push("The observation has no pull summaries, so pull-level comparison is unavailable.");
   warnings.push("This report describes one observed run; it is evidence for review, not proof that the route is strategically optimal.");
@@ -145,6 +150,9 @@ export function compareRunToRoute(route, observation) {
       gameVersion: observation.game?.version ?? null,
       gameBuild: observation.game?.build ?? null,
       collectorVersion: observation.collector?.version ?? null,
+      knowledgeBuild: observation.collector?.knowledgeBuild ?? null,
+      knowledgeRevision: observation.collector?.knowledgeRevision ?? null,
+      pullDataStatus: observation.run.pullDataStatus ?? null,
       keystoneLevel: observation.run.keystoneLevel ?? null,
       affixIds: observation.run.affixIds ?? [],
       startedAt: observation.run.startedAt,

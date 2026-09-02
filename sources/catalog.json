@@ -2,6 +2,27 @@
   "schemaVersion": 1,
   "sources": [
     {
+      "id": "blizzard-generated-scenario-info-api-12.1",
+      "publisher": "Blizzard Entertainment",
+      "title": "Generated ScenarioInfo API documentation",
+      "url": "https://github.com/Gethe/wow-ui-source/blob/live/Interface/AddOns/Blizzard_APIDocumentationGenerated/ScenarioInfoDocumentation.lua",
+      "usage": "Runtime contract for scenario step and criteria fields, including weighted progress and secret per-unit criteria values. Reviewed 2026-09-02."
+    },
+    {
+      "id": "blizzard-generated-challenge-mode-api-12.1",
+      "publisher": "Blizzard Entertainment",
+      "title": "Generated ChallengeModeInfo API documentation",
+      "url": "https://github.com/tomrus88/BlizzardInterfaceCode/blob/master/Interface/AddOns/Blizzard_APIDocumentationGenerated/ChallengeModeInfoDocumentation.lua",
+      "usage": "Runtime contract for challenge-mode start, completion, reset, and death-count observation. Reviewed 2026-09-02."
+    },
+    {
+      "id": "patch-12-secret-value-addon-evidence",
+      "publisher": "mythicplus-timer-and-tools contributors",
+      "title": "Patch 12 Mythic+ addon limitations",
+      "url": "https://github.com/Friftycode/mythicplus-timer-and-tools",
+      "usage": "Corroborating live-addon evidence that Patch 12 combat-log registration and per-unit force/GUID processing are unsafe inside keys. WHELP independently uses only banked scenario criteria. Reviewed 2026-09-02."
+    },
+    {
       "id": "blizzard-midnight-season-2-launch",
       "publisher": "Blizzard Entertainment",
       "title": "Midnight Season 2 is Now Live!",

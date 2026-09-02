@@ -12,11 +12,14 @@
     "challengeMapId": { "type": "integer", "minimum": 1 },
     "observation": {
       "type": "object",
-      "required": ["gameVersion", "gameBuild", "collectorVersion", "keystoneLevel", "affixIds", "startedAt", "status"],
+      "required": ["gameVersion", "gameBuild", "collectorVersion", "knowledgeBuild", "knowledgeRevision", "pullDataStatus", "keystoneLevel", "affixIds", "startedAt", "status"],
       "properties": {
         "gameVersion": { "type": ["string", "null"] },
         "gameBuild": { "type": ["string", "null"] },
         "collectorVersion": { "type": ["string", "null"] },
+        "knowledgeBuild": { "type": ["string", "null"] },
+        "knowledgeRevision": { "type": ["string", "null"], "pattern": "^[a-f0-9]{64}$" },
+        "pullDataStatus": { "enum": ["progress-only", "build-mismatch", "dungeon-unknown", "knowledge-unavailable", null] },
         "keystoneLevel": { "type": ["integer", "null"], "minimum": 2 },
         "affixIds": { "type": "array", "items": { "type": "integer", "minimum": 1 } },
         "startedAt": { "type": "integer", "minimum": 1 },
@@ -68,7 +71,7 @@
           "durationMs": { "type": ["integer", "null"], "minimum": 0 },
           "deaths": { "type": ["integer", "null"], "minimum": 0 },
           "enemyCountDrift": {
-            "type": "array",
+            "type": ["array", "null"],
             "items": {
               "type": "object",
               "required": ["npcId", "plannedCount", "observedCount", "delta"],

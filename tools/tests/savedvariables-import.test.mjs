@@ -2,7 +2,7 @@ import assert from "node:assert/strict";
 import { readFile } from "node:fs/promises";
 import path from "node:path";
 import test from "node:test";
-import { importWhelpSavedVariables, parseWhelpSavedVariables } from "../lib/savedvariables-import.mjs";
+import { importWhelpSavedVariables, parseWhelpSavedVariables, sanitizeRun } from "../lib/savedvariables-import.mjs";
 
 const fixturePath = path.join(import.meta.dirname, "fixtures", "savedvariables.synthetic.lua");
 
@@ -45,6 +45,37 @@ test("quarantines invalid observations without echoing their values", async () =
   assert.equal(bundle.audit.exportedRunCount, 1);
   assert.equal(bundle.audit.rejectedRunCount, 1);
   assert.deepEqual(bundle.rejections, [{ index: 1, code: "invalid-record" }]);
+});
+
+test("preserves internally consistent scenario-progress pull evidence", async () => {
+  const database = parseWhelpSavedVariables(await readFile(fixturePath, "utf8"));
+  const raw = structuredClone(database.runs[0]);
+  raw.collector.knowledgeBuild = "12.1.0.69587";
+  raw.collector.knowledgeRevision = "a".repeat(64);
+  raw.run.pullDataStatus = "progress-only";
+  raw.pulls = [{
+    order: 1,
+    startedAt: 1788300005,
+    completedAt: 1788300025,
+    durationMs: 20000,
+    enemies: [],
+    enemyForces: 7,
+    enemyForcesSource: "scenario-progress",
+    enemyForcesStart: 10,
+    enemyForcesEnd: 17,
+    enemyIdentityStatus: "unavailable-secret-values",
+    deaths: 0,
+  }];
+  const observation = sanitizeRun(raw);
+  assert.equal(observation.pulls[0].enemyForces, 7);
+  assert.equal(observation.pulls[0].enemyIdentityStatus, "unavailable-secret-values");
+  raw.pulls[0].enemyForces = 8;
+  assert.throws(() => sanitizeRun(raw), /Scenario progress/);
+  raw.pulls[0].enemyForces = 0;
+  raw.pulls[0].enemyForcesSource = "unavailable";
+  delete raw.pulls[0].enemyForcesStart;
+  delete raw.pulls[0].enemyForcesEnd;
+  assert.equal(sanitizeRun(raw).pulls[0].enemyForcesSource, "unavailable");
 });
 
 test("rejects executable, sparse, and unexpected SavedVariables programs", () => {

@@ -7,6 +7,9 @@ for _, eventName in ipairs({
     "CHALLENGE_MODE_COMPLETED",
     "CHALLENGE_MODE_RESET",
     "CHALLENGE_MODE_DEATH_COUNT_UPDATED",
+    "PLAYER_REGEN_DISABLED",
+    "PLAYER_REGEN_ENABLED",
+    "SCENARIO_CRITERIA_UPDATE",
     "ENCOUNTER_START",
     "ENCOUNTER_END",
 }) do
@@ -45,6 +48,14 @@ frame:SetScript("OnEvent", function(_, event, ...)
         WHELP.Collector:AbandonRun()
     elseif event == "CHALLENGE_MODE_DEATH_COUNT_UPDATED" then
         WHELP.Collector:UpdateDeathCount()
+    elseif event == "PLAYER_REGEN_DISABLED" then
+        WHELP.Collector:UpdateDeathCount()
+        WHELP.PullTracker:StartPull()
+    elseif event == "PLAYER_REGEN_ENABLED" then
+        WHELP.Collector:UpdateDeathCount()
+        WHELP.PullTracker:EndPull()
+    elseif event == "SCENARIO_CRITERIA_UPDATE" then
+        WHELP.PullTracker:RefreshProgress()
     elseif event == "ENCOUNTER_START" then
         local encounterId = ...
         WHELP.Collector:StartEncounter(encounterId)

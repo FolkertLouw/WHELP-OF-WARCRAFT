@@ -100,19 +100,22 @@ function WHELP.Collector:StartRun()
         group = groupSnapshot(),
         privacy = { containsNames = false, containsChat = false },
     }
+    WHELP.PullTracker:Configure()
     WHELP:Print("Started privacy-safe run observation.")
 end
 
 local function finishRun(status)
     local observation = WHELP.db.activeRun
     if not observation then return end
+    WHELP.Collector:UpdateDeathCount()
+    WHELP.PullTracker:EndPull()
     observation.run.completedAt = WHELP:Now()
     observation.run.durationMs = math.max(0, observation.run.completedAt - observation.run.startedAt) * 1000
     observation.run.status = status
-    WHELP.Collector:UpdateDeathCount()
     WHELP.Database:AddRun(observation)
     WHELP.db.activeRun = nil
     WHELP.db.activeEncounter = nil
+    WHELP.PullTracker:Reset()
 end
 
 function WHELP.Collector:CompleteRun()

@@ -15,3 +15,5 @@ WHELP accepts canonical facts, curated strategy, schemas, tooling, and sanitized
 Observations do not become canonical facts merely because they validate. New strategy remains `draft` until reviewed and corroborated.
 
 Raw combat logs and complete SavedVariables files must not be attached to a public pull request.
+
+After changing a current season's dungeon IDs or enemy-forces values, run `npm run generate:addon-knowledge`. The test suite rejects a generated addon lookup that no longer matches canonical JSON.

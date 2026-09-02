@@ -12,7 +12,9 @@
       "required": ["name", "version"],
       "properties": {
         "name": { "const": "WHELP Collector" },
-        "version": { "type": "string" }
+        "version": { "type": "string" },
+        "knowledgeBuild": { "type": ["string", "null"] },
+        "knowledgeRevision": { "type": ["string", "null"], "pattern": "^[a-f0-9]{64}$" }
       },
       "additionalProperties": false
     },
@@ -40,6 +42,7 @@
         "durationMs": { "type": ["integer", "null"], "minimum": 0 },
         "deathCount": { "type": "integer", "minimum": 0 },
         "deathTimeLostMs": { "type": "integer", "minimum": 0 },
+        "pullDataStatus": { "enum": ["progress-only", "build-mismatch", "dungeon-unknown", "knowledge-unavailable"] },
         "status": { "enum": ["started", "completed", "abandoned"] }
       },
       "additionalProperties": false
@@ -83,6 +86,10 @@
             }
           },
           "enemyForces": { "type": "integer", "minimum": 0 },
+          "enemyForcesSource": { "enum": ["scenario-progress", "canonical-npc-sum", "unavailable"] },
+          "enemyForcesStart": { "type": ["integer", "null"], "minimum": 0 },
+          "enemyForcesEnd": { "type": ["integer", "null"], "minimum": 0 },
+          "enemyIdentityStatus": { "enum": ["available", "unavailable-secret-values"] },
           "deaths": { "type": "integer", "minimum": 0 }
         },
         "additionalProperties": false

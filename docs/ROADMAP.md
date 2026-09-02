@@ -10,7 +10,7 @@
 
 ## Phase 2 — local evidence loop
 
-- Complete the WHELP Collector run summary.
+- Complete the WHELP Collector run summary. Run, encounter, death, and Patch 12-safe pull progress are implemented; live-client field verification and richer non-secret events remain.
 - Build a SavedVariables importer and sanitizer. The private-file parser, allowlist, quarantine audit, and duplicate hashes are implemented; ingestion-service submission remains.
 - Import MDT routes without treating them as verified automatically.
 - Parse optional combat logs for deaths, casts, interrupts, dispels, and encounter timing.

@@ -35,6 +35,9 @@ test("compares explicit pull links, count drift, deaths, and checkpoints", () =>
     gameVersion: "12.1.0",
     gameBuild: "69587",
     collectorVersion: "0.2.0",
+    knowledgeBuild: null,
+    knowledgeRevision: null,
+    pullDataStatus: null,
     keystoneLevel: 10,
     affixIds: [9],
     startedAt: 1000,
@@ -57,6 +60,24 @@ test("labels order-only matches as inferred", () => {
   assert.equal(report.matchQuality.orderInferredMatches, 1);
   assert.equal(report.matchQuality.missingPlannedPulls, 1);
   assert.match(report.warnings[0], /inferred by order/);
+});
+
+test("does not invent enemy identity drift for Patch 12 scenario-only pulls", () => {
+  const report = compareRunToRoute(route, observation([
+    {
+      order: 1,
+      enemyForces: 5,
+      enemyForcesSource: "scenario-progress",
+      enemyForcesStart: 0,
+      enemyForcesEnd: 5,
+      enemyIdentityStatus: "unavailable-secret-values",
+      durationMs: 20,
+      deaths: 0,
+      enemies: [],
+    },
+  ]));
+  assert.equal(report.pulls[0].enemyCountDrift, null);
+  assert.match(report.warnings.join(" "), /secret-value restrictions/);
 });
 
 test("keeps unknown planned IDs visible as extra pulls", () => {
