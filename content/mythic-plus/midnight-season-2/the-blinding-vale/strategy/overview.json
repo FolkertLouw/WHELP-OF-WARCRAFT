@@ -1,0 +1,20 @@
+{
+  "$schema": "../../../../../schemas/strategy-note.schema.json",
+  "schemaVersion": 1,
+  "recordType": "strategy-note",
+  "id": "the-blinding-vale/overview",
+  "status": "corroborated",
+  "validity": { "fromBuild": "12.1.0.69587", "untilBuild": null, "seasonId": null, "seasonSlug": "midnight-season-2" },
+  "context": { "contentType": "mythic-plus", "instanceMapId": 2859, "encounterId": null, "npcIds": [245336, 245484, 245345, 254850, 243028, 243029, 243030, 244887, 245912, 247676], "spellIds": [] },
+  "category": "other",
+  "summary": "The Blinding Vale offers a left-or-right route choice and mechanics centered on interrupts, blossom interception, roots, locked cones, and damage-buff orbs.",
+  "actions": [
+    "Interrupt Light Bolt Volley, Light Bolt, Disorienting Screech, Warden's Wrath, and Lightspore Shot.",
+    "Break players out of Bloodthorn Roots and focus Lightgorged Lasher shields before their nearby healing becomes costly.",
+    "For the Lightblossom Trinity, step into the blossom to intercept the beam rather than standing in front of it.",
+    "For Lightwarden Ruia, spread the locked Pulverizing Strikes cones and stand still once targeted.",
+    "For Ziekket, soak Lightbloom's Essence for its damage benefit while preparing for the incoming damage, then aim Concentrated Lightbeam through dead adds."
+  ],
+  "roles": ["tank", "healer", "damage"],
+  "provenance": [{ "kind": "external-reference", "description": "Original compact strategy summary derived from targeted review of Wowhead's Patch 12.1 dungeon overview.", "url": "https://www.wowhead.com/guide/midnight/the-blinding-vale-dungeon-overview-location-rewards", "retrievedAt": "2026-09-02T11:30:00+02:00" }]
+}

@@ -1,0 +1,20 @@
+{
+  "$schema": "../../../../../schemas/strategy-note.schema.json",
+  "schemaVersion": 1,
+  "recordType": "strategy-note",
+  "id": "murder-row/overview",
+  "status": "corroborated",
+  "validity": { "fromBuild": "12.1.0.69587", "untilBuild": null, "seasonId": null, "seasonSlug": "midnight-season-2" },
+  "context": { "contentType": "mythic-plus", "instanceMapId": 2813, "encounterId": null, "npcIds": [236084, 236082, 236902, 236897, 235267, 235268, 235265, 252458, 234649, 234647, 237415], "spellIds": [] },
+  "category": "other",
+  "summary": "Murder Row emphasizes interrupt coverage, dispel variety, environmental objects, and planned use of boss cover mechanics.",
+  "actions": [
+    "Interrupt Fel Missiles, Seduction, Felstorm, Fel Rage, Health Funnel, and Chaos Bolt.",
+    "Plan dispels for Corroding Spittle, Heartstop Poison, Murder in a Row, and Curse of Doom; use offensive removal on Back to Work and Fel Rage when appropriate.",
+    "Collect Fel Crystals in the opening area and exchange them with vendors for dungeon buffs.",
+    "On Zaen, use the first Fire Bomb set to destroy the first Fel Barrel and preserve the second barrel as cover for Murder in a Row.",
+    "On Lithiel, keep summoned adds controlled and use the group gateway interaction to cross the expanding Malefic Wave."
+  ],
+  "roles": ["tank", "healer", "damage"],
+  "provenance": [{ "kind": "external-reference", "description": "Original compact strategy summary derived from targeted review of Wowhead's Patch 12.1 dungeon overview.", "url": "https://www.wowhead.com/guide/midnight/murder-row-dungeon-overview-location-rewards", "retrievedAt": "2026-09-02T11:30:00+02:00" }]
+}

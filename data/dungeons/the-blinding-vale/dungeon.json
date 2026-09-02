@@ -20,10 +20,14 @@
     2500
   ],
   "enemyForcesTotal": 686,
-  "mythicPlusTimerSeconds": null,
-  "requiredLevel": null,
-  "location": null,
-  "entrance": null,
+  "mythicPlusTimerSeconds": 1860,
+  "requiredLevel": 90,
+  "location": "Harandar",
+  "entrance": {
+    "uiMapId": 2576,
+    "x": 27.8,
+    "y": 77.9
+  },
   "encounters": [
     {
       "name": "Lightblossom Trinity",
@@ -190,6 +194,12 @@
       "description": "Instance, encounter, and boss NPC identifiers corroborated against DBM Dungeons r261.",
       "url": "https://github.com/DeadlyBossMods/DBM-Dungeons",
       "retrievedAt": "2026-09-02T11:15:00+02:00"
+    },
+    {
+      "kind": "external-reference",
+      "description": "Level requirement, Mythic+ timer, location, entrance coordinates, boss count, and teleport unlock requirement corroborated against Wowhead's Patch 12.1 dungeon overview.",
+      "url": "https://www.wowhead.com/guide/midnight/the-blinding-vale-dungeon-overview-location-rewards",
+      "retrievedAt": "2026-09-02T11:30:00+02:00"
     }
   ]
 }

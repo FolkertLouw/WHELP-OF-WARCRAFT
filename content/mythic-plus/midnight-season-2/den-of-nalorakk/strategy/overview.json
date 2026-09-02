@@ -1,0 +1,20 @@
+{
+  "$schema": "../../../../../schemas/strategy-note.schema.json",
+  "schemaVersion": 1,
+  "recordType": "strategy-note",
+  "id": "den-of-nalorakk/overview",
+  "status": "corroborated",
+  "validity": { "fromBuild": "12.1.0.69587", "untilBuild": null, "seasonId": null, "seasonSlug": "midnight-season-2" },
+  "context": { "contentType": "mythic-plus", "instanceMapId": 2825, "encounterId": null, "npcIds": [245855, 241814, 241808, 241872, 245139, 245145, 241816, 244100, 248710], "spellIds": [] },
+  "category": "other",
+  "summary": "Den of Nalorakk combines dangerous priority trash with boss checks built around mushroom soaks, the storm eye, and Zul'jarra's protection.",
+  "actions": [
+    "Interrupt Scavenge, Healing Breeze, Frigid Roar, Winter's Shroud, and Arc Lightning.",
+    "Plan removals for Insatiable Hunger, Toxic Spores, Cryo Surge, and Glacial Torment; remove or purge Mother's Wrath and Bestial Wrath where the group composition allows.",
+    "Avoid combining multiple Spirits of Hunger until the group can safely handle their pressure.",
+    "Soak the Hoardmonger's Spoiled Supplies, remain in the Sentinel's safe storm eye, and use Zul'jarra's shield against Nalorakk's Overwhelming Onslaught.",
+    "During Fury of the War God, intercept charging bear echoes before they reach Zul'jarra."
+  ],
+  "roles": ["tank", "healer", "damage"],
+  "provenance": [{ "kind": "external-reference", "description": "Original compact strategy summary derived from targeted review of Wowhead's Patch 12.1 dungeon overview.", "url": "https://www.wowhead.com/guide/midnight/den-of-nalorakk-dungeon-overview-location-rewards", "retrievedAt": "2026-09-02T11:30:00+02:00" }]
+}

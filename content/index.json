@@ -18,6 +18,10 @@
     { "id": "altar-of-fangs/zuljan-coordination", "path": "mythic-plus/midnight-season-2/altar-of-fangs/strategy/zuljan-coordination.json", "status": "corroborated" },
     { "id": "altar-of-fangs/mutating-elixir", "path": "mythic-plus/midnight-season-2/altar-of-fangs/strategy/mutating-elixir.json", "status": "draft" },
     { "id": "altar-of-fangs/restoration-shaman-utility", "path": "mythic-plus/midnight-season-2/altar-of-fangs/specs/restoration-shaman.json", "status": "corroborated" },
-    { "id": "altar-of-fangs/enhancement-shaman-utility", "path": "mythic-plus/midnight-season-2/altar-of-fangs/specs/enhancement-shaman.json", "status": "corroborated" }
+    { "id": "altar-of-fangs/enhancement-shaman-utility", "path": "mythic-plus/midnight-season-2/altar-of-fangs/specs/enhancement-shaman.json", "status": "corroborated" },
+    { "id": "den-of-nalorakk/overview", "path": "mythic-plus/midnight-season-2/den-of-nalorakk/strategy/overview.json", "status": "corroborated" },
+    { "id": "murder-row/overview", "path": "mythic-plus/midnight-season-2/murder-row/strategy/overview.json", "status": "corroborated" },
+    { "id": "the-blinding-vale/overview", "path": "mythic-plus/midnight-season-2/the-blinding-vale/strategy/overview.json", "status": "corroborated" },
+    { "id": "voidscar-arena/overview", "path": "mythic-plus/midnight-season-2/voidscar-arena/strategy/overview.json", "status": "corroborated" }
   ]
 }

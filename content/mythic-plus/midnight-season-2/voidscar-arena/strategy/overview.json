@@ -1,0 +1,20 @@
+{
+  "$schema": "../../../../../schemas/strategy-note.schema.json",
+  "schemaVersion": 1,
+  "recordType": "strategy-note",
+  "id": "voidscar-arena/overview",
+  "status": "corroborated",
+  "validity": { "fromBuild": "12.1.0.69587", "untilBuild": null, "seasonId": null, "seasonSlug": "midnight-season-2" },
+  "context": { "contentType": "mythic-plus", "instanceMapId": 2923, "encounterId": null, "npcIds": [238883, 252072, 249590, 243766, 244708, 243983, 263228, 243985, 239008, 248015], "spellIds": [] },
+  "category": "other",
+  "summary": "Voidscar Arena combines a route-defining secondary-stat choice with priority stops and spatial boss mechanics.",
+  "actions": [
+    "Interrupt Demoralizing Shout, Shadowbolt Volley, Violent Sand, Mad Shriek, and Mending Void.",
+    "Remove Melt Armor and Corrosive Essence; treat Mind-Numbing Poison as recovery after a failed mechanic and purge Bolster.",
+    "Choose the opening path deliberately: the left path grants a 30-minute Versatility bonus and the right path grants a 30-minute Mastery bonus.",
+    "Face Brutok into a wall, burst the Protective Turtle during its vulnerable window, and kill a Devouring Brutalizer's selected victim before the enemy can heal.",
+    "On Charonus, assign singularities with pings and kite Gravitic Orbs into the chosen singularity."
+  ],
+  "roles": ["tank", "healer", "damage"],
+  "provenance": [{ "kind": "external-reference", "description": "Original compact strategy summary derived from targeted review of Wowhead's Patch 12.1 dungeon overview.", "url": "https://www.wowhead.com/guide/midnight/voidscar-arena-dungeon-overview-location-rewards", "retrievedAt": "2026-09-02T11:30:00+02:00" }]
+}

@@ -7,6 +7,7 @@
   "dungeons": [
     {
       "slug": "den-of-nalorakk", "expansion": "Midnight", "mdtFile": "DenOfNalorakk.lua", "instanceMapId": 2825,
+      "overview": { "mythicPlusTimerSeconds": 1920, "requiredLevel": 90, "location": "Southwestern Zul'Aman", "entrance": { "uiMapId": 2437, "x": 31.4, "y": 83.9 }, "url": "https://www.wowhead.com/guide/midnight/den-of-nalorakk-dungeon-overview-location-rewards" },
       "encounters": [
         { "name": "The Hoardmonger", "encounterId": 3207, "npcId": 248710 },
         { "name": "Sentinel of Winter", "encounterId": 3208, "npcId": 244100 },
@@ -15,6 +16,7 @@
     },
     {
       "slug": "murder-row", "expansion": "Midnight", "mdtFile": "MurderRow.lua", "instanceMapId": 2813,
+      "overview": { "mythicPlusTimerSeconds": 2040, "requiredLevel": 90, "location": "Silvermoon City", "entrance": { "uiMapId": 2393, "x": 56.2, "y": 61.1 }, "url": "https://www.wowhead.com/guide/midnight/murder-row-dungeon-overview-location-rewards" },
       "encounters": [
         { "name": "Kystia Manaheart", "encounterId": 3101, "npcId": 252458 },
         { "name": "Zaen Bladesorrow", "encounterId": 3102, "npcId": 234649 },
@@ -24,6 +26,7 @@
     },
     {
       "slug": "the-blinding-vale", "expansion": "Midnight", "mdtFile": "TheBlindingVale.lua", "instanceMapId": 2859,
+      "overview": { "mythicPlusTimerSeconds": 1860, "requiredLevel": 90, "location": "Harandar", "entrance": { "uiMapId": 2576, "x": 27.8, "y": 77.9 }, "url": "https://www.wowhead.com/guide/midnight/the-blinding-vale-dungeon-overview-location-rewards" },
       "encounters": [
         { "name": "Lightblossom Trinity", "encounterId": 3199, "npcId": 243028 },
         { "name": "Ikuzz the Light Hunter", "encounterId": 3200, "npcId": 244887 },
@@ -33,6 +36,7 @@
     },
     {
       "slug": "voidscar-arena", "expansion": "Midnight", "mdtFile": "VoidscarArena.lua", "instanceMapId": 2923,
+      "overview": { "mythicPlusTimerSeconds": 1800, "requiredLevel": 90, "location": "Slayer's Rise in northern Voidstorm", "entrance": { "uiMapId": 2444, "x": 53.6, "y": 34.4 }, "url": "https://www.wowhead.com/guide/midnight/voidscar-arena-dungeon-overview-location-rewards" },
       "encounters": [
         { "name": "Taz'Rah", "encounterId": 3285, "npcId": 238887 },
         { "name": "Atroxus", "encounterId": 3286, "npcId": 239008 },

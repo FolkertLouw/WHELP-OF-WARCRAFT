@@ -136,6 +136,12 @@ for (const { file, value } of records.filter(({ value }) => ["spec-note", "strat
     for (const npcId of value.context.npcIds ?? []) {
       if (!knownNpcIds.has(npcId)) fail(file, `unknown NPC ${npcId} for ${dungeon.value.id}`);
     }
+    if (value.context.encounterId !== null && value.context.encounterId !== undefined) {
+      const knownEncounterIds = new Set(dungeon.value.encounters.map((encounter) => encounter.encounterId));
+      if (!knownEncounterIds.has(value.context.encounterId)) {
+        fail(file, `unknown encounterId ${value.context.encounterId} for ${dungeon.value.id}`);
+      }
+    }
   }
 }
 
@@ -164,6 +170,21 @@ for (const dungeon of index.dungeons ?? []) {
       }
     } catch (error) {
       fail(indexPath, `cannot read dungeon ${dungeon[field]}: ${error.message}`);
+    }
+  }
+}
+const indexedDungeons = new Map((index.dungeons ?? []).map((entry) => [entry.id, entry]));
+for (const { file, value: season } of records.filter(({ value }) => value.recordType === "season")) {
+  for (const seasonalDungeon of season.dungeons ?? []) {
+    const entry = indexedDungeons.get(seasonalDungeon.id);
+    if (!entry) {
+      fail(file, `season dungeon ${seasonalDungeon.id} is absent from data/index.json`);
+      continue;
+    }
+    const dungeonRecord = records.find(({ value }) => value.recordType === "dungeon" && value.id === seasonalDungeon.id)?.value;
+    if (!dungeonRecord) fail(file, `season dungeon ${seasonalDungeon.id} has no loaded dungeon record`);
+    else if (dungeonRecord.challengeMapId !== seasonalDungeon.challengeMapId) {
+      fail(file, `${seasonalDungeon.id} challengeMapId ${seasonalDungeon.challengeMapId} does not match dungeon record ${dungeonRecord.challengeMapId}`);
     }
   }
 }

@@ -22,10 +22,14 @@
     2564
   ],
   "enemyForcesTotal": 729,
-  "mythicPlusTimerSeconds": null,
-  "requiredLevel": null,
-  "location": null,
-  "entrance": null,
+  "mythicPlusTimerSeconds": 1920,
+  "requiredLevel": 90,
+  "location": "Southwestern Zul'Aman",
+  "entrance": {
+    "uiMapId": 2437,
+    "x": 31.4,
+    "y": 83.9
+  },
   "encounters": [
     {
       "name": "The Hoardmonger",
@@ -222,6 +226,12 @@
       "description": "Instance, encounter, and boss NPC identifiers corroborated against DBM Dungeons r261.",
       "url": "https://github.com/DeadlyBossMods/DBM-Dungeons",
       "retrievedAt": "2026-09-02T11:15:00+02:00"
+    },
+    {
+      "kind": "external-reference",
+      "description": "Level requirement, Mythic+ timer, location, entrance coordinates, boss count, and teleport unlock requirement corroborated against Wowhead's Patch 12.1 dungeon overview.",
+      "url": "https://www.wowhead.com/guide/midnight/den-of-nalorakk-dungeon-overview-location-rewards",
+      "retrievedAt": "2026-09-02T11:30:00+02:00"
     }
   ]
 }

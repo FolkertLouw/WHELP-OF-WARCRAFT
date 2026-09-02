@@ -51,6 +51,34 @@
       "title": "All Dungeon Buffs in Midnight Season 2 Dungeons",
       "url": "https://www.wowhead.com/news/all-dungeon-buffs-in-midnight-season-2-dungeons-382688",
       "usage": "Discovery source for profession interactions. New reports remain draft until independently corroborated."
+    },
+    {
+      "id": "wowhead-den-of-nalorakk-12.1",
+      "publisher": "Wowhead",
+      "title": "Den of Nalorakk Dungeon Overview - World of Warcraft: Midnight",
+      "url": "https://www.wowhead.com/guide/midnight/den-of-nalorakk-dungeon-overview-location-rewards",
+      "usage": "Targeted corroboration of Patch 12.1 overview facts and compact strategy records."
+    },
+    {
+      "id": "wowhead-murder-row-12.1",
+      "publisher": "Wowhead",
+      "title": "Murder Row Dungeon Overview - World of Warcraft: Midnight",
+      "url": "https://www.wowhead.com/guide/midnight/murder-row-dungeon-overview-location-rewards",
+      "usage": "Targeted corroboration of Patch 12.1 overview facts and compact strategy records."
+    },
+    {
+      "id": "wowhead-the-blinding-vale-12.1",
+      "publisher": "Wowhead",
+      "title": "The Blinding Vale Dungeon Overview - World of Warcraft: Midnight",
+      "url": "https://www.wowhead.com/guide/midnight/the-blinding-vale-dungeon-overview-location-rewards",
+      "usage": "Targeted corroboration of Patch 12.1 overview facts and compact strategy records."
+    },
+    {
+      "id": "wowhead-voidscar-arena-12.1",
+      "publisher": "Wowhead",
+      "title": "Voidscar Arena Dungeon Overview - World of Warcraft: Midnight",
+      "url": "https://www.wowhead.com/guide/midnight/voidscar-arena-dungeon-overview-location-rewards",
+      "usage": "Targeted corroboration of Patch 12.1 overview facts and compact strategy records."
     }
   ]
 }

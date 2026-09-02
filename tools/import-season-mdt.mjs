@@ -43,13 +43,23 @@ for (const configured of manifest.dungeons) {
     url: "https://github.com/DeadlyBossMods/DBM-Dungeons",
     retrievedAt,
   }];
+  if (configured.overview) provenance.push({
+    kind: "external-reference",
+    description: "Level requirement, Mythic+ timer, location, entrance coordinates, boss count, and teleport unlock requirement corroborated against Wowhead's Patch 12.1 dungeon overview.",
+    url: configured.overview.url,
+    retrievedAt: "2026-09-02T11:30:00+02:00",
+  });
   const dungeon = {
     $schema: "../../../schemas/dungeon.schema.json", schemaVersion: 1, recordType: "dungeon",
     id: configured.slug, status: "corroborated", name: parsed.name, expansion: configured.expansion,
     validity, challengeMapId: parsed.challengeMapId, instanceMapId: configured.instanceMapId,
     teleportSpellId: parsed.teleportSpellId, uiMapId: null, zoneIds: parsed.zoneIds,
-    enemyForcesTotal: parsed.enemyForcesTotal, mythicPlusTimerSeconds: null, requiredLevel: null,
-    location: null, entrance: null, encounters: configured.encounters, enemies, provenance,
+    enemyForcesTotal: parsed.enemyForcesTotal,
+    mythicPlusTimerSeconds: configured.overview?.mythicPlusTimerSeconds ?? null,
+    requiredLevel: configured.overview?.requiredLevel ?? null,
+    location: configured.overview?.location ?? null,
+    entrance: configured.overview?.entrance ?? null,
+    encounters: configured.encounters, enemies, provenance,
   };
   const abilityEnemies = parsed.enemies.map((enemy) => ({
     name: enemy.name, npcId: enemy.npcId,
