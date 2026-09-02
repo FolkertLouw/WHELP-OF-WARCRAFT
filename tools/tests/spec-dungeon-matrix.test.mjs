@@ -26,6 +26,8 @@ const arcaneCapabilities = await loadJson("data", "specs", "mage", "arcane.json"
 const fireMageMatrix = await loadJson("content", "mythic-plus", "midnight-season-2", "specs", "fire-mage-utility-matrix.json");
 const frostMageMatrix = await loadJson("content", "mythic-plus", "midnight-season-2", "specs", "frost-mage-utility-matrix.json");
 const frostMageCapabilities = await loadJson("data", "specs", "mage", "frost.json");
+const protectionPaladinMatrix = await loadJson("content", "mythic-plus", "midnight-season-2", "specs", "protection-paladin-utility-matrix.json");
+const protectionPaladinCapabilities = await loadJson("data", "specs", "paladin", "protection.json");
 const season = await loadJson("data", "seasons", "midnight-season-2.json");
 
 test("Unholy matrix covers every Midnight Season 2 dungeon exactly once", () => {
@@ -238,4 +240,20 @@ test("Frost Mage matrix resolves tools and preserves self-only barrier removal",
   }
   assert.equal(tools.get("energized-barriers").scope, "self");
   assert.equal(tools.get("remove-curse").scope, "friendly-single");
+});
+
+test("Protection Paladin matrix covers the season and resolves every utility axis", () => {
+  assert.deepEqual(new Set(protectionPaladinMatrix.dungeons.map((entry) => entry.dungeonId)), new Set(season.dungeons.map((entry) => entry.id)));
+  const tools = new Map(protectionPaladinCapabilities.tools.map((tool) => [tool.id, tool]));
+  for (const axis of protectionPaladinMatrix.axes) {
+    for (const toolId of axis.toolIds) assert.ok(tools.has(toolId), `${axis.id} should resolve ${toolId}`);
+  }
+});
+
+test("Protection Paladin separates interrupt bounces, cleanses, and immunities", () => {
+  const tools = new Map(protectionPaladinCapabilities.tools.map((tool) => [tool.id, tool]));
+  assert.match(tools.get("avengers-shield").limitations.join(" "), /Only the primary target/);
+  assert.deepEqual(tools.get("cleanse-toxins").actions, ["cleanse-poison", "cleanse-disease"]);
+  assert.deepEqual(tools.get("blessing-of-spellwarding").actions, ["external-defensive"]);
+  assert.match(protectionPaladinMatrix.dungeons.find((entry) => entry.dungeonId === "ruby-life-pools").notes.join(" "), /does not remove Blaze of Glory/);
 });

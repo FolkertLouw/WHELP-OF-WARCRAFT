@@ -52,6 +52,14 @@ test("joins Frost Mage control to the exact Voidscar mechanic", () => {
   assert.ok(report.dungeons[0].mechanicSpellIds.includes(1263971));
 });
 
+test("joins Protection Paladin toxin removal without claiming Magic cleansing", () => {
+  const report = querySpecMatrix(matrices, capabilities, { spec: "protection-paladin", dungeon: "murder-row", rating: "always" });
+  const cleanse = report.dungeons[0].utilities.find((entry) => entry.axisId === "toxin-cleanse").tools[0];
+  assert.deepEqual(cleanse.actions, ["cleanse-poison", "cleanse-disease"]);
+  assert.match(cleanse.limitations.join(" "), /Does not remove harmful Magic/);
+  assert.ok(report.dungeons[0].mechanicSpellIds.includes(1216590));
+});
+
 test("surfaces action-level talent availability for Restoration Shaman", () => {
   const report = querySpecMatrix(matrices, capabilities, { spec: "restoration-shaman", dungeon: "den-of-nalorakk" });
   const purify = report.dungeons[0].utilities.find((entry) => entry.axisId === "improved-purify-spirit").tools[0];

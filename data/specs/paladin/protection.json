@@ -3,6 +3,7 @@
   "schemaVersion": 1,
   "recordType": "spec-capabilities",
   "id": "paladin/protection/capabilities",
+  "matrixRecordId": "midnight-season-2/protection-paladin-utility-matrix",
   "status": "corroborated",
   "validity": { "fromBuild": "12.1.0.69587", "untilBuild": null, "seasonId": null, "seasonSlug": "midnight-season-2" },
   "spec": { "classId": 2, "className": "Paladin", "specId": 66, "specName": "Protection", "slug": "protection-paladin" },
@@ -15,11 +16,16 @@
     { "id": "blessing-of-protection", "name": "Blessing of Protection", "spellId": 1022, "actions": ["external-defensive"], "availability": "talent", "scope": "friendly-single", "limitations": ["Protects against physical damage and effects", "Causes Forbearance", "Can cause the target to lose enemy aggression"] },
     { "id": "intercession", "name": "Intercession", "spellId": 391054, "actions": ["battle-resurrection"], "availability": "baseline", "scope": "friendly-single", "limitations": ["Requires a dead ally", "Uses the shared combat-resurrection limit"] },
     { "id": "devotion-aura", "name": "Devotion Aura", "spellId": 465, "actions": ["party-damage-reduction"], "availability": "specialization", "scope": "friendly-area", "limitations": ["Only affects allies within the aura range"] },
-    { "id": "divine-shield", "name": "Divine Shield", "spellId": 642, "actions": ["defensive"], "availability": "baseline", "scope": "self", "limitations": ["Personal immunity only", "Causes Forbearance", "May require cancellation or coordination while actively tanking"] }
+    { "id": "divine-shield", "name": "Divine Shield", "spellId": 642, "actions": ["defensive"], "availability": "baseline", "scope": "self", "limitations": ["Personal immunity only", "Causes Forbearance", "May require cancellation or coordination while actively tanking"] },
+    { "id": "avengers-shield", "name": "Avenger's Shield", "spellId": 31935, "actions": ["interrupt"], "availability": "talent", "scope": "enemy", "limitations": ["Only the primary target is interrupted and silenced", "Additional bounces deal damage but are not equivalent interrupts", "Can conflict with planned interrupt assignments"] },
+    { "id": "blessing-of-spellwarding", "name": "Blessing of Spellwarding", "spellId": 204018, "actions": ["external-defensive"], "availability": "talent", "scope": "friendly-single", "limitations": ["Replaces and shares a cooldown with Blessing of Protection", "Magic immunity does not remove existing effects", "Causes Forbearance"] },
+    { "id": "blessing-of-freedom", "name": "Blessing of Freedom", "spellId": 1044, "actions": ["cleanse-snare", "cleanse-root"], "availability": "talent", "scope": "friendly-single", "limitations": ["Movement-impairing effects only", "Does not remove unrelated harmful Magic effects"] }
   ],
   "provenance": [
     { "kind": "external-reference", "description": "Current Protection Paladin ability guide identifies Rebuke, Cleanse Toxins, control, auras, and blessing utility.", "url": "https://www.wowhead.com/guide/classes/paladin/protection/abilities-talents-pve-tank", "retrievedAt": "2026-09-02T16:30:00+02:00" },
     { "kind": "external-reference", "description": "Current Cleanse Toxins record confirms friendly Poison and Disease removal and its cooldown.", "url": "https://www.wowhead.com/spell=426184/cleanse-toxins", "retrievedAt": "2026-09-02T16:30:00+02:00" },
-    { "kind": "external-reference", "description": "Current Blessing of Sacrifice record confirms the external damage reduction, transfer, range, and stop condition.", "url": "https://www.wowhead.com/spell=6940/blessing-of-sacrifice", "retrievedAt": "2026-09-02T16:30:00+02:00" }
+    { "kind": "external-reference", "description": "Current Blessing of Sacrifice record confirms the external damage reduction, transfer, range, and stop condition.", "url": "https://www.wowhead.com/spell=6940/blessing-of-sacrifice", "retrievedAt": "2026-09-02T16:30:00+02:00" },
+    { "kind": "external-reference", "description": "Current Patch 12.1.0 Protection dungeon guide repeats Avenger's Shield, Cleanse, Blessing of Spellwarding, and Blessing of Freedom as its core dungeon utility and supplies affix recommendations.", "url": "https://www.wowhead.com/guide/classes/paladin/protection/mythic-plus-dungeon-tips", "retrievedAt": "2026-09-02T18:21:00+02:00" },
+    { "kind": "external-reference", "description": "Current spell records confirm Avenger's Shield's primary-target interrupt, Spellwarding's ally Magic immunity, and Freedom's movement-impairment immunity.", "url": "https://www.wowhead.com/spell=31935/avengers-shield", "retrievedAt": "2026-09-02T18:21:00+02:00" }
   ]
 }
