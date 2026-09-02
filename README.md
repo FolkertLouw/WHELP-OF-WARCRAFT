@@ -56,9 +56,10 @@ Query class and composition capabilities independently of a dungeon:
 ```bash
 npm run query:capabilities -- --specs holy-paladin,protection-paladin --action battle-resurrection
 npm run query:capabilities -- --specs holy-paladin,retribution-paladin --action cleanse-magic
+npm run query:capabilities -- --specs restoration-shaman,beast-mastery-hunter,marksmanship-hunter --action bloodlust
 ```
 
-Capability results preserve action-specific availability, so a talent-gated extension to a baseline spell remains visible.
+Capability results preserve action-specific availability, alternate faction spell IDs, and configuration requirements, so a talent-gated extension or pet-dependent group tool remains visible.
 
 To test the collector locally, copy `addon/WHELPCollector` into Retail's `Interface/AddOns` directory, restart WoW or run `/reload`, then use `/whelp status`.
 

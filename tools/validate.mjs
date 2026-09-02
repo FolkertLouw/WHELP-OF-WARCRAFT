@@ -90,10 +90,10 @@ function validateRecord(file, value) {
     requireFields(file, value, ["id", "status", "validity", "spec", "tools", "provenance"]);
     if (!Number.isInteger(value.spec?.specId) || value.spec.specId < 1) fail(file, "spec.specId must be a positive integer");
     const toolIds = (value.tools ?? []).map((tool) => tool.id);
-    const spellIds = (value.tools ?? []).map((tool) => tool.spellId);
+    const spellIds = (value.tools ?? []).flatMap((tool) => [tool.spellId, ...(tool.alternateSpellIds ?? [])]);
     if (new Set(toolIds).size !== toolIds.length) fail(file, "spec capability tool IDs must be unique");
     if (new Set(spellIds).size !== spellIds.length) fail(file, "spec capability spell IDs must be unique");
-    const allowedCapabilityActions = new Set(["interrupt", "purge", "cleanse-magic", "cleanse-curse", "cleanse-disease", "cleanse-poison", "soothe", "defensive", "crowd-control", "external-defensive", "battle-resurrection", "party-damage-reduction"]);
+    const allowedCapabilityActions = new Set(["interrupt", "purge", "cleanse-magic", "cleanse-curse", "cleanse-disease", "cleanse-poison", "soothe", "defensive", "crowd-control", "external-defensive", "battle-resurrection", "party-damage-reduction", "bloodlust"]);
     const allowedAvailability = new Set(["baseline", "specialization", "talent"]);
     const allowedScopes = new Set(["enemy", "friendly-single", "friendly-periodic-area", "friendly-area", "self", "area-enemy"]);
     for (const tool of value.tools ?? []) {
@@ -108,6 +108,9 @@ function validateRecord(file, value) {
       }
       if (!allowedAvailability.has(tool.availability)) fail(file, `spec tool ${tool.id} has unknown availability ${tool.availability}`);
       if (!allowedScopes.has(tool.scope)) fail(file, `spec tool ${tool.id} has unknown scope ${tool.scope}`);
+      for (const requirement of tool.requirements ?? []) {
+        if (!requirement.kind?.trim() || !requirement.value?.trim()) fail(file, `spec tool ${tool.id} has an invalid requirement`);
+      }
     }
   } else if (value.recordType === "spec-dungeon-matrix") {
     requireFields(file, value, ["id", "status", "validity", "spec", "axes", "dungeons", "affixes", "provenance"]);

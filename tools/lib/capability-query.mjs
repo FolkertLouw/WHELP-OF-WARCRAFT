@@ -1,4 +1,4 @@
-const allowedActions = new Set(["interrupt", "purge", "cleanse-magic", "cleanse-curse", "cleanse-disease", "cleanse-poison", "soothe", "defensive", "crowd-control", "external-defensive", "battle-resurrection", "party-damage-reduction"]);
+const allowedActions = new Set(["interrupt", "purge", "cleanse-magic", "cleanse-curse", "cleanse-disease", "cleanse-poison", "soothe", "defensive", "crowd-control", "external-defensive", "battle-resurrection", "party-damage-reduction", "bloodlust"]);
 const allowedScopes = new Set(["enemy", "friendly-single", "friendly-periodic-area", "friendly-area", "self", "area-enemy"]);
 
 export function queryCapabilities(capabilityRecords, filters = {}) {
@@ -26,9 +26,11 @@ export function queryCapabilities(capabilityRecords, filters = {}) {
           id: tool.id,
           name: tool.name,
           spellId: tool.spellId,
+          alternateSpellIds: tool.alternateSpellIds ?? [],
           actions,
           availabilityByAction: Object.fromEntries(actions.map((action) => [action, tool.actionAvailability?.[action] ?? tool.availability])),
           scope: tool.scope,
+          requirements: tool.requirements ?? [],
           limitations: tool.limitations
         }
       };

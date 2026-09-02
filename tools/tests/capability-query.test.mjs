@@ -24,6 +24,21 @@ test("preserves per-action talent requirements", () => {
   assert.equal(poison.results[0].tool.availabilityByAction["cleanse-poison"], "talent");
 });
 
+test("distinguishes unconditional and configuration-dependent Bloodlust access", () => {
+  const result = queryCapabilities(capabilities, {
+    specs: ["restoration-shaman", "beast-mastery-hunter", "marksmanship-hunter"],
+    action: "bloodlust"
+  });
+  assert.equal(result.resultCount, 3);
+  const shaman = result.results.find((entry) => entry.spec.slug === "restoration-shaman");
+  const beastMastery = result.results.find((entry) => entry.spec.slug === "beast-mastery-hunter");
+  const marksmanship = result.results.find((entry) => entry.spec.slug === "marksmanship-hunter");
+  assert.deepEqual(shaman.tool.alternateSpellIds, [32182]);
+  assert.deepEqual(beastMastery.tool.requirements, [{ kind: "pet-specialization", value: "Ferocity" }]);
+  assert.deepEqual(marksmanship.tool.requirements, []);
+  assert.equal(marksmanship.tool.availabilityByAction.bloodlust, "specialization");
+});
+
 test("rejects unknown specialization slugs", () => {
   assert.throws(() => queryCapabilities(capabilities, { specs: ["not-a-real-spec"] }), /unknown spec/);
 });

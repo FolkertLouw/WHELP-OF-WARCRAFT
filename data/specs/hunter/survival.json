@@ -10,12 +10,14 @@
     { "id": "muzzle", "name": "Muzzle", "spellId": 187707, "actions": ["interrupt"], "availability": "talent", "scope": "enemy", "limitations": ["Melee range", "Single target", "Fifteen-second cooldown"] },
     { "id": "tranquilizing-shot", "name": "Tranquilizing Shot", "spellId": 19801, "actions": ["purge", "soothe"], "availability": "talent", "scope": "enemy", "limitations": ["Removes one beneficial Magic effect and one Enrage effect", "Single target"] },
     { "id": "intimidation", "name": "Intimidation", "spellId": 19577, "actions": ["crowd-control"], "availability": "talent", "scope": "enemy", "limitations": ["Requires an active pet", "Only affects stunnable enemies", "One-minute cooldown"] },
+    { "id": "primal-rage", "name": "Primal Rage", "spellId": 264667, "actions": ["bloodlust"], "availability": "baseline", "scope": "friendly-area", "requirements": [{ "kind": "pet-specialization", "value": "Ferocity" }], "limitations": ["Requires an active Ferocity pet", "Applies the ten-minute Sated lockout"] },
     { "id": "aspect-of-the-turtle", "name": "Aspect of the Turtle", "spellId": 186265, "actions": ["defensive"], "availability": "baseline", "scope": "self", "limitations": ["Personal defense only", "Prevents attacking while active", "Does not remove damage-over-time effects already applied"] },
     { "id": "survival-of-the-fittest", "name": "Survival of the Fittest", "spellId": 281195, "actions": ["defensive"], "availability": "talent", "scope": "self", "limitations": ["Personal mitigation only", "Brief duration"] }
   ],
   "provenance": [
     { "kind": "external-reference", "description": "Current Survival Hunter ability guide identifies the specialization's melee play style and utility kit.", "url": "https://www.wowhead.com/guide/classes/hunter/survival/abilities-talents-pve-dps", "retrievedAt": "2026-09-02T17:35:00+02:00" },
     { "kind": "external-reference", "description": "Current Survival Hunter Season 2 guide confirms a melee interrupt plus Tranquilizing Shot for enemy dispel and Enrage removal.", "url": "https://www.wowhead.com/guide/classes/hunter/survival/midnight-season-2", "retrievedAt": "2026-09-02T17:35:00+02:00" },
-    { "kind": "external-reference", "description": "Current Muzzle spell record confirms its melee interrupt, school lockout, and cooldown.", "url": "https://www.wowhead.com/spell=187707/muzzle", "retrievedAt": "2026-09-02T17:35:00+02:00" }
+    { "kind": "external-reference", "description": "Current Muzzle spell record confirms its melee interrupt, school lockout, and cooldown.", "url": "https://www.wowhead.com/spell=187707/muzzle", "retrievedAt": "2026-09-02T17:35:00+02:00" },
+    { "kind": "external-reference", "description": "Current Primal Rage record confirms the Hunter Bloodlust equivalent and its Ferocity-pet access condition.", "url": "https://www.wowhead.com/spell=264667/primal-rage", "retrievedAt": "2026-09-02T18:50:00+02:00" }
   ]
 }

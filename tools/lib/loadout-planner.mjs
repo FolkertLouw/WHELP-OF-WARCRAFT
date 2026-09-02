@@ -57,7 +57,7 @@ export function buildPartyGapReport(responseRecords, capabilityRecords, dungeonI
       }
       const handlers = capabilityRecords.flatMap((capability) => capability.tools
         .filter((tool) => tool.scope !== "self" && tool.actions.includes(action))
-        .map((tool) => ({ specSlug: capability.spec.slug, specId: capability.spec.specId, toolId: tool.id, toolName: tool.name, spellId: tool.spellId, availability: tool.actionAvailability?.[action] ?? tool.availability, scope: tool.scope })));
+        .map((tool) => ({ specSlug: capability.spec.slug, specId: capability.spec.specId, toolId: tool.id, toolName: tool.name, spellId: tool.spellId, alternateSpellIds: tool.alternateSpellIds ?? [], availability: tool.actionAvailability?.[action] ?? tool.availability, scope: tool.scope, requirements: tool.requirements ?? [] })));
       (handlers.length ? coveredUtility : uncoveredUtility).push({ ...base, handlers });
     }
   }
