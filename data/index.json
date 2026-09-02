@@ -75,7 +75,9 @@
   "specCapabilities": [
     { "id": "shaman/restoration/capabilities", "record": "specs/shaman/restoration.json", "status": "corroborated" },
     { "id": "shaman/enhancement/capabilities", "record": "specs/shaman/enhancement.json", "status": "corroborated" },
-    { "id": "hunter/beast-mastery/capabilities", "record": "specs/hunter/beast-mastery.json", "status": "corroborated" }
+    { "id": "hunter/beast-mastery/capabilities", "record": "specs/hunter/beast-mastery.json", "status": "corroborated" },
+    { "id": "hunter/marksmanship/capabilities", "record": "specs/hunter/marksmanship.json", "status": "corroborated" },
+    { "id": "hunter/survival/capabilities", "record": "specs/hunter/survival.json", "status": "corroborated" }
   ],
   "builds": [
     {

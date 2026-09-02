@@ -451,7 +451,13 @@ for (const { file, value } of records.filter(({ value }) => value.recordType ===
     if (!affixDefinitions.has(affix.affixSlug)) fail(file, `matrix references unknown affix ${affix.affixSlug}`);
   }
 }
+const capabilitySpecIds = new Map();
+const capabilitySlugs = new Map();
 for (const { file, value } of records.filter(({ value }) => value.recordType === "spec-capabilities")) {
+  if (capabilitySpecIds.has(value.spec?.specId)) fail(file, `specId ${value.spec?.specId} duplicates ${capabilitySpecIds.get(value.spec.specId)}`);
+  else capabilitySpecIds.set(value.spec?.specId, file);
+  if (capabilitySlugs.has(value.spec?.slug)) fail(file, `spec slug ${value.spec?.slug} duplicates ${capabilitySlugs.get(value.spec.slug)}`);
+  else capabilitySlugs.set(value.spec?.slug, file);
   if (!value.matrixRecordId) continue;
   const matrix = records.find(({ value: candidate }) => candidate.recordType === "spec-dungeon-matrix"
     && candidate.id === value.matrixRecordId)?.value;

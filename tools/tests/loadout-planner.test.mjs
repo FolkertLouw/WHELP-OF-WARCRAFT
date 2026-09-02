@@ -10,6 +10,8 @@ const capabilities = await loadSpecCapabilities(root);
 const restoration = capabilities.find((record) => record.spec.slug === "restoration-shaman");
 const enhancement = capabilities.find((record) => record.spec.slug === "enhancement-shaman");
 const beastMastery = capabilities.find((record) => record.spec.slug === "beast-mastery-hunter");
+const marksmanship = capabilities.find((record) => record.spec.slug === "marksmanship-hunter");
+const survival = capabilities.find((record) => record.spec.slug === "survival-hunter");
 
 test("builds a deduplicated spec loadout with mechanic references", () => {
   const loadout = buildSpecLoadout(responses, restoration, "ruby-life-pools");
@@ -43,4 +45,13 @@ test("builds a Beast Mastery loadout without inventing a friendly Magic cleanse"
   assert.ok(loadout.recommendedTools.some((tool) => tool.name === "Tranquilizing Shot"));
   assert.ok(loadout.unsupportedActions.some((entry) => entry.name === "Stormslam" && entry.action === "cleanse-magic"));
   assert.ok(loadout.selfOnlyResponses.some((entry) => entry.name === "Stormslam" && entry.action === "defensive"));
+});
+
+test("preserves ranged and melee Hunter interrupt identities", () => {
+  const marksmanLoadout = buildSpecLoadout(responses, marksmanship, "murder-row");
+  const survivalLoadout = buildSpecLoadout(responses, survival, "murder-row");
+  assert.ok(marksmanLoadout.recommendedTools.some((tool) => tool.name === "Counter Shot"));
+  assert.ok(!marksmanLoadout.recommendedTools.some((tool) => tool.name === "Muzzle"));
+  assert.ok(survivalLoadout.recommendedTools.some((tool) => tool.name === "Muzzle"));
+  assert.ok(!survivalLoadout.recommendedTools.some((tool) => tool.name === "Counter Shot"));
 });
