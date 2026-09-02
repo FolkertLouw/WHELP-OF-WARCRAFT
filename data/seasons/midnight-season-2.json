@@ -1,0 +1,39 @@
+{
+  "$schema": "../../schemas/season.schema.json",
+  "schemaVersion": 1,
+  "recordType": "season",
+  "id": "midnight-season-2",
+  "status": "verified",
+  "expansion": "Midnight",
+  "seasonNumber": 2,
+  "validity": {
+    "fromBuild": "12.1.0.69587",
+    "untilBuild": null,
+    "seasonId": null,
+    "seasonSlug": "midnight-season-2"
+  },
+  "dungeons": [
+    { "id": "altar-of-fangs", "name": "Altar of Fangs", "challengeMapId": 588, "expansion": "Midnight" },
+    { "id": "murder-row", "name": "Murder Row", "challengeMapId": 587, "expansion": "Midnight" },
+    { "id": "den-of-nalorakk", "name": "Den of Nalorakk", "challengeMapId": 586, "expansion": "Midnight" },
+    { "id": "the-blinding-vale", "name": "The Blinding Vale", "challengeMapId": 584, "expansion": "Midnight" },
+    { "id": "voidscar-arena", "name": "Voidscar Arena", "challengeMapId": 585, "expansion": "Midnight" },
+    { "id": "kings-rest", "name": "King's Rest", "challengeMapId": 249, "expansion": "Battle for Azeroth" },
+    { "id": "ruby-life-pools", "name": "Ruby Life Pools", "challengeMapId": 399, "expansion": "Dragonflight" },
+    { "id": "temple-of-sethraliss", "name": "Temple of Sethraliss", "challengeMapId": 250, "expansion": "Battle for Azeroth" }
+  ],
+  "provenance": [
+    {
+      "kind": "official-publisher",
+      "description": "Dungeon rotation verified against Blizzard's Midnight Season 2 launch announcement.",
+      "url": "https://news.blizzard.com/en-gb/article/24294369/midnight-season-2-is-now-live",
+      "retrievedAt": "2026-09-02T10:30:00+02:00"
+    },
+    {
+      "kind": "game-data",
+      "description": "Challenge map IDs corroborated against locally installed Mythic Dungeon Tools 6.2.10.",
+      "url": "https://github.com/Nnoggie/MythicDungeonTools",
+      "retrievedAt": "2026-09-02T10:30:00+02:00"
+    }
+  ]
+}

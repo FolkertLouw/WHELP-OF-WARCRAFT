@@ -1,0 +1,13 @@
+{
+  "$schema": "../../../../../schemas/mechanic.schema.json",
+  "schemaVersion": 1,
+  "recordType": "mechanic",
+  "id": "altar-of-fangs/the-writhing-coil/tail-scythe-1298949",
+  "status": "draft",
+  "validity": { "fromBuild": "12.1.0.69587", "untilBuild": null, "seasonId": null, "seasonSlug": "midnight-season-2" },
+  "encounter": { "instanceId": 2993, "encounterId": 3457, "npcId": 259446 },
+  "mechanic": { "spellId": 1298949, "category": "defensive", "summary": "Tail Scythe is a tank-buster event.", "response": "Tank prepares active mitigation or a defensive; healer anticipates the hit." },
+  "roles": ["tank", "healer"],
+  "specIds": [],
+  "provenance": [{ "kind": "external-reference", "description": "Draft classification inferred from DBM Dungeons r261 alert metadata; not yet independently verified by WHELP.", "url": "https://github.com/DeadlyBossMods/DBM-Dungeons/blob/master/DBM-Party-Midnight/AltarofFangs/TheWrithingCoil.lua", "retrievedAt": "2026-09-02T10:30:00+02:00" }]
+}

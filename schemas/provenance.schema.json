@@ -6,7 +6,7 @@
   "required": ["kind", "description"],
   "properties": {
     "kind": {
-      "enum": ["official-api", "game-data", "local-client", "addon-observation", "combat-log", "curated", "external-reference"]
+      "enum": ["official-api", "official-publisher", "game-data", "local-client", "addon-observation", "combat-log", "curated", "external-reference"]
     },
     "description": { "type": "string", "minLength": 1 },
     "url": { "type": "string", "format": "uri" },

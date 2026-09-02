@@ -4,11 +4,15 @@
   "private": true,
   "description": "World-data Hub for Encounters, Loadouts & Progression",
   "scripts": {
-    "test": "node tools/validate.mjs",
-    "validate": "node tools/validate.mjs"
+    "test": "npm run validate && npm run lint:lua",
+    "validate": "node tools/validate.mjs",
+    "lint:lua": "node tools/check-lua.mjs"
   },
   "engines": {
     "node": ">=20"
   },
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "luaparse": "0.3.1"
+  }
 }

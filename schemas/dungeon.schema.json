@@ -1,0 +1,50 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://whelp.dev/schemas/dungeon.schema.json",
+  "title": "WHELP dungeon",
+  "type": "object",
+  "required": ["schemaVersion", "recordType", "id", "status", "name", "expansion", "validity", "challengeMapId", "instanceMapId", "encounters", "enemies", "provenance"],
+  "properties": {
+    "schemaVersion": { "const": 1 },
+    "recordType": { "const": "dungeon" },
+    "id": { "type": "string", "pattern": "^[a-z0-9][a-z0-9-]+$" },
+    "status": { "enum": ["draft", "corroborated", "verified", "deprecated"] },
+    "name": { "type": "string", "minLength": 1 },
+    "expansion": { "type": "string", "minLength": 1 },
+    "validity": { "$ref": "validity.schema.json" },
+    "challengeMapId": { "type": "integer", "minimum": 1 },
+    "instanceMapId": { "type": "integer", "minimum": 1 },
+    "teleportSpellId": { "type": ["integer", "null"], "minimum": 1 },
+    "uiMapId": { "type": ["integer", "null"], "minimum": 1 },
+    "zoneIds": { "type": "array", "items": { "type": "integer", "minimum": 1 }, "uniqueItems": true },
+    "enemyForcesTotal": { "type": ["integer", "null"], "minimum": 0 },
+    "encounters": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["name", "encounterId", "npcId"],
+        "properties": {
+          "name": { "type": "string" },
+          "encounterId": { "type": "integer", "minimum": 1 },
+          "npcId": { "type": "integer", "minimum": 1 }
+        },
+        "additionalProperties": false
+      }
+    },
+    "enemies": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["name", "npcId", "enemyForces"],
+        "properties": {
+          "name": { "type": "string" },
+          "npcId": { "type": "integer", "minimum": 1 },
+          "enemyForces": { "type": "integer", "minimum": 0 }
+        },
+        "additionalProperties": false
+      }
+    },
+    "provenance": { "type": "array", "minItems": 1, "items": { "$ref": "provenance.schema.json" } }
+  },
+  "additionalProperties": false
+}

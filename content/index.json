@@ -1,0 +1,17 @@
+{
+  "schemaVersion": 1,
+  "records": [
+    { "id": "altar-of-fangs/ravi/triple-shot-1296220", "path": "mythic-plus/midnight-season-2/altar-of-fangs/mechanics/ravi-triple-shot.json", "status": "draft" },
+    { "id": "altar-of-fangs/ravi/regurgitate-1296050", "path": "mythic-plus/midnight-season-2/altar-of-fangs/mechanics/ravi-regurgitate.json", "status": "draft" },
+    { "id": "altar-of-fangs/ravi/ravenous-stomp-1307894", "path": "mythic-plus/midnight-season-2/altar-of-fangs/mechanics/ravi-ravenous-stomp.json", "status": "draft" },
+    { "id": "altar-of-fangs/ravi/fresh-meat-1307921", "path": "mythic-plus/midnight-season-2/altar-of-fangs/mechanics/ravi-fresh-meat.json", "status": "draft" },
+    { "id": "altar-of-fangs/the-writhing-coil/toxic-atrophy-1310547", "path": "mythic-plus/midnight-season-2/altar-of-fangs/mechanics/coil-toxic-atrophy.json", "status": "draft" },
+    { "id": "altar-of-fangs/the-writhing-coil/tail-scythe-1298949", "path": "mythic-plus/midnight-season-2/altar-of-fangs/mechanics/coil-tail-scythe.json", "status": "draft" },
+    { "id": "altar-of-fangs/the-writhing-coil/vindictive-onslaught-1299940", "path": "mythic-plus/midnight-season-2/altar-of-fangs/mechanics/coil-vindictive-onslaught.json", "status": "draft" },
+    { "id": "altar-of-fangs/the-writhing-coil/assimilation-1300686", "path": "mythic-plus/midnight-season-2/altar-of-fangs/mechanics/coil-assimilation.json", "status": "draft" },
+    { "id": "altar-of-fangs/zuljan/ritual-of-the-fang-1300876", "path": "mythic-plus/midnight-season-2/altar-of-fangs/mechanics/zuljan-ritual-of-the-fang.json", "status": "draft" },
+    { "id": "altar-of-fangs/zuljan/boneslicer-1301413", "path": "mythic-plus/midnight-season-2/altar-of-fangs/mechanics/zuljan-boneslicer.json", "status": "draft" },
+    { "id": "altar-of-fangs/zuljan/axegrinder-1301111", "path": "mythic-plus/midnight-season-2/altar-of-fangs/mechanics/zuljan-axegrinder.json", "status": "draft" },
+    { "id": "altar-of-fangs/zuljan/chop-down-1301350", "path": "mythic-plus/midnight-season-2/altar-of-fangs/mechanics/zuljan-chop-down.json", "status": "draft" }
+  ]
+}

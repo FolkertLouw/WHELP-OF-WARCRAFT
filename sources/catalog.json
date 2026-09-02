@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "sources": [
+    {
+      "id": "blizzard-midnight-season-2-launch",
+      "publisher": "Blizzard Entertainment",
+      "title": "Midnight Season 2 is Now Live!",
+      "url": "https://news.blizzard.com/en-gb/article/24294369/midnight-season-2-is-now-live",
+      "usage": "Canonical season composition and launch schedule."
+    },
+    {
+      "id": "mythic-dungeon-tools-6.2.10",
+      "publisher": "Mythic Dungeon Tools contributors",
+      "title": "Mythic Dungeon Tools 6.2.10",
+      "url": "https://github.com/Nnoggie/MythicDungeonTools",
+      "license": "GPL-2.0",
+      "usage": "Corroborating numeric dungeon, NPC, enemy-forces, map, and spell identifiers. WHELP stores derived factual records, not copied implementation code or map artwork."
+    },
+    {
+      "id": "dbm-dungeons-r261",
+      "publisher": "Deadly Boss Mods contributors",
+      "title": "DBM Dungeons r261",
+      "url": "https://github.com/DeadlyBossMods/DBM-Dungeons",
+      "license": "All Rights Reserved",
+      "usage": "Corroborating encounter and spell identifiers. WHELP does not redistribute DBM source code or creative text. Mechanic interpretations remain draft."
+    }
+  ]
+}

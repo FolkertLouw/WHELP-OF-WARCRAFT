@@ -1,0 +1,63 @@
+{
+  "$schema": "../../../schemas/dungeon.schema.json",
+  "schemaVersion": 1,
+  "recordType": "dungeon",
+  "id": "altar-of-fangs",
+  "status": "corroborated",
+  "name": "Altar of Fangs",
+  "expansion": "Midnight",
+  "validity": {
+    "fromBuild": "12.1.0.69587",
+    "untilBuild": null,
+    "seasonId": null,
+    "seasonSlug": "midnight-season-2"
+  },
+  "challengeMapId": 588,
+  "instanceMapId": 2993,
+  "teleportSpellId": 1286812,
+  "uiMapId": null,
+  "zoneIds": [2588, 2589, 2590],
+  "enemyForcesTotal": 817,
+  "encounters": [
+    { "name": "Rav'i", "encounterId": 3456, "npcId": 259445 },
+    { "name": "The Writhing Coil", "encounterId": 3457, "npcId": 259446 },
+    { "name": "Zul'jan", "encounterId": 3458, "npcId": 259447 }
+  ],
+  "enemies": [
+    { "name": "Ritual Chieftain", "npcId": 270306, "enemyForces": 25 },
+    { "name": "Bloodletter", "npcId": 261552, "enemyForces": 5 },
+    { "name": "High Evolutionist", "npcId": 261557, "enemyForces": 7 },
+    { "name": "Hatchling", "npcId": 261556, "enemyForces": 0 },
+    { "name": "Living Venom", "npcId": 263112, "enemyForces": 1 },
+    { "name": "Primal Serpent", "npcId": 261560, "enemyForces": 7 },
+    { "name": "Ravenous Descendant", "npcId": 261553, "enemyForces": 5 },
+    { "name": "Ula'tek's Chosen", "npcId": 263109, "enemyForces": 25 },
+    { "name": "Ascendant Serpent", "npcId": 261573, "enemyForces": 30 },
+    { "name": "Twinfang Harrower", "npcId": 261554, "enemyForces": 25 },
+    { "name": "Venom Leech", "npcId": 261550, "enemyForces": 1 },
+    { "name": "Rattling Writhe", "npcId": 262011, "enemyForces": 25 },
+    { "name": "Blade of the Altar", "npcId": 271453, "enemyForces": 5 },
+    { "name": "Rav'i", "npcId": 259445, "enemyForces": 0 },
+    { "name": "The Writhing Coil", "npcId": 259446, "enemyForces": 0 },
+    { "name": "Zul'jan", "npcId": 259447, "enemyForces": 0 },
+    { "name": "Uncoiled Writhe", "npcId": 262398, "enemyForces": 0 },
+    { "name": "Infused Eggs", "npcId": 264798, "enemyForces": 0 },
+    { "name": "Ritual Snake", "npcId": 268358, "enemyForces": 0 },
+    { "name": "Ritual Spirit", "npcId": 270378, "enemyForces": 0 },
+    { "name": "Uncoiled Writhe", "npcId": 270417, "enemyForces": 0 }
+  ],
+  "provenance": [
+    {
+      "kind": "game-data",
+      "description": "Dungeon, NPC, map, teleport, zone, and enemy-forces identifiers derived from Mythic Dungeon Tools 6.2.10 installed for interface 120100.",
+      "url": "https://github.com/Nnoggie/MythicDungeonTools",
+      "retrievedAt": "2026-09-02T10:30:00+02:00"
+    },
+    {
+      "kind": "external-reference",
+      "description": "Encounter and instance identifiers corroborated against DBM Dungeons r261 installed for interface 120100.",
+      "url": "https://github.com/DeadlyBossMods/DBM-Dungeons",
+      "retrievedAt": "2026-09-02T10:30:00+02:00"
+    }
+  ]
+}

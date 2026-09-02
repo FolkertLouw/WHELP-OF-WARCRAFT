@@ -1,6 +1,20 @@
 {
   "schemaVersion": 1,
   "product": "wow",
+  "seasons": [
+    {
+      "id": "midnight-season-2",
+      "manifest": "seasons/midnight-season-2.json",
+      "status": "verified"
+    }
+  ],
+  "dungeons": [
+    {
+      "id": "altar-of-fangs",
+      "record": "dungeons/altar-of-fangs/dungeon.json",
+      "status": "corroborated"
+    }
+  ],
   "builds": [
     {
       "version": "12.1.0.69587",

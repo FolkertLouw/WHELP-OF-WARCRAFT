@@ -1,0 +1,13 @@
+{
+  "$schema": "../../../../../schemas/mechanic.schema.json",
+  "schemaVersion": 1,
+  "recordType": "mechanic",
+  "id": "altar-of-fangs/zuljan/ritual-of-the-fang-1300876",
+  "status": "draft",
+  "validity": { "fromBuild": "12.1.0.69587", "untilBuild": null, "seasonId": null, "seasonSlug": "midnight-season-2" },
+  "encounter": { "instanceId": 2993, "encounterId": 3458, "npcId": 259447 },
+  "mechanic": { "spellId": 1300876, "category": "positioning", "summary": "Ritual of the Fang is a line-based group soak.", "response": "Players share the indicated line soak; exact assignment requires verification." },
+  "roles": ["tank", "healer", "damage"],
+  "specIds": [],
+  "provenance": [{ "kind": "external-reference", "description": "Draft classification inferred from DBM Dungeons r261 alert metadata; not yet independently verified by WHELP.", "url": "https://github.com/DeadlyBossMods/DBM-Dungeons/blob/master/DBM-Party-Midnight/AltarofFangs/Zuljan.lua", "retrievedAt": "2026-09-02T10:30:00+02:00" }]
+}

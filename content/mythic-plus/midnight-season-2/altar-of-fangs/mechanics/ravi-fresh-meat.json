@@ -1,0 +1,13 @@
+{
+  "$schema": "../../../../../schemas/mechanic.schema.json",
+  "schemaVersion": 1,
+  "recordType": "mechanic",
+  "id": "altar-of-fangs/ravi/fresh-meat-1307921",
+  "status": "draft",
+  "validity": { "fromBuild": "12.1.0.69587", "untilBuild": null, "seasonId": null, "seasonSlug": "midnight-season-2" },
+  "encounter": { "instanceId": 2993, "encounterId": 3456, "npcId": 259445 },
+  "mechanic": { "spellId": 1307921, "category": "positioning", "summary": "Fresh Meat requires the tank to reposition the boss.", "response": "Tank moves the boss away from the affected location or target; exact trigger requires verification." },
+  "roles": ["tank"],
+  "specIds": [],
+  "provenance": [{ "kind": "external-reference", "description": "Draft classification inferred from DBM Dungeons r261 alert metadata; not yet independently verified by WHELP.", "url": "https://github.com/DeadlyBossMods/DBM-Dungeons/blob/master/DBM-Party-Midnight/AltarofFangs/Ravi.lua", "retrievedAt": "2026-09-02T10:30:00+02:00" }]
+}

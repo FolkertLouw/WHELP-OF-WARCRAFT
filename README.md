@@ -23,7 +23,7 @@ This is the initial foundation. It includes:
 - a minimal Retail addon, **WHELP Collector**;
 - a build manifest for the locally verified Retail build `12.1.0.69587`.
 
-No dungeon strategy has been asserted yet. The examples under `examples/` are synthetic and must never be treated as game facts.
+The first populated slice covers the current Midnight Season 2 rotation and Altar of Fangs. Canonical IDs are versioned and sourced; initial mechanic interpretations remain drafts until independently verified. The examples under `examples/` are synthetic and must never be treated as game facts.
 
 ## Quick start
 
