@@ -50,6 +50,7 @@
     { "id": "murder-row/lithiel-cinderfury/fingers-of-guldan-474457", "path": "mythic-plus/midnight-season-2/murder-row/mechanics/lithiel-fingers-of-guldan.json", "status": "draft" },
     { "id": "murder-row/lithiel-cinderfury/malefic-wave-1217384", "path": "mythic-plus/midnight-season-2/murder-row/mechanics/lithiel-malefic-wave.json", "status": "draft" },
     { "id": "the-blinding-vale/overview", "path": "mythic-plus/midnight-season-2/the-blinding-vale/strategy/overview.json", "status": "corroborated" },
+    { "id": "the-blinding-vale/pug-10-15-baseline", "path": "mythic-plus/midnight-season-2/the-blinding-vale/routes/pug-10-15.json", "status": "draft" },
     { "id": "the-blinding-vale/lightblossom-trinity/thornblade-1235640", "path": "mythic-plus/midnight-season-2/the-blinding-vale/mechanics/trinity-thornblade.json", "status": "draft" },
     { "id": "the-blinding-vale/lightblossom-trinity/fan-of-thorns-1261011", "path": "mythic-plus/midnight-season-2/the-blinding-vale/mechanics/trinity-fan-of-thorns.json", "status": "draft" },
     { "id": "the-blinding-vale/lightblossom-trinity/lightsower-dash-1234850", "path": "mythic-plus/midnight-season-2/the-blinding-vale/mechanics/trinity-lightsower-dash.json", "status": "draft" },
