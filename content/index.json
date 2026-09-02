@@ -102,6 +102,7 @@
     { "id": "ruby-life-pools/kyrakka-and-erkhart/inferno-spit-381602", "path": "mythic-plus/midnight-season-2/ruby-life-pools/mechanics/kyrakka-inferno-spit.json", "status": "draft" },
     { "id": "ruby-life-pools/kyrakka-and-erkhart/stormslam-381512", "path": "mythic-plus/midnight-season-2/ruby-life-pools/mechanics/erkhart-stormslam.json", "status": "draft" },
     { "id": "temple-of-sethraliss/overview", "path": "mythic-plus/midnight-season-2/temple-of-sethraliss/strategy/overview.json", "status": "corroborated" },
+    { "id": "temple-of-sethraliss/pug-10-15-baseline", "path": "mythic-plus/midnight-season-2/temple-of-sethraliss/routes/pug-10-15.json", "status": "draft" },
     { "id": "temple-of-sethraliss/adderis-and-aspix/tempest-winds-1288864", "path": "mythic-plus/midnight-season-2/temple-of-sethraliss/mechanics/adderis-aspix-tempest-winds.json", "status": "draft" },
     { "id": "temple-of-sethraliss/adderis-and-aspix/gale-force-1289062", "path": "mythic-plus/midnight-season-2/temple-of-sethraliss/mechanics/adderis-aspix-gale-force.json", "status": "draft" },
     { "id": "temple-of-sethraliss/adderis-and-aspix/thunder-and-lightning-1288235", "path": "mythic-plus/midnight-season-2/temple-of-sethraliss/mechanics/adderis-aspix-thunder-and-lightning.json", "status": "draft" },
