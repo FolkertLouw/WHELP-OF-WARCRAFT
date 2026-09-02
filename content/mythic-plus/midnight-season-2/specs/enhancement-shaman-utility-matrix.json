@@ -1,0 +1,38 @@
+{
+  "$schema": "../../../../schemas/spec-dungeon-matrix.schema.json",
+  "schemaVersion": 1,
+  "recordType": "spec-dungeon-matrix",
+  "id": "midnight-season-2/enhancement-shaman-utility-matrix",
+  "status": "corroborated",
+  "validity": { "fromBuild": "12.1.0.69587", "untilBuild": null, "seasonId": null, "seasonSlug": "midnight-season-2" },
+  "spec": { "classId": 7, "className": "Shaman", "specId": 263, "specName": "Enhancement" },
+  "axes": [
+    { "id": "poison-cleansing", "label": "Poison removal", "abilityNames": ["Poison Cleansing Totem"], "spellIds": [383013] },
+    { "id": "decurse", "label": "Curse removal", "abilityNames": ["Cleanse Spirit"], "spellIds": [51886] },
+    { "id": "snare-removal", "label": "Dispellable snare removal", "abilityNames": ["Thunderous Paws", "Spirit Walk", "Jet Stream"], "spellIds": [] },
+    { "id": "root-removal", "label": "Root removal", "abilityNames": ["Spirit Walk"], "spellIds": [58875] },
+    { "id": "purge", "label": "Enemy magic removal", "abilityNames": ["Purge"], "spellIds": [370] }
+  ],
+  "dungeons": [
+    { "dungeonId": "altar-of-fangs", "instanceMapId": 2993, "ratings": { "poison-cleansing": "always", "decurse": "none", "snare-removal": "always", "root-removal": "none", "purge": "none" }, "notes": ["Prioritize Poison Cleansing Totem and reliable personal snare removal."] },
+    { "dungeonId": "the-blinding-vale", "instanceMapId": 2859, "ratings": { "poison-cleansing": "always", "decurse": "none", "snare-removal": "niche", "root-removal": "none", "purge": "none" }, "notes": ["Poison removal is the required utility; snare removal is a comfort option."] },
+    { "dungeonId": "den-of-nalorakk", "instanceMapId": 2825, "ratings": { "poison-cleansing": "always", "decurse": "always", "snare-removal": "always", "root-removal": "always", "purge": "always" }, "notes": ["All five tracked utility categories have relevant targets in this dungeon."] },
+    { "dungeonId": "kings-rest", "instanceMapId": 1762, "ratings": { "poison-cleansing": "always", "decurse": "always", "snare-removal": "always", "root-removal": "always", "purge": "always" }, "notes": ["All five tracked utility categories have relevant targets in this dungeon."] },
+    { "dungeonId": "murder-row", "instanceMapId": 2813, "ratings": { "poison-cleansing": "always", "decurse": "always", "snare-removal": "none", "root-removal": "none", "purge": "always" }, "notes": ["Bring poison removal, curse removal, and Purge; the matrix lists no required snare or root removal."] },
+    { "dungeonId": "ruby-life-pools", "instanceMapId": 2521, "ratings": { "poison-cleansing": "none", "decurse": "none", "snare-removal": "niche", "root-removal": "none", "purge": "always" }, "notes": ["Purge is required utility; snare removal is a comfort option."] },
+    { "dungeonId": "temple-of-sethraliss", "instanceMapId": 1877, "ratings": { "poison-cleansing": "always", "decurse": "always", "snare-removal": "none", "root-removal": "none", "purge": "none" }, "notes": ["Bring poison and curse removal; the guide matrix does not rate Purge as required for Enhancement."] },
+    { "dungeonId": "voidscar-arena", "instanceMapId": 2923, "ratings": { "poison-cleansing": "always", "decurse": "none", "snare-removal": "none", "root-removal": "always", "purge": "none" }, "notes": ["Poison Cleansing Totem and root removal are the tracked priorities."] }
+  ],
+  "affixes": [
+    { "affixSlug": "xalataths-bargain-ascendant", "recommendations": ["Capacitor Totem with Static Charge can stop groups of casts; Wind Shear or Purge can handle individual emergencies."] },
+    { "affixSlug": "xalataths-bargain-voidbound", "recommendations": ["No dedicated utility swap is required; swap to and focus the emissary."] },
+    { "affixSlug": "xalataths-bargain-pulsar", "recommendations": ["No dedicated utility swap is required; position early to intercept partner orbs."] },
+    { "affixSlug": "xalataths-bargain-devour", "recommendations": ["Cleanse Spirit and Poison Cleansing Totem remove eligible shields.", "Spirit Walk or Thunderous Paws can clear the personal slow, while Wind Rush Totem with Jet Stream can clear slows for the group."] }
+  ],
+  "provenance": [{
+    "kind": "external-reference",
+    "description": "Original structured transcription of the always, comfort, and unused utility ratings in wordup's Enhancement Shaman Mythic+ guide, updated for Patch 12.1.0. Talent build strings are intentionally excluded.",
+    "url": "https://www.wowhead.com/guide/classes/shaman/enhancement/mythic-plus-dungeon-tips",
+    "retrievedAt": "2026-09-02T13:10:00+02:00"
+  }]
+}

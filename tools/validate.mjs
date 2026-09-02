@@ -57,6 +57,28 @@ function validateRecord(file, value) {
     }
   } else if (value.recordType === "spec-note") {
     requireFields(file, value, ["id", "status", "validity", "context", "specIds", "summary", "recommendations", "provenance"]);
+  } else if (value.recordType === "spec-dungeon-matrix") {
+    requireFields(file, value, ["id", "status", "validity", "spec", "axes", "dungeons", "affixes", "provenance"]);
+    if (!Number.isInteger(value.spec?.classId) || value.spec.classId < 1) fail(file, "spec.classId must be a positive integer");
+    if (!Number.isInteger(value.spec?.specId) || value.spec.specId < 1) fail(file, "spec.specId must be a positive integer");
+    const axisIds = (value.axes ?? []).map((axis) => axis.id);
+    if (new Set(axisIds).size !== axisIds.length) fail(file, "utility axis IDs must be unique");
+    const dungeonIds = (value.dungeons ?? []).map((dungeon) => dungeon.dungeonId);
+    if (new Set(dungeonIds).size !== dungeonIds.length) fail(file, "matrix dungeon IDs must be unique");
+    const affixSlugs = (value.affixes ?? []).map((affix) => affix.affixSlug);
+    if (new Set(affixSlugs).size !== affixSlugs.length) fail(file, "matrix affix slugs must be unique");
+    for (const dungeon of value.dungeons ?? []) {
+      const ratingIds = Object.keys(dungeon.ratings ?? {});
+      for (const axisId of axisIds) {
+        if (!ratingIds.includes(axisId)) fail(file, `${dungeon.dungeonId} is missing rating ${axisId}`);
+      }
+      for (const ratingId of ratingIds) {
+        if (!axisIds.includes(ratingId)) fail(file, `${dungeon.dungeonId} rates unknown utility axis ${ratingId}`);
+        if (!["always", "niche", "none"].includes(dungeon.ratings[ratingId])) {
+          fail(file, `${dungeon.dungeonId} has invalid rating for ${ratingId}`);
+        }
+      }
+    }
   } else if (value.recordType === "strategy-note") {
     requireFields(file, value, ["id", "status", "validity", "context", "category", "summary", "actions", "provenance"]);
   } else if (value.recordType === "affix-set") {
@@ -153,6 +175,24 @@ for (const { file, value } of records.filter(({ value }) => ["spec-note", "strat
         fail(file, `unknown encounterId ${value.context.encounterId} for ${dungeon.value.id}`);
       }
     }
+  }
+}
+const affixDefinitions = new Set(
+  records
+    .filter(({ value }) => value.recordType === "affix-set")
+    .flatMap(({ value }) => (value.definitions ?? []).map((definition) => definition.slug)),
+);
+for (const { file, value } of records.filter(({ value }) => value.recordType === "spec-dungeon-matrix")) {
+  if (file.includes(`${path.sep}examples${path.sep}`)) continue;
+  for (const entry of value.dungeons ?? []) {
+    const dungeon = dungeons.find(({ value: candidate }) => candidate.id === entry.dungeonId);
+    if (!dungeon) fail(file, `matrix references unknown dungeon ${entry.dungeonId}`);
+    else if (dungeon.value.instanceMapId !== entry.instanceMapId) {
+      fail(file, `${entry.dungeonId} instanceMapId ${entry.instanceMapId} does not match dungeon record ${dungeon.value.instanceMapId}`);
+    }
+  }
+  for (const affix of value.affixes ?? []) {
+    if (!affixDefinitions.has(affix.affixSlug)) fail(file, `matrix references unknown affix ${affix.affixSlug}`);
   }
 }
 

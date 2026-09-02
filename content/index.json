@@ -25,6 +25,8 @@
     { "id": "voidscar-arena/overview", "path": "mythic-plus/midnight-season-2/voidscar-arena/strategy/overview.json", "status": "corroborated" },
     { "id": "kings-rest/overview", "path": "mythic-plus/midnight-season-2/kings-rest/strategy/overview.json", "status": "corroborated" },
     { "id": "ruby-life-pools/overview", "path": "mythic-plus/midnight-season-2/ruby-life-pools/strategy/overview.json", "status": "corroborated" },
-    { "id": "temple-of-sethraliss/overview", "path": "mythic-plus/midnight-season-2/temple-of-sethraliss/strategy/overview.json", "status": "corroborated" }
+    { "id": "temple-of-sethraliss/overview", "path": "mythic-plus/midnight-season-2/temple-of-sethraliss/strategy/overview.json", "status": "corroborated" },
+    { "id": "midnight-season-2/restoration-shaman-utility-matrix", "path": "mythic-plus/midnight-season-2/specs/restoration-shaman-utility-matrix.json", "status": "corroborated" },
+    { "id": "midnight-season-2/enhancement-shaman-utility-matrix", "path": "mythic-plus/midnight-season-2/specs/enhancement-shaman-utility-matrix.json", "status": "corroborated" }
   ]
 }

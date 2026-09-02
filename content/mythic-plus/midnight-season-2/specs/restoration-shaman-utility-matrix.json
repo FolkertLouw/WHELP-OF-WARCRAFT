@@ -1,0 +1,70 @@
+{
+  "$schema": "../../../../schemas/spec-dungeon-matrix.schema.json",
+  "schemaVersion": 1,
+  "recordType": "spec-dungeon-matrix",
+  "id": "midnight-season-2/restoration-shaman-utility-matrix",
+  "status": "corroborated",
+  "validity": { "fromBuild": "12.1.0.69587", "untilBuild": null, "seasonId": null, "seasonSlug": "midnight-season-2" },
+  "spec": { "classId": 7, "className": "Shaman", "specId": 264, "specName": "Restoration" },
+  "axes": [
+    { "id": "improved-purify-spirit", "label": "Improved Purify Spirit", "abilityNames": ["Improved Purify Spirit"], "spellIds": [] },
+    { "id": "tremor-totem", "label": "Fear, charm, and sleep removal", "abilityNames": ["Tremor Totem"], "spellIds": [] },
+    { "id": "poison-cleansing-totem", "label": "Group poison removal", "abilityNames": ["Poison Cleansing Totem"], "spellIds": [383013] },
+    { "id": "purge", "label": "Enemy magic removal", "abilityNames": ["Purge"], "spellIds": [370] },
+    { "id": "spirit-walk", "label": "Personal snare and root removal", "abilityNames": ["Spirit Walk"], "spellIds": [58875] }
+  ],
+  "dungeons": [
+    {
+      "dungeonId": "altar-of-fangs", "instanceMapId": 2993,
+      "ratings": { "improved-purify-spirit": "none", "tremor-totem": "none", "poison-cleansing-totem": "always", "purge": "none", "spirit-walk": "always" },
+      "notes": ["Poison Cleansing Totem covers Mass Envenom and Lasher Toxin.", "Spirit Walk can answer Paralyzing Shots, Regurgitate, and Toxic Atrophy movement restrictions."]
+    },
+    {
+      "dungeonId": "the-blinding-vale", "instanceMapId": 2859,
+      "ratings": { "improved-purify-spirit": "none", "tremor-totem": "none", "poison-cleansing-totem": "always", "purge": "none", "spirit-walk": "always" },
+      "notes": ["Poison Cleansing Totem covers Toxic Spew.", "Spirit Walk removes Bloodthorn Roots and Spore Spines from the Shaman."]
+    },
+    {
+      "dungeonId": "den-of-nalorakk", "instanceMapId": 2825,
+      "ratings": { "improved-purify-spirit": "always", "tremor-totem": "none", "poison-cleansing-totem": "always", "purge": "always", "spirit-walk": "always" },
+      "notes": ["Improved Purify Spirit answers Insatiable Hunger.", "Purge Healing Breeze from Earthwhisper Tenders.", "Poison Cleansing Totem covers Toxic Spores; Spirit Walk provides personal freedom from Glacial Tomb and relevant snares."]
+    },
+    {
+      "dungeonId": "murder-row", "instanceMapId": 2813,
+      "ratings": { "improved-purify-spirit": "always", "tremor-totem": "niche", "poison-cleansing-totem": "always", "purge": "always", "spirit-walk": "none" },
+      "notes": ["Improved Purify Spirit removes Curse of Doom, Poison Cleansing Totem answers Heartstop Poison, and Purge removes Fel Crazed.", "Tremor Totem can answer Seduction, but Poison Cleansing Totem is generally preferred because Seduction can be interrupted and the two talents compete."]
+    },
+    {
+      "dungeonId": "voidscar-arena", "instanceMapId": 2923,
+      "ratings": { "improved-purify-spirit": "none", "tremor-totem": "niche", "poison-cleansing-totem": "always", "purge": "none", "spirit-walk": "always" },
+      "notes": ["Poison Cleansing Totem answers Poison Splash, Corrosive Essence, and Mind-Numbing Poison.", "Tremor Totem can answer Mad Shriek but is generally displaced by Poison Cleansing Totem because the cast should be interrupted.", "Spirit Walk helps with Violent Sand and Condensed Mass movement restrictions."]
+    },
+    {
+      "dungeonId": "temple-of-sethraliss", "instanceMapId": 1877,
+      "ratings": { "improved-purify-spirit": "always", "tremor-totem": "none", "poison-cleansing-totem": "always", "purge": "always", "spirit-walk": "none" },
+      "notes": ["Improved Purify Spirit removes Addle Mind.", "Poison Cleansing Totem answers Poison Spit, Cytotoxin, and Poisoned Cheap Shot; Purge removes Accumulate Charge."]
+    },
+    {
+      "dungeonId": "kings-rest", "instanceMapId": 1762,
+      "ratings": { "improved-purify-spirit": "always", "tremor-totem": "niche", "poison-cleansing-totem": "always", "purge": "always", "spirit-walk": "always" },
+      "notes": ["Improved Purify Spirit answers Hex effects and Purge has several high-value enemy buffs.", "Poison Cleansing Totem is generally preferred over Tremor Totem due to the dungeon's numerous poisons.", "Spirit Walk removes several personal snares and roots."]
+    },
+    {
+      "dungeonId": "ruby-life-pools", "instanceMapId": 2521,
+      "ratings": { "improved-purify-spirit": "none", "tremor-totem": "none", "poison-cleansing-totem": "none", "purge": "always", "spirit-walk": "none" },
+      "notes": ["Purge removes Blaze of Glory and Stormcloud Barrier; the other matrix utilities have no listed dungeon-specific target."]
+    }
+  ],
+  "affixes": [
+    { "affixSlug": "xalataths-bargain-ascendant", "recommendations": ["Use Capacitor Totem to stop groups of Ascendant casts."] },
+    { "affixSlug": "xalataths-bargain-voidbound", "recommendations": ["No specialization-specific utility adjustment is required; focus the emissary."] },
+    { "affixSlug": "xalataths-bargain-pulsar", "recommendations": ["Ghost Wolf can help intercept partner orbs, but no dedicated talent swap is required."] },
+    { "affixSlug": "xalataths-bargain-devour", "recommendations": ["Poison Cleansing Totem can clear multiple eligible shields; ordinary dispels and healing provide fallbacks."] }
+  ],
+  "provenance": [{
+    "kind": "external-reference",
+    "description": "Original structured summary of the dungeon utility and affix recommendations in Harreks' Restoration Shaman Mythic+ guide, updated for Patch 12.1.0. Talent build strings are intentionally excluded.",
+    "url": "https://www.wowhead.com/guide/classes/shaman/restoration/mythic-plus-dungeon-tips",
+    "retrievedAt": "2026-09-02T13:10:00+02:00"
+  }]
+}

@@ -1,0 +1,73 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://whelp.dev/schemas/spec-dungeon-matrix.schema.json",
+  "title": "WHELP specialization dungeon utility matrix",
+  "type": "object",
+  "required": ["schemaVersion", "recordType", "id", "status", "validity", "spec", "axes", "dungeons", "affixes", "provenance"],
+  "properties": {
+    "$schema": { "type": "string" },
+    "schemaVersion": { "const": 1 },
+    "recordType": { "const": "spec-dungeon-matrix" },
+    "id": { "type": "string", "minLength": 1 },
+    "status": { "enum": ["draft", "corroborated", "verified", "deprecated"] },
+    "validity": { "$ref": "validity.schema.json" },
+    "spec": {
+      "type": "object",
+      "required": ["classId", "className", "specId", "specName"],
+      "properties": {
+        "classId": { "type": "integer", "minimum": 1 },
+        "className": { "type": "string", "minLength": 1 },
+        "specId": { "type": "integer", "minimum": 1 },
+        "specName": { "type": "string", "minLength": 1 }
+      },
+      "additionalProperties": false
+    },
+    "axes": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["id", "label", "abilityNames", "spellIds"],
+        "properties": {
+          "id": { "type": "string", "pattern": "^[a-z0-9][a-z0-9-]+$" },
+          "label": { "type": "string", "minLength": 1 },
+          "abilityNames": { "type": "array", "minItems": 1, "items": { "type": "string", "minLength": 1 }, "uniqueItems": true },
+          "spellIds": { "type": "array", "items": { "type": "integer", "minimum": 1 }, "uniqueItems": true }
+        },
+        "additionalProperties": false
+      }
+    },
+    "dungeons": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["dungeonId", "instanceMapId", "ratings", "notes"],
+        "properties": {
+          "dungeonId": { "type": "string", "minLength": 1 },
+          "instanceMapId": { "type": "integer", "minimum": 1 },
+          "ratings": {
+            "type": "object",
+            "additionalProperties": { "enum": ["always", "niche", "none"] }
+          },
+          "notes": { "type": "array", "items": { "type": "string", "minLength": 1 }, "uniqueItems": true }
+        },
+        "additionalProperties": false
+      }
+    },
+    "affixes": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["affixSlug", "recommendations"],
+        "properties": {
+          "affixSlug": { "type": "string", "minLength": 1 },
+          "recommendations": { "type": "array", "minItems": 1, "items": { "type": "string", "minLength": 1 }, "uniqueItems": true }
+        },
+        "additionalProperties": false
+      }
+    },
+    "provenance": { "type": "array", "minItems": 1, "items": { "$ref": "provenance.schema.json" } }
+  },
+  "additionalProperties": false
+}
