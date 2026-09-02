@@ -42,6 +42,15 @@ npm run query:spec-responses -- --spec enhancement-shaman --dungeon ruby-life-po
 
 The result identifies exact class tools, talent requirements, unsupported actions, and self-only defensives without treating them as party coverage.
 
+Build a compact dungeon loadout or inspect the gaps between multiple specializations:
+
+```bash
+npm run query:loadout -- --spec restoration-shaman --dungeon murder-row
+npm run query:party-gaps -- --specs restoration-shaman,enhancement-shaman --dungeon murder-row
+```
+
+The party report covers shared utility only. Universal positioning and personal defensives are returned separately and never counted as group coverage.
+
 To test the collector locally, copy `addon/WHELPCollector` into Retail's `Interface/AddOns` directory, restart WoW or run `/reload`, then use `/whelp status`.
 
 To inspect a locally installed Mythic Dungeon Tools module without copying its implementation into WHELP:

@@ -18,4 +18,6 @@ For focused interrupt, dispel, cleanse, or soothe questions, query the curated t
 
 For questions about what a particular specialization can personally handle, use `npm run query:spec-responses -- --spec <spec-slug>`. Preserve `unsupported` and `conditional-self` results: do not turn a missing class tool or a personal-only defensive into group coverage.
 
+For dungeon preparation, use `npm run query:loadout --` to obtain deduplicated tool recommendations and `npm run query:party-gaps --` to find utility the listed specializations do not cover. Party-gap output intentionally excludes universal movement and personal defensives from group utility.
+
 The repository validator is run with `npm test`.
