@@ -34,6 +34,14 @@ WHELP does not mirror third-party guides. It stores compact original records, st
 npm test
 ```
 
+Query a specialization against the curated dungeon-response catalog:
+
+```bash
+npm run query:spec-responses -- --spec enhancement-shaman --dungeon ruby-life-pools --priority critical
+```
+
+The result identifies exact class tools, talent requirements, unsupported actions, and self-only defensives without treating them as party coverage.
+
 To test the collector locally, copy `addon/WHELPCollector` into Retail's `Interface/AddOns` directory, restart WoW or run `/reload`, then use `/whelp status`.
 
 To inspect a locally installed Mythic Dungeon Tools module without copying its implementation into WHELP:

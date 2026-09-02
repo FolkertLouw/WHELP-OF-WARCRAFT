@@ -72,6 +72,10 @@
       "status": "draft"
     }
   ],
+  "specCapabilities": [
+    { "id": "shaman/restoration/capabilities", "record": "specs/shaman/restoration.json", "status": "corroborated" },
+    { "id": "shaman/enhancement/capabilities", "record": "specs/shaman/enhancement.json", "status": "corroborated" }
+  ],
   "builds": [
     {
       "version": "12.1.0.69587",

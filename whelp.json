@@ -12,6 +12,7 @@
     "strategyKnowledge": "content/index.json",
     "flaggedAbilities": "data/abilities/midnight-season-2.json",
     "curatedAbilityResponses": "content/mythic-plus/midnight-season-2/abilities/response-index.json",
+    "specCapabilities": "data/index.json",
     "pugRoutes": "content/mythic-plus/midnight-season-2/routes/catalog.json",
     "trustModel": "docs/TRUST_MODEL.md"
   },
@@ -19,6 +20,7 @@
     "validate": "npm test",
     "queryAbilities": "npm run query:abilities -- --dungeon <id> --tag <response-tag>",
     "queryAbilityResponses": "npm run query:responses -- --dungeon <id> --action <action> --priority <priority>",
+    "querySpecResponses": "npm run query:spec-responses -- --spec <spec-slug> --dungeon <id> --coverage <full|partial|none>",
     "regenerateAbilityIndex": "npm run generate:ability-index"
   }
 }

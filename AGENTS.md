@@ -16,4 +16,6 @@ When answering a World of Warcraft question with this repository available:
 
 For focused interrupt, dispel, cleanse, or soothe questions, query the curated tactical records with `npm run query:responses --` first. Use `npm run query:abilities --` for raw imported flags and coverage checks. Never translate the neutral `dispel-magic` flag into purge or friendly-cleanse advice without a curated response record.
 
+For questions about what a particular specialization can personally handle, use `npm run query:spec-responses -- --spec <spec-slug>`. Preserve `unsupported` and `conditional-self` results: do not turn a missing class tool or a personal-only defensive into group coverage.
+
 The repository validator is run with `npm test`.

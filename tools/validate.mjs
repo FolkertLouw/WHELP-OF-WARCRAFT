@@ -86,6 +86,25 @@ function validateRecord(file, value) {
     if (new Set(recordIds).size !== recordIds.length) fail(file, "response index record IDs must be unique");
   } else if (value.recordType === "spec-note") {
     requireFields(file, value, ["id", "status", "validity", "context", "specIds", "summary", "recommendations", "provenance"]);
+  } else if (value.recordType === "spec-capabilities") {
+    requireFields(file, value, ["id", "status", "validity", "spec", "tools", "provenance"]);
+    if (!Number.isInteger(value.spec?.specId) || value.spec.specId < 1) fail(file, "spec.specId must be a positive integer");
+    const toolIds = (value.tools ?? []).map((tool) => tool.id);
+    const spellIds = (value.tools ?? []).map((tool) => tool.spellId);
+    if (new Set(toolIds).size !== toolIds.length) fail(file, "spec capability tool IDs must be unique");
+    if (new Set(spellIds).size !== spellIds.length) fail(file, "spec capability spell IDs must be unique");
+    const allowedCapabilityActions = new Set(["interrupt", "purge", "cleanse-magic", "cleanse-curse", "cleanse-disease", "cleanse-poison", "soothe", "defensive", "crowd-control"]);
+    const allowedAvailability = new Set(["baseline", "specialization", "talent"]);
+    const allowedScopes = new Set(["enemy", "friendly-single", "friendly-periodic-area", "self", "area-enemy"]);
+    for (const tool of value.tools ?? []) {
+      requireFields(file, tool, ["id", "name", "spellId", "actions", "availability", "scope", "limitations"]);
+      if (!(tool.actions ?? []).length) fail(file, `spec tool ${tool.id} has no actions`);
+      for (const action of tool.actions ?? []) {
+        if (!allowedCapabilityActions.has(action)) fail(file, `spec tool ${tool.id} has unknown action ${action}`);
+      }
+      if (!allowedAvailability.has(tool.availability)) fail(file, `spec tool ${tool.id} has unknown availability ${tool.availability}`);
+      if (!allowedScopes.has(tool.scope)) fail(file, `spec tool ${tool.id} has unknown scope ${tool.scope}`);
+    }
   } else if (value.recordType === "spec-dungeon-matrix") {
     requireFields(file, value, ["id", "status", "validity", "spec", "axes", "dungeons", "affixes", "provenance"]);
     if (!Number.isInteger(value.spec?.classId) || value.spec.classId < 1) fail(file, "spec.classId must be a positive integer");
@@ -432,6 +451,15 @@ for (const { file, value } of records.filter(({ value }) => value.recordType ===
     if (!affixDefinitions.has(affix.affixSlug)) fail(file, `matrix references unknown affix ${affix.affixSlug}`);
   }
 }
+for (const { file, value } of records.filter(({ value }) => value.recordType === "spec-capabilities")) {
+  const matrix = records.find(({ value: candidate }) => candidate.recordType === "spec-dungeon-matrix"
+    && candidate.spec?.specId === value.spec?.specId
+    && candidate.validity?.seasonSlug === value.validity?.seasonSlug)?.value;
+  if (!matrix) fail(file, `no utility matrix covers spec ${value.spec?.specId} in ${value.validity?.seasonSlug}`);
+  else if (matrix.spec.classId !== value.spec.classId || matrix.spec.specName !== value.spec.specName) {
+    fail(file, `spec identity does not match utility matrix ${matrix.id}`);
+  }
+}
 
 const indexPath = path.join(root, "data", "index.json");
 const index = JSON.parse(await readFile(indexPath, "utf8"));
@@ -479,6 +507,16 @@ for (const abilityIndex of index.abilityIndexes ?? []) {
     if (record.status !== abilityIndex.status) fail(indexPath, `${abilityIndex.record} has status ${record.status}, expected ${abilityIndex.status}`);
   } catch (error) {
     fail(indexPath, `cannot read ability index ${abilityIndex.record}: ${error.message}`);
+  }
+}
+for (const capability of index.specCapabilities ?? []) {
+  const recordPath = path.join(root, "data", capability.record);
+  try {
+    const record = JSON.parse(await readFile(recordPath, "utf8"));
+    if (record.id !== capability.id) fail(indexPath, `${capability.record} has id ${record.id}, expected ${capability.id}`);
+    if (record.status !== capability.status) fail(indexPath, `${capability.record} has status ${record.status}, expected ${capability.status}`);
+  } catch (error) {
+    fail(indexPath, `cannot read spec capability ${capability.record}: ${error.message}`);
   }
 }
 const indexedDungeons = new Map((index.dungeons ?? []).map((entry) => [entry.id, entry]));
