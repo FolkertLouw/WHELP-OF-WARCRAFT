@@ -60,6 +60,14 @@ test("joins Protection Paladin toxin removal without claiming Magic cleansing", 
   assert.ok(report.dungeons[0].mechanicSpellIds.includes(1216590));
 });
 
+test("joins Retribution physical immunity to exact King's Rest mechanics", () => {
+  const report = querySpecMatrix(matrices, capabilities, { spec: "retribution-paladin", dungeon: "kings-rest", rating: "always" });
+  const immunity = report.dungeons[0].utilities.find((entry) => entry.axisId === "physical-immunity");
+  assert.equal(immunity.tools[0].id, "blessing-of-protection");
+  assert.ok(report.dungeons[0].mechanicSpellIds.includes(267494));
+  assert.ok(report.dungeons[0].mechanicSpellIds.includes(1303490));
+});
+
 test("surfaces action-level talent availability for Restoration Shaman", () => {
   const report = querySpecMatrix(matrices, capabilities, { spec: "restoration-shaman", dungeon: "den-of-nalorakk" });
   const purify = report.dungeons[0].utilities.find((entry) => entry.axisId === "improved-purify-spirit").tools[0];

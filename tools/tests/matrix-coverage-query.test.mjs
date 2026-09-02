@@ -13,9 +13,9 @@ const season = JSON.parse(await readFile(path.join(root, "data", "seasons", "mid
 test("reports explicit full-matrix and capability-only coverage", () => {
   const report = queryMatrixCoverage(capabilities, matrices, season);
   assert.equal(report.summary.modeledSpecCount, 21);
-  assert.equal(report.summary.matrixSpecCount, 12);
-  assert.equal(report.summary.fullMatrixSpecCount, 12);
-  assert.equal(report.summary.capabilityOnlySpecCount, 9);
+  assert.equal(report.summary.matrixSpecCount, 13);
+  assert.equal(report.summary.fullMatrixSpecCount, 13);
+  assert.equal(report.summary.capabilityOnlySpecCount, 8);
   const beastMastery = report.entries.find((entry) => entry.spec.slug === "beast-mastery-hunter");
   assert.equal(beastMastery.completeSeasonCoverage, true);
   assert.deepEqual(beastMastery.missingDungeonIds, []);
@@ -32,6 +32,8 @@ test("reports explicit full-matrix and capability-only coverage", () => {
   assert.equal(frostMage.completeSeasonCoverage, true);
   const protectionPaladin = report.entries.find((entry) => entry.spec.slug === "protection-paladin");
   assert.equal(protectionPaladin.completeSeasonCoverage, true);
+  const retributionPaladin = report.entries.find((entry) => entry.spec.slug === "retribution-paladin");
+  assert.equal(retributionPaladin.completeSeasonCoverage, true);
 });
 
 test("rejects malformed coverage inputs", () => {

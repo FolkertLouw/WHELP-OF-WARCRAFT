@@ -1,0 +1,33 @@
+{
+  "$schema": "../../../../schemas/spec-dungeon-matrix.schema.json",
+  "schemaVersion": 1,
+  "recordType": "spec-dungeon-matrix",
+  "id": "midnight-season-2/retribution-paladin-utility-matrix",
+  "status": "corroborated",
+  "validity": { "fromBuild": "12.1.0.69587", "untilBuild": null, "seasonId": null, "seasonSlug": "midnight-season-2" },
+  "spec": { "classId": 2, "className": "Paladin", "specId": 70, "specName": "Retribution" },
+  "axes": [
+    { "id": "physical-immunity", "label": "Friendly Physical immunity", "abilityNames": ["Blessing of Protection"], "spellIds": [1022], "toolIds": ["blessing-of-protection"] },
+    { "id": "movement-freedom", "label": "Friendly snare and root removal", "abilityNames": ["Blessing of Freedom"], "spellIds": [1044], "toolIds": ["blessing-of-freedom"] },
+    { "id": "external-defensive", "label": "Damage-transfer external", "abilityNames": ["Blessing of Sacrifice"], "spellIds": [6940], "toolIds": ["blessing-of-sacrifice"] },
+    { "id": "toxin-cleanse", "label": "Friendly Poison and Disease removal", "abilityNames": ["Cleanse Toxins"], "spellIds": [426184], "toolIds": ["cleanse-toxins"] },
+    { "id": "control", "label": "Single-target and area crowd control", "abilityNames": ["Hammer of Justice", "Blinding Light"], "spellIds": [853, 115750], "toolIds": ["hammer-of-justice", "blinding-light"] }
+  ],
+  "dungeons": [
+    { "dungeonId": "altar-of-fangs", "instanceMapId": 2993, "ratings": { "physical-immunity": "niche", "movement-freedom": "none", "external-defensive": "niche", "toxin-cleanse": "always", "control": "niche" }, "mechanicSpellIds": [1307571], "notes": ["Cleanse Toxins dispels Envenom. Blessing of Protection has only general Physical-bleed value here, while Blessing of Freedom has no listed application.", "Blessing of Sacrifice remains general ally support and Blinding Light is an optional area stop."] },
+    { "dungeonId": "the-blinding-vale", "instanceMapId": 2859, "ratings": { "physical-immunity": "always", "movement-freedom": "always", "external-defensive": "niche", "toxin-cleanse": "none", "control": "niche" }, "mechanicSpellIds": [1237090, 1241058, 1259365], "notes": ["Blessing of Protection removes Grievous Thrash or immunes Bloodthirsty Gaze; Blessing of Freedom removes Bloodthorn Roots.", "Cleanse Toxins has no listed application; Sacrifice and Blinding Light retain general support value."] },
+    { "dungeonId": "den-of-nalorakk", "instanceMapId": 2825, "ratings": { "physical-immunity": "niche", "movement-freedom": "always", "external-defensive": "niche", "toxin-cleanse": "always", "control": "niche" }, "mechanicSpellIds": [1234846, 1238053], "notes": ["Blessing of Freedom removes roots and slows before Sentinel of Winter; Cleanse Toxins dispels Toxic Spores on The Hoardmonger.", "Blessing of Protection covers general Physical bleeds, while Sacrifice and Blinding Light remain situational support."] },
+    { "dungeonId": "murder-row", "instanceMapId": 2813, "ratings": { "physical-immunity": "always", "movement-freedom": "none", "external-defensive": "niche", "toxin-cleanse": "always", "control": "niche" }, "mechanicSpellIds": [1216590, 474478], "notes": ["Blessing of Protection immunes Killing Spree damage; Cleanse Toxins dispels Heartstop Poison.", "Blessing of Freedom has no listed application; Sacrifice and Blinding Light retain general support value."] },
+    { "dungeonId": "voidscar-arena", "instanceMapId": 2923, "ratings": { "physical-immunity": "none", "movement-freedom": "none", "external-defensive": "niche", "toxin-cleanse": "always", "control": "niche" }, "mechanicSpellIds": [1249661, 1289258], "notes": ["Cleanse Toxins dispels poisons on trash before Atroxus.", "The guide lists no Blessing of Protection or Freedom application; Sacrifice and Blinding Light remain generic support."] },
+    { "dungeonId": "temple-of-sethraliss", "instanceMapId": 1877, "ratings": { "physical-immunity": "always", "movement-freedom": "none", "external-defensive": "niche", "toxin-cleanse": "always", "control": "niche" }, "mechanicSpellIds": [1290031, 1308148], "notes": ["Pre-cast Blessing of Protection to immune A Knot of Snakes; Cleanse Toxins dispels Cytotoxin and other eligible poisons.", "Blessing of Freedom has no listed application; Sacrifice and Blinding Light remain generic support."] },
+    { "dungeonId": "kings-rest", "instanceMapId": 1762, "ratings": { "physical-immunity": "always", "movement-freedom": "always", "external-defensive": "niche", "toxin-cleanse": "always", "control": "always" }, "mechanicSpellIds": [267494, 271564, 1303490], "notes": ["Blessing of Protection immunes Barrel Through or Savage Maul. Blessing of Freedom and Cleanse Toxins both answer Lingering Fluid because it is a Poison with a snare.", "Blinding Light prevents susceptible Minion of Zul fear casts; Blessing of Sacrifice remains general ally support."] },
+    { "dungeonId": "ruby-life-pools", "instanceMapId": 2521, "ratings": { "physical-immunity": "none", "movement-freedom": "none", "external-defensive": "niche", "toxin-cleanse": "none", "control": "niche" }, "mechanicSpellIds": [], "notes": ["The guide lists no dungeon-specific application for Blessing of Protection, Blessing of Freedom, or Cleanse Toxins.", "Blessing of Sacrifice remains general ally support and Blinding Light is an optional area stop."] }
+  ],
+  "affixes": [
+    { "affixSlug": "xalataths-bargain-ascendant", "recommendations": ["Use Blinding Light for the cluster; Hammer of Justice and Rebuke cover survivors when group area control misses."] },
+    { "affixSlug": "xalataths-bargain-voidbound", "recommendations": ["Focus the emissary when it spawns so its stacking enemy damage reduction does not linger."] },
+    { "affixSlug": "xalataths-bargain-pulsar", "recommendations": ["Use Divine Steed to collect allies' orbiting orbs while aiming your own toward another player."] },
+    { "affixSlug": "xalataths-bargain-devour", "recommendations": ["Cleanse Toxins and Blessing of Freedom remove eligible applications; Lay on Hands can provide the healing alternative, and Unbound Freedom can extend coverage to another player."] }
+  ],
+  "provenance": [{ "kind": "external-reference", "description": "Original structured summary of Bolas's Patch 12.1.0 Retribution Paladin dungeon utility and affix recommendations. Talent strings, gear, performance rankings, and legacy comments are intentionally excluded.", "url": "https://www.wowhead.com/guide/classes/paladin/retribution/mythic-plus-dungeon-tips", "retrievedAt": "2026-09-02T18:28:00+02:00" }]
+}

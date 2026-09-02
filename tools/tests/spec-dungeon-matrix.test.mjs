@@ -28,6 +28,8 @@ const frostMageMatrix = await loadJson("content", "mythic-plus", "midnight-seaso
 const frostMageCapabilities = await loadJson("data", "specs", "mage", "frost.json");
 const protectionPaladinMatrix = await loadJson("content", "mythic-plus", "midnight-season-2", "specs", "protection-paladin-utility-matrix.json");
 const protectionPaladinCapabilities = await loadJson("data", "specs", "paladin", "protection.json");
+const retributionPaladinMatrix = await loadJson("content", "mythic-plus", "midnight-season-2", "specs", "retribution-paladin-utility-matrix.json");
+const retributionPaladinCapabilities = await loadJson("data", "specs", "paladin", "retribution.json");
 const season = await loadJson("data", "seasons", "midnight-season-2.json");
 
 test("Unholy matrix covers every Midnight Season 2 dungeon exactly once", () => {
@@ -256,4 +258,21 @@ test("Protection Paladin separates interrupt bounces, cleanses, and immunities",
   assert.deepEqual(tools.get("cleanse-toxins").actions, ["cleanse-poison", "cleanse-disease"]);
   assert.deepEqual(tools.get("blessing-of-spellwarding").actions, ["external-defensive"]);
   assert.match(protectionPaladinMatrix.dungeons.find((entry) => entry.dungeonId === "ruby-life-pools").notes.join(" "), /does not remove Blaze of Glory/);
+});
+
+test("Retribution Paladin matrix covers the season and resolves every utility axis", () => {
+  assert.deepEqual(new Set(retributionPaladinMatrix.dungeons.map((entry) => entry.dungeonId)), new Set(season.dungeons.map((entry) => entry.id)));
+  const tools = new Map(retributionPaladinCapabilities.tools.map((tool) => [tool.id, tool]));
+  for (const axis of retributionPaladinMatrix.axes) {
+    for (const toolId of axis.toolIds) assert.ok(tools.has(toolId), `${axis.id} should resolve ${toolId}`);
+  }
+});
+
+test("Retribution preserves explicit dungeon none ratings and dual-domain Lingering Fluid answers", () => {
+  const altar = retributionPaladinMatrix.dungeons.find((entry) => entry.dungeonId === "altar-of-fangs");
+  assert.equal(altar.ratings["movement-freedom"], "none");
+  const kingsRest = retributionPaladinMatrix.dungeons.find((entry) => entry.dungeonId === "kings-rest");
+  assert.equal(kingsRest.ratings["movement-freedom"], "always");
+  assert.equal(kingsRest.ratings["toxin-cleanse"], "always");
+  assert.ok(kingsRest.mechanicSpellIds.includes(271564));
 });
