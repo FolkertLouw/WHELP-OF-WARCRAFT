@@ -3,7 +3,7 @@
   "schemaVersion": 1,
   "name": "WHELP-OF-WARCRAFT",
   "acronym": "World-data Hub for Encounters, Loadouts & Progression",
-  "datasetVersion": "1.8.0",
+  "datasetVersion": "1.9.0",
   "currentBuild": "12.1.0.69587",
   "currentSeason": "midnight-season-2",
   "entrypoints": {
@@ -15,7 +15,7 @@
     "specCapabilities": "data/index.json",
     "specCapabilityCoverage": "data/specs/coverage.json",
     "sourceFreshnessPolicy": "data/policies/source-freshness.json",
-    "sourceClaimAudits": "data/source-audits/evoker-midnight-season-2-wowhead-dungeon-tips.json",
+    "sourceClaimAudits": "data/index.json",
     "pugRoutes": "content/mythic-plus/midnight-season-2/routes/catalog.json",
     "trustModel": "docs/TRUST_MODEL.md"
   },
