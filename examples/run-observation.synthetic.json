@@ -20,7 +20,7 @@
     { "encounterId": 999002, "startedAt": 1788300100, "completedAt": 1788300200, "durationMs": 100000, "success": true }
   ],
   "pulls": [
-    { "order": 1, "startedAt": 1788300005, "completedAt": 1788300065, "durationMs": 60000, "enemies": [{ "npcId": 999003, "count": 1 }], "enemyForces": 7, "deaths": 0 }
+    { "order": 1, "plannedPullId": "pull-01", "startedAt": 1788300005, "completedAt": 1788300065, "durationMs": 60000, "enemies": [{ "npcId": 999003, "count": 1 }], "enemyForces": 7, "deaths": 0 }
   ],
   "player": { "classId": 7, "specId": 264, "role": "HEALER", "itemLevel": null },
   "group": [],

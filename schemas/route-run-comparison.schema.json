@@ -1,0 +1,123 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://whelp.dev/schemas/route-run-comparison.schema.json",
+  "title": "WHELP route-to-run comparison report",
+  "type": "object",
+  "required": ["$schema", "reportVersion", "reportType", "routeId", "challengeMapId", "observation", "matchQuality", "summary", "pulls", "extraPulls", "checkpoints", "warnings"],
+  "properties": {
+    "$schema": { "const": "https://whelp.dev/schemas/route-run-comparison.schema.json" },
+    "reportVersion": { "const": 1 },
+    "reportType": { "const": "route-run-comparison" },
+    "routeId": { "type": "string" },
+    "challengeMapId": { "type": "integer", "minimum": 1 },
+    "observation": {
+      "type": "object",
+      "required": ["gameVersion", "gameBuild", "collectorVersion", "keystoneLevel", "affixIds", "startedAt", "status"],
+      "properties": {
+        "gameVersion": { "type": ["string", "null"] },
+        "gameBuild": { "type": ["string", "null"] },
+        "collectorVersion": { "type": ["string", "null"] },
+        "keystoneLevel": { "type": ["integer", "null"], "minimum": 2 },
+        "affixIds": { "type": "array", "items": { "type": "integer", "minimum": 1 } },
+        "startedAt": { "type": "integer", "minimum": 1 },
+        "status": { "enum": ["started", "completed", "abandoned", null] }
+      },
+      "additionalProperties": false
+    },
+    "matchQuality": {
+      "type": "object",
+      "required": ["explicitPullIdMatches", "orderInferredMatches", "missingPlannedPulls", "extraObservedPulls"],
+      "properties": {
+        "explicitPullIdMatches": { "type": "integer", "minimum": 0 },
+        "orderInferredMatches": { "type": "integer", "minimum": 0 },
+        "missingPlannedPulls": { "type": "integer", "minimum": 0 },
+        "extraObservedPulls": { "type": "integer", "minimum": 0 }
+      },
+      "additionalProperties": false
+    },
+    "summary": {
+      "type": "object",
+      "required": ["plannedPullCount", "observedPullCount", "plannedEnemyForces", "observedEnemyForces", "enemyForcesDelta", "runDurationMs", "runDeaths", "pullAttributedDeaths", "unattributedDeaths"],
+      "properties": {
+        "plannedPullCount": { "type": "integer", "minimum": 0 },
+        "observedPullCount": { "type": "integer", "minimum": 0 },
+        "plannedEnemyForces": { "type": "integer", "minimum": 0 },
+        "observedEnemyForces": { "type": "integer", "minimum": 0 },
+        "enemyForcesDelta": { "type": "integer" },
+        "runDurationMs": { "type": ["integer", "null"], "minimum": 0 },
+        "runDeaths": { "type": "integer", "minimum": 0 },
+        "pullAttributedDeaths": { "type": "integer", "minimum": 0 },
+        "unattributedDeaths": { "type": "integer", "minimum": 0 }
+      },
+      "additionalProperties": false
+    },
+    "pulls": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["plannedPullId", "plannedOrder", "status", "matchBasis", "observedOrder", "plannedEnemyForces", "observedEnemyForces", "enemyForcesDelta", "durationMs", "deaths", "enemyCountDrift"],
+        "properties": {
+          "plannedPullId": { "type": "string" },
+          "plannedOrder": { "type": "integer", "minimum": 1 },
+          "status": { "enum": ["matched", "missing"] },
+          "matchBasis": { "enum": ["planned-pull-id", "order-inferred", null] },
+          "observedOrder": { "type": ["integer", "null"], "minimum": 1 },
+          "plannedEnemyForces": { "type": "integer", "minimum": 0 },
+          "observedEnemyForces": { "type": ["integer", "null"], "minimum": 0 },
+          "enemyForcesDelta": { "type": ["integer", "null"] },
+          "durationMs": { "type": ["integer", "null"], "minimum": 0 },
+          "deaths": { "type": ["integer", "null"], "minimum": 0 },
+          "enemyCountDrift": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": ["npcId", "plannedCount", "observedCount", "delta"],
+              "properties": {
+                "npcId": { "type": "integer", "minimum": 1 },
+                "plannedCount": { "type": "integer", "minimum": 0 },
+                "observedCount": { "type": "integer", "minimum": 0 },
+                "delta": { "type": "integer" }
+              },
+              "additionalProperties": false
+            }
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "extraPulls": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["observedOrder", "plannedPullId", "enemyForces", "durationMs", "deaths", "reason"],
+        "properties": {
+          "observedOrder": { "type": "integer", "minimum": 1 },
+          "plannedPullId": { "type": ["string", "null"] },
+          "enemyForces": { "type": "integer", "minimum": 0 },
+          "durationMs": { "type": ["integer", "null"], "minimum": 0 },
+          "deaths": { "type": "integer", "minimum": 0 },
+          "reason": { "enum": ["unknown-planned-pull-id", "unmatched-observed-pull"] }
+        },
+        "additionalProperties": false
+      }
+    },
+    "checkpoints": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["encounterId", "afterPlannedPullId", "observed", "success", "encounterDurationMs", "completedElapsedMs"],
+        "properties": {
+          "encounterId": { "type": "integer", "minimum": 1 },
+          "afterPlannedPullId": { "type": "string" },
+          "observed": { "type": "boolean" },
+          "success": { "type": ["boolean", "null"] },
+          "encounterDurationMs": { "type": ["integer", "null"], "minimum": 0 },
+          "completedElapsedMs": { "type": ["integer", "null"], "minimum": 0 }
+        },
+        "additionalProperties": false
+      }
+    },
+    "warnings": { "type": "array", "items": { "type": "string" } }
+  },
+  "additionalProperties": false
+}

@@ -106,6 +106,48 @@ function validateRecord(file, value) {
     if (value.privacy?.containsNames !== false || value.privacy?.containsChat !== false) {
       fail(file, "public observations must explicitly exclude names and chat");
     }
+    const pulls = value.pulls ?? [];
+    const pullOrders = pulls.map((pull) => pull.order);
+    if (new Set(pullOrders).size !== pullOrders.length) fail(file, "observed pull order values must be unique");
+    for (let index = 0; index < pullOrders.length; index += 1) {
+      if (pullOrders[index] !== index + 1) fail(file, "observed pull order must be contiguous and match array order");
+    }
+    const plannedPullIds = pulls.map((pull) => pull.plannedPullId).filter(Boolean);
+    if (new Set(plannedPullIds).size !== plannedPullIds.length) fail(file, "plannedPullId values must be unique within an observation");
+    if (plannedPullIds.length && !value.run?.routePlanId) fail(file, "plannedPullId requires run.routePlanId");
+    const startedAt = value.run?.startedAt;
+    const completedAt = value.run?.completedAt;
+    if (completedAt !== null && completedAt !== undefined && completedAt < startedAt) fail(file, "run.completedAt is before run.startedAt");
+    if (completedAt !== null && completedAt !== undefined && value.run?.durationMs !== (completedAt - startedAt) * 1000) {
+      fail(file, "run.durationMs does not match run timestamps");
+    }
+    if ((completedAt === null || completedAt === undefined) && value.run?.durationMs !== null && value.run?.durationMs !== undefined) {
+      fail(file, "run has durationMs without completedAt");
+    }
+    if (["completed", "abandoned"].includes(value.run?.status) && (completedAt === null || completedAt === undefined)) {
+      fail(file, `${value.run.status} run is missing completedAt`);
+    }
+    if (value.run?.status === "started" && completedAt !== null && completedAt !== undefined) fail(file, "started run must not have completedAt");
+    let attributedDeaths = 0;
+    for (const pull of pulls) {
+      attributedDeaths += pull.deaths ?? 0;
+      if (pull.startedAt < startedAt) fail(file, `observed pull ${pull.order} starts before the run`);
+      if (completedAt !== null && completedAt !== undefined && pull.startedAt > completedAt) fail(file, `observed pull ${pull.order} starts after the run`);
+      if (pull.completedAt !== null && pull.completedAt !== undefined) {
+        if (pull.completedAt < pull.startedAt) fail(file, `observed pull ${pull.order} completes before it starts`);
+        if (pull.durationMs !== (pull.completedAt - pull.startedAt) * 1000) fail(file, `observed pull ${pull.order} duration does not match timestamps`);
+        if (completedAt !== null && completedAt !== undefined && pull.completedAt > completedAt) fail(file, `observed pull ${pull.order} completes after the run`);
+      } else if (pull.durationMs !== null) {
+        fail(file, `observed pull ${pull.order} has durationMs without completedAt`);
+      }
+    }
+    if (attributedDeaths > (value.run?.deathCount ?? 0)) fail(file, "pull-attributed deaths exceed the run death count");
+    for (const encounter of value.encounters ?? []) {
+      if (encounter.startedAt < startedAt) fail(file, `encounter ${encounter.encounterId} starts before the run`);
+      if (encounter.completedAt < encounter.startedAt) fail(file, `encounter ${encounter.encounterId} completes before it starts`);
+      if (encounter.durationMs !== (encounter.completedAt - encounter.startedAt) * 1000) fail(file, `encounter ${encounter.encounterId} duration does not match timestamps`);
+      if (completedAt !== null && completedAt !== undefined && encounter.completedAt > completedAt) fail(file, `encounter ${encounter.encounterId} completes after the run`);
+    }
   } else {
     fail(file, `unknown recordType ${value.recordType}`);
   }
@@ -324,6 +366,42 @@ for (const { file, value } of records.filter(({ value }) => value.recordType ===
   if (value.targetEnemyForces !== cumulativeEnemyForces) fail(file, "targetEnemyForces does not match final cumulative enemy forces");
   if (value.targetEnemyForces < dungeon.value.enemyForcesTotal) {
     fail(file, `route plans ${value.targetEnemyForces} forces but dungeon requires ${dungeon.value.enemyForcesTotal}`);
+  }
+}
+const routesById = new Map(records.filter(({ value }) => value.recordType === "route").map(({ value }) => [value.id, value]));
+for (const { file, value } of records.filter(({ value }) => value.recordType === "run-observation")) {
+  if (file.includes(`${path.sep}examples${path.sep}`)) continue;
+  const dungeon = dungeons.find(({ value: candidate }) => candidate.challengeMapId === value.run?.challengeMapId);
+  if (!dungeon) {
+    fail(file, `no dungeon has challengeMapId ${value.run?.challengeMapId}`);
+    continue;
+  }
+  const knownEnemies = new Map(dungeon.value.enemies.map((enemy) => [enemy.npcId, enemy]));
+  const knownEncounters = new Set(dungeon.value.encounters.map((encounter) => encounter.encounterId));
+  for (const pull of value.pulls ?? []) {
+    let enemyForces = 0;
+    for (const enemy of pull.enemies ?? []) {
+      const canonical = knownEnemies.get(enemy.npcId);
+      if (!canonical) fail(file, `observed pull ${pull.order} references unknown NPC ${enemy.npcId}`);
+      else enemyForces += canonical.enemyForces * enemy.count;
+    }
+    if (pull.enemyForces !== enemyForces) fail(file, `observed pull ${pull.order} enemyForces does not match its enemies`);
+  }
+  for (const encounter of value.encounters ?? []) {
+    if (!knownEncounters.has(encounter.encounterId)) fail(file, `unknown observed encounter ${encounter.encounterId} for ${dungeon.value.id}`);
+  }
+  if (!value.run?.routePlanId) continue;
+  const route = routesById.get(value.run.routePlanId);
+  if (!route) {
+    fail(file, `routePlanId references unknown route ${value.run.routePlanId}`);
+    continue;
+  }
+  if (route.challengeMapId !== value.run.challengeMapId) fail(file, "routePlanId challengeMapId does not match the observed run");
+  const knownPullIds = new Set(route.pulls.map((pull) => pull.id));
+  for (const pull of value.pulls ?? []) {
+    if (pull.plannedPullId && !knownPullIds.has(pull.plannedPullId)) {
+      fail(file, `observed pull ${pull.order} references unknown planned pull ${pull.plannedPullId}`);
+    }
   }
 }
 for (const { file, value } of records.filter(({ file }) => file.startsWith(path.join(root, "content")))) {

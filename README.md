@@ -52,6 +52,14 @@ npm run inspect:mdt-packs -- "/path/to/MythicDungeonTools/Expansion/Dungeon.lua"
 
 Spawn groups are review evidence, not a route. The inspector intentionally exposes count mismatches caused by summoned or encounter-only entities; see `docs/ROUTES.md`.
 
+To compare a sanitized run observation with its planned route:
+
+```text
+npm run compare:route -- --route <route.json> --observation <run-observation.json>
+```
+
+The JSON report keeps exact pull-ID matches separate from order-based inference and exposes count drift, missing or extra pulls, deaths, durations, and boss checkpoints. See `docs/ROUTES.md` for its trust boundary.
+
 To regenerate the seven season-wide dungeon packages described by the checked-in import manifest:
 
 ```bash

@@ -10,7 +10,8 @@
     "test:tools": "node --test tools/tests/*.test.mjs",
     "import:mdt": "node tools/import-mdt.mjs",
     "import:season-mdt": "node tools/import-season-mdt.mjs",
-    "inspect:mdt-packs": "node tools/inspect-mdt-packs.mjs"
+    "inspect:mdt-packs": "node tools/inspect-mdt-packs.mjs",
+    "compare:route": "node tools/compare-run-to-route.mjs"
   },
   "engines": {
     "node": ">=20"

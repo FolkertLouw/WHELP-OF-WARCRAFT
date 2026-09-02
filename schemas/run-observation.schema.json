@@ -66,6 +66,7 @@
         "required": ["order", "startedAt", "completedAt", "durationMs", "enemies", "enemyForces", "deaths"],
         "properties": {
           "order": { "type": "integer", "minimum": 1 },
+          "plannedPullId": { "type": ["string", "null"], "pattern": "^[a-z0-9][a-z0-9-]+$" },
           "startedAt": { "type": "integer", "minimum": 1 },
           "completedAt": { "type": ["integer", "null"], "minimum": 1 },
           "durationMs": { "type": ["integer", "null"], "minimum": 0 },

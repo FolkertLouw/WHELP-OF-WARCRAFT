@@ -14,7 +14,7 @@
 - Build a SavedVariables importer and sanitizer.
 - Import MDT routes without treating them as verified automatically.
 - Parse optional combat logs for deaths, casts, interrupts, dispels, and encounter timing.
-- Produce local comparison reports.
+- Produce local comparison reports. The first route-to-run report is implemented; aggregation and combat-event comparisons remain.
 
 ## Phase 3 — public collaboration
 
