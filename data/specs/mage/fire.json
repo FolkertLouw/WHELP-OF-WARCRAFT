@@ -1,0 +1,23 @@
+{
+  "$schema": "../../../schemas/spec-capabilities.schema.json",
+  "schemaVersion": 1,
+  "recordType": "spec-capabilities",
+  "id": "mage/fire/capabilities",
+  "status": "corroborated",
+  "validity": { "fromBuild": "12.1.0.69587", "untilBuild": null, "seasonId": null, "seasonSlug": "midnight-season-2" },
+  "spec": { "classId": 8, "className": "Mage", "specId": 63, "specName": "Fire", "slug": "fire-mage" },
+  "tools": [
+    { "id": "counterspell", "name": "Counterspell", "spellId": 2139, "actions": ["interrupt"], "availability": "baseline", "scope": "enemy", "limitations": ["Single target", "Forty-yard range", "Twenty-five-second cooldown before Quick Witted"] },
+    { "id": "spellsteal", "name": "Spellsteal", "spellId": 30449, "actions": ["purge"], "availability": "talent", "scope": "enemy", "limitations": ["Steals one beneficial Magic effect instead of merely removing it", "High mana cost"] },
+    { "id": "remove-curse", "name": "Remove Curse", "spellId": 475, "actions": ["cleanse-curse"], "availability": "talent", "scope": "friendly-single", "limitations": ["Curse effects only", "Eight-second cooldown before Improved Remove Curse"] },
+    { "id": "polymorph", "name": "Polymorph", "spellId": 118, "actions": ["crowd-control"], "availability": "baseline", "scope": "enemy", "limitations": ["Damage breaks the effect", "Only affects susceptible creature types"] },
+    { "id": "time-warp", "name": "Time Warp", "spellId": 80353, "actions": ["bloodlust"], "availability": "baseline", "scope": "friendly-area", "limitations": ["Thirty percent Haste for forty seconds", "Applies the shared ten-minute exhaustion effect", "Five-minute cooldown"] },
+    { "id": "arcane-intellect", "name": "Arcane Intellect", "spellId": 1459, "actions": ["group-buff"], "availability": "baseline", "scope": "friendly-area", "limitations": ["Three percent Intellect for one hour", "Does not stack with an equivalent Arcane Intellect effect"] },
+    { "id": "blazing-barrier", "name": "Blazing Barrier", "spellId": 235313, "actions": ["defensive"], "availability": "talent", "scope": "self", "limitations": ["Personal absorb only"] }
+  ],
+  "provenance": [
+    { "kind": "external-reference", "description": "Current Midnight Fire Mythic+ build guidance explicitly includes Remove Curse and Spellsteal and describes the configurable Mage class utility tree.", "url": "https://www.wowhead.com/guide/classes/mage/fire/talent-builds-pve-dps", "retrievedAt": "2026-09-02T22:00:00+02:00" },
+    { "kind": "external-reference", "description": "Current Fire overview confirms the Midnight specialization and its Blazing Barrier defensive support.", "url": "https://www.wowhead.com/guide/classes/mage/fire/overview-pve-dps", "retrievedAt": "2026-09-02T22:00:00+02:00" },
+    { "kind": "external-reference", "description": "Current Spellsteal record confirms its enemy Magic theft behavior and spell identifier.", "url": "https://www.wowhead.com/spell=30449/spellsteal", "retrievedAt": "2026-09-02T22:00:00+02:00" }
+  ]
+}

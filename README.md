@@ -67,6 +67,13 @@ npm run query:capabilities -- --specs discipline-priest,holy-priest,shadow-pries
 npm run query:capabilities -- --specs discipline-priest,holy-priest,shadow-priest --scope mixed-area
 ```
 
+Mage records expose shared Counterspell, Time Warp, Arcane Intellect, Remove Curse, Spellsteal, and Polymorph utility while preserving each specialization's defensive barrier:
+
+```powershell
+npm run query:capabilities -- --specs arcane-mage,fire-mage,frost-mage --action bloodlust
+npm run query:capabilities -- --specs arcane-mage,fire-mage,frost-mage --action cleanse-curse
+```
+
 Capability results preserve action-specific availability, alternate faction spell IDs, and configuration requirements, so a talent-gated extension or pet-dependent group tool remains visible.
 
 The capability catalog is intentionally marked partial in `data/specs/coverage.json`. Query output includes that completeness state and the number of modeled specs; an absent spec means “not modeled yet,” never “has no utility.”

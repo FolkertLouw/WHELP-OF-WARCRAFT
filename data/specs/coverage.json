@@ -21,7 +21,10 @@
     { "specId": 105, "slug": "restoration-druid", "recordId": "druid/restoration/capabilities" },
     { "specId": 256, "slug": "discipline-priest", "recordId": "priest/discipline/capabilities" },
     { "specId": 257, "slug": "holy-priest", "recordId": "priest/holy/capabilities" },
-    { "specId": 258, "slug": "shadow-priest", "recordId": "priest/shadow/capabilities" }
+    { "specId": 258, "slug": "shadow-priest", "recordId": "priest/shadow/capabilities" },
+    { "specId": 62, "slug": "arcane-mage", "recordId": "mage/arcane/capabilities" },
+    { "specId": 63, "slug": "fire-mage", "recordId": "mage/fire/capabilities" },
+    { "specId": 64, "slug": "frost-mage", "recordId": "mage/frost/capabilities" }
   ],
   "missingDataMeaning": "A specialization absent from this partial catalog is not yet modeled. Absence must never be interpreted as evidence that the specialization lacks a capability.",
   "provenance": [

@@ -87,7 +87,10 @@
     { "id": "druid/restoration/capabilities", "record": "specs/druid/restoration.json", "status": "corroborated" },
     { "id": "priest/discipline/capabilities", "record": "specs/priest/discipline.json", "status": "corroborated" },
     { "id": "priest/holy/capabilities", "record": "specs/priest/holy.json", "status": "corroborated" },
-    { "id": "priest/shadow/capabilities", "record": "specs/priest/shadow.json", "status": "corroborated" }
+    { "id": "priest/shadow/capabilities", "record": "specs/priest/shadow.json", "status": "corroborated" },
+    { "id": "mage/arcane/capabilities", "record": "specs/mage/arcane.json", "status": "corroborated" },
+    { "id": "mage/fire/capabilities", "record": "specs/mage/fire.json", "status": "corroborated" },
+    { "id": "mage/frost/capabilities", "record": "specs/mage/frost.json", "status": "corroborated" }
   ],
   "specCapabilityCoverage": {
     "id": "retail/spec-capability-coverage",

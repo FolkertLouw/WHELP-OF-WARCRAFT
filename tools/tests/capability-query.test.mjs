@@ -87,6 +87,21 @@ test("preserves Priest interrupt and external cooldown distinctions", () => {
   assert.ok(offensive.results.every((entry) => entry.tool.name === "Power Infusion"));
 });
 
+test("queries shared Mage composition utility across all specializations", () => {
+  const specs = ["arcane-mage", "fire-mage", "frost-mage"];
+  const interrupts = queryCapabilities(capabilities, { specs, action: "interrupt" });
+  const bloodlust = queryCapabilities(capabilities, { specs, action: "bloodlust" });
+  const curses = queryCapabilities(capabilities, { specs, action: "cleanse-curse" });
+  const purges = queryCapabilities(capabilities, { specs, action: "purge" });
+  assert.equal(interrupts.resultCount, 3);
+  assert.equal(bloodlust.resultCount, 3);
+  assert.equal(curses.resultCount, 3);
+  assert.equal(purges.resultCount, 3);
+  assert.ok(bloodlust.results.every((entry) => entry.tool.spellId === 80353));
+  assert.ok(curses.results.every((entry) => entry.tool.availabilityByAction["cleanse-curse"] === "talent"));
+  assert.ok(purges.results.every((entry) => entry.tool.name === "Spellsteal"));
+});
+
 test("rejects unknown specialization slugs", () => {
   assert.throws(() => queryCapabilities(capabilities, { specs: ["not-a-real-spec"] }), /unknown spec/);
 });
