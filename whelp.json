@@ -3,7 +3,7 @@
   "schemaVersion": 1,
   "name": "WHELP-OF-WARCRAFT",
   "acronym": "World-data Hub for Encounters, Loadouts & Progression",
-  "datasetVersion": "1.11.0",
+  "datasetVersion": "1.12.0",
   "currentBuild": "12.1.0.69587",
   "currentSeason": "midnight-season-2",
   "entrypoints": {
@@ -30,7 +30,7 @@
     "queryLoadout": "npm run query:loadout -- --spec <spec-slug> --dungeon <id>",
     "queryPartyGaps": "npm run query:party-gaps -- --specs <spec-slug,spec-slug> --dungeon <id>",
     "queryFreshness": "npm run query:freshness -- --as-of <ISO-date> --include <review|all>",
-    "querySourceClaims": "npm run query:source-claims -- --disposition <accepted|rejected-cross-dungeon|rejected-placeholder|unresolved> --type <mechanic-location|utility-rating|placeholder> --spec <slug> --axis <id> --dungeon <id> --spell <id>",
+    "querySourceClaims": "npm run query:source-claims -- --disposition <accepted|rejected-cross-dungeon|rejected-placeholder|unresolved> --type <mechanic-location|utility-rating|utility-mention|placeholder> --spec <slug> --axis <id> --dungeon <id> --spell <id>",
     "regenerateAbilityIndex": "npm run generate:ability-index"
   }
 }

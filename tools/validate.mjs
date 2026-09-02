@@ -203,7 +203,7 @@ function validateRecord(file, value) {
       if (!["accepted", "rejected-cross-dungeon", "rejected-placeholder", "unresolved"].includes(claim.disposition)) {
         fail(file, `claim ${claim.claimId} has unknown disposition ${claim.disposition}`);
       }
-      if (claim.claimType && !["mechanic-location", "utility-rating", "placeholder"].includes(claim.claimType)) {
+      if (claim.claimType && !["mechanic-location", "utility-rating", "utility-mention", "placeholder"].includes(claim.claimType)) {
         fail(file, `claim ${claim.claimId} has unknown claim type ${claim.claimType}`);
       }
       if (claim.claimType === "utility-rating") {
@@ -211,6 +211,9 @@ function validateRecord(file, value) {
         if (!["always", "niche", "none"].includes(claim.assertedRating)) {
           fail(file, `utility-rating claim ${claim.claimId} has invalid rating ${claim.assertedRating}`);
         }
+      }
+      if (claim.claimType === "utility-mention") {
+        requireFields(file, claim, ["specSlug", "axisId"]);
       }
       if (claim.claimType === "placeholder" && claim.disposition !== "rejected-placeholder") {
         fail(file, `placeholder claim ${claim.claimId} must be rejected-placeholder`);
@@ -392,15 +395,17 @@ for (const { file, value } of records.filter(({ value }) => value.recordType ===
         fail(file, `accepted claim ${claim.claimId} has no ability-index context for ${claim.canonicalDungeonId}`);
       }
     }
-    if (claim.disposition === "accepted" && claim.claimType === "utility-rating") {
+    if (claim.disposition === "accepted" && ["utility-rating", "utility-mention"].includes(claim.claimType)) {
       const expectedMatrixId = `${value.validity?.seasonSlug}/${claim.specSlug}-utility-matrix`;
       const matrix = specMatrices.find(({ value: candidate }) => candidate.id === expectedMatrixId)?.value;
       const dungeonEntry = matrix?.dungeons?.find((entry) => entry.dungeonId === claim.canonicalDungeonId);
-      if (!matrix) fail(file, `utility-rating claim ${claim.claimId} has no matrix for ${claim.specSlug}`);
-      else if (!matrix.axes?.some((axis) => axis.id === claim.axisId)) fail(file, `utility-rating claim ${claim.claimId} has unknown axis ${claim.axisId}`);
-      else if (!dungeonEntry) fail(file, `utility-rating claim ${claim.claimId} has no matrix dungeon ${claim.canonicalDungeonId}`);
-      else if (dungeonEntry.ratings?.[claim.axisId] !== claim.assertedRating) {
+      if (!matrix) fail(file, `${claim.claimType} claim ${claim.claimId} has no matrix for ${claim.specSlug}`);
+      else if (!matrix.axes?.some((axis) => axis.id === claim.axisId)) fail(file, `${claim.claimType} claim ${claim.claimId} has unknown axis ${claim.axisId}`);
+      else if (!dungeonEntry) fail(file, `${claim.claimType} claim ${claim.claimId} has no matrix dungeon ${claim.canonicalDungeonId}`);
+      else if (claim.claimType === "utility-rating" && dungeonEntry.ratings?.[claim.axisId] !== claim.assertedRating) {
         fail(file, `utility-rating claim ${claim.claimId} disagrees with matrix rating ${dungeonEntry.ratings?.[claim.axisId] ?? "missing"}`);
+      } else if (claim.claimType === "utility-mention" && !["always", "niche"].includes(dungeonEntry.ratings?.[claim.axisId])) {
+        fail(file, `utility-mention claim ${claim.claimId} maps to non-usable matrix rating ${dungeonEntry.ratings?.[claim.axisId] ?? "missing"}`);
       }
     }
     if (!claim.spellId || claim.disposition === "accepted") continue;

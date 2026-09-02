@@ -16,8 +16,8 @@ export function querySourceClaims(audits, filters = {}) {
   const claimType = filters.claimType ?? null;
   const specSlug = filters.specSlug ?? null;
   const axisId = filters.axisId ?? null;
-  if (claimType && !["mechanic-location", "utility-rating", "placeholder"].includes(claimType)) {
-    throw new TypeError("claimType must be mechanic-location, utility-rating, or placeholder");
+  if (claimType && !["mechanic-location", "utility-rating", "utility-mention", "placeholder"].includes(claimType)) {
+    throw new TypeError("claimType must be mechanic-location, utility-rating, utility-mention, or placeholder");
   }
   const spellId = filters.spellId === undefined ? null : Number(filters.spellId);
   if (spellId !== null && (!Number.isInteger(spellId) || spellId < 1)) {

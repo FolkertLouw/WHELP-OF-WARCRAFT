@@ -9,21 +9,33 @@ const audits = await Promise.all([
   "evoker-midnight-season-2-wowhead-dungeon-tips.json",
   "evoker-midnight-season-2-wowhead-cross-dungeon-sections.json",
   "elemental-shaman-midnight-season-2-wowhead-placeholders.json",
+  "elemental-shaman-midnight-season-2-wowhead-utility-mentions.json",
   "enhancement-shaman-midnight-season-2-wowhead-utility-ratings.json",
   "restoration-shaman-midnight-season-2-wowhead-dungeon-tips.json",
 ].map(async (file) => JSON.parse(await readFile(path.join(root, "data", "source-audits", file), "utf8"))));
 
 test("claim audit exposes rejected and unresolved source assertions", () => {
   assert.deepEqual(summarizeSourceClaims(audits), {
-    auditCount: 5,
-    claimCount: 107,
-    byDisposition: { accepted: 69, "rejected-cross-dungeon": 28, "rejected-placeholder": 9, unresolved: 1 },
+    auditCount: 6,
+    claimCount: 144,
+    byDisposition: { accepted: 106, "rejected-cross-dungeon": 28, "rejected-placeholder": 9, unresolved: 1 },
   });
   assert.equal(querySourceClaims(audits, { dungeonId: "maisara-caverns" }).length, 5);
   assert.equal(querySourceClaims(audits, { dungeonId: "windrunner-spire" }).length, 4);
   assert.equal(querySourceClaims(audits, { dungeonId: "algethar-academy" }).length, 5);
   assert.equal(querySourceClaims(audits, { spellId: 1281636 })[0].canonicalDungeonId, "nexus-point-xenas");
   assert.equal(querySourceClaims(audits, { disposition: "unresolved" })[0].subjectName, "Dreadbellow");
+});
+
+test("Elemental utility mentions bind to non-none axes without inventing ratings", async () => {
+  const mentions = querySourceClaims(audits, { claimType: "utility-mention", specSlug: "elemental-shaman" });
+  assert.equal(mentions.length, 37);
+  assert.equal(mentions.every(({ assertedRating }) => assertedRating === undefined), true);
+  const matrix = JSON.parse(await readFile(path.join(root, "content", "mythic-plus", "midnight-season-2", "specs", "elemental-shaman-utility-matrix.json"), "utf8"));
+  for (const dungeonId of ["voidscar-arena", "kings-rest"]) {
+    assert.equal(matrix.dungeons.find((dungeon) => dungeon.dungeonId === dungeonId).ratings["root-removal"], "none");
+    assert.equal(querySourceClaims(audits, { claimType: "utility-mention", specSlug: "elemental-shaman", dungeonId, axisId: "root-removal" }).length, 0);
+  }
 });
 
 test("Enhancement utility-rating claims reproduce the complete guide grid", () => {

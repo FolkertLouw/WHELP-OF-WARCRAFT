@@ -29,7 +29,7 @@
         "required": ["claimId", "assertedDungeonId", "sectionLabel", "subjectName", "disposition", "canonicalDungeonId", "reason", "evidence"],
         "properties": {
           "claimId": { "type": "string", "pattern": "^[a-z0-9][a-z0-9-]+$" },
-          "claimType": { "enum": ["mechanic-location", "utility-rating", "placeholder"] },
+          "claimType": { "enum": ["mechanic-location", "utility-rating", "utility-mention", "placeholder"] },
           "assertedDungeonId": { "type": "string", "minLength": 1 },
           "sectionLabel": { "type": "string", "minLength": 1 },
           "subjectName": { "type": "string", "minLength": 1 },

@@ -126,6 +126,11 @@
   },
   "sourceClaimAudits": [
     {
+      "id": "midnight-season-2/elemental-shaman-wowhead-utility-mentions-audit",
+      "record": "source-audits/elemental-shaman-midnight-season-2-wowhead-utility-mentions.json",
+      "status": "corroborated"
+    },
+    {
       "id": "midnight-season-2/elemental-shaman-wowhead-placeholder-audit",
       "record": "source-audits/elemental-shaman-midnight-season-2-wowhead-placeholders.json",
       "status": "corroborated"

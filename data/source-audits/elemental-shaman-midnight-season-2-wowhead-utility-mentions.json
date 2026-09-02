@@ -1,0 +1,772 @@
+{
+  "$schema": "../../schemas/source-claim-audit.schema.json",
+  "schemaVersion": 1,
+  "recordType": "source-claim-audit",
+  "id": "midnight-season-2/elemental-shaman-wowhead-utility-mentions-audit",
+  "status": "corroborated",
+  "validity": {
+    "fromBuild": "12.1.0.69587",
+    "untilBuild": null,
+    "seasonId": null,
+    "seasonSlug": "midnight-season-2"
+  },
+  "source": {
+    "title": "Elemental Shaman Mythic+ Dungeon Tips",
+    "url": "https://www.wowhead.com/guide/classes/shaman/elemental/mythic-plus-dungeon-tips",
+    "retrievedAt": "2026-09-02T21:35:00+02:00"
+  },
+  "claims": [
+    {
+      "claimId": "altar-of-fangs-poison-cleansing-totem-mention",
+      "claimType": "utility-mention",
+      "assertedDungeonId": "altar-of-fangs",
+      "sectionLabel": "Altar of Fangs Utility Options",
+      "subjectName": "Poison Cleansing Totem",
+      "specSlug": "elemental-shaman",
+      "axisId": "poison-cleansing",
+      "disposition": "accepted",
+      "canonicalDungeonId": "altar-of-fangs",
+      "reason": "The guide explicitly lists this utility in the dungeon section without assigning an always, niche, or none rating.",
+      "evidence": [
+        {
+          "kind": "external-reference",
+          "description": "The current Elemental Shaman guide lists Poison Cleansing Totem under Altar of Fangs utility options.",
+          "url": "https://www.wowhead.com/guide/classes/shaman/elemental/mythic-plus-dungeon-tips",
+          "retrievedAt": "2026-09-02T21:35:00+02:00"
+        }
+      ]
+    },
+    {
+      "claimId": "altar-of-fangs-spirit-walk-snare-mention",
+      "claimType": "utility-mention",
+      "assertedDungeonId": "altar-of-fangs",
+      "sectionLabel": "Altar of Fangs Utility Options",
+      "subjectName": "Spirit Walk",
+      "specSlug": "elemental-shaman",
+      "axisId": "snare-removal",
+      "disposition": "accepted",
+      "canonicalDungeonId": "altar-of-fangs",
+      "reason": "The guide explicitly lists this utility in the dungeon section without assigning an always, niche, or none rating.",
+      "evidence": [
+        {
+          "kind": "external-reference",
+          "description": "The current Elemental Shaman guide lists Spirit Walk under Altar of Fangs utility options.",
+          "url": "https://www.wowhead.com/guide/classes/shaman/elemental/mythic-plus-dungeon-tips",
+          "retrievedAt": "2026-09-02T21:35:00+02:00"
+        }
+      ]
+    },
+    {
+      "claimId": "altar-of-fangs-thunderous-paws-mention",
+      "claimType": "utility-mention",
+      "assertedDungeonId": "altar-of-fangs",
+      "sectionLabel": "Altar of Fangs Utility Options",
+      "subjectName": "Thunderous Paws",
+      "specSlug": "elemental-shaman",
+      "axisId": "snare-removal",
+      "disposition": "accepted",
+      "canonicalDungeonId": "altar-of-fangs",
+      "reason": "The guide explicitly lists this utility in the dungeon section without assigning an always, niche, or none rating.",
+      "evidence": [
+        {
+          "kind": "external-reference",
+          "description": "The current Elemental Shaman guide lists Thunderous Paws under Altar of Fangs utility options.",
+          "url": "https://www.wowhead.com/guide/classes/shaman/elemental/mythic-plus-dungeon-tips",
+          "retrievedAt": "2026-09-02T21:35:00+02:00"
+        }
+      ]
+    },
+    {
+      "claimId": "altar-of-fangs-jet-stream-mention",
+      "claimType": "utility-mention",
+      "assertedDungeonId": "altar-of-fangs",
+      "sectionLabel": "Altar of Fangs Utility Options",
+      "subjectName": "Jet Stream",
+      "specSlug": "elemental-shaman",
+      "axisId": "snare-removal",
+      "disposition": "accepted",
+      "canonicalDungeonId": "altar-of-fangs",
+      "reason": "The guide explicitly lists this utility in the dungeon section without assigning an always, niche, or none rating.",
+      "evidence": [
+        {
+          "kind": "external-reference",
+          "description": "The current Elemental Shaman guide lists Jet Stream under Altar of Fangs utility options.",
+          "url": "https://www.wowhead.com/guide/classes/shaman/elemental/mythic-plus-dungeon-tips",
+          "retrievedAt": "2026-09-02T21:35:00+02:00"
+        }
+      ]
+    },
+    {
+      "claimId": "altar-of-fangs-earthbind-totem-mention",
+      "claimType": "utility-mention",
+      "assertedDungeonId": "altar-of-fangs",
+      "sectionLabel": "Altar of Fangs Utility Options",
+      "subjectName": "Earthbind Totem",
+      "specSlug": "elemental-shaman",
+      "axisId": "enemy-slow",
+      "disposition": "accepted",
+      "canonicalDungeonId": "altar-of-fangs",
+      "reason": "The guide explicitly lists this utility in the dungeon section without assigning an always, niche, or none rating.",
+      "evidence": [
+        {
+          "kind": "external-reference",
+          "description": "The current Elemental Shaman guide lists Earthbind Totem under Altar of Fangs utility options.",
+          "url": "https://www.wowhead.com/guide/classes/shaman/elemental/mythic-plus-dungeon-tips",
+          "retrievedAt": "2026-09-02T21:35:00+02:00"
+        }
+      ]
+    },
+    {
+      "claimId": "the-blinding-vale-poison-cleansing-totem-mention",
+      "claimType": "utility-mention",
+      "assertedDungeonId": "the-blinding-vale",
+      "sectionLabel": "The Blinding Vale Utility Options",
+      "subjectName": "Poison Cleansing Totem",
+      "specSlug": "elemental-shaman",
+      "axisId": "poison-cleansing",
+      "disposition": "accepted",
+      "canonicalDungeonId": "the-blinding-vale",
+      "reason": "The guide explicitly lists this utility in the dungeon section without assigning an always, niche, or none rating.",
+      "evidence": [
+        {
+          "kind": "external-reference",
+          "description": "The current Elemental Shaman guide lists Poison Cleansing Totem under The Blinding Vale utility options.",
+          "url": "https://www.wowhead.com/guide/classes/shaman/elemental/mythic-plus-dungeon-tips",
+          "retrievedAt": "2026-09-02T21:35:00+02:00"
+        }
+      ]
+    },
+    {
+      "claimId": "the-blinding-vale-spirit-walk-root-mention",
+      "claimType": "utility-mention",
+      "assertedDungeonId": "the-blinding-vale",
+      "sectionLabel": "The Blinding Vale Utility Options",
+      "subjectName": "Spirit Walk",
+      "specSlug": "elemental-shaman",
+      "axisId": "root-removal",
+      "disposition": "accepted",
+      "canonicalDungeonId": "the-blinding-vale",
+      "reason": "The guide explicitly lists this utility in the dungeon section without assigning an always, niche, or none rating.",
+      "evidence": [
+        {
+          "kind": "external-reference",
+          "description": "The current Elemental Shaman guide lists Spirit Walk under The Blinding Vale utility options.",
+          "url": "https://www.wowhead.com/guide/classes/shaman/elemental/mythic-plus-dungeon-tips",
+          "retrievedAt": "2026-09-02T21:35:00+02:00"
+        }
+      ]
+    },
+    {
+      "claimId": "the-blinding-vale-spirit-walk-snare-mention",
+      "claimType": "utility-mention",
+      "assertedDungeonId": "the-blinding-vale",
+      "sectionLabel": "The Blinding Vale Utility Options",
+      "subjectName": "Spirit Walk",
+      "specSlug": "elemental-shaman",
+      "axisId": "snare-removal",
+      "disposition": "accepted",
+      "canonicalDungeonId": "the-blinding-vale",
+      "reason": "The guide explicitly lists this utility in the dungeon section without assigning an always, niche, or none rating.",
+      "evidence": [
+        {
+          "kind": "external-reference",
+          "description": "The current Elemental Shaman guide lists Spirit Walk under The Blinding Vale utility options.",
+          "url": "https://www.wowhead.com/guide/classes/shaman/elemental/mythic-plus-dungeon-tips",
+          "retrievedAt": "2026-09-02T21:35:00+02:00"
+        }
+      ]
+    },
+    {
+      "claimId": "the-blinding-vale-jet-stream-mention",
+      "claimType": "utility-mention",
+      "assertedDungeonId": "the-blinding-vale",
+      "sectionLabel": "The Blinding Vale Utility Options",
+      "subjectName": "Jet Stream",
+      "specSlug": "elemental-shaman",
+      "axisId": "snare-removal",
+      "disposition": "accepted",
+      "canonicalDungeonId": "the-blinding-vale",
+      "reason": "The guide explicitly lists this utility in the dungeon section without assigning an always, niche, or none rating.",
+      "evidence": [
+        {
+          "kind": "external-reference",
+          "description": "The current Elemental Shaman guide lists Jet Stream under The Blinding Vale utility options.",
+          "url": "https://www.wowhead.com/guide/classes/shaman/elemental/mythic-plus-dungeon-tips",
+          "retrievedAt": "2026-09-02T21:35:00+02:00"
+        }
+      ]
+    },
+    {
+      "claimId": "den-of-nalorakk-poison-cleansing-totem-mention",
+      "claimType": "utility-mention",
+      "assertedDungeonId": "den-of-nalorakk",
+      "sectionLabel": "Den of Nalorakk Utility Options",
+      "subjectName": "Poison Cleansing Totem",
+      "specSlug": "elemental-shaman",
+      "axisId": "poison-cleansing",
+      "disposition": "accepted",
+      "canonicalDungeonId": "den-of-nalorakk",
+      "reason": "The guide explicitly lists this utility in the dungeon section without assigning an always, niche, or none rating.",
+      "evidence": [
+        {
+          "kind": "external-reference",
+          "description": "The current Elemental Shaman guide lists Poison Cleansing Totem under Den of Nalorakk utility options.",
+          "url": "https://www.wowhead.com/guide/classes/shaman/elemental/mythic-plus-dungeon-tips",
+          "retrievedAt": "2026-09-02T21:35:00+02:00"
+        }
+      ]
+    },
+    {
+      "claimId": "den-of-nalorakk-cleanse-spirit-mention",
+      "claimType": "utility-mention",
+      "assertedDungeonId": "den-of-nalorakk",
+      "sectionLabel": "Den of Nalorakk Utility Options",
+      "subjectName": "Cleanse Spirit",
+      "specSlug": "elemental-shaman",
+      "axisId": "decurse",
+      "disposition": "accepted",
+      "canonicalDungeonId": "den-of-nalorakk",
+      "reason": "The guide explicitly lists this utility in the dungeon section without assigning an always, niche, or none rating.",
+      "evidence": [
+        {
+          "kind": "external-reference",
+          "description": "The current Elemental Shaman guide lists Cleanse Spirit under Den of Nalorakk utility options.",
+          "url": "https://www.wowhead.com/guide/classes/shaman/elemental/mythic-plus-dungeon-tips",
+          "retrievedAt": "2026-09-02T21:35:00+02:00"
+        }
+      ]
+    },
+    {
+      "claimId": "den-of-nalorakk-purge-mention",
+      "claimType": "utility-mention",
+      "assertedDungeonId": "den-of-nalorakk",
+      "sectionLabel": "Den of Nalorakk Utility Options",
+      "subjectName": "Purge",
+      "specSlug": "elemental-shaman",
+      "axisId": "purge",
+      "disposition": "accepted",
+      "canonicalDungeonId": "den-of-nalorakk",
+      "reason": "The guide explicitly lists this utility in the dungeon section without assigning an always, niche, or none rating.",
+      "evidence": [
+        {
+          "kind": "external-reference",
+          "description": "The current Elemental Shaman guide lists Purge under Den of Nalorakk utility options.",
+          "url": "https://www.wowhead.com/guide/classes/shaman/elemental/mythic-plus-dungeon-tips",
+          "retrievedAt": "2026-09-02T21:35:00+02:00"
+        }
+      ]
+    },
+    {
+      "claimId": "den-of-nalorakk-spirit-walk-root-mention",
+      "claimType": "utility-mention",
+      "assertedDungeonId": "den-of-nalorakk",
+      "sectionLabel": "Den of Nalorakk Utility Options",
+      "subjectName": "Spirit Walk",
+      "specSlug": "elemental-shaman",
+      "axisId": "root-removal",
+      "disposition": "accepted",
+      "canonicalDungeonId": "den-of-nalorakk",
+      "reason": "The guide explicitly lists this utility in the dungeon section without assigning an always, niche, or none rating.",
+      "evidence": [
+        {
+          "kind": "external-reference",
+          "description": "The current Elemental Shaman guide lists Spirit Walk under Den of Nalorakk utility options.",
+          "url": "https://www.wowhead.com/guide/classes/shaman/elemental/mythic-plus-dungeon-tips",
+          "retrievedAt": "2026-09-02T21:35:00+02:00"
+        }
+      ]
+    },
+    {
+      "claimId": "den-of-nalorakk-spirit-walk-snare-mention",
+      "claimType": "utility-mention",
+      "assertedDungeonId": "den-of-nalorakk",
+      "sectionLabel": "Den of Nalorakk Utility Options",
+      "subjectName": "Spirit Walk",
+      "specSlug": "elemental-shaman",
+      "axisId": "snare-removal",
+      "disposition": "accepted",
+      "canonicalDungeonId": "den-of-nalorakk",
+      "reason": "The guide explicitly lists this utility in the dungeon section without assigning an always, niche, or none rating.",
+      "evidence": [
+        {
+          "kind": "external-reference",
+          "description": "The current Elemental Shaman guide lists Spirit Walk under Den of Nalorakk utility options.",
+          "url": "https://www.wowhead.com/guide/classes/shaman/elemental/mythic-plus-dungeon-tips",
+          "retrievedAt": "2026-09-02T21:35:00+02:00"
+        }
+      ]
+    },
+    {
+      "claimId": "den-of-nalorakk-jet-stream-mention",
+      "claimType": "utility-mention",
+      "assertedDungeonId": "den-of-nalorakk",
+      "sectionLabel": "Den of Nalorakk Utility Options",
+      "subjectName": "Jet Stream",
+      "specSlug": "elemental-shaman",
+      "axisId": "snare-removal",
+      "disposition": "accepted",
+      "canonicalDungeonId": "den-of-nalorakk",
+      "reason": "The guide explicitly lists this utility in the dungeon section without assigning an always, niche, or none rating.",
+      "evidence": [
+        {
+          "kind": "external-reference",
+          "description": "The current Elemental Shaman guide lists Jet Stream under Den of Nalorakk utility options.",
+          "url": "https://www.wowhead.com/guide/classes/shaman/elemental/mythic-plus-dungeon-tips",
+          "retrievedAt": "2026-09-02T21:35:00+02:00"
+        }
+      ]
+    },
+    {
+      "claimId": "murder-row-poison-cleansing-totem-mention",
+      "claimType": "utility-mention",
+      "assertedDungeonId": "murder-row",
+      "sectionLabel": "Murder Row Utility Options",
+      "subjectName": "Poison Cleansing Totem",
+      "specSlug": "elemental-shaman",
+      "axisId": "poison-cleansing",
+      "disposition": "accepted",
+      "canonicalDungeonId": "murder-row",
+      "reason": "The guide explicitly lists this utility in the dungeon section without assigning an always, niche, or none rating.",
+      "evidence": [
+        {
+          "kind": "external-reference",
+          "description": "The current Elemental Shaman guide lists Poison Cleansing Totem under Murder Row utility options.",
+          "url": "https://www.wowhead.com/guide/classes/shaman/elemental/mythic-plus-dungeon-tips",
+          "retrievedAt": "2026-09-02T21:35:00+02:00"
+        }
+      ]
+    },
+    {
+      "claimId": "murder-row-cleanse-spirit-mention",
+      "claimType": "utility-mention",
+      "assertedDungeonId": "murder-row",
+      "sectionLabel": "Murder Row Utility Options",
+      "subjectName": "Cleanse Spirit",
+      "specSlug": "elemental-shaman",
+      "axisId": "decurse",
+      "disposition": "accepted",
+      "canonicalDungeonId": "murder-row",
+      "reason": "The guide explicitly lists this utility in the dungeon section without assigning an always, niche, or none rating.",
+      "evidence": [
+        {
+          "kind": "external-reference",
+          "description": "The current Elemental Shaman guide lists Cleanse Spirit under Murder Row utility options.",
+          "url": "https://www.wowhead.com/guide/classes/shaman/elemental/mythic-plus-dungeon-tips",
+          "retrievedAt": "2026-09-02T21:35:00+02:00"
+        }
+      ]
+    },
+    {
+      "claimId": "murder-row-purge-mention",
+      "claimType": "utility-mention",
+      "assertedDungeonId": "murder-row",
+      "sectionLabel": "Murder Row Utility Options",
+      "subjectName": "Purge",
+      "specSlug": "elemental-shaman",
+      "axisId": "purge",
+      "disposition": "accepted",
+      "canonicalDungeonId": "murder-row",
+      "reason": "The guide explicitly lists this utility in the dungeon section without assigning an always, niche, or none rating.",
+      "evidence": [
+        {
+          "kind": "external-reference",
+          "description": "The current Elemental Shaman guide lists Purge under Murder Row utility options.",
+          "url": "https://www.wowhead.com/guide/classes/shaman/elemental/mythic-plus-dungeon-tips",
+          "retrievedAt": "2026-09-02T21:35:00+02:00"
+        }
+      ]
+    },
+    {
+      "claimId": "murder-row-tremor-totem-mention",
+      "claimType": "utility-mention",
+      "assertedDungeonId": "murder-row",
+      "sectionLabel": "Murder Row Utility Options",
+      "subjectName": "Tremor Totem",
+      "specSlug": "elemental-shaman",
+      "axisId": "control-cleanse",
+      "disposition": "accepted",
+      "canonicalDungeonId": "murder-row",
+      "reason": "The guide explicitly lists this utility in the dungeon section without assigning an always, niche, or none rating.",
+      "evidence": [
+        {
+          "kind": "external-reference",
+          "description": "The current Elemental Shaman guide lists Tremor Totem under Murder Row utility options.",
+          "url": "https://www.wowhead.com/guide/classes/shaman/elemental/mythic-plus-dungeon-tips",
+          "retrievedAt": "2026-09-02T21:35:00+02:00"
+        }
+      ]
+    },
+    {
+      "claimId": "murder-row-thunderstorm-mention",
+      "claimType": "utility-mention",
+      "assertedDungeonId": "murder-row",
+      "sectionLabel": "Murder Row Utility Options",
+      "subjectName": "Thunderstorm",
+      "specSlug": "elemental-shaman",
+      "axisId": "enemy-reposition",
+      "disposition": "accepted",
+      "canonicalDungeonId": "murder-row",
+      "reason": "The guide explicitly lists this utility in the dungeon section without assigning an always, niche, or none rating.",
+      "evidence": [
+        {
+          "kind": "external-reference",
+          "description": "The current Elemental Shaman guide lists Thunderstorm under Murder Row utility options.",
+          "url": "https://www.wowhead.com/guide/classes/shaman/elemental/mythic-plus-dungeon-tips",
+          "retrievedAt": "2026-09-02T21:35:00+02:00"
+        }
+      ]
+    },
+    {
+      "claimId": "voidscar-arena-poison-cleansing-totem-mention",
+      "claimType": "utility-mention",
+      "assertedDungeonId": "voidscar-arena",
+      "sectionLabel": "Voidscar Arena Utility Options",
+      "subjectName": "Poison Cleansing Totem",
+      "specSlug": "elemental-shaman",
+      "axisId": "poison-cleansing",
+      "disposition": "accepted",
+      "canonicalDungeonId": "voidscar-arena",
+      "reason": "The guide explicitly lists this utility in the dungeon section without assigning an always, niche, or none rating.",
+      "evidence": [
+        {
+          "kind": "external-reference",
+          "description": "The current Elemental Shaman guide lists Poison Cleansing Totem under Voidscar Arena utility options.",
+          "url": "https://www.wowhead.com/guide/classes/shaman/elemental/mythic-plus-dungeon-tips",
+          "retrievedAt": "2026-09-02T21:35:00+02:00"
+        }
+      ]
+    },
+    {
+      "claimId": "voidscar-arena-spirit-walk-snare-mention",
+      "claimType": "utility-mention",
+      "assertedDungeonId": "voidscar-arena",
+      "sectionLabel": "Voidscar Arena Utility Options",
+      "subjectName": "Spirit Walk",
+      "specSlug": "elemental-shaman",
+      "axisId": "snare-removal",
+      "disposition": "accepted",
+      "canonicalDungeonId": "voidscar-arena",
+      "reason": "The guide explicitly lists this utility in the dungeon section without assigning an always, niche, or none rating.",
+      "evidence": [
+        {
+          "kind": "external-reference",
+          "description": "The current Elemental Shaman guide lists Spirit Walk under Voidscar Arena utility options.",
+          "url": "https://www.wowhead.com/guide/classes/shaman/elemental/mythic-plus-dungeon-tips",
+          "retrievedAt": "2026-09-02T21:35:00+02:00"
+        }
+      ]
+    },
+    {
+      "claimId": "voidscar-arena-thunderstorm-mention",
+      "claimType": "utility-mention",
+      "assertedDungeonId": "voidscar-arena",
+      "sectionLabel": "Voidscar Arena Utility Options",
+      "subjectName": "Thunderstorm",
+      "specSlug": "elemental-shaman",
+      "axisId": "enemy-reposition",
+      "disposition": "accepted",
+      "canonicalDungeonId": "voidscar-arena",
+      "reason": "The guide explicitly lists this utility in the dungeon section without assigning an always, niche, or none rating.",
+      "evidence": [
+        {
+          "kind": "external-reference",
+          "description": "The current Elemental Shaman guide lists Thunderstorm under Voidscar Arena utility options.",
+          "url": "https://www.wowhead.com/guide/classes/shaman/elemental/mythic-plus-dungeon-tips",
+          "retrievedAt": "2026-09-02T21:35:00+02:00"
+        }
+      ]
+    },
+    {
+      "claimId": "voidscar-arena-tremor-totem-mention",
+      "claimType": "utility-mention",
+      "assertedDungeonId": "voidscar-arena",
+      "sectionLabel": "Voidscar Arena Utility Options",
+      "subjectName": "Tremor Totem",
+      "specSlug": "elemental-shaman",
+      "axisId": "control-cleanse",
+      "disposition": "accepted",
+      "canonicalDungeonId": "voidscar-arena",
+      "reason": "The guide explicitly lists this utility in the dungeon section without assigning an always, niche, or none rating.",
+      "evidence": [
+        {
+          "kind": "external-reference",
+          "description": "The current Elemental Shaman guide lists Tremor Totem under Voidscar Arena utility options.",
+          "url": "https://www.wowhead.com/guide/classes/shaman/elemental/mythic-plus-dungeon-tips",
+          "retrievedAt": "2026-09-02T21:35:00+02:00"
+        }
+      ]
+    },
+    {
+      "claimId": "voidscar-arena-jet-stream-mention",
+      "claimType": "utility-mention",
+      "assertedDungeonId": "voidscar-arena",
+      "sectionLabel": "Voidscar Arena Utility Options",
+      "subjectName": "Jet Stream",
+      "specSlug": "elemental-shaman",
+      "axisId": "snare-removal",
+      "disposition": "accepted",
+      "canonicalDungeonId": "voidscar-arena",
+      "reason": "The guide explicitly lists this utility in the dungeon section without assigning an always, niche, or none rating.",
+      "evidence": [
+        {
+          "kind": "external-reference",
+          "description": "The current Elemental Shaman guide lists Jet Stream under Voidscar Arena utility options.",
+          "url": "https://www.wowhead.com/guide/classes/shaman/elemental/mythic-plus-dungeon-tips",
+          "retrievedAt": "2026-09-02T21:35:00+02:00"
+        }
+      ]
+    },
+    {
+      "claimId": "temple-of-sethraliss-poison-cleansing-totem-mention",
+      "claimType": "utility-mention",
+      "assertedDungeonId": "temple-of-sethraliss",
+      "sectionLabel": "Temple of Sethraliss Utility Options",
+      "subjectName": "Poison Cleansing Totem",
+      "specSlug": "elemental-shaman",
+      "axisId": "poison-cleansing",
+      "disposition": "accepted",
+      "canonicalDungeonId": "temple-of-sethraliss",
+      "reason": "The guide explicitly lists this utility in the dungeon section without assigning an always, niche, or none rating.",
+      "evidence": [
+        {
+          "kind": "external-reference",
+          "description": "The current Elemental Shaman guide lists Poison Cleansing Totem under Temple of Sethraliss utility options.",
+          "url": "https://www.wowhead.com/guide/classes/shaman/elemental/mythic-plus-dungeon-tips",
+          "retrievedAt": "2026-09-02T21:35:00+02:00"
+        }
+      ]
+    },
+    {
+      "claimId": "temple-of-sethraliss-cleanse-spirit-mention",
+      "claimType": "utility-mention",
+      "assertedDungeonId": "temple-of-sethraliss",
+      "sectionLabel": "Temple of Sethraliss Utility Options",
+      "subjectName": "Cleanse Spirit",
+      "specSlug": "elemental-shaman",
+      "axisId": "decurse",
+      "disposition": "accepted",
+      "canonicalDungeonId": "temple-of-sethraliss",
+      "reason": "The guide explicitly lists this utility in the dungeon section without assigning an always, niche, or none rating.",
+      "evidence": [
+        {
+          "kind": "external-reference",
+          "description": "The current Elemental Shaman guide lists Cleanse Spirit under Temple of Sethraliss utility options.",
+          "url": "https://www.wowhead.com/guide/classes/shaman/elemental/mythic-plus-dungeon-tips",
+          "retrievedAt": "2026-09-02T21:35:00+02:00"
+        }
+      ]
+    },
+    {
+      "claimId": "temple-of-sethraliss-purge-mention",
+      "claimType": "utility-mention",
+      "assertedDungeonId": "temple-of-sethraliss",
+      "sectionLabel": "Temple of Sethraliss Utility Options",
+      "subjectName": "Purge",
+      "specSlug": "elemental-shaman",
+      "axisId": "purge",
+      "disposition": "accepted",
+      "canonicalDungeonId": "temple-of-sethraliss",
+      "reason": "The guide explicitly lists this utility in the dungeon section without assigning an always, niche, or none rating.",
+      "evidence": [
+        {
+          "kind": "external-reference",
+          "description": "The current Elemental Shaman guide lists Purge under Temple of Sethraliss utility options.",
+          "url": "https://www.wowhead.com/guide/classes/shaman/elemental/mythic-plus-dungeon-tips",
+          "retrievedAt": "2026-09-02T21:35:00+02:00"
+        }
+      ]
+    },
+    {
+      "claimId": "temple-of-sethraliss-earthbind-totem-mention",
+      "claimType": "utility-mention",
+      "assertedDungeonId": "temple-of-sethraliss",
+      "sectionLabel": "Temple of Sethraliss Utility Options",
+      "subjectName": "Earthbind Totem",
+      "specSlug": "elemental-shaman",
+      "axisId": "enemy-slow",
+      "disposition": "accepted",
+      "canonicalDungeonId": "temple-of-sethraliss",
+      "reason": "The guide explicitly lists this utility in the dungeon section without assigning an always, niche, or none rating.",
+      "evidence": [
+        {
+          "kind": "external-reference",
+          "description": "The current Elemental Shaman guide lists Earthbind Totem under Temple of Sethraliss utility options.",
+          "url": "https://www.wowhead.com/guide/classes/shaman/elemental/mythic-plus-dungeon-tips",
+          "retrievedAt": "2026-09-02T21:35:00+02:00"
+        }
+      ]
+    },
+    {
+      "claimId": "temple-of-sethraliss-thunderstorm-mention",
+      "claimType": "utility-mention",
+      "assertedDungeonId": "temple-of-sethraliss",
+      "sectionLabel": "Temple of Sethraliss Utility Options",
+      "subjectName": "Thunderstorm",
+      "specSlug": "elemental-shaman",
+      "axisId": "enemy-reposition",
+      "disposition": "accepted",
+      "canonicalDungeonId": "temple-of-sethraliss",
+      "reason": "The guide explicitly lists this utility in the dungeon section without assigning an always, niche, or none rating.",
+      "evidence": [
+        {
+          "kind": "external-reference",
+          "description": "The current Elemental Shaman guide lists Thunderstorm under Temple of Sethraliss utility options.",
+          "url": "https://www.wowhead.com/guide/classes/shaman/elemental/mythic-plus-dungeon-tips",
+          "retrievedAt": "2026-09-02T21:35:00+02:00"
+        }
+      ]
+    },
+    {
+      "claimId": "kings-rest-poison-cleansing-totem-mention",
+      "claimType": "utility-mention",
+      "assertedDungeonId": "kings-rest",
+      "sectionLabel": "Kings' Rest Utility Options",
+      "subjectName": "Poison Cleansing Totem",
+      "specSlug": "elemental-shaman",
+      "axisId": "poison-cleansing",
+      "disposition": "accepted",
+      "canonicalDungeonId": "kings-rest",
+      "reason": "The guide explicitly lists this utility in the dungeon section without assigning an always, niche, or none rating.",
+      "evidence": [
+        {
+          "kind": "external-reference",
+          "description": "The current Elemental Shaman guide lists Poison Cleansing Totem under Kings' Rest utility options.",
+          "url": "https://www.wowhead.com/guide/classes/shaman/elemental/mythic-plus-dungeon-tips",
+          "retrievedAt": "2026-09-02T21:35:00+02:00"
+        }
+      ]
+    },
+    {
+      "claimId": "kings-rest-cleanse-spirit-mention",
+      "claimType": "utility-mention",
+      "assertedDungeonId": "kings-rest",
+      "sectionLabel": "Kings' Rest Utility Options",
+      "subjectName": "Cleanse Spirit",
+      "specSlug": "elemental-shaman",
+      "axisId": "decurse",
+      "disposition": "accepted",
+      "canonicalDungeonId": "kings-rest",
+      "reason": "The guide explicitly lists this utility in the dungeon section without assigning an always, niche, or none rating.",
+      "evidence": [
+        {
+          "kind": "external-reference",
+          "description": "The current Elemental Shaman guide lists Cleanse Spirit under Kings' Rest utility options.",
+          "url": "https://www.wowhead.com/guide/classes/shaman/elemental/mythic-plus-dungeon-tips",
+          "retrievedAt": "2026-09-02T21:35:00+02:00"
+        }
+      ]
+    },
+    {
+      "claimId": "kings-rest-purge-mention",
+      "claimType": "utility-mention",
+      "assertedDungeonId": "kings-rest",
+      "sectionLabel": "Kings' Rest Utility Options",
+      "subjectName": "Purge",
+      "specSlug": "elemental-shaman",
+      "axisId": "purge",
+      "disposition": "accepted",
+      "canonicalDungeonId": "kings-rest",
+      "reason": "The guide explicitly lists this utility in the dungeon section without assigning an always, niche, or none rating.",
+      "evidence": [
+        {
+          "kind": "external-reference",
+          "description": "The current Elemental Shaman guide lists Purge under Kings' Rest utility options.",
+          "url": "https://www.wowhead.com/guide/classes/shaman/elemental/mythic-plus-dungeon-tips",
+          "retrievedAt": "2026-09-02T21:35:00+02:00"
+        }
+      ]
+    },
+    {
+      "claimId": "kings-rest-spirit-walk-snare-mention",
+      "claimType": "utility-mention",
+      "assertedDungeonId": "kings-rest",
+      "sectionLabel": "Kings' Rest Utility Options",
+      "subjectName": "Spirit Walk",
+      "specSlug": "elemental-shaman",
+      "axisId": "snare-removal",
+      "disposition": "accepted",
+      "canonicalDungeonId": "kings-rest",
+      "reason": "The guide explicitly lists this utility in the dungeon section without assigning an always, niche, or none rating.",
+      "evidence": [
+        {
+          "kind": "external-reference",
+          "description": "The current Elemental Shaman guide lists Spirit Walk under Kings' Rest utility options.",
+          "url": "https://www.wowhead.com/guide/classes/shaman/elemental/mythic-plus-dungeon-tips",
+          "retrievedAt": "2026-09-02T21:35:00+02:00"
+        }
+      ]
+    },
+    {
+      "claimId": "kings-rest-tremor-totem-mention",
+      "claimType": "utility-mention",
+      "assertedDungeonId": "kings-rest",
+      "sectionLabel": "Kings' Rest Utility Options",
+      "subjectName": "Tremor Totem",
+      "specSlug": "elemental-shaman",
+      "axisId": "control-cleanse",
+      "disposition": "accepted",
+      "canonicalDungeonId": "kings-rest",
+      "reason": "The guide explicitly lists this utility in the dungeon section without assigning an always, niche, or none rating.",
+      "evidence": [
+        {
+          "kind": "external-reference",
+          "description": "The current Elemental Shaman guide lists Tremor Totem under Kings' Rest utility options.",
+          "url": "https://www.wowhead.com/guide/classes/shaman/elemental/mythic-plus-dungeon-tips",
+          "retrievedAt": "2026-09-02T21:35:00+02:00"
+        }
+      ]
+    },
+    {
+      "claimId": "ruby-life-pools-purge-mention",
+      "claimType": "utility-mention",
+      "assertedDungeonId": "ruby-life-pools",
+      "sectionLabel": "Ruby Life Pools Utility Options",
+      "subjectName": "Purge",
+      "specSlug": "elemental-shaman",
+      "axisId": "purge",
+      "disposition": "accepted",
+      "canonicalDungeonId": "ruby-life-pools",
+      "reason": "The guide explicitly lists this utility in the dungeon section without assigning an always, niche, or none rating.",
+      "evidence": [
+        {
+          "kind": "external-reference",
+          "description": "The current Elemental Shaman guide lists Purge under Ruby Life Pools utility options.",
+          "url": "https://www.wowhead.com/guide/classes/shaman/elemental/mythic-plus-dungeon-tips",
+          "retrievedAt": "2026-09-02T21:35:00+02:00"
+        }
+      ]
+    },
+    {
+      "claimId": "ruby-life-pools-jet-stream-mention",
+      "claimType": "utility-mention",
+      "assertedDungeonId": "ruby-life-pools",
+      "sectionLabel": "Ruby Life Pools Utility Options",
+      "subjectName": "Jet Stream",
+      "specSlug": "elemental-shaman",
+      "axisId": "snare-removal",
+      "disposition": "accepted",
+      "canonicalDungeonId": "ruby-life-pools",
+      "reason": "The guide explicitly lists this utility in the dungeon section without assigning an always, niche, or none rating.",
+      "evidence": [
+        {
+          "kind": "external-reference",
+          "description": "The current Elemental Shaman guide lists Jet Stream under Ruby Life Pools utility options.",
+          "url": "https://www.wowhead.com/guide/classes/shaman/elemental/mythic-plus-dungeon-tips",
+          "retrievedAt": "2026-09-02T21:35:00+02:00"
+        }
+      ]
+    }
+  ],
+  "provenance": [
+    {
+      "kind": "external-reference",
+      "description": "HawkCorrigan's current Patch 12.1.0 dungeon sections explicitly name these utility tools but do not provide an always/niche/none rating grid.",
+      "url": "https://www.wowhead.com/guide/classes/shaman/elemental/mythic-plus-dungeon-tips",
+      "retrievedAt": "2026-09-02T21:35:00+02:00"
+    },
+    {
+      "kind": "curated",
+      "description": "WHELP preserves each source mention without promoting it to an exact rating; validation only requires a corresponding non-none matrix axis."
+    }
+  ]
+}
