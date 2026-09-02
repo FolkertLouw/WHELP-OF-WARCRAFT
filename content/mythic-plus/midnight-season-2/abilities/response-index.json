@@ -8,6 +8,18 @@
   "seasonSlug": "midnight-season-2",
   "entries": [
     {
+      "dungeonId": "altar-of-fangs",
+      "recordId": "altar-of-fangs/ability-response-priorities",
+      "path": "../altar-of-fangs/strategy/ability-priorities.json",
+      "status": "corroborated"
+    },
+    {
+      "dungeonId": "den-of-nalorakk",
+      "recordId": "den-of-nalorakk/ability-response-priorities",
+      "path": "../den-of-nalorakk/strategy/ability-priorities.json",
+      "status": "corroborated"
+    },
+    {
       "dungeonId": "murder-row",
       "recordId": "murder-row/ability-response-priorities",
       "path": "../murder-row/strategy/ability-priorities.json",

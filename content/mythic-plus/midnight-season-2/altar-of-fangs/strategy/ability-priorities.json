@@ -1,0 +1,23 @@
+{
+  "$schema": "../../../../../schemas/ability-response.schema.json",
+  "schemaVersion": 1,
+  "recordType": "ability-response",
+  "id": "altar-of-fangs/ability-response-priorities",
+  "status": "corroborated",
+  "validity": { "fromBuild": "12.1.0.69587", "untilBuild": null, "seasonId": null, "seasonSlug": "midnight-season-2" },
+  "dungeonId": "altar-of-fangs",
+  "instanceMapId": 2993,
+  "entries": [
+    { "spellId": 1294557, "name": "Piercing Hiss", "npcIds": [261560], "targetDisposition": "enemy-cast", "actions": ["interrupt"], "priority": "high", "evidenceStatus": "source-confirmed", "rationale": "A named important interrupt from Primal Serpents in the opening section." },
+    { "spellId": 1310666, "name": "Toxic Atrophy", "npcIds": [262398], "targetDisposition": "enemy-cast", "actions": ["interrupt"], "priority": "critical", "evidenceStatus": "source-confirmed", "rationale": "The Writhing Coil casts this three times in succession; plan a kick rotation rather than relying on one player." },
+    { "spellId": 1307567, "name": "Mass Envenom", "npcIds": [263109], "targetDisposition": "enemy-cast", "actions": ["interrupt"], "priority": "critical", "evidenceStatus": "source-confirmed", "rationale": "Stop Ula'tek's Chosen from applying the group poison; missed casts create additional dispel pressure." },
+    { "spellId": 1294569, "name": "Paralyzing Shots", "npcIds": [261554], "targetDisposition": "player-debuff", "actions": ["cleanse-magic"], "priority": "high", "evidenceStatus": "source-confirmed", "rationale": "Remove the Magic control effect applied by Twinfang Harrowers." },
+    { "spellId": 1296069, "name": "Regurgitate", "npcIds": [259445], "targetDisposition": "player-debuff", "actions": ["cleanse-disease"], "priority": "situational", "evidenceStatus": "source-confirmed", "rationale": "Dodge Rav'i's cone first; cleanse the Disease only when a player is hit." },
+    { "spellId": 1307571, "name": "Envenom", "npcIds": [261557, 263109], "targetDisposition": "player-debuff", "actions": ["cleanse-poison"], "priority": "high", "evidenceStatus": "source-confirmed", "rationale": "Cleanse the Poison left by High Evolutionists or Ula'tek's Chosen, especially after a missed Mass Envenom stop." },
+    { "spellId": 1306308, "name": "Ravenous Claws (enrage aura)", "npcIds": [261553], "targetDisposition": "enemy-buff", "actions": ["soothe", "crowd-control"], "priority": "high", "evidenceStatus": "source-confirmed", "rationale": "Remove the Ravenous Descendant's Enrage or use a short stun and kite window to reset its dangerous attack-speed pressure." }
+  ],
+  "provenance": [
+    { "kind": "external-reference", "description": "Interrupt, dispel, purge, and recovery priorities were independently summarized from Wowhead's Patch 12.1 dungeon overview.", "url": "https://www.wowhead.com/guide/midnight/altar-of-fangs-dungeon-overview-location-rewards", "retrievedAt": "2026-09-02T14:50:00+02:00" },
+    { "kind": "game-data", "description": "Spell IDs, NPC contexts, and low-level response flags are linked to the generated Midnight Season 2 ability index.", "recordId": "midnight-season-2/flagged-abilities", "retrievedAt": "2026-09-02T14:50:00+02:00" }
+  ]
+}

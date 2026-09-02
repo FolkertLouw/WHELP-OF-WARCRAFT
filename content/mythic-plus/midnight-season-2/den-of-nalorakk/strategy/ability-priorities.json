@@ -1,0 +1,27 @@
+{
+  "$schema": "../../../../../schemas/ability-response.schema.json",
+  "schemaVersion": 1,
+  "recordType": "ability-response",
+  "id": "den-of-nalorakk/ability-response-priorities",
+  "status": "corroborated",
+  "validity": { "fromBuild": "12.1.0.69587", "untilBuild": null, "seasonId": null, "seasonSlug": "midnight-season-2" },
+  "dungeonId": "den-of-nalorakk",
+  "instanceMapId": 2825,
+  "entries": [
+    { "spellId": 1239394, "name": "Scavenge", "npcIds": [245752], "targetDisposition": "enemy-cast", "actions": ["interrupt"], "priority": "high", "evidenceStatus": "source-confirmed", "rationale": "A named important interrupt from Keen-Eyed Strikers before the first boss." },
+    { "spellId": 1297696, "name": "Healing Breeze", "npcIds": [241814], "targetDisposition": "mixed", "actions": ["interrupt", "purge"], "priority": "critical", "evidenceStatus": "source-confirmed", "rationale": "Interrupt the Earthwhisper Tender's heal; purge its Magic effect only as recovery after a missed stop." },
+    { "spellId": 1309919, "name": "Frigid Roar", "npcIds": [241872], "targetDisposition": "enemy-cast", "actions": ["interrupt"], "priority": "high", "evidenceStatus": "source-confirmed", "rationale": "Stop the Frigid Mauler's named priority cast." },
+    { "spellId": 1235829, "name": "Winter's Shroud", "npcIds": [244759], "targetDisposition": "enemy-cast", "actions": ["interrupt"], "priority": "critical", "evidenceStatus": "source-confirmed", "rationale": "Interrupt the Fractured Shivercore cast during Sentinel of Winter." },
+    { "spellId": 1297778, "name": "Arc Lightning", "npcIds": [245139], "targetDisposition": "enemy-cast", "actions": ["interrupt"], "priority": "high", "evidenceStatus": "source-confirmed", "rationale": "A named important interrupt from Stormbound Mystics in the final section." },
+    { "spellId": 1238801, "name": "Insatiable Hunger", "npcIds": [245567], "targetDisposition": "player-debuff", "actions": ["cleanse-curse"], "priority": "high", "evidenceStatus": "source-confirmed", "rationale": "Remove the Curse associated with the Spirit of Hunger encounter object." },
+    { "spellId": 1234846, "name": "Toxic Spores", "npcIds": [241812], "targetDisposition": "player-debuff", "actions": ["cleanse-poison"], "priority": "high", "evidenceStatus": "source-confirmed", "rationale": "Cleanse the Poison applied during The Hoardmonger." },
+    { "spellId": 1239860, "name": "Cryo Surge", "npcIds": [241876], "targetDisposition": "player-debuff", "actions": ["cleanse-magic"], "priority": "high", "evidenceStatus": "source-confirmed", "rationale": "Remove the Glacial Revenant's Magic debuff in the winter section." },
+    { "spellId": 1235549, "name": "Glacial Torment", "npcIds": [244100], "targetDisposition": "player-debuff", "actions": ["cleanse-magic"], "priority": "critical", "evidenceStatus": "source-confirmed", "rationale": "Plan Magic dispels for Sentinel of Winter's named priority debuff." },
+    { "spellId": 1238053, "name": "Mother's Wrath", "npcIds": [241808], "targetDisposition": "enemy-buff", "actions": ["soothe"], "priority": "high", "evidenceStatus": "source-confirmed", "rationale": "Remove the Territorial Matriarch's Enrage to reduce tank pressure." },
+    { "spellId": 1246865, "name": "Bestial Wrath", "npcIds": [245145], "targetDisposition": "enemy-buff", "actions": ["soothe"], "priority": "high", "evidenceStatus": "source-confirmed", "rationale": "Remove the Bonded Beasttamer's Enrage rather than treating it as a friendly dispel." }
+  ],
+  "provenance": [
+    { "kind": "external-reference", "description": "Interrupt, dispel, purge, and Enrage-removal priorities were independently summarized from Wowhead's Patch 12.1 dungeon overview.", "url": "https://www.wowhead.com/guide/midnight/den-of-nalorakk-dungeon-overview-location-rewards", "retrievedAt": "2026-09-02T14:50:00+02:00" },
+    { "kind": "game-data", "description": "Spell IDs, NPC contexts, and low-level response flags are linked to the generated Midnight Season 2 ability index.", "recordId": "midnight-season-2/flagged-abilities", "retrievedAt": "2026-09-02T14:50:00+02:00" }
+  ]
+}
