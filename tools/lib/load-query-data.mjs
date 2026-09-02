@@ -17,3 +17,10 @@ export async function loadSpecCapabilityCoverage(root) {
   if (!index.specCapabilityCoverage) return null;
   return JSON.parse(await readFile(path.join(root, "data", index.specCapabilityCoverage.record), "utf8"));
 }
+
+export async function loadSpecDungeonMatrices(root) {
+  const indexPath = path.join(root, "content", "index.json");
+  const index = JSON.parse(await readFile(indexPath, "utf8"));
+  const entries = (index.records ?? []).filter((entry) => entry.path.includes("/specs/") && entry.path.endsWith("-utility-matrix.json"));
+  return Promise.all(entries.map(async (entry) => JSON.parse(await readFile(path.join(root, "content", entry.path), "utf8"))));
+}

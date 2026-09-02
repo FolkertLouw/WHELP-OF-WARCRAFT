@@ -83,6 +83,13 @@ npm run query:capabilities -- --specs blood-death-knight,frost-death-knight,unho
 npm run query:capabilities -- --specs blood-death-knight,frost-death-knight,unholy-death-knight --action enemy-reposition
 ```
 
+Query the joined seasonal matrix for exact dungeon tools, ratings, mechanic spell IDs, affix advice, and provenance:
+
+```powershell
+npm run query:spec-matrix -- --spec blood-death-knight --dungeon ruby-life-pools
+npm run query:spec-matrix -- --spec frost-death-knight --dungeon kings-rest --rating always
+```
+
 Capability results preserve action-specific availability, alternate faction spell IDs, and configuration requirements, so a talent-gated extension or pet-dependent group tool remains visible.
 
 The capability catalog is intentionally marked partial in `data/specs/coverage.json`. Query output includes that completeness state and the number of modeled specs; an absent spec means “not modeled yet,” never “has no utility.”
