@@ -1,6 +1,6 @@
 {
   "name": "whelp-of-warcraft",
-  "version": "1.7.0",
+  "version": "1.8.0",
   "private": true,
   "description": "World-data Hub for Encounters, Loadouts & Progression",
   "scripts": {
@@ -22,6 +22,7 @@
     "query:loadout": "node tools/query-loadout.mjs",
     "query:party-gaps": "node tools/query-party-gaps.mjs",
     "query:freshness": "node tools/query-source-freshness.mjs",
+    "query:source-claims": "node tools/query-source-claims.mjs",
     "import:savedvariables": "node tools/import-savedvariables.mjs",
     "compare:route": "node tools/compare-run-to-route.mjs"
   },

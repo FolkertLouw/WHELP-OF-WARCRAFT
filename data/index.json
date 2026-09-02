@@ -124,6 +124,13 @@
     "record": "policies/source-freshness.json",
     "status": "verified"
   },
+  "sourceClaimAudits": [
+    {
+      "id": "midnight-season-2/evoker-wowhead-dungeon-tips-audit",
+      "record": "source-audits/evoker-midnight-season-2-wowhead-dungeon-tips.json",
+      "status": "corroborated"
+    }
+  ],
   "builds": [
     {
       "version": "12.1.0.69587",

@@ -1,0 +1,129 @@
+{
+  "$schema": "../../schemas/source-claim-audit.schema.json",
+  "schemaVersion": 1,
+  "recordType": "source-claim-audit",
+  "id": "midnight-season-2/evoker-wowhead-dungeon-tips-audit",
+  "status": "corroborated",
+  "validity": { "fromBuild": "12.1.0.69587", "untilBuild": null, "seasonId": null, "seasonSlug": "midnight-season-2" },
+  "source": {
+    "title": "Preservation Evoker Mythic+ Dungeon Tips",
+    "url": "https://www.wowhead.com/guide/classes/evoker/preservation/mythic-plus-dungeon-tips",
+    "retrievedAt": "2026-09-02T20:55:00+02:00"
+  },
+  "claims": [
+    {
+      "claimId": "blinding-vale-flanking-spear",
+      "assertedDungeonId": "the-blinding-vale",
+      "sectionLabel": "The Blinding Vale",
+      "subjectName": "Flanking Spear",
+      "npcId": 247570,
+      "spellId": 1266480,
+      "disposition": "rejected-cross-dungeon",
+      "canonicalDungeonId": "maisara-caverns",
+      "reason": "The spell and Muro'jin encounter records place this mechanic in Maisara Caverns, not The Blinding Vale.",
+      "evidence": [
+        { "kind": "external-reference", "description": "Wowhead's Muro'jin encounter record identifies NPC 247570, Flanking Spear, and Maisara Caverns.", "url": "https://www.wowhead.com/npc=247570/murojin/heroic-encounter-journal", "retrievedAt": "2026-09-02T20:55:00+02:00" },
+        { "kind": "external-reference", "description": "Wowhead's Flanking Spear spell record attributes spell 1266480 to Muro'jin.", "url": "https://www.wowhead.com/spell=1266480/flanking-spear", "retrievedAt": "2026-09-02T20:55:00+02:00" }
+      ]
+    },
+    {
+      "claimId": "blinding-vale-infected-pinions",
+      "assertedDungeonId": "the-blinding-vale",
+      "sectionLabel": "The Blinding Vale",
+      "subjectName": "Infected Pinions",
+      "npcId": 247570,
+      "spellId": 1246666,
+      "disposition": "rejected-cross-dungeon",
+      "canonicalDungeonId": "maisara-caverns",
+      "reason": "The Muro'jin and Nekraxx encounter journal places Infected Pinions in Maisara Caverns.",
+      "evidence": [
+        { "kind": "external-reference", "description": "Wowhead's encounter record places Nekraxx's Infected Pinions in the Muro'jin encounter in Maisara Caverns.", "url": "https://www.wowhead.com/npc=247570/murojin/heroic-encounter-journal", "retrievedAt": "2026-09-02T20:55:00+02:00" }
+      ]
+    },
+    {
+      "claimId": "blinding-vale-blood-frenzy",
+      "assertedDungeonId": "the-blinding-vale",
+      "sectionLabel": "The Blinding Vale",
+      "subjectName": "Blood Frenzy",
+      "spellId": 1255765,
+      "disposition": "rejected-cross-dungeon",
+      "canonicalDungeonId": "maisara-caverns",
+      "reason": "The surrounding guide fragment names Muro'jin and Nekraxx mechanics and therefore cannot support a Blinding Vale utility rating.",
+      "evidence": [
+        { "kind": "external-reference", "description": "Wowhead's Maisara Caverns overview identifies Muro'jin and Nekraxx as its opening encounter.", "url": "https://www.wowhead.com/guide/midnight/maisara-caverns-dungeon-overview-location-rewards", "retrievedAt": "2026-09-02T20:55:00+02:00" }
+      ]
+    },
+    {
+      "claimId": "blinding-vale-deafening-roar",
+      "assertedDungeonId": "the-blinding-vale",
+      "sectionLabel": "The Blinding Vale",
+      "subjectName": "Deafening Roar",
+      "spellId": 1256047,
+      "disposition": "rejected-cross-dungeon",
+      "canonicalDungeonId": "maisara-caverns",
+      "reason": "This claim occurs inside the same Muro'jin and Nekraxx fragment that is independently located in Maisara Caverns.",
+      "evidence": [
+        { "kind": "external-reference", "description": "Wowhead's Maisara Caverns overview establishes the fragment's encounter context.", "url": "https://www.wowhead.com/guide/midnight/maisara-caverns-dungeon-overview-location-rewards", "retrievedAt": "2026-09-02T20:55:00+02:00" }
+      ]
+    },
+    {
+      "claimId": "blinding-vale-ritual-drums",
+      "assertedDungeonId": "the-blinding-vale",
+      "sectionLabel": "The Blinding Vale",
+      "subjectName": "Ritual Drums",
+      "spellId": 1259887,
+      "disposition": "rejected-cross-dungeon",
+      "canonicalDungeonId": "maisara-caverns",
+      "reason": "This claim occurs inside the same Muro'jin and Nekraxx fragment that is independently located in Maisara Caverns.",
+      "evidence": [
+        { "kind": "external-reference", "description": "Wowhead's Maisara Caverns overview establishes the fragment's encounter context.", "url": "https://www.wowhead.com/guide/midnight/maisara-caverns-dungeon-overview-location-rewards", "retrievedAt": "2026-09-02T20:55:00+02:00" }
+      ]
+    },
+    {
+      "claimId": "den-creeping-void",
+      "assertedDungeonId": "den-of-nalorakk",
+      "sectionLabel": "Den of Nalorakk",
+      "subjectName": "Creeping Void",
+      "npcId": 248706,
+      "spellId": 1281636,
+      "disposition": "rejected-cross-dungeon",
+      "canonicalDungeonId": "nexus-point-xenas",
+      "reason": "Independent current class guidance identifies Creeping Void as second-boss trash in Nexus-Point Xenas.",
+      "evidence": [
+        { "kind": "external-reference", "description": "Wowhead's current Fire Mage dungeon guide places Creeping Void in its Nexus-Point Xenas section.", "url": "https://www.wowhead.com/ptr/guide/classes/mage/fire/mythic-plus-dungeon-tips", "retrievedAt": "2026-09-02T20:55:00+02:00" },
+        { "kind": "external-reference", "description": "Wowhead spell 1281636 confirms Creeping Void is a Curse increasing Shadow damage taken.", "url": "https://www.wowhead.com/spell=1281636/creeping-void", "retrievedAt": "2026-09-02T20:55:00+02:00" }
+      ]
+    },
+    {
+      "claimId": "den-burning-radiance",
+      "assertedDungeonId": "den-of-nalorakk",
+      "sectionLabel": "Den of Nalorakk",
+      "subjectName": "Burning Radiance",
+      "spellId": 1277557,
+      "disposition": "rejected-cross-dungeon",
+      "canonicalDungeonId": "nexus-point-xenas",
+      "reason": "Wowhead's current dispel guide explicitly places Burning Radiance and its Lightwrought caster in Nexus-Point Xenas.",
+      "evidence": [
+        { "kind": "external-reference", "description": "Wowhead's Midnight dispel guide places Burning Radiance in Nexus-Point Xenas.", "url": "https://www.wowhead.com/news/important-dispels-in-midnight-season-1-mythic-dungeons-381477?page=2", "retrievedAt": "2026-09-02T20:55:00+02:00" }
+      ]
+    },
+    {
+      "claimId": "den-dreadbellow",
+      "assertedDungeonId": "den-of-nalorakk",
+      "sectionLabel": "Den of Nalorakk",
+      "subjectName": "Dreadbellow",
+      "npcId": 248502,
+      "spellId": 1252406,
+      "disposition": "unresolved",
+      "canonicalDungeonId": null,
+      "reason": "The linked Null Sentinel record does not expose a location, and WHELP has not found sufficient independent evidence to assign the mechanic to a dungeon.",
+      "evidence": [
+        { "kind": "external-reference", "description": "Wowhead's Null Sentinel NPC record confirms NPC 248502 but currently reports no location.", "url": "https://www.wowhead.com/npc=248502/null-sentinel", "retrievedAt": "2026-09-02T20:55:00+02:00" }
+      ]
+    }
+  ],
+  "provenance": [
+    { "kind": "external-reference", "description": "The audited source is Wowhead's current Preservation Evoker dungeon guide; claims are evaluated individually rather than trusting section placement.", "url": "https://www.wowhead.com/guide/classes/evoker/preservation/mythic-plus-dungeon-tips", "retrievedAt": "2026-09-02T20:55:00+02:00" },
+    { "kind": "curated", "description": "WHELP claim-level review requiring independent dungeon-context evidence before guide claims may enter canonical records." }
+  ]
+}

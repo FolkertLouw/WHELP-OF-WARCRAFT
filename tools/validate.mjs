@@ -192,6 +192,29 @@ function validateRecord(file, value) {
       if (!sourceKinds.has(kind)) fail(file, `freshness policy requires timestamp for unknown source kind ${kind}`);
       if (value.maxAgeDaysByKind?.[kind] === undefined) fail(file, `timestamp-required source kind ${kind} has no maximum age`);
     }
+  } else if (value.recordType === "source-claim-audit") {
+    requireFields(file, value, ["id", "status", "validity", "source", "claims", "provenance"]);
+    requireFields(file, value.source ?? {}, ["title", "url", "retrievedAt"]);
+    const claimIds = (value.claims ?? []).map((claim) => claim.claimId);
+    if (!(value.claims ?? []).length) fail(file, "source claim audit must contain at least one claim");
+    if (new Set(claimIds).size !== claimIds.length) fail(file, "source claim IDs must be unique");
+    for (const claim of value.claims ?? []) {
+      requireFields(file, claim, ["claimId", "assertedDungeonId", "sectionLabel", "subjectName", "disposition", "reason", "evidence"]);
+      if (!["accepted", "rejected-cross-dungeon", "unresolved"].includes(claim.disposition)) {
+        fail(file, `claim ${claim.claimId} has unknown disposition ${claim.disposition}`);
+      }
+      if (!(claim.evidence ?? []).length) fail(file, `claim ${claim.claimId} has no evidence`);
+      if (claim.disposition === "accepted" && claim.canonicalDungeonId !== claim.assertedDungeonId) {
+        fail(file, `accepted claim ${claim.claimId} must resolve to its asserted dungeon`);
+      }
+      if (claim.disposition === "rejected-cross-dungeon"
+        && (!claim.canonicalDungeonId || claim.canonicalDungeonId === claim.assertedDungeonId)) {
+        fail(file, `rejected claim ${claim.claimId} must resolve to a different dungeon`);
+      }
+      if (claim.disposition === "unresolved" && claim.canonicalDungeonId !== null) {
+        fail(file, `unresolved claim ${claim.claimId} cannot assert a canonical dungeon`);
+      }
+    }
   } else if (value.recordType === "run-observation") {
     requireFields(file, value, ["collector", "game", "run", "player", "group", "privacy"]);
     if (value.privacy?.containsNames !== false || value.privacy?.containsChat !== false) {
@@ -336,6 +359,21 @@ for (const file of files.filter((candidate) => candidate.endsWith(".json"))) {
 }
 
 const dungeons = records.filter(({ value }) => value.recordType === "dungeon");
+for (const { file, value } of records.filter(({ value }) => value.recordType === "source-claim-audit")) {
+  if (file.includes(`${path.sep}examples${path.sep}`)) continue;
+  for (const claim of value.claims ?? []) {
+    if (!dungeons.some(({ value: dungeon }) => dungeon.id === claim.assertedDungeonId)) {
+      fail(file, `claim ${claim.claimId} asserts unknown dungeon ${claim.assertedDungeonId}`);
+    }
+    if (!claim.spellId || claim.disposition === "accepted") continue;
+    for (const { file: matrixFile, value: matrix } of records.filter(({ value: candidate }) => candidate.recordType === "spec-dungeon-matrix")) {
+      const dungeonEntry = (matrix.dungeons ?? []).find((entry) => entry.dungeonId === claim.assertedDungeonId);
+      if ((dungeonEntry?.mechanicSpellIds ?? []).includes(claim.spellId)) {
+        fail(matrixFile, `mechanic spell ${claim.spellId} is ${claim.disposition} for ${claim.assertedDungeonId} by ${value.id}`);
+      }
+    }
+  }
+}
 for (const { file, value } of records.filter(({ value }) => value.recordType === "mechanic")) {
   if (file.includes(`${path.sep}examples${path.sep}`)) continue;
   const dungeon = dungeons.find(({ value: candidate }) => candidate.instanceMapId === value.encounter?.instanceId);
@@ -602,6 +640,22 @@ for (const capability of index.specCapabilities ?? []) {
   } catch (error) {
     fail(indexPath, `cannot read spec capability ${capability.record}: ${error.message}`);
   }
+}
+for (const audit of index.sourceClaimAudits ?? []) {
+  const recordPath = path.join(root, "data", audit.record);
+  try {
+    const record = JSON.parse(await readFile(recordPath, "utf8"));
+    if (record.recordType !== "source-claim-audit") fail(indexPath, `${audit.record} is not a source-claim-audit record`);
+    if (record.id !== audit.id) fail(indexPath, `${audit.record} has id ${record.id}, expected ${audit.id}`);
+    if (record.status !== audit.status) fail(indexPath, `${audit.record} has status ${record.status}, expected ${audit.status}`);
+  } catch (error) {
+    fail(indexPath, `cannot read source claim audit ${audit.record}: ${error.message}`);
+  }
+}
+const indexedAuditIds = new Set((index.sourceClaimAudits ?? []).map((entry) => entry.id));
+for (const { file, value } of records.filter(({ value }) => value.recordType === "source-claim-audit")) {
+  if (file.includes(`${path.sep}examples${path.sep}`)) continue;
+  if (!indexedAuditIds.has(value.id)) fail(file, `source claim audit ${value.id} is absent from data/index.json`);
 }
 if (index.specCapabilityCoverage) {
   const coveragePath = path.join(root, "data", index.specCapabilityCoverage.record);

@@ -1,0 +1,48 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://whelp.dev/schemas/source-claim-audit.schema.json",
+  "title": "WHELP source claim audit",
+  "type": "object",
+  "required": ["schemaVersion", "recordType", "id", "status", "validity", "source", "claims", "provenance"],
+  "properties": {
+    "$schema": { "type": "string" },
+    "schemaVersion": { "const": 1 },
+    "recordType": { "const": "source-claim-audit" },
+    "id": { "type": "string", "minLength": 1 },
+    "status": { "enum": ["draft", "corroborated", "verified", "deprecated"] },
+    "validity": { "$ref": "validity.schema.json" },
+    "source": {
+      "type": "object",
+      "required": ["title", "url", "retrievedAt"],
+      "properties": {
+        "title": { "type": "string", "minLength": 1 },
+        "url": { "type": "string", "format": "uri" },
+        "retrievedAt": { "type": "string", "format": "date-time" }
+      },
+      "additionalProperties": false
+    },
+    "claims": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["claimId", "assertedDungeonId", "sectionLabel", "subjectName", "disposition", "canonicalDungeonId", "reason", "evidence"],
+        "properties": {
+          "claimId": { "type": "string", "pattern": "^[a-z0-9][a-z0-9-]+$" },
+          "assertedDungeonId": { "type": "string", "minLength": 1 },
+          "sectionLabel": { "type": "string", "minLength": 1 },
+          "subjectName": { "type": "string", "minLength": 1 },
+          "npcId": { "type": "integer", "minimum": 1 },
+          "spellId": { "type": "integer", "minimum": 1 },
+          "disposition": { "enum": ["accepted", "rejected-cross-dungeon", "unresolved"] },
+          "canonicalDungeonId": { "type": ["string", "null"] },
+          "reason": { "type": "string", "minLength": 1 },
+          "evidence": { "type": "array", "minItems": 1, "items": { "$ref": "provenance.schema.json" } }
+        },
+        "additionalProperties": false
+      }
+    },
+    "provenance": { "type": "array", "minItems": 1, "items": { "$ref": "provenance.schema.json" } }
+  },
+  "additionalProperties": false
+}

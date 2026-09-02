@@ -14,7 +14,7 @@ The repository is the reviewable public knowledge layer. Raw high-volume telemet
 
 ## Current status
 
-Version 1.0 is a validated, queryable foundation. It includes:
+Version 1.8 is a validated, queryable foundation. It includes:
 
 - the WHELP data and trust model;
 - JSON schemas and synthetic examples;
@@ -53,6 +53,8 @@ Elemental Shaman completes the Shaman class and extends the catalog to 34 full m
 Demon Hunter coverage reflects Midnight's current three-spec roster, including Devourer (`specId` 1480). The shared 12.1 model keeps Burn It Out and Soul Cleanse self-only, treats Chaos Brand as an enemy Magic-damage-taken increase instead of a friendly buff, and preserves Void Nova, Chaos Nova, and Imprison as control rather than school-lockout interrupts. Vengeance separately models Sigil of Silence, Sigil of Chains, and Fiery Brand's current self-defensive behavior.
 
 Evoker completes the current Retail specialization catalog at 40 full matrices. Devastation, Preservation, and Augmentation retain distinct dispel and support profiles: Cauterizing Flame handles Bleed, Poison, Curse, and Disease but never Magic; only Preservation's Naturalize supplies friendly Magic removal. Zephyr is five-player AoE mitigation plus movement speed, while Rescue, Spatial Paradox, and Time Spiral remain separate movement-support behaviors. The ingestion notes also reject current guide fragments placed under the wrong dungeon instead of laundering them into canonical facts.
+
+Source claims now have their own auditable record layer. Each extracted guide claim is individually marked `accepted`, `rejected-cross-dungeon`, or `unresolved`, with evidence and any independently established canonical dungeon. This prevents a mislabeled or copied guide section from silently changing a specialization matrix. Inspect the review queue with `npm run query:source-claims`, or filter it with `--disposition`, `--dungeon`, and `--spell`.
 
 Source maintenance is machine-readable. `npm run query:freshness` compares every canonical provenance-bearing record with the current build and the checked-in freshness policy. It reports source age separately from build validity and returns an actionable review queue; use `--as-of <ISO-date> --include all` for a reproducible full audit. See `docs/FRESHNESS.md`.
 
@@ -119,7 +121,7 @@ npm run query:matrix-coverage
 
 Capability results preserve action-specific availability, alternate faction spell IDs, and configuration requirements, so a talent-gated extension or pet-dependent group tool remains visible.
 
-The capability catalog is intentionally marked partial in `data/specs/coverage.json`. Query output includes that completeness state and the number of modeled specs; an absent spec means “not modeled yet,” never “has no utility.”
+The capability catalog is marked complete for the current 40-spec Retail roster in `data/specs/coverage.json`. Query output still includes completeness state and modeled-spec count so future roster changes cannot silently turn missing data into “has no utility.”
 
 To test the collector locally, copy `addon/WHELPCollector` into Retail's `Interface/AddOns` directory, restart WoW or run `/reload`, then use `/whelp status`.
 
