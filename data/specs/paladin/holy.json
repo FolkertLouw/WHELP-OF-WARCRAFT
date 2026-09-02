@@ -3,6 +3,7 @@
   "schemaVersion": 1,
   "recordType": "spec-capabilities",
   "id": "paladin/holy/capabilities",
+  "matrixRecordId": "midnight-season-2/holy-paladin-utility-matrix",
   "status": "corroborated",
   "validity": { "fromBuild": "12.1.0.69587", "untilBuild": null, "seasonId": null, "seasonSlug": "midnight-season-2" },
   "spec": { "classId": 2, "className": "Paladin", "specId": 65, "specName": "Holy", "slug": "holy-paladin" },
@@ -14,11 +15,14 @@
     { "id": "blessing-of-protection", "name": "Blessing of Protection", "spellId": 1022, "actions": ["external-defensive"], "availability": "talent", "scope": "friendly-single", "limitations": ["Protects against physical damage and effects", "Causes Forbearance", "Can cause the target to lose enemy aggression"] },
     { "id": "intercession", "name": "Intercession", "spellId": 391054, "actions": ["battle-resurrection"], "availability": "baseline", "scope": "friendly-single", "limitations": ["Requires a dead ally", "Uses the shared combat-resurrection limit"] },
     { "id": "devotion-aura", "name": "Devotion Aura", "spellId": 465, "actions": ["party-damage-reduction"], "availability": "talent", "scope": "friendly-area", "limitations": ["Only affects allies within the aura range"] },
-    { "id": "divine-shield", "name": "Divine Shield", "spellId": 642, "actions": ["defensive"], "availability": "baseline", "scope": "self", "limitations": ["Personal immunity only", "Causes Forbearance"] }
+    { "id": "divine-shield", "name": "Divine Shield", "spellId": 642, "actions": ["defensive"], "availability": "baseline", "scope": "self", "limitations": ["Personal immunity only", "Causes Forbearance"] },
+    { "id": "blessing-of-freedom", "name": "Blessing of Freedom", "spellId": 1044, "actions": ["cleanse-snare", "cleanse-root"], "availability": "talent", "scope": "friendly-single", "limitations": ["Movement-impairing effects only", "Does not remove unrelated harmful Magic effects"] },
+    { "id": "blinding-light", "name": "Blinding Light", "spellId": 115750, "actions": ["crowd-control"], "availability": "talent", "scope": "area-enemy", "limitations": ["Breaks after sufficient non-Holy damage", "Does not affect every creature type"] }
   ],
   "provenance": [
     { "kind": "external-reference", "description": "Current Holy Paladin ability guide identifies Cleanse, Intercession, Divine Shield, Hammer of Justice, auras, and blessing utility.", "url": "https://www.wowhead.com/guide/classes/paladin/holy/abilities-talents-pve-healer", "retrievedAt": "2026-09-02T16:30:00+02:00" },
     { "kind": "external-reference", "description": "Current Cleanse record distinguishes baseline Magic removal from Poison and Disease removal granted by Improved Cleanse.", "url": "https://www.wowhead.com/spell=4987/cleanse", "retrievedAt": "2026-09-02T16:30:00+02:00" },
-    { "kind": "external-reference", "description": "Current Intercession record confirms Paladin combat resurrection and the enforced encounter limit.", "url": "https://www.wowhead.com/spell=391054/intercession", "retrievedAt": "2026-09-02T16:30:00+02:00" }
+    { "kind": "external-reference", "description": "Current Intercession record confirms Paladin combat resurrection and the enforced encounter limit.", "url": "https://www.wowhead.com/spell=391054/intercession", "retrievedAt": "2026-09-02T16:30:00+02:00" },
+    { "kind": "external-reference", "description": "Current Patch 12.1.0 Holy dungeon guide supplies dungeon-specific Cleanse, Blessing of Protection, Blessing of Freedom, Blessing of Sacrifice, and Blinding Light recommendations.", "url": "https://www.wowhead.com/guide/classes/paladin/holy/mythic-plus-dungeon-tips", "retrievedAt": "2026-09-02T18:32:43+02:00" }
   ]
 }

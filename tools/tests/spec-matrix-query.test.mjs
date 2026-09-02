@@ -68,6 +68,21 @@ test("joins Retribution physical immunity to exact King's Rest mechanics", () =>
   assert.ok(report.dungeons[0].mechanicSpellIds.includes(1303490));
 });
 
+test("joins Holy Paladin Magic cleansing without extending it to non-healer specs", () => {
+  const report = querySpecMatrix(matrices, capabilities, { spec: "holy-paladin", dungeon: "murder-row", rating: "always" });
+  const cleanse = report.dungeons[0].utilities.find((entry) => entry.axisId === "magic-toxin-cleanse").tools[0];
+  assert.equal(cleanse.id, "cleanse");
+  assert.ok(cleanse.actions.includes("cleanse-magic"));
+  assert.ok(report.dungeons[0].mechanicSpellIds.includes(1201554));
+});
+
+test("joins Holy Paladin Physical immunity to canonical Severing Axe", () => {
+  const report = querySpecMatrix(matrices, capabilities, { spec: "holy-paladin", dungeon: "kings-rest", rating: "always" });
+  const immunity = report.dungeons[0].utilities.find((entry) => entry.axisId === "physical-immunity");
+  assert.equal(immunity.tools[0].id, "blessing-of-protection");
+  assert.ok(report.dungeons[0].mechanicSpellIds.includes(266231));
+});
+
 test("surfaces action-level talent availability for Restoration Shaman", () => {
   const report = querySpecMatrix(matrices, capabilities, { spec: "restoration-shaman", dungeon: "den-of-nalorakk" });
   const purify = report.dungeons[0].utilities.find((entry) => entry.axisId === "improved-purify-spirit").tools[0];

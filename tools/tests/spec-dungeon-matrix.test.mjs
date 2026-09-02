@@ -30,6 +30,8 @@ const protectionPaladinMatrix = await loadJson("content", "mythic-plus", "midnig
 const protectionPaladinCapabilities = await loadJson("data", "specs", "paladin", "protection.json");
 const retributionPaladinMatrix = await loadJson("content", "mythic-plus", "midnight-season-2", "specs", "retribution-paladin-utility-matrix.json");
 const retributionPaladinCapabilities = await loadJson("data", "specs", "paladin", "retribution.json");
+const holyPaladinMatrix = await loadJson("content", "mythic-plus", "midnight-season-2", "specs", "holy-paladin-utility-matrix.json");
+const holyPaladinCapabilities = await loadJson("data", "specs", "paladin", "holy.json");
 const season = await loadJson("data", "seasons", "midnight-season-2.json");
 
 test("Unholy matrix covers every Midnight Season 2 dungeon exactly once", () => {
@@ -274,5 +276,26 @@ test("Retribution preserves explicit dungeon none ratings and dual-domain Linger
   const kingsRest = retributionPaladinMatrix.dungeons.find((entry) => entry.dungeonId === "kings-rest");
   assert.equal(kingsRest.ratings["movement-freedom"], "always");
   assert.equal(kingsRest.ratings["toxin-cleanse"], "always");
+  assert.ok(kingsRest.mechanicSpellIds.includes(271564));
+});
+
+test("Holy Paladin matrix completes Paladin coverage and resolves every utility axis", () => {
+  assert.deepEqual(new Set(holyPaladinMatrix.dungeons.map((entry) => entry.dungeonId)), new Set(season.dungeons.map((entry) => entry.id)));
+  const tools = new Map(holyPaladinCapabilities.tools.map((tool) => [tool.id, tool]));
+  for (const axis of holyPaladinMatrix.axes) {
+    for (const toolId of axis.toolIds) assert.ok(tools.has(toolId), `${axis.id} should resolve ${toolId}`);
+  }
+});
+
+test("Holy Paladin preserves healer-only Magic cleansing and dual-domain movement answers", () => {
+  const cleanse = holyPaladinCapabilities.tools.find((tool) => tool.id === "cleanse");
+  assert.deepEqual(cleanse.actions, ["cleanse-magic", "cleanse-poison", "cleanse-disease"]);
+  assert.equal(cleanse.actionAvailability["cleanse-poison"], "talent");
+  const murderRow = holyPaladinMatrix.dungeons.find((entry) => entry.dungeonId === "murder-row");
+  assert.equal(murderRow.ratings["magic-toxin-cleanse"], "always");
+  assert.ok(murderRow.mechanicSpellIds.includes(1201554));
+  const kingsRest = holyPaladinMatrix.dungeons.find((entry) => entry.dungeonId === "kings-rest");
+  assert.equal(kingsRest.ratings["movement-freedom"], "always");
+  assert.ok(kingsRest.mechanicSpellIds.includes(266231));
   assert.ok(kingsRest.mechanicSpellIds.includes(271564));
 });

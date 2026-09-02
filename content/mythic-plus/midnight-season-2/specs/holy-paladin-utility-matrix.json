@@ -1,0 +1,33 @@
+{
+  "$schema": "../../../../schemas/spec-dungeon-matrix.schema.json",
+  "schemaVersion": 1,
+  "recordType": "spec-dungeon-matrix",
+  "id": "midnight-season-2/holy-paladin-utility-matrix",
+  "status": "corroborated",
+  "validity": { "fromBuild": "12.1.0.69587", "untilBuild": null, "seasonId": null, "seasonSlug": "midnight-season-2" },
+  "spec": { "classId": 2, "className": "Paladin", "specId": 65, "specName": "Holy" },
+  "axes": [
+    { "id": "magic-toxin-cleanse", "label": "Friendly Magic, Poison, and Disease removal", "abilityNames": ["Cleanse"], "spellIds": [4987], "toolIds": ["cleanse"] },
+    { "id": "physical-immunity", "label": "Friendly Physical immunity", "abilityNames": ["Blessing of Protection"], "spellIds": [1022], "toolIds": ["blessing-of-protection"] },
+    { "id": "movement-freedom", "label": "Friendly snare and root removal", "abilityNames": ["Blessing of Freedom"], "spellIds": [1044], "toolIds": ["blessing-of-freedom"] },
+    { "id": "external-defensive", "label": "Damage-transfer external", "abilityNames": ["Blessing of Sacrifice"], "spellIds": [6940], "toolIds": ["blessing-of-sacrifice"] },
+    { "id": "control", "label": "Single-target and area crowd control", "abilityNames": ["Hammer of Justice", "Blinding Light"], "spellIds": [853, 115750], "toolIds": ["hammer-of-justice", "blinding-light"] }
+  ],
+  "dungeons": [
+    { "dungeonId": "altar-of-fangs", "instanceMapId": 2993, "ratings": { "magic-toxin-cleanse": "always", "physical-immunity": "none", "movement-freedom": "always", "external-defensive": "niche", "control": "niche" }, "mechanicSpellIds": [1294569, 1296069, 1307567, 1310666], "notes": ["Cleanse covers eligible effects including Paralyzing Shots and Regurgitate; interrupt Mass Envenom and Toxic Atrophy before they create avoidable recovery pressure.", "Blessing of Freedom removes eligible movement impairment from Paralyzing Shots, Toxic Atrophy, and Regurgitate. The guide lists no specific Blessing of Protection application here."] },
+    { "dungeonId": "the-blinding-vale", "instanceMapId": 2859, "ratings": { "magic-toxin-cleanse": "always", "physical-immunity": "always", "movement-freedom": "always", "external-defensive": "niche", "control": "niche" }, "mechanicSpellIds": [1238084, 1241058, 1250937, 1259365], "notes": ["Cleanse Toxic Spew and Spore Spines. Blessing of Protection removes named bleed effects such as Grievous Thrash.", "Blessing of Freedom removes Bloodthorn Roots on Ikuzz."] },
+    { "dungeonId": "den-of-nalorakk", "instanceMapId": 2825, "ratings": { "magic-toxin-cleanse": "always", "physical-immunity": "always", "movement-freedom": "always", "external-defensive": "niche", "control": "niche" }, "mechanicSpellIds": [1234846, 1238053, 1309919], "notes": ["Cleanse Toxic Spores on The Hoardmonger. Blessing of Freedom removes Glacial Tomb and eligible Frigid Roar or Rime Detonation movement effects.", "Blessing of Protection removes Razor Dive when needed."] },
+    { "dungeonId": "murder-row", "instanceMapId": 2813, "ratings": { "magic-toxin-cleanse": "always", "physical-immunity": "always", "movement-freedom": "none", "external-defensive": "niche", "control": "niche" }, "mechanicSpellIds": [1201554, 1216590], "notes": ["Cleanse Heartstop Poison and the harmful Magic effect from Seduction when it is not interrupted or crowd-controlled.", "Blessing of Protection removes named Physical bleed effects. The guide lists no specific Blessing of Freedom application."] },
+    { "dungeonId": "voidscar-arena", "instanceMapId": 2923, "ratings": { "magic-toxin-cleanse": "always", "physical-immunity": "none", "movement-freedom": "always", "external-defensive": "niche", "control": "niche" }, "mechanicSpellIds": [1226031, 1249661, 1263971, 1289258], "notes": ["Cleanse eligible poisons including Corrosive Essence, Mind-Numbing Poison, and Poison Splash.", "Blessing of Freedom removes Condensed Mass movement impairment. The guide lists no specific Blessing of Protection application."] },
+    { "dungeonId": "temple-of-sethraliss", "instanceMapId": 1877, "ratings": { "magic-toxin-cleanse": "always", "physical-immunity": "always", "movement-freedom": "none", "external-defensive": "niche", "control": "niche" }, "mechanicSpellIds": [1296052, 1308148], "notes": ["Cleanse Imbued Conduction, Cytotoxin, and eligible Poison Splash applications.", "Blessing of Protection removes Serrated Charge when needed. The guide lists no specific Blessing of Freedom application."] },
+    { "dungeonId": "kings-rest", "instanceMapId": 1762, "ratings": { "magic-toxin-cleanse": "always", "physical-immunity": "always", "movement-freedom": "always", "external-defensive": "niche", "control": "niche" }, "mechanicSpellIds": [266231, 271564], "notes": ["Cleanse or Blessing of Freedom removes Lingering Fluid because it is both a Poison and a movement impairment.", "Blessing of Protection removes Physical bleed effects including Severing Axe; it can be cast before that cast finishes."] },
+    { "dungeonId": "ruby-life-pools", "instanceMapId": 2521, "ratings": { "magic-toxin-cleanse": "none", "physical-immunity": "always", "movement-freedom": "none", "external-defensive": "niche", "control": "niche" }, "mechanicSpellIds": [], "notes": ["Blessing of Protection removes Blazing Rush.", "The guide lists no specific Cleanse or Blessing of Freedom application, and no spell ID is asserted here until the current-season mechanic is corroborated in canonical data."] }
+  ],
+  "affixes": [
+    { "affixSlug": "xalataths-bargain-ascendant", "recommendations": ["Use Blinding Light to clear multiple susceptible orbs; Hammer of Justice and Rebuke cover survivors."] },
+    { "affixSlug": "xalataths-bargain-voidbound", "recommendations": ["Prioritize killing the emissary; the guide identifies no Holy-specific removal tool for its cast."] },
+    { "affixSlug": "xalataths-bargain-pulsar", "recommendations": ["Help collect allies' orbiting orbs and position your own for another player to collect."] },
+    { "affixSlug": "xalataths-bargain-devour", "recommendations": ["Cleanse immediately so the cooldown can return before expiry for a second dispel; Blessing of Freedom removes another eligible application, and healing through it remains the fallback."] }
+  ],
+  "provenance": [{ "kind": "external-reference", "description": "Original structured summary of HolyClarius's Patch 12.1.0 Holy Paladin dungeon utility and affix recommendations. Talent strings, gear, performance rankings, and comments are intentionally excluded.", "url": "https://www.wowhead.com/guide/classes/paladin/holy/mythic-plus-dungeon-tips", "retrievedAt": "2026-09-02T18:32:43+02:00" }]
+}
