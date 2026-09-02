@@ -34,6 +34,7 @@
     { "id": "den-of-nalorakk/nalorakk/forceful-slam-1297797", "path": "mythic-plus/midnight-season-2/den-of-nalorakk/mechanics/nalorakk-forceful-slam.json", "status": "draft" },
     { "id": "den-of-nalorakk/nalorakk/fury-of-the-war-god-1243002", "path": "mythic-plus/midnight-season-2/den-of-nalorakk/mechanics/nalorakk-fury-of-the-war-god.json", "status": "draft" },
     { "id": "murder-row/overview", "path": "mythic-plus/midnight-season-2/murder-row/strategy/overview.json", "status": "corroborated" },
+    { "id": "murder-row/pug-10-15-baseline", "path": "mythic-plus/midnight-season-2/murder-row/routes/pug-10-15.json", "status": "draft" },
     { "id": "murder-row/kystia-manaheart/felshield-1217989", "path": "mythic-plus/midnight-season-2/murder-row/mechanics/kystia-felshield.json", "status": "draft" },
     { "id": "murder-row/kystia-manaheart/corroding-spittle-1228198", "path": "mythic-plus/midnight-season-2/murder-row/mechanics/kystia-corroding-spittle.json", "status": "draft" },
     { "id": "murder-row/kystia-manaheart/destabilized-1265412", "path": "mythic-plus/midnight-season-2/murder-row/mechanics/kystia-destabilized.json", "status": "draft" },
