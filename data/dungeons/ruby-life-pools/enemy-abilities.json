@@ -18,7 +18,7 @@
       "abilities": [
         {
           "spellId": 384933,
-          "name": null,
+          "name": "Ice Shield",
           "interruptible": true,
           "dispelType": "none",
           "enrage": false
@@ -31,21 +31,21 @@
       "abilities": [
         {
           "spellId": 371984,
-          "name": null,
+          "name": "Frostbolt",
           "interruptible": true,
           "dispelType": "none",
           "enrage": false
         },
         {
           "spellId": 372743,
-          "name": null,
+          "name": "Ice Shield",
           "interruptible": true,
           "dispelType": "none",
           "enrage": false
         },
         {
           "spellId": 384933,
-          "name": null,
+          "name": "Ice Shield",
           "interruptible": true,
           "dispelType": "none",
           "enrage": false
@@ -58,7 +58,7 @@
       "abilities": [
         {
           "spellId": 1305234,
-          "name": null,
+          "name": "Cold Claws",
           "interruptible": false,
           "dispelType": "magic",
           "enrage": false
@@ -71,7 +71,7 @@
       "abilities": [
         {
           "spellId": 372808,
-          "name": null,
+          "name": "Frigid Shard",
           "interruptible": true,
           "dispelType": "none",
           "enrage": false
@@ -84,7 +84,7 @@
       "abilities": [
         {
           "spellId": 392641,
-          "name": null,
+          "name": "Rolling Thunder",
           "interruptible": false,
           "dispelType": "magic",
           "enrage": false
@@ -97,7 +97,7 @@
       "abilities": [
         {
           "spellId": 384194,
-          "name": null,
+          "name": "Cinderbolt",
           "interruptible": true,
           "dispelType": "none",
           "enrage": false
@@ -110,7 +110,7 @@
       "abilities": [
         {
           "spellId": 1305955,
-          "name": null,
+          "name": "Fiery Blast",
           "interruptible": true,
           "dispelType": "none",
           "enrage": false
@@ -123,7 +123,7 @@
       "abilities": [
         {
           "spellId": 373972,
-          "name": null,
+          "name": "Blaze of Glory",
           "interruptible": false,
           "dispelType": "magic",
           "enrage": false
@@ -136,7 +136,7 @@
       "abilities": [
         {
           "spellId": 385310,
-          "name": null,
+          "name": "Storm Bolt",
           "interruptible": true,
           "dispelType": "none",
           "enrage": false
@@ -149,7 +149,7 @@
       "abilities": [
         {
           "spellId": 391031,
-          "name": null,
+          "name": "Stormcloud Barrier",
           "interruptible": false,
           "dispelType": "magic",
           "enrage": false
@@ -162,7 +162,7 @@
       "abilities": [
         {
           "spellId": 392576,
-          "name": null,
+          "name": "Thunder Blast",
           "interruptible": true,
           "dispelType": "none",
           "enrage": false
@@ -175,7 +175,7 @@
       "abilities": [
         {
           "spellId": 381515,
-          "name": null,
+          "name": "Stormslam",
           "interruptible": false,
           "dispelType": "magic",
           "enrage": false
@@ -188,7 +188,7 @@
       "abilities": [
         {
           "spellId": 373017,
-          "name": null,
+          "name": "Blaze Volley",
           "interruptible": true,
           "dispelType": "none",
           "enrage": false
@@ -201,7 +201,7 @@
       "abilities": [
         {
           "spellId": 1305234,
-          "name": null,
+          "name": "Cold Claws",
           "interruptible": false,
           "dispelType": "magic",
           "enrage": false
@@ -212,9 +212,23 @@
   "provenance": [
     {
       "kind": "game-data",
-      "description": "Ability flags extracted by WHELP from Mythic Dungeon Tools 6.2.10; names remain null until independently corroborated.",
+      "description": "Ability flags extracted by WHELP from Mythic Dungeon Tools 6.2.10; names are independently corroborated below.",
       "url": "https://github.com/Nnoggie/MythicDungeonTools",
       "retrievedAt": "2026-09-02T11:15:00+02:00"
-    }
+    },
+    { "kind": "external-reference", "description": "Spell 384933 name corroborated against Wowhead's Ice Shield record.", "url": "https://www.wowhead.com/spell=384933/ice-shield", "retrievedAt": "2026-09-02T14:18:00+02:00" },
+    { "kind": "external-reference", "description": "Spell 371984 name corroborated against Wowhead's Frostbolt record.", "url": "https://www.wowhead.com/spell=371984/frostbolt", "retrievedAt": "2026-09-02T14:18:00+02:00" },
+    { "kind": "external-reference", "description": "Spell 372743 name corroborated against Wowhead's Ice Shield record.", "url": "https://www.wowhead.com/spell=372743/ice-shield", "retrievedAt": "2026-09-02T14:18:00+02:00" },
+    { "kind": "external-reference", "description": "Spell 1305234 name corroborated against Wowhead's Cold Claws record.", "url": "https://www.wowhead.com/spell=1305234/cold-claws", "retrievedAt": "2026-09-02T14:18:00+02:00" },
+    { "kind": "external-reference", "description": "Spell 372808 name corroborated against Wowhead's Frigid Shard record.", "url": "https://www.wowhead.com/spell=372808/frigid-shard", "retrievedAt": "2026-09-02T14:18:00+02:00" },
+    { "kind": "external-reference", "description": "Spell 392641 name corroborated against Wowhead's Rolling Thunder record.", "url": "https://www.wowhead.com/spell=392641/rolling-thunder", "retrievedAt": "2026-09-02T14:18:00+02:00" },
+    { "kind": "external-reference", "description": "Spell 384194 name corroborated against Wowhead's Cinderbolt record.", "url": "https://www.wowhead.com/spell=384194/cinderbolt", "retrievedAt": "2026-09-02T14:18:00+02:00" },
+    { "kind": "external-reference", "description": "Spell 1305955 name corroborated against Wowhead's Fiery Blast record.", "url": "https://www.wowhead.com/spell=1305955/fiery-blast", "retrievedAt": "2026-09-02T14:18:00+02:00" },
+    { "kind": "external-reference", "description": "Spell 373972 name corroborated against Wowhead's Blaze of Glory record.", "url": "https://www.wowhead.com/spell=373972/blaze-of-glory", "retrievedAt": "2026-09-02T14:18:00+02:00" },
+    { "kind": "external-reference", "description": "Spell 385310 name corroborated against Wowhead's Storm Bolt record.", "url": "https://www.wowhead.com/spell=385310/storm-bolt", "retrievedAt": "2026-09-02T14:18:00+02:00" },
+    { "kind": "external-reference", "description": "Spell 391031 name corroborated against Wowhead's Stormcloud Barrier record.", "url": "https://www.wowhead.com/spell=391031/stormcloud-barrier", "retrievedAt": "2026-09-02T14:18:00+02:00" },
+    { "kind": "external-reference", "description": "Spell 392576 name corroborated against Wowhead's Thunder Blast record.", "url": "https://www.wowhead.com/spell=392576/thunder-blast", "retrievedAt": "2026-09-02T14:18:00+02:00" },
+    { "kind": "external-reference", "description": "Spell 381515 name corroborated against Wowhead's Stormslam record.", "url": "https://www.wowhead.com/spell=381515/stormslam", "retrievedAt": "2026-09-02T14:18:00+02:00" },
+    { "kind": "external-reference", "description": "Spell 373017 name corroborated against Wowhead's Blaze Volley record.", "url": "https://www.wowhead.com/spell=373017/blaze-volley", "retrievedAt": "2026-09-02T14:18:00+02:00" }
   ]
 }
