@@ -18,7 +18,7 @@
       "abilities": [
         {
           "spellId": 269935,
-          "name": null,
+          "name": "Bound by Shadow",
           "interruptible": false,
           "dispelType": "magic",
           "enrage": false
@@ -31,14 +31,14 @@
       "abilities": [
         {
           "spellId": 269972,
-          "name": null,
+          "name": "Hex Volley",
           "interruptible": true,
           "dispelType": "curse",
           "enrage": false
         },
         {
           "spellId": 1294815,
-          "name": null,
+          "name": "Shadowfrost Bolt",
           "interruptible": true,
           "dispelType": "magic",
           "enrage": false
@@ -51,7 +51,7 @@
       "abilities": [
         {
           "spellId": 269976,
-          "name": null,
+          "name": "Ancestral Fury",
           "interruptible": false,
           "dispelType": "none",
           "enrage": true
@@ -64,7 +64,7 @@
       "abilities": [
         {
           "spellId": 1297763,
-          "name": null,
+          "name": "Bestial Berserk",
           "interruptible": false,
           "dispelType": "none",
           "enrage": true
@@ -77,14 +77,14 @@
       "abilities": [
         {
           "spellId": 1297763,
-          "name": null,
+          "name": "Bestial Berserk",
           "interruptible": false,
           "dispelType": "none",
           "enrage": true
         },
         {
           "spellId": 1306763,
-          "name": null,
+          "name": "Serpent Strike",
           "interruptible": false,
           "dispelType": "poison",
           "enrage": false
@@ -97,14 +97,14 @@
       "abilities": [
         {
           "spellId": 270901,
-          "name": null,
+          "name": "Unholy Mending",
           "interruptible": true,
           "dispelType": "magic",
           "enrage": false
         },
         {
           "spellId": 1296671,
-          "name": null,
+          "name": "Captain's Bulwark",
           "interruptible": false,
           "dispelType": "magic",
           "enrage": false
@@ -117,7 +117,7 @@
       "abilities": [
         {
           "spellId": 1296671,
-          "name": null,
+          "name": "Captain's Bulwark",
           "interruptible": false,
           "dispelType": "magic",
           "enrage": false
@@ -130,7 +130,7 @@
       "abilities": [
         {
           "spellId": 1296671,
-          "name": null,
+          "name": "Captain's Bulwark",
           "interruptible": false,
           "dispelType": "magic",
           "enrage": false
@@ -143,14 +143,14 @@
       "abilities": [
         {
           "spellId": 270920,
-          "name": null,
+          "name": "Bind Soul",
           "interruptible": true,
           "dispelType": "magic",
           "enrage": false
         },
         {
           "spellId": 1294972,
-          "name": null,
+          "name": "Soul Bolt",
           "interruptible": true,
           "dispelType": "magic",
           "enrage": false
@@ -163,14 +163,14 @@
       "abilities": [
         {
           "spellId": 270492,
-          "name": null,
+          "name": "Hex",
           "interruptible": true,
           "dispelType": "curse",
           "enrage": false
         },
         {
           "spellId": 1295125,
-          "name": null,
+          "name": "Spectral Bolt",
           "interruptible": true,
           "dispelType": "magic",
           "enrage": false
@@ -183,7 +183,7 @@
       "abilities": [
         {
           "spellId": 270499,
-          "name": null,
+          "name": "Frost Shock",
           "interruptible": false,
           "dispelType": "magic",
           "enrage": false
@@ -196,7 +196,7 @@
       "abilities": [
         {
           "spellId": 1298104,
-          "name": null,
+          "name": "Putrid Seekers",
           "interruptible": false,
           "dispelType": "poison",
           "enrage": false
@@ -209,7 +209,7 @@
       "abilities": [
         {
           "spellId": 269369,
-          "name": null,
+          "name": "Deathly Roar",
           "interruptible": true,
           "dispelType": "none",
           "enrage": false
@@ -222,7 +222,7 @@
       "abilities": [
         {
           "spellId": 269935,
-          "name": null,
+          "name": "Bound by Shadow",
           "interruptible": false,
           "dispelType": "magic",
           "enrage": false
@@ -235,7 +235,7 @@
       "abilities": [
         {
           "spellId": 267273,
-          "name": null,
+          "name": "Poison Nova",
           "interruptible": true,
           "dispelType": "poison",
           "enrage": false
@@ -248,7 +248,7 @@
       "abilities": [
         {
           "spellId": 267763,
-          "name": null,
+          "name": "Wretched Discharge",
           "interruptible": true,
           "dispelType": "disease",
           "enrage": false
@@ -259,9 +259,26 @@
   "provenance": [
     {
       "kind": "game-data",
-      "description": "Ability flags extracted by WHELP from Mythic Dungeon Tools 6.2.10; names remain null until independently corroborated.",
+      "description": "Ability flags extracted by WHELP from Mythic Dungeon Tools 6.2.10; names are independently corroborated below.",
       "url": "https://github.com/Nnoggie/MythicDungeonTools",
       "retrievedAt": "2026-09-02T11:15:00+02:00"
-    }
+    },
+    { "kind": "external-reference", "description": "Spell 269935 name corroborated against Wowhead's Bound by Shadow record.", "url": "https://www.wowhead.com/spell=269935/bound-by-shadow", "retrievedAt": "2026-09-02T14:16:00+02:00" },
+    { "kind": "external-reference", "description": "Spell 269972 name corroborated against Wowhead's Hex Volley record.", "url": "https://www.wowhead.com/spell=269972/hex-volley", "retrievedAt": "2026-09-02T14:16:00+02:00" },
+    { "kind": "external-reference", "description": "Spell 1294815 name corroborated against Wowhead's Shadowfrost Bolt record.", "url": "https://www.wowhead.com/spell=1294815/shadowfrost-bolt", "retrievedAt": "2026-09-02T14:16:00+02:00" },
+    { "kind": "external-reference", "description": "Spell 269976 name corroborated against Wowhead's Ancestral Fury record.", "url": "https://www.wowhead.com/spell=269976/ancestral-fury", "retrievedAt": "2026-09-02T14:16:00+02:00" },
+    { "kind": "external-reference", "description": "Spell 1297763 name corroborated against Wowhead's Bestial Berserk record.", "url": "https://www.wowhead.com/spell=1297763/bestial-berserk", "retrievedAt": "2026-09-02T14:16:00+02:00" },
+    { "kind": "external-reference", "description": "Spell 1306763 name corroborated against Wowhead's Serpent Strike record.", "url": "https://www.wowhead.com/spell=1306763/serpent-strike", "retrievedAt": "2026-09-02T14:16:00+02:00" },
+    { "kind": "external-reference", "description": "Spell 270901 name corroborated against Wowhead's Unholy Mending record.", "url": "https://www.wowhead.com/spell=270901/unholy-mending", "retrievedAt": "2026-09-02T14:16:00+02:00" },
+    { "kind": "external-reference", "description": "Spell 1296671 name corroborated against Wowhead's Captain's Bulwark record.", "url": "https://www.wowhead.com/spell=1296671/captains-bulwark", "retrievedAt": "2026-09-02T14:16:00+02:00" },
+    { "kind": "external-reference", "description": "Spell 270920 name corroborated against Wowhead's Bind Soul record.", "url": "https://www.wowhead.com/spell=270920/bind-soul", "retrievedAt": "2026-09-02T14:16:00+02:00" },
+    { "kind": "external-reference", "description": "Spell 1294972 name corroborated against Wowhead's Soul Bolt record.", "url": "https://www.wowhead.com/spell=1294972/soul-bolt", "retrievedAt": "2026-09-02T14:16:00+02:00" },
+    { "kind": "external-reference", "description": "Spell 270492 name corroborated against Wowhead's Hex record.", "url": "https://www.wowhead.com/spell=270492/hex", "retrievedAt": "2026-09-02T14:16:00+02:00" },
+    { "kind": "external-reference", "description": "Spell 1295125 name corroborated against Wowhead's Spectral Bolt record.", "url": "https://www.wowhead.com/spell=1295125/spectral-bolt", "retrievedAt": "2026-09-02T14:16:00+02:00" },
+    { "kind": "external-reference", "description": "Spell 270499 name corroborated against Wowhead's Frost Shock record.", "url": "https://www.wowhead.com/spell=270499/frost-shock", "retrievedAt": "2026-09-02T14:16:00+02:00" },
+    { "kind": "external-reference", "description": "Spell 1298104 name corroborated against Wowhead's Putrid Seekers record.", "url": "https://www.wowhead.com/spell=1298104/putrid-seekers", "retrievedAt": "2026-09-02T14:16:00+02:00" },
+    { "kind": "external-reference", "description": "Spell 269369 name corroborated against Wowhead's Deathly Roar record.", "url": "https://www.wowhead.com/spell=269369/deathly-roar", "retrievedAt": "2026-09-02T14:16:00+02:00" },
+    { "kind": "external-reference", "description": "Spell 267273 name corroborated against Wowhead's Poison Nova record.", "url": "https://www.wowhead.com/spell=267273/poison-nova", "retrievedAt": "2026-09-02T14:16:00+02:00" },
+    { "kind": "external-reference", "description": "Spell 267763 name corroborated against Wowhead's Wretched Discharge record.", "url": "https://www.wowhead.com/spell=267763/wretched-discharge", "retrievedAt": "2026-09-02T14:16:00+02:00" }
   ]
 }
