@@ -61,6 +61,7 @@
     { "id": "the-blinding-vale/ziekket/awaken-the-lightbloom-1246372", "path": "mythic-plus/midnight-season-2/the-blinding-vale/mechanics/ziekket-awaken-the-lightbloom.json", "status": "draft" },
     { "id": "the-blinding-vale/ziekket/concentrated-lightbeam-1246607", "path": "mythic-plus/midnight-season-2/the-blinding-vale/mechanics/ziekket-concentrated-lightbeam.json", "status": "draft" },
     { "id": "voidscar-arena/overview", "path": "mythic-plus/midnight-season-2/voidscar-arena/strategy/overview.json", "status": "corroborated" },
+    { "id": "voidscar-arena/pug-10-15-baseline", "path": "mythic-plus/midnight-season-2/voidscar-arena/routes/pug-10-15.json", "status": "draft" },
     { "id": "voidscar-arena/tazrah/nether-dash-1222098", "path": "mythic-plus/midnight-season-2/voidscar-arena/mechanics/tazrah-nether-dash.json", "status": "draft" },
     { "id": "voidscar-arena/tazrah/dark-bloom-1300259", "path": "mythic-plus/midnight-season-2/voidscar-arena/mechanics/tazrah-dark-bloom.json", "status": "draft" },
     { "id": "voidscar-arena/atroxus/monstrous-roar-1262497", "path": "mythic-plus/midnight-season-2/voidscar-arena/mechanics/atroxus-monstrous-roar.json", "status": "draft" },
