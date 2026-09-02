@@ -18,7 +18,7 @@
       "abilities": [
         {
           "spellId": 1291262,
-          "name": null,
+          "name": "Lightning Bolt",
           "interruptible": true,
           "dispelType": "none",
           "enrage": false
@@ -31,7 +31,7 @@
       "abilities": [
         {
           "spellId": 1308100,
-          "name": null,
+          "name": "Poisoned Cheap Shot",
           "interruptible": true,
           "dispelType": "poison",
           "enrage": false
@@ -44,7 +44,7 @@
       "abilities": [
         {
           "spellId": 1308148,
-          "name": null,
+          "name": "Cytotoxin",
           "interruptible": true,
           "dispelType": "poison",
           "enrage": false
@@ -57,14 +57,14 @@
       "abilities": [
         {
           "spellId": 1293307,
-          "name": null,
+          "name": "Addle Mind",
           "interruptible": true,
           "dispelType": "curse",
           "enrage": false
         },
         {
           "spellId": 1314082,
-          "name": null,
+          "name": "Addle Mind",
           "interruptible": true,
           "dispelType": "curse",
           "enrage": false
@@ -77,7 +77,7 @@
       "abilities": [
         {
           "spellId": 1310683,
-          "name": null,
+          "name": "Venom Bolt",
           "interruptible": true,
           "dispelType": "none",
           "enrage": false
@@ -90,14 +90,14 @@
       "abilities": [
         {
           "spellId": 1293464,
-          "name": null,
+          "name": "Accumulate Charge",
           "interruptible": false,
           "dispelType": "magic",
           "enrage": false
         },
         {
           "spellId": 1310739,
-          "name": null,
+          "name": "Accumulate Charge",
           "interruptible": false,
           "dispelType": "magic",
           "enrage": false
@@ -110,21 +110,21 @@
       "abilities": [
         {
           "spellId": 1291262,
-          "name": null,
+          "name": "Lightning Bolt",
           "interruptible": true,
           "dispelType": "none",
           "enrage": false
         },
         {
           "spellId": 1296052,
-          "name": null,
+          "name": "Imbued Conduction",
           "interruptible": false,
           "dispelType": "magic",
           "enrage": false
         },
         {
           "spellId": 1310739,
-          "name": null,
+          "name": "Accumulate Charge",
           "interruptible": false,
           "dispelType": "magic",
           "enrage": false
@@ -137,7 +137,7 @@
       "abilities": [
         {
           "spellId": 268013,
-          "name": null,
+          "name": "Flame Shock",
           "interruptible": true,
           "dispelType": "none",
           "enrage": false
@@ -150,7 +150,7 @@
       "abilities": [
         {
           "spellId": 267027,
-          "name": null,
+          "name": "Poison Spit",
           "interruptible": true,
           "dispelType": "poison",
           "enrage": false
@@ -163,7 +163,7 @@
       "abilities": [
         {
           "spellId": 1302158,
-          "name": null,
+          "name": "Flame Shock",
           "interruptible": true,
           "dispelType": "none",
           "enrage": false
@@ -174,9 +174,21 @@
   "provenance": [
     {
       "kind": "game-data",
-      "description": "Ability flags extracted by WHELP from Mythic Dungeon Tools 6.2.10; names remain null until independently corroborated.",
+      "description": "Ability flags extracted by WHELP from Mythic Dungeon Tools 6.2.10; names are independently corroborated below.",
       "url": "https://github.com/Nnoggie/MythicDungeonTools",
       "retrievedAt": "2026-09-02T11:15:00+02:00"
-    }
+    },
+    { "kind": "external-reference", "description": "Spell 1291262 name corroborated against Wowhead's Lightning Bolt record.", "url": "https://www.wowhead.com/spell=1291262/lightning-bolt", "retrievedAt": "2026-09-02T14:21:00+02:00" },
+    { "kind": "external-reference", "description": "Spell 1308100 name corroborated against Wowhead's Poisoned Cheap Shot record.", "url": "https://www.wowhead.com/spell=1308100/poisoned-cheap-shot", "retrievedAt": "2026-09-02T14:21:00+02:00" },
+    { "kind": "external-reference", "description": "Spell 1308148 name corroborated against Wowhead's Cytotoxin record.", "url": "https://www.wowhead.com/spell=1308148/cytotoxin", "retrievedAt": "2026-09-02T14:21:00+02:00" },
+    { "kind": "external-reference", "description": "Spell 1293307 name corroborated against Wowhead's Addle Mind record.", "url": "https://www.wowhead.com/spell=1293307/addle-mind", "retrievedAt": "2026-09-02T14:21:00+02:00" },
+    { "kind": "external-reference", "description": "Spell 1314082 name corroborated against Wowhead's Addle Mind record.", "url": "https://www.wowhead.com/spell=1314082/addle-mind", "retrievedAt": "2026-09-02T14:21:00+02:00" },
+    { "kind": "external-reference", "description": "Spell 1310683 name corroborated against Wowhead's Venom Bolt record.", "url": "https://www.wowhead.com/spell=1310683/venom-bolt", "retrievedAt": "2026-09-02T14:21:00+02:00" },
+    { "kind": "external-reference", "description": "Spell 1293464 name corroborated against Wowhead's Accumulate Charge record.", "url": "https://www.wowhead.com/spell=1293464/accumulate-charge", "retrievedAt": "2026-09-02T14:21:00+02:00" },
+    { "kind": "external-reference", "description": "Spell 1310739 name corroborated against Wowhead's Accumulate Charge record.", "url": "https://www.wowhead.com/spell=1310739/accumulate-charge", "retrievedAt": "2026-09-02T14:21:00+02:00" },
+    { "kind": "external-reference", "description": "Spell 1296052 name corroborated against Wowhead's Imbued Conduction record.", "url": "https://www.wowhead.com/spell=1296052/imbued-conduction", "retrievedAt": "2026-09-02T14:21:00+02:00" },
+    { "kind": "external-reference", "description": "Spell 268013 name corroborated against Wowhead's Flame Shock record.", "url": "https://www.wowhead.com/spell=268013/flame-shock", "retrievedAt": "2026-09-02T14:21:00+02:00" },
+    { "kind": "external-reference", "description": "Spell 267027 name corroborated against Wowhead's Poison Spit record.", "url": "https://www.wowhead.com/spell=267027/poison-spit", "retrievedAt": "2026-09-02T14:21:00+02:00" },
+    { "kind": "external-reference", "description": "Spell 1302158 name corroborated against Wowhead's Flame Shock record.", "url": "https://www.wowhead.com/spell=1302158/flame-shock", "retrievedAt": "2026-09-02T14:21:00+02:00" }
   ]
 }
