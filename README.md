@@ -68,7 +68,7 @@ npm run import:savedvariables -- --input <WHELPCollector.lua> [--output <sanitiz
 
 The importer strips unknown fields, excludes active state, quarantines malformed runs, and hashes sanitized observations for duplicate detection. Raw SavedVariables stay private; see `docs/SAVEDVARIABLES_IMPORT.md`.
 
-The addon now compiles build-stamped dungeon totals from canonical JSON and records Patch 12-safe pull segments using banked scenario progress. It explicitly does not collect secret enemy identities or use the protected combat log. See `docs/COLLECTOR.md`.
+The addon now compiles build-stamped dungeon totals from canonical JSON and records Patch 12-safe pull segments using banked scenario progress. Active runs and anonymous pull checkpoints survive `/reload`; recovered and incomplete telemetry is labeled explicitly. It does not collect secret enemy identities or use the protected combat log. See `docs/COLLECTOR.md`.
 
 The test suite executes a complete collector lifecycle in a mocked Lua/WoW runtime, in the exact file order declared by the addon manifest. Live-client event timing still requires an in-game integration run.
 

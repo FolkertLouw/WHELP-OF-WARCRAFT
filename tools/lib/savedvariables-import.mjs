@@ -173,7 +173,7 @@ export function sanitizeRun(input, audit = { strippedFieldCount: 0 }) {
   optionalProperty(sanitizedGame, "region", string(game.region, "game.region", { pattern: /^[A-Z]{2,4}$/, maximum: 4, nullable: true, optional: true }));
 
   const run = object(input.run, "run");
-  dropUnknown(run, ["challengeMapId", "routePlanId", "keystoneLevel", "affixIds", "startedAt", "completedAt", "durationMs", "deathCount", "deathTimeLostMs", "pullDataStatus", "status"], audit);
+  dropUnknown(run, ["challengeMapId", "routePlanId", "keystoneLevel", "affixIds", "startedAt", "completedAt", "durationMs", "deathCount", "deathTimeLostMs", "recoveryCount", "telemetryGapCount", "lastRecoveredAt", "pullDataStatus", "terminationReason", "status"], audit);
   const affixIds = array(run.affixIds ?? [], "run.affixIds", 16).map((id, index) => integer(id, `run.affixIds[${index}]`, { minimum: 1, maximum: 100000 }));
   if (new Set(affixIds).size !== affixIds.length) reject("invalid-record", "run.affixIds contains duplicates");
   const sanitizedRun = {
@@ -183,12 +183,16 @@ export function sanitizeRun(input, audit = { strippedFieldCount: 0 }) {
     startedAt: integer(run.startedAt, "run.startedAt", { minimum: 1 }),
     deathCount: integer(run.deathCount ?? 0, "run.deathCount", { maximum: 100000 }),
     deathTimeLostMs: integer(run.deathTimeLostMs ?? 0, "run.deathTimeLostMs", { maximum: 864000000 }),
+    recoveryCount: integer(run.recoveryCount ?? 0, "run.recoveryCount", { maximum: 10000 }),
+    telemetryGapCount: integer(run.telemetryGapCount ?? 0, "run.telemetryGapCount", { maximum: 10000 }),
     status: enumeration(run.status, ["started", "completed", "abandoned"], "run.status"),
   };
   optionalProperty(sanitizedRun, "routePlanId", string(run.routePlanId, "run.routePlanId", { pattern: SAFE_ID, maximum: 256, nullable: true, optional: true }));
   optionalProperty(sanitizedRun, "pullDataStatus", run.pullDataStatus === undefined ? undefined : enumeration(run.pullDataStatus, ["progress-only", "build-mismatch", "dungeon-unknown", "knowledge-unavailable"], "run.pullDataStatus"));
   optionalProperty(sanitizedRun, "completedAt", integer(run.completedAt, "run.completedAt", { minimum: 1, nullable: true, optional: true }));
   optionalProperty(sanitizedRun, "durationMs", integer(run.durationMs, "run.durationMs", { maximum: 864000000, nullable: true, optional: true }));
+  optionalProperty(sanitizedRun, "lastRecoveredAt", integer(run.lastRecoveredAt, "run.lastRecoveredAt", { minimum: 1, nullable: true, optional: true }));
+  optionalProperty(sanitizedRun, "terminationReason", run.terminationReason === undefined ? undefined : enumeration(run.terminationReason, ["challenge-completed", "challenge-reset", "superseded-by-new-run", "recovery-no-matching-challenge"], "run.terminationReason"));
 
   const encounters = array(input.encounters, "encounters", 100).map((candidate, index) => {
     const encounter = object(candidate, `encounters[${index}]`);
@@ -206,7 +210,7 @@ export function sanitizeRun(input, audit = { strippedFieldCount: 0 }) {
   if (input.pulls !== undefined) {
     pulls = array(input.pulls, "pulls", 1000).map((candidate, index) => {
       const pull = object(candidate, `pulls[${index}]`);
-      dropUnknown(pull, ["order", "plannedPullId", "startedAt", "completedAt", "durationMs", "enemies", "enemyForces", "enemyForcesSource", "enemyForcesStart", "enemyForcesEnd", "enemyIdentityStatus", "deaths"], audit);
+      dropUnknown(pull, ["order", "plannedPullId", "startedAt", "completedAt", "durationMs", "enemies", "enemyForces", "enemyForcesSource", "enemyForcesStart", "enemyForcesEnd", "enemyIdentityStatus", "endReason", "deaths"], audit);
       const enemies = array(pull.enemies, `pulls[${index}].enemies`, 100).map((candidateEnemy, enemyIndex) => {
         const enemy = object(candidateEnemy, `pulls[${index}].enemies[${enemyIndex}]`);
         dropUnknown(enemy, ["npcId", "count"], audit);
@@ -229,6 +233,7 @@ export function sanitizeRun(input, audit = { strippedFieldCount: 0 }) {
       optionalProperty(sanitizedPull, "enemyForcesStart", integer(pull.enemyForcesStart, `pulls[${index}].enemyForcesStart`, { maximum: 1000000, nullable: true, optional: true }));
       optionalProperty(sanitizedPull, "enemyForcesEnd", integer(pull.enemyForcesEnd, `pulls[${index}].enemyForcesEnd`, { maximum: 1000000, nullable: true, optional: true }));
       optionalProperty(sanitizedPull, "enemyIdentityStatus", pull.enemyIdentityStatus === undefined ? undefined : enumeration(pull.enemyIdentityStatus, ["available", "unavailable-secret-values"], `pulls[${index}].enemyIdentityStatus`));
+      optionalProperty(sanitizedPull, "endReason", pull.endReason === undefined ? undefined : enumeration(pull.endReason, ["combat-ended", "reload-reconciled", "run-ended"], `pulls[${index}].endReason`));
       return sanitizedPull;
     });
   }
@@ -271,6 +276,12 @@ function validateObservationConsistency(observation) {
   if (!finished && (run.completedAt != null || run.durationMs != null)) reject("inconsistent-time", "Started run contains completion timing");
   if (finished && (run.completedAt < run.startedAt || run.durationMs !== (run.completedAt - run.startedAt) * 1000)) {
     reject("inconsistent-time", "Run duration does not match its timestamps");
+  }
+  if (run.lastRecoveredAt != null && (run.lastRecoveredAt < run.startedAt || (finished && run.lastRecoveredAt > run.completedAt))) {
+    reject("inconsistent-time", "Run recovery timestamp falls outside the run");
+  }
+  if ((run.recoveryCount === 0) !== (run.lastRecoveredAt == null)) {
+    reject("inconsistent-recovery", "Run recovery count and timestamp disagree");
   }
   let deaths = 0;
   for (const [index, pull] of (observation.pulls ?? []).entries()) {

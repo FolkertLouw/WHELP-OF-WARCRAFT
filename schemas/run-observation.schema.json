@@ -42,7 +42,11 @@
         "durationMs": { "type": ["integer", "null"], "minimum": 0 },
         "deathCount": { "type": "integer", "minimum": 0 },
         "deathTimeLostMs": { "type": "integer", "minimum": 0 },
+        "recoveryCount": { "type": "integer", "minimum": 0 },
+        "telemetryGapCount": { "type": "integer", "minimum": 0 },
+        "lastRecoveredAt": { "type": ["integer", "null"], "minimum": 1 },
         "pullDataStatus": { "enum": ["progress-only", "build-mismatch", "dungeon-unknown", "knowledge-unavailable"] },
+        "terminationReason": { "enum": ["challenge-completed", "challenge-reset", "superseded-by-new-run", "recovery-no-matching-challenge"] },
         "status": { "enum": ["started", "completed", "abandoned"] }
       },
       "additionalProperties": false
@@ -90,6 +94,7 @@
           "enemyForcesStart": { "type": ["integer", "null"], "minimum": 0 },
           "enemyForcesEnd": { "type": ["integer", "null"], "minimum": 0 },
           "enemyIdentityStatus": { "enum": ["available", "unavailable-secret-values"] },
+          "endReason": { "enum": ["combat-ended", "reload-reconciled", "run-ended"] },
           "deaths": { "type": "integer", "minimum": 0 }
         },
         "additionalProperties": false

@@ -7,6 +7,7 @@ for _, eventName in ipairs({
     "CHALLENGE_MODE_COMPLETED",
     "CHALLENGE_MODE_RESET",
     "CHALLENGE_MODE_DEATH_COUNT_UPDATED",
+    "PLAYER_ENTERING_WORLD",
     "PLAYER_REGEN_DISABLED",
     "PLAYER_REGEN_ENABLED",
     "SCENARIO_CRITERIA_UPDATE",
@@ -20,6 +21,7 @@ frame:SetScript("OnEvent", function(_, event, ...)
     if event == "ADDON_LOADED" then
         if ... ~= addonName then return end
         WHELP.Database:Initialize()
+        WHELP.Collector:PrepareRecovery()
         SLASH_WHELPCOLLECTOR1 = "/whelp"
         SlashCmdList.WHELPCOLLECTOR = function(message)
             local command = tostring(message or ""):lower():match("^%s*(.-)%s*$")
@@ -42,6 +44,8 @@ frame:SetScript("OnEvent", function(_, event, ...)
         WHELP:Print("Collector ready. Data remains local unless explicitly exported.")
     elseif event == "CHALLENGE_MODE_START" then
         WHELP.Collector:StartRun()
+    elseif event == "PLAYER_ENTERING_WORLD" then
+        WHELP.Collector:RecoverRun()
     elseif event == "CHALLENGE_MODE_COMPLETED" then
         WHELP.Collector:CompleteRun()
     elseif event == "CHALLENGE_MODE_RESET" then
@@ -53,7 +57,7 @@ frame:SetScript("OnEvent", function(_, event, ...)
         WHELP.PullTracker:StartPull()
     elseif event == "PLAYER_REGEN_ENABLED" then
         WHELP.Collector:UpdateDeathCount()
-        WHELP.PullTracker:EndPull()
+        WHELP.PullTracker:EndPull("combat-ended")
     elseif event == "SCENARIO_CRITERIA_UPDATE" then
         WHELP.PullTracker:RefreshProgress()
     elseif event == "ENCOUNTER_START" then

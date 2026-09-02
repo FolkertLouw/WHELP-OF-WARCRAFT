@@ -64,11 +64,13 @@ test("preserves internally consistent scenario-progress pull evidence", async ()
     enemyForcesStart: 10,
     enemyForcesEnd: 17,
     enemyIdentityStatus: "unavailable-secret-values",
+    endReason: "combat-ended",
     deaths: 0,
   }];
   const observation = sanitizeRun(raw);
   assert.equal(observation.pulls[0].enemyForces, 7);
   assert.equal(observation.pulls[0].enemyIdentityStatus, "unavailable-secret-values");
+  assert.equal(observation.pulls[0].endReason, "combat-ended");
   raw.pulls[0].enemyForces = 8;
   assert.throws(() => sanitizeRun(raw), /Scenario progress/);
   raw.pulls[0].enemyForces = 0;
@@ -76,6 +78,24 @@ test("preserves internally consistent scenario-progress pull evidence", async ()
   delete raw.pulls[0].enemyForcesStart;
   delete raw.pulls[0].enemyForcesEnd;
   assert.equal(sanitizeRun(raw).pulls[0].enemyForcesSource, "unavailable");
+});
+
+test("validates reload recovery metadata before export", async () => {
+  const database = parseWhelpSavedVariables(await readFile(fixturePath, "utf8"));
+  const raw = structuredClone(database.runs[0]);
+  raw.run.recoveryCount = 1;
+  raw.run.telemetryGapCount = 0;
+  raw.run.lastRecoveredAt = raw.run.startedAt + 30;
+  raw.run.terminationReason = "challenge-completed";
+  const observation = sanitizeRun(raw);
+  assert.equal(observation.run.recoveryCount, 1);
+  assert.equal(observation.run.lastRecoveredAt, raw.run.startedAt + 30);
+  assert.equal(observation.run.terminationReason, "challenge-completed");
+
+  raw.run.lastRecoveredAt = raw.run.completedAt + 1;
+  assert.throws(() => sanitizeRun(raw), /recovery timestamp/);
+  raw.run.lastRecoveredAt = null;
+  assert.throws(() => sanitizeRun(raw), /recovery count and timestamp/);
 });
 
 test("rejects executable, sparse, and unexpected SavedVariables programs", () => {

@@ -21,20 +21,53 @@ function runChunk(state, source, name, withAddonArguments = false) {
   assert.equal(callStatus, lua.LUA_OK, `${name} failed: ${lua.lua_tojsstring(state, -1)}`);
 }
 
+async function loadAddon(state) {
+  const toc = await readFile(path.join(addonRoot, "WHELPCollector.toc"), "utf8");
+  const entries = toc.split(/\r?\n/).filter((line) => line.endsWith(".lua"));
+  for (const entry of entries) {
+    const source = await readFile(path.join(addonRoot, ...entry.split("\\")), "utf8");
+    runChunk(state, source, entry, true);
+  }
+}
+
+async function runFixture(state, name) {
+  const source = await readFile(path.join(import.meta.dirname, "fixtures", name), "utf8");
+  runChunk(state, source, name);
+}
+
+function resetAddonNamespace(state) {
+  runChunk(state, "WHELP_TEST_NAMESPACE = {}", "reset-addon-namespace.lua");
+}
+
 test("executes a complete collector lifecycle in exact addon manifest order", async () => {
   const state = lauxlib.luaL_newstate();
   lualib.luaL_openlibs(state);
   try {
     const mock = await readFile(path.join(import.meta.dirname, "fixtures", "mock-wow.lua"), "utf8");
     runChunk(state, mock, "mock-wow.lua");
-    const toc = await readFile(path.join(addonRoot, "WHELPCollector.toc"), "utf8");
-    const entries = toc.split(/\r?\n/).filter((line) => line.endsWith(".lua"));
-    for (const entry of entries) {
-      const source = await readFile(path.join(addonRoot, ...entry.split("\\")), "utf8");
-      runChunk(state, source, entry, true);
-    }
-    const spec = await readFile(path.join(import.meta.dirname, "fixtures", "collector-lifecycle.spec.lua"), "utf8");
-    runChunk(state, spec, "collector-lifecycle.spec.lua");
+    await loadAddon(state);
+    await runFixture(state, "collector-lifecycle.spec.lua");
+  } finally {
+    lua.lua_close(state);
+  }
+});
+
+test("recovers an active run and abandons stale state across real addon reloads", async () => {
+  const state = lauxlib.luaL_newstate();
+  lualib.luaL_openlibs(state);
+  try {
+    const mock = await readFile(path.join(import.meta.dirname, "fixtures", "mock-wow.lua"), "utf8");
+    runChunk(state, mock, "mock-wow.lua");
+    await loadAddon(state);
+    await runFixture(state, "collector-reload-before.spec.lua");
+
+    resetAddonNamespace(state);
+    await loadAddon(state);
+    await runFixture(state, "collector-reload-after.spec.lua");
+
+    resetAddonNamespace(state);
+    await loadAddon(state);
+    await runFixture(state, "collector-reload-stale.spec.lua");
   } finally {
     lua.lua_close(state);
   }

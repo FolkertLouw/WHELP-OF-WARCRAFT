@@ -49,13 +49,36 @@ local function scenarioEnemyForces()
     return nil
 end
 
-function WHELP.PullTracker:Configure()
+local function isInteger(value)
+    return type(value) == "number" and value == math.floor(value)
+end
+
+local function validCheckpoint(checkpoint, observation)
+    if type(checkpoint) ~= "table" then return false end
+    if not isInteger(checkpoint.startedAt)
+        or checkpoint.startedAt < observation.run.startedAt
+        or checkpoint.startedAt > WHELP:Now() then return false end
+    if not isInteger(checkpoint.deathsAtStart) or checkpoint.deathsAtStart < 0 then return false end
+    return checkpoint.enemyForcesAtStart == nil
+        or (isInteger(checkpoint.enemyForcesAtStart) and checkpoint.enemyForcesAtStart >= 0)
+end
+
+function WHELP.PullTracker:Configure(resume)
     runtime.activePull = nil
     runtime.latestEnemyForces = nil
     runtime.dungeon = nil
     local observation = WHELP.db and WHELP.db.activeRun
     if not observation then return end
-    observation.pulls = {}
+    if resume and type(observation.pulls) == "table" then
+        if validCheckpoint(WHELP.db.activePull, observation) then
+            runtime.activePull = WHELP.db.activePull
+        else
+            WHELP.db.activePull = nil
+        end
+    else
+        observation.pulls = {}
+        WHELP.db.activePull = nil
+    end
     local knowledge = WHELP.GeneratedKnowledge
     if not knowledge then
         observation.run.pullDataStatus = "knowledge-unavailable"
@@ -91,9 +114,10 @@ function WHELP.PullTracker:StartPull()
         deathsAtStart = tonumber(observation.run.deathCount) or 0,
         enemyForcesAtStart = runtime.latestEnemyForces,
     }
+    WHELP.db.activePull = runtime.activePull
 end
 
-function WHELP.PullTracker:EndPull()
+function WHELP.PullTracker:EndPull(reason)
     local observation = WHELP.db and WHELP.db.activeRun
     local active = runtime.activePull
     if not observation or not active then return end
@@ -118,12 +142,15 @@ function WHELP.PullTracker:EndPull()
         enemyForcesEnd = forcesAtEnd,
         enemyIdentityStatus = "unavailable-secret-values",
         deaths = math.max(0, (tonumber(observation.run.deathCount) or 0) - active.deathsAtStart),
+        endReason = reason or "combat-ended",
     })
     runtime.activePull = nil
+    WHELP.db.activePull = nil
 end
 
 function WHELP.PullTracker:Reset()
     runtime.activePull = nil
     runtime.latestEnemyForces = nil
     runtime.dungeon = nil
+    if WHELP.db then WHELP.db.activePull = nil end
 end

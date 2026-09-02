@@ -19,7 +19,7 @@
   "runs": [
     {
       "sourceIndex": 1,
-      "sha256": "d22fdcdec5bf44f97e2595a91d4041f5d195677a4570bbb4100fe90bcb155d84",
+      "sha256": "fa980b96825ba5d567bafa6514d0507a05726155846c561d85246d3577ebe2ec",
       "observation": {
         "$schema": "https://whelp.dev/schemas/run-observation.schema.json",
         "schemaVersion": 1,
@@ -33,6 +33,8 @@
           "startedAt": 1788300000,
           "deathCount": 1,
           "deathTimeLostMs": 15000,
+          "recoveryCount": 0,
+          "telemetryGapCount": 0,
           "status": "completed",
           "completedAt": 1788300060,
           "durationMs": 60000
@@ -49,7 +51,7 @@
     {
       "index": 2,
       "duplicateOf": 1,
-      "sha256": "d22fdcdec5bf44f97e2595a91d4041f5d195677a4570bbb4100fe90bcb155d84"
+      "sha256": "fa980b96825ba5d567bafa6514d0507a05726155846c561d85246d3577ebe2ec"
     }
   ]
 }

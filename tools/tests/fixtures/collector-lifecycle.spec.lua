@@ -10,7 +10,7 @@ assert(WHELP.db.settings.collectionEnabled == true)
 T:Fire("CHALLENGE_MODE_START")
 local active = WHELP.db.activeRun
 assert(active.recordType == "run-observation")
-assert(active.collector.version == "0.3.0")
+assert(active.collector.version == "0.3.1")
 assert(active.collector.knowledgeBuild == "12.1.0.69587")
 assert(type(active.collector.knowledgeRevision) == "string" and #active.collector.knowledgeRevision == 64)
 assert(active.run.pullDataStatus == "progress-only")
@@ -33,6 +33,7 @@ assert(first.enemyForcesStart == 0 and first.enemyForcesEnd == 44)
 assert(first.enemyIdentityStatus == "unavailable-secret-values")
 assert(#first.enemies == 0)
 assert(first.deaths == 1)
+assert(first.endReason == "combat-ended")
 
 T.now = 1030
 T:Fire("PLAYER_REGEN_DISABLED")
@@ -55,6 +56,8 @@ local completed = WHELP.db.runs[1]
 assert(completed.run.status == "completed")
 assert(completed.run.durationMs == 50000)
 assert(completed.run.deathCount == 1 and completed.run.deathTimeLostMs == 5000)
+assert(completed.run.recoveryCount == 0 and completed.run.telemetryGapCount == 0)
+assert(completed.run.terminationReason == "challenge-completed")
 assert(#completed.pulls == 2)
 assert(completed.pulls[2].completedAt <= completed.run.completedAt)
 for _, prohibited in ipairs({ "playerName", "characterName", "battleTag", "guild", "guid", "chat" }) do
@@ -81,6 +84,7 @@ assert(active.pulls[1].enemyForcesStart == nil and active.pulls[1].enemyForcesEn
 T.now = 2020
 T:Fire("CHALLENGE_MODE_RESET")
 assert(WHELP.db.runs[2].run.status == "abandoned")
+assert(WHELP.db.runs[2].run.terminationReason == "challenge-reset")
 
 T.version = "12.1.0"
 T.build = "69587"

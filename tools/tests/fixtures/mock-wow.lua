@@ -12,6 +12,7 @@ WHELP_TEST = {
     criteriaQuantity = 0,
     criteriaTotal = 608,
     criteriaAvailable = true,
+    inCombat = false,
     messages = {},
 }
 
@@ -44,6 +45,7 @@ function GetSpecialization() return 1 end
 function GetSpecializationInfo() return 264 end
 function GetNumGroupMembers() return 1 end
 function IsInRaid() return false end
+function UnitAffectingCombat() return WHELP_TEST.inCombat end
 
 C_ChallengeMode = {}
 function C_ChallengeMode.GetActiveChallengeMapID() return WHELP_TEST.mapId end

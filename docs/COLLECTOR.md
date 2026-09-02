@@ -30,6 +30,14 @@ The output contains numeric challenge-map IDs, instance-map IDs, required forces
 
 At runtime, scenario-progress collection is enabled only when the game version and build equal the generated `dataBuild` and the active challenge map is known. Otherwise the run reports `build-mismatch`, `dungeon-unknown`, or `knowledge-unavailable`; WHELP does not silently apply stale totals.
 
+## Reload and interruption recovery
+
+Active runs survive `/reload` through SavedVariables. WHELP 0.3.1 also checkpoints the minimal anonymous state needed for an in-flight pull: its start time, death-count baseline, and banked enemy-forces baseline. After `PLAYER_ENTERING_WORLD`, the collector resumes only when the active challenge map and keystone level still match the saved run.
+
+Completed pulls are never erased during recovery. An in-flight pull continues when the player is still in combat; if combat ended while the addon was reloading, it is closed with `endReason: reload-reconciled`. If WHELP reloads into combat without a valid checkpoint, it starts a new partial segment and increments `telemetryGapCount` rather than pretending the missing interval was observed.
+
+When no matching challenge remains active, the saved run is finalized as `abandoned` with `terminationReason: recovery-no-matching-challenge`. Any incomplete pull is discarded and counted as a telemetry gap. Finished observations include `recoveryCount`, `lastRecoveredAt`, and `telemetryGapCount`, allowing downstream comparisons to distinguish uninterrupted evidence from recovered or incomplete telemetry.
+
 ## Evidence boundary
 
 Combat-state events are a segmentation heuristic, not proof of route intent. Scenario progress is client-observed evidence, not proof that a SavedVariables file was not edited. Pull observations therefore remain separate from canonical dungeon facts and reviewed strategy, and comparison reports label order matching as inferred.
@@ -38,6 +46,6 @@ API behavior was reviewed on 2026-09-02 against Blizzard's generated ScenarioInf
 
 ## Automated runtime test
 
-`npm test` loads the exact addon `.toc` order into a pinned Fengari Lua VM with a minimal mocked WoW API. The lifecycle test exercises addon initialization, an enabled +10 run, scenario progress, combat boundaries, death penalties, a boss encounter, completion, stale-build fallback, unavailable criteria, reset, and collection opt-out. It also asserts that expected identifying fields are absent.
+`npm test` loads the exact addon `.toc` order into a pinned Fengari Lua VM with a minimal mocked WoW API. The lifecycle tests exercise addon initialization, an enabled +10 run, scenario progress, combat boundaries, death penalties, a boss encounter, completion, stale-build fallback, unavailable criteria, reset, collection opt-out, a real namespace reload while a boss pull is active, and stale-run abandonment after a second reload. They also assert that expected identifying fields are absent.
 
 The mock proves WHELP's state transitions and serialized values. It cannot prove that Blizzard fires an event at the expected moment or returns a field unmodified on a live client, so an actual key remains the final integration check after installation.
