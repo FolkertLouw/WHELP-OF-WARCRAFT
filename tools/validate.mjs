@@ -452,12 +452,17 @@ for (const { file, value } of records.filter(({ value }) => value.recordType ===
   }
 }
 for (const { file, value } of records.filter(({ value }) => value.recordType === "spec-capabilities")) {
+  if (!value.matrixRecordId) continue;
   const matrix = records.find(({ value: candidate }) => candidate.recordType === "spec-dungeon-matrix"
-    && candidate.spec?.specId === value.spec?.specId
-    && candidate.validity?.seasonSlug === value.validity?.seasonSlug)?.value;
-  if (!matrix) fail(file, `no utility matrix covers spec ${value.spec?.specId} in ${value.validity?.seasonSlug}`);
-  else if (matrix.spec.classId !== value.spec.classId || matrix.spec.specName !== value.spec.specName) {
-    fail(file, `spec identity does not match utility matrix ${matrix.id}`);
+    && candidate.id === value.matrixRecordId)?.value;
+  if (!matrix) fail(file, `matrixRecordId references missing utility matrix ${value.matrixRecordId}`);
+  else {
+    if (matrix.spec?.specId !== value.spec?.specId || matrix.spec?.classId !== value.spec?.classId || matrix.spec?.specName !== value.spec?.specName) {
+      fail(file, `spec identity does not match utility matrix ${matrix.id}`);
+    }
+    if (matrix.validity?.seasonSlug !== value.validity?.seasonSlug) {
+      fail(file, `season ${value.validity?.seasonSlug} does not match utility matrix ${matrix.id}`);
+    }
   }
 }
 

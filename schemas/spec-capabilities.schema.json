@@ -8,6 +8,7 @@
     "schemaVersion": { "const": 1 },
     "recordType": { "const": "spec-capabilities" },
     "id": { "type": "string" },
+    "matrixRecordId": { "type": "string", "minLength": 1 },
     "status": { "enum": ["draft", "corroborated", "verified", "deprecated"] },
     "validity": { "$ref": "validity.schema.json" },
     "spec": {

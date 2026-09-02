@@ -10,6 +10,7 @@ const responseIndex = JSON.parse(await readFile(responseIndexPath, "utf8"));
 const responses = await Promise.all(responseIndex.entries.map(async (entry) => JSON.parse(await readFile(path.resolve(path.dirname(responseIndexPath), entry.path), "utf8"))));
 const restoration = JSON.parse(await readFile(path.join(root, "data", "specs", "shaman", "restoration.json"), "utf8"));
 const enhancement = JSON.parse(await readFile(path.join(root, "data", "specs", "shaman", "enhancement.json"), "utf8"));
+const beastMastery = JSON.parse(await readFile(path.join(root, "data", "specs", "hunter", "beast-mastery.json"), "utf8"));
 
 test("distinguishes Restoration and Enhancement friendly Magic removal", () => {
   const resto = querySpecResponses(responses, restoration, { spellId: 381515 });
@@ -24,6 +25,13 @@ test("reports unsupported Enrage removal instead of misusing Purge", () => {
   assert.equal(result.resultCount, 1);
   assert.equal(result.results[0].coverage, "none");
   assert.equal(result.results[0].actionCoverage[0].support, "unsupported");
+});
+
+test("maps Tranquilizing Shot to Enrage removal for Beast Mastery", () => {
+  const result = querySpecResponses(responses, beastMastery, { dungeonId: "voidscar-arena", action: "soothe" });
+  assert.equal(result.resultCount, 1);
+  assert.equal(result.results[0].coverage, "full");
+  assert.equal(result.results[0].actionCoverage[0].tools[0].name, "Tranquilizing Shot");
 });
 
 test("preserves universal positional responses", () => {

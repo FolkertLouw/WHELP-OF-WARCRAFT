@@ -3,6 +3,7 @@
   "schemaVersion": 1,
   "recordType": "spec-capabilities",
   "id": "shaman/enhancement/capabilities",
+  "matrixRecordId": "midnight-season-2/enhancement-shaman-utility-matrix",
   "status": "corroborated",
   "validity": { "fromBuild": "12.1.0.69587", "untilBuild": null, "seasonId": null, "seasonSlug": "midnight-season-2" },
   "spec": { "classId": 7, "className": "Shaman", "specId": 263, "specName": "Enhancement", "slug": "enhancement-shaman" },

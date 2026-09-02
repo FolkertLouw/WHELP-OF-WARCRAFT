@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../schemas/spec-capabilities.schema.json",
+  "schemaVersion": 1,
+  "recordType": "spec-capabilities",
+  "id": "hunter/beast-mastery/capabilities",
+  "status": "corroborated",
+  "validity": { "fromBuild": "12.1.0.69587", "untilBuild": null, "seasonId": null, "seasonSlug": "midnight-season-2" },
+  "spec": { "classId": 3, "className": "Hunter", "specId": 253, "specName": "Beast Mastery", "slug": "beast-mastery-hunter" },
+  "tools": [
+    { "id": "counter-shot", "name": "Counter Shot", "spellId": 147362, "actions": ["interrupt"], "availability": "talent", "scope": "enemy", "limitations": ["Requires a ranged weapon", "Single target", "Twenty-four-second cooldown"] },
+    { "id": "tranquilizing-shot", "name": "Tranquilizing Shot", "spellId": 19801, "actions": ["purge", "soothe"], "availability": "talent", "scope": "enemy", "limitations": ["Removes one beneficial Magic effect and one Enrage effect", "Single target"] },
+    { "id": "intimidation", "name": "Intimidation", "spellId": 19577, "actions": ["crowd-control"], "availability": "talent", "scope": "enemy", "limitations": ["Requires an active pet", "Only affects stunnable enemies", "One-minute cooldown"] },
+    { "id": "aspect-of-the-turtle", "name": "Aspect of the Turtle", "spellId": 186265, "actions": ["defensive"], "availability": "baseline", "scope": "self", "limitations": ["Personal defense only", "Prevents attacking while active", "Does not remove damage-over-time effects already applied"] },
+    { "id": "survival-of-the-fittest", "name": "Survival of the Fittest", "spellId": 281195, "actions": ["defensive"], "availability": "talent", "scope": "self", "limitations": ["Personal mitigation only", "Six-second duration"] }
+  ],
+  "provenance": [
+    { "kind": "external-reference", "description": "Current Beast Mastery Hunter ability guide identifies Counter Shot, Tranquilizing Shot, and their PvE utility.", "url": "https://www.wowhead.com/guide/classes/hunter/beast-mastery/abilities-talents-pve-dps", "retrievedAt": "2026-09-02T17:10:00+02:00" },
+    { "kind": "external-reference", "description": "Current Counter Shot spell record confirms its interrupt, range, lockout, and cooldown.", "url": "https://www.wowhead.com/spell=147362/counter-shot", "retrievedAt": "2026-09-02T17:10:00+02:00" },
+    { "kind": "external-reference", "description": "Current Intimidation spell record confirms the pet-commanded single-target stun and cooldown.", "url": "https://www.wowhead.com/spell=19577/intimidation", "retrievedAt": "2026-09-02T17:10:00+02:00" }
+  ]
+}

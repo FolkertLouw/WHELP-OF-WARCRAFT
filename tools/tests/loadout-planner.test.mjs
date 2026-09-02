@@ -9,6 +9,7 @@ const responses = await loadResponseRecords(root);
 const capabilities = await loadSpecCapabilities(root);
 const restoration = capabilities.find((record) => record.spec.slug === "restoration-shaman");
 const enhancement = capabilities.find((record) => record.spec.slug === "enhancement-shaman");
+const beastMastery = capabilities.find((record) => record.spec.slug === "beast-mastery-hunter");
 
 test("builds a deduplicated spec loadout with mechanic references", () => {
   const loadout = buildSpecLoadout(responses, restoration, "ruby-life-pools");
@@ -27,4 +28,19 @@ test("reports party utility gaps without claiming personal responses as coverage
   assert.ok(report.uncoveredUtility.some((entry) => entry.name === "Back to Work!" && entry.action === "soothe"));
   assert.ok(report.coveredUtility.some((entry) => entry.name === "Curse of Doom" && entry.action === "cleanse-curse"));
   assert.ok(report.individualResponses.some((entry) => entry.name === "Murder in a Row" && entry.action === "line-of-sight"));
+});
+
+test("uses Beast Mastery enemy dispels to close party purge and soothe gaps", () => {
+  const report = buildPartyGapReport(responses, [restoration, enhancement, beastMastery], "murder-row");
+  const soothe = report.coveredUtility.find((entry) => entry.name === "Back to Work!" && entry.action === "soothe");
+  assert.ok(soothe);
+  assert.ok(soothe.handlers.some((handler) => handler.toolName === "Tranquilizing Shot"));
+  assert.ok(!report.uncoveredUtility.some((entry) => entry.name === "Back to Work!" && entry.action === "soothe"));
+});
+
+test("builds a Beast Mastery loadout without inventing a friendly Magic cleanse", () => {
+  const loadout = buildSpecLoadout(responses, beastMastery, "ruby-life-pools");
+  assert.ok(loadout.recommendedTools.some((tool) => tool.name === "Tranquilizing Shot"));
+  assert.ok(loadout.unsupportedActions.some((entry) => entry.name === "Stormslam" && entry.action === "cleanse-magic"));
+  assert.ok(loadout.selfOnlyResponses.some((entry) => entry.name === "Stormslam" && entry.action === "defensive"));
 });
