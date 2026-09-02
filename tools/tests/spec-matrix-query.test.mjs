@@ -94,6 +94,31 @@ test("joins Discipline Priest mixed dispels and self-only Phantasm without confl
   assert.ok(report.dungeons[0].mechanicSpellIds.includes(270499));
 });
 
+test("joins Holy Priest healer dispels and route utility with explicit scopes", () => {
+  const report = querySpecMatrix(matrices, capabilities, { spec: "holy-priest", dungeon: "altar-of-fangs", rating: "always" });
+  const magic = report.dungeons[0].utilities.find((entry) => entry.axisId === "friendly-magic-removal");
+  assert.deepEqual(magic.tools.map((tool) => tool.id), ["purify", "mass-dispel"]);
+  assert.equal(magic.tools.find((tool) => tool.id === "mass-dispel").scope, "mixed-area");
+  const disease = report.dungeons[0].utilities.find((entry) => entry.axisId === "disease-cleanse");
+  assert.equal(disease.tools[0].availabilityByAction["cleanse-disease"], "talent");
+});
+
+test("joins Shadow Priest offensive dispels without claiming Dominate Mind on Undead", () => {
+  const report = querySpecMatrix(matrices, capabilities, { spec: "shadow-priest", dungeon: "kings-rest", rating: "always" });
+  const purge = report.dungeons[0].utilities.find((entry) => entry.axisId === "enemy-magic-removal");
+  assert.deepEqual(purge.tools.map((tool) => tool.id), ["dispel-magic", "mass-dispel"]);
+  assert.ok(report.dungeons[0].mechanicSpellIds.includes(269935));
+  assert.ok(!report.dungeons[0].utilities.some((entry) => entry.axisId === "mind-control"));
+});
+
+test("joins Shadow Dispersion only as self movement freedom", () => {
+  const report = querySpecMatrix(matrices, capabilities, { spec: "shadow-priest", dungeon: "the-blinding-vale", rating: "always" });
+  const movement = report.dungeons[0].utilities.find((entry) => entry.axisId === "self-movement-freedom").tools[0];
+  assert.equal(movement.id, "dispersion");
+  assert.equal(movement.scope, "self");
+  assert.ok(movement.actions.includes("cleanse-root"));
+});
+
 test("surfaces action-level talent availability for Restoration Shaman", () => {
   const report = querySpecMatrix(matrices, capabilities, { spec: "restoration-shaman", dungeon: "den-of-nalorakk" });
   const purify = report.dungeons[0].utilities.find((entry) => entry.axisId === "improved-purify-spirit").tools[0];

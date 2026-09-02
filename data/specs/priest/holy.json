@@ -3,6 +3,7 @@
   "schemaVersion": 1,
   "recordType": "spec-capabilities",
   "id": "priest/holy/capabilities",
+  "matrixRecordId": "midnight-season-2/holy-priest-utility-matrix",
   "status": "corroborated",
   "validity": { "fromBuild": "12.1.0.69587", "untilBuild": null, "seasonId": null, "seasonSlug": "midnight-season-2" },
   "spec": { "classId": 5, "className": "Priest", "specId": 257, "specName": "Holy", "slug": "holy-priest" },
@@ -14,11 +15,16 @@
     { "id": "power-infusion", "name": "Power Infusion", "spellId": 10060, "actions": ["external-offensive"], "availability": "talent", "scope": "friendly-single", "limitations": ["Twenty percent Haste for fifteen seconds", "Two-minute cooldown", "Can only target players"] },
     { "id": "guardian-spirit", "name": "Guardian Spirit", "spellId": 47788, "actions": ["external-defensive"], "availability": "talent", "scope": "friendly-single", "limitations": ["Increases healing received", "Prevents one otherwise-fatal hit unless the damage is too large", "Three-minute cooldown"] },
     { "id": "power-word-fortitude", "name": "Power Word: Fortitude", "spellId": 21562, "actions": ["group-buff"], "availability": "baseline", "scope": "friendly-area", "limitations": ["Five percent Stamina", "Does not stack with an equivalent Fortitude effect"] },
-    { "id": "desperate-prayer", "name": "Desperate Prayer", "spellId": 19236, "actions": ["defensive"], "availability": "baseline", "scope": "self", "limitations": ["Personal defensive only"] }
+    { "id": "desperate-prayer", "name": "Desperate Prayer", "spellId": 19236, "actions": ["defensive"], "availability": "baseline", "scope": "self", "limitations": ["Personal defensive only"] },
+    { "id": "phantasm", "name": "Phantasm", "spellId": 108942, "actions": ["cleanse-snare"], "availability": "talent", "scope": "self", "limitations": ["Activates through Fade", "Removes snares only, not every root or harmful Magic effect"] },
+    { "id": "mind-soothe", "name": "Mind Soothe", "spellId": 453, "actions": ["detection-reduction"], "availability": "baseline", "scope": "area-enemy", "limitations": ["Reduces detection range by ten yards", "Only affects Humanoid and Dragonkin enemies", "Does not make the party invisible"] },
+    { "id": "shackle-horror", "name": "Shackle Horror", "spellId": 9484, "actions": ["crowd-control"], "availability": "talent", "scope": "enemy", "limitations": ["Only affects Aberration and Undead enemies", "Damage cancels the effect", "Only one target can be shackled at a time"] }
   ],
   "provenance": [
     { "kind": "external-reference", "description": "Current Midnight Holy guide identifies Purify, Improved Purify, Dispel Magic, Mass Dispel, Power Infusion, Fortitude, Psychic Scream, and Guardian Spirit.", "url": "https://www.wowhead.com/guide/classes/priest/holy/abilities-talents-pve-healer", "retrievedAt": "2026-09-02T16:30:00+02:00" },
     { "kind": "external-reference", "description": "Current Purify record confirms healer Magic removal and Disease removal from Improved Purify.", "url": "https://www.wowhead.com/spell=527/purify", "retrievedAt": "2026-09-02T16:30:00+02:00" },
-    { "kind": "external-reference", "description": "Current Guardian Spirit record confirms its friendly target, healing increase, death-prevention behavior, and cooldown.", "url": "https://www.wowhead.com/spell=47788/guardian-spirit", "retrievedAt": "2026-09-02T16:30:00+02:00" }
+    { "kind": "external-reference", "description": "Current Guardian Spirit record confirms its friendly target, healing increase, death-prevention behavior, and cooldown.", "url": "https://www.wowhead.com/spell=47788/guardian-spirit", "retrievedAt": "2026-09-02T16:30:00+02:00" },
+    { "kind": "external-reference", "description": "Current Patch 12.1.0 Holy dungeon guide provides per-dungeon Mass Dispel, Phantasm, Mind Soothe, Improved Purify, and Shackle Horror guidance.", "url": "https://www.wowhead.com/guide/classes/priest/holy/mythic-plus-dungeon-tips", "retrievedAt": "2026-09-02T18:52:46+02:00" },
+    { "kind": "external-reference", "description": "Current Mind Soothe, Phantasm, and Shackle Horror records establish detection, self-snare, and creature-control boundaries shared by Priest healers.", "url": "https://www.wowhead.com/spell=453/mind-soothe", "retrievedAt": "2026-09-02T18:52:46+02:00" }
   ]
 }

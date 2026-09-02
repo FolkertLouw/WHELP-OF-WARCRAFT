@@ -88,11 +88,11 @@ test("preserves Priest interrupt and external cooldown distinctions", () => {
 });
 
 test("models Mind Soothe as route detection reduction rather than crowd control", () => {
-  const routing = queryCapabilities(capabilities, { specs: ["discipline-priest"], action: "detection-reduction" });
-  assert.equal(routing.resultCount, 1);
-  assert.equal(routing.results[0].tool.name, "Mind Soothe");
-  assert.equal(routing.results[0].tool.scope, "area-enemy");
-  assert.match(routing.results[0].tool.limitations.join(" "), /Humanoid and Dragonkin/);
+  const routing = queryCapabilities(capabilities, { specs: ["discipline-priest", "holy-priest", "shadow-priest"], action: "detection-reduction" });
+  assert.equal(routing.resultCount, 3);
+  assert.ok(routing.results.every((entry) => entry.tool.name === "Mind Soothe"));
+  assert.ok(routing.results.every((entry) => entry.tool.scope === "area-enemy"));
+  assert.ok(routing.results.every((entry) => /Humanoid and Dragonkin/.test(entry.tool.limitations.join(" "))));
 });
 
 test("queries shared Mage composition utility across all specializations", () => {

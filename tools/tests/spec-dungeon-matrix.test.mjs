@@ -34,6 +34,10 @@ const holyPaladinMatrix = await loadJson("content", "mythic-plus", "midnight-sea
 const holyPaladinCapabilities = await loadJson("data", "specs", "paladin", "holy.json");
 const disciplinePriestMatrix = await loadJson("content", "mythic-plus", "midnight-season-2", "specs", "discipline-priest-utility-matrix.json");
 const disciplinePriestCapabilities = await loadJson("data", "specs", "priest", "discipline.json");
+const holyPriestMatrix = await loadJson("content", "mythic-plus", "midnight-season-2", "specs", "holy-priest-utility-matrix.json");
+const holyPriestCapabilities = await loadJson("data", "specs", "priest", "holy.json");
+const shadowPriestMatrix = await loadJson("content", "mythic-plus", "midnight-season-2", "specs", "shadow-priest-utility-matrix.json");
+const shadowPriestCapabilities = await loadJson("data", "specs", "priest", "shadow.json");
 const season = await loadJson("data", "seasons", "midnight-season-2.json");
 
 test("Unholy matrix covers every Midnight Season 2 dungeon exactly once", () => {
@@ -321,4 +325,34 @@ test("Discipline Priest keeps route, self-cleanse, dispel, and creature control 
   assert.match(vale.notes.join(" "), /does not remove those roots/);
   const voidscar = disciplinePriestMatrix.dungeons.find((entry) => entry.dungeonId === "voidscar-arena");
   assert.equal(voidscar.ratings["detection-reduction"], "none");
+});
+
+test("all three Priest matrices cover the complete season", () => {
+  const expected = new Set(season.dungeons.map((entry) => entry.id));
+  for (const priestMatrix of [disciplinePriestMatrix, holyPriestMatrix, shadowPriestMatrix]) {
+    assert.deepEqual(new Set(priestMatrix.dungeons.map((entry) => entry.dungeonId)), expected);
+  }
+});
+
+test("Holy Priest resolves shared healer tools without inheriting Shadow-only utility", () => {
+  const tools = new Map(holyPriestCapabilities.tools.map((tool) => [tool.id, tool]));
+  for (const axis of holyPriestMatrix.axes) {
+    for (const toolId of axis.toolIds) assert.ok(tools.has(toolId), `${axis.id} should resolve ${toolId}`);
+  }
+  assert.ok(tools.has("purify"));
+  assert.ok(!tools.has("silence"));
+  assert.ok(!tools.has("dominate-mind"));
+});
+
+test("Shadow Priest separates Disease, Magic, movement, and creature restrictions", () => {
+  const tools = new Map(shadowPriestCapabilities.tools.map((tool) => [tool.id, tool]));
+  for (const axis of shadowPriestMatrix.axes) {
+    for (const toolId of axis.toolIds) assert.ok(tools.has(toolId), `${axis.id} should resolve ${toolId}`);
+  }
+  assert.deepEqual(tools.get("purify-disease").actions, ["cleanse-disease"]);
+  assert.deepEqual(tools.get("dispersion").actions, ["defensive", "cleanse-snare", "cleanse-root"]);
+  assert.match(tools.get("dominate-mind").limitations.join(" "), /Undead/);
+  const kingsRest = shadowPriestMatrix.dungeons.find((entry) => entry.dungeonId === "kings-rest");
+  assert.equal(kingsRest.ratings["mind-control"], "none");
+  assert.equal(kingsRest.ratings["detection-reduction"], "none");
 });

@@ -148,6 +148,8 @@
     { "id": "midnight-season-2/protection-paladin-utility-matrix", "path": "mythic-plus/midnight-season-2/specs/protection-paladin-utility-matrix.json", "status": "corroborated" },
     { "id": "midnight-season-2/retribution-paladin-utility-matrix", "path": "mythic-plus/midnight-season-2/specs/retribution-paladin-utility-matrix.json", "status": "corroborated" },
     { "id": "midnight-season-2/holy-paladin-utility-matrix", "path": "mythic-plus/midnight-season-2/specs/holy-paladin-utility-matrix.json", "status": "corroborated" },
-    { "id": "midnight-season-2/discipline-priest-utility-matrix", "path": "mythic-plus/midnight-season-2/specs/discipline-priest-utility-matrix.json", "status": "corroborated" }
+    { "id": "midnight-season-2/discipline-priest-utility-matrix", "path": "mythic-plus/midnight-season-2/specs/discipline-priest-utility-matrix.json", "status": "corroborated" },
+    { "id": "midnight-season-2/holy-priest-utility-matrix", "path": "mythic-plus/midnight-season-2/specs/holy-priest-utility-matrix.json", "status": "corroborated" },
+    { "id": "midnight-season-2/shadow-priest-utility-matrix", "path": "mythic-plus/midnight-season-2/specs/shadow-priest-utility-matrix.json", "status": "corroborated" }
   ]
 }

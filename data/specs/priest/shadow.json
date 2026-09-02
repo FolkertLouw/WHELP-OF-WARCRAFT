@@ -3,6 +3,7 @@
   "schemaVersion": 1,
   "recordType": "spec-capabilities",
   "id": "priest/shadow/capabilities",
+  "matrixRecordId": "midnight-season-2/shadow-priest-utility-matrix",
   "status": "corroborated",
   "validity": { "fromBuild": "12.1.0.69587", "untilBuild": null, "seasonId": null, "seasonSlug": "midnight-season-2" },
   "spec": { "classId": 5, "className": "Priest", "specId": 258, "specName": "Shadow", "slug": "shadow-priest" },
@@ -14,11 +15,16 @@
     { "id": "psychic-scream", "name": "Psychic Scream", "spellId": 8122, "actions": ["crowd-control"], "availability": "talent", "scope": "area-enemy", "limitations": ["Fear can break from damage", "Only affects susceptible enemies"] },
     { "id": "power-infusion", "name": "Power Infusion", "spellId": 10060, "actions": ["external-offensive"], "availability": "talent", "scope": "friendly-single", "limitations": ["Twenty percent Haste for fifteen seconds", "Two-minute cooldown", "Can only target players"] },
     { "id": "power-word-fortitude", "name": "Power Word: Fortitude", "spellId": 21562, "actions": ["group-buff"], "availability": "baseline", "scope": "friendly-area", "limitations": ["Five percent Stamina", "Does not stack with an equivalent Fortitude effect"] },
-    { "id": "dispersion", "name": "Dispersion", "spellId": 47585, "actions": ["defensive"], "availability": "specialization", "scope": "self", "limitations": ["Personal mitigation only", "Cannot attack or cast during its six-second duration", "Two-minute cooldown"] }
+    { "id": "dispersion", "name": "Dispersion", "spellId": 47585, "actions": ["defensive", "cleanse-snare", "cleanse-root"], "availability": "specialization", "scope": "self", "limitations": ["Personal mitigation and movement freedom only", "Cannot attack or cast during its six-second duration", "Two-minute cooldown"] },
+    { "id": "dominate-mind", "name": "Dominate Mind", "spellId": 205364, "actions": ["crowd-control"], "availability": "talent", "scope": "enemy", "limitations": ["Does not work on Demonic, Mechanical, or Undead beings or players", "Controls one eligible enemy for thirty seconds", "One-point-eight-second cast and thirty-second cooldown"] },
+    { "id": "mind-soothe", "name": "Mind Soothe", "spellId": 453, "actions": ["detection-reduction"], "availability": "baseline", "scope": "area-enemy", "limitations": ["Reduces detection range by ten yards", "Only affects Humanoid and Dragonkin enemies", "Does not make the party invisible"] }
   ],
   "provenance": [
     { "kind": "external-reference", "description": "Current Midnight Shadow guide identifies Silence, Purify Disease, Dispel Magic, Mass Dispel, Power Infusion, Fortitude, Psychic Scream, and Dispersion.", "url": "https://www.wowhead.com/guide/classes/priest/shadow/abilities-talents-pve-dps", "retrievedAt": "2026-09-02T16:30:00+02:00" },
     { "kind": "external-reference", "description": "Current Silence record confirms its ranged interrupt behavior and thirty-second cooldown.", "url": "https://www.wowhead.com/spell=15487/silence", "retrievedAt": "2026-09-02T16:30:00+02:00" },
-    { "kind": "external-reference", "description": "Current Purify Disease record confirms Shadow's Disease-only friendly dispel and cooldown.", "url": "https://www.wowhead.com/spell=213634/purify-disease", "retrievedAt": "2026-09-02T16:30:00+02:00" }
+    { "kind": "external-reference", "description": "Current Purify Disease record confirms Shadow's Disease-only friendly dispel and cooldown.", "url": "https://www.wowhead.com/spell=213634/purify-disease", "retrievedAt": "2026-09-02T16:30:00+02:00" },
+    { "kind": "external-reference", "description": "Current Patch 12.1.0 Shadow dungeon guide provides per-dungeon Purify Disease, Mass Dispel, Dominate Mind, Mind Soothe, Dispersion, and affix guidance.", "url": "https://www.wowhead.com/guide/classes/priest/shadow/mythic-plus-dungeon-tips", "retrievedAt": "2026-09-02T18:52:46+02:00" },
+    { "kind": "external-reference", "description": "Current Dominate Mind record confirms its control duration, cast time, cooldown, and excluded creature types.", "url": "https://www.wowhead.com/spell=205364/dominate-mind", "retrievedAt": "2026-09-02T18:52:46+02:00" },
+    { "kind": "external-reference", "description": "Current Dispersion record confirms personal mitigation, movement speed, and immunity to root and snare mechanics.", "url": "https://www.wowhead.com/spell=47585/dispersion", "retrievedAt": "2026-09-02T18:52:46+02:00" }
   ]
 }
