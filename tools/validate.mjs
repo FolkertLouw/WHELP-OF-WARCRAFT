@@ -48,6 +48,14 @@ function validateRecord(file, value) {
   } else if (value.recordType === "mechanic") {
     requireFields(file, value, ["id", "status", "validity", "encounter", "mechanic", "provenance"]);
     if (!value.mechanic?.spellId) fail(file, "mechanic.spellId must be a positive numeric ID");
+  } else if (value.recordType === "enemy-abilities") {
+    requireFields(file, value, ["id", "status", "validity", "instanceMapId", "enemies", "provenance"]);
+    for (const enemy of value.enemies ?? []) {
+      const spellIds = (enemy.abilities ?? []).map((ability) => ability.spellId);
+      if (new Set(spellIds).size !== spellIds.length) fail(file, `duplicate ability for NPC ${enemy.npcId}`);
+    }
+  } else if (value.recordType === "spec-note") {
+    requireFields(file, value, ["id", "status", "validity", "context", "specIds", "summary", "recommendations", "provenance"]);
   } else if (value.recordType === "route") {
     requireFields(file, value, ["id", "status", "validity", "challengeMapId", "pulls", "provenance"]);
     const orders = (value.pulls ?? []).map((pull) => pull.order);
@@ -102,6 +110,17 @@ for (const { file, value } of records.filter(({ value }) => value.recordType ===
   const encounter = dungeon.value.encounters.find((candidate) => candidate.encounterId === value.encounter.encounterId);
   if (!encounter) fail(file, `unknown encounterId ${value.encounter.encounterId} for ${dungeon.value.id}`);
   else if (encounter.npcId !== value.encounter.npcId) fail(file, "mechanic NPC does not match its encounter");
+}
+for (const { file, value } of records.filter(({ value }) => value.recordType === "enemy-abilities")) {
+  const dungeon = dungeons.find(({ value: candidate }) => candidate.instanceMapId === value.instanceMapId);
+  if (!dungeon) {
+    fail(file, `no dungeon has instanceMapId ${value.instanceMapId}`);
+    continue;
+  }
+  const knownNpcIds = new Set(dungeon.value.enemies.map((enemy) => enemy.npcId));
+  for (const enemy of value.enemies ?? []) {
+    if (!knownNpcIds.has(enemy.npcId)) fail(file, `unknown NPC ${enemy.npcId} for ${dungeon.value.id}`);
+  }
 }
 
 const indexPath = path.join(root, "data", "index.json");

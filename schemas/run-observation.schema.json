@@ -3,7 +3,7 @@
   "$id": "https://whelp.dev/schemas/run-observation.schema.json",
   "title": "WHELP run observation",
   "type": "object",
-  "required": ["schemaVersion", "recordType", "collector", "game", "run", "player", "group", "privacy"],
+  "required": ["schemaVersion", "recordType", "collector", "game", "run", "encounters", "player", "group", "privacy"],
   "properties": {
     "schemaVersion": { "const": 1 },
     "recordType": { "const": "run-observation" },
@@ -37,9 +37,26 @@
         "startedAt": { "type": "integer", "minimum": 1 },
         "completedAt": { "type": ["integer", "null"], "minimum": 1 },
         "durationMs": { "type": ["integer", "null"], "minimum": 0 },
+        "deathCount": { "type": "integer", "minimum": 0 },
+        "deathTimeLostMs": { "type": "integer", "minimum": 0 },
         "status": { "enum": ["started", "completed", "abandoned"] }
       },
       "additionalProperties": false
+    },
+    "encounters": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["encounterId", "startedAt", "completedAt", "durationMs", "success"],
+        "properties": {
+          "encounterId": { "type": "integer", "minimum": 1 },
+          "startedAt": { "type": "integer", "minimum": 1 },
+          "completedAt": { "type": "integer", "minimum": 1 },
+          "durationMs": { "type": "integer", "minimum": 0 },
+          "success": { "type": "boolean" }
+        },
+        "additionalProperties": false
+      }
     },
     "player": { "$ref": "player.schema.json" },
     "group": { "type": "array", "items": { "$ref": "player.schema.json" }, "maxItems": 5 },

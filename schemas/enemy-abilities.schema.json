@@ -1,0 +1,44 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://whelp.dev/schemas/enemy-abilities.schema.json",
+  "title": "WHELP enemy ability flags",
+  "type": "object",
+  "required": ["schemaVersion", "recordType", "id", "status", "validity", "instanceMapId", "enemies", "provenance"],
+  "properties": {
+    "schemaVersion": { "const": 1 },
+    "recordType": { "const": "enemy-abilities" },
+    "id": { "type": "string" },
+    "status": { "enum": ["draft", "corroborated", "verified", "deprecated"] },
+    "validity": { "$ref": "validity.schema.json" },
+    "instanceMapId": { "type": "integer", "minimum": 1 },
+    "enemies": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["name", "npcId", "abilities"],
+        "properties": {
+          "name": { "type": "string" },
+          "npcId": { "type": "integer", "minimum": 1 },
+          "abilities": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": ["spellId", "interruptible", "dispelType", "enrage"],
+              "properties": {
+                "spellId": { "type": "integer", "minimum": 1 },
+                "name": { "type": ["string", "null"] },
+                "interruptible": { "type": "boolean" },
+                "dispelType": { "enum": ["poison", "disease", "curse", "magic", "none"] },
+                "enrage": { "type": "boolean" }
+              },
+              "additionalProperties": false
+            }
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "provenance": { "type": "array", "minItems": 1, "items": { "$ref": "provenance.schema.json" } }
+  },
+  "additionalProperties": false
+}

@@ -6,6 +6,9 @@ for _, eventName in ipairs({
     "CHALLENGE_MODE_START",
     "CHALLENGE_MODE_COMPLETED",
     "CHALLENGE_MODE_RESET",
+    "CHALLENGE_MODE_DEATH_COUNT_UPDATED",
+    "ENCOUNTER_START",
+    "ENCOUNTER_END",
 }) do
     pcall(frame.RegisterEvent, frame, eventName)
 end
@@ -40,5 +43,13 @@ frame:SetScript("OnEvent", function(_, event, ...)
         WHELP.Collector:CompleteRun()
     elseif event == "CHALLENGE_MODE_RESET" then
         WHELP.Collector:AbandonRun()
+    elseif event == "CHALLENGE_MODE_DEATH_COUNT_UPDATED" then
+        WHELP.Collector:UpdateDeathCount()
+    elseif event == "ENCOUNTER_START" then
+        local encounterId = ...
+        WHELP.Collector:StartEncounter(encounterId)
+    elseif event == "ENCOUNTER_END" then
+        local encounterId, _, _, _, success = ...
+        WHELP.Collector:EndEncounter(encounterId, success)
     end
 end)

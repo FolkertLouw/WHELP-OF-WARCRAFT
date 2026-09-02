@@ -1,12 +1,14 @@
 {
   "name": "whelp-of-warcraft",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "private": true,
   "description": "World-data Hub for Encounters, Loadouts & Progression",
   "scripts": {
-    "test": "npm run validate && npm run lint:lua",
+    "test": "npm run validate && npm run lint:lua && npm run test:tools",
     "validate": "node tools/validate.mjs",
-    "lint:lua": "node tools/check-lua.mjs"
+    "lint:lua": "node tools/check-lua.mjs",
+    "test:tools": "node --test tools/tests/*.test.mjs",
+    "import:mdt": "node tools/import-mdt.mjs"
   },
   "engines": {
     "node": ">=20"

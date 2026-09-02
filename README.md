@@ -33,6 +33,14 @@ npm test
 
 To test the collector locally, copy `addon/WHELPCollector` into Retail's `Interface/AddOns` directory, restart WoW or run `/reload`, then use `/whelp status`.
 
+To inspect a locally installed Mythic Dungeon Tools module without copying its implementation into WHELP:
+
+```bash
+npm run import:mdt -- --input "/path/to/MythicDungeonTools/Expansion/Dungeon.lua"
+```
+
+The importer emits normalized dungeon, enemy, enemy-forces, and spell-flag facts. Imported output is evidence requiring review; it does not become verified strategy automatically.
+
 ## Repository map
 
 ```text

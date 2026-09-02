@@ -45,6 +45,35 @@ local function activeKeystone()
     return mapId, level, affixIds
 end
 
+function WHELP.Collector:UpdateDeathCount()
+    local observation = WHELP.db.activeRun
+    if not observation or not C_ChallengeMode or not C_ChallengeMode.GetDeathCount then return end
+    local ok, deaths, timeLost = pcall(C_ChallengeMode.GetDeathCount)
+    if not ok then return end
+    observation.run.deathCount = tonumber(deaths) or observation.run.deathCount or 0
+    observation.run.deathTimeLostMs = math.floor((tonumber(timeLost) or 0) * 1000)
+end
+
+function WHELP.Collector:StartEncounter(encounterId)
+    if not WHELP.db.activeRun or not tonumber(encounterId) then return end
+    WHELP.db.activeEncounter = { encounterId = tonumber(encounterId), startedAt = WHELP:Now() }
+end
+
+function WHELP.Collector:EndEncounter(encounterId, success)
+    local observation = WHELP.db.activeRun
+    local active = WHELP.db.activeEncounter
+    if not observation or not active or active.encounterId ~= tonumber(encounterId) then return end
+    local completedAt = WHELP:Now()
+    table.insert(observation.encounters, {
+        encounterId = active.encounterId,
+        startedAt = active.startedAt,
+        completedAt = completedAt,
+        durationMs = math.max(0, completedAt - active.startedAt) * 1000,
+        success = tonumber(success) == 1,
+    })
+    WHELP.db.activeEncounter = nil
+end
+
 function WHELP.Collector:StartRun()
     if not WHELP.db.settings.collectionEnabled then return end
     local mapId, level, affixIds = activeKeystone()
@@ -62,8 +91,11 @@ function WHELP.Collector:StartRun()
             keystoneLevel = level,
             affixIds = affixIds,
             startedAt = WHELP:Now(),
+            deathCount = 0,
+            deathTimeLostMs = 0,
             status = "started",
         },
+        encounters = {},
         player = playerSnapshot("player"),
         group = groupSnapshot(),
         privacy = { containsNames = false, containsChat = false },
@@ -77,8 +109,10 @@ local function finishRun(status)
     observation.run.completedAt = WHELP:Now()
     observation.run.durationMs = math.max(0, observation.run.completedAt - observation.run.startedAt) * 1000
     observation.run.status = status
+    WHELP.Collector:UpdateDeathCount()
     WHELP.Database:AddRun(observation)
     WHELP.db.activeRun = nil
+    WHELP.db.activeEncounter = nil
 end
 
 function WHELP.Collector:CompleteRun()

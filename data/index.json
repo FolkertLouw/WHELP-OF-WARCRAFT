@@ -12,6 +12,7 @@
     {
       "id": "altar-of-fangs",
       "record": "dungeons/altar-of-fangs/dungeon.json",
+      "enemyAbilities": "dungeons/altar-of-fangs/enemy-abilities.json",
       "status": "corroborated"
     }
   ],

@@ -1,0 +1,52 @@
+{
+  "$schema": "../../../schemas/enemy-abilities.schema.json",
+  "schemaVersion": 1,
+  "recordType": "enemy-abilities",
+  "id": "altar-of-fangs/enemy-abilities",
+  "status": "draft",
+  "validity": { "fromBuild": "12.1.0.69587", "untilBuild": null, "seasonId": null, "seasonSlug": "midnight-season-2" },
+  "instanceMapId": 2993,
+  "enemies": [
+    { "name": "High Evolutionist", "npcId": 261557, "abilities": [
+      { "spellId": 1289416, "name": null, "interruptible": true, "dispelType": "poison", "enrage": false },
+      { "spellId": 1307567, "name": null, "interruptible": true, "dispelType": "none", "enrage": false },
+      { "spellId": 1307571, "name": "Envenom", "interruptible": false, "dispelType": "poison", "enrage": false }
+    ] },
+    { "name": "Living Venom", "npcId": 263112, "abilities": [
+      { "spellId": 1306230, "name": null, "interruptible": false, "dispelType": "poison", "enrage": false }
+    ] },
+    { "name": "Primal Serpent", "npcId": 261560, "abilities": [
+      { "spellId": 1294557, "name": "Piercing Hiss", "interruptible": true, "dispelType": "none", "enrage": false }
+    ] },
+    { "name": "Ravenous Descendant", "npcId": 261553, "abilities": [
+      { "spellId": 1306308, "name": null, "interruptible": false, "dispelType": "none", "enrage": true }
+    ] },
+    { "name": "Ula'tek's Chosen", "npcId": 263109, "abilities": [
+      { "spellId": 1289416, "name": null, "interruptible": true, "dispelType": "poison", "enrage": false },
+      { "spellId": 1307567, "name": null, "interruptible": true, "dispelType": "none", "enrage": false },
+      { "spellId": 1307571, "name": "Envenom", "interruptible": false, "dispelType": "poison", "enrage": false }
+    ] },
+    { "name": "Twinfang Harrower", "npcId": 261554, "abilities": [
+      { "spellId": 1294569, "name": null, "interruptible": false, "dispelType": "magic", "enrage": false }
+    ] },
+    { "name": "Rattling Writhe", "npcId": 262011, "abilities": [
+      { "spellId": 1294845, "name": "Corrosive Fangs", "interruptible": false, "dispelType": "poison", "enrage": false }
+    ] },
+    { "name": "Rav'i", "npcId": 259445, "abilities": [
+      { "spellId": 1296069, "name": null, "interruptible": false, "dispelType": "disease", "enrage": false }
+    ] },
+    { "name": "The Writhing Coil", "npcId": 259446, "abilities": [
+      { "spellId": 1305368, "name": null, "interruptible": false, "dispelType": "poison", "enrage": false }
+    ] },
+    { "name": "Uncoiled Writhe", "npcId": 262398, "abilities": [
+      { "spellId": 1305368, "name": null, "interruptible": false, "dispelType": "poison", "enrage": false },
+      { "spellId": 1310666, "name": null, "interruptible": true, "dispelType": "none", "enrage": false }
+    ] }
+  ],
+  "provenance": [{
+    "kind": "game-data",
+    "description": "Ability flags extracted by WHELP from Mythic Dungeon Tools 6.2.10. Spell names are included only when separately corroborated by DBM Dungeons r261; null names remain unresolved.",
+    "url": "https://github.com/Nnoggie/MythicDungeonTools",
+    "retrievedAt": "2026-09-02T10:45:00+02:00"
+  }]
+}
