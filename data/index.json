@@ -99,7 +99,10 @@
     { "id": "warrior/protection/capabilities", "record": "specs/warrior/protection.json", "status": "corroborated" },
     { "id": "rogue/assassination/capabilities", "record": "specs/rogue/assassination.json", "status": "corroborated" },
     { "id": "rogue/outlaw/capabilities", "record": "specs/rogue/outlaw.json", "status": "corroborated" },
-    { "id": "rogue/subtlety/capabilities", "record": "specs/rogue/subtlety.json", "status": "corroborated" }
+    { "id": "rogue/subtlety/capabilities", "record": "specs/rogue/subtlety.json", "status": "corroborated" },
+    { "id": "warlock/affliction/capabilities", "record": "specs/warlock/affliction.json", "status": "corroborated" },
+    { "id": "warlock/demonology/capabilities", "record": "specs/warlock/demonology.json", "status": "corroborated" },
+    { "id": "warlock/destruction/capabilities", "record": "specs/warlock/destruction.json", "status": "corroborated" }
   ],
   "specCapabilityCoverage": {
     "id": "retail/spec-capability-coverage",

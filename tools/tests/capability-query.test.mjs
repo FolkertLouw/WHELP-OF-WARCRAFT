@@ -185,6 +185,31 @@ test("rejects unknown specialization slugs", () => {
   assert.throws(() => queryCapabilities(capabilities, { specs: ["not-a-real-spec"] }), /unknown spec/);
 });
 
+test("models shared Warlock composition tools and preserves pet configuration", () => {
+  const specs = ["affliction-warlock", "demonology-warlock", "destruction-warlock"];
+  const stones = queryCapabilities(capabilities, { specs, action: "group-consumable" });
+  const gateways = queryCapabilities(capabilities, { specs, action: "group-movement" });
+  const resurrections = queryCapabilities(capabilities, { specs, action: "battle-resurrection" });
+  const interrupts = queryCapabilities(capabilities, { specs, action: "interrupt" });
+  assert.equal(stones.resultCount, 3);
+  assert.equal(gateways.resultCount, 3);
+  assert.equal(resurrections.resultCount, 3);
+  assert.equal(interrupts.resultCount, 3);
+  assert.ok(stones.results.every((entry) => entry.tool.name === "Create Soulwell"));
+  assert.ok(gateways.results.every((entry) => entry.tool.name === "Demonic Gateway"));
+  assert.ok(gateways.results.every((entry) => entry.tool.availabilityByAction["group-movement"] === "talent"));
+  assert.ok(interrupts.results.every((entry) => entry.tool.requirements.some((requirement) => requirement.kind === "configuration")));
+});
+
+test("does not turn Demonology Fel Ravager or Axe Toss into school-lockout coverage", () => {
+  const purges = queryCapabilities(capabilities, { specs: ["demonology-warlock"], action: "purge" });
+  assert.ok(purges.results.some((entry) => entry.tool.id === "grimoire-fel-ravager"));
+  const control = queryCapabilities(capabilities, { specs: ["demonology-warlock"], action: "crowd-control" });
+  const axe = control.results.find((entry) => entry.tool.id === "axe-toss").tool;
+  assert.ok(!axe.actions.includes("interrupt"));
+  assert.match(axe.limitations.join(" "), /school lockout/);
+});
+
 test("rejects unknown actions and scopes instead of returning misleading empty reports", () => {
   assert.throws(() => queryCapabilities(capabilities, { action: "battle-rez" }), /unknown capability action/);
   assert.throws(() => queryCapabilities(capabilities, { scope: "the-whole-party" }), /unknown capability scope/);

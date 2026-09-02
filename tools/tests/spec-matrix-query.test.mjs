@@ -38,6 +38,29 @@ test("rejects absent matrices and invalid filters explicitly", () => {
   assert.throws(() => querySpecMatrix(matrices, capabilities, { spec: "frost-death-knight", rating: "best" }), /unknown utility rating/);
 });
 
+test("keeps Warlock pet cleansing, purging, and interrupt configurations distinct", () => {
+  const altar = querySpecMatrix(matrices, capabilities, { spec: "affliction-warlock", dungeon: "altar-of-fangs", rating: "always" });
+  const cleanse = altar.dungeons[0].utilities.find((entry) => entry.axisId === "friendly-magic-removal").tools[0];
+  const interrupt = altar.dungeons[0].utilities.find((entry) => entry.axisId === "interrupt").tools[0];
+  assert.equal(cleanse.id, "singe-magic");
+  assert.equal(interrupt.id, "spell-lock");
+  assert.ok(cleanse.requirements.some((requirement) => /Imp/.test(requirement.value)));
+  assert.ok(interrupt.requirements.some((requirement) => /Felhunter/.test(requirement.value)));
+  const den = querySpecMatrix(matrices, capabilities, { spec: "demonology-warlock", dungeon: "den-of-nalorakk", rating: "always" });
+  const purge = den.dungeons[0].utilities.find((entry) => entry.axisId === "enemy-magic-removal");
+  assert.ok(purge.tools.some((tool) => tool.id === "grimoire-fel-ravager"));
+  assert.ok(purge.tools.every((tool) => tool.actions.includes("purge")));
+});
+
+test("keeps Warlock stops, movement, and self freedom in separate scopes", () => {
+  const vale = querySpecMatrix(matrices, capabilities, { spec: "destruction-warlock", dungeon: "the-blinding-vale", rating: "always" });
+  assert.equal(vale.dungeons[0].utilities.find((entry) => entry.axisId === "self-root-removal").tools[0].scope, "self");
+  const altar = querySpecMatrix(matrices, capabilities, { spec: "demonology-warlock", dungeon: "altar-of-fangs" });
+  assert.equal(altar.dungeons[0].utilities.find((entry) => entry.axisId === "gateway").tools[0].scope, "friendly-area");
+  const axe = altar.dungeons[0].utilities.find((entry) => entry.axisId === "felguard-stop").tools[0];
+  assert.deepEqual(axe.actions, ["crowd-control"]);
+});
+
 test("joins Arcane Mage decurse without treating self movement tools as party coverage", () => {
   const report = querySpecMatrix(matrices, capabilities, { spec: "arcane-mage", dungeon: "den-of-nalorakk", rating: "always" });
   const decurse = report.dungeons[0].utilities.find((entry) => entry.axisId === "decurse");

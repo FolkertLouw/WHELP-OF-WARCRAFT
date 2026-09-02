@@ -1,0 +1,373 @@
+{
+  "$schema": "../../../../schemas/spec-dungeon-matrix.schema.json",
+  "schemaVersion": 1,
+  "recordType": "spec-dungeon-matrix",
+  "id": "midnight-season-2/affliction-warlock-utility-matrix",
+  "status": "corroborated",
+  "validity": {
+    "fromBuild": "12.1.0.69587",
+    "untilBuild": null,
+    "seasonId": null,
+    "seasonSlug": "midnight-season-2"
+  },
+  "spec": {
+    "classId": 9,
+    "className": "Warlock",
+    "specId": 265,
+    "specName": "Affliction"
+  },
+  "axes": [
+    {
+      "id": "healthstones",
+      "label": "Party Healthstone supply",
+      "abilityNames": [
+        "Create Soulwell"
+      ],
+      "spellIds": [
+        29893,
+        6262
+      ],
+      "toolIds": [
+        "create-soulwell"
+      ]
+    },
+    {
+      "id": "combat-resurrection",
+      "label": "Single-target combat resurrection",
+      "abilityNames": [
+        "Soulstone"
+      ],
+      "spellIds": [
+        20707
+      ],
+      "toolIds": [
+        "soulstone"
+      ]
+    },
+    {
+      "id": "gateway",
+      "label": "Placed party movement and route utility",
+      "abilityNames": [
+        "Demonic Gateway"
+      ],
+      "spellIds": [
+        111771
+      ],
+      "toolIds": [
+        "demonic-gateway"
+      ]
+    },
+    {
+      "id": "area-control",
+      "label": "Susceptible-enemy area stop without school lockout",
+      "abilityNames": [
+        "Shadowfury"
+      ],
+      "spellIds": [
+        30283
+      ],
+      "toolIds": [
+        "shadowfury"
+      ]
+    },
+    {
+      "id": "caster-slow",
+      "label": "Single-target or talented area cast-time slowing",
+      "abilityNames": [
+        "Curse of Tongues",
+        "Blight of Tongues"
+      ],
+      "spellIds": [
+        1714,
+        1271802
+      ],
+      "toolIds": [
+        "curse-of-tongues",
+        "blight-of-tongues"
+      ]
+    },
+    {
+      "id": "friendly-magic-removal",
+      "label": "Pet-dependent friendly Magic cleanse",
+      "abilityNames": [
+        "Singe Magic"
+      ],
+      "spellIds": [
+        89808
+      ],
+      "toolIds": [
+        "singe-magic"
+      ]
+    },
+    {
+      "id": "enemy-magic-removal",
+      "label": "Pet- or talent-dependent enemy Magic purge",
+      "abilityNames": [
+        "Devour Magic"
+      ],
+      "spellIds": [
+        19505
+      ],
+      "toolIds": [
+        "devour-magic"
+      ]
+    },
+    {
+      "id": "self-root-removal",
+      "label": "Soulburn and pre-positioned Circle self freedom",
+      "abilityNames": [
+        "Soulburn: Demonic Circle"
+      ],
+      "spellIds": [
+        48020,
+        48018,
+        385899
+      ],
+      "toolIds": [
+        "soulburn-demonic-circle"
+      ]
+    },
+    {
+      "id": "interrupt",
+      "label": "Pet-dependent spell-school interrupt",
+      "abilityNames": [
+        "Spell Lock"
+      ],
+      "spellIds": [
+        19647
+      ],
+      "toolIds": [
+        "spell-lock"
+      ]
+    }
+  ],
+  "dungeons": [
+    {
+      "dungeonId": "altar-of-fangs",
+      "instanceMapId": 2993,
+      "ratings": {
+        "healthstones": "always",
+        "combat-resurrection": "always",
+        "gateway": "always",
+        "area-control": "always",
+        "caster-slow": "always",
+        "friendly-magic-removal": "always",
+        "enemy-magic-removal": "none",
+        "self-root-removal": "none",
+        "interrupt": "always"
+      },
+      "mechanicSpellIds": [
+        1294569,
+        1310666
+      ],
+      "notes": [
+        "Singe Magic is valuable for Paralyzing Shots but requires the Imp configuration; do not assume it alongside Felhunter Spell Lock.",
+        "Gateway can bypass the final lieutenants and quickly separate Writhing Coil links; both uses depend on exact placement."
+      ]
+    },
+    {
+      "dungeonId": "the-blinding-vale",
+      "instanceMapId": 2859,
+      "ratings": {
+        "healthstones": "always",
+        "combat-resurrection": "always",
+        "gateway": "none",
+        "area-control": "always",
+        "caster-slow": "always",
+        "friendly-magic-removal": "none",
+        "enemy-magic-removal": "none",
+        "self-root-removal": "always",
+        "interrupt": "always"
+      },
+      "mechanicSpellIds": [
+        1236658,
+        1246858
+      ],
+      "notes": [
+        "Soulburn with a pre-positioned Demonic Circle can prevent or clear eligible root effects around Ikuzz.",
+        "This is self-only movement freedom, not a party root dispel."
+      ]
+    },
+    {
+      "dungeonId": "den-of-nalorakk",
+      "instanceMapId": 2825,
+      "ratings": {
+        "healthstones": "always",
+        "combat-resurrection": "always",
+        "gateway": "always",
+        "area-control": "always",
+        "caster-slow": "always",
+        "friendly-magic-removal": "none",
+        "enemy-magic-removal": "always",
+        "self-root-removal": "none",
+        "interrupt": "always"
+      },
+      "mechanicSpellIds": [
+        1297696,
+        1235829
+      ],
+      "notes": [
+        "Devour Magic can remove Healing Breeze after a missed interrupt, but requires the appropriate active demon or talent window.",
+        "A documented Gateway placement can skip the miniboss before Sentinel of Winter."
+      ]
+    },
+    {
+      "dungeonId": "murder-row",
+      "instanceMapId": 2813,
+      "ratings": {
+        "healthstones": "always",
+        "combat-resurrection": "always",
+        "gateway": "niche",
+        "area-control": "always",
+        "caster-slow": "always",
+        "friendly-magic-removal": "always",
+        "enemy-magic-removal": "none",
+        "self-root-removal": "none",
+        "interrupt": "always"
+      },
+      "mechanicSpellIds": [
+        1217633,
+        1228198,
+        1201554
+      ],
+      "notes": [
+        "Singe Magic can remove Corroding Spittle on the Massive Felwyrm and first boss when the Imp configuration is active.",
+        "Circle or Gateway can cross the final boss fire wave, but neither replaces mechanic awareness."
+      ]
+    },
+    {
+      "dungeonId": "voidscar-arena",
+      "instanceMapId": 2923,
+      "ratings": {
+        "healthstones": "always",
+        "combat-resurrection": "always",
+        "gateway": "niche",
+        "area-control": "always",
+        "caster-slow": "always",
+        "friendly-magic-removal": "none",
+        "enemy-magic-removal": "none",
+        "self-root-removal": "none",
+        "interrupt": "always"
+      },
+      "mechanicSpellIds": [
+        1223298,
+        1227197
+      ],
+      "notes": [
+        "Circle helps reposition during Charonus orb fixation and targeted mechanics.",
+        "A Gateway skip exists, but the pack can also be walked around slowly; treat it as optional route tech."
+      ]
+    },
+    {
+      "dungeonId": "temple-of-sethraliss",
+      "instanceMapId": 1877,
+      "ratings": {
+        "healthstones": "always",
+        "combat-resurrection": "always",
+        "gateway": "niche",
+        "area-control": "always",
+        "caster-slow": "always",
+        "friendly-magic-removal": "none",
+        "enemy-magic-removal": "always",
+        "self-root-removal": "none",
+        "interrupt": "always"
+      },
+      "mechanicSpellIds": [
+        1293464,
+        1310739,
+        1290031
+      ],
+      "notes": [
+        "Devour Magic can remove dangerous enemy Magic stacks such as Accumulate Charge when configured.",
+        "Circle and Gateway are positional aids on Merektha; curse effects slow casts but do not stop them."
+      ]
+    },
+    {
+      "dungeonId": "kings-rest",
+      "instanceMapId": 1762,
+      "ratings": {
+        "healthstones": "always",
+        "combat-resurrection": "always",
+        "gateway": "niche",
+        "area-control": "always",
+        "caster-slow": "always",
+        "friendly-magic-removal": "none",
+        "enemy-magic-removal": "always",
+        "self-root-removal": "none",
+        "interrupt": "always"
+      },
+      "mechanicSpellIds": [
+        269935,
+        1296671,
+        267618
+      ],
+      "notes": [
+        "Devour Magic can remove Bound by Shadow or Captain's Bulwark when available.",
+        "Gateway can reduce movement during Mchimba; use personal defensives for Drain Fluids."
+      ]
+    },
+    {
+      "dungeonId": "ruby-life-pools",
+      "instanceMapId": 2521,
+      "ratings": {
+        "healthstones": "always",
+        "combat-resurrection": "always",
+        "gateway": "none",
+        "area-control": "always",
+        "caster-slow": "always",
+        "friendly-magic-removal": "none",
+        "enemy-magic-removal": "always",
+        "self-root-removal": "none",
+        "interrupt": "always"
+      },
+      "mechanicSpellIds": [
+        373972,
+        391031
+      ],
+      "notes": [
+        "Devour Magic can remove Blaze of Glory and Stormcloud Barrier when the correct demon or talent window is active.",
+        "Curse choices are mutually exclusive per target; select cast slowing or attack mitigation deliberately."
+      ]
+    }
+  ],
+  "affixes": [
+    {
+      "affixSlug": "xalataths-bargain-ascendant",
+      "recommendations": [
+        "Use Shadowfury on clustered orbs; spread orbs may still require Spell Lock or other party stops."
+      ]
+    },
+    {
+      "affixSlug": "xalataths-bargain-voidbound",
+      "recommendations": [
+        "Swap damage to the Voidbound emissary and align available offensive cooldowns with its absorption shield."
+      ]
+    },
+    {
+      "affixSlug": "xalataths-bargain-pulsar",
+      "recommendations": [
+        "Burning Rush and pre-positioned Circle movement help collect nearby orbs without dragging them away from the group."
+      ]
+    },
+    {
+      "affixSlug": "xalataths-bargain-devour",
+      "recommendations": [
+        "Soulburn with Demonic Circle can remove the Warlock's own eligible snare or root; this is not party-wide dispel coverage."
+      ]
+    }
+  ],
+  "provenance": [
+    {
+      "kind": "external-reference",
+      "description": "Original structured summary of the Patch 12.1.0 Affliction Warlock Mythic+ guide. Repeated guide prose is represented once as typed capability data; dungeon entries retain only compact original conclusions and auditable mechanic IDs.",
+      "url": "https://www.wowhead.com/guide/classes/warlock/affliction/mythic-plus-dungeon-tips",
+      "retrievedAt": "2026-09-02T19:34:37+02:00"
+    },
+    {
+      "kind": "external-reference",
+      "description": "Current spell records resolve the guide's Fel Ravager wording as purge/Devour Magic behavior rather than guaranteed interrupt coverage.",
+      "url": "https://www.wowhead.com/spell=1276467/grimoire-fel-ravager",
+      "retrievedAt": "2026-09-02T19:34:37+02:00"
+    }
+  ]
+}
