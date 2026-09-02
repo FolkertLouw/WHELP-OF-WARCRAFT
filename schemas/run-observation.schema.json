@@ -1,0 +1,57 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://whelp.dev/schemas/run-observation.schema.json",
+  "title": "WHELP run observation",
+  "type": "object",
+  "required": ["schemaVersion", "recordType", "collector", "game", "run", "player", "group", "privacy"],
+  "properties": {
+    "schemaVersion": { "const": 1 },
+    "recordType": { "const": "run-observation" },
+    "collector": {
+      "type": "object",
+      "required": ["name", "version"],
+      "properties": {
+        "name": { "const": "WHELP Collector" },
+        "version": { "type": "string" }
+      },
+      "additionalProperties": false
+    },
+    "game": {
+      "type": "object",
+      "required": ["version", "build", "interfaceVersion"],
+      "properties": {
+        "version": { "type": "string" },
+        "build": { "type": "string" },
+        "interfaceVersion": { "type": "integer", "minimum": 1 },
+        "region": { "type": ["string", "null"] }
+      },
+      "additionalProperties": false
+    },
+    "run": {
+      "type": "object",
+      "required": ["challengeMapId", "keystoneLevel", "startedAt", "status"],
+      "properties": {
+        "challengeMapId": { "type": "integer", "minimum": 1 },
+        "keystoneLevel": { "type": "integer", "minimum": 2 },
+        "affixIds": { "type": "array", "items": { "type": "integer", "minimum": 1 } },
+        "startedAt": { "type": "integer", "minimum": 1 },
+        "completedAt": { "type": ["integer", "null"], "minimum": 1 },
+        "durationMs": { "type": ["integer", "null"], "minimum": 0 },
+        "status": { "enum": ["started", "completed", "abandoned"] }
+      },
+      "additionalProperties": false
+    },
+    "player": { "$ref": "player.schema.json" },
+    "group": { "type": "array", "items": { "$ref": "player.schema.json" }, "maxItems": 5 },
+    "privacy": {
+      "type": "object",
+      "required": ["containsNames", "containsChat"],
+      "properties": {
+        "containsNames": { "const": false },
+        "containsChat": { "const": false }
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}

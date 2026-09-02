@@ -1,0 +1,16 @@
+{
+  "$schema": "../../../schemas/build-manifest.schema.json",
+  "schemaVersion": 1,
+  "recordType": "build-manifest",
+  "product": "wow",
+  "region": "EU",
+  "version": "12.1.0.69587",
+  "interfaceVersion": 120100,
+  "observedAt": "2026-09-02T00:00:00+02:00",
+  "provenance": [
+    {
+      "kind": "local-client",
+      "description": "Observed from the installed Retail .build.info file on the project workstation."
+    }
+  ]
+}

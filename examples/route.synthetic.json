@@ -1,0 +1,21 @@
+{
+  "$schema": "../schemas/route.schema.json",
+  "schemaVersion": 1,
+  "recordType": "route",
+  "id": "synthetic-dungeon/baseline-route",
+  "status": "draft",
+  "validity": { "fromBuild": "12.1.0.69587", "untilBuild": null, "seasonId": null },
+  "challengeMapId": 999001,
+  "title": "Synthetic baseline route",
+  "keyLevel": { "minimum": 2, "maximum": 10 },
+  "affixIds": [],
+  "mdtImport": null,
+  "pulls": [
+    {
+      "order": 1,
+      "enemies": [{ "npcId": 999003, "count": 1 }],
+      "notes": "Synthetic pull for schema validation."
+    }
+  ],
+  "provenance": [{ "kind": "curated", "description": "Synthetic example for testing only." }]
+}

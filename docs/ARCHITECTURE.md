@@ -1,0 +1,16 @@
+# Architecture
+
+WHELP has four independent layers:
+
+1. **Collection** records privacy-safe observations inside the game client.
+2. **Ingestion** imports exports and combat logs outside the game.
+3. **Knowledge** stores versioned facts and reviewed strategy.
+4. **Delivery** produces Git releases, addon data packs, APIs, and LLM connectors.
+
+The addon is not the database server and GitHub is not the raw telemetry ingestion service.
+
+Canonical facts come from official APIs or redistributable game data and are immutable within a build snapshot. Curated strategy contains reviewed interpretations with declared applicability and provenance. Observations describe actual runs; individual submissions are evidence, not truth.
+
+An LLM connector should resolve the current build, retrieve a small relevant record set, and return record IDs, validity, provenance, and confidence. It must not inject the entire repository into every prompt.
+
+A knowledge compiler will eventually turn verified records into compact Lua tables under `addon/WHELPCollector/GeneratedKnowledge`. Generated files must identify their dataset revision and build range.

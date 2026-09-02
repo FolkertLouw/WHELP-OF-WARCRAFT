@@ -1,0 +1,10 @@
+node_modules/
+.DS_Store
+Thumbs.db
+
+# Raw player data is private and must not be committed.
+observations/raw/
+imports/private/
+*.combatlog
+WoWCombatLog*.txt
+*SavedVariables*.lua

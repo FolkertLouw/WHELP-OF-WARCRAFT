@@ -1,0 +1,11 @@
+{
+  "schemaVersion": 1,
+  "product": "wow",
+  "builds": [
+    {
+      "version": "12.1.0.69587",
+      "manifest": "builds/12.1.0.69587/manifest.json",
+      "status": "observed-local"
+    }
+  ]
+}

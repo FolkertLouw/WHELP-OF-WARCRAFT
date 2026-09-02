@@ -1,0 +1,17 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://whelp.dev/schemas/provenance.schema.json",
+  "title": "WHELP provenance",
+  "type": "object",
+  "required": ["kind", "description"],
+  "properties": {
+    "kind": {
+      "enum": ["official-api", "game-data", "local-client", "addon-observation", "combat-log", "curated", "external-reference"]
+    },
+    "description": { "type": "string", "minLength": 1 },
+    "url": { "type": "string", "format": "uri" },
+    "recordId": { "type": "string" },
+    "retrievedAt": { "type": "string", "format": "date-time" }
+  },
+  "additionalProperties": false
+}

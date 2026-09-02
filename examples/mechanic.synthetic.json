@@ -1,0 +1,18 @@
+{
+  "$schema": "../schemas/mechanic.schema.json",
+  "schemaVersion": 1,
+  "recordType": "mechanic",
+  "id": "synthetic-dungeon/synthetic-boss/spell-999001",
+  "status": "draft",
+  "validity": { "fromBuild": "12.1.0.69587", "untilBuild": null, "seasonId": null },
+  "encounter": { "instanceId": 999001, "encounterId": 999002, "npcId": 999003 },
+  "mechanic": {
+    "spellId": 999001,
+    "category": "interrupt",
+    "summary": "Synthetic schema example; this is not a real mechanic.",
+    "response": "Interrupt the cast."
+  },
+  "roles": ["tank", "healer", "damage"],
+  "specIds": [],
+  "provenance": [{ "kind": "curated", "description": "Synthetic example for testing only." }]
+}

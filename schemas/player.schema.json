@@ -1,0 +1,14 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://whelp.dev/schemas/player.schema.json",
+  "title": "Anonymous WHELP player snapshot",
+  "type": "object",
+  "required": ["classId", "role"],
+  "properties": {
+    "classId": { "type": "integer", "minimum": 1 },
+    "specId": { "type": ["integer", "null"], "minimum": 1 },
+    "role": { "enum": ["TANK", "HEALER", "DAMAGER", "NONE"] },
+    "itemLevel": { "type": ["number", "null"], "minimum": 0 }
+  },
+  "additionalProperties": false
+}

@@ -1,0 +1,13 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://whelp.dev/schemas/validity.schema.json",
+  "title": "WHELP build validity",
+  "type": "object",
+  "required": ["fromBuild"],
+  "properties": {
+    "fromBuild": { "type": "string", "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+\\.[0-9]+$" },
+    "untilBuild": { "type": ["string", "null"] },
+    "seasonId": { "type": ["integer", "null"], "minimum": 1 }
+  },
+  "additionalProperties": false
+}
