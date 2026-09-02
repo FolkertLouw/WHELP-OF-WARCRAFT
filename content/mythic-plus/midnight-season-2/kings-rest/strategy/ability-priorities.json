@@ -1,0 +1,28 @@
+{
+  "$schema": "../../../../../schemas/ability-response.schema.json",
+  "schemaVersion": 1,
+  "recordType": "ability-response",
+  "id": "kings-rest/ability-response-priorities",
+  "status": "corroborated",
+  "validity": { "fromBuild": "12.1.0.69587", "untilBuild": null, "seasonId": null, "seasonSlug": "midnight-season-2" },
+  "dungeonId": "kings-rest",
+  "instanceMapId": 1762,
+  "entries": [
+    { "spellId": 269972, "name": "Hex Volley", "npcIds": [134174], "targetDisposition": "mixed", "actions": ["interrupt", "cleanse-curse"], "priority": "critical", "evidenceStatus": "source-confirmed", "rationale": "Interrupt the Risen Hexer group cast; remove any Curse that lands after a missed stop." },
+    { "spellId": 270920, "name": "Bind Soul", "npcIds": [137478], "targetDisposition": "enemy-cast", "actions": ["interrupt"], "priority": "critical", "evidenceStatus": "source-confirmed", "rationale": "A named priority interrupt from Queen Wasi." },
+    { "spellId": 270901, "name": "Unholy Mending", "npcIds": [134251], "targetDisposition": "mixed", "actions": ["interrupt", "purge"], "priority": "critical", "evidenceStatus": "source-confirmed", "rationale": "Interrupt Seneschal M'bara's heal; purge its Magic effect if the cast completes." },
+    { "spellId": 267763, "name": "Wretched Discharge", "npcIds": [270502], "targetDisposition": "mixed", "actions": ["interrupt", "cleanse-disease"], "priority": "high", "evidenceStatus": "source-confirmed", "rationale": "Stop the Half-Finished Mummy cast; cleanse the Disease as recovery if it lands." },
+    { "spellId": 270492, "name": "Hex", "npcIds": [135204], "targetDisposition": "mixed", "actions": ["interrupt", "cleanse-curse"], "priority": "critical", "evidenceStatus": "source-confirmed", "rationale": "Interrupt the Phantom Hex Priest; remove the Curse only after a failed stop." },
+    { "spellId": 267273, "name": "Poison Nova", "npcIds": [269810], "targetDisposition": "mixed", "actions": ["interrupt", "cleanse-poison"], "priority": "critical", "evidenceStatus": "source-confirmed", "rationale": "Interrupt Zanazal's large AoE; cleanse Poison applications if the cast succeeds." },
+    { "spellId": 269369, "name": "Deathly Roar", "npcIds": [136984], "targetDisposition": "enemy-cast", "actions": ["interrupt"], "priority": "critical", "evidenceStatus": "source-confirmed", "rationale": "Stop Reban's AoE fear during Dazar." },
+    { "spellId": 269935, "name": "Bound by Shadow", "npcIds": [133943, 138493], "targetDisposition": "enemy-buff", "actions": ["purge"], "priority": "critical", "evidenceStatus": "source-confirmed", "rationale": "Purge the Minion of Zul shield to kill the minion immediately instead of breaking it through damage." },
+    { "spellId": 269976, "name": "Ancestral Fury", "npcIds": [134158], "targetDisposition": "enemy-buff", "actions": ["soothe"], "priority": "high", "evidenceStatus": "source-confirmed", "rationale": "Remove the Shadow-Borne Champion's Enrage to reduce its pressure." },
+    { "spellId": 1297763, "name": "Bestial Berserk", "npcIds": [137486], "targetDisposition": "enemy-buff", "actions": ["soothe"], "priority": "high", "evidenceStatus": "source-confirmed", "rationale": "Remove Queen Patlaa's Enrage effect from the hunting raptors." },
+    { "spellId": 1296671, "name": "Captain's Bulwark", "npcIds": [137473], "targetDisposition": "enemy-buff", "actions": ["purge"], "priority": "high", "evidenceStatus": "source-confirmed", "rationale": "Offensively remove Guard Captain Atu's Magic bulwark." },
+    { "spellId": 1298104, "name": "Putrid Seekers", "npcIds": [137989], "targetDisposition": "player-debuff", "actions": ["cleanse-poison"], "priority": "high", "evidenceStatus": "source-confirmed", "rationale": "Cleanse the Poison applied by Embalming Fluid." }
+  ],
+  "provenance": [
+    { "kind": "external-reference", "description": "Current interrupt, dispel, purge, Enrage-removal, and boss priorities were independently summarized from Wowhead's Midnight Season 2 dungeon overview.", "url": "https://www.wowhead.com/guide/midnight/kings-rest-dungeon-overview-mythic-plus", "retrievedAt": "2026-09-02T15:20:00+02:00" },
+    { "kind": "game-data", "description": "Spell IDs, NPC contexts, dispel types, and Enrage flags are linked to the generated Midnight Season 2 ability index.", "recordId": "midnight-season-2/flagged-abilities", "retrievedAt": "2026-09-02T15:20:00+02:00" }
+  ]
+}

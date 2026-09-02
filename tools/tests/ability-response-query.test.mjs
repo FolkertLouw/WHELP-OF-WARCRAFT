@@ -5,11 +5,12 @@ import test from "node:test";
 import { queryAbilityResponses } from "../lib/ability-response-query.mjs";
 
 const root = path.resolve(import.meta.dirname, "..", "..");
-const load = async (dungeon) => JSON.parse(await readFile(
-  path.join(root, "content", "mythic-plus", "midnight-season-2", dungeon, "strategy", "ability-priorities.json"),
+const responseIndexPath = path.join(root, "content", "mythic-plus", "midnight-season-2", "abilities", "response-index.json");
+const responseIndex = JSON.parse(await readFile(responseIndexPath, "utf8"));
+const records = await Promise.all(responseIndex.entries.map(async (entry) => JSON.parse(await readFile(
+  path.resolve(path.dirname(responseIndexPath), entry.path),
   "utf8",
-));
-const records = await Promise.all([load("murder-row"), load("the-blinding-vale")]);
+))));
 
 test("queries explicit response actions without confusing purge and cleanse", () => {
   const cleanses = queryAbilityResponses(records, { dungeonId: "murder-row", action: "cleanse-magic" });
@@ -33,4 +34,9 @@ test("filters priorities and rejects invalid response queries", () => {
   assert.ok(critical.results.every((entry) => entry.priority === "critical"));
   assert.throws(() => queryAbilityResponses(records, { action: "guess" }), /unknown response action/);
   assert.throws(() => queryAbilityResponses(records, { spellId: 0 }), /positive integer/);
+});
+
+test("loads one curated response record for every seasonal dungeon", () => {
+  assert.equal(records.length, 8);
+  assert.equal(new Set(records.map((record) => record.dungeonId)).size, 8);
 });

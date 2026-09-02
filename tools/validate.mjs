@@ -370,9 +370,17 @@ const abilityResponsesById = new Map(
 for (const { file, value } of records.filter(({ value }) => value.recordType === "ability-response-index")) {
   if (value.validity?.seasonSlug !== value.seasonSlug) fail(file, "response index seasonSlug does not match validity");
   const indexedResponseIds = new Set((value.entries ?? []).map((entry) => entry.recordId));
+  const indexedResponseDungeons = new Set((value.entries ?? []).map((entry) => entry.dungeonId));
   const scopedResponses = [...abilityResponsesById.values()].filter((response) => response.validity?.seasonSlug === value.seasonSlug);
   for (const response of scopedResponses) {
     if (!indexedResponseIds.has(response.id)) fail(file, `response index omits scoped record ${response.id}`);
+  }
+  const season = records.find(({ value: candidate }) => candidate.recordType === "season" && candidate.id === value.seasonSlug)?.value;
+  if (!season) fail(file, `response index references unknown season ${value.seasonSlug}`);
+  else {
+    for (const dungeon of season.dungeons ?? []) {
+      if (!indexedResponseDungeons.has(dungeon.id)) fail(file, `response index omits seasonal dungeon ${dungeon.id}`);
+    }
   }
   for (const entry of value.entries ?? []) {
     const response = abilityResponsesById.get(entry.recordId);

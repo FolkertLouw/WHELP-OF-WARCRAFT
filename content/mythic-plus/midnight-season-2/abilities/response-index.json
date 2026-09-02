@@ -3,7 +3,7 @@
   "schemaVersion": 1,
   "recordType": "ability-response-index",
   "id": "midnight-season-2/ability-response-index",
-  "status": "draft",
+  "status": "corroborated",
   "validity": { "fromBuild": "12.1.0.69587", "untilBuild": null, "seasonId": null, "seasonSlug": "midnight-season-2" },
   "seasonSlug": "midnight-season-2",
   "entries": [
@@ -17,6 +17,12 @@
       "dungeonId": "den-of-nalorakk",
       "recordId": "den-of-nalorakk/ability-response-priorities",
       "path": "../den-of-nalorakk/strategy/ability-priorities.json",
+      "status": "corroborated"
+    },
+    {
+      "dungeonId": "kings-rest",
+      "recordId": "kings-rest/ability-response-priorities",
+      "path": "../kings-rest/strategy/ability-priorities.json",
       "status": "corroborated"
     },
     {
@@ -38,6 +44,12 @@
       "status": "corroborated"
     },
     {
+      "dungeonId": "temple-of-sethraliss",
+      "recordId": "temple-of-sethraliss/ability-response-priorities",
+      "path": "../temple-of-sethraliss/strategy/ability-priorities.json",
+      "status": "corroborated"
+    },
+    {
       "dungeonId": "voidscar-arena",
       "recordId": "voidscar-arena/ability-response-priorities",
       "path": "../voidscar-arena/strategy/ability-priorities.json",
@@ -47,7 +59,7 @@
   "provenance": [
     {
       "kind": "curated",
-      "description": "Machine-readable discovery index for source-backed tactical response records.",
+      "description": "Machine-readable discovery index covering source-backed tactical response records for every Midnight Season 2 dungeon.",
       "retrievedAt": "2026-09-02T14:35:33+02:00"
     }
   ]

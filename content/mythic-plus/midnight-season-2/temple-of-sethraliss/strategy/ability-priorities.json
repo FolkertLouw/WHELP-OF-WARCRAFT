@@ -1,0 +1,25 @@
+{
+  "$schema": "../../../../../schemas/ability-response.schema.json",
+  "schemaVersion": 1,
+  "recordType": "ability-response",
+  "id": "temple-of-sethraliss/ability-response-priorities",
+  "status": "corroborated",
+  "validity": { "fromBuild": "12.1.0.69587", "untilBuild": null, "seasonId": null, "seasonSlug": "midnight-season-2" },
+  "dungeonId": "temple-of-sethraliss",
+  "instanceMapId": 1877,
+  "entries": [
+    { "spellId": 1308100, "name": "Poisoned Cheap Shot", "npcIds": [134602], "targetDisposition": "mixed", "actions": ["interrupt", "cleanse-poison"], "priority": "high", "evidenceStatus": "source-confirmed", "rationale": "Interrupt the Shrouded Fang; cleanse the Poison only as recovery after a missed stop." },
+    { "spellId": 1293307, "name": "Addle Mind", "npcIds": [134364], "targetDisposition": "mixed", "actions": ["interrupt", "cleanse-curse"], "priority": "critical", "evidenceStatus": "source-confirmed", "rationale": "Stop the Faithless Subjugator cast; remove the Curse if it lands." },
+    { "spellId": 1314082, "name": "Addle Mind", "npcIds": [134364], "targetDisposition": "mixed", "actions": ["interrupt", "cleanse-curse"], "priority": "critical", "evidenceStatus": "source-confirmed", "rationale": "Alternate indexed Addle Mind variant with the same interrupt-first, curse-cleanse fallback." },
+    { "spellId": 268013, "name": "Flame Shock", "npcIds": [136250], "targetDisposition": "enemy-cast", "actions": ["interrupt"], "priority": "high", "evidenceStatus": "source-confirmed", "rationale": "Interrupt the Twisted Hexxer cast in the Avatar section." },
+    { "spellId": 1302158, "name": "Flame Shock", "npcIds": [268491], "targetDisposition": "enemy-cast", "actions": ["interrupt"], "priority": "high", "evidenceStatus": "source-confirmed", "rationale": "Current indexed Twisted Hexxer variant for the same named interrupt priority." },
+    { "spellId": 1308148, "name": "Cytotoxin", "npcIds": [135562], "targetDisposition": "player-debuff", "actions": ["cleanse-poison"], "priority": "high", "evidenceStatus": "source-confirmed", "rationale": "Cleanse the Poisonous Viper debuff." },
+    { "spellId": 1296052, "name": "Imbued Conduction", "npcIds": [134599], "targetDisposition": "player-debuff", "actions": ["cleanse-magic"], "priority": "high", "evidenceStatus": "source-confirmed", "rationale": "Remove the Imbued Stormcaller's Magic debuff." },
+    { "spellId": 1293464, "name": "Accumulate Charge", "npcIds": [136076], "targetDisposition": "enemy-buff", "actions": ["purge"], "priority": "critical", "evidenceStatus": "source-confirmed", "rationale": "Offensively remove the Agitated Nimbus Magic buff before its accumulated pressure grows." },
+    { "spellId": 1310739, "name": "Accumulate Charge", "npcIds": [136076], "targetDisposition": "enemy-buff", "actions": ["purge"], "priority": "critical", "evidenceStatus": "source-confirmed", "rationale": "Alternate indexed Accumulate Charge variant for the same purge priority." }
+  ],
+  "provenance": [
+    { "kind": "external-reference", "description": "Current interrupt, dispel, purge, and recovery priorities were independently summarized from Wowhead's Midnight Season 2 dungeon overview.", "url": "https://www.wowhead.com/guide/midnight/temple-of-sethraliss-dungeon-overview-mythic-plus", "retrievedAt": "2026-09-02T15:20:00+02:00" },
+    { "kind": "game-data", "description": "Spell IDs, NPC contexts, and low-level response flags are linked to the generated Midnight Season 2 ability index.", "recordId": "midnight-season-2/flagged-abilities", "retrievedAt": "2026-09-02T15:20:00+02:00" }
+  ]
+}

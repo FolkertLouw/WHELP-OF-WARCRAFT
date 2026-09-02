@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "records": [
-    { "id": "midnight-season-2/ability-response-index", "path": "mythic-plus/midnight-season-2/abilities/response-index.json", "status": "draft" },
+    { "id": "midnight-season-2/ability-response-index", "path": "mythic-plus/midnight-season-2/abilities/response-index.json", "status": "corroborated" },
     { "id": "midnight-season-2/pug-route-catalog", "path": "mythic-plus/midnight-season-2/routes/catalog.json", "status": "draft" },
     { "id": "altar-of-fangs/pug-10-15-baseline", "path": "mythic-plus/midnight-season-2/altar-of-fangs/routes/pug-10-15.json", "status": "draft" },
     { "id": "altar-of-fangs/ability-response-priorities", "path": "mythic-plus/midnight-season-2/altar-of-fangs/strategy/ability-priorities.json", "status": "corroborated" },
@@ -82,6 +82,7 @@
     { "id": "voidscar-arena/charonus/gravitic-orbs-1223298", "path": "mythic-plus/midnight-season-2/voidscar-arena/mechanics/charonus-gravitic-orbs.json", "status": "draft" },
     { "id": "voidscar-arena/charonus/void-cascade-1222755", "path": "mythic-plus/midnight-season-2/voidscar-arena/mechanics/charonus-void-cascade.json", "status": "draft" },
     { "id": "kings-rest/overview", "path": "mythic-plus/midnight-season-2/kings-rest/strategy/overview.json", "status": "corroborated" },
+    { "id": "kings-rest/ability-response-priorities", "path": "mythic-plus/midnight-season-2/kings-rest/strategy/ability-priorities.json", "status": "corroborated" },
     { "id": "kings-rest/pug-10-15-baseline", "path": "mythic-plus/midnight-season-2/kings-rest/routes/pug-10-15.json", "status": "draft" },
     { "id": "kings-rest/the-golden-serpent/serpentine-gust-1311987", "path": "mythic-plus/midnight-season-2/kings-rest/mechanics/golden-serpent-serpentine-gust.json", "status": "draft" },
     { "id": "kings-rest/the-golden-serpent/spit-gold-265773", "path": "mythic-plus/midnight-season-2/kings-rest/mechanics/golden-serpent-spit-gold.json", "status": "draft" },
@@ -115,6 +116,7 @@
     { "id": "ruby-life-pools/kyrakka-and-erkhart/inferno-spit-381602", "path": "mythic-plus/midnight-season-2/ruby-life-pools/mechanics/kyrakka-inferno-spit.json", "status": "draft" },
     { "id": "ruby-life-pools/kyrakka-and-erkhart/stormslam-381512", "path": "mythic-plus/midnight-season-2/ruby-life-pools/mechanics/erkhart-stormslam.json", "status": "draft" },
     { "id": "temple-of-sethraliss/overview", "path": "mythic-plus/midnight-season-2/temple-of-sethraliss/strategy/overview.json", "status": "corroborated" },
+    { "id": "temple-of-sethraliss/ability-response-priorities", "path": "mythic-plus/midnight-season-2/temple-of-sethraliss/strategy/ability-priorities.json", "status": "corroborated" },
     { "id": "temple-of-sethraliss/pug-10-15-baseline", "path": "mythic-plus/midnight-season-2/temple-of-sethraliss/routes/pug-10-15.json", "status": "draft" },
     { "id": "temple-of-sethraliss/adderis-and-aspix/tempest-winds-1288864", "path": "mythic-plus/midnight-season-2/temple-of-sethraliss/mechanics/adderis-aspix-tempest-winds.json", "status": "draft" },
     { "id": "temple-of-sethraliss/adderis-and-aspix/gale-force-1289062", "path": "mythic-plus/midnight-season-2/temple-of-sethraliss/mechanics/adderis-aspix-gale-force.json", "status": "draft" },
