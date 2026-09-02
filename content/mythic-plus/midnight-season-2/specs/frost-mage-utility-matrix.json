@@ -1,0 +1,34 @@
+{
+  "$schema": "../../../../schemas/spec-dungeon-matrix.schema.json",
+  "schemaVersion": 1,
+  "recordType": "spec-dungeon-matrix",
+  "id": "midnight-season-2/frost-mage-utility-matrix",
+  "status": "corroborated",
+  "validity": { "fromBuild": "12.1.0.69587", "untilBuild": null, "seasonId": null, "seasonSlug": "midnight-season-2" },
+  "spec": { "classId": 8, "className": "Mage", "specId": 64, "specName": "Frost" },
+  "axes": [
+    { "id": "target-drop", "label": "Target and channel cancellation", "abilityNames": ["Greater Invisibility"], "spellIds": [110959], "toolIds": ["greater-invisibility"] },
+    { "id": "snare-removal", "label": "Personal snare removal", "abilityNames": ["Energized Barriers"], "spellIds": [386828], "toolIds": ["energized-barriers"] },
+    { "id": "root-escape", "label": "Personal root and bond escape", "abilityNames": ["Blink"], "spellIds": [1953], "toolIds": ["blink"] },
+    { "id": "decurse", "label": "Friendly Curse removal", "abilityNames": ["Remove Curse"], "spellIds": [475], "toolIds": ["remove-curse"] },
+    { "id": "enemy-removal", "label": "Enemy Magic theft", "abilityNames": ["Spellsteal"], "spellIds": [30449], "toolIds": ["spellsteal"] },
+    { "id": "control", "label": "Disorient, incapacitate, and knock-up control", "abilityNames": ["Polymorph", "Supernova", "Dragon's Breath", "Ring of Frost"], "spellIds": [118, 157980, 31661, 113724], "toolIds": ["polymorph", "supernova", "dragons-breath", "ring-of-frost"] }
+  ],
+  "dungeons": [
+    { "dungeonId": "altar-of-fangs", "instanceMapId": 2993, "ratings": { "target-drop": "always", "snare-removal": "always", "root-escape": "none", "decurse": "none", "enemy-removal": "none", "control": "niche" }, "mechanicSpellIds": [1294569, 1301413], "notes": ["Energized Barriers removes Paralyzing Shots from the Mage.", "Greater Invisibility cancels Zul'jan's Boneslicer when the Mage is selected; line of sight Blood Sacrifice."] },
+    { "dungeonId": "the-blinding-vale", "instanceMapId": 2859, "ratings": { "target-drop": "always", "snare-removal": "none", "root-escape": "always", "decurse": "none", "enemy-removal": "always", "control": "niche" }, "mechanicSpellIds": [1238581, 1259365], "notes": ["Spellsteal removes Spiny Shield from a Spineshield Beetle.", "Greater Invisibility or Blink can break Bloodthorn Roots when the Mage is trapped."] },
+    { "dungeonId": "den-of-nalorakk", "instanceMapId": 2825, "ratings": { "target-drop": "always", "snare-removal": "none", "root-escape": "none", "decurse": "always", "enemy-removal": "none", "control": "niche" }, "mechanicSpellIds": [1238801, 1309919], "notes": ["Remove Curse dispels Insatiable Hunger from the Mage or an ally.", "Greater Invisibility cancels Feast of Misery when the Mage is selected."] },
+    { "dungeonId": "murder-row", "instanceMapId": 2813, "ratings": { "target-drop": "always", "snare-removal": "none", "root-escape": "none", "decurse": "always", "enemy-removal": "none", "control": "niche" }, "mechanicSpellIds": [1214922, 1217973], "notes": ["Remove Curse answers Curse of Doom on the Mage or an ally.", "Greater Invisibility cancels selected Drain Life channels; use Dragon's Breath or Supernova for susceptible casts."] },
+    { "dungeonId": "voidscar-arena", "instanceMapId": 2923, "ratings": { "target-drop": "always", "snare-removal": "none", "root-escape": "none", "decurse": "none", "enemy-removal": "none", "control": "always" }, "mechanicSpellIds": [1227197, 1263971], "notes": ["Greater Invisibility cancels Charonus's Void Cascade when the Mage is selected.", "Polymorph the Protective Turtle to interrupt Shell Guard."] },
+    { "dungeonId": "temple-of-sethraliss", "instanceMapId": 1877, "ratings": { "target-drop": "always", "snare-removal": "always", "root-escape": "always", "decurse": "none", "enemy-removal": "always", "control": "always" }, "mechanicSpellIds": [267027, 1290031, 1293307, 1293464], "notes": ["Spellsteal removes Accumulate Charge; Energized Barriers removes Slither Strike's snare.", "Greater Invisibility cancels Gust or Arrow Barrage, Blink escapes A Knot of Snakes, and Ring of Frost supplies another Arrow Barrage stop."] },
+    { "dungeonId": "kings-rest", "instanceMapId": 1762, "ratings": { "target-drop": "always", "snare-removal": "always", "root-escape": "none", "decurse": "always", "enemy-removal": "always", "control": "always" }, "mechanicSpellIds": [269935, 270492, 1296671, 1298104], "notes": ["Spellsteal eligible Magic buffs deliberately and Remove Curse answers Hex; Energized Barriers removes Frost Shock.", "Greater Invisibility cancels selected casts and channels, while Ring of Frost controls susceptible raptor leaps; line of sight Serpentine Gust."] },
+    { "dungeonId": "ruby-life-pools", "instanceMapId": 2521, "ratings": { "target-drop": "always", "snare-removal": "none", "root-escape": "none", "decurse": "none", "enemy-removal": "always", "control": "niche" }, "mechanicSpellIds": [373972, 391031], "notes": ["Spellsteal removes Blaze of Glory and Stormcloud Barrier.", "Greater Invisibility cancels High Channeler Ryvati's Lightning Torrent when the Mage is selected."] }
+  ],
+  "affixes": [
+    { "affixSlug": "xalataths-bargain-ascendant", "recommendations": ["Use Counterspell, Spellsteal, and Dragon's Breath or Supernova after the cluster spawns to stop as many casts as possible."] },
+    { "affixSlug": "xalataths-bargain-voidbound", "recommendations": ["Kill the Voidbound Emissary quickly and use Splitting Ice cleave when positioning permits."] },
+    { "affixSlug": "xalataths-bargain-pulsar", "recommendations": ["Use Mage mobility to swing orbiting void orbs into allies and receive theirs."] },
+    { "affixSlug": "xalataths-bargain-devour", "recommendations": ["Remove Curse clears the eligible effect from the Mage or an ally; Energized Barriers provides a self-only alternative through its snare component."] }
+  ],
+  "provenance": [{ "kind": "external-reference", "description": "Original structured summary of Dorovon's Patch 12.1.0 Frost Mage dungeon utility and affix recommendations. Talent strings, gear, and performance rankings are intentionally excluded.", "url": "https://www.wowhead.com/guide/classes/mage/frost/mythic-plus-dungeon-tips", "retrievedAt": "2026-09-02T18:14:00+02:00" }]
+}

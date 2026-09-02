@@ -23,6 +23,9 @@ const survivalMatrix = await loadJson("content", "mythic-plus", "midnight-season
 const survivalCapabilities = await loadJson("data", "specs", "hunter", "survival.json");
 const arcaneMatrix = await loadJson("content", "mythic-plus", "midnight-season-2", "specs", "arcane-mage-utility-matrix.json");
 const arcaneCapabilities = await loadJson("data", "specs", "mage", "arcane.json");
+const fireMageMatrix = await loadJson("content", "mythic-plus", "midnight-season-2", "specs", "fire-mage-utility-matrix.json");
+const frostMageMatrix = await loadJson("content", "mythic-plus", "midnight-season-2", "specs", "frost-mage-utility-matrix.json");
+const frostMageCapabilities = await loadJson("data", "specs", "mage", "frost.json");
 const season = await loadJson("data", "seasons", "midnight-season-2.json");
 
 test("Unholy matrix covers every Midnight Season 2 dungeon exactly once", () => {
@@ -219,4 +222,20 @@ test("Arcane separates party decurse from self-only movement removal", () => {
   assert.deepEqual(arcaneMatrix.dungeons.find((entry) => entry.dungeonId === "ruby-life-pools").ratings, {
     "target-drop": "none", "snare-removal": "none", "root-escape": "none", decurse: "none", "enemy-removal": "always", control: "none",
   });
+});
+
+test("all three Mage matrices cover the complete season", () => {
+  const expected = new Set(season.dungeons.map((entry) => entry.id));
+  for (const mageMatrix of [arcaneMatrix, fireMageMatrix, frostMageMatrix]) {
+    assert.deepEqual(new Set(mageMatrix.dungeons.map((entry) => entry.dungeonId)), expected);
+  }
+});
+
+test("Frost Mage matrix resolves tools and preserves self-only barrier removal", () => {
+  const tools = new Map(frostMageCapabilities.tools.map((tool) => [tool.id, tool]));
+  for (const axis of frostMageMatrix.axes) {
+    for (const toolId of axis.toolIds) assert.ok(tools.has(toolId), `${axis.id} should resolve ${toolId}`);
+  }
+  assert.equal(tools.get("energized-barriers").scope, "self");
+  assert.equal(tools.get("remove-curse").scope, "friendly-single");
 });
