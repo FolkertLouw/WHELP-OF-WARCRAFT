@@ -10,7 +10,7 @@ assert(WHELP.db.settings.collectionEnabled == true)
 T:Fire("CHALLENGE_MODE_START")
 local active = WHELP.db.activeRun
 assert(active.recordType == "run-observation")
-assert(active.collector.version == "0.5.0")
+assert(active.collector.version == "0.5.1")
 assert(active.collector.knowledgeBuild == "12.1.0.69587")
 assert(type(active.collector.knowledgeRevision) == "string" and #active.collector.knowledgeRevision == 64)
 assert(active.run.pullDataStatus == "progress-only")

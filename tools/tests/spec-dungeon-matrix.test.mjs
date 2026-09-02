@@ -21,6 +21,8 @@ const marksmanshipMatrix = await loadJson("content", "mythic-plus", "midnight-se
 const marksmanshipCapabilities = await loadJson("data", "specs", "hunter", "marksmanship.json");
 const survivalMatrix = await loadJson("content", "mythic-plus", "midnight-season-2", "specs", "survival-hunter-utility-matrix.json");
 const survivalCapabilities = await loadJson("data", "specs", "hunter", "survival.json");
+const arcaneMatrix = await loadJson("content", "mythic-plus", "midnight-season-2", "specs", "arcane-mage-utility-matrix.json");
+const arcaneCapabilities = await loadJson("data", "specs", "mage", "arcane.json");
 const season = await loadJson("data", "seasons", "midnight-season-2.json");
 
 test("Unholy matrix covers every Midnight Season 2 dungeon exactly once", () => {
@@ -195,4 +197,26 @@ test("Survival models pet healing reduction and stealth revelation separately", 
   assert.deepEqual(flare.actions, ["reveal-stealth"]);
   assert.equal(survivalMatrix.dungeons.find((entry) => entry.dungeonId === "murder-row").ratings["reveal-stealth"], "always");
   assert.ok(survivalMatrix.dungeons.filter((entry) => entry.dungeonId !== "murder-row").every((entry) => entry.ratings["reveal-stealth"] === "none"));
+});
+
+test("Arcane Mage matrix covers the season and resolves every utility axis", () => {
+  assert.deepEqual(new Set(arcaneMatrix.dungeons.map((entry) => entry.dungeonId)), new Set(season.dungeons.map((entry) => entry.id)));
+  const tools = new Map(arcaneCapabilities.tools.map((tool) => [tool.id, tool]));
+  for (const axis of arcaneMatrix.axes) {
+    for (const toolId of axis.toolIds) {
+      const tool = tools.get(toolId);
+      assert.ok(tool, `${axis.id} should resolve ${toolId}`);
+      assert.ok(axis.abilityNames.includes(tool.name));
+      assert.ok(axis.spellIds.includes(tool.spellId));
+    }
+  }
+});
+
+test("Arcane separates party decurse from self-only movement removal", () => {
+  assert.equal(arcaneCapabilities.tools.find((tool) => tool.id === "remove-curse").scope, "friendly-single");
+  assert.equal(arcaneCapabilities.tools.find((tool) => tool.id === "energized-barriers").scope, "self");
+  assert.equal(arcaneCapabilities.tools.find((tool) => tool.id === "blink").scope, "self");
+  assert.deepEqual(arcaneMatrix.dungeons.find((entry) => entry.dungeonId === "ruby-life-pools").ratings, {
+    "target-drop": "none", "snare-removal": "none", "root-escape": "none", decurse: "none", "enemy-removal": "always", control: "none",
+  });
 });

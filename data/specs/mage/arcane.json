@@ -3,6 +3,7 @@
   "schemaVersion": 1,
   "recordType": "spec-capabilities",
   "id": "mage/arcane/capabilities",
+  "matrixRecordId": "midnight-season-2/arcane-mage-utility-matrix",
   "status": "corroborated",
   "validity": { "fromBuild": "12.1.0.69587", "untilBuild": null, "seasonId": null, "seasonSlug": "midnight-season-2" },
   "spec": { "classId": 8, "className": "Mage", "specId": 62, "specName": "Arcane", "slug": "arcane-mage" },
@@ -13,11 +14,19 @@
     { "id": "polymorph", "name": "Polymorph", "spellId": 118, "actions": ["crowd-control"], "availability": "baseline", "scope": "enemy", "limitations": ["Damage breaks the effect", "Only affects susceptible creature types"] },
     { "id": "time-warp", "name": "Time Warp", "spellId": 80353, "actions": ["bloodlust"], "availability": "baseline", "scope": "friendly-area", "limitations": ["Thirty percent Haste for forty seconds", "Applies the shared ten-minute exhaustion effect", "Five-minute cooldown"] },
     { "id": "arcane-intellect", "name": "Arcane Intellect", "spellId": 1459, "actions": ["group-buff"], "availability": "baseline", "scope": "friendly-area", "limitations": ["Three percent Intellect for one hour", "Does not stack with an equivalent Arcane Intellect effect"] },
-    { "id": "prismatic-barrier", "name": "Prismatic Barrier", "spellId": 235450, "actions": ["defensive"], "availability": "talent", "scope": "self", "limitations": ["Personal absorb and Magic mitigation only"] }
+    { "id": "prismatic-barrier", "name": "Prismatic Barrier", "spellId": 235450, "actions": ["defensive"], "availability": "talent", "scope": "self", "limitations": ["Personal absorb and Magic mitigation only"] },
+    { "id": "greater-invisibility", "name": "Greater Invisibility", "spellId": 110959, "actions": ["target-drop", "defensive"], "availability": "talent", "scope": "self", "limitations": ["Personal only", "Only cancels mechanics that stop or retarget when the Mage becomes untargetable", "Actions cancel invisibility"] },
+    { "id": "energized-barriers", "name": "Energized Barriers", "spellId": 386828, "actions": ["cleanse-snare"], "availability": "talent", "scope": "self", "requirements": [{ "kind": "configuration", "value": "Cast Prismatic Barrier to trigger the passive" }], "limitations": ["Self-only", "Removes snares rather than roots"] },
+    { "id": "blink", "name": "Blink", "spellId": 1953, "actions": ["cleanse-root"], "availability": "baseline", "scope": "self", "limitations": ["Self-only", "Replaced by Shimmer when that talent is selected", "Encounter-specific bonds may differ from ordinary roots"] },
+    { "id": "supernova", "name": "Supernova", "spellId": 157980, "actions": ["crowd-control"], "availability": "talent", "scope": "area-enemy", "limitations": ["Knock-up only affects susceptible enemies", "Forty-five-second cooldown"] },
+    { "id": "ring-of-frost", "name": "Ring of Frost", "spellId": 113724, "actions": ["crowd-control"], "availability": "talent", "scope": "area-enemy", "limitations": ["Incapacitate breaks on damage", "Requires placement and activation time", "Only affects susceptible enemies"] }
   ],
   "provenance": [
     { "kind": "external-reference", "description": "Current Midnight Arcane guide identifies Time Warp, Counterspell, Arcane Intellect, Spellsteal, Remove Curse, Polymorph, and Prismatic Barrier.", "url": "https://www.wowhead.com/guide/classes/mage/arcane/abilities-talents-pve-dps", "retrievedAt": "2026-09-02T16:30:00+02:00" },
     { "kind": "external-reference", "description": "Current Time Warp record confirms Mage Bloodlust-equivalent behavior, duration, shared lockout, and spell identifier.", "url": "https://www.wowhead.com/spell=80353/time-warp", "retrievedAt": "2026-09-02T16:30:00+02:00" },
-    { "kind": "external-reference", "description": "Current Arcane Intellect record confirms the party-wide three-percent Intellect effect.", "url": "https://www.wowhead.com/spell=1459/arcane-intellect", "retrievedAt": "2026-09-02T16:30:00+02:00" }
+    { "kind": "external-reference", "description": "Current Arcane Intellect record confirms the party-wide three-percent Intellect effect.", "url": "https://www.wowhead.com/spell=1459/arcane-intellect", "retrievedAt": "2026-09-02T16:30:00+02:00" },
+    { "kind": "external-reference", "description": "Current Patch 12.1.0 Arcane dungeon guide identifies Greater Invisibility, Energized Barriers, Blink, Remove Curse, Spellsteal, Supernova, and Ring of Frost uses across the season.", "url": "https://www.wowhead.com/guide/classes/mage/arcane/mythic-plus-dungeon-tips", "retrievedAt": "2026-09-02T18:02:00+02:00" },
+    { "kind": "external-reference", "description": "Current Energized Barriers record confirms that casting a Mage barrier removes snare effects.", "url": "https://www.wowhead.com/spell=386828/energized-barriers", "retrievedAt": "2026-09-02T18:02:00+02:00" },
+    { "kind": "external-reference", "description": "Current Ring of Frost and Supernova records confirm their area-control behavior and exact player spell identifiers.", "url": "https://www.wowhead.com/spell=113724/ring-of-frost", "retrievedAt": "2026-09-02T18:02:00+02:00" }
   ]
 }

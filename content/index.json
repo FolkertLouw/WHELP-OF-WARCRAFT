@@ -138,6 +138,7 @@
     { "id": "midnight-season-2/blood-death-knight-utility-matrix", "path": "mythic-plus/midnight-season-2/specs/blood-death-knight-utility-matrix.json", "status": "corroborated" },
     { "id": "midnight-season-2/beast-mastery-hunter-utility-matrix", "path": "mythic-plus/midnight-season-2/specs/beast-mastery-hunter-utility-matrix.json", "status": "corroborated" },
     { "id": "midnight-season-2/marksmanship-hunter-utility-matrix", "path": "mythic-plus/midnight-season-2/specs/marksmanship-hunter-utility-matrix.json", "status": "corroborated" },
-    { "id": "midnight-season-2/survival-hunter-utility-matrix", "path": "mythic-plus/midnight-season-2/specs/survival-hunter-utility-matrix.json", "status": "corroborated" }
+    { "id": "midnight-season-2/survival-hunter-utility-matrix", "path": "mythic-plus/midnight-season-2/specs/survival-hunter-utility-matrix.json", "status": "corroborated" },
+    { "id": "midnight-season-2/arcane-mage-utility-matrix", "path": "mythic-plus/midnight-season-2/specs/arcane-mage-utility-matrix.json", "status": "corroborated" }
   ]
 }

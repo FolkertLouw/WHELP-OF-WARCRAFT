@@ -32,9 +32,17 @@ test("returns one requested affix with provenance", () => {
 });
 
 test("rejects absent matrices and invalid filters explicitly", () => {
-  assert.throws(() => querySpecMatrix(matrices, capabilities, { spec: "arcane-mage" }), /has no seasonal utility matrix/);
+  assert.throws(() => querySpecMatrix(matrices, capabilities, { spec: "fire-mage" }), /has no seasonal utility matrix/);
   assert.throws(() => querySpecMatrix(matrices, capabilities, { spec: "frost-death-knight", dungeon: "not-a-dungeon" }), /has no dungeon/);
   assert.throws(() => querySpecMatrix(matrices, capabilities, { spec: "frost-death-knight", rating: "best" }), /unknown utility rating/);
+});
+
+test("joins Arcane Mage decurse without treating self movement tools as party coverage", () => {
+  const report = querySpecMatrix(matrices, capabilities, { spec: "arcane-mage", dungeon: "den-of-nalorakk", rating: "always" });
+  const decurse = report.dungeons[0].utilities.find((entry) => entry.axisId === "decurse");
+  assert.equal(decurse.tools[0].id, "remove-curse");
+  assert.ok(report.dungeons[0].mechanicSpellIds.includes(1238801));
+  assert.ok(!report.dungeons[0].utilities.some((entry) => entry.axisId === "snare-removal"));
 });
 
 test("surfaces action-level talent availability for Restoration Shaman", () => {
