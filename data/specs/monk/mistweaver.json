@@ -1,0 +1,268 @@
+{
+  "$schema": "../../../schemas/spec-capabilities.schema.json",
+  "schemaVersion": 1,
+  "recordType": "spec-capabilities",
+  "id": "monk/mistweaver/capabilities",
+  "matrixRecordId": "midnight-season-2/mistweaver-monk-utility-matrix",
+  "status": "corroborated",
+  "validity": {
+    "fromBuild": "12.1.0.69587",
+    "untilBuild": null,
+    "seasonId": null,
+    "seasonSlug": "midnight-season-2"
+  },
+  "spec": {
+    "classId": 10,
+    "className": "Monk",
+    "specId": 270,
+    "specName": "Mistweaver",
+    "slug": "mistweaver-monk"
+  },
+  "tools": [
+    {
+      "id": "mystic-touch",
+      "name": "Mystic Touch",
+      "spellId": 113746,
+      "actions": [
+        "group-buff"
+      ],
+      "availability": "baseline",
+      "scope": "enemy",
+      "limitations": [
+        "Applied by dealing damage",
+        "Increases Physical damage taken by 5%",
+        "Unique effect does not stack with another Mystic Touch"
+      ]
+    },
+    {
+      "id": "leg-sweep",
+      "name": "Leg Sweep",
+      "spellId": 119381,
+      "actions": [
+        "crowd-control"
+      ],
+      "availability": "baseline",
+      "scope": "area-enemy",
+      "limitations": [
+        "Six-yard radius before modifiers",
+        "Three-second stun",
+        "Only affects susceptible enemies",
+        "Does not provide a spell-school lockout"
+      ]
+    },
+    {
+      "id": "ring-of-peace",
+      "name": "Ring of Peace",
+      "spellId": 116844,
+      "actions": [
+        "crowd-control",
+        "enemy-reposition"
+      ],
+      "availability": "talent",
+      "scope": "area-enemy",
+      "limitations": [
+        "Ejects susceptible enemies from a placed ring",
+        "Displacement can interrupt some casts but does not lock a spell school",
+        "Can disrupt planned positioning if used carelessly"
+      ]
+    },
+    {
+      "id": "paralysis",
+      "name": "Paralysis",
+      "spellId": 115078,
+      "actions": [
+        "crowd-control",
+        "soothe"
+      ],
+      "availability": "talent",
+      "actionAvailability": {
+        "crowd-control": "talent",
+        "soothe": "talent"
+      },
+      "scope": "enemy",
+      "requirements": [
+        {
+          "kind": "talent",
+          "value": "Pressure Points is required for Enrage removal"
+        }
+      ],
+      "limitations": [
+        "Single-target Incapacitate breaks from damage",
+        "Only controls susceptible enemies",
+        "Enrage removal is not baseline Paralysis behavior"
+      ]
+    },
+    {
+      "id": "tigers-lust",
+      "name": "Tiger's Lust",
+      "spellId": 116841,
+      "actions": [
+        "external-movement",
+        "cleanse-root",
+        "cleanse-snare"
+      ],
+      "availability": "talent",
+      "scope": "friendly-single",
+      "limitations": [
+        "Twenty-yard range",
+        "Thirty-second cooldown",
+        "Removes roots and snares but not stuns or other control",
+        "Movement increase lasts six seconds"
+      ]
+    },
+    {
+      "id": "diffuse-magic",
+      "name": "Diffuse Magic",
+      "spellId": 1243287,
+      "actions": [
+        "cleanse-magic",
+        "spell-reflection"
+      ],
+      "availability": "talent",
+      "scope": "self",
+      "requirements": [
+        {
+          "kind": "talent",
+          "value": "Activates through Fortifying Brew while Diffuse Magic is selected"
+        }
+      ],
+      "limitations": [
+        "Self-only",
+        "Transfers currently active harmful Magic effects only when a source can receive them",
+        "Some effects can be removed but not reflected"
+      ]
+    },
+    {
+      "id": "swift-art",
+      "name": "Swift Art",
+      "spellId": 450622,
+      "actions": [
+        "cleanse-snare"
+      ],
+      "availability": "talent",
+      "scope": "self",
+      "requirements": [
+        {
+          "kind": "talent",
+          "value": "Triggers through Roll"
+        }
+      ],
+      "limitations": [
+        "Self-only",
+        "Removes one snare at most once every thirty seconds",
+        "Does not remove roots"
+      ]
+    },
+    {
+      "id": "stillstep-coil",
+      "name": "Stillstep Coil",
+      "spellId": 1266733,
+      "actions": [
+        "crowd-control",
+        "enemy-output-slow"
+      ],
+      "availability": "talent",
+      "scope": "area-enemy",
+      "requirements": [
+        {
+          "kind": "talent",
+          "value": "Triggers after Leg Sweep ends"
+        }
+      ],
+      "limitations": [
+        "Applies Disable for five seconds after Leg Sweep",
+        "Slow applies only to affected susceptible enemies",
+        "Does not provide a spell-school lockout"
+      ]
+    },
+    {
+      "id": "detox",
+      "name": "Detox",
+      "spellId": 115450,
+      "alternateSpellIds": [
+        388874
+      ],
+      "actions": [
+        "cleanse-magic",
+        "cleanse-disease",
+        "cleanse-poison"
+      ],
+      "availability": "specialization",
+      "actionAvailability": {
+        "cleanse-magic": "specialization",
+        "cleanse-disease": "talent",
+        "cleanse-poison": "talent"
+      },
+      "scope": "friendly-single",
+      "requirements": [
+        {
+          "kind": "talent",
+          "value": "Improved Detox is required for Poison and Disease removal"
+        }
+      ],
+      "limitations": [
+        "Eight-second dispel cadence",
+        "Magic removal is Mistweaver specialization utility",
+        "Poison and Disease removal require Improved Detox"
+      ]
+    },
+    {
+      "id": "revival",
+      "name": "Revival",
+      "spellId": 115310,
+      "actions": [
+        "cleanse-magic",
+        "cleanse-disease",
+        "cleanse-poison"
+      ],
+      "availability": "talent",
+      "scope": "friendly-area",
+      "limitations": [
+        "Three-minute cooldown",
+        "Clears up to three harmful Magic effects and all Poison and Disease effects within forty yards",
+        "Mass dispelling can trigger dispel punishments"
+      ]
+    },
+    {
+      "id": "life-cocoon",
+      "name": "Life Cocoon",
+      "spellId": 116849,
+      "actions": [
+        "external-defensive"
+      ],
+      "availability": "talent",
+      "scope": "friendly-single",
+      "limitations": [
+        "Two-minute cooldown",
+        "Absorb scales with target health and Versatility",
+        "Also increases healing-over-time received"
+      ]
+    }
+  ],
+  "provenance": [
+    {
+      "kind": "external-reference",
+      "description": "Patch 12.1.0 Mistweaver Monk Mythic+ guide supplies current dungeon, utility, and affix guidance.",
+      "url": "https://www.wowhead.com/guide/classes/monk/mistweaver/mythic-plus-dungeon-tips",
+      "retrievedAt": "2026-09-02T19:49:11+02:00"
+    },
+    {
+      "kind": "external-reference",
+      "description": "Current Tiger's Lust, Ring of Peace, Paralysis, and Pressure Points records establish ally movement, displacement, control, and talent-dependent Enrage removal.",
+      "url": "https://www.wowhead.com/spell=116841/tigers-lust",
+      "retrievedAt": "2026-09-02T19:49:11+02:00"
+    },
+    {
+      "kind": "external-reference",
+      "description": "Current Mistweaver Detox, Improved Detox, Revival, and Life Cocoon records establish healer-only Magic cleansing, talent-dependent toxin cleansing, mass cleanse, and external defense.",
+      "url": "https://www.wowhead.com/spell=115450/detox",
+      "retrievedAt": "2026-09-02T19:49:11+02:00"
+    },
+    {
+      "kind": "external-reference",
+      "description": "Current Diffuse Magic and Swift Art records establish self-only Magic transfer and snare removal boundaries.",
+      "url": "https://www.wowhead.com/spell=1243287/diffuse-magic",
+      "retrievedAt": "2026-09-02T19:49:11+02:00"
+    }
+  ]
+}

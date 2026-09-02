@@ -102,7 +102,10 @@
     { "id": "rogue/subtlety/capabilities", "record": "specs/rogue/subtlety.json", "status": "corroborated" },
     { "id": "warlock/affliction/capabilities", "record": "specs/warlock/affliction.json", "status": "corroborated" },
     { "id": "warlock/demonology/capabilities", "record": "specs/warlock/demonology.json", "status": "corroborated" },
-    { "id": "warlock/destruction/capabilities", "record": "specs/warlock/destruction.json", "status": "corroborated" }
+    { "id": "warlock/destruction/capabilities", "record": "specs/warlock/destruction.json", "status": "corroborated" },
+    { "id": "monk/brewmaster/capabilities", "record": "specs/monk/brewmaster.json", "status": "corroborated" },
+    { "id": "monk/mistweaver/capabilities", "record": "specs/monk/mistweaver.json", "status": "corroborated" },
+    { "id": "monk/windwalker/capabilities", "record": "specs/monk/windwalker.json", "status": "corroborated" }
   ],
   "specCapabilityCoverage": {
     "id": "retail/spec-capability-coverage",

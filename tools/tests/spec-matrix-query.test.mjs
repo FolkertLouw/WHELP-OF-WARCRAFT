@@ -38,6 +38,32 @@ test("rejects absent matrices and invalid filters explicitly", () => {
   assert.throws(() => querySpecMatrix(matrices, capabilities, { spec: "frost-death-knight", rating: "best" }), /unknown utility rating/);
 });
 
+test("joins Monk matrices without widening Detox or movement scopes", () => {
+  const brew = querySpecMatrix(matrices, capabilities, { spec: "brewmaster-monk", dungeon: "altar-of-fangs", rating: "always" });
+  const brewDetox = brew.dungeons[0].utilities.find((entry) => entry.axisId === "toxin-cleanse").tools[0];
+  assert.deepEqual(brewDetox.actions, ["cleanse-disease", "cleanse-poison"]);
+  assert.ok(!brewDetox.actions.includes("cleanse-magic"));
+  const mist = querySpecMatrix(matrices, capabilities, { spec: "mistweaver-monk", dungeon: "altar-of-fangs", rating: "always" });
+  const mistDetox = mist.dungeons[0].utilities.find((entry) => entry.axisId === "friendly-magic-cleanse").tools[0];
+  assert.ok(mistDetox.actions.includes("cleanse-magic"));
+  assert.equal(mistDetox.scope, "friendly-single");
+  const freedom = mist.dungeons[0].utilities.find((entry) => entry.axisId === "ally-movement-freedom").tools[0];
+  assert.equal(freedom.id, "tigers-lust");
+  assert.equal(freedom.scope, "friendly-single");
+});
+
+test("keeps Monk displacement and self Magic transfer out of interrupt coverage", () => {
+  const temple = querySpecMatrix(matrices, capabilities, { spec: "windwalker-monk", dungeon: "temple-of-sethraliss" });
+  const control = temple.dungeons[0].utilities.find((entry) => entry.axisId === "area-control");
+  const ring = control.tools.find((tool) => tool.id === "ring-of-peace");
+  assert.ok(ring.actions.includes("enemy-reposition"));
+  assert.ok(!ring.actions.includes("interrupt"));
+  const transfer = temple.dungeons[0].utilities.find((entry) => entry.axisId === "self-magic-transfer").tools[0];
+  assert.equal(transfer.scope, "self");
+  const mist = querySpecMatrix(matrices, capabilities, { spec: "mistweaver-monk", dungeon: "kings-rest" });
+  assert.ok(!mist.dungeons[0].utilities.some((entry) => entry.axisId === "interrupt"));
+});
+
 test("keeps Warlock pet cleansing, purging, and interrupt configurations distinct", () => {
   const altar = querySpecMatrix(matrices, capabilities, { spec: "affliction-warlock", dungeon: "altar-of-fangs", rating: "always" });
   const cleanse = altar.dungeons[0].utilities.find((entry) => entry.axisId === "friendly-magic-removal").tools[0];

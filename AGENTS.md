@@ -22,6 +22,8 @@ For dungeon preparation, use `npm run query:loadout --` to obtain deduplicated t
 
 For party-composition questions such as Bloodlust, combat resurrection, external defenses, persistent group buffs, or party-wide mitigation, use `npm run query:capabilities --`. Preserve `availabilityByAction`, `requirements`, and `alternateSpellIds`; one spell can provide baseline behavior while a talent adds another response type, and some utility depends on faction or character configuration.
 
+Preserve `external-movement` as targeted movement assistance rather than party-wide movement. Tiger's Lust can accelerate and free one friendly target; it does not provide the same coverage as a group movement effect. Likewise, a self-scoped cleanse or movement response never closes a party utility gap.
+
 Preserve `enemy-reposition` as displacement. Death Grip can stop some casts by moving a susceptible enemy, but it is not equivalent to an interrupt with a spell-school lockout and must not be reported as guaranteed interrupt coverage.
 
 For specialization-specific dungeon advice, prefer a matching `spec-dungeon-matrix` when present. Resolve `axes[].toolIds` through that specialization's capability record and treat `dungeons[].mechanicSpellIds` as the auditable bridge to canonical dungeon data. Preserve `always`, `niche`, and `none` ratings; do not generalize one dungeon's interaction to the whole season.

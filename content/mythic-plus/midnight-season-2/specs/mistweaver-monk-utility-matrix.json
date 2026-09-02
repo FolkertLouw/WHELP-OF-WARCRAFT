@@ -1,0 +1,433 @@
+{
+  "$schema": "../../../../schemas/spec-dungeon-matrix.schema.json",
+  "schemaVersion": 1,
+  "recordType": "spec-dungeon-matrix",
+  "id": "midnight-season-2/mistweaver-monk-utility-matrix",
+  "status": "corroborated",
+  "validity": {
+    "fromBuild": "12.1.0.69587",
+    "untilBuild": null,
+    "seasonId": null,
+    "seasonSlug": "midnight-season-2"
+  },
+  "spec": {
+    "classId": 10,
+    "className": "Monk",
+    "specId": 270,
+    "specName": "Mistweaver"
+  },
+  "axes": [
+    {
+      "id": "physical-vulnerability",
+      "label": "Physical-damage vulnerability debuff",
+      "abilityNames": [
+        "Mystic Touch"
+      ],
+      "spellIds": [
+        113746
+      ],
+      "toolIds": [
+        "mystic-touch"
+      ]
+    },
+    {
+      "id": "toxin-cleanse",
+      "label": "Talent-dependent friendly Poison and Disease cleanse",
+      "abilityNames": [
+        "Detox"
+      ],
+      "spellIds": [
+        115450
+      ],
+      "toolIds": [
+        "detox"
+      ]
+    },
+    {
+      "id": "friendly-magic-cleanse",
+      "label": "Mistweaver friendly Magic cleanse",
+      "abilityNames": [
+        "Detox"
+      ],
+      "spellIds": [
+        115450
+      ],
+      "toolIds": [
+        "detox"
+      ]
+    },
+    {
+      "id": "mass-cleanse",
+      "label": "Long-cooldown area Magic, Poison, and Disease cleanse",
+      "abilityNames": [
+        "Revival"
+      ],
+      "spellIds": [
+        115310
+      ],
+      "toolIds": [
+        "revival"
+      ]
+    },
+    {
+      "id": "external-defense",
+      "label": "Single-target absorb and healing amplification",
+      "abilityNames": [
+        "Life Cocoon"
+      ],
+      "spellIds": [
+        116849
+      ],
+      "toolIds": [
+        "life-cocoon"
+      ]
+    },
+    {
+      "id": "ally-movement-freedom",
+      "label": "Friendly single-target root and snare removal with speed",
+      "abilityNames": [
+        "Tiger's Lust"
+      ],
+      "spellIds": [
+        116841
+      ],
+      "toolIds": [
+        "tigers-lust"
+      ]
+    },
+    {
+      "id": "area-control",
+      "label": "Area stun and positional displacement",
+      "abilityNames": [
+        "Leg Sweep",
+        "Ring of Peace"
+      ],
+      "spellIds": [
+        119381,
+        116844
+      ],
+      "toolIds": [
+        "leg-sweep",
+        "ring-of-peace"
+      ]
+    },
+    {
+      "id": "soothe",
+      "label": "Talent-dependent Enrage removal through Paralysis",
+      "abilityNames": [
+        "Paralysis"
+      ],
+      "spellIds": [
+        115078,
+        450432
+      ],
+      "toolIds": [
+        "paralysis"
+      ]
+    },
+    {
+      "id": "self-magic-transfer",
+      "label": "Self-only harmful-Magic removal and conditional transfer",
+      "abilityNames": [
+        "Diffuse Magic"
+      ],
+      "spellIds": [
+        1243287
+      ],
+      "toolIds": [
+        "diffuse-magic"
+      ]
+    },
+    {
+      "id": "self-snare-removal",
+      "label": "Self-only periodic snare removal through Roll",
+      "abilityNames": [
+        "Swift Art"
+      ],
+      "spellIds": [
+        450622
+      ],
+      "toolIds": [
+        "swift-art"
+      ]
+    },
+    {
+      "id": "area-slow",
+      "label": "Post-Leg Sweep Disable slow",
+      "abilityNames": [
+        "Stillstep Coil"
+      ],
+      "spellIds": [
+        1266733
+      ],
+      "toolIds": [
+        "stillstep-coil"
+      ]
+    }
+  ],
+  "dungeons": [
+    {
+      "dungeonId": "altar-of-fangs",
+      "instanceMapId": 2993,
+      "ratings": {
+        "physical-vulnerability": "always",
+        "toxin-cleanse": "always",
+        "ally-movement-freedom": "always",
+        "area-control": "always",
+        "soothe": "always",
+        "self-magic-transfer": "always",
+        "self-snare-removal": "always",
+        "area-slow": "niche",
+        "friendly-magic-cleanse": "always",
+        "mass-cleanse": "always",
+        "external-defense": "always"
+      },
+      "mechanicSpellIds": [
+        1296069,
+        1307571,
+        1307567,
+        1294569,
+        1306308
+      ],
+      "notes": [
+        "Detox removes Paralyzing Shots as Magic; Improved Detox adds Envenom and Regurgitate toxin coverage.",
+        "Tiger's Lust can remove eligible movement impairments from an ally; Diffuse Magic and Swift Art remain self-only.",
+        "Pressure Points lets Paralysis remove Ravenous Claws Enrage; Ring of Peace and Leg Sweep are stops, not school lockouts."
+      ]
+    },
+    {
+      "dungeonId": "the-blinding-vale",
+      "instanceMapId": 2859,
+      "ratings": {
+        "physical-vulnerability": "always",
+        "toxin-cleanse": "always",
+        "ally-movement-freedom": "always",
+        "area-control": "always",
+        "soothe": "none",
+        "self-magic-transfer": "always",
+        "self-snare-removal": "none",
+        "area-slow": "niche",
+        "friendly-magic-cleanse": "none",
+        "mass-cleanse": "niche",
+        "external-defense": "always"
+      },
+      "mechanicSpellIds": [
+        1250937,
+        1236658
+      ],
+      "notes": [
+        "Detox removes Toxic Spew when the toxin-cleanse talent profile is active.",
+        "Tiger's Lust removes Bloodthorn Roots from one friendly target; Diffuse Magic can clear the Monk's own application only.",
+        "Do not turn Diffuse Magic's self response into party Magic-dispel coverage."
+      ]
+    },
+    {
+      "dungeonId": "den-of-nalorakk",
+      "instanceMapId": 2825,
+      "ratings": {
+        "physical-vulnerability": "always",
+        "toxin-cleanse": "always",
+        "ally-movement-freedom": "always",
+        "area-control": "always",
+        "soothe": "always",
+        "self-magic-transfer": "always",
+        "self-snare-removal": "always",
+        "area-slow": "niche",
+        "friendly-magic-cleanse": "none",
+        "mass-cleanse": "niche",
+        "external-defense": "always"
+      },
+      "mechanicSpellIds": [
+        1234846,
+        1238053,
+        1246865,
+        1309919
+      ],
+      "notes": [
+        "Detox is a direct answer to Toxic Spores.",
+        "Pressure Points removes Mother's Wrath or Bestial Wrath, while Tiger's Lust helps allies with eligible roots and snares.",
+        "Mistweaver has no Spear Hand Strike in this model; use Paralysis or area control only on susceptible enemies and rely on the party for school lockouts."
+      ]
+    },
+    {
+      "dungeonId": "murder-row",
+      "instanceMapId": 2813,
+      "ratings": {
+        "physical-vulnerability": "always",
+        "toxin-cleanse": "always",
+        "ally-movement-freedom": "niche",
+        "area-control": "always",
+        "soothe": "always",
+        "self-magic-transfer": "always",
+        "self-snare-removal": "none",
+        "area-slow": "niche",
+        "friendly-magic-cleanse": "none",
+        "mass-cleanse": "niche",
+        "external-defense": "always"
+      },
+      "mechanicSpellIds": [
+        474515,
+        1216970,
+        1214922,
+        1217633,
+        1228198
+      ],
+      "notes": [
+        "Detox removes Heartstop Poison.",
+        "Pressure Points turns Paralysis into recovery for Back to Work! or Fel Rage Enrages.",
+        "Diffuse Magic can remove Corroding Spittle from the Monk and transfer it only when the original source can receive it."
+      ]
+    },
+    {
+      "dungeonId": "voidscar-arena",
+      "instanceMapId": 2923,
+      "ratings": {
+        "physical-vulnerability": "always",
+        "toxin-cleanse": "always",
+        "ally-movement-freedom": "always",
+        "area-control": "always",
+        "soothe": "always",
+        "self-magic-transfer": "none",
+        "self-snare-removal": "always",
+        "area-slow": "niche",
+        "friendly-magic-cleanse": "none",
+        "mass-cleanse": "niche",
+        "external-defense": "always"
+      },
+      "mechanicSpellIds": [
+        1226031,
+        1263971,
+        1289258,
+        1249621
+      ],
+      "notes": [
+        "Detox handles Poison Splash or other listed toxin effects.",
+        "Pressure Points can remove Bloodsurge or Bolster, but the damage-taken tradeoff may make leaving them active a deliberate strategy choice.",
+        "Tiger's Lust removes Condensed Mass or Violent Sand from one ally; Swift Art is self-only."
+      ]
+    },
+    {
+      "dungeonId": "temple-of-sethraliss",
+      "instanceMapId": 1877,
+      "ratings": {
+        "physical-vulnerability": "always",
+        "toxin-cleanse": "always",
+        "ally-movement-freedom": "niche",
+        "area-control": "always",
+        "soothe": "none",
+        "self-magic-transfer": "always",
+        "self-snare-removal": "none",
+        "area-slow": "niche",
+        "friendly-magic-cleanse": "none",
+        "mass-cleanse": "niche",
+        "external-defense": "always"
+      },
+      "mechanicSpellIds": [
+        1308100,
+        1308148,
+        1296052,
+        1290031
+      ],
+      "notes": [
+        "Detox is heavily used for Poisoned Cheap Shot, Cytotoxin, and other Poison effects.",
+        "Diffuse Magic can clear and, when possible, reflect Imbued Conduction from the Monk.",
+        "Ring of Peace can move enemies from beneficial ground effects and help release A Knot of Snakes, but it is not a guaranteed spell interrupt."
+      ]
+    },
+    {
+      "dungeonId": "kings-rest",
+      "instanceMapId": 1762,
+      "ratings": {
+        "physical-vulnerability": "always",
+        "toxin-cleanse": "always",
+        "ally-movement-freedom": "always",
+        "area-control": "always",
+        "soothe": "always",
+        "self-magic-transfer": "always",
+        "self-snare-removal": "none",
+        "area-slow": "niche",
+        "friendly-magic-cleanse": "none",
+        "mass-cleanse": "niche",
+        "external-defense": "always"
+      },
+      "mechanicSpellIds": [
+        1298104,
+        271564,
+        269976,
+        1297763,
+        270492
+      ],
+      "notes": [
+        "Detox removes Putrid Seekers and Lingering Fluid toxin effects.",
+        "Pressure Points can remove Ancestral Fury or Bestial Berserk.",
+        "Mistweaver cannot replace the required Hex interrupt; Detox can remove Magic only after eligible effects land."
+      ]
+    },
+    {
+      "dungeonId": "ruby-life-pools",
+      "instanceMapId": 2521,
+      "ratings": {
+        "physical-vulnerability": "always",
+        "toxin-cleanse": "none",
+        "ally-movement-freedom": "always",
+        "area-control": "always",
+        "soothe": "none",
+        "self-magic-transfer": "always",
+        "self-snare-removal": "none",
+        "area-slow": "niche",
+        "friendly-magic-cleanse": "none",
+        "mass-cleanse": "niche",
+        "external-defense": "always"
+      },
+      "mechanicSpellIds": [
+        1305234,
+        392641
+      ],
+      "notes": [
+        "Tiger's Lust removes Cold Claws roots or snares from one ally before stacks become dangerous.",
+        "Diffuse Magic can remove Rolling Thunder from the Monk; this does not cleanse the rest of the group.",
+        "The current guide names no Poison or Disease requirement here, so Detox is not promoted to generic Magic cleansing."
+      ]
+    }
+  ],
+  "affixes": [
+    {
+      "affixSlug": "xalataths-bargain-ascendant",
+      "recommendations": [
+        "Use Leg Sweep for clustered orbs, Ring of Peace for a ground-targeted wider fallback, and Paralysis for a final straggler."
+      ]
+    },
+    {
+      "affixSlug": "xalataths-bargain-voidbound",
+      "recommendations": [
+        "Fatal Touch improves Touch of Death access; the emissary begins at one health beneath its absorb, making Touch of Death valuable into the shield."
+      ]
+    },
+    {
+      "affixSlug": "xalataths-bargain-pulsar",
+      "recommendations": [
+        "Tiger's Lust can accelerate one collector and remove movement impairments; avoid carrying an orb away from the group."
+      ]
+    },
+    {
+      "affixSlug": "xalataths-bargain-devour",
+      "recommendations": [
+        "Use Improved Detox for eligible Poison or Disease applications and Swift Art for the Monk's own snare; Detox's Magic domain does not make every Devour application dispellable."
+      ]
+    }
+  ],
+  "provenance": [
+    {
+      "kind": "external-reference",
+      "description": "Original structured summary of the Patch 12.1.0 Mistweaver Monk Mythic+ guide. Guide recommendations are joined to canonical mechanic spell IDs without copying source prose.",
+      "url": "https://www.wowhead.com/guide/classes/monk/mistweaver/mythic-plus-dungeon-tips",
+      "retrievedAt": "2026-09-02T19:49:11+02:00"
+    },
+    {
+      "kind": "external-reference",
+      "description": "Current spell records define exact Detox domains, ally movement freedom, self-only Magic transfer, Enrage removal, displacement, and interrupt boundaries.",
+      "url": "https://www.wowhead.com/spell=115450/detox",
+      "retrievedAt": "2026-09-02T19:49:11+02:00"
+    }
+  ]
+}

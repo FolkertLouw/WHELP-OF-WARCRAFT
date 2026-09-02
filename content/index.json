@@ -163,6 +163,9 @@
     { "id": "midnight-season-2/subtlety-rogue-utility-matrix", "path": "mythic-plus/midnight-season-2/specs/subtlety-rogue-utility-matrix.json", "status": "corroborated" },
     { "id": "midnight-season-2/affliction-warlock-utility-matrix", "path": "mythic-plus/midnight-season-2/specs/affliction-warlock-utility-matrix.json", "status": "corroborated" },
     { "id": "midnight-season-2/demonology-warlock-utility-matrix", "path": "mythic-plus/midnight-season-2/specs/demonology-warlock-utility-matrix.json", "status": "corroborated" },
-    { "id": "midnight-season-2/destruction-warlock-utility-matrix", "path": "mythic-plus/midnight-season-2/specs/destruction-warlock-utility-matrix.json", "status": "corroborated" }
+    { "id": "midnight-season-2/destruction-warlock-utility-matrix", "path": "mythic-plus/midnight-season-2/specs/destruction-warlock-utility-matrix.json", "status": "corroborated" },
+    { "id": "midnight-season-2/brewmaster-monk-utility-matrix", "path": "mythic-plus/midnight-season-2/specs/brewmaster-monk-utility-matrix.json", "status": "corroborated" },
+    { "id": "midnight-season-2/mistweaver-monk-utility-matrix", "path": "mythic-plus/midnight-season-2/specs/mistweaver-monk-utility-matrix.json", "status": "corroborated" },
+    { "id": "midnight-season-2/windwalker-monk-utility-matrix", "path": "mythic-plus/midnight-season-2/specs/windwalker-monk-utility-matrix.json", "status": "corroborated" }
   ]
 }

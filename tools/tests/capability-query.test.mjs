@@ -185,6 +185,41 @@ test("rejects unknown specialization slugs", () => {
   assert.throws(() => queryCapabilities(capabilities, { specs: ["not-a-real-spec"] }), /unknown spec/);
 });
 
+test("preserves Monk specialization Detox domains", () => {
+  const damageSpecs = ["brewmaster-monk", "windwalker-monk"];
+  const toxin = queryCapabilities(capabilities, { specs: damageSpecs, action: "cleanse-poison" });
+  const damageMagic = queryCapabilities(capabilities, { specs: damageSpecs, action: "cleanse-magic" });
+  const mistMagic = queryCapabilities(capabilities, { specs: ["mistweaver-monk"], action: "cleanse-magic" });
+  const mistDisease = queryCapabilities(capabilities, { specs: ["mistweaver-monk"], action: "cleanse-disease" });
+  assert.equal(toxin.resultCount, 2);
+  assert.equal(damageMagic.resultCount, 2);
+  assert.ok(damageMagic.results.every((entry) => entry.tool.id === "diffuse-magic" && entry.tool.scope === "self"));
+  assert.ok(mistMagic.results.some((entry) => entry.tool.id === "detox" && entry.tool.scope === "friendly-single"));
+  assert.equal(mistDisease.results.find((entry) => entry.tool.id === "detox").tool.availabilityByAction["cleanse-disease"], "talent");
+});
+
+test("models Monk ally movement separately from self-only removals", () => {
+  const specs = ["brewmaster-monk", "mistweaver-monk", "windwalker-monk"];
+  const movement = queryCapabilities(capabilities, { specs, action: "external-movement" });
+  const roots = queryCapabilities(capabilities, { specs, action: "cleanse-root" });
+  const selfSnares = queryCapabilities(capabilities, { specs, action: "cleanse-snare", scope: "self" });
+  assert.equal(movement.resultCount, 3);
+  assert.ok(movement.results.every((entry) => entry.tool.id === "tigers-lust" && entry.tool.scope === "friendly-single"));
+  assert.equal(roots.resultCount, 3);
+  assert.ok(roots.results.every((entry) => entry.tool.id === "tigers-lust"));
+  assert.ok(selfSnares.results.every((entry) => entry.tool.id === "swift-art"));
+});
+
+test("keeps Mistweaver interrupt absence and Ring of Peace displacement explicit", () => {
+  const specs = ["brewmaster-monk", "mistweaver-monk", "windwalker-monk"];
+  const interrupts = queryCapabilities(capabilities, { specs, action: "interrupt" });
+  const displacement = queryCapabilities(capabilities, { specs, action: "enemy-reposition" });
+  assert.deepEqual(interrupts.results.map((entry) => entry.spec.slug).sort(), ["brewmaster-monk", "windwalker-monk"]);
+  assert.ok(interrupts.results.every((entry) => entry.tool.id === "spear-hand-strike"));
+  assert.equal(displacement.resultCount, 3);
+  assert.ok(displacement.results.every((entry) => entry.tool.id === "ring-of-peace"));
+});
+
 test("models shared Warlock composition tools and preserves pet configuration", () => {
   const specs = ["affliction-warlock", "demonology-warlock", "destruction-warlock"];
   const stones = queryCapabilities(capabilities, { specs, action: "group-consumable" });
