@@ -45,6 +45,7 @@
     },
     {
       "slug": "kings-rest", "expansion": "Battle for Azeroth", "mdtFile": "KingsRest.lua", "instanceMapId": 1762,
+      "overview": { "mythicPlusTimerSeconds": 1980, "requiredLevel": 90, "location": "Western Zuldazar", "entrance": { "uiMapId": 862, "x": 37.6, "y": 39.4 }, "url": "https://www.wowhead.com/guide/midnight/kings-rest-dungeon-overview-mythic-plus" },
       "encounters": [
         { "name": "The Golden Serpent", "encounterId": 2139, "npcId": 135322 },
         { "name": "Council of Tribes", "encounterId": 2140, "npcId": 135475 },
@@ -54,6 +55,7 @@
     },
     {
       "slug": "ruby-life-pools", "expansion": "Dragonflight", "mdtFile": "RubyLifePools.lua", "instanceMapId": 2521,
+      "overview": { "mythicPlusTimerSeconds": 1680, "requiredLevel": 90, "location": "Southeastern Waking Shores", "entrance": { "uiMapId": 2022, "x": 60.0, "y": 75.7 }, "url": "https://www.wowhead.com/guide/midnight/ruby-life-pools-dungeon-overview-mythic-plus" },
       "encounters": [
         { "name": "Melidrussa Chillworn", "encounterId": 2609, "npcId": 188252 },
         { "name": "Kokia Blazehoof", "encounterId": 2606, "npcId": 189232 },
@@ -62,6 +64,7 @@
     },
     {
       "slug": "temple-of-sethraliss", "expansion": "Battle for Azeroth", "mdtFile": "TempleOfSethraliss.lua", "instanceMapId": 1877,
+      "overview": { "mythicPlusTimerSeconds": 1980, "requiredLevel": 90, "location": "Northern Vol'dun", "entrance": { "uiMapId": 864, "x": 51.9, "y": 26.7 }, "url": "https://www.wowhead.com/guide/midnight/temple-of-sethraliss-dungeon-overview-mythic-plus" },
       "encounters": [
         { "name": "Adderis and Aspix", "encounterId": 2124, "npcId": 133379 },
         { "name": "Merektha", "encounterId": 2125, "npcId": 133384 },

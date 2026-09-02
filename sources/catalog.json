@@ -79,6 +79,34 @@
       "title": "Voidscar Arena Dungeon Overview - World of Warcraft: Midnight",
       "url": "https://www.wowhead.com/guide/midnight/voidscar-arena-dungeon-overview-location-rewards",
       "usage": "Targeted corroboration of Patch 12.1 overview facts and compact strategy records."
+    },
+    {
+      "id": "wowhead-kings-rest-12.1",
+      "publisher": "Wowhead",
+      "title": "Kings' Rest Dungeon Overview - Midnight Season 2 Mythic+",
+      "url": "https://www.wowhead.com/guide/midnight/kings-rest-dungeon-overview-mythic-plus",
+      "usage": "Targeted corroboration of Patch 12.1 overview facts and compact strategy records."
+    },
+    {
+      "id": "wowhead-ruby-life-pools-12.1",
+      "publisher": "Wowhead",
+      "title": "Ruby Life Pools Dungeon Overview - Midnight Season 2 Mythic+",
+      "url": "https://www.wowhead.com/guide/midnight/ruby-life-pools-dungeon-overview-mythic-plus",
+      "usage": "Targeted corroboration of Patch 12.1 overview facts and compact strategy records."
+    },
+    {
+      "id": "wowhead-temple-of-sethraliss-12.1",
+      "publisher": "Wowhead",
+      "title": "Temple of Sethraliss Dungeon Overview - Midnight Season 2 Mythic+",
+      "url": "https://www.wowhead.com/guide/midnight/temple-of-sethraliss-dungeon-overview-mythic-plus",
+      "usage": "Targeted corroboration of Patch 12.1 overview facts and compact strategy records."
+    },
+    {
+      "id": "wowhead-midnight-season-2-mythic-plus",
+      "publisher": "Wowhead",
+      "title": "Mythic+ Overview - Midnight Season 2",
+      "url": "https://www.wowhead.com/guide/midnight/mythic-plus-season-overview",
+      "usage": "Corroborating keystone affix thresholds and effects. Dungeon-specific pages take precedence when their newer timer values conflict with the overview's PTR-marked table."
     }
   ]
 }

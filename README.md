@@ -23,7 +23,7 @@ This is the initial foundation. It includes:
 - a minimal Retail addon, **WHELP Collector**;
 - a build manifest for the locally verified Retail build `12.1.0.69587`.
 
-The current dataset covers all eight Midnight Season 2 Mythic+ dungeons with dungeon IDs, instance maps, teleports, zones, encounters, enemy-forces values, enemy NPCs, and flagged interrupt/dispel/enrage abilities. Altar of Fangs additionally includes targeted Wowhead-corroborated facts, priority utility, route gates, Zul'jan coordination, and Restoration/Enhancement Shaman notes. Canonical IDs are versioned and sourced; uncorroborated discoveries remain drafts. The examples under `examples/` are synthetic and must never be treated as game facts.
+The current dataset covers all eight Midnight Season 2 Mythic+ dungeons with dungeon IDs, instance maps, teleports, zones, encounters, timers, entrances, enemy-forces values, enemy NPCs, and flagged interrupt/dispel/enrage abilities. Every dungeon has a compact Wowhead-corroborated strategy overview; Altar of Fangs also has Restoration and Enhancement Shaman notes. The season affix set is machine-readable across keystone thresholds. Canonical IDs are versioned and sourced; uncorroborated discoveries remain drafts. The examples under `examples/` are synthetic and must never be treated as game facts.
 
 WHELP does not mirror third-party guides. It stores compact original records, stable identifiers, validity ranges, retrieval timestamps, and links back to the source so updates can be reviewed.
 

@@ -1,0 +1,120 @@
+{
+  "$schema": "../../schemas/affix-set.schema.json",
+  "schemaVersion": 1,
+  "recordType": "affix-set",
+  "id": "midnight-season-2/affixes",
+  "status": "corroborated",
+  "validity": { "fromBuild": "12.1.0.69587", "untilBuild": null, "seasonId": null, "seasonSlug": "midnight-season-2" },
+  "definitions": [
+    {
+      "slug": "lindormis-guidance",
+      "name": "Lindormi's Guidance",
+      "kind": "guidance",
+      "summary": "Highlights selected route enemies and weakens them while removing the usual player-death timer penalty.",
+      "success": null,
+      "failure": null,
+      "modifiersPercent": { "highlightedEnemyHealth": -5, "highlightedEnemyDamage": -5 },
+      "deathPenaltySeconds": 0
+    },
+    {
+      "slug": "xalataths-bargain",
+      "name": "Xal'atath's Bargain",
+      "kind": "rotation-group",
+      "rotationGroup": null,
+      "summary": "One of four Bargain mechanics rotates weekly between Ascendant, Voidbound, Pulsar, and Devour.",
+      "success": "Resolving the weekly mechanic grants a temporary party benefit.",
+      "failure": "Failure empowers enemies temporarily.",
+      "modifiersPercent": {},
+      "deathPenaltySeconds": null
+    },
+    {
+      "slug": "xalataths-bargain-ascendant",
+      "name": "Xal'atath's Bargain: Ascendant",
+      "kind": "bargain",
+      "rotationGroup": "xalataths-bargain",
+      "summary": "Ten orbs attempt interruptible casts and can also be stopped with displacement, crowd control, or purge.",
+      "success": "Each stopped cast grants temporary movement speed and Haste.",
+      "failure": "Completed casts grant enemies temporary increased damage and damage reduction.",
+      "modifiersPercent": {},
+      "deathPenaltySeconds": null
+    },
+    {
+      "slug": "xalataths-bargain-voidbound",
+      "name": "Xal'atath's Bargain: Voidbound",
+      "kind": "bargain",
+      "rotationGroup": "xalataths-bargain",
+      "summary": "A Void Emissary shields itself while empowering nearby enemies and must be defeated before its cast completes.",
+      "success": "Defeating the emissary grants temporary Versatility and increased ability cooldown rate.",
+      "failure": "Nearby enemies gain damage and damage-reduction benefits scaled by the emissary shield remaining.",
+      "modifiersPercent": {},
+      "deathPenaltySeconds": null
+    },
+    {
+      "slug": "xalataths-bargain-pulsar",
+      "name": "Xal'atath's Bargain: Pulsar",
+      "kind": "bargain",
+      "rotationGroup": "xalataths-bargain",
+      "summary": "Players must cross and soak each other's orbiting pulsar orbs before the 15-second window expires.",
+      "success": "Intercepted orbs grant the party temporary Mastery and Leech.",
+      "failure": "Unintercepted orbs grant enemies temporary increased damage and damage reduction.",
+      "modifiersPercent": {},
+      "deathPenaltySeconds": null
+    },
+    {
+      "slug": "xalataths-bargain-devour",
+      "name": "Xal'atath's Bargain: Devour",
+      "kind": "bargain",
+      "rotationGroup": "xalataths-bargain",
+      "summary": "Each player receives a removable shield debuff that can be cleared through healing or any eligible dispel type.",
+      "success": "Removed shields grant the party temporary Critical Strike and maximum health.",
+      "failure": "Uncleared shields grant enemies temporary increased damage and damage reduction.",
+      "modifiersPercent": {},
+      "deathPenaltySeconds": null
+    },
+    {
+      "slug": "fortified",
+      "name": "Fortified",
+      "kind": "weekly-scaling",
+      "summary": "Strengthens non-boss enemies.",
+      "success": null,
+      "failure": null,
+      "modifiersPercent": { "nonBossHealth": 20, "nonBossDamage": 20 },
+      "deathPenaltySeconds": null
+    },
+    {
+      "slug": "tyrannical",
+      "name": "Tyrannical",
+      "kind": "weekly-scaling",
+      "summary": "Strengthens dungeon bosses.",
+      "success": null,
+      "failure": null,
+      "modifiersPercent": { "bossHealth": 25, "bossDamage": 15 },
+      "deathPenaltySeconds": null
+    },
+    {
+      "slug": "xalataths-guile",
+      "name": "Xal'atath's Guile",
+      "kind": "death-penalty",
+      "summary": "Replaces the rotating Bargain and makes deaths subtract time until the final minute of the run.",
+      "success": null,
+      "failure": null,
+      "modifiersPercent": {},
+      "deathPenaltySeconds": 15
+    }
+  ],
+  "activations": [
+    { "reference": "lindormis-guidance", "minimumKey": 2, "maximumKey": 5, "condition": "Always active from +2 through +5." },
+    { "reference": "xalataths-bargain", "minimumKey": 5, "maximumKey": 11, "condition": "One Bargain variant rotates weekly." },
+    { "reference": "fortified", "minimumKey": 7, "maximumKey": 9, "condition": "Active on alternating Fortified weeks." },
+    { "reference": "tyrannical", "minimumKey": 7, "maximumKey": 9, "condition": "Active on alternating Tyrannical weeks." },
+    { "reference": "fortified", "minimumKey": 10, "maximumKey": null, "condition": "Always active together with Tyrannical from +10 upward." },
+    { "reference": "tyrannical", "minimumKey": 10, "maximumKey": null, "condition": "Always active together with Fortified from +10 upward." },
+    { "reference": "xalataths-guile", "minimumKey": 12, "maximumKey": null, "condition": "Replaces Xal'atath's Bargain from +12 upward; its timer penalty stops applying during the final minute." }
+  ],
+  "provenance": [{
+    "kind": "external-reference",
+    "description": "Season 2 thresholds, confirmed numerical scaling modifiers, and current qualitative Bargain success and failure effects corroborated against Wowhead's Midnight Season 2 Mythic+ overview. Historical Bargain percentages on the same page are intentionally not promoted into the current record.",
+    "url": "https://www.wowhead.com/guide/midnight/mythic-plus-season-overview",
+    "retrievedAt": "2026-09-02T11:45:00+02:00"
+  }]
+}

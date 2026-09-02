@@ -1,0 +1,20 @@
+{
+  "$schema": "../../../../../schemas/strategy-note.schema.json",
+  "schemaVersion": 1,
+  "recordType": "strategy-note",
+  "id": "temple-of-sethraliss/overview",
+  "status": "corroborated",
+  "validity": { "fromBuild": "12.1.0.69587", "untilBuild": null, "seasonId": null, "seasonSlug": "midnight-season-2" },
+  "context": { "contentType": "mythic-plus", "instanceMapId": 1877, "encounterId": null, "npcIds": [134602, 134364, 133384, 269227, 136250, 135562, 134599, 136076, 134629, 133379, 133389, 133392], "spellIds": [] },
+  "category": "other",
+  "summary": "Temple of Sethraliss needs extra enemy-forces planning, broad poison and magic answers, crowd control, and role-aware soaking on the Avatar.",
+  "actions": [
+    "Prioritize Poisoned Cheap Shot, Addle Mind, Poison Spit, Essence Disruption, and Flame Shock interrupts; plan poison and magic removals for failed casts and persistent debuffs.",
+    "Purge Accumulate Charge and avoid under-counting trash because the dungeon requires substantial additional enemy forces.",
+    "Group near Merektha's indicated target so area crowd control can break A Knot of Snakes quickly.",
+    "Crowd-control Temple Disruptors while the Eye of Sethraliss is active so the orb can finish and continue following the party.",
+    "Assign damage dealers to Corrupted Lifeforce soaks on the Avatar because the effect increases healing done but also increases Physical damage taken."
+  ],
+  "roles": ["tank", "healer", "damage"],
+  "provenance": [{ "kind": "external-reference", "description": "Original compact strategy summary derived from targeted review of Wowhead's Patch 12.1 dungeon overview.", "url": "https://www.wowhead.com/guide/midnight/temple-of-sethraliss-dungeon-overview-mythic-plus", "retrievedAt": "2026-09-02T11:45:00+02:00" }]
+}

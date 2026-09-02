@@ -58,6 +58,13 @@
       "status": "corroborated"
     }
   ],
+  "affixSets": [
+    {
+      "id": "midnight-season-2/affixes",
+      "record": "affixes/midnight-season-2.json",
+      "status": "corroborated"
+    }
+  ],
   "builds": [
     {
       "version": "12.1.0.69587",

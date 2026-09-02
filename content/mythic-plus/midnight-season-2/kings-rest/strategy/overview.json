@@ -1,0 +1,20 @@
+{
+  "$schema": "../../../../../schemas/strategy-note.schema.json",
+  "schemaVersion": 1,
+  "recordType": "strategy-note",
+  "id": "kings-rest/overview",
+  "status": "corroborated",
+  "validity": { "fromBuild": "12.1.0.69587", "untilBuild": null, "seasonId": null, "seasonSlug": "midnight-season-2" },
+  "context": { "contentType": "mythic-plus", "instanceMapId": 1762, "encounterId": null, "npcIds": [133943, 134174, 134158, 137486, 134251, 137473, 137478, 270502, 135204, 269810, 136984], "spellIds": [] },
+  "category": "other",
+  "summary": "King's Rest requires essentially complete enemy-forces coverage, strong interrupt and purge assignments, and precise add control across all four bosses.",
+  "actions": [
+    "Plan to defeat every required enemy because the current route has no meaningful trash-count skip allowance.",
+    "Prioritize Hex Volley, Bind Soul, Unholy Mending, Wretched Discharge, Hex, Poison Nova, and Deathly Roar interrupts.",
+    "Purge Minions of Zul to destroy them quickly, remove dangerous enemy buffs, and kill Healing Tide Totems immediately.",
+    "Prevent Animated Gold from reaching the Golden Serpent; free Entombed players promptly on Mchimba.",
+    "Kill explosive totems during the Council and move immediately when Dazar begins Gilded Destruction so spears are placed safely."
+  ],
+  "roles": ["tank", "healer", "damage"],
+  "provenance": [{ "kind": "external-reference", "description": "Original compact strategy summary derived from targeted review of Wowhead's Patch 12.1 dungeon overview.", "url": "https://www.wowhead.com/guide/midnight/kings-rest-dungeon-overview-mythic-plus", "retrievedAt": "2026-09-02T11:45:00+02:00" }]
+}

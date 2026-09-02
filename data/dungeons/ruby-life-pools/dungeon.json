@@ -21,10 +21,14 @@
     2095
   ],
   "enemyForcesTotal": 551,
-  "mythicPlusTimerSeconds": null,
-  "requiredLevel": null,
-  "location": null,
-  "entrance": null,
+  "mythicPlusTimerSeconds": 1680,
+  "requiredLevel": 90,
+  "location": "Southeastern Waking Shores",
+  "entrance": {
+    "uiMapId": 2022,
+    "x": 60,
+    "y": 75.7
+  },
   "encounters": [
     {
       "name": "Melidrussa Chillworn",
@@ -176,6 +180,12 @@
       "description": "Instance, encounter, and boss NPC identifiers corroborated against DBM Dungeons r261.",
       "url": "https://github.com/DeadlyBossMods/DBM-Dungeons",
       "retrievedAt": "2026-09-02T11:15:00+02:00"
+    },
+    {
+      "kind": "external-reference",
+      "description": "Level requirement, Mythic+ timer, location, entrance coordinates, boss count, and teleport unlock requirement corroborated against Wowhead's Patch 12.1 dungeon overview.",
+      "url": "https://www.wowhead.com/guide/midnight/ruby-life-pools-dungeon-overview-mythic-plus",
+      "retrievedAt": "2026-09-02T11:30:00+02:00"
     }
   ]
 }

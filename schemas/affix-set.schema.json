@@ -1,0 +1,51 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://whelp.dev/schemas/affix-set.schema.json",
+  "title": "WHELP Mythic+ affix set",
+  "type": "object",
+  "required": ["schemaVersion", "recordType", "id", "status", "validity", "definitions", "activations", "provenance"],
+  "properties": {
+    "schemaVersion": { "const": 1 },
+    "recordType": { "const": "affix-set" },
+    "id": { "type": "string", "pattern": "^[a-z0-9][a-z0-9./_-]+$" },
+    "status": { "enum": ["draft", "corroborated", "verified", "deprecated"] },
+    "validity": { "$ref": "validity.schema.json" },
+    "definitions": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["slug", "name", "kind", "summary"],
+        "properties": {
+          "slug": { "type": "string", "pattern": "^[a-z0-9][a-z0-9-]+$" },
+          "name": { "type": "string", "minLength": 1 },
+          "kind": { "enum": ["guidance", "rotation-group", "bargain", "weekly-scaling", "death-penalty"] },
+          "rotationGroup": { "type": ["string", "null"] },
+          "summary": { "type": "string", "minLength": 1 },
+          "success": { "type": ["string", "null"] },
+          "failure": { "type": ["string", "null"] },
+          "modifiersPercent": { "type": "object", "additionalProperties": { "type": "number" } },
+          "deathPenaltySeconds": { "type": ["integer", "null"], "minimum": 0 }
+        },
+        "additionalProperties": false
+      }
+    },
+    "activations": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["reference", "minimumKey", "maximumKey", "condition"],
+        "properties": {
+          "reference": { "type": "string" },
+          "minimumKey": { "type": "integer", "minimum": 2 },
+          "maximumKey": { "type": ["integer", "null"], "minimum": 2 },
+          "condition": { "type": "string", "minLength": 1 }
+        },
+        "additionalProperties": false
+      }
+    },
+    "provenance": { "type": "array", "minItems": 1, "items": { "$ref": "provenance.schema.json" } }
+  },
+  "additionalProperties": false
+}

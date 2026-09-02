@@ -1,0 +1,20 @@
+{
+  "$schema": "../../../../../schemas/strategy-note.schema.json",
+  "schemaVersion": 1,
+  "recordType": "strategy-note",
+  "id": "ruby-life-pools/overview",
+  "status": "corroborated",
+  "validity": { "fromBuild": "12.1.0.69587", "untilBuild": null, "seasonId": null, "seasonSlug": "midnight-season-2" },
+  "context": { "contentType": "mythic-plus", "instanceMapId": 2521, "encounterId": null, "npcIds": [188067, 187894, 187897, 190034, 197698, 190206, 197509, 188252, 189232, 190484, 190485], "spellIds": [] },
+  "category": "other",
+  "summary": "Ruby Life Pools rewards planned early trash pulls, coordinated interrupts and dispels, disciplined space usage, and prioritizing Kyrakka in the final encounter.",
+  "actions": [
+    "Interrupt Ice Shield, Frigid Shard, Fiery Blast, and Blaze Volley; remove Cold Claws, Rolling Thunder, and Stormslam.",
+    "Purge Blaze of Glory and Stormcloud Barrier.",
+    "Account for Defier Draghar as a mandatory high-health progression enemy when planning the opening route.",
+    "Avoid being knocked into Hailbombs after Chillstorm and kite Kokia gradually to preserve room.",
+    "On the final encounter, prioritize Kyrakka whenever the dragon is attackable at range and defeat it first."
+  ],
+  "roles": ["tank", "healer", "damage"],
+  "provenance": [{ "kind": "external-reference", "description": "Original compact strategy summary derived from targeted review of Wowhead's Patch 12.1 dungeon overview.", "url": "https://www.wowhead.com/guide/midnight/ruby-life-pools-dungeon-overview-mythic-plus", "retrievedAt": "2026-09-02T11:45:00+02:00" }]
+}

@@ -59,6 +59,17 @@ function validateRecord(file, value) {
     requireFields(file, value, ["id", "status", "validity", "context", "specIds", "summary", "recommendations", "provenance"]);
   } else if (value.recordType === "strategy-note") {
     requireFields(file, value, ["id", "status", "validity", "context", "category", "summary", "actions", "provenance"]);
+  } else if (value.recordType === "affix-set") {
+    requireFields(file, value, ["id", "status", "validity", "definitions", "activations", "provenance"]);
+    const slugs = (value.definitions ?? []).map((definition) => definition.slug);
+    if (new Set(slugs).size !== slugs.length) fail(file, "affix definition slugs must be unique");
+    const known = new Set(slugs);
+    for (const activation of value.activations ?? []) {
+      if (!known.has(activation.reference)) fail(file, `activation references unknown affix ${activation.reference}`);
+      if (activation.maximumKey !== null && activation.maximumKey < activation.minimumKey) {
+        fail(file, `activation ${activation.reference} has maximumKey below minimumKey`);
+      }
+    }
   } else if (value.recordType === "route") {
     requireFields(file, value, ["id", "status", "validity", "challengeMapId", "pulls", "provenance"]);
     const orders = (value.pulls ?? []).map((pull) => pull.order);
@@ -171,6 +182,16 @@ for (const dungeon of index.dungeons ?? []) {
     } catch (error) {
       fail(indexPath, `cannot read dungeon ${dungeon[field]}: ${error.message}`);
     }
+  }
+}
+for (const affixSet of index.affixSets ?? []) {
+  const recordPath = path.join(root, "data", affixSet.record);
+  try {
+    const record = JSON.parse(await readFile(recordPath, "utf8"));
+    if (record.id !== affixSet.id) fail(indexPath, `${affixSet.record} has id ${record.id}, expected ${affixSet.id}`);
+    if (record.status !== affixSet.status) fail(indexPath, `${affixSet.record} has status ${record.status}, expected ${affixSet.status}`);
+  } catch (error) {
+    fail(indexPath, `cannot read affix set ${affixSet.record}: ${error.message}`);
   }
 }
 const indexedDungeons = new Map((index.dungeons ?? []).map((entry) => [entry.id, entry]));
