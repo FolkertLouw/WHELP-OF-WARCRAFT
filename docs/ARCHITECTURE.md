@@ -14,3 +14,5 @@ Canonical facts come from official APIs or redistributable game data and are imm
 An LLM connector should resolve the current build, retrieve a small relevant record set, and return record IDs, validity, provenance, and confidence. It must not inject the entire repository into every prompt.
 
 A knowledge compiler will eventually turn verified records into compact Lua tables under `addon/WHELPCollector/GeneratedKnowledge`. Generated files must identify their dataset revision and build range.
+
+Route plans and run observations meet through stable route and pull identifiers. The route remains curated knowledge; an observed pull is evidence of what happened. Importers may compare the two, but telemetry cannot mutate a route or promote it from draft without review. See `docs/ROUTES.md` for the route invariants and MDT import boundary.

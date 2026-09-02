@@ -5,7 +5,7 @@
 - Stabilize record identifiers and JSON schemas.
 - Select one current Mythic+ dungeon as the reference dataset.
 - Add canonical dungeon, encounter, NPC, spell, and affix records.
-- Add one reviewed route and two spec-note sets.
+- Add one reviewed route and two spec-note sets. Route extraction and validation foundations are complete; live route curation remains in progress.
 - Validate every contribution in CI.
 
 ## Phase 2 — local evidence loop

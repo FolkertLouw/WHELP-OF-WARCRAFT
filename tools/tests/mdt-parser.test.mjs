@@ -27,5 +27,6 @@ test("extracts normalized dungeon facts from an MDT Lua module", async () => {
       magic: false,
       enrage: false,
     }],
+    clones: [{ cloneIndex: 1, groupId: 9, sublevel: 2, x: 123.5, y: -45.25 }],
   }]);
 });

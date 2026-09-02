@@ -93,9 +93,14 @@ function validateRecord(file, value) {
       }
     }
   } else if (value.recordType === "route") {
-    requireFields(file, value, ["id", "status", "validity", "challengeMapId", "pulls", "provenance"]);
+    requireFields(file, value, ["id", "status", "validity", "dungeonId", "challengeMapId", "instanceMapId", "routeKind", "targetEnemyForces", "pulls", "provenance"]);
     const orders = (value.pulls ?? []).map((pull) => pull.order);
     if (new Set(orders).size !== orders.length) fail(file, "pull order values must be unique");
+    const pullIds = (value.pulls ?? []).map((pull) => pull.id);
+    if (new Set(pullIds).size !== pullIds.length) fail(file, "pull IDs must be unique");
+    for (let index = 0; index < orders.length; index += 1) {
+      if (orders[index] !== index + 1) fail(file, "pull order must be contiguous and match array order");
+    }
   } else if (value.recordType === "run-observation") {
     requireFields(file, value, ["collector", "game", "run", "player", "group", "privacy"]);
     if (value.privacy?.containsNames !== false || value.privacy?.containsChat !== false) {
@@ -275,6 +280,50 @@ for (const entry of contentIndex.records ?? []) {
     if (record.status !== entry.status) fail(contentIndexPath, `${entry.path} has status ${record.status}, expected ${entry.status}`);
   } catch (error) {
     fail(contentIndexPath, `cannot read indexed record ${entry.path}: ${error.message}`);
+  }
+}
+for (const { file, value } of records.filter(({ value }) => value.recordType === "route")) {
+  if (file.includes(`${path.sep}examples${path.sep}`)) continue;
+  const dungeon = dungeons.find(({ value: candidate }) => candidate.id === value.dungeonId);
+  if (!dungeon) {
+    fail(file, `route references unknown dungeon ${value.dungeonId}`);
+    continue;
+  }
+  if (dungeon.value.challengeMapId !== value.challengeMapId) {
+    fail(file, `challengeMapId ${value.challengeMapId} does not match ${value.dungeonId}`);
+  }
+  if (dungeon.value.instanceMapId !== value.instanceMapId) {
+    fail(file, `instanceMapId ${value.instanceMapId} does not match ${value.dungeonId}`);
+  }
+  if (value.keyLevel && value.keyLevel.maximum < value.keyLevel.minimum) {
+    fail(file, "keyLevel.maximum is below keyLevel.minimum");
+  }
+  const knownEnemies = new Map(dungeon.value.enemies.map((enemy) => [enemy.npcId, enemy]));
+  const knownEncounters = new Set(dungeon.value.encounters.map((encounter) => encounter.encounterId));
+  let cumulativeEnemyForces = 0;
+  for (const pull of value.pulls ?? []) {
+    let pullEnemyForces = 0;
+    for (const enemy of pull.enemies ?? []) {
+      const canonical = knownEnemies.get(enemy.npcId);
+      if (!canonical) {
+        fail(file, `${pull.id} references unknown NPC ${enemy.npcId}`);
+        continue;
+      }
+      if (canonical.enemyForces !== enemy.enemyForcesEach) {
+        fail(file, `${pull.id} gives NPC ${enemy.npcId} ${enemy.enemyForcesEach} forces; canonical value is ${canonical.enemyForces}`);
+      }
+      pullEnemyForces += canonical.enemyForces * enemy.count;
+    }
+    if (pull.enemyForces !== pullEnemyForces) fail(file, `${pull.id} enemyForces does not match its enemies`);
+    cumulativeEnemyForces += pullEnemyForces;
+    if (pull.cumulativeEnemyForces !== cumulativeEnemyForces) fail(file, `${pull.id} cumulativeEnemyForces is incorrect`);
+    if (pull.afterEncounterId !== null && pull.afterEncounterId !== undefined && !knownEncounters.has(pull.afterEncounterId)) {
+      fail(file, `${pull.id} references unknown encounter ${pull.afterEncounterId}`);
+    }
+  }
+  if (value.targetEnemyForces !== cumulativeEnemyForces) fail(file, "targetEnemyForces does not match final cumulative enemy forces");
+  if (value.targetEnemyForces < dungeon.value.enemyForcesTotal) {
+    fail(file, `route plans ${value.targetEnemyForces} forces but dungeon requires ${dungeon.value.enemyForcesTotal}`);
   }
 }
 for (const { file, value } of records.filter(({ file }) => file.startsWith(path.join(root, "content")))) {

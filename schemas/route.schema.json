@@ -3,15 +3,19 @@
   "$id": "https://whelp.dev/schemas/route.schema.json",
   "title": "WHELP Mythic+ route",
   "type": "object",
-  "required": ["schemaVersion", "recordType", "id", "status", "validity", "challengeMapId", "title", "pulls", "provenance"],
+  "required": ["schemaVersion", "recordType", "id", "status", "validity", "dungeonId", "challengeMapId", "instanceMapId", "title", "routeKind", "targetEnemyForces", "pulls", "provenance"],
   "properties": {
     "schemaVersion": { "const": 1 },
     "recordType": { "const": "route" },
     "id": { "type": "string", "pattern": "^[a-z0-9][a-z0-9./_-]+$" },
     "status": { "enum": ["draft", "verified", "deprecated"] },
     "validity": { "$ref": "validity.schema.json" },
+    "dungeonId": { "type": "string", "pattern": "^[a-z0-9][a-z0-9-]+$" },
     "challengeMapId": { "type": "integer", "minimum": 1 },
+    "instanceMapId": { "type": "integer", "minimum": 1 },
     "title": { "type": "string", "minLength": 1 },
+    "routeKind": { "enum": ["learning", "pug", "push", "farm", "experimental"] },
+    "targetEnemyForces": { "type": "integer", "minimum": 1 },
     "keyLevel": {
       "type": "object",
       "required": ["minimum", "maximum"],
@@ -28,22 +32,29 @@
       "minItems": 1,
       "items": {
         "type": "object",
-        "required": ["order", "enemies"],
+        "required": ["id", "order", "enemies", "enemyForces", "cumulativeEnemyForces"],
         "properties": {
+          "id": { "type": "string", "pattern": "^[a-z0-9][a-z0-9-]+$" },
           "order": { "type": "integer", "minimum": 1 },
           "enemies": {
             "type": "array",
             "minItems": 1,
             "items": {
               "type": "object",
-              "required": ["npcId", "count"],
+              "required": ["npcId", "count", "enemyForcesEach"],
               "properties": {
                 "npcId": { "type": "integer", "minimum": 1 },
-                "count": { "type": "integer", "minimum": 1 }
+                "count": { "type": "integer", "minimum": 1 },
+                "enemyForcesEach": { "type": "integer", "minimum": 0 },
+                "sourcePackIds": { "type": "array", "items": { "type": "integer", "minimum": 1 }, "uniqueItems": true }
               },
               "additionalProperties": false
             }
           },
+          "enemyForces": { "type": "integer", "minimum": 0 },
+          "cumulativeEnemyForces": { "type": "integer", "minimum": 0 },
+          "afterEncounterId": { "type": ["integer", "null"], "minimum": 1 },
+          "dangerousSpellIds": { "type": "array", "items": { "type": "integer", "minimum": 1 }, "uniqueItems": true },
           "notes": { "type": "string" }
         },
         "additionalProperties": false

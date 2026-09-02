@@ -43,6 +43,11 @@ function integer(source, pattern, label, optional = false) {
   return Number(match[1]);
 }
 
+function numberValue(source, pattern) {
+  const match = source.match(pattern);
+  return match ? Number(match[1]) : null;
+}
+
 function stringValue(source, pattern, label) {
   const match = source.match(pattern);
   if (!match) throw new Error(`Missing ${label}`);
@@ -77,6 +82,22 @@ function parseSpells(enemyBody) {
   }));
 }
 
+function parseClones(enemyBody) {
+  let clonesBody;
+  try {
+    clonesBody = balancedTable(enemyBody, '["clones"] =');
+  } catch {
+    return [];
+  }
+  return numberedEntries(clonesBody, 6).map(({ index: cloneIndex, body }) => ({
+    cloneIndex,
+    groupId: integer(body, /\["g"\]\s*=\s*(\d+)/, "clone group", true),
+    sublevel: integer(body, /\["sublevel"\]\s*=\s*(\d+)/, "clone sublevel", true) ?? 1,
+    x: numberValue(body, /\["x"\]\s*=\s*(-?\d+(?:\.\d+)?)/),
+    y: numberValue(body, /\["y"\]\s*=\s*(-?\d+(?:\.\d+)?)/),
+  }));
+}
+
 export function parseMdtDungeon(source) {
   const dungeonIndex = integer(source, /local dungeonIndex\s*=\s*(\d+)/, "dungeonIndex");
   const mapInfo = balancedTable(source, "MDT.mapInfo[dungeonIndex] =");
@@ -91,6 +112,7 @@ export function parseMdtDungeon(source) {
     sourceEncounterId: integer(body, /\["encounterID"\]\s*=\s*(\d+)/, "encounterID", true),
     sourceInstanceId: integer(body, /\["instanceID"\]\s*=\s*(\d+)/, "instanceID", true),
     spells: parseSpells(body),
+    clones: parseClones(body),
   }));
 
   return {

@@ -32,6 +32,7 @@
       "required": ["challengeMapId", "keystoneLevel", "startedAt", "status"],
       "properties": {
         "challengeMapId": { "type": "integer", "minimum": 1 },
+        "routePlanId": { "type": ["string", "null"], "pattern": "^[a-z0-9][a-z0-9./_-]+$" },
         "keystoneLevel": { "type": "integer", "minimum": 2 },
         "affixIds": { "type": "array", "items": { "type": "integer", "minimum": 1 } },
         "startedAt": { "type": "integer", "minimum": 1 },
@@ -54,6 +55,34 @@
           "completedAt": { "type": "integer", "minimum": 1 },
           "durationMs": { "type": "integer", "minimum": 0 },
           "success": { "type": "boolean" }
+        },
+        "additionalProperties": false
+      }
+    },
+    "pulls": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["order", "startedAt", "completedAt", "durationMs", "enemies", "enemyForces", "deaths"],
+        "properties": {
+          "order": { "type": "integer", "minimum": 1 },
+          "startedAt": { "type": "integer", "minimum": 1 },
+          "completedAt": { "type": ["integer", "null"], "minimum": 1 },
+          "durationMs": { "type": ["integer", "null"], "minimum": 0 },
+          "enemies": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": ["npcId", "count"],
+              "properties": {
+                "npcId": { "type": "integer", "minimum": 1 },
+                "count": { "type": "integer", "minimum": 1 }
+              },
+              "additionalProperties": false
+            }
+          },
+          "enemyForces": { "type": "integer", "minimum": 0 },
+          "deaths": { "type": "integer", "minimum": 0 }
         },
         "additionalProperties": false
       }

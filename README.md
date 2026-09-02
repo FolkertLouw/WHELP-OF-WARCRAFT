@@ -19,6 +19,7 @@ This is the initial foundation. It includes:
 - the WHELP data and trust model;
 - JSON schemas and synthetic examples;
 - a dependency-free repository validator;
+- route extraction safeguards and planned-versus-observed pull contracts;
 - an LLM grounding brief in `AGENTS.md`;
 - a minimal Retail addon, **WHELP Collector**;
 - a build manifest for the locally verified Retail build `12.1.0.69587`.
@@ -43,6 +44,14 @@ npm run import:mdt -- --input "/path/to/MythicDungeonTools/Expansion/Dungeon.lua
 
 The importer emits normalized dungeon, enemy, enemy-forces, and spell-flag facts. Imported output is evidence requiring review; it does not become verified strategy automatically.
 
+To inspect MDT spawn groups before curating a route:
+
+```bash
+npm run inspect:mdt-packs -- "/path/to/MythicDungeonTools/Expansion/Dungeon.lua"
+```
+
+Spawn groups are review evidence, not a route. The inspector intentionally exposes count mismatches caused by summoned or encounter-only entities; see `docs/ROUTES.md`.
+
 To regenerate the seven season-wide dungeon packages described by the checked-in import manifest:
 
 ```bash
@@ -58,7 +67,7 @@ content/      Reviewed mechanics, routes, loadouts, and progression knowledge
 observations/ Sanitized fixtures and published aggregate datasets
 schemas/      Machine-readable WHELP contracts
 tools/        Validation, importing, normalization, and compilation
-docs/         Architecture, trust model, and roadmap
+docs/         Architecture, trust model, route rules, and roadmap
 examples/     Explicitly synthetic schema examples
 ```
 
