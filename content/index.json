@@ -88,6 +88,7 @@
     { "id": "kings-rest/king-dazar/gilded-destruction-1303267", "path": "mythic-plus/midnight-season-2/kings-rest/mechanics/dazar-gilded-destruction.json", "status": "draft" },
     { "id": "kings-rest/king-dazar/quaking-leap-1303327", "path": "mythic-plus/midnight-season-2/kings-rest/mechanics/dazar-quaking-leap.json", "status": "draft" },
     { "id": "ruby-life-pools/overview", "path": "mythic-plus/midnight-season-2/ruby-life-pools/strategy/overview.json", "status": "corroborated" },
+    { "id": "ruby-life-pools/pug-10-15-baseline", "path": "mythic-plus/midnight-season-2/ruby-life-pools/routes/pug-10-15.json", "status": "draft" },
     { "id": "ruby-life-pools/melidrussa-chillworn/hailburst-396044", "path": "mythic-plus/midnight-season-2/ruby-life-pools/mechanics/melidrussa-hailburst.json", "status": "draft" },
     { "id": "ruby-life-pools/melidrussa-chillworn/chillstorm-372851", "path": "mythic-plus/midnight-season-2/ruby-life-pools/mechanics/melidrussa-chillstorm.json", "status": "draft" },
     { "id": "ruby-life-pools/melidrussa-chillworn/frigid-shard-372808", "path": "mythic-plus/midnight-season-2/ruby-life-pools/mechanics/melidrussa-frigid-shard.json", "status": "draft" },
