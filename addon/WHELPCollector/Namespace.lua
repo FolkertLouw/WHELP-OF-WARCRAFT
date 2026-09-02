@@ -1,7 +1,7 @@
 local addonName, WHELP = ...
 
 WHELP.name = addonName
-WHELP.version = "0.4.6"
+WHELP.version = "0.4.7"
 WHELP.schemaVersion = 1
 
 function WHELP:Now()

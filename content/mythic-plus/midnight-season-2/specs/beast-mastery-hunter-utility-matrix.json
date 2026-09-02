@@ -1,0 +1,79 @@
+{
+  "$schema": "../../../../schemas/spec-dungeon-matrix.schema.json",
+  "schemaVersion": 1,
+  "recordType": "spec-dungeon-matrix",
+  "id": "midnight-season-2/beast-mastery-hunter-utility-matrix",
+  "status": "corroborated",
+  "validity": { "fromBuild": "12.1.0.69587", "untilBuild": null, "seasonId": null, "seasonSlug": "midnight-season-2" },
+  "spec": { "classId": 3, "className": "Hunter", "specId": 253, "specName": "Beast Mastery" },
+  "axes": [
+    { "id": "target-drop", "label": "Targeted-cast cancellation", "abilityNames": ["Feign Death"], "spellIds": [5384], "toolIds": ["feign-death"] },
+    { "id": "self-cleanse", "label": "Personal poison and disease removal", "abilityNames": ["Emergency Salve"], "spellIds": [459517], "toolIds": ["emergency-salve"] },
+    { "id": "movement-removal", "label": "Friendly snare and root removal", "abilityNames": ["Master's Call"], "spellIds": [272682], "toolIds": ["masters-call"] },
+    { "id": "enemy-removal", "label": "Enemy Magic and Enrage removal", "abilityNames": ["Tranquilizing Shot", "Kodo Tranquilizer"], "spellIds": [19801, 459983], "toolIds": ["tranquilizing-shot", "kodo-tranquilizer"] },
+    { "id": "hard-control", "label": "Stops and add control", "abilityNames": ["Intimidation", "Binding Shot", "Freezing Trap"], "spellIds": [19577, 109248, 187650], "toolIds": ["intimidation", "binding-shot", "freezing-trap"] },
+    { "id": "turtle", "label": "Aspect of the Turtle immunities and soaks", "abilityNames": ["Aspect of the Turtle"], "spellIds": [186265], "toolIds": ["aspect-of-the-turtle"] }
+  ],
+  "dungeons": [
+    {
+      "dungeonId": "altar-of-fangs", "instanceMapId": 2993,
+      "ratings": { "target-drop": "always", "self-cleanse": "always", "movement-removal": "always", "enemy-removal": "niche", "hard-control": "always", "turtle": "none" },
+      "mechanicSpellIds": [1289416, 1294569, 1307571],
+      "notes": ["Feign Death can cancel a Ritual of the Fang beam when positioned correctly; this is encounter-specific target manipulation, not a general interrupt.", "Emergency Salve removes Envenom from the Hunter, while Master's Call or Posthaste handles Paralyzing Shots.", "Control Ravenous Descendants and High Evolutionists; Tranquilizing Shot can remove eligible Evolve or Ravenous Claws effects as recovery."]
+    },
+    {
+      "dungeonId": "the-blinding-vale", "instanceMapId": 2859,
+      "ratings": { "target-drop": "always", "self-cleanse": "always", "movement-removal": "always", "enemy-removal": "always", "hard-control": "always", "turtle": "always" },
+      "mechanicSpellIds": [1238581, 1250937, 1259365],
+      "notes": ["Feign Death cancels selected targeted abilities; Emergency Salve removes Toxic Spew from the Hunter.", "Master's Call can free an ally from Bloodthorn Roots, and Kodo Tranquilizer can widen Spiny Shield removal.", "Turtle can block Thornblade, but do not use it to soak multiple Lightbloom's Essence because that also blocks the beneficial damage increase."]
+    },
+    {
+      "dungeonId": "den-of-nalorakk", "instanceMapId": 2825,
+      "ratings": { "target-drop": "always", "self-cleanse": "always", "movement-removal": "always", "enemy-removal": "always", "hard-control": "always", "turtle": "always" },
+      "mechanicSpellIds": [1234846, 1238053, 1246865, 1297696, 1309919],
+      "notes": ["Feign Death can stop Feast of Misery targeting; Emergency Salve removes Toxic Spores from the Hunter.", "Master's Call covers Glacial Tomb and Frigid Roar movement effects.", "Tranquilizing Shot removes Mother's Wrath and Bestial Wrath; Turtle can intercept Echo of Nalorakk without taking Spectral Slash."]
+    },
+    {
+      "dungeonId": "murder-row", "instanceMapId": 2813,
+      "ratings": { "target-drop": "always", "self-cleanse": "none", "movement-removal": "none", "enemy-removal": "always", "hard-control": "always", "turtle": "always" },
+      "mechanicSpellIds": [1214922, 1216571, 1216970],
+      "notes": ["Feign Death cancels selected Fel Missiles and Drain Life targeting.", "Tranquilizing Shot removes Back to Work! and Fel Rage; Binding Shot or Freezing Trap controls fleeing or charging trash.", "Turtle has boss-specific uses for Murder in a Row, Infernal Crush, and crossing Malefic Wave."]
+    },
+    {
+      "dungeonId": "voidscar-arena", "instanceMapId": 2923,
+      "ratings": { "target-drop": "always", "self-cleanse": "always", "movement-removal": "always", "enemy-removal": "always", "hard-control": "always", "turtle": "always" },
+      "mechanicSpellIds": [1226031, 1249661, 1254826, 1263971, 1289258, 1310319],
+      "notes": ["Feign Death cancels selected Void Beam and Macestorm targeting; Emergency Salve removes Corrosive Essence and Atroxus poisons from the Hunter.", "Master's Call covers Barbed Net, while Tranquilizing Shot removes Bolster, Bloodsurge, and Feral Rage.", "Use control on Protective Turtles and leaping Saberons; Turtle can solo-soak Sky Strike and block Cosmic Crash's damage-over-time effect."]
+    },
+    {
+      "dungeonId": "temple-of-sethraliss", "instanceMapId": 1877,
+      "ratings": { "target-drop": "always", "self-cleanse": "always", "movement-removal": "none", "enemy-removal": "always", "hard-control": "always", "turtle": "always" },
+      "mechanicSpellIds": [267027, 1293307, 1293464, 1308148],
+      "notes": ["Feign Death can cancel Addle Mind targeting; Emergency Salve removes Cytotoxin and Poison Spit from the Hunter.", "Kodo Tranquilizer can widen Accumulate Charge removal when multiple Nimbus enemies are present.", "Control Temple Disruptors and healer-fixating Tormentors; Turtle can solo-soak Thunder and Lightning."]
+    },
+    {
+      "dungeonId": "kings-rest", "instanceMapId": 1762,
+      "ratings": { "target-drop": "always", "self-cleanse": "always", "movement-removal": "always", "enemy-removal": "always", "hard-control": "always", "turtle": "always" },
+      "mechanicSpellIds": [267763, 269935, 269976, 270499, 1296671, 1297763, 1306763],
+      "notes": ["Feign Death cancels selected Bladestorm, Entomb, and Barrel Through targeting; Turtle is the alternative Barrel Through solo-soak.", "Emergency Salve removes Serpent Strike and Wretched Discharge from the Hunter, while Master's Call covers Frost Shock.", "Tranquilizing Shot or Kodo Tranquilizer removes Bound by Shadow, Captain's Bulwark, Ancestral Fury, and Bestial Berserk; use crowd control on dangerous leaps and Animated Gold."]
+    },
+    {
+      "dungeonId": "ruby-life-pools", "instanceMapId": 2521,
+      "ratings": { "target-drop": "always", "self-cleanse": "none", "movement-removal": "none", "enemy-removal": "always", "hard-control": "always", "turtle": "none" },
+      "mechanicSpellIds": [373972, 391031],
+      "notes": ["Feign Death cancels selected Flaming Barrage and Lightning Torrent targeting and can avoid Inferno damage when timed against the cast.", "Kodo Tranquilizer can widen Stormcloud Barrier removal; Tranquilizing Shot removes Blaze of Glory.", "Binding Shot limits Infused Whelp melee pressure, and Intimidation or Freezing Trap can stop Flaming Barrage when another player is targeted."]
+    }
+  ],
+  "affixes": [
+    { "affixSlug": "xalataths-bargain-ascendant", "recommendations": ["Intimidation with Guttural Roar can clear several Ascendant casts; Freezing Trap handles only one target."] },
+    { "affixSlug": "xalataths-bargain-voidbound", "recommendations": ["No dedicated utility swap is required; target and burst the emissary."] },
+    { "affixSlug": "xalataths-bargain-pulsar", "recommendations": ["Use Hunter mobility to intercept the paired orbs; no dedicated utility swap is required."] },
+    { "affixSlug": "xalataths-bargain-devour", "recommendations": ["Exhilaration can help heal the effect off; Feign Death with Emergency Salve removes it from the Hunter.", "Master's Call with Masterful Call can remove an eligible effect from an ally."] }
+  ],
+  "provenance": [{
+    "kind": "external-reference",
+    "description": "Original structured summary of Tarlo's Patch 12.1.0 Beast Mastery Hunter dungeon utility and affix recommendations. Talent build strings and performance rankings are intentionally excluded.",
+    "url": "https://www.wowhead.com/guide/classes/hunter/beast-mastery/mythic-plus-dungeon-tips",
+    "retrievedAt": "2026-09-02T17:30:00+02:00"
+  }]
+}

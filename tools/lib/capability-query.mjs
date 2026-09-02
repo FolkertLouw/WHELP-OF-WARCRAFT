@@ -1,4 +1,4 @@
-const allowedActions = new Set(["interrupt", "purge", "cleanse-magic", "cleanse-curse", "cleanse-disease", "cleanse-poison", "cleanse-snare", "cleanse-root", "cleanse-fear", "cleanse-charm", "cleanse-sleep", "soothe", "defensive", "crowd-control", "enemy-reposition", "external-defensive", "external-offensive", "battle-resurrection", "party-damage-reduction", "bloodlust", "group-buff"]);
+const allowedActions = new Set(["interrupt", "purge", "cleanse-magic", "cleanse-curse", "cleanse-disease", "cleanse-poison", "cleanse-snare", "cleanse-root", "cleanse-fear", "cleanse-charm", "cleanse-sleep", "soothe", "defensive", "target-drop", "crowd-control", "enemy-reposition", "external-defensive", "external-offensive", "battle-resurrection", "party-damage-reduction", "bloodlust", "group-buff"]);
 const allowedScopes = new Set(["enemy", "friendly-single", "friendly-periodic-area", "friendly-area", "self", "area-enemy", "mixed-area"]);
 
 export function queryCapabilities(capabilityRecords, filters = {}) {

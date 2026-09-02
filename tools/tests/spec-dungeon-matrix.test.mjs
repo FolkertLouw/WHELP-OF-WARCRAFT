@@ -15,6 +15,8 @@ const restorationMatrix = await loadJson("content", "mythic-plus", "midnight-sea
 const restorationCapabilities = await loadJson("data", "specs", "shaman", "restoration.json");
 const enhancementMatrix = await loadJson("content", "mythic-plus", "midnight-season-2", "specs", "enhancement-shaman-utility-matrix.json");
 const enhancementCapabilities = await loadJson("data", "specs", "shaman", "enhancement.json");
+const beastMasteryMatrix = await loadJson("content", "mythic-plus", "midnight-season-2", "specs", "beast-mastery-hunter-utility-matrix.json");
+const beastMasteryCapabilities = await loadJson("data", "specs", "hunter", "beast-mastery.json");
 const season = await loadJson("data", "seasons", "midnight-season-2.json");
 
 test("Unholy matrix covers every Midnight Season 2 dungeon exactly once", () => {
@@ -125,4 +127,25 @@ test("Enhancement Shaman matrix resolves distinct personal and group snare tools
     assert.ok(tools.get(toolId).actions.includes("cleanse-snare"));
   }
   assert.match(tools.get("wind-rush-totem").limitations.join(" "), /Jet Stream/);
+});
+
+test("Beast Mastery Hunter matrix covers the season and resolves every utility axis", () => {
+  assert.deepEqual(new Set(beastMasteryMatrix.dungeons.map((entry) => entry.dungeonId)), new Set(season.dungeons.map((entry) => entry.id)));
+  const tools = new Map(beastMasteryCapabilities.tools.map((tool) => [tool.id, tool]));
+  for (const axis of beastMasteryMatrix.axes) {
+    for (const toolId of axis.toolIds) {
+      const tool = tools.get(toolId);
+      assert.ok(tool, `${axis.id} should resolve ${toolId}`);
+      assert.ok(axis.abilityNames.includes(tool.name));
+      assert.ok(axis.spellIds.includes(tool.spellId));
+    }
+  }
+});
+
+test("Beast Mastery keeps target drops, cleanses, and enemy removal distinct", () => {
+  const tools = new Map(beastMasteryCapabilities.tools.map((tool) => [tool.id, tool]));
+  assert.deepEqual(tools.get("feign-death").actions, ["target-drop"]);
+  assert.deepEqual(tools.get("emergency-salve").actions, ["cleanse-disease", "cleanse-poison"]);
+  assert.deepEqual(tools.get("tranquilizing-shot").actions, ["purge", "soothe"]);
+  assert.match(beastMasteryMatrix.dungeons.find((entry) => entry.dungeonId === "altar-of-fangs").notes.join(" "), /not a general interrupt/);
 });

@@ -52,3 +52,11 @@ test("returns Enhancement Shaman's exact snare-removal options", () => {
   assert.deepEqual(snare.tools.map((tool) => tool.id), ["thunderous-paws", "spirit-walk", "wind-rush-totem"]);
   assert.ok(report.dungeons[0].mechanicSpellIds.includes(1294569));
 });
+
+test("joins Beast Mastery target manipulation to the exact dungeon evidence", () => {
+  const report = querySpecMatrix(matrices, capabilities, { spec: "beast-mastery-hunter", dungeon: "ruby-life-pools", rating: "always" });
+  const targetDrop = report.dungeons[0].utilities.find((entry) => entry.axisId === "target-drop");
+  assert.deepEqual(targetDrop.tools.map((tool) => tool.id), ["feign-death"]);
+  assert.deepEqual(targetDrop.tools[0].actions, ["target-drop"]);
+  assert.ok(report.dungeons[0].mechanicSpellIds.includes(391031));
+});

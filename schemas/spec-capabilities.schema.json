@@ -33,12 +33,12 @@
           "id": { "type": "string" },
           "name": { "type": "string" },
           "spellId": { "type": "integer", "minimum": 1 },
-          "actions": { "type": "array", "minItems": 1, "uniqueItems": true, "items": { "enum": ["interrupt", "purge", "cleanse-magic", "cleanse-curse", "cleanse-disease", "cleanse-poison", "cleanse-snare", "cleanse-root", "cleanse-fear", "cleanse-charm", "cleanse-sleep", "soothe", "defensive", "crowd-control", "enemy-reposition", "external-defensive", "external-offensive", "battle-resurrection", "party-damage-reduction", "bloodlust", "group-buff"] } },
+          "actions": { "type": "array", "minItems": 1, "uniqueItems": true, "items": { "enum": ["interrupt", "purge", "cleanse-magic", "cleanse-curse", "cleanse-disease", "cleanse-poison", "cleanse-snare", "cleanse-root", "cleanse-fear", "cleanse-charm", "cleanse-sleep", "soothe", "defensive", "target-drop", "crowd-control", "enemy-reposition", "external-defensive", "external-offensive", "battle-resurrection", "party-damage-reduction", "bloodlust", "group-buff"] } },
           "alternateSpellIds": { "type": "array", "items": { "type": "integer", "minimum": 1 }, "uniqueItems": true },
           "availability": { "enum": ["baseline", "specialization", "talent"] },
           "actionAvailability": {
             "type": "object",
-            "propertyNames": { "enum": ["interrupt", "purge", "cleanse-magic", "cleanse-curse", "cleanse-disease", "cleanse-poison", "cleanse-snare", "cleanse-root", "cleanse-fear", "cleanse-charm", "cleanse-sleep", "soothe", "defensive", "crowd-control", "enemy-reposition", "external-defensive", "external-offensive", "battle-resurrection", "party-damage-reduction", "bloodlust", "group-buff"] },
+            "propertyNames": { "enum": ["interrupt", "purge", "cleanse-magic", "cleanse-curse", "cleanse-disease", "cleanse-poison", "cleanse-snare", "cleanse-root", "cleanse-fear", "cleanse-charm", "cleanse-sleep", "soothe", "defensive", "target-drop", "crowd-control", "enemy-reposition", "external-defensive", "external-offensive", "battle-resurrection", "party-damage-reduction", "bloodlust", "group-buff"] },
             "additionalProperties": { "enum": ["baseline", "specialization", "talent"] }
           },
           "scope": { "enum": ["enemy", "friendly-single", "friendly-periodic-area", "friendly-area", "self", "area-enemy", "mixed-area"] },
