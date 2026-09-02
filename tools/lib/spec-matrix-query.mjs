@@ -54,6 +54,8 @@ export function querySpecMatrix(matrices, capabilities, filters = {}) {
               actions: tool.actions,
               availability: tool.availability,
               availabilityByAction: Object.fromEntries(tool.actions.map((action) => [action, tool.actionAvailability?.[action] ?? tool.availability])),
+              scope: tool.scope,
+              requirements: tool.requirements ?? [],
               limitations: tool.limitations,
             };
           }),

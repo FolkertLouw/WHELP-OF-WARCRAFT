@@ -83,6 +83,17 @@ test("joins Holy Paladin Physical immunity to canonical Severing Axe", () => {
   assert.ok(report.dungeons[0].mechanicSpellIds.includes(266231));
 });
 
+test("joins Discipline Priest mixed dispels and self-only Phantasm without conflation", () => {
+  const report = querySpecMatrix(matrices, capabilities, { spec: "discipline-priest", dungeon: "kings-rest", rating: "always" });
+  const purge = report.dungeons[0].utilities.find((entry) => entry.axisId === "enemy-magic-removal");
+  assert.deepEqual(purge.tools.map((tool) => tool.id), ["dispel-magic", "mass-dispel"]);
+  const phantasm = report.dungeons[0].utilities.find((entry) => entry.axisId === "self-snare-removal").tools[0];
+  assert.equal(phantasm.scope, "self");
+  assert.deepEqual(phantasm.actions, ["cleanse-snare"]);
+  assert.ok(report.dungeons[0].mechanicSpellIds.includes(269935));
+  assert.ok(report.dungeons[0].mechanicSpellIds.includes(270499));
+});
+
 test("surfaces action-level talent availability for Restoration Shaman", () => {
   const report = querySpecMatrix(matrices, capabilities, { spec: "restoration-shaman", dungeon: "den-of-nalorakk" });
   const purify = report.dungeons[0].utilities.find((entry) => entry.axisId === "improved-purify-spirit").tools[0];

@@ -3,6 +3,7 @@
   "schemaVersion": 1,
   "recordType": "spec-capabilities",
   "id": "priest/discipline/capabilities",
+  "matrixRecordId": "midnight-season-2/discipline-priest-utility-matrix",
   "status": "corroborated",
   "validity": { "fromBuild": "12.1.0.69587", "untilBuild": null, "seasonId": null, "seasonSlug": "midnight-season-2" },
   "spec": { "classId": 5, "className": "Priest", "specId": 256, "specName": "Discipline", "slug": "discipline-priest" },
@@ -15,11 +16,18 @@
     { "id": "pain-suppression", "name": "Pain Suppression", "spellId": 33206, "actions": ["external-defensive"], "availability": "talent", "scope": "friendly-single", "limitations": ["Forty percent damage reduction for eight seconds", "Three-minute recharge per charge", "Can be cast while stunned"] },
     { "id": "power-word-barrier", "name": "Power Word: Barrier", "spellId": 62618, "actions": ["party-damage-reduction"], "availability": "talent", "scope": "friendly-area", "limitations": ["Requires allies to remain inside the barrier", "Twenty percent damage reduction", "Three-minute cooldown"] },
     { "id": "power-word-fortitude", "name": "Power Word: Fortitude", "spellId": 21562, "actions": ["group-buff"], "availability": "baseline", "scope": "friendly-area", "limitations": ["Five percent Stamina", "Does not stack with an equivalent Fortitude effect"] },
-    { "id": "desperate-prayer", "name": "Desperate Prayer", "spellId": 19236, "actions": ["defensive"], "availability": "baseline", "scope": "self", "limitations": ["Personal defensive only"] }
+    { "id": "desperate-prayer", "name": "Desperate Prayer", "spellId": 19236, "actions": ["defensive"], "availability": "baseline", "scope": "self", "limitations": ["Personal defensive only"] },
+    { "id": "phantasm", "name": "Phantasm", "spellId": 108942, "actions": ["cleanse-snare"], "availability": "talent", "scope": "self", "limitations": ["Activates through Fade", "Removes snares only, not every root or harmful Magic effect"] },
+    { "id": "mind-soothe", "name": "Mind Soothe", "spellId": 453, "actions": ["detection-reduction"], "availability": "baseline", "scope": "area-enemy", "limitations": ["Reduces detection range by ten yards", "Only affects Humanoid and Dragonkin enemies", "Does not make the party invisible"] },
+    { "id": "shackle-horror", "name": "Shackle Horror", "spellId": 9484, "actions": ["crowd-control"], "availability": "talent", "scope": "enemy", "limitations": ["Only affects Aberration and Undead enemies", "Damage cancels the effect", "Only one target can be shackled at a time"] }
   ],
   "provenance": [
     { "kind": "external-reference", "description": "Current Midnight Discipline guide identifies Purify, Improved Purify, Dispel Magic, Mass Dispel, Power Infusion, Fortitude, Psychic Scream, Pain Suppression, and Power Word: Barrier.", "url": "https://www.wowhead.com/guide/classes/priest/discipline/abilities-talents-pve-healer", "retrievedAt": "2026-09-02T16:30:00+02:00" },
     { "kind": "external-reference", "description": "Current Mass Dispel record confirms its mixed friendly-and-enemy area behavior, target caps, cast time, and cooldown.", "url": "https://www.wowhead.com/spell=32375/mass-dispel", "retrievedAt": "2026-09-02T16:30:00+02:00" },
-    { "kind": "external-reference", "description": "Current Pain Suppression record confirms its target, mitigation, duration, and cast-while-stunned behavior.", "url": "https://www.wowhead.com/spell=33206/pain-suppression", "retrievedAt": "2026-09-02T16:30:00+02:00" }
+    { "kind": "external-reference", "description": "Current Pain Suppression record confirms its target, mitigation, duration, and cast-while-stunned behavior.", "url": "https://www.wowhead.com/spell=33206/pain-suppression", "retrievedAt": "2026-09-02T16:30:00+02:00" },
+    { "kind": "external-reference", "description": "Current Patch 12.1.0 Discipline dungeon guide provides per-dungeon Mass Dispel, Phantasm, Mind Soothe, Improved Purify, and Shackle Horror guidance.", "url": "https://www.wowhead.com/guide/classes/priest/discipline/mythic-plus-dungeon-tips", "retrievedAt": "2026-09-02T18:43:36+02:00" },
+    { "kind": "external-reference", "description": "Current Mind Soothe record confirms its enemy-type restriction, area behavior, detection-range reduction, duration, and cooldown.", "url": "https://www.wowhead.com/spell=453/mind-soothe", "retrievedAt": "2026-09-02T18:43:36+02:00" },
+    { "kind": "external-reference", "description": "Current Phantasm and Shackle Horror records confirm self-only snare removal through Fade and creature-type-limited breakable control.", "url": "https://www.wowhead.com/spell=108942/phantasm", "retrievedAt": "2026-09-02T18:43:36+02:00" },
+    { "kind": "external-reference", "description": "Current Shackle Horror record confirms Aberration and Undead targeting, the one-target limit, and damage break behavior.", "url": "https://www.wowhead.com/spell=9484/shackle-horror", "retrievedAt": "2026-09-02T18:43:36+02:00" }
   ]
 }

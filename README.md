@@ -32,6 +32,8 @@ All three Mage specializations now also have complete Midnight Season 2 utility 
 
 All three Paladin specializations now have complete seasonal utility matrices as well. Holy preserves its healer-only Magic dispel alongside talent-dependent Poison and Disease removal; Protection and Retribution retain the narrower Cleanse Toxins boundary. Blessings, control, interrupts, and battle resurrection remain separately queryable instead of being collapsed into generic utility.
 
+Discipline Priest now has a complete seasonal matrix covering single and area Magic removal, offensive purges, self-only snare removal, route-oriented detection reduction, talent-dependent Disease cleansing, and creature-type-limited Shackle Horror control. Matrix query results retain tool scope and requirements so downstream agents do not mistake personal utility for party coverage.
+
 Source maintenance is machine-readable. `npm run query:freshness` compares every canonical provenance-bearing record with the current build and the checked-in freshness policy. It reports source age separately from build validity and returns an actionable review queue; use `--as-of <ISO-date> --include all` for a reproducible full audit. See `docs/FRESHNESS.md`.
 
 ## Quick start

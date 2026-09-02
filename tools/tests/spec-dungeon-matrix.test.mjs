@@ -32,6 +32,8 @@ const retributionPaladinMatrix = await loadJson("content", "mythic-plus", "midni
 const retributionPaladinCapabilities = await loadJson("data", "specs", "paladin", "retribution.json");
 const holyPaladinMatrix = await loadJson("content", "mythic-plus", "midnight-season-2", "specs", "holy-paladin-utility-matrix.json");
 const holyPaladinCapabilities = await loadJson("data", "specs", "paladin", "holy.json");
+const disciplinePriestMatrix = await loadJson("content", "mythic-plus", "midnight-season-2", "specs", "discipline-priest-utility-matrix.json");
+const disciplinePriestCapabilities = await loadJson("data", "specs", "priest", "discipline.json");
 const season = await loadJson("data", "seasons", "midnight-season-2.json");
 
 test("Unholy matrix covers every Midnight Season 2 dungeon exactly once", () => {
@@ -298,4 +300,25 @@ test("Holy Paladin preserves healer-only Magic cleansing and dual-domain movemen
   assert.equal(kingsRest.ratings["movement-freedom"], "always");
   assert.ok(kingsRest.mechanicSpellIds.includes(266231));
   assert.ok(kingsRest.mechanicSpellIds.includes(271564));
+});
+
+test("Discipline Priest matrix covers the season and resolves every utility axis", () => {
+  assert.deepEqual(new Set(disciplinePriestMatrix.dungeons.map((entry) => entry.dungeonId)), new Set(season.dungeons.map((entry) => entry.id)));
+  const tools = new Map(disciplinePriestCapabilities.tools.map((tool) => [tool.id, tool]));
+  for (const axis of disciplinePriestMatrix.axes) {
+    for (const toolId of axis.toolIds) assert.ok(tools.has(toolId), `${axis.id} should resolve ${toolId}`);
+  }
+});
+
+test("Discipline Priest keeps route, self-cleanse, dispel, and creature control semantics separate", () => {
+  const tools = new Map(disciplinePriestCapabilities.tools.map((tool) => [tool.id, tool]));
+  assert.deepEqual(tools.get("mind-soothe").actions, ["detection-reduction"]);
+  assert.equal(tools.get("phantasm").scope, "self");
+  assert.match(tools.get("shackle-horror").limitations.join(" "), /Aberration and Undead/);
+  const vale = disciplinePriestMatrix.dungeons.find((entry) => entry.dungeonId === "the-blinding-vale");
+  assert.equal(vale.ratings["friendly-magic-removal"], "always");
+  assert.equal(vale.ratings["self-snare-removal"], "niche");
+  assert.match(vale.notes.join(" "), /does not remove those roots/);
+  const voidscar = disciplinePriestMatrix.dungeons.find((entry) => entry.dungeonId === "voidscar-arena");
+  assert.equal(voidscar.ratings["detection-reduction"], "none");
 });

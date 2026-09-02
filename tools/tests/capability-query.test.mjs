@@ -87,6 +87,14 @@ test("preserves Priest interrupt and external cooldown distinctions", () => {
   assert.ok(offensive.results.every((entry) => entry.tool.name === "Power Infusion"));
 });
 
+test("models Mind Soothe as route detection reduction rather than crowd control", () => {
+  const routing = queryCapabilities(capabilities, { specs: ["discipline-priest"], action: "detection-reduction" });
+  assert.equal(routing.resultCount, 1);
+  assert.equal(routing.results[0].tool.name, "Mind Soothe");
+  assert.equal(routing.results[0].tool.scope, "area-enemy");
+  assert.match(routing.results[0].tool.limitations.join(" "), /Humanoid and Dragonkin/);
+});
+
 test("queries shared Mage composition utility across all specializations", () => {
   const specs = ["arcane-mage", "fire-mage", "frost-mage"];
   const interrupts = queryCapabilities(capabilities, { specs, action: "interrupt" });
