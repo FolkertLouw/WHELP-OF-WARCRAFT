@@ -1,6 +1,6 @@
 const responseOrder = ["interrupt", "dispel-magic", "cleanse-curse", "cleanse-disease", "cleanse-poison", "soothe"];
 
-function responseTags(contexts) {
+export function deriveResponseTags(contexts) {
   const tags = new Set();
   for (const context of contexts) {
     if (context.interruptible) tags.add("interrupt");
@@ -51,7 +51,7 @@ export function compileAbilityIndex({ season, dungeons, abilityRecords }) {
 
   const normalized = [...abilities.values()].sort((left, right) => left.spellId - right.spellId).map((ability) => {
     ability.contexts.sort((left, right) => left.dungeonId.localeCompare(right.dungeonId) || left.npcId - right.npcId);
-    return { spellId: ability.spellId, name: ability.name, responseTags: responseTags(ability.contexts), contexts: ability.contexts };
+    return { spellId: ability.spellId, name: ability.name, responseTags: deriveResponseTags(ability.contexts), contexts: ability.contexts };
   });
   for (const ability of normalized) {
     if (!ability.responseTags.length) throw new Error(`spell ${ability.spellId} has no actionable response tag`);

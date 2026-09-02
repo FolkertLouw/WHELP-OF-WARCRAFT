@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://whelp.dev/schemas/dataset-manifest.schema.json",
+  "title": "WHELP dataset discovery manifest",
+  "type": "object",
+  "required": ["schemaVersion", "name", "acronym", "datasetVersion", "currentBuild", "currentSeason", "entrypoints", "commands"],
+  "properties": {
+    "$schema": { "type": "string" },
+    "schemaVersion": { "const": 1 },
+    "name": { "const": "WHELP-OF-WARCRAFT" },
+    "acronym": { "const": "World-data Hub for Encounters, Loadouts & Progression" },
+    "datasetVersion": { "type": "string", "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$" },
+    "currentBuild": { "type": "string", "minLength": 1 },
+    "currentSeason": { "type": "string", "minLength": 1 },
+    "entrypoints": { "type": "object", "additionalProperties": { "type": "string", "minLength": 1 } },
+    "commands": { "type": "object", "additionalProperties": { "type": "string", "minLength": 1 } }
+  },
+  "additionalProperties": false
+}

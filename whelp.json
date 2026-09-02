@@ -1,0 +1,22 @@
+{
+  "$schema": "schemas/dataset-manifest.schema.json",
+  "schemaVersion": 1,
+  "name": "WHELP-OF-WARCRAFT",
+  "acronym": "World-data Hub for Encounters, Loadouts & Progression",
+  "datasetVersion": "0.3.1",
+  "currentBuild": "12.1.0.69587",
+  "currentSeason": "midnight-season-2",
+  "entrypoints": {
+    "agentBriefing": "AGENTS.md",
+    "canonicalData": "data/index.json",
+    "strategyKnowledge": "content/index.json",
+    "flaggedAbilities": "data/abilities/midnight-season-2.json",
+    "pugRoutes": "content/mythic-plus/midnight-season-2/routes/catalog.json",
+    "trustModel": "docs/TRUST_MODEL.md"
+  },
+  "commands": {
+    "validate": "npm test",
+    "queryAbilities": "npm run query:abilities -- --dungeon <id> --tag <response-tag>",
+    "regenerateAbilityIndex": "npm run generate:ability-index"
+  }
+}
