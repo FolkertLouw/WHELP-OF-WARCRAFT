@@ -18,7 +18,7 @@
       "abilities": [
         {
           "spellId": 1238158,
-          "name": null,
+          "name": "Lightbloom Pollination",
           "interruptible": true,
           "dispelType": "none",
           "enrage": false
@@ -31,7 +31,7 @@
       "abilities": [
         {
           "spellId": 1238084,
-          "name": null,
+          "name": "Spore Spines",
           "interruptible": false,
           "dispelType": "magic",
           "enrage": false
@@ -44,21 +44,21 @@
       "abilities": [
         {
           "spellId": 1238063,
-          "name": null,
+          "name": "Light Bolt",
           "interruptible": true,
           "dispelType": "none",
           "enrage": false
         },
         {
           "spellId": 1238200,
-          "name": null,
+          "name": "Frantic Blooming",
           "interruptible": true,
           "dispelType": "none",
           "enrage": false
         },
         {
           "spellId": 1301834,
-          "name": null,
+          "name": "Light Bolt Volley",
           "interruptible": true,
           "dispelType": "none",
           "enrage": false
@@ -71,7 +71,7 @@
       "abilities": [
         {
           "spellId": 1238294,
-          "name": null,
+          "name": "Disorienting Screech",
           "interruptible": true,
           "dispelType": "none",
           "enrage": false
@@ -84,7 +84,7 @@
       "abilities": [
         {
           "spellId": 1238581,
-          "name": null,
+          "name": "Spiny Shield",
           "interruptible": false,
           "dispelType": "magic",
           "enrage": false
@@ -97,7 +97,7 @@
       "abilities": [
         {
           "spellId": 1238232,
-          "name": null,
+          "name": "Seed Shot",
           "interruptible": true,
           "dispelType": "none",
           "enrage": false
@@ -110,7 +110,7 @@
       "abilities": [
         {
           "spellId": 1235616,
-          "name": null,
+          "name": "Light Bolt",
           "interruptible": true,
           "dispelType": "none",
           "enrage": false
@@ -123,7 +123,7 @@
       "abilities": [
         {
           "spellId": 1239821,
-          "name": null,
+          "name": "Warden's Wrath",
           "interruptible": true,
           "dispelType": "none",
           "enrage": false
@@ -136,7 +136,7 @@
       "abilities": [
         {
           "spellId": 1247669,
-          "name": null,
+          "name": "Lightspore Shot",
           "interruptible": true,
           "dispelType": "none",
           "enrage": false
@@ -149,7 +149,7 @@
       "abilities": [
         {
           "spellId": 1250937,
-          "name": null,
+          "name": "Toxic Spew",
           "interruptible": false,
           "dispelType": "poison",
           "enrage": false
@@ -162,7 +162,7 @@
       "abilities": [
         {
           "spellId": 1259365,
-          "name": null,
+          "name": "Bloodthorn Roots",
           "interruptible": false,
           "dispelType": "magic",
           "enrage": false
@@ -173,9 +173,22 @@
   "provenance": [
     {
       "kind": "game-data",
-      "description": "Ability flags extracted by WHELP from Mythic Dungeon Tools 6.2.10; names remain null until independently corroborated.",
+      "description": "Ability flags extracted by WHELP from Mythic Dungeon Tools 6.2.10; names are independently corroborated below.",
       "url": "https://github.com/Nnoggie/MythicDungeonTools",
       "retrievedAt": "2026-09-02T11:15:00+02:00"
-    }
+    },
+    { "kind": "external-reference", "description": "Spell 1238158 name corroborated against Wowhead's Lightbloom Pollination record.", "url": "https://www.wowhead.com/spell=1238158/lightbloom-pollination", "retrievedAt": "2026-09-02T14:08:00+02:00" },
+    { "kind": "external-reference", "description": "Spell 1238084 name corroborated against Wowhead's Spore Spines record.", "url": "https://www.wowhead.com/spell=1238084/spore-spines", "retrievedAt": "2026-09-02T14:08:00+02:00" },
+    { "kind": "external-reference", "description": "Spell 1238063 name corroborated against Wowhead's Light Bolt record.", "url": "https://www.wowhead.com/spell=1238063/light-bolt", "retrievedAt": "2026-09-02T14:08:00+02:00" },
+    { "kind": "external-reference", "description": "Spell 1238200 name corroborated against Wowhead's Frantic Blooming record.", "url": "https://www.wowhead.com/spell=1238200/frantic-blooming", "retrievedAt": "2026-09-02T14:08:00+02:00" },
+    { "kind": "external-reference", "description": "Spell 1301834 name corroborated against Wowhead's Light Bolt Volley record.", "url": "https://www.wowhead.com/spell=1301834/light-bolt-volley", "retrievedAt": "2026-09-02T14:08:00+02:00" },
+    { "kind": "external-reference", "description": "Spell 1238294 name corroborated against Wowhead's Disorienting Screech record.", "url": "https://www.wowhead.com/spell=1238294/disorienting-screech", "retrievedAt": "2026-09-02T14:08:00+02:00" },
+    { "kind": "external-reference", "description": "Spell 1238581 name corroborated against Wowhead's Spiny Shield record.", "url": "https://www.wowhead.com/spell=1238581/spiny-shield", "retrievedAt": "2026-09-02T14:08:00+02:00" },
+    { "kind": "external-reference", "description": "Spell 1238232 name corroborated against Wowhead's Seed Shot record.", "url": "https://www.wowhead.com/spell=1238232/seed-shot", "retrievedAt": "2026-09-02T14:08:00+02:00" },
+    { "kind": "external-reference", "description": "Spell 1235616 name corroborated against Wowhead's Light Bolt record.", "url": "https://www.wowhead.com/spell=1235616/light-bolt", "retrievedAt": "2026-09-02T14:08:00+02:00" },
+    { "kind": "external-reference", "description": "Spell 1239821 name corroborated against Wowhead's Warden's Wrath record.", "url": "https://www.wowhead.com/spell=1239821/wardens-wrath", "retrievedAt": "2026-09-02T14:08:00+02:00" },
+    { "kind": "external-reference", "description": "Spell 1247669 name corroborated against Wowhead's Lightspore Shot record.", "url": "https://www.wowhead.com/spell=1247669/lightspore-shot", "retrievedAt": "2026-09-02T14:08:00+02:00" },
+    { "kind": "external-reference", "description": "Spell 1250937 name corroborated against Wowhead's Toxic Spew record.", "url": "https://www.wowhead.com/spell=1250937/toxic-spew", "retrievedAt": "2026-09-02T14:08:00+02:00" },
+    { "kind": "external-reference", "description": "Spell 1259365 name corroborated against Wowhead's Bloodthorn Roots record.", "url": "https://www.wowhead.com/spell=1259365/bloodthorn-roots", "retrievedAt": "2026-09-02T14:08:00+02:00" }
   ]
 }
