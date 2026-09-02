@@ -8,14 +8,16 @@ const root = path.resolve(import.meta.dirname, "../..");
 const audits = await Promise.all([
   "evoker-midnight-season-2-wowhead-dungeon-tips.json",
   "evoker-midnight-season-2-wowhead-cross-dungeon-sections.json",
+  "elemental-shaman-midnight-season-2-wowhead-placeholders.json",
+  "enhancement-shaman-midnight-season-2-wowhead-utility-ratings.json",
   "restoration-shaman-midnight-season-2-wowhead-dungeon-tips.json",
 ].map(async (file) => JSON.parse(await readFile(path.join(root, "data", "source-audits", file), "utf8"))));
 
 test("claim audit exposes rejected and unresolved source assertions", () => {
   assert.deepEqual(summarizeSourceClaims(audits), {
-    auditCount: 3,
-    claimCount: 58,
-    byDisposition: { accepted: 29, "rejected-cross-dungeon": 28, unresolved: 1 },
+    auditCount: 5,
+    claimCount: 107,
+    byDisposition: { accepted: 69, "rejected-cross-dungeon": 28, "rejected-placeholder": 9, unresolved: 1 },
   });
   assert.equal(querySourceClaims(audits, { dungeonId: "maisara-caverns" }).length, 5);
   assert.equal(querySourceClaims(audits, { dungeonId: "windrunner-spire" }).length, 4);
@@ -24,8 +26,24 @@ test("claim audit exposes rejected and unresolved source assertions", () => {
   assert.equal(querySourceClaims(audits, { disposition: "unresolved" })[0].subjectName, "Dreadbellow");
 });
 
+test("Enhancement utility-rating claims reproduce the complete guide grid", () => {
+  const ratings = querySourceClaims(audits, { claimType: "utility-rating", specSlug: "enhancement-shaman" });
+  assert.equal(ratings.length, 40);
+  assert.equal(querySourceClaims(audits, { specSlug: "enhancement-shaman", dungeonId: "voidscar-arena", axisId: "root-removal" })[0].assertedRating, "always");
+  assert.equal(querySourceClaims(audits, { specSlug: "enhancement-shaman", dungeonId: "voidscar-arena", axisId: "purge" })[0].assertedRating, "none");
+});
+
+test("Elemental authoring placeholders are queryable and never accepted", () => {
+  const placeholders = querySourceClaims(audits, { claimType: "placeholder" });
+  assert.equal(placeholders.length, 9);
+  assert.equal(placeholders.every(({ disposition, canonicalDungeonId }) => disposition === "rejected-placeholder" && canonicalDungeonId === null), true);
+  assert.equal(querySourceClaims(audits, { disposition: "rejected-placeholder", dungeonId: "murder-row" })[0].subjectName, "MURDER_TIPS");
+  assert.equal(placeholders.some(({ subjectName }) => subjectName === "Platform Despawn Nudge Trigger"), true);
+  assert.equal(placeholders.some(({ subjectName }) => subjectName === "Ship Spawned"), true);
+});
+
 test("Restoration Shaman accepted claims span every seasonal dungeon", () => {
-  const accepted = querySourceClaims(audits, { disposition: "accepted" });
+  const accepted = querySourceClaims(audits, { disposition: "accepted", claimType: "mechanic-location" });
   assert.equal(accepted.length, 29);
   assert.deepEqual(
     [...new Set(accepted.map(({ canonicalDungeonId }) => canonicalDungeonId))].sort(),
@@ -49,6 +67,7 @@ test("Evoker matrices cannot reintroduce rejected Blinding Vale claims", async (
 
 test("claim queries reject invalid filters instead of returning deceptive empty output", () => {
   assert.throws(() => querySourceClaims(audits, { disposition: "verified" }), /disposition/);
+  assert.throws(() => querySourceClaims(audits, { claimType: "template-ish" }), /claimType/);
   assert.throws(() => querySourceClaims(audits, { spellId: "not-an-id" }), /positive integer/);
   assert.throws(() => querySourceClaims([{ recordType: "strategy-note" }]), /source-claim-audit/);
 });

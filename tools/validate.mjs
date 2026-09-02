@@ -200,8 +200,20 @@ function validateRecord(file, value) {
     if (new Set(claimIds).size !== claimIds.length) fail(file, "source claim IDs must be unique");
     for (const claim of value.claims ?? []) {
       requireFields(file, claim, ["claimId", "assertedDungeonId", "sectionLabel", "subjectName", "disposition", "reason", "evidence"]);
-      if (!["accepted", "rejected-cross-dungeon", "unresolved"].includes(claim.disposition)) {
+      if (!["accepted", "rejected-cross-dungeon", "rejected-placeholder", "unresolved"].includes(claim.disposition)) {
         fail(file, `claim ${claim.claimId} has unknown disposition ${claim.disposition}`);
+      }
+      if (claim.claimType && !["mechanic-location", "utility-rating", "placeholder"].includes(claim.claimType)) {
+        fail(file, `claim ${claim.claimId} has unknown claim type ${claim.claimType}`);
+      }
+      if (claim.claimType === "utility-rating") {
+        requireFields(file, claim, ["specSlug", "axisId", "assertedRating"]);
+        if (!["always", "niche", "none"].includes(claim.assertedRating)) {
+          fail(file, `utility-rating claim ${claim.claimId} has invalid rating ${claim.assertedRating}`);
+        }
+      }
+      if (claim.claimType === "placeholder" && claim.disposition !== "rejected-placeholder") {
+        fail(file, `placeholder claim ${claim.claimId} must be rejected-placeholder`);
       }
       if (!(claim.evidence ?? []).length) fail(file, `claim ${claim.claimId} has no evidence`);
       if (claim.disposition === "accepted" && claim.canonicalDungeonId !== claim.assertedDungeonId) {
@@ -213,6 +225,9 @@ function validateRecord(file, value) {
       }
       if (claim.disposition === "unresolved" && claim.canonicalDungeonId !== null) {
         fail(file, `unresolved claim ${claim.claimId} cannot assert a canonical dungeon`);
+      }
+      if (claim.disposition === "rejected-placeholder" && claim.canonicalDungeonId !== null) {
+        fail(file, `placeholder claim ${claim.claimId} cannot assert a canonical dungeon`);
       }
     }
   } else if (value.recordType === "run-observation") {
@@ -360,6 +375,7 @@ for (const file of files.filter((candidate) => candidate.endsWith(".json"))) {
 
 const dungeons = records.filter(({ value }) => value.recordType === "dungeon");
 const abilityIndexes = records.filter(({ value }) => value.recordType === "ability-index");
+const specMatrices = records.filter(({ value }) => value.recordType === "spec-dungeon-matrix");
 for (const { file, value } of records.filter(({ value }) => value.recordType === "source-claim-audit")) {
   if (file.includes(`${path.sep}examples${path.sep}`)) continue;
   for (const claim of value.claims ?? []) {
@@ -374,6 +390,17 @@ for (const { file, value } of records.filter(({ value }) => value.recordType ===
       } else if (!matchingAbilities.some((ability) => (ability.contexts ?? [])
         .some((context) => context.dungeonId === claim.canonicalDungeonId))) {
         fail(file, `accepted claim ${claim.claimId} has no ability-index context for ${claim.canonicalDungeonId}`);
+      }
+    }
+    if (claim.disposition === "accepted" && claim.claimType === "utility-rating") {
+      const expectedMatrixId = `${value.validity?.seasonSlug}/${claim.specSlug}-utility-matrix`;
+      const matrix = specMatrices.find(({ value: candidate }) => candidate.id === expectedMatrixId)?.value;
+      const dungeonEntry = matrix?.dungeons?.find((entry) => entry.dungeonId === claim.canonicalDungeonId);
+      if (!matrix) fail(file, `utility-rating claim ${claim.claimId} has no matrix for ${claim.specSlug}`);
+      else if (!matrix.axes?.some((axis) => axis.id === claim.axisId)) fail(file, `utility-rating claim ${claim.claimId} has unknown axis ${claim.axisId}`);
+      else if (!dungeonEntry) fail(file, `utility-rating claim ${claim.claimId} has no matrix dungeon ${claim.canonicalDungeonId}`);
+      else if (dungeonEntry.ratings?.[claim.axisId] !== claim.assertedRating) {
+        fail(file, `utility-rating claim ${claim.claimId} disagrees with matrix rating ${dungeonEntry.ratings?.[claim.axisId] ?? "missing"}`);
       }
     }
     if (!claim.spellId || claim.disposition === "accepted") continue;

@@ -29,12 +29,16 @@
         "required": ["claimId", "assertedDungeonId", "sectionLabel", "subjectName", "disposition", "canonicalDungeonId", "reason", "evidence"],
         "properties": {
           "claimId": { "type": "string", "pattern": "^[a-z0-9][a-z0-9-]+$" },
+          "claimType": { "enum": ["mechanic-location", "utility-rating", "placeholder"] },
           "assertedDungeonId": { "type": "string", "minLength": 1 },
           "sectionLabel": { "type": "string", "minLength": 1 },
           "subjectName": { "type": "string", "minLength": 1 },
+          "specSlug": { "type": "string", "pattern": "^[a-z0-9][a-z0-9-]+$" },
+          "axisId": { "type": "string", "pattern": "^[a-z0-9][a-z0-9-]+$" },
+          "assertedRating": { "enum": ["always", "niche", "none"] },
           "npcId": { "type": "integer", "minimum": 1 },
           "spellId": { "type": "integer", "minimum": 1 },
-          "disposition": { "enum": ["accepted", "rejected-cross-dungeon", "unresolved"] },
+          "disposition": { "enum": ["accepted", "rejected-cross-dungeon", "rejected-placeholder", "unresolved"] },
           "canonicalDungeonId": { "type": ["string", "null"] },
           "reason": { "type": "string", "minLength": 1 },
           "evidence": { "type": "array", "minItems": 1, "items": { "$ref": "provenance.schema.json" } }

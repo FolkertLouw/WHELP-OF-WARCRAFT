@@ -1,0 +1,792 @@
+{
+  "$schema": "../../schemas/source-claim-audit.schema.json",
+  "schemaVersion": 1,
+  "recordType": "source-claim-audit",
+  "id": "midnight-season-2/enhancement-shaman-wowhead-utility-ratings-audit",
+  "status": "corroborated",
+  "validity": {
+    "fromBuild": "12.1.0.69587",
+    "untilBuild": null,
+    "seasonId": null,
+    "seasonSlug": "midnight-season-2"
+  },
+  "source": {
+    "title": "Enhancement Shaman Mythic+ Dungeon Tips",
+    "url": "https://www.wowhead.com/guide/classes/shaman/enhancement/mythic-plus-dungeon-tips",
+    "retrievedAt": "2026-09-02T21:25:00+02:00"
+  },
+  "claims": [
+    {
+      "claimId": "altar-of-fangs-poison-cleansing-always",
+      "claimType": "utility-rating",
+      "assertedDungeonId": "altar-of-fangs",
+      "sectionLabel": "Talent Swap Cheat Sheet",
+      "subjectName": "Poison removal",
+      "specSlug": "enhancement-shaman",
+      "axisId": "poison-cleansing",
+      "assertedRating": "always",
+      "disposition": "accepted",
+      "canonicalDungeonId": "altar-of-fangs",
+      "reason": "The guide cheat-sheet cell is transcribed as always; repository validation binds it to the same matrix cell.",
+      "evidence": [
+        {
+          "kind": "curated",
+          "description": "WHELP validates this accepted utility rating against the checked-in Enhancement Shaman matrix."
+        }
+      ]
+    },
+    {
+      "claimId": "altar-of-fangs-decurse-none",
+      "claimType": "utility-rating",
+      "assertedDungeonId": "altar-of-fangs",
+      "sectionLabel": "Talent Swap Cheat Sheet",
+      "subjectName": "Curse removal",
+      "specSlug": "enhancement-shaman",
+      "axisId": "decurse",
+      "assertedRating": "none",
+      "disposition": "accepted",
+      "canonicalDungeonId": "altar-of-fangs",
+      "reason": "The guide cheat-sheet cell is transcribed as none; repository validation binds it to the same matrix cell.",
+      "evidence": [
+        {
+          "kind": "curated",
+          "description": "WHELP validates this accepted utility rating against the checked-in Enhancement Shaman matrix."
+        }
+      ]
+    },
+    {
+      "claimId": "altar-of-fangs-snare-removal-always",
+      "claimType": "utility-rating",
+      "assertedDungeonId": "altar-of-fangs",
+      "sectionLabel": "Talent Swap Cheat Sheet",
+      "subjectName": "Dispellable snare removal",
+      "specSlug": "enhancement-shaman",
+      "axisId": "snare-removal",
+      "assertedRating": "always",
+      "disposition": "accepted",
+      "canonicalDungeonId": "altar-of-fangs",
+      "reason": "The guide cheat-sheet cell is transcribed as always; repository validation binds it to the same matrix cell.",
+      "evidence": [
+        {
+          "kind": "curated",
+          "description": "WHELP validates this accepted utility rating against the checked-in Enhancement Shaman matrix."
+        }
+      ]
+    },
+    {
+      "claimId": "altar-of-fangs-root-removal-none",
+      "claimType": "utility-rating",
+      "assertedDungeonId": "altar-of-fangs",
+      "sectionLabel": "Talent Swap Cheat Sheet",
+      "subjectName": "Root removal",
+      "specSlug": "enhancement-shaman",
+      "axisId": "root-removal",
+      "assertedRating": "none",
+      "disposition": "accepted",
+      "canonicalDungeonId": "altar-of-fangs",
+      "reason": "The guide cheat-sheet cell is transcribed as none; repository validation binds it to the same matrix cell.",
+      "evidence": [
+        {
+          "kind": "curated",
+          "description": "WHELP validates this accepted utility rating against the checked-in Enhancement Shaman matrix."
+        }
+      ]
+    },
+    {
+      "claimId": "altar-of-fangs-purge-none",
+      "claimType": "utility-rating",
+      "assertedDungeonId": "altar-of-fangs",
+      "sectionLabel": "Talent Swap Cheat Sheet",
+      "subjectName": "Enemy magic removal",
+      "specSlug": "enhancement-shaman",
+      "axisId": "purge",
+      "assertedRating": "none",
+      "disposition": "accepted",
+      "canonicalDungeonId": "altar-of-fangs",
+      "reason": "The guide cheat-sheet cell is transcribed as none; repository validation binds it to the same matrix cell.",
+      "evidence": [
+        {
+          "kind": "curated",
+          "description": "WHELP validates this accepted utility rating against the checked-in Enhancement Shaman matrix."
+        }
+      ]
+    },
+    {
+      "claimId": "the-blinding-vale-poison-cleansing-always",
+      "claimType": "utility-rating",
+      "assertedDungeonId": "the-blinding-vale",
+      "sectionLabel": "Talent Swap Cheat Sheet",
+      "subjectName": "Poison removal",
+      "specSlug": "enhancement-shaman",
+      "axisId": "poison-cleansing",
+      "assertedRating": "always",
+      "disposition": "accepted",
+      "canonicalDungeonId": "the-blinding-vale",
+      "reason": "The guide cheat-sheet cell is transcribed as always; repository validation binds it to the same matrix cell.",
+      "evidence": [
+        {
+          "kind": "curated",
+          "description": "WHELP validates this accepted utility rating against the checked-in Enhancement Shaman matrix."
+        }
+      ]
+    },
+    {
+      "claimId": "the-blinding-vale-decurse-none",
+      "claimType": "utility-rating",
+      "assertedDungeonId": "the-blinding-vale",
+      "sectionLabel": "Talent Swap Cheat Sheet",
+      "subjectName": "Curse removal",
+      "specSlug": "enhancement-shaman",
+      "axisId": "decurse",
+      "assertedRating": "none",
+      "disposition": "accepted",
+      "canonicalDungeonId": "the-blinding-vale",
+      "reason": "The guide cheat-sheet cell is transcribed as none; repository validation binds it to the same matrix cell.",
+      "evidence": [
+        {
+          "kind": "curated",
+          "description": "WHELP validates this accepted utility rating against the checked-in Enhancement Shaman matrix."
+        }
+      ]
+    },
+    {
+      "claimId": "the-blinding-vale-snare-removal-niche",
+      "claimType": "utility-rating",
+      "assertedDungeonId": "the-blinding-vale",
+      "sectionLabel": "Talent Swap Cheat Sheet",
+      "subjectName": "Dispellable snare removal",
+      "specSlug": "enhancement-shaman",
+      "axisId": "snare-removal",
+      "assertedRating": "niche",
+      "disposition": "accepted",
+      "canonicalDungeonId": "the-blinding-vale",
+      "reason": "The guide cheat-sheet cell is transcribed as niche; repository validation binds it to the same matrix cell.",
+      "evidence": [
+        {
+          "kind": "curated",
+          "description": "WHELP validates this accepted utility rating against the checked-in Enhancement Shaman matrix."
+        }
+      ]
+    },
+    {
+      "claimId": "the-blinding-vale-root-removal-none",
+      "claimType": "utility-rating",
+      "assertedDungeonId": "the-blinding-vale",
+      "sectionLabel": "Talent Swap Cheat Sheet",
+      "subjectName": "Root removal",
+      "specSlug": "enhancement-shaman",
+      "axisId": "root-removal",
+      "assertedRating": "none",
+      "disposition": "accepted",
+      "canonicalDungeonId": "the-blinding-vale",
+      "reason": "The guide cheat-sheet cell is transcribed as none; repository validation binds it to the same matrix cell.",
+      "evidence": [
+        {
+          "kind": "curated",
+          "description": "WHELP validates this accepted utility rating against the checked-in Enhancement Shaman matrix."
+        }
+      ]
+    },
+    {
+      "claimId": "the-blinding-vale-purge-none",
+      "claimType": "utility-rating",
+      "assertedDungeonId": "the-blinding-vale",
+      "sectionLabel": "Talent Swap Cheat Sheet",
+      "subjectName": "Enemy magic removal",
+      "specSlug": "enhancement-shaman",
+      "axisId": "purge",
+      "assertedRating": "none",
+      "disposition": "accepted",
+      "canonicalDungeonId": "the-blinding-vale",
+      "reason": "The guide cheat-sheet cell is transcribed as none; repository validation binds it to the same matrix cell.",
+      "evidence": [
+        {
+          "kind": "curated",
+          "description": "WHELP validates this accepted utility rating against the checked-in Enhancement Shaman matrix."
+        }
+      ]
+    },
+    {
+      "claimId": "den-of-nalorakk-poison-cleansing-always",
+      "claimType": "utility-rating",
+      "assertedDungeonId": "den-of-nalorakk",
+      "sectionLabel": "Talent Swap Cheat Sheet",
+      "subjectName": "Poison removal",
+      "specSlug": "enhancement-shaman",
+      "axisId": "poison-cleansing",
+      "assertedRating": "always",
+      "disposition": "accepted",
+      "canonicalDungeonId": "den-of-nalorakk",
+      "reason": "The guide cheat-sheet cell is transcribed as always; repository validation binds it to the same matrix cell.",
+      "evidence": [
+        {
+          "kind": "curated",
+          "description": "WHELP validates this accepted utility rating against the checked-in Enhancement Shaman matrix."
+        }
+      ]
+    },
+    {
+      "claimId": "den-of-nalorakk-decurse-always",
+      "claimType": "utility-rating",
+      "assertedDungeonId": "den-of-nalorakk",
+      "sectionLabel": "Talent Swap Cheat Sheet",
+      "subjectName": "Curse removal",
+      "specSlug": "enhancement-shaman",
+      "axisId": "decurse",
+      "assertedRating": "always",
+      "disposition": "accepted",
+      "canonicalDungeonId": "den-of-nalorakk",
+      "reason": "The guide cheat-sheet cell is transcribed as always; repository validation binds it to the same matrix cell.",
+      "evidence": [
+        {
+          "kind": "curated",
+          "description": "WHELP validates this accepted utility rating against the checked-in Enhancement Shaman matrix."
+        }
+      ]
+    },
+    {
+      "claimId": "den-of-nalorakk-snare-removal-always",
+      "claimType": "utility-rating",
+      "assertedDungeonId": "den-of-nalorakk",
+      "sectionLabel": "Talent Swap Cheat Sheet",
+      "subjectName": "Dispellable snare removal",
+      "specSlug": "enhancement-shaman",
+      "axisId": "snare-removal",
+      "assertedRating": "always",
+      "disposition": "accepted",
+      "canonicalDungeonId": "den-of-nalorakk",
+      "reason": "The guide cheat-sheet cell is transcribed as always; repository validation binds it to the same matrix cell.",
+      "evidence": [
+        {
+          "kind": "curated",
+          "description": "WHELP validates this accepted utility rating against the checked-in Enhancement Shaman matrix."
+        }
+      ]
+    },
+    {
+      "claimId": "den-of-nalorakk-root-removal-always",
+      "claimType": "utility-rating",
+      "assertedDungeonId": "den-of-nalorakk",
+      "sectionLabel": "Talent Swap Cheat Sheet",
+      "subjectName": "Root removal",
+      "specSlug": "enhancement-shaman",
+      "axisId": "root-removal",
+      "assertedRating": "always",
+      "disposition": "accepted",
+      "canonicalDungeonId": "den-of-nalorakk",
+      "reason": "The guide cheat-sheet cell is transcribed as always; repository validation binds it to the same matrix cell.",
+      "evidence": [
+        {
+          "kind": "curated",
+          "description": "WHELP validates this accepted utility rating against the checked-in Enhancement Shaman matrix."
+        }
+      ]
+    },
+    {
+      "claimId": "den-of-nalorakk-purge-always",
+      "claimType": "utility-rating",
+      "assertedDungeonId": "den-of-nalorakk",
+      "sectionLabel": "Talent Swap Cheat Sheet",
+      "subjectName": "Enemy magic removal",
+      "specSlug": "enhancement-shaman",
+      "axisId": "purge",
+      "assertedRating": "always",
+      "disposition": "accepted",
+      "canonicalDungeonId": "den-of-nalorakk",
+      "reason": "The guide cheat-sheet cell is transcribed as always; repository validation binds it to the same matrix cell.",
+      "evidence": [
+        {
+          "kind": "curated",
+          "description": "WHELP validates this accepted utility rating against the checked-in Enhancement Shaman matrix."
+        }
+      ]
+    },
+    {
+      "claimId": "kings-rest-poison-cleansing-always",
+      "claimType": "utility-rating",
+      "assertedDungeonId": "kings-rest",
+      "sectionLabel": "Talent Swap Cheat Sheet",
+      "subjectName": "Poison removal",
+      "specSlug": "enhancement-shaman",
+      "axisId": "poison-cleansing",
+      "assertedRating": "always",
+      "disposition": "accepted",
+      "canonicalDungeonId": "kings-rest",
+      "reason": "The guide cheat-sheet cell is transcribed as always; repository validation binds it to the same matrix cell.",
+      "evidence": [
+        {
+          "kind": "curated",
+          "description": "WHELP validates this accepted utility rating against the checked-in Enhancement Shaman matrix."
+        }
+      ]
+    },
+    {
+      "claimId": "kings-rest-decurse-always",
+      "claimType": "utility-rating",
+      "assertedDungeonId": "kings-rest",
+      "sectionLabel": "Talent Swap Cheat Sheet",
+      "subjectName": "Curse removal",
+      "specSlug": "enhancement-shaman",
+      "axisId": "decurse",
+      "assertedRating": "always",
+      "disposition": "accepted",
+      "canonicalDungeonId": "kings-rest",
+      "reason": "The guide cheat-sheet cell is transcribed as always; repository validation binds it to the same matrix cell.",
+      "evidence": [
+        {
+          "kind": "curated",
+          "description": "WHELP validates this accepted utility rating against the checked-in Enhancement Shaman matrix."
+        }
+      ]
+    },
+    {
+      "claimId": "kings-rest-snare-removal-always",
+      "claimType": "utility-rating",
+      "assertedDungeonId": "kings-rest",
+      "sectionLabel": "Talent Swap Cheat Sheet",
+      "subjectName": "Dispellable snare removal",
+      "specSlug": "enhancement-shaman",
+      "axisId": "snare-removal",
+      "assertedRating": "always",
+      "disposition": "accepted",
+      "canonicalDungeonId": "kings-rest",
+      "reason": "The guide cheat-sheet cell is transcribed as always; repository validation binds it to the same matrix cell.",
+      "evidence": [
+        {
+          "kind": "curated",
+          "description": "WHELP validates this accepted utility rating against the checked-in Enhancement Shaman matrix."
+        }
+      ]
+    },
+    {
+      "claimId": "kings-rest-root-removal-always",
+      "claimType": "utility-rating",
+      "assertedDungeonId": "kings-rest",
+      "sectionLabel": "Talent Swap Cheat Sheet",
+      "subjectName": "Root removal",
+      "specSlug": "enhancement-shaman",
+      "axisId": "root-removal",
+      "assertedRating": "always",
+      "disposition": "accepted",
+      "canonicalDungeonId": "kings-rest",
+      "reason": "The guide cheat-sheet cell is transcribed as always; repository validation binds it to the same matrix cell.",
+      "evidence": [
+        {
+          "kind": "curated",
+          "description": "WHELP validates this accepted utility rating against the checked-in Enhancement Shaman matrix."
+        }
+      ]
+    },
+    {
+      "claimId": "kings-rest-purge-always",
+      "claimType": "utility-rating",
+      "assertedDungeonId": "kings-rest",
+      "sectionLabel": "Talent Swap Cheat Sheet",
+      "subjectName": "Enemy magic removal",
+      "specSlug": "enhancement-shaman",
+      "axisId": "purge",
+      "assertedRating": "always",
+      "disposition": "accepted",
+      "canonicalDungeonId": "kings-rest",
+      "reason": "The guide cheat-sheet cell is transcribed as always; repository validation binds it to the same matrix cell.",
+      "evidence": [
+        {
+          "kind": "curated",
+          "description": "WHELP validates this accepted utility rating against the checked-in Enhancement Shaman matrix."
+        }
+      ]
+    },
+    {
+      "claimId": "murder-row-poison-cleansing-always",
+      "claimType": "utility-rating",
+      "assertedDungeonId": "murder-row",
+      "sectionLabel": "Talent Swap Cheat Sheet",
+      "subjectName": "Poison removal",
+      "specSlug": "enhancement-shaman",
+      "axisId": "poison-cleansing",
+      "assertedRating": "always",
+      "disposition": "accepted",
+      "canonicalDungeonId": "murder-row",
+      "reason": "The guide cheat-sheet cell is transcribed as always; repository validation binds it to the same matrix cell.",
+      "evidence": [
+        {
+          "kind": "curated",
+          "description": "WHELP validates this accepted utility rating against the checked-in Enhancement Shaman matrix."
+        }
+      ]
+    },
+    {
+      "claimId": "murder-row-decurse-always",
+      "claimType": "utility-rating",
+      "assertedDungeonId": "murder-row",
+      "sectionLabel": "Talent Swap Cheat Sheet",
+      "subjectName": "Curse removal",
+      "specSlug": "enhancement-shaman",
+      "axisId": "decurse",
+      "assertedRating": "always",
+      "disposition": "accepted",
+      "canonicalDungeonId": "murder-row",
+      "reason": "The guide cheat-sheet cell is transcribed as always; repository validation binds it to the same matrix cell.",
+      "evidence": [
+        {
+          "kind": "curated",
+          "description": "WHELP validates this accepted utility rating against the checked-in Enhancement Shaman matrix."
+        }
+      ]
+    },
+    {
+      "claimId": "murder-row-snare-removal-none",
+      "claimType": "utility-rating",
+      "assertedDungeonId": "murder-row",
+      "sectionLabel": "Talent Swap Cheat Sheet",
+      "subjectName": "Dispellable snare removal",
+      "specSlug": "enhancement-shaman",
+      "axisId": "snare-removal",
+      "assertedRating": "none",
+      "disposition": "accepted",
+      "canonicalDungeonId": "murder-row",
+      "reason": "The guide cheat-sheet cell is transcribed as none; repository validation binds it to the same matrix cell.",
+      "evidence": [
+        {
+          "kind": "curated",
+          "description": "WHELP validates this accepted utility rating against the checked-in Enhancement Shaman matrix."
+        }
+      ]
+    },
+    {
+      "claimId": "murder-row-root-removal-none",
+      "claimType": "utility-rating",
+      "assertedDungeonId": "murder-row",
+      "sectionLabel": "Talent Swap Cheat Sheet",
+      "subjectName": "Root removal",
+      "specSlug": "enhancement-shaman",
+      "axisId": "root-removal",
+      "assertedRating": "none",
+      "disposition": "accepted",
+      "canonicalDungeonId": "murder-row",
+      "reason": "The guide cheat-sheet cell is transcribed as none; repository validation binds it to the same matrix cell.",
+      "evidence": [
+        {
+          "kind": "curated",
+          "description": "WHELP validates this accepted utility rating against the checked-in Enhancement Shaman matrix."
+        }
+      ]
+    },
+    {
+      "claimId": "murder-row-purge-always",
+      "claimType": "utility-rating",
+      "assertedDungeonId": "murder-row",
+      "sectionLabel": "Talent Swap Cheat Sheet",
+      "subjectName": "Enemy magic removal",
+      "specSlug": "enhancement-shaman",
+      "axisId": "purge",
+      "assertedRating": "always",
+      "disposition": "accepted",
+      "canonicalDungeonId": "murder-row",
+      "reason": "The guide cheat-sheet cell is transcribed as always; repository validation binds it to the same matrix cell.",
+      "evidence": [
+        {
+          "kind": "curated",
+          "description": "WHELP validates this accepted utility rating against the checked-in Enhancement Shaman matrix."
+        }
+      ]
+    },
+    {
+      "claimId": "ruby-life-pools-poison-cleansing-none",
+      "claimType": "utility-rating",
+      "assertedDungeonId": "ruby-life-pools",
+      "sectionLabel": "Talent Swap Cheat Sheet",
+      "subjectName": "Poison removal",
+      "specSlug": "enhancement-shaman",
+      "axisId": "poison-cleansing",
+      "assertedRating": "none",
+      "disposition": "accepted",
+      "canonicalDungeonId": "ruby-life-pools",
+      "reason": "The guide cheat-sheet cell is transcribed as none; repository validation binds it to the same matrix cell.",
+      "evidence": [
+        {
+          "kind": "curated",
+          "description": "WHELP validates this accepted utility rating against the checked-in Enhancement Shaman matrix."
+        }
+      ]
+    },
+    {
+      "claimId": "ruby-life-pools-decurse-none",
+      "claimType": "utility-rating",
+      "assertedDungeonId": "ruby-life-pools",
+      "sectionLabel": "Talent Swap Cheat Sheet",
+      "subjectName": "Curse removal",
+      "specSlug": "enhancement-shaman",
+      "axisId": "decurse",
+      "assertedRating": "none",
+      "disposition": "accepted",
+      "canonicalDungeonId": "ruby-life-pools",
+      "reason": "The guide cheat-sheet cell is transcribed as none; repository validation binds it to the same matrix cell.",
+      "evidence": [
+        {
+          "kind": "curated",
+          "description": "WHELP validates this accepted utility rating against the checked-in Enhancement Shaman matrix."
+        }
+      ]
+    },
+    {
+      "claimId": "ruby-life-pools-snare-removal-niche",
+      "claimType": "utility-rating",
+      "assertedDungeonId": "ruby-life-pools",
+      "sectionLabel": "Talent Swap Cheat Sheet",
+      "subjectName": "Dispellable snare removal",
+      "specSlug": "enhancement-shaman",
+      "axisId": "snare-removal",
+      "assertedRating": "niche",
+      "disposition": "accepted",
+      "canonicalDungeonId": "ruby-life-pools",
+      "reason": "The guide cheat-sheet cell is transcribed as niche; repository validation binds it to the same matrix cell.",
+      "evidence": [
+        {
+          "kind": "curated",
+          "description": "WHELP validates this accepted utility rating against the checked-in Enhancement Shaman matrix."
+        }
+      ]
+    },
+    {
+      "claimId": "ruby-life-pools-root-removal-none",
+      "claimType": "utility-rating",
+      "assertedDungeonId": "ruby-life-pools",
+      "sectionLabel": "Talent Swap Cheat Sheet",
+      "subjectName": "Root removal",
+      "specSlug": "enhancement-shaman",
+      "axisId": "root-removal",
+      "assertedRating": "none",
+      "disposition": "accepted",
+      "canonicalDungeonId": "ruby-life-pools",
+      "reason": "The guide cheat-sheet cell is transcribed as none; repository validation binds it to the same matrix cell.",
+      "evidence": [
+        {
+          "kind": "curated",
+          "description": "WHELP validates this accepted utility rating against the checked-in Enhancement Shaman matrix."
+        }
+      ]
+    },
+    {
+      "claimId": "ruby-life-pools-purge-always",
+      "claimType": "utility-rating",
+      "assertedDungeonId": "ruby-life-pools",
+      "sectionLabel": "Talent Swap Cheat Sheet",
+      "subjectName": "Enemy magic removal",
+      "specSlug": "enhancement-shaman",
+      "axisId": "purge",
+      "assertedRating": "always",
+      "disposition": "accepted",
+      "canonicalDungeonId": "ruby-life-pools",
+      "reason": "The guide cheat-sheet cell is transcribed as always; repository validation binds it to the same matrix cell.",
+      "evidence": [
+        {
+          "kind": "curated",
+          "description": "WHELP validates this accepted utility rating against the checked-in Enhancement Shaman matrix."
+        }
+      ]
+    },
+    {
+      "claimId": "temple-of-sethraliss-poison-cleansing-always",
+      "claimType": "utility-rating",
+      "assertedDungeonId": "temple-of-sethraliss",
+      "sectionLabel": "Talent Swap Cheat Sheet",
+      "subjectName": "Poison removal",
+      "specSlug": "enhancement-shaman",
+      "axisId": "poison-cleansing",
+      "assertedRating": "always",
+      "disposition": "accepted",
+      "canonicalDungeonId": "temple-of-sethraliss",
+      "reason": "The guide cheat-sheet cell is transcribed as always; repository validation binds it to the same matrix cell.",
+      "evidence": [
+        {
+          "kind": "curated",
+          "description": "WHELP validates this accepted utility rating against the checked-in Enhancement Shaman matrix."
+        }
+      ]
+    },
+    {
+      "claimId": "temple-of-sethraliss-decurse-always",
+      "claimType": "utility-rating",
+      "assertedDungeonId": "temple-of-sethraliss",
+      "sectionLabel": "Talent Swap Cheat Sheet",
+      "subjectName": "Curse removal",
+      "specSlug": "enhancement-shaman",
+      "axisId": "decurse",
+      "assertedRating": "always",
+      "disposition": "accepted",
+      "canonicalDungeonId": "temple-of-sethraliss",
+      "reason": "The guide cheat-sheet cell is transcribed as always; repository validation binds it to the same matrix cell.",
+      "evidence": [
+        {
+          "kind": "curated",
+          "description": "WHELP validates this accepted utility rating against the checked-in Enhancement Shaman matrix."
+        }
+      ]
+    },
+    {
+      "claimId": "temple-of-sethraliss-snare-removal-none",
+      "claimType": "utility-rating",
+      "assertedDungeonId": "temple-of-sethraliss",
+      "sectionLabel": "Talent Swap Cheat Sheet",
+      "subjectName": "Dispellable snare removal",
+      "specSlug": "enhancement-shaman",
+      "axisId": "snare-removal",
+      "assertedRating": "none",
+      "disposition": "accepted",
+      "canonicalDungeonId": "temple-of-sethraliss",
+      "reason": "The guide cheat-sheet cell is transcribed as none; repository validation binds it to the same matrix cell.",
+      "evidence": [
+        {
+          "kind": "curated",
+          "description": "WHELP validates this accepted utility rating against the checked-in Enhancement Shaman matrix."
+        }
+      ]
+    },
+    {
+      "claimId": "temple-of-sethraliss-root-removal-none",
+      "claimType": "utility-rating",
+      "assertedDungeonId": "temple-of-sethraliss",
+      "sectionLabel": "Talent Swap Cheat Sheet",
+      "subjectName": "Root removal",
+      "specSlug": "enhancement-shaman",
+      "axisId": "root-removal",
+      "assertedRating": "none",
+      "disposition": "accepted",
+      "canonicalDungeonId": "temple-of-sethraliss",
+      "reason": "The guide cheat-sheet cell is transcribed as none; repository validation binds it to the same matrix cell.",
+      "evidence": [
+        {
+          "kind": "curated",
+          "description": "WHELP validates this accepted utility rating against the checked-in Enhancement Shaman matrix."
+        }
+      ]
+    },
+    {
+      "claimId": "temple-of-sethraliss-purge-none",
+      "claimType": "utility-rating",
+      "assertedDungeonId": "temple-of-sethraliss",
+      "sectionLabel": "Talent Swap Cheat Sheet",
+      "subjectName": "Enemy magic removal",
+      "specSlug": "enhancement-shaman",
+      "axisId": "purge",
+      "assertedRating": "none",
+      "disposition": "accepted",
+      "canonicalDungeonId": "temple-of-sethraliss",
+      "reason": "The guide cheat-sheet cell is transcribed as none; repository validation binds it to the same matrix cell.",
+      "evidence": [
+        {
+          "kind": "curated",
+          "description": "WHELP validates this accepted utility rating against the checked-in Enhancement Shaman matrix."
+        }
+      ]
+    },
+    {
+      "claimId": "voidscar-arena-poison-cleansing-always",
+      "claimType": "utility-rating",
+      "assertedDungeonId": "voidscar-arena",
+      "sectionLabel": "Talent Swap Cheat Sheet",
+      "subjectName": "Poison removal",
+      "specSlug": "enhancement-shaman",
+      "axisId": "poison-cleansing",
+      "assertedRating": "always",
+      "disposition": "accepted",
+      "canonicalDungeonId": "voidscar-arena",
+      "reason": "The guide cheat-sheet cell is transcribed as always; repository validation binds it to the same matrix cell.",
+      "evidence": [
+        {
+          "kind": "curated",
+          "description": "WHELP validates this accepted utility rating against the checked-in Enhancement Shaman matrix."
+        }
+      ]
+    },
+    {
+      "claimId": "voidscar-arena-decurse-none",
+      "claimType": "utility-rating",
+      "assertedDungeonId": "voidscar-arena",
+      "sectionLabel": "Talent Swap Cheat Sheet",
+      "subjectName": "Curse removal",
+      "specSlug": "enhancement-shaman",
+      "axisId": "decurse",
+      "assertedRating": "none",
+      "disposition": "accepted",
+      "canonicalDungeonId": "voidscar-arena",
+      "reason": "The guide cheat-sheet cell is transcribed as none; repository validation binds it to the same matrix cell.",
+      "evidence": [
+        {
+          "kind": "curated",
+          "description": "WHELP validates this accepted utility rating against the checked-in Enhancement Shaman matrix."
+        }
+      ]
+    },
+    {
+      "claimId": "voidscar-arena-snare-removal-none",
+      "claimType": "utility-rating",
+      "assertedDungeonId": "voidscar-arena",
+      "sectionLabel": "Talent Swap Cheat Sheet",
+      "subjectName": "Dispellable snare removal",
+      "specSlug": "enhancement-shaman",
+      "axisId": "snare-removal",
+      "assertedRating": "none",
+      "disposition": "accepted",
+      "canonicalDungeonId": "voidscar-arena",
+      "reason": "The guide cheat-sheet cell is transcribed as none; repository validation binds it to the same matrix cell.",
+      "evidence": [
+        {
+          "kind": "curated",
+          "description": "WHELP validates this accepted utility rating against the checked-in Enhancement Shaman matrix."
+        }
+      ]
+    },
+    {
+      "claimId": "voidscar-arena-root-removal-always",
+      "claimType": "utility-rating",
+      "assertedDungeonId": "voidscar-arena",
+      "sectionLabel": "Talent Swap Cheat Sheet",
+      "subjectName": "Root removal",
+      "specSlug": "enhancement-shaman",
+      "axisId": "root-removal",
+      "assertedRating": "always",
+      "disposition": "accepted",
+      "canonicalDungeonId": "voidscar-arena",
+      "reason": "The guide cheat-sheet cell is transcribed as always; repository validation binds it to the same matrix cell.",
+      "evidence": [
+        {
+          "kind": "curated",
+          "description": "WHELP validates this accepted utility rating against the checked-in Enhancement Shaman matrix."
+        }
+      ]
+    },
+    {
+      "claimId": "voidscar-arena-purge-none",
+      "claimType": "utility-rating",
+      "assertedDungeonId": "voidscar-arena",
+      "sectionLabel": "Talent Swap Cheat Sheet",
+      "subjectName": "Enemy magic removal",
+      "specSlug": "enhancement-shaman",
+      "axisId": "purge",
+      "assertedRating": "none",
+      "disposition": "accepted",
+      "canonicalDungeonId": "voidscar-arena",
+      "reason": "The guide cheat-sheet cell is transcribed as none; repository validation binds it to the same matrix cell.",
+      "evidence": [
+        {
+          "kind": "curated",
+          "description": "WHELP validates this accepted utility rating against the checked-in Enhancement Shaman matrix."
+        }
+      ]
+    }
+  ],
+  "provenance": [
+    {
+      "kind": "external-reference",
+      "description": "Wordup's current Patch 12.1.0 guide supplies the eight-by-five utility cheat sheet audited here; its dungeon-detail bodies are currently empty.",
+      "url": "https://www.wowhead.com/guide/classes/shaman/enhancement/mythic-plus-dungeon-tips",
+      "retrievedAt": "2026-09-02T21:25:00+02:00"
+    },
+    {
+      "kind": "curated",
+      "description": "WHELP records every table cell, including explicit none and niche ratings, and validates each accepted value against the specialization matrix."
+    }
+  ]
+}

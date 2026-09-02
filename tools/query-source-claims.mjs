@@ -18,6 +18,9 @@ const filters = {
   disposition: option("--disposition"),
   dungeonId: option("--dungeon"),
   spellId: option("--spell"),
+  claimType: option("--type"),
+  specSlug: option("--spec"),
+  axisId: option("--axis"),
 };
 const claims = querySourceClaims(audits, filters);
 

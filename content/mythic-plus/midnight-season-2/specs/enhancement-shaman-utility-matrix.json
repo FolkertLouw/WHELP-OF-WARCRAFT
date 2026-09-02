@@ -29,10 +29,22 @@
     { "affixSlug": "xalataths-bargain-pulsar", "recommendations": ["No dedicated utility swap is required; position early to intercept partner orbs."] },
     { "affixSlug": "xalataths-bargain-devour", "recommendations": ["Cleanse Spirit and Poison Cleansing Totem remove eligible shields.", "Spirit Walk or Thunderous Paws can clear the personal slow, while Wind Rush Totem with Jet Stream can clear slows for the group."] }
   ],
-  "provenance": [{
-    "kind": "external-reference",
-    "description": "Original structured transcription of the always, comfort, and unused utility ratings in wordup's Enhancement Shaman Mythic+ guide, updated for Patch 12.1.0. Talent build strings are intentionally excluded.",
-    "url": "https://www.wowhead.com/guide/classes/shaman/enhancement/mythic-plus-dungeon-tips",
-    "retrievedAt": "2026-09-02T13:10:00+02:00"
-  }]
+  "provenance": [
+    {
+      "kind": "external-reference",
+      "description": "The always, comfort, and unused utility ratings are a structured transcription of wordup's Patch 12.1.0 Enhancement Shaman cheat sheet. The guide's dungeon-detail bodies are empty, so WHELP does not attribute the mechanic notes to the author.",
+      "url": "https://www.wowhead.com/guide/classes/shaman/enhancement/mythic-plus-dungeon-tips",
+      "retrievedAt": "2026-09-02T21:25:00+02:00"
+    },
+    {
+      "kind": "game-data",
+      "description": "Mechanic spell IDs and dungeon contexts are joined from WHELP's generated seasonal ability index.",
+      "recordId": "midnight-season-2/flagged-abilities",
+      "retrievedAt": "2026-09-02T21:25:00+02:00"
+    },
+    {
+      "kind": "curated",
+      "description": "Mechanic notes are original WHELP joins that explain the audited table ratings without inventing missing guide prose."
+    }
+  ]
 }

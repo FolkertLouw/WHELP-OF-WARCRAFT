@@ -1,0 +1,194 @@
+{
+  "$schema": "../../schemas/source-claim-audit.schema.json",
+  "schemaVersion": 1,
+  "recordType": "source-claim-audit",
+  "id": "midnight-season-2/elemental-shaman-wowhead-placeholder-audit",
+  "status": "corroborated",
+  "validity": {
+    "fromBuild": "12.1.0.69587",
+    "untilBuild": null,
+    "seasonId": null,
+    "seasonSlug": "midnight-season-2"
+  },
+  "source": {
+    "title": "Elemental Shaman Mythic+ Dungeon Tips",
+    "url": "https://www.wowhead.com/guide/classes/shaman/elemental/mythic-plus-dungeon-tips",
+    "retrievedAt": "2026-09-02T21:25:00+02:00"
+  },
+  "claims": [
+    {
+      "claimId": "altar-of-fangs-fangs-tips",
+      "claimType": "placeholder",
+      "assertedDungeonId": "altar-of-fangs",
+      "sectionLabel": "Altar of Fangs Tips",
+      "subjectName": "FANGS_TIPS",
+      "disposition": "rejected-placeholder",
+      "canonicalDungeonId": null,
+      "reason": "This is a literal authoring-template token, not player-facing strategy and not evidence for a WHELP recommendation.",
+      "evidence": [
+        {
+          "kind": "external-reference",
+          "description": "The current Elemental Shaman guide exposes the literal FANGS_TIPS token in this tips section.",
+          "url": "https://www.wowhead.com/guide/classes/shaman/elemental/mythic-plus-dungeon-tips",
+          "retrievedAt": "2026-09-02T21:25:00+02:00"
+        }
+      ]
+    },
+    {
+      "claimId": "the-blinding-vale-vale-tips",
+      "claimType": "placeholder",
+      "assertedDungeonId": "the-blinding-vale",
+      "sectionLabel": "The Blinding Vale Tips",
+      "subjectName": "VALE_TIPS",
+      "disposition": "rejected-placeholder",
+      "canonicalDungeonId": null,
+      "reason": "This is a literal authoring-template token, not player-facing strategy and not evidence for a WHELP recommendation.",
+      "evidence": [
+        {
+          "kind": "external-reference",
+          "description": "The current Elemental Shaman guide exposes the literal VALE_TIPS token in this tips section.",
+          "url": "https://www.wowhead.com/guide/classes/shaman/elemental/mythic-plus-dungeon-tips",
+          "retrievedAt": "2026-09-02T21:25:00+02:00"
+        }
+      ]
+    },
+    {
+      "claimId": "den-of-nalorakk-nalorakk-tips",
+      "claimType": "placeholder",
+      "assertedDungeonId": "den-of-nalorakk",
+      "sectionLabel": "Den of Nalorakk Tips",
+      "subjectName": "NALORAKK_TIPS",
+      "disposition": "rejected-placeholder",
+      "canonicalDungeonId": null,
+      "reason": "This is a literal authoring-template token, not player-facing strategy and not evidence for a WHELP recommendation.",
+      "evidence": [
+        {
+          "kind": "external-reference",
+          "description": "The current Elemental Shaman guide exposes the literal NALORAKK_TIPS token in this tips section.",
+          "url": "https://www.wowhead.com/guide/classes/shaman/elemental/mythic-plus-dungeon-tips",
+          "retrievedAt": "2026-09-02T21:25:00+02:00"
+        }
+      ]
+    },
+    {
+      "claimId": "murder-row-murder-tips",
+      "claimType": "placeholder",
+      "assertedDungeonId": "murder-row",
+      "sectionLabel": "Murder Row Tips",
+      "subjectName": "MURDER_TIPS",
+      "disposition": "rejected-placeholder",
+      "canonicalDungeonId": null,
+      "reason": "This is a literal authoring-template token, not player-facing strategy and not evidence for a WHELP recommendation.",
+      "evidence": [
+        {
+          "kind": "external-reference",
+          "description": "The current Elemental Shaman guide exposes the literal MURDER_TIPS token in this tips section.",
+          "url": "https://www.wowhead.com/guide/classes/shaman/elemental/mythic-plus-dungeon-tips",
+          "retrievedAt": "2026-09-02T21:25:00+02:00"
+        }
+      ]
+    },
+    {
+      "claimId": "temple-of-sethraliss-sethraliss-tips",
+      "claimType": "placeholder",
+      "assertedDungeonId": "temple-of-sethraliss",
+      "sectionLabel": "Temple of Sethraliss Tips",
+      "subjectName": "SETHRALISS_TIPS",
+      "disposition": "rejected-placeholder",
+      "canonicalDungeonId": null,
+      "reason": "This is a literal authoring-template token, not player-facing strategy and not evidence for a WHELP recommendation.",
+      "evidence": [
+        {
+          "kind": "external-reference",
+          "description": "The current Elemental Shaman guide exposes the literal SETHRALISS_TIPS token in this tips section.",
+          "url": "https://www.wowhead.com/guide/classes/shaman/elemental/mythic-plus-dungeon-tips",
+          "retrievedAt": "2026-09-02T21:25:00+02:00"
+        }
+      ]
+    },
+    {
+      "claimId": "kings-rest-kings-tips",
+      "claimType": "placeholder",
+      "assertedDungeonId": "kings-rest",
+      "sectionLabel": "Kings' Rest Tips",
+      "subjectName": "KINGS_TIPS",
+      "disposition": "rejected-placeholder",
+      "canonicalDungeonId": null,
+      "reason": "This is a literal authoring-template token, not player-facing strategy and not evidence for a WHELP recommendation.",
+      "evidence": [
+        {
+          "kind": "external-reference",
+          "description": "The current Elemental Shaman guide exposes the literal KINGS_TIPS token in this tips section.",
+          "url": "https://www.wowhead.com/guide/classes/shaman/elemental/mythic-plus-dungeon-tips",
+          "retrievedAt": "2026-09-02T21:25:00+02:00"
+        }
+      ]
+    },
+    {
+      "claimId": "den-of-nalorakk-platform-despawn-nudge-trigger",
+      "claimType": "placeholder",
+      "assertedDungeonId": "den-of-nalorakk",
+      "sectionLabel": "Den of Nalorakk Utility Options",
+      "subjectName": "Platform Despawn Nudge Trigger",
+      "disposition": "rejected-placeholder",
+      "canonicalDungeonId": null,
+      "reason": "This internal DNT trigger label is not the player-facing Rime Detonation root and cannot support a Spirit Walk recommendation.",
+      "evidence": [
+        {
+          "kind": "external-reference",
+          "description": "The current guide links spell 1264597 under this internal label, while the Sentinel encounter journal identifies Rime Detonation as the root mechanic.",
+          "url": "https://www.wowhead.com/npc=261053/sentinel-of-winter",
+          "retrievedAt": "2026-09-02T21:25:00+02:00"
+        }
+      ]
+    },
+    {
+      "claimId": "murder-row-ship-spawned-label",
+      "claimType": "placeholder",
+      "assertedDungeonId": "murder-row",
+      "sectionLabel": "Murder Row Utility Options",
+      "subjectName": "Ship Spawned",
+      "disposition": "rejected-placeholder",
+      "canonicalDungeonId": null,
+      "reason": "This rendered implementation label is not a usable NPC name; WHELP retains Seductive Sayaad from canonical NPC context instead.",
+      "evidence": [
+        {
+          "kind": "external-reference",
+          "description": "The current Elemental guide visibly renders Ship Spawned as the Seduction source.",
+          "url": "https://www.wowhead.com/guide/classes/shaman/elemental/mythic-plus-dungeon-tips",
+          "retrievedAt": "2026-09-02T21:25:00+02:00"
+        }
+      ]
+    },
+    {
+      "claimId": "ruby-life-pools-ruby-tips",
+      "claimType": "placeholder",
+      "assertedDungeonId": "ruby-life-pools",
+      "sectionLabel": "Ruby Life Pools Tips",
+      "subjectName": "RUBY_TIPS",
+      "disposition": "rejected-placeholder",
+      "canonicalDungeonId": null,
+      "reason": "This is a literal authoring-template token, not player-facing strategy and not evidence for a WHELP recommendation.",
+      "evidence": [
+        {
+          "kind": "external-reference",
+          "description": "The current Elemental Shaman guide exposes the literal RUBY_TIPS token in this tips section.",
+          "url": "https://www.wowhead.com/guide/classes/shaman/elemental/mythic-plus-dungeon-tips",
+          "retrievedAt": "2026-09-02T21:25:00+02:00"
+        }
+      ]
+    }
+  ],
+  "provenance": [
+    {
+      "kind": "external-reference",
+      "description": "HawkCorrigan's current Patch 12.1.0 guide is audited for literal unfinished tips placeholders; usable utility rows remain separate from these rejected tokens.",
+      "url": "https://www.wowhead.com/guide/classes/shaman/elemental/mythic-plus-dungeon-tips",
+      "retrievedAt": "2026-09-02T21:25:00+02:00"
+    },
+    {
+      "kind": "curated",
+      "description": "WHELP quarantines authoring placeholders so language models cannot quote or expand them as if they were strategy."
+    }
+  ]
+}

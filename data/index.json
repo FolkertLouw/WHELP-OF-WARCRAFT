@@ -126,6 +126,16 @@
   },
   "sourceClaimAudits": [
     {
+      "id": "midnight-season-2/elemental-shaman-wowhead-placeholder-audit",
+      "record": "source-audits/elemental-shaman-midnight-season-2-wowhead-placeholders.json",
+      "status": "corroborated"
+    },
+    {
+      "id": "midnight-season-2/enhancement-shaman-wowhead-utility-ratings-audit",
+      "record": "source-audits/enhancement-shaman-midnight-season-2-wowhead-utility-ratings.json",
+      "status": "corroborated"
+    },
+    {
       "id": "midnight-season-2/restoration-shaman-wowhead-dungeon-tips-audit",
       "record": "source-audits/restoration-shaman-midnight-season-2-wowhead-dungeon-tips.json",
       "status": "corroborated"

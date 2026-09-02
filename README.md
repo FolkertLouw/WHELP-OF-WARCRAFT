@@ -14,7 +14,7 @@ The repository is the reviewable public knowledge layer. Raw high-volume telemet
 
 ## Current status
 
-Version 1.10 is a validated, queryable foundation. It includes:
+Version 1.11 is a validated, queryable foundation. It includes:
 
 - the WHELP data and trust model;
 - JSON schemas and synthetic examples;
@@ -54,7 +54,7 @@ Demon Hunter coverage reflects Midnight's current three-spec roster, including D
 
 Evoker completes the current Retail specialization catalog at 40 full matrices. Devastation, Preservation, and Augmentation retain distinct dispel and support profiles: Cauterizing Flame handles Bleed, Poison, Curse, and Disease but never Magic; only Preservation's Naturalize supplies friendly Magic removal. Zephyr is five-player AoE mitigation plus movement speed, while Rescue, Spatial Paradox, and Time Spiral remain separate movement-support behaviors. The ingestion notes also reject current guide fragments placed under the wrong dungeon instead of laundering them into canonical facts.
 
-Source claims now have their own auditable record layer. Each extracted guide claim is individually marked `accepted`, `rejected-cross-dungeon`, or `unresolved`, with evidence and any independently established canonical dungeon. The current audits quarantine 28 cross-dungeon claims from seven mislabeled Evoker-guide sections, retain one unresolved claim for later review, and positively corroborate 29 Restoration Shaman claims across all eight seasonal dungeons. Accepted spell claims must resolve to their asserted dungeon in the generated ability index, so a reviewer cannot bypass the location safeguard by changing the disposition. Inspect the review queue with `npm run query:source-claims`, or filter it with `--disposition`, `--dungeon`, and `--spell`.
+Source claims now have their own auditable record layer. Each extracted claim records its type, disposition, evidence, and independently established canonical context. The current audits quarantine 28 cross-dungeon claims from seven mislabeled Evoker-guide sections, retain one unresolved claim, positively corroborate 29 Restoration Shaman mechanics, and bind all 40 cells of Enhancement's eight-by-five utility cheat sheet to its matrix. Nine Elemental source artifacts—including seven literal tips tokens and two internal implementation labels—are explicitly rejected instead of being treated as strategy. Accepted spell claims must resolve to their dungeon in the generated ability index; accepted utility ratings must equal the corresponding specialization-matrix cell. Inspect the evidence with `npm run query:source-claims`, filtering by `--disposition`, `--type`, `--spec`, `--axis`, `--dungeon`, or `--spell`.
 
 Source maintenance is machine-readable. `npm run query:freshness` compares every canonical provenance-bearing record with the current build and the checked-in freshness policy. It reports source age separately from build validity and returns an actionable review queue; use `--as-of <ISO-date> --include all` for a reproducible full audit. See `docs/FRESHNESS.md`.
 
