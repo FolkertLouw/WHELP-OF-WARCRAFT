@@ -279,3 +279,12 @@ test("does not turn Vanish mechanic cancellation into a generic dispel", () => {
   assert.ok(!vanish.actions.includes("cleanse-magic"));
   assert.ok(!vanish.actions.includes("cleanse-root"));
 });
+
+test("joins Elemental Shaman displacement and control cleanses without calling them interrupts", () => {
+  const report = querySpecMatrix(matrices, capabilities, { spec: "elemental-shaman", dungeon: "voidscar-arena", rating: "always" });
+  const displacement = report.dungeons[0].utilities.find((entry) => entry.axisId === "enemy-reposition").tools[0];
+  const controlCleanse = report.dungeons[0].utilities.find((entry) => entry.axisId === "control-cleanse").tools[0];
+  assert.equal(displacement.id, "thunderstorm");
+  assert.ok(!displacement.actions.includes("interrupt"));
+  assert.deepEqual(controlCleanse.actions, ["cleanse-fear", "cleanse-charm", "cleanse-sleep"]);
+});

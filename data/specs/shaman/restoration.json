@@ -16,6 +16,7 @@
     { "id": "spirit-walk", "name": "Spirit Walk", "spellId": 58875, "actions": ["cleanse-snare", "cleanse-root"], "availability": "talent", "scope": "self", "limitations": ["Personal movement-impairment removal", "One-minute cooldown"] },
     { "id": "capacitor-totem", "name": "Capacitor Totem", "spellId": 192058, "actions": ["crowd-control"], "availability": "talent", "scope": "area-enemy", "limitations": ["Two-second arming delay", "Only affects stunnable enemies"] },
     { "id": "bloodlust-heroism", "name": "Bloodlust / Heroism", "spellId": 2825, "alternateSpellIds": [32182], "actions": ["bloodlust"], "availability": "baseline", "scope": "friendly-area", "limitations": ["Spell name and ID vary by faction", "Applies the ten-minute Sated or Exhaustion lockout"] },
+    { "id": "skyfury", "name": "Skyfury", "spellId": 462854, "actions": ["group-buff"], "availability": "baseline", "scope": "friendly-area", "limitations": ["Provides Mastery and an auto-attack proc rather than a defensive effect"] },
     { "id": "astral-shift", "name": "Astral Shift", "spellId": 108271, "actions": ["defensive"], "availability": "talent", "scope": "self", "limitations": ["Personal mitigation only"] }
   ],
   "provenance": [
@@ -24,6 +25,7 @@
     { "kind": "external-reference", "description": "Current Bloodlust and Heroism records confirm the faction variants and shared raid-wide haste lockout.", "url": "https://www.wowhead.com/spell=2825/bloodlust", "retrievedAt": "2026-09-02T16:30:00+02:00" },
     { "kind": "external-reference", "description": "Current Improved Purify Spirit record confirms that Curse removal is a talent-dependent extension of Purify Spirit.", "url": "https://www.wowhead.com/spell=383016/improved-purify-spirit", "retrievedAt": "2026-09-02T17:25:00+02:00" },
     { "kind": "external-reference", "description": "Current Tremor Totem record confirms its fear, charm, and sleep removal behavior.", "url": "https://www.wowhead.com/spell=8143/tremor-totem", "retrievedAt": "2026-09-02T17:25:00+02:00" },
-    { "kind": "external-reference", "description": "Current Spirit Walk record confirms personal movement-impairment removal.", "url": "https://www.wowhead.com/spell=58875/spirit-walk", "retrievedAt": "2026-09-02T17:25:00+02:00" }
+    { "kind": "external-reference", "description": "Current Spirit Walk record confirms personal movement-impairment removal.", "url": "https://www.wowhead.com/spell=58875/spirit-walk", "retrievedAt": "2026-09-02T17:25:00+02:00" },
+    { "kind": "external-reference", "description": "Current Skyfury record confirms the Shaman party and raid Mastery and auto-attack buff.", "url": "https://www.wowhead.com/spell=462854/skyfury", "retrievedAt": "2026-09-02T19:58:20+02:00" }
   ]
 }

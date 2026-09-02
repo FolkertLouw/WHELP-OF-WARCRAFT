@@ -73,6 +73,7 @@
     }
   ],
   "specCapabilities": [
+    { "id": "shaman/elemental/capabilities", "record": "specs/shaman/elemental.json", "status": "corroborated" },
     { "id": "shaman/restoration/capabilities", "record": "specs/shaman/restoration.json", "status": "corroborated" },
     { "id": "shaman/enhancement/capabilities", "record": "specs/shaman/enhancement.json", "status": "corroborated" },
     { "id": "hunter/beast-mastery/capabilities", "record": "specs/hunter/beast-mastery.json", "status": "corroborated" },

@@ -220,6 +220,32 @@ test("keeps Mistweaver interrupt absence and Ring of Peace displacement explicit
   assert.ok(displacement.results.every((entry) => entry.tool.id === "ring-of-peace"));
 });
 
+test("models the complete Shaman composition layer without widening dispel domains", () => {
+  const specs = ["elemental-shaman", "enhancement-shaman", "restoration-shaman"];
+  assert.equal(queryCapabilities(capabilities, { specs, action: "bloodlust" }).resultCount, 3);
+  const buffs = queryCapabilities(capabilities, { specs, action: "group-buff" });
+  assert.equal(buffs.resultCount, 3);
+  assert.ok(buffs.results.every((entry) => entry.tool.id === "skyfury"));
+  const curses = queryCapabilities(capabilities, { specs, action: "cleanse-curse" });
+  assert.equal(curses.resultCount, 3);
+  const friendlyMagic = queryCapabilities(capabilities, { specs, action: "cleanse-magic", scope: "friendly-single" });
+  assert.equal(friendlyMagic.resultCount, 1);
+  assert.equal(friendlyMagic.results[0].spec.slug, "restoration-shaman");
+  const displacement = queryCapabilities(capabilities, { specs, action: "enemy-reposition" });
+  assert.equal(displacement.resultCount, 1);
+  assert.equal(displacement.results[0].tool.id, "thunderstorm");
+});
+
+test("types Shaman group movement and movement-effect removal separately", () => {
+  const specs = ["elemental-shaman", "enhancement-shaman"];
+  const movement = queryCapabilities(capabilities, { specs, action: "group-movement" });
+  assert.equal(movement.resultCount, 2);
+  assert.ok(movement.results.every((entry) => entry.tool.id === "wind-rush-totem"));
+  const roots = queryCapabilities(capabilities, { specs, action: "cleanse-root" });
+  assert.equal(roots.resultCount, 2);
+  assert.ok(roots.results.every((entry) => entry.tool.id === "spirit-walk" && entry.tool.scope === "self"));
+});
+
 test("models shared Warlock composition tools and preserves pet configuration", () => {
   const specs = ["affliction-warlock", "demonology-warlock", "destruction-warlock"];
   const stones = queryCapabilities(capabilities, { specs, action: "group-consumable" });

@@ -15,6 +15,8 @@ const restorationMatrix = await loadJson("content", "mythic-plus", "midnight-sea
 const restorationCapabilities = await loadJson("data", "specs", "shaman", "restoration.json");
 const enhancementMatrix = await loadJson("content", "mythic-plus", "midnight-season-2", "specs", "enhancement-shaman-utility-matrix.json");
 const enhancementCapabilities = await loadJson("data", "specs", "shaman", "enhancement.json");
+const elementalMatrix = await loadJson("content", "mythic-plus", "midnight-season-2", "specs", "elemental-shaman-utility-matrix.json");
+const elementalCapabilities = await loadJson("data", "specs", "shaman", "elemental.json");
 const beastMasteryMatrix = await loadJson("content", "mythic-plus", "midnight-season-2", "specs", "beast-mastery-hunter-utility-matrix.json");
 const beastMasteryCapabilities = await loadJson("data", "specs", "hunter", "beast-mastery.json");
 const marksmanshipMatrix = await loadJson("content", "mythic-plus", "midnight-season-2", "specs", "marksmanship-hunter-utility-matrix.json");
@@ -148,6 +150,25 @@ test("Enhancement Shaman matrix resolves distinct personal and group snare tools
     assert.ok(tools.get(toolId).actions.includes("cleanse-snare"));
   }
   assert.match(tools.get("wind-rush-totem").limitations.join(" "), /Jet Stream/);
+});
+
+test("Elemental Shaman matrix covers the season and resolves every utility axis", () => {
+  assert.deepEqual(new Set(elementalMatrix.dungeons.map((entry) => entry.dungeonId)), new Set(season.dungeons.map((entry) => entry.id)));
+  const tools = new Map(elementalCapabilities.tools.map((tool) => [tool.id, tool]));
+  for (const axis of elementalMatrix.axes) {
+    for (const toolId of axis.toolIds) assert.ok(tools.has(toolId), `${axis.id} should resolve ${toolId}`);
+  }
+});
+
+test("Elemental keeps school interrupts, displacement, and movement cleansing distinct", () => {
+  const tools = new Map(elementalCapabilities.tools.map((tool) => [tool.id, tool]));
+  assert.deepEqual(tools.get("wind-shear").actions, ["interrupt"]);
+  assert.deepEqual(tools.get("thunderstorm").actions, ["enemy-reposition", "crowd-control"]);
+  assert.ok(!tools.get("thunderstorm").actions.includes("interrupt"));
+  assert.equal(tools.get("spirit-walk").scope, "self");
+  assert.ok(tools.get("spirit-walk").actions.includes("cleanse-root"));
+  assert.ok(!tools.get("wind-rush-totem").actions.includes("cleanse-root"));
+  assert.ok(tools.get("wind-rush-totem").actions.includes("group-movement"));
 });
 
 test("Beast Mastery Hunter matrix covers the season and resolves every utility axis", () => {

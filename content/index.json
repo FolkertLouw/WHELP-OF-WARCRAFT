@@ -136,6 +136,7 @@
     { "id": "temple-of-sethraliss/avatar-of-sethraliss/defiling-taint-1301199", "path": "mythic-plus/midnight-season-2/temple-of-sethraliss/mechanics/avatar-defiling-taint.json", "status": "draft" },
     { "id": "midnight-season-2/restoration-shaman-utility-matrix", "path": "mythic-plus/midnight-season-2/specs/restoration-shaman-utility-matrix.json", "status": "corroborated" },
     { "id": "midnight-season-2/enhancement-shaman-utility-matrix", "path": "mythic-plus/midnight-season-2/specs/enhancement-shaman-utility-matrix.json", "status": "corroborated" },
+    { "id": "midnight-season-2/elemental-shaman-utility-matrix", "path": "mythic-plus/midnight-season-2/specs/elemental-shaman-utility-matrix.json", "status": "corroborated" },
     { "id": "midnight-season-2/unholy-death-knight-utility-matrix", "path": "mythic-plus/midnight-season-2/specs/unholy-death-knight-utility-matrix.json", "status": "corroborated" },
     { "id": "midnight-season-2/frost-death-knight-utility-matrix", "path": "mythic-plus/midnight-season-2/specs/frost-death-knight-utility-matrix.json", "status": "corroborated" },
     { "id": "midnight-season-2/blood-death-knight-utility-matrix", "path": "mythic-plus/midnight-season-2/specs/blood-death-knight-utility-matrix.json", "status": "corroborated" },

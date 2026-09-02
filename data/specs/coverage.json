@@ -7,6 +7,7 @@
   "validity": { "fromBuild": "12.1.0.69587", "untilBuild": null, "seasonId": null, "seasonSlug": "midnight-season-2" },
   "isComplete": false,
   "entries": [
+    { "specId": 262, "slug": "elemental-shaman", "recordId": "shaman/elemental/capabilities" },
     { "specId": 264, "slug": "restoration-shaman", "recordId": "shaman/restoration/capabilities" },
     { "specId": 263, "slug": "enhancement-shaman", "recordId": "shaman/enhancement/capabilities" },
     { "specId": 253, "slug": "beast-mastery-hunter", "recordId": "hunter/beast-mastery/capabilities" },
