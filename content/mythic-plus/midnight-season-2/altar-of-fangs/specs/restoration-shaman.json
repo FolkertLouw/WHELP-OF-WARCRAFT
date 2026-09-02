@@ -1,0 +1,23 @@
+{
+  "$schema": "../../../../../schemas/spec-note.schema.json",
+  "schemaVersion": 1,
+  "recordType": "spec-note",
+  "id": "altar-of-fangs/restoration-shaman-utility",
+  "status": "corroborated",
+  "validity": { "fromBuild": "12.1.0.69587", "untilBuild": null, "seasonId": null, "seasonSlug": "midnight-season-2" },
+  "context": { "contentType": "mythic-plus", "instanceMapId": 2993, "encounterId": null, "keyLevelMinimum": 2, "keyLevelMaximum": null },
+  "specIds": [264],
+  "summary": "Restoration Shaman has especially relevant poison cleansing and personal snare-removal utility in Altar of Fangs.",
+  "recommendations": [
+    "Talent Poison Cleansing Totem for Mass Envenom and Lasher Toxin recovery.",
+    "Use Spirit Walk to remove the slowing components of Paralyzing Shots, Regurgitate, and Toxic Atrophy from yourself.",
+    "Do not allocate dungeon-specific points to Improved Purify Spirit, Tremor Totem, or Purge solely for the mechanics covered by this note.",
+    "Keep Wind Shear available for priority casts, especially the three successive Toxic Atrophy casts."
+  ],
+  "provenance": [{
+    "kind": "external-reference",
+    "description": "Original build-scoped summary derived from targeted review of Wowhead's Restoration Shaman Midnight Season 2 dungeon guide.",
+    "url": "https://www.wowhead.com/guide/classes/shaman/restoration/mythic-plus-dungeon-tips",
+    "retrievedAt": "2026-09-02T14:30:00+02:00"
+  }]
+}

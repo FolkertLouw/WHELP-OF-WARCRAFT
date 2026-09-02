@@ -56,6 +56,8 @@ function validateRecord(file, value) {
     }
   } else if (value.recordType === "spec-note") {
     requireFields(file, value, ["id", "status", "validity", "context", "specIds", "summary", "recommendations", "provenance"]);
+  } else if (value.recordType === "strategy-note") {
+    requireFields(file, value, ["id", "status", "validity", "context", "category", "summary", "actions", "provenance"]);
   } else if (value.recordType === "route") {
     requireFields(file, value, ["id", "status", "validity", "challengeMapId", "pulls", "provenance"]);
     const orders = (value.pulls ?? []).map((pull) => pull.order);
@@ -122,6 +124,19 @@ for (const { file, value } of records.filter(({ value }) => value.recordType ===
     if (!knownNpcIds.has(enemy.npcId)) fail(file, `unknown NPC ${enemy.npcId} for ${dungeon.value.id}`);
   }
 }
+for (const { file, value } of records.filter(({ value }) => ["spec-note", "strategy-note"].includes(value.recordType))) {
+  if (file.includes(`${path.sep}examples${path.sep}`)) continue;
+  const instanceMapId = value.context?.instanceMapId;
+  if (!instanceMapId) continue;
+  const dungeon = dungeons.find(({ value: candidate }) => candidate.instanceMapId === instanceMapId);
+  if (!dungeon) fail(file, `no dungeon has instanceMapId ${instanceMapId}`);
+  if (value.recordType === "strategy-note" && dungeon) {
+    const knownNpcIds = new Set(dungeon.value.enemies.map((enemy) => enemy.npcId));
+    for (const npcId of value.context.npcIds ?? []) {
+      if (!knownNpcIds.has(npcId)) fail(file, `unknown NPC ${npcId} for ${dungeon.value.id}`);
+    }
+  }
+}
 
 const indexPath = path.join(root, "data", "index.json");
 const index = JSON.parse(await readFile(indexPath, "utf8"));
@@ -132,6 +147,26 @@ for (const build of index.builds ?? []) {
   } catch {
     fail(indexPath, `missing manifest ${build.manifest}`);
   }
+}
+
+const contentIndexPath = path.join(root, "content", "index.json");
+const contentIndex = JSON.parse(await readFile(contentIndexPath, "utf8"));
+const indexedContentIds = new Set();
+for (const entry of contentIndex.records ?? []) {
+  if (indexedContentIds.has(entry.id)) fail(contentIndexPath, `duplicate content id ${entry.id}`);
+  indexedContentIds.add(entry.id);
+  const recordPath = path.join(root, "content", entry.path);
+  try {
+    const record = JSON.parse(await readFile(recordPath, "utf8"));
+    if (record.id !== entry.id) fail(contentIndexPath, `${entry.path} has id ${record.id}, expected ${entry.id}`);
+    if (record.status !== entry.status) fail(contentIndexPath, `${entry.path} has status ${record.status}, expected ${entry.status}`);
+  } catch (error) {
+    fail(contentIndexPath, `cannot read indexed record ${entry.path}: ${error.message}`);
+  }
+}
+for (const { file, value } of records.filter(({ file }) => file.startsWith(path.join(root, "content")))) {
+  if (path.basename(file) === "index.json" || !value.id) continue;
+  if (!indexedContentIds.has(value.id)) fail(file, `content record ${value.id} is absent from content/index.json`);
 }
 
 if (failures.length) {

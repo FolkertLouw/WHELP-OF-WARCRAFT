@@ -1,0 +1,23 @@
+{
+  "$schema": "../../../../../schemas/strategy-note.schema.json",
+  "schemaVersion": 1,
+  "recordType": "strategy-note",
+  "id": "altar-of-fangs/progression-gates",
+  "status": "corroborated",
+  "validity": { "fromBuild": "12.1.0.69587", "untilBuild": null, "seasonId": null, "seasonSlug": "midnight-season-2" },
+  "context": { "contentType": "mythic-plus", "instanceMapId": 2993, "encounterId": null, "npcIds": [261573], "spellIds": [] },
+  "category": "route",
+  "summary": "The route has mandatory interaction and enemy gates that should not be mistaken for optional enemy-forces choices.",
+  "actions": [
+    "Activate every totem in the opening area to unlock progress toward Rav'i.",
+    "Defeat the Ascendant Serpent after the Writhing Coil to continue.",
+    "Use crowd control to stop High Evolutionists channeling Evolve; a completed channel heals and grants a shield with crowd-control immunity."
+  ],
+  "roles": ["tank", "healer", "damage"],
+  "provenance": [{
+    "kind": "external-reference",
+    "description": "Original compact route summary derived from targeted review of Wowhead's Patch 12.1 Altar of Fangs overview and Evolve spell record.",
+    "url": "https://www.wowhead.com/guide/midnight/altar-of-fangs-dungeon-overview-location-rewards",
+    "retrievedAt": "2026-09-02T14:30:00+02:00"
+  }]
+}

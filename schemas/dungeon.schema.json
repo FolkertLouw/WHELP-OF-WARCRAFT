@@ -18,6 +18,19 @@
     "uiMapId": { "type": ["integer", "null"], "minimum": 1 },
     "zoneIds": { "type": "array", "items": { "type": "integer", "minimum": 1 }, "uniqueItems": true },
     "enemyForcesTotal": { "type": ["integer", "null"], "minimum": 0 },
+    "mythicPlusTimerSeconds": { "type": ["integer", "null"], "minimum": 1 },
+    "requiredLevel": { "type": ["integer", "null"], "minimum": 1 },
+    "location": { "type": ["string", "null"] },
+    "entrance": {
+      "type": ["object", "null"],
+      "required": ["uiMapId", "x", "y"],
+      "properties": {
+        "uiMapId": { "type": "integer", "minimum": 1 },
+        "x": { "type": "number", "minimum": 0, "maximum": 100 },
+        "y": { "type": "number", "minimum": 0, "maximum": 100 }
+      },
+      "additionalProperties": false
+    },
     "encounters": {
       "type": "array",
       "items": {

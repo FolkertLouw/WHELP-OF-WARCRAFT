@@ -1,0 +1,23 @@
+{
+  "$schema": "../../../../../schemas/strategy-note.schema.json",
+  "schemaVersion": 1,
+  "recordType": "strategy-note",
+  "id": "altar-of-fangs/mutating-elixir",
+  "status": "draft",
+  "validity": { "fromBuild": "12.1.0.69587", "untilBuild": null, "seasonId": null, "seasonSlug": "midnight-season-2" },
+  "context": { "contentType": "mythic-plus", "instanceMapId": 2993, "encounterId": null, "npcIds": [261573], "spellIds": [] },
+  "category": "profession",
+  "summary": "A reported post-Writhing Coil profession interaction grants the party 3% Versatility for the remainder of the dungeon.",
+  "actions": [
+    "After the Writhing Coil, look for the Unfinished Mixture near the Ascendant Serpent and serpent eggs.",
+    "Have a player with at least 25 Midnight Alchemy or Midnight Cooking interact with it.",
+    "Treat this record as draft until independently corroborated in game or through another source."
+  ],
+  "roles": ["tank", "healer", "damage"],
+  "provenance": [{
+    "kind": "external-reference",
+    "description": "Newly published Wowhead report; retained as draft because it has not yet been independently corroborated by WHELP.",
+    "url": "https://www.wowhead.com/news/all-dungeon-buffs-in-midnight-season-2-dungeons-382688",
+    "retrievedAt": "2026-09-02T14:30:00+02:00"
+  }]
+}

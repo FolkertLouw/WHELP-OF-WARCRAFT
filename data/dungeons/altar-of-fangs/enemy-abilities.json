@@ -9,7 +9,7 @@
   "enemies": [
     { "name": "High Evolutionist", "npcId": 261557, "abilities": [
       { "spellId": 1289416, "name": null, "interruptible": true, "dispelType": "poison", "enrage": false },
-      { "spellId": 1307567, "name": null, "interruptible": true, "dispelType": "none", "enrage": false },
+      { "spellId": 1307567, "name": "Mass Envenom", "interruptible": true, "dispelType": "none", "enrage": false },
       { "spellId": 1307571, "name": "Envenom", "interruptible": false, "dispelType": "poison", "enrage": false }
     ] },
     { "name": "Living Venom", "npcId": 263112, "abilities": [
@@ -19,15 +19,15 @@
       { "spellId": 1294557, "name": "Piercing Hiss", "interruptible": true, "dispelType": "none", "enrage": false }
     ] },
     { "name": "Ravenous Descendant", "npcId": 261553, "abilities": [
-      { "spellId": 1306308, "name": null, "interruptible": false, "dispelType": "none", "enrage": true }
+      { "spellId": 1306308, "name": "Ravenous Claws (enrage aura)", "interruptible": false, "dispelType": "none", "enrage": true }
     ] },
     { "name": "Ula'tek's Chosen", "npcId": 263109, "abilities": [
       { "spellId": 1289416, "name": null, "interruptible": true, "dispelType": "poison", "enrage": false },
-      { "spellId": 1307567, "name": null, "interruptible": true, "dispelType": "none", "enrage": false },
+      { "spellId": 1307567, "name": "Mass Envenom", "interruptible": true, "dispelType": "none", "enrage": false },
       { "spellId": 1307571, "name": "Envenom", "interruptible": false, "dispelType": "poison", "enrage": false }
     ] },
     { "name": "Twinfang Harrower", "npcId": 261554, "abilities": [
-      { "spellId": 1294569, "name": null, "interruptible": false, "dispelType": "magic", "enrage": false }
+      { "spellId": 1294569, "name": "Paralyzing Shots", "interruptible": false, "dispelType": "magic", "enrage": false }
     ] },
     { "name": "Rattling Writhe", "npcId": 262011, "abilities": [
       { "spellId": 1294845, "name": "Corrosive Fangs", "interruptible": false, "dispelType": "poison", "enrage": false }
@@ -45,8 +45,13 @@
   ],
   "provenance": [{
     "kind": "game-data",
-    "description": "Ability flags extracted by WHELP from Mythic Dungeon Tools 6.2.10. Spell names are included only when separately corroborated by DBM Dungeons r261; null names remain unresolved.",
+    "description": "Ability flags extracted by WHELP from Mythic Dungeon Tools 6.2.10. Names are included only when separately corroborated by DBM Dungeons r261 or targeted Wowhead spell and dungeon records; null names remain unresolved.",
     "url": "https://github.com/Nnoggie/MythicDungeonTools",
     "retrievedAt": "2026-09-02T10:45:00+02:00"
+  }, {
+    "kind": "external-reference",
+    "description": "Targeted spell-name and mechanic corroboration for Mass Envenom, Envenom, Paralyzing Shots, Piercing Hiss, and Ravenous Claws. No guide prose is redistributed.",
+    "url": "https://www.wowhead.com/guide/midnight/altar-of-fangs-dungeon-overview-location-rewards",
+    "retrievedAt": "2026-09-02T14:30:00+02:00"
   }]
 }

@@ -1,0 +1,23 @@
+{
+  "$schema": "../../../../../schemas/spec-note.schema.json",
+  "schemaVersion": 1,
+  "recordType": "spec-note",
+  "id": "altar-of-fangs/enhancement-shaman-utility",
+  "status": "corroborated",
+  "validity": { "fromBuild": "12.1.0.69587", "untilBuild": null, "seasonId": null, "seasonSlug": "midnight-season-2" },
+  "context": { "contentType": "mythic-plus", "instanceMapId": 2993, "encounterId": null, "keyLevelMinimum": 2, "keyLevelMaximum": null },
+  "specIds": [263],
+  "summary": "Enhancement Shaman should prioritize poison cleansing and a self snare-removal option for Altar of Fangs.",
+  "recommendations": [
+    "Talent Poison Cleansing Totem as a recovery tool for Envenom and Mass Envenom.",
+    "Bring an eligible snare-removal option for Paralyzing Shots.",
+    "Do not talent Purge solely for this dungeon based on the current Enhancement guide recommendation.",
+    "Use Wind Shear on priority casts, coordinating coverage for repeated Toxic Atrophy casts."
+  ],
+  "provenance": [{
+    "kind": "external-reference",
+    "description": "Original build-scoped summary derived from targeted review of Wowhead's Enhancement Shaman Midnight Season 2 dungeon guide.",
+    "url": "https://www.wowhead.com/guide/classes/shaman/enhancement/mythic-plus-dungeon-tips",
+    "retrievedAt": "2026-09-02T14:30:00+02:00"
+  }]
+}

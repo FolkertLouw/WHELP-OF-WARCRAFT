@@ -23,6 +23,34 @@
       "url": "https://github.com/DeadlyBossMods/DBM-Dungeons",
       "license": "All Rights Reserved",
       "usage": "Corroborating encounter and spell identifiers. WHELP does not redistribute DBM source code or creative text. Mechanic interpretations remain draft."
+    },
+    {
+      "id": "wowhead-altar-of-fangs-12.1",
+      "publisher": "Wowhead",
+      "title": "Altar of Fangs Dungeon Overview - Midnight Season 2 Mythic+",
+      "url": "https://www.wowhead.com/guide/midnight/altar-of-fangs-dungeon-overview-location-rewards",
+      "usage": "Targeted corroboration of dungeon facts and mechanic classifications. WHELP stores original compact summaries and source pointers, not mirrored guide prose."
+    },
+    {
+      "id": "wowhead-restoration-shaman-mplus-12.1",
+      "publisher": "Wowhead",
+      "title": "Restoration Shaman Mythic+ Guide - Midnight Season 2",
+      "url": "https://www.wowhead.com/guide/classes/shaman/restoration/mythic-plus-dungeon-tips",
+      "usage": "Targeted, build-scoped corroboration of Restoration Shaman utility in Altar of Fangs."
+    },
+    {
+      "id": "wowhead-enhancement-shaman-mplus-12.1",
+      "publisher": "Wowhead",
+      "title": "Enhancement Shaman Mythic+ Guide - Midnight Season 2",
+      "url": "https://www.wowhead.com/guide/classes/shaman/enhancement/mythic-plus-dungeon-tips",
+      "usage": "Targeted, build-scoped corroboration of Enhancement Shaman utility in Altar of Fangs."
+    },
+    {
+      "id": "wowhead-midnight-season-2-dungeon-buffs",
+      "publisher": "Wowhead",
+      "title": "All Dungeon Buffs in Midnight Season 2 Dungeons",
+      "url": "https://www.wowhead.com/news/all-dungeon-buffs-in-midnight-season-2-dungeons-382688",
+      "usage": "Discovery source for profession interactions. New reports remain draft until independently corroborated."
     }
   ]
 }

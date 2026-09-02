@@ -18,6 +18,10 @@
   "uiMapId": null,
   "zoneIds": [2588, 2589, 2590],
   "enemyForcesTotal": 817,
+  "mythicPlusTimerSeconds": 1740,
+  "requiredLevel": 90,
+  "location": "The Coiled Isle, inside the Vaults of Atal'Utek",
+  "entrance": { "uiMapId": 2509, "x": 47.2, "y": 67.6 },
   "encounters": [
     { "name": "Rav'i", "encounterId": 3456, "npcId": 259445 },
     { "name": "The Writhing Coil", "encounterId": 3457, "npcId": 259446 },
@@ -58,6 +62,12 @@
       "description": "Encounter and instance identifiers corroborated against DBM Dungeons r261 installed for interface 120100.",
       "url": "https://github.com/DeadlyBossMods/DBM-Dungeons",
       "retrievedAt": "2026-09-02T10:30:00+02:00"
+    },
+    {
+      "kind": "external-reference",
+      "description": "Level requirement, Mythic+ timer, location, entrance coordinates, boss count, and teleport unlock requirement corroborated against Wowhead's Patch 12.1 dungeon overview.",
+      "url": "https://www.wowhead.com/guide/midnight/altar-of-fangs-dungeon-overview-location-rewards",
+      "retrievedAt": "2026-09-02T14:30:00+02:00"
     }
   ]
 }

@@ -12,6 +12,12 @@
     { "id": "altar-of-fangs/zuljan/ritual-of-the-fang-1300876", "path": "mythic-plus/midnight-season-2/altar-of-fangs/mechanics/zuljan-ritual-of-the-fang.json", "status": "draft" },
     { "id": "altar-of-fangs/zuljan/boneslicer-1301413", "path": "mythic-plus/midnight-season-2/altar-of-fangs/mechanics/zuljan-boneslicer.json", "status": "draft" },
     { "id": "altar-of-fangs/zuljan/axegrinder-1301111", "path": "mythic-plus/midnight-season-2/altar-of-fangs/mechanics/zuljan-axegrinder.json", "status": "draft" },
-    { "id": "altar-of-fangs/zuljan/chop-down-1301350", "path": "mythic-plus/midnight-season-2/altar-of-fangs/mechanics/zuljan-chop-down.json", "status": "draft" }
+    { "id": "altar-of-fangs/zuljan/chop-down-1301350", "path": "mythic-plus/midnight-season-2/altar-of-fangs/mechanics/zuljan-chop-down.json", "status": "draft" },
+    { "id": "altar-of-fangs/priority-utility", "path": "mythic-plus/midnight-season-2/altar-of-fangs/strategy/priority-utility.json", "status": "corroborated" },
+    { "id": "altar-of-fangs/progression-gates", "path": "mythic-plus/midnight-season-2/altar-of-fangs/strategy/progression-gates.json", "status": "corroborated" },
+    { "id": "altar-of-fangs/zuljan-coordination", "path": "mythic-plus/midnight-season-2/altar-of-fangs/strategy/zuljan-coordination.json", "status": "corroborated" },
+    { "id": "altar-of-fangs/mutating-elixir", "path": "mythic-plus/midnight-season-2/altar-of-fangs/strategy/mutating-elixir.json", "status": "draft" },
+    { "id": "altar-of-fangs/restoration-shaman-utility", "path": "mythic-plus/midnight-season-2/altar-of-fangs/specs/restoration-shaman.json", "status": "corroborated" },
+    { "id": "altar-of-fangs/enhancement-shaman-utility", "path": "mythic-plus/midnight-season-2/altar-of-fangs/specs/enhancement-shaman.json", "status": "corroborated" }
   ]
 }

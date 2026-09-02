@@ -1,0 +1,40 @@
+{
+  "$schema": "../../../../../schemas/strategy-note.schema.json",
+  "schemaVersion": 1,
+  "recordType": "strategy-note",
+  "id": "altar-of-fangs/priority-utility",
+  "status": "corroborated",
+  "validity": { "fromBuild": "12.1.0.69587", "untilBuild": null, "seasonId": null, "seasonSlug": "midnight-season-2" },
+  "context": {
+    "contentType": "mythic-plus",
+    "instanceMapId": 2993,
+    "encounterId": null,
+    "npcIds": [261560, 259446, 263109, 261554, 261557, 261553],
+    "spellIds": [1294557, 1310547, 1307567, 1294569, 1307571, 1306333]
+  },
+  "category": "interrupt",
+  "summary": "The principal stops and removals are Piercing Hiss, Toxic Atrophy, Mass Envenom, Paralyzing Shots, Envenom, and Ravenous Claws.",
+  "actions": [
+    "Interrupt Piercing Hiss from Primal Serpents.",
+    "Plan interrupts for the Writhing Coil's three successive Toxic Atrophy casts.",
+    "Interrupt Mass Envenom from Ula'tek's Chosen; remove its poison only as recovery if the cast completes.",
+    "Remove Paralyzing Shots as Magic or use an eligible snare-removal effect.",
+    "Remove Envenom as Poison.",
+    "Use a purge or short control/kiting window against the Ravenous Descendant's stacking attack-speed threat."
+  ],
+  "roles": ["tank", "healer", "damage"],
+  "provenance": [
+    {
+      "kind": "game-data",
+      "description": "Interrupt, dispel, and enrage flags derived from Mythic Dungeon Tools 6.2.10.",
+      "url": "https://github.com/Nnoggie/MythicDungeonTools",
+      "retrievedAt": "2026-09-02T10:45:00+02:00"
+    },
+    {
+      "kind": "external-reference",
+      "description": "Priority classification and responses corroborated through targeted review of Wowhead's Patch 12.1 dungeon overview and spell pages.",
+      "url": "https://www.wowhead.com/guide/midnight/altar-of-fangs-dungeon-overview-location-rewards",
+      "retrievedAt": "2026-09-02T14:30:00+02:00"
+    }
+  ]
+}

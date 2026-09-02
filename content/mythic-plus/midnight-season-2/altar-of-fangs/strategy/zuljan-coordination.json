@@ -1,0 +1,23 @@
+{
+  "$schema": "../../../../../schemas/strategy-note.schema.json",
+  "schemaVersion": 1,
+  "recordType": "strategy-note",
+  "id": "altar-of-fangs/zuljan-coordination",
+  "status": "corroborated",
+  "validity": { "fromBuild": "12.1.0.69587", "untilBuild": null, "seasonId": null, "seasonSlug": "midnight-season-2" },
+  "context": { "contentType": "mythic-plus", "instanceMapId": 2993, "encounterId": 3458, "npcIds": [259447], "spellIds": [1300876, 1300901, 1301413] },
+  "category": "encounter",
+  "summary": "Zul'jan rewards preassigned beam positions and deliberate Boneslicer line soaks that clear Ritual Venom.",
+  "actions": [
+    "Preassign players to intercept all four Ritual of the Fang beams.",
+    "Players carrying Ritual Venom should line up for Boneslicer; one soak clears all of that player's stacks.",
+    "Place the resulting Bloodletting ground pools away from future movement and soak positions."
+  ],
+  "roles": ["tank", "healer", "damage"],
+  "provenance": [{
+    "kind": "external-reference",
+    "description": "Original compact encounter summary corroborated against Wowhead's Patch 12.1 guide and Ritual Venom spell record.",
+    "url": "https://www.wowhead.com/guide/midnight/altar-of-fangs-dungeon-overview-location-rewards",
+    "retrievedAt": "2026-09-02T14:30:00+02:00"
+  }]
+}
