@@ -1,0 +1,24 @@
+{
+  "$schema": "../../../schemas/spec-capabilities.schema.json",
+  "schemaVersion": 1,
+  "recordType": "spec-capabilities",
+  "id": "paladin/holy/capabilities",
+  "status": "corroborated",
+  "validity": { "fromBuild": "12.1.0.69587", "untilBuild": null, "seasonId": null, "seasonSlug": "midnight-season-2" },
+  "spec": { "classId": 2, "className": "Paladin", "specId": 65, "specName": "Holy", "slug": "holy-paladin" },
+  "tools": [
+    { "id": "rebuke", "name": "Rebuke", "spellId": 96231, "actions": ["interrupt"], "availability": "talent", "scope": "enemy", "limitations": ["Melee range", "Single target", "Fifteen-second cooldown"] },
+    { "id": "cleanse", "name": "Cleanse", "spellId": 4987, "actions": ["cleanse-magic", "cleanse-poison", "cleanse-disease"], "availability": "specialization", "actionAvailability": { "cleanse-poison": "talent", "cleanse-disease": "talent" }, "scope": "friendly-single", "limitations": ["Poison and Disease removal require Improved Cleanse", "Eight-second cooldown"] },
+    { "id": "hammer-of-justice", "name": "Hammer of Justice", "spellId": 853, "actions": ["crowd-control"], "availability": "baseline", "scope": "enemy", "limitations": ["Single-target stun", "Only affects stunnable enemies"] },
+    { "id": "blessing-of-sacrifice", "name": "Blessing of Sacrifice", "spellId": 6940, "actions": ["external-defensive"], "availability": "talent", "scope": "friendly-single", "limitations": ["Transfers prevented damage to the Paladin", "Ends before transferred damage would reduce the Paladin below twenty percent health"] },
+    { "id": "blessing-of-protection", "name": "Blessing of Protection", "spellId": 1022, "actions": ["external-defensive"], "availability": "talent", "scope": "friendly-single", "limitations": ["Protects against physical damage and effects", "Causes Forbearance", "Can cause the target to lose enemy aggression"] },
+    { "id": "intercession", "name": "Intercession", "spellId": 391054, "actions": ["battle-resurrection"], "availability": "baseline", "scope": "friendly-single", "limitations": ["Requires a dead ally", "Uses the shared combat-resurrection limit"] },
+    { "id": "devotion-aura", "name": "Devotion Aura", "spellId": 465, "actions": ["party-damage-reduction"], "availability": "talent", "scope": "friendly-area", "limitations": ["Only affects allies within the aura range"] },
+    { "id": "divine-shield", "name": "Divine Shield", "spellId": 642, "actions": ["defensive"], "availability": "baseline", "scope": "self", "limitations": ["Personal immunity only", "Causes Forbearance"] }
+  ],
+  "provenance": [
+    { "kind": "external-reference", "description": "Current Holy Paladin ability guide identifies Cleanse, Intercession, Divine Shield, Hammer of Justice, auras, and blessing utility.", "url": "https://www.wowhead.com/guide/classes/paladin/holy/abilities-talents-pve-healer", "retrievedAt": "2026-09-02T18:15:00+02:00" },
+    { "kind": "external-reference", "description": "Current Cleanse record distinguishes baseline Magic removal from Poison and Disease removal granted by Improved Cleanse.", "url": "https://www.wowhead.com/spell=4987/cleanse", "retrievedAt": "2026-09-02T18:15:00+02:00" },
+    { "kind": "external-reference", "description": "Current Intercession record confirms Paladin combat resurrection and the enforced encounter limit.", "url": "https://www.wowhead.com/spell=391054/intercession", "retrievedAt": "2026-09-02T18:15:00+02:00" }
+  ]
+}

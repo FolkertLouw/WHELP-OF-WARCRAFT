@@ -1,0 +1,25 @@
+{
+  "$schema": "../../../schemas/spec-capabilities.schema.json",
+  "schemaVersion": 1,
+  "recordType": "spec-capabilities",
+  "id": "paladin/protection/capabilities",
+  "status": "corroborated",
+  "validity": { "fromBuild": "12.1.0.69587", "untilBuild": null, "seasonId": null, "seasonSlug": "midnight-season-2" },
+  "spec": { "classId": 2, "className": "Paladin", "specId": 66, "specName": "Protection", "slug": "protection-paladin" },
+  "tools": [
+    { "id": "rebuke", "name": "Rebuke", "spellId": 96231, "actions": ["interrupt"], "availability": "talent", "scope": "enemy", "limitations": ["Melee range", "Single target", "Fifteen-second cooldown"] },
+    { "id": "cleanse-toxins", "name": "Cleanse Toxins", "spellId": 426184, "actions": ["cleanse-poison", "cleanse-disease"], "availability": "talent", "scope": "friendly-single", "limitations": ["Does not remove harmful Magic effects", "Eight-second cooldown"] },
+    { "id": "hammer-of-justice", "name": "Hammer of Justice", "spellId": 853, "actions": ["crowd-control"], "availability": "baseline", "scope": "enemy", "limitations": ["Single-target stun", "Only affects stunnable enemies"] },
+    { "id": "blinding-light", "name": "Blinding Light", "spellId": 115750, "actions": ["crowd-control"], "availability": "talent", "scope": "area-enemy", "limitations": ["Breaks after sufficient non-Holy damage", "Does not affect every creature type"] },
+    { "id": "blessing-of-sacrifice", "name": "Blessing of Sacrifice", "spellId": 6940, "actions": ["external-defensive"], "availability": "talent", "scope": "friendly-single", "limitations": ["Transfers prevented damage to the Paladin", "Ends before transferred damage would reduce the Paladin below twenty percent health"] },
+    { "id": "blessing-of-protection", "name": "Blessing of Protection", "spellId": 1022, "actions": ["external-defensive"], "availability": "talent", "scope": "friendly-single", "limitations": ["Protects against physical damage and effects", "Causes Forbearance", "Can cause the target to lose enemy aggression"] },
+    { "id": "intercession", "name": "Intercession", "spellId": 391054, "actions": ["battle-resurrection"], "availability": "baseline", "scope": "friendly-single", "limitations": ["Requires a dead ally", "Uses the shared combat-resurrection limit"] },
+    { "id": "devotion-aura", "name": "Devotion Aura", "spellId": 465, "actions": ["party-damage-reduction"], "availability": "specialization", "scope": "friendly-area", "limitations": ["Only affects allies within the aura range"] },
+    { "id": "divine-shield", "name": "Divine Shield", "spellId": 642, "actions": ["defensive"], "availability": "baseline", "scope": "self", "limitations": ["Personal immunity only", "Causes Forbearance", "May require cancellation or coordination while actively tanking"] }
+  ],
+  "provenance": [
+    { "kind": "external-reference", "description": "Current Protection Paladin ability guide identifies Rebuke, Cleanse Toxins, control, auras, and blessing utility.", "url": "https://www.wowhead.com/guide/classes/paladin/protection/abilities-talents-pve-tank", "retrievedAt": "2026-09-02T18:15:00+02:00" },
+    { "kind": "external-reference", "description": "Current Cleanse Toxins record confirms friendly Poison and Disease removal and its cooldown.", "url": "https://www.wowhead.com/spell=426184/cleanse-toxins", "retrievedAt": "2026-09-02T18:15:00+02:00" },
+    { "kind": "external-reference", "description": "Current Blessing of Sacrifice record confirms the external damage reduction, transfer, range, and stop condition.", "url": "https://www.wowhead.com/spell=6940/blessing-of-sacrifice", "retrievedAt": "2026-09-02T18:15:00+02:00" }
+  ]
+}

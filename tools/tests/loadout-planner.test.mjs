@@ -12,6 +12,9 @@ const enhancement = capabilities.find((record) => record.spec.slug === "enhancem
 const beastMastery = capabilities.find((record) => record.spec.slug === "beast-mastery-hunter");
 const marksmanship = capabilities.find((record) => record.spec.slug === "marksmanship-hunter");
 const survival = capabilities.find((record) => record.spec.slug === "survival-hunter");
+const holyPaladin = capabilities.find((record) => record.spec.slug === "holy-paladin");
+const protectionPaladin = capabilities.find((record) => record.spec.slug === "protection-paladin");
+const retributionPaladin = capabilities.find((record) => record.spec.slug === "retribution-paladin");
 
 test("builds a deduplicated spec loadout with mechanic references", () => {
   const loadout = buildSpecLoadout(responses, restoration, "ruby-life-pools");
@@ -54,4 +57,19 @@ test("preserves ranged and melee Hunter interrupt identities", () => {
   assert.ok(!marksmanLoadout.recommendedTools.some((tool) => tool.name === "Muzzle"));
   assert.ok(survivalLoadout.recommendedTools.some((tool) => tool.name === "Muzzle"));
   assert.ok(!survivalLoadout.recommendedTools.some((tool) => tool.name === "Counter Shot"));
+});
+
+test("distinguishes Holy and non-healer Paladin Magic cleansing", () => {
+  const holy = buildSpecLoadout(responses, holyPaladin, "ruby-life-pools");
+  const retribution = buildSpecLoadout(responses, retributionPaladin, "ruby-life-pools");
+  assert.ok(holy.recommendedTools.some((tool) => tool.name === "Cleanse"));
+  assert.ok(!holy.unsupportedActions.some((entry) => entry.name === "Stormslam" && entry.action === "cleanse-magic"));
+  assert.ok(retribution.unsupportedActions.some((entry) => entry.name === "Stormslam" && entry.action === "cleanse-magic"));
+});
+
+test("uses Cleanse Toxins for disease recovery without claiming Magic removal", () => {
+  const loadout = buildSpecLoadout(responses, protectionPaladin, "kings-rest");
+  const cleanse = loadout.recommendedTools.find((tool) => tool.name === "Cleanse Toxins");
+  assert.ok(cleanse.mechanicReferences.some((entry) => entry.name === "Wretched Discharge" && entry.action === "cleanse-disease"));
+  assert.equal(cleanse.availability, "talent");
 });

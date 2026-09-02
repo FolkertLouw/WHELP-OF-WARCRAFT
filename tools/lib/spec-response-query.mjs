@@ -11,7 +11,14 @@ export function querySpecResponses(responseRecords, capabilityRecord, filters = 
       if (universalActions.has(action)) return { action, support: "universal", tools: [] };
       const tools = capabilityRecord.tools
         .filter((tool) => tool.actions.includes(action))
-        .map(({ id, name, spellId, availability, scope, limitations }) => ({ id, name, spellId, availability, scope, limitations }));
+        .map(({ id, name, spellId, availability, actionAvailability, scope, limitations }) => ({
+          id,
+          name,
+          spellId,
+          availability: actionAvailability?.[action] ?? availability,
+          scope,
+          limitations
+        }));
       const selfOnly = tools.length && tools.every((tool) => tool.scope === "self");
       return { action, support: tools.length ? (selfOnly ? "conditional-self" : "spec-tool") : "unsupported", tools };
     });

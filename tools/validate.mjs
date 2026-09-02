@@ -93,14 +93,18 @@ function validateRecord(file, value) {
     const spellIds = (value.tools ?? []).map((tool) => tool.spellId);
     if (new Set(toolIds).size !== toolIds.length) fail(file, "spec capability tool IDs must be unique");
     if (new Set(spellIds).size !== spellIds.length) fail(file, "spec capability spell IDs must be unique");
-    const allowedCapabilityActions = new Set(["interrupt", "purge", "cleanse-magic", "cleanse-curse", "cleanse-disease", "cleanse-poison", "soothe", "defensive", "crowd-control"]);
+    const allowedCapabilityActions = new Set(["interrupt", "purge", "cleanse-magic", "cleanse-curse", "cleanse-disease", "cleanse-poison", "soothe", "defensive", "crowd-control", "external-defensive", "battle-resurrection", "party-damage-reduction"]);
     const allowedAvailability = new Set(["baseline", "specialization", "talent"]);
-    const allowedScopes = new Set(["enemy", "friendly-single", "friendly-periodic-area", "self", "area-enemy"]);
+    const allowedScopes = new Set(["enemy", "friendly-single", "friendly-periodic-area", "friendly-area", "self", "area-enemy"]);
     for (const tool of value.tools ?? []) {
       requireFields(file, tool, ["id", "name", "spellId", "actions", "availability", "scope", "limitations"]);
       if (!(tool.actions ?? []).length) fail(file, `spec tool ${tool.id} has no actions`);
       for (const action of tool.actions ?? []) {
         if (!allowedCapabilityActions.has(action)) fail(file, `spec tool ${tool.id} has unknown action ${action}`);
+      }
+      for (const [action, availability] of Object.entries(tool.actionAvailability ?? {})) {
+        if (!(tool.actions ?? []).includes(action)) fail(file, `spec tool ${tool.id} overrides availability for absent action ${action}`);
+        if (!allowedAvailability.has(availability)) fail(file, `spec tool ${tool.id} has unknown action availability ${availability}`);
       }
       if (!allowedAvailability.has(tool.availability)) fail(file, `spec tool ${tool.id} has unknown availability ${tool.availability}`);
       if (!allowedScopes.has(tool.scope)) fail(file, `spec tool ${tool.id} has unknown scope ${tool.scope}`);

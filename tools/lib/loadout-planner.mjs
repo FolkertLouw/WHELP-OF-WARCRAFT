@@ -2,6 +2,7 @@ import { queryAbilityResponses } from "./ability-response-query.mjs";
 import { querySpecResponses } from "./spec-response-query.mjs";
 
 const individualActions = new Set(["avoid", "line-of-sight", "defensive"]);
+const availabilityRank = { baseline: 0, specialization: 1, talent: 2 };
 
 export function buildSpecLoadout(responseRecords, capabilityRecord, dungeonId) {
   if (!dungeonId) throw new Error("dungeonId is required");
@@ -17,7 +18,9 @@ export function buildSpecLoadout(responseRecords, capabilityRecord, dungeonId) {
       if (action.support === "universal") universalResponses.push(reference);
       if (action.support === "conditional-self") selfOnlyResponses.push(reference);
       for (const tool of action.tools) {
-        const existing = tools.get(tool.id) ?? { ...tool, mechanicReferences: [] };
+        const existing = tools.get(tool.id) ?? { ...tool, availabilityByAction: {}, mechanicReferences: [] };
+        existing.availabilityByAction[action.action] = tool.availability;
+        if (availabilityRank[tool.availability] > availabilityRank[existing.availability]) existing.availability = tool.availability;
         existing.mechanicReferences.push(reference);
         tools.set(tool.id, existing);
       }
@@ -54,7 +57,7 @@ export function buildPartyGapReport(responseRecords, capabilityRecords, dungeonI
       }
       const handlers = capabilityRecords.flatMap((capability) => capability.tools
         .filter((tool) => tool.scope !== "self" && tool.actions.includes(action))
-        .map((tool) => ({ specSlug: capability.spec.slug, specId: capability.spec.specId, toolId: tool.id, toolName: tool.name, spellId: tool.spellId, availability: tool.availability, scope: tool.scope })));
+        .map((tool) => ({ specSlug: capability.spec.slug, specId: capability.spec.specId, toolId: tool.id, toolName: tool.name, spellId: tool.spellId, availability: tool.actionAvailability?.[action] ?? tool.availability, scope: tool.scope })));
       (handlers.length ? coveredUtility : uncoveredUtility).push({ ...base, handlers });
     }
   }
