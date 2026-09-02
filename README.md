@@ -1,4 +1,4 @@
-# WHELP
+# WHELP-OF-WARCRAFT
 
 **World-data Hub for Encounters, Loadouts & Progression**
 
