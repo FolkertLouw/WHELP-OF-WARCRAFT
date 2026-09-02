@@ -1,0 +1,30 @@
+{
+  "$schema": "../../../schemas/spec-capabilities.schema.json",
+  "schemaVersion": 1,
+  "recordType": "spec-capabilities",
+  "id": "rogue/outlaw/capabilities",
+  "matrixRecordId": "midnight-season-2/outlaw-rogue-utility-matrix",
+  "status": "corroborated",
+  "validity": { "fromBuild": "12.1.0.69587", "untilBuild": null, "seasonId": null, "seasonSlug": "midnight-season-2" },
+  "spec": { "classId": 4, "className": "Rogue", "specId": 260, "specName": "Outlaw", "slug": "outlaw-rogue" },
+  "tools": [
+    { "id": "kick", "name": "Kick", "spellId": 1766, "actions": ["interrupt"], "availability": "baseline", "scope": "enemy", "limitations": ["Melee range", "Fifteen-second cooldown", "Only interrupts interruptible casts"] },
+    { "id": "shiv", "name": "Shiv", "spellId": 5938, "actions": ["soothe"], "availability": "talent", "scope": "enemy", "limitations": ["Removes one Enrage effect", "Requires melee range", "Does not remove ordinary beneficial Magic effects"] },
+    { "id": "blind", "name": "Blind", "spellId": 2094, "actions": ["crowd-control"], "availability": "baseline", "scope": "enemy", "limitations": ["Single-target stop before talent modifiers", "Breaks from damage", "Does not lock the interrupted spell school"] },
+    { "id": "kidney-shot", "name": "Kidney Shot", "spellId": 408, "actions": ["crowd-control"], "availability": "baseline", "scope": "enemy", "limitations": ["Single-target stun", "Requires combo points", "Only affects susceptible enemies"] },
+    { "id": "shroud-of-concealment", "name": "Shroud of Concealment", "spellId": 114018, "actions": ["group-stealth"], "availability": "baseline", "scope": "friendly-area", "limitations": ["Provides stealth, not invisibility", "Requires Stealth to activate", "Route-dependent", "Six-minute cooldown"] },
+    { "id": "atrophic-poison", "name": "Atrophic Poison", "spellId": 381637, "actions": ["enemy-damage-reduction"], "availability": "talent", "scope": "enemy", "requirements": [{ "kind": "configuration", "value": "Non-lethal poison choice; competes with Numbing Poison" }], "limitations": ["Proc-based weapon poison", "Only the strongest Atrophic Poison reduction applies"] },
+    { "id": "numbing-poison", "name": "Numbing Poison", "spellId": 5761, "actions": ["enemy-output-slow"], "availability": "talent", "scope": "enemy", "requirements": [{ "kind": "configuration", "value": "Non-lethal poison choice; competes with Atrophic Poison" }], "limitations": ["Proc-based weapon poison", "Important casts may be immune to cast-speed slowing"] },
+    { "id": "wound-poison", "name": "Wound Poison", "spellId": 8679, "actions": ["healing-reduction"], "availability": "baseline", "scope": "enemy", "requirements": [{ "kind": "configuration", "value": "Lethal poison selection" }], "limitations": ["Niche against regeneration or lifesteal", "Can cost damage relative to the normal lethal-poison choice"] },
+    { "id": "tricks-of-the-trade", "name": "Tricks of the Trade", "spellId": 57934, "actions": ["threat-transfer"], "availability": "talent", "scope": "friendly-single", "limitations": ["Threat transfer starts after the Rogue attacks", "Does not protect the first stealth hit", "Choice node with Blackjack"] },
+    { "id": "cloak-of-shadows", "name": "Cloak of Shadows", "spellId": 31224, "actions": ["defensive", "cleanse-magic"], "availability": "baseline", "scope": "self", "limitations": ["Self-only", "Removes harmful spell effects rather than Poison or Disease by category", "Some mechanics cannot be immuned or removed"] },
+    { "id": "vanish", "name": "Vanish", "spellId": 1856, "actions": ["target-drop"], "availability": "baseline", "scope": "self", "limitations": ["Self-only", "Can cancel some targeted mechanics", "Not a general-purpose Magic, Curse, Poison, Disease, root, or snare dispel"] },
+    { "id": "feint", "name": "Feint", "spellId": 1966, "actions": ["defensive"], "availability": "baseline", "scope": "self", "limitations": ["Self-only", "Primarily reduces area-effect damage", "Requires proactive use"] }
+  ],
+  "provenance": [
+    { "kind": "external-reference", "description": "Original capability summary based on JustGuy's Patch 12.1.0 Outlaw Rogue Mythic+ guide, including route stealth, control, poisons, Enrage removal, target cancellation, and self-only defenses.", "url": "https://www.wowhead.com/guide/classes/rogue/outlaw/mythic-plus-dungeon-tips", "retrievedAt": "2026-09-02T19:24:00+02:00" },
+    { "kind": "external-reference", "description": "Current Kick record confirms melee spell interruption, six-second school lockout, and fifteen-second cooldown.", "url": "https://www.wowhead.com/spell=1766/kick", "retrievedAt": "2026-09-02T19:24:00+02:00" },
+    { "kind": "external-reference", "description": "Current Shroud record confirms party stealth, duration, range, activation requirement, and six-minute cooldown.", "url": "https://www.wowhead.com/spell=114018/shroud-of-concealment", "retrievedAt": "2026-09-02T19:24:00+02:00" },
+    { "kind": "external-reference", "description": "Current Atrophic Poison record confirms proc-based enemy damage reduction and non-stacking strongest-effect behavior.", "url": "https://www.wowhead.com/spell=381637/atrophic-poison", "retrievedAt": "2026-09-02T19:24:00+02:00" }
+  ]
+}

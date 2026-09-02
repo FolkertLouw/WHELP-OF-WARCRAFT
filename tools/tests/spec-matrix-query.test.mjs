@@ -206,3 +206,27 @@ test("does not promote Warrior self cleansing to party coverage or root removal"
   assert.ok(!rage.actions.includes("cleanse-root"));
   assert.match(vale.dungeons[0].notes.join(" "), /not Bloodthorn Roots/);
 });
+
+test("joins Rogue route stealth without treating it as invisibility or universal skip coverage", () => {
+  const report = querySpecMatrix(matrices, capabilities, { spec: "subtlety-rogue", dungeon: "kings-rest", rating: "niche" });
+  const shroud = report.dungeons[0].utilities.find((entry) => entry.axisId === "route-stealth").tools[0];
+  assert.equal(shroud.scope, "friendly-area");
+  assert.match(shroud.limitations.join(" "), /stealth, not invisibility/);
+  assert.match(report.dungeons[0].notes.join(" "), /route-planning utility/);
+});
+
+test("preserves Rogue Enrage and single-target stop boundaries", () => {
+  const den = querySpecMatrix(matrices, capabilities, { spec: "assassination-rogue", dungeon: "den-of-nalorakk", rating: "always" });
+  assert.equal(den.dungeons[0].utilities.find((entry) => entry.axisId === "soothe").tools[0].id, "shiv");
+  const control = den.dungeons[0].utilities.find((entry) => entry.axisId === "single-target-control");
+  assert.deepEqual(control.tools.map((tool) => tool.id), ["blind", "kidney-shot"]);
+  assert.ok(control.tools.every((tool) => !tool.actions.includes("interrupt")));
+});
+
+test("does not turn Vanish mechanic cancellation into a generic dispel", () => {
+  const report = querySpecMatrix(matrices, capabilities, { spec: "outlaw-rogue", dungeon: "the-blinding-vale", rating: "always" });
+  const vanish = report.dungeons[0].utilities.find((entry) => entry.axisId === "target-cancellation").tools[0];
+  assert.deepEqual(vanish.actions, ["target-drop"]);
+  assert.ok(!vanish.actions.includes("cleanse-magic"));
+  assert.ok(!vanish.actions.includes("cleanse-root"));
+});

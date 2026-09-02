@@ -86,6 +86,28 @@ test("keeps Protection Warrior area lockout separate from crowd-control stops", 
   assert.ok(control.results.every((entry) => entry.tool.name !== "Disrupting Shout"));
 });
 
+test("models Rogue route stealth, configured poisons, and threat transfer separately", () => {
+  const specs = ["assassination-rogue", "outlaw-rogue", "subtlety-rogue"];
+  const shrouds = queryCapabilities(capabilities, { specs, action: "group-stealth" });
+  assert.equal(shrouds.resultCount, 3);
+  assert.ok(shrouds.results.every((entry) => entry.tool.name === "Shroud of Concealment" && entry.tool.scope === "friendly-area"));
+  assert.equal(queryCapabilities(capabilities, { specs, action: "enemy-damage-reduction" }).resultCount, 3);
+  assert.equal(queryCapabilities(capabilities, { specs, action: "enemy-output-slow" }).resultCount, 3);
+  assert.equal(queryCapabilities(capabilities, { specs, action: "healing-reduction" }).resultCount, 3);
+  assert.equal(queryCapabilities(capabilities, { specs, action: "threat-transfer" }).resultCount, 3);
+});
+
+test("keeps Rogue cleanse and target-drop coverage self-only", () => {
+  const specs = ["assassination-rogue", "outlaw-rogue", "subtlety-rogue"];
+  const cloaks = queryCapabilities(capabilities, { specs, action: "cleanse-magic" });
+  const vanishes = queryCapabilities(capabilities, { specs, action: "target-drop" });
+  assert.equal(cloaks.resultCount, 3);
+  assert.equal(vanishes.resultCount, 3);
+  assert.ok(cloaks.results.every((entry) => entry.tool.scope === "self"));
+  assert.ok(vanishes.results.every((entry) => entry.tool.scope === "self"));
+  assert.equal(queryCapabilities(capabilities, { specs, action: "cleanse-root" }).resultCount, 0);
+});
+
 test("distinguishes Priest healer dispels from Shadow dispels", () => {
   const healerMagic = queryCapabilities(capabilities, { specs: ["discipline-priest", "holy-priest"], action: "cleanse-magic" });
   const shadowMagic = queryCapabilities(capabilities, { specs: ["shadow-priest"], action: "cleanse-magic" });

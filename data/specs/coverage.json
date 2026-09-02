@@ -30,10 +30,13 @@
     { "specId": 252, "slug": "unholy-death-knight", "recordId": "death-knight/unholy/capabilities" },
     { "specId": 71, "slug": "arms-warrior", "recordId": "warrior/arms/capabilities" },
     { "specId": 72, "slug": "fury-warrior", "recordId": "warrior/fury/capabilities" },
-    { "specId": 73, "slug": "protection-warrior", "recordId": "warrior/protection/capabilities" }
+    { "specId": 73, "slug": "protection-warrior", "recordId": "warrior/protection/capabilities" },
+    { "specId": 259, "slug": "assassination-rogue", "recordId": "rogue/assassination/capabilities" },
+    { "specId": 260, "slug": "outlaw-rogue", "recordId": "rogue/outlaw/capabilities" },
+    { "specId": 261, "slug": "subtlety-rogue", "recordId": "rogue/subtlety/capabilities" }
   ],
   "missingDataMeaning": "A specialization absent from this partial catalog is not yet modeled. Absence must never be interpreted as evidence that the specialization lacks a capability.",
   "provenance": [
-    { "kind": "curated", "description": "Generated from and cross-checked against every specialization capability entry in data/index.json.", "recordId": "data/index.json", "retrievedAt": "2026-09-02T19:14:00+02:00" }
+    { "kind": "curated", "description": "Generated from and cross-checked against every specialization capability entry in data/index.json.", "recordId": "data/index.json", "retrievedAt": "2026-09-02T19:24:00+02:00" }
   ]
 }
