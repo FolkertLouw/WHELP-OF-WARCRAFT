@@ -18,7 +18,7 @@
       "abilities": [
         {
           "spellId": 1216538,
-          "name": null,
+          "name": "Fel Detonation",
           "interruptible": false,
           "dispelType": "magic",
           "enrage": false
@@ -31,14 +31,14 @@
       "abilities": [
         {
           "spellId": 1216571,
-          "name": null,
+          "name": "Fel Missiles",
           "interruptible": true,
           "dispelType": "none",
           "enrage": false
         },
         {
           "spellId": 1229433,
-          "name": null,
+          "name": "Fel Crazed",
           "interruptible": false,
           "dispelType": "magic",
           "enrage": false
@@ -51,7 +51,7 @@
       "abilities": [
         {
           "spellId": 1201554,
-          "name": null,
+          "name": "Seduction",
           "interruptible": true,
           "dispelType": "magic",
           "enrage": false
@@ -64,14 +64,14 @@
       "abilities": [
         {
           "spellId": 1217633,
-          "name": null,
+          "name": "Corroding Spittle",
           "interruptible": false,
           "dispelType": "magic",
           "enrage": false
         },
         {
           "spellId": 1256300,
-          "name": null,
+          "name": "Massive Fel Detonation",
           "interruptible": false,
           "dispelType": "magic",
           "enrage": false
@@ -84,7 +84,7 @@
       "abilities": [
         {
           "spellId": 1216590,
-          "name": null,
+          "name": "Heartstop Poison",
           "interruptible": false,
           "dispelType": "poison",
           "enrage": false
@@ -97,7 +97,7 @@
       "abilities": [
         {
           "spellId": 1216970,
-          "name": null,
+          "name": "Back to Work!",
           "interruptible": false,
           "dispelType": "none",
           "enrage": true
@@ -110,7 +110,7 @@
       "abilities": [
         {
           "spellId": 1216970,
-          "name": null,
+          "name": "Back to Work!",
           "interruptible": false,
           "dispelType": "none",
           "enrage": true
@@ -123,7 +123,7 @@
       "abilities": [
         {
           "spellId": 1223204,
-          "name": null,
+          "name": "Felfire Burst",
           "interruptible": true,
           "dispelType": "none",
           "enrage": false
@@ -136,7 +136,7 @@
       "abilities": [
         {
           "spellId": 1217930,
-          "name": null,
+          "name": "Imprison",
           "interruptible": false,
           "dispelType": "magic",
           "enrage": false
@@ -149,7 +149,7 @@
       "abilities": [
         {
           "spellId": 1214980,
-          "name": null,
+          "name": "Health Funnel",
           "interruptible": true,
           "dispelType": "none",
           "enrage": false
@@ -162,7 +162,7 @@
       "abilities": [
         {
           "spellId": 1214922,
-          "name": null,
+          "name": "Fel Rage",
           "interruptible": true,
           "dispelType": "none",
           "enrage": true
@@ -175,7 +175,7 @@
       "abilities": [
         {
           "spellId": 1217973,
-          "name": null,
+          "name": "Curse of Doom",
           "interruptible": false,
           "dispelType": "curse",
           "enrage": false
@@ -188,7 +188,7 @@
       "abilities": [
         {
           "spellId": 1217930,
-          "name": null,
+          "name": "Imprison",
           "interruptible": false,
           "dispelType": "magic",
           "enrage": false
@@ -201,21 +201,21 @@
       "abilities": [
         {
           "spellId": 474515,
-          "name": null,
+          "name": "Heartstop Poison",
           "interruptible": false,
           "dispelType": "poison",
           "enrage": false
         },
         {
           "spellId": 734276,
-          "name": null,
+          "name": "Murder in a Row",
           "interruptible": true,
           "dispelType": "none",
           "enrage": false
         },
         {
           "spellId": 1223939,
-          "name": null,
+          "name": "Envenom",
           "interruptible": false,
           "dispelType": "poison",
           "enrage": false
@@ -228,7 +228,7 @@
       "abilities": [
         {
           "spellId": 1228198,
-          "name": null,
+          "name": "Corroding Spittle",
           "interruptible": false,
           "dispelType": "magic",
           "enrage": false
@@ -241,14 +241,14 @@
       "abilities": [
         {
           "spellId": 474375,
-          "name": null,
+          "name": "Chaos Bolt",
           "interruptible": true,
           "dispelType": "none",
           "enrage": false
         },
         {
           "spellId": 1216945,
-          "name": null,
+          "name": "Searing Fel Flame",
           "interruptible": true,
           "dispelType": "none",
           "enrage": false
@@ -261,7 +261,7 @@
       "abilities": [
         {
           "spellId": 1217099,
-          "name": null,
+          "name": "Fel-Infused Freight",
           "interruptible": true,
           "dispelType": "none",
           "enrage": false
@@ -274,7 +274,7 @@
       "abilities": [
         {
           "spellId": 1213658,
-          "name": null,
+          "name": "Unsatisfied Customer",
           "interruptible": true,
           "dispelType": "none",
           "enrage": true
@@ -287,7 +287,7 @@
       "abilities": [
         {
           "spellId": 1223204,
-          "name": null,
+          "name": "Felfire Burst",
           "interruptible": true,
           "dispelType": "none",
           "enrage": false
@@ -300,7 +300,7 @@
       "abilities": [
         {
           "spellId": 1257877,
-          "name": null,
+          "name": "Scathing Review",
           "interruptible": true,
           "dispelType": "none",
           "enrage": false
@@ -313,7 +313,7 @@
       "abilities": [
         {
           "spellId": 1216538,
-          "name": null,
+          "name": "Fel Detonation",
           "interruptible": false,
           "dispelType": "magic",
           "enrage": false
@@ -326,14 +326,14 @@
       "abilities": [
         {
           "spellId": 1264106,
-          "name": null,
+          "name": "Felstorm",
           "interruptible": true,
           "dispelType": "none",
           "enrage": false
         },
         {
           "spellId": 1264110,
-          "name": null,
+          "name": "Felstorm",
           "interruptible": true,
           "dispelType": "none",
           "enrage": false
@@ -346,7 +346,7 @@
       "abilities": [
         {
           "spellId": 1201554,
-          "name": null,
+          "name": "Seduction",
           "interruptible": true,
           "dispelType": "magic",
           "enrage": false
@@ -357,9 +357,33 @@
   "provenance": [
     {
       "kind": "game-data",
-      "description": "Ability flags extracted by WHELP from Mythic Dungeon Tools 6.2.10; names remain null until independently corroborated.",
+      "description": "Ability flags extracted by WHELP from Mythic Dungeon Tools 6.2.10; names are independently corroborated below.",
       "url": "https://github.com/Nnoggie/MythicDungeonTools",
       "retrievedAt": "2026-09-02T11:15:00+02:00"
-    }
+    },
+    { "kind": "external-reference", "description": "Spell 1216538 name corroborated against Wowhead's Fel Detonation record.", "url": "https://www.wowhead.com/spell=1216538/fel-detonation", "retrievedAt": "2026-09-02T14:14:22+02:00" },
+    { "kind": "external-reference", "description": "Spell 1216571 name corroborated against Wowhead's Fel Missiles record.", "url": "https://www.wowhead.com/spell=1216571/fel-missiles", "retrievedAt": "2026-09-02T14:14:22+02:00" },
+    { "kind": "external-reference", "description": "Spell 1229433 name corroborated against Wowhead's Fel Crazed record.", "url": "https://www.wowhead.com/spell=1229433/fel-crazed", "retrievedAt": "2026-09-02T14:14:22+02:00" },
+    { "kind": "external-reference", "description": "Spell 1201554 name corroborated against Wowhead's Seduction record.", "url": "https://www.wowhead.com/spell=1201554/seduction", "retrievedAt": "2026-09-02T14:14:22+02:00" },
+    { "kind": "external-reference", "description": "Spell 1217633 name corroborated against Wowhead's Corroding Spittle record.", "url": "https://www.wowhead.com/spell=1217633/corroding-spittle", "retrievedAt": "2026-09-02T14:14:22+02:00" },
+    { "kind": "external-reference", "description": "Spell 1256300 name corroborated against Wowhead's Massive Fel Detonation record.", "url": "https://www.wowhead.com/spell=1256300/massive-fel-detonation", "retrievedAt": "2026-09-02T14:14:22+02:00" },
+    { "kind": "external-reference", "description": "Spell 1216590 name corroborated against Wowhead's Heartstop Poison record.", "url": "https://www.wowhead.com/spell=1216590/heartstop-poison", "retrievedAt": "2026-09-02T14:14:22+02:00" },
+    { "kind": "external-reference", "description": "Spell 1216970 name corroborated against Wowhead's Back to Work! record.", "url": "https://www.wowhead.com/spell=1216970/back-to-work", "retrievedAt": "2026-09-02T14:14:22+02:00" },
+    { "kind": "external-reference", "description": "Spell 1223204 name corroborated against Wowhead's Felfire Burst record.", "url": "https://www.wowhead.com/spell=1223204/felfire-burst", "retrievedAt": "2026-09-02T14:14:22+02:00" },
+    { "kind": "external-reference", "description": "Spell 1217930 name corroborated against Wowhead's Imprison record.", "url": "https://www.wowhead.com/spell=1217930/imprison", "retrievedAt": "2026-09-02T14:14:22+02:00" },
+    { "kind": "external-reference", "description": "Spell 1214980 name corroborated against Wowhead's Health Funnel record.", "url": "https://www.wowhead.com/spell=1214980/health-funnel", "retrievedAt": "2026-09-02T14:14:22+02:00" },
+    { "kind": "external-reference", "description": "Spell 1214922 name corroborated against Wowhead's Fel Rage record.", "url": "https://www.wowhead.com/spell=1214922/fel-rage", "retrievedAt": "2026-09-02T14:14:22+02:00" },
+    { "kind": "external-reference", "description": "Spell 1217973 name corroborated against Wowhead's Curse of Doom record.", "url": "https://www.wowhead.com/spell=1217973/curse-of-doom", "retrievedAt": "2026-09-02T14:14:22+02:00" },
+    { "kind": "external-reference", "description": "Spell 474515 name corroborated against Wowhead's Heartstop Poison record.", "url": "https://www.wowhead.com/spell=474515/heartstop-poison", "retrievedAt": "2026-09-02T14:14:22+02:00" },
+    { "kind": "external-reference", "description": "Spell 734276 name corroborated against Wowhead's Murder in a Row record.", "url": "https://www.wowhead.com/spell=734276/murder-in-a-row", "retrievedAt": "2026-09-02T14:14:22+02:00" },
+    { "kind": "external-reference", "description": "Spell 1223939 name corroborated against Wowhead's Envenom record.", "url": "https://www.wowhead.com/spell=1223939/envenom", "retrievedAt": "2026-09-02T14:14:22+02:00" },
+    { "kind": "external-reference", "description": "Spell 1228198 name corroborated against Wowhead's Corroding Spittle record.", "url": "https://www.wowhead.com/spell=1228198/corroding-spittle", "retrievedAt": "2026-09-02T14:14:22+02:00" },
+    { "kind": "external-reference", "description": "Spell 474375 name corroborated against Wowhead's Chaos Bolt record.", "url": "https://www.wowhead.com/spell=474375/chaos-bolt", "retrievedAt": "2026-09-02T14:14:22+02:00" },
+    { "kind": "external-reference", "description": "Spell 1216945 name corroborated against Wowhead's Searing Fel Flame record.", "url": "https://www.wowhead.com/spell=1216945/searing-fel-flame", "retrievedAt": "2026-09-02T14:14:22+02:00" },
+    { "kind": "external-reference", "description": "Spell 1217099 name corroborated against Wowhead's Fel-Infused Freight record.", "url": "https://www.wowhead.com/spell=1217099/fel-infused-freight", "retrievedAt": "2026-09-02T14:14:22+02:00" },
+    { "kind": "external-reference", "description": "Spell 1213658 name corroborated against Wowhead's Unsatisfied Customer record.", "url": "https://www.wowhead.com/spell=1213658/unsatisfied-customer", "retrievedAt": "2026-09-02T14:14:22+02:00" },
+    { "kind": "external-reference", "description": "Spell 1257877 name corroborated against Wowhead's Scathing Review record.", "url": "https://www.wowhead.com/spell=1257877/scathing-review", "retrievedAt": "2026-09-02T14:14:22+02:00" },
+    { "kind": "external-reference", "description": "Spells 1264106 and 1264110 names corroborated against their distinct Wowhead Felstorm records.", "url": "https://www.wowhead.com/spell=1264106/felstorm", "retrievedAt": "2026-09-02T14:14:22+02:00" },
+    { "kind": "external-reference", "description": "Spell 1264110 is a distinct Felstorm record used alongside spell 1264106.", "url": "https://www.wowhead.com/spell=1264110/felstorm", "retrievedAt": "2026-09-02T14:14:22+02:00" }
   ]
 }
