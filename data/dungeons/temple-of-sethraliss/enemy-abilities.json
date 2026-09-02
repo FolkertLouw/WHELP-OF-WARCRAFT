@@ -1,0 +1,182 @@
+{
+  "$schema": "../../../schemas/enemy-abilities.schema.json",
+  "schemaVersion": 1,
+  "recordType": "enemy-abilities",
+  "id": "temple-of-sethraliss/enemy-abilities",
+  "status": "draft",
+  "validity": {
+    "fromBuild": "12.1.0.69587",
+    "untilBuild": null,
+    "seasonId": null,
+    "seasonSlug": "midnight-season-2"
+  },
+  "instanceMapId": 1877,
+  "enemies": [
+    {
+      "name": "Storm Adept",
+      "npcId": 134990,
+      "abilities": [
+        {
+          "spellId": 1291262,
+          "name": null,
+          "interruptible": true,
+          "dispelType": "none",
+          "enrage": false
+        }
+      ]
+    },
+    {
+      "name": "Shrouded Fang",
+      "npcId": 134602,
+      "abilities": [
+        {
+          "spellId": 1308100,
+          "name": null,
+          "interruptible": true,
+          "dispelType": "poison",
+          "enrage": false
+        }
+      ]
+    },
+    {
+      "name": "Poisonous Viper",
+      "npcId": 135562,
+      "abilities": [
+        {
+          "spellId": 1308148,
+          "name": null,
+          "interruptible": true,
+          "dispelType": "poison",
+          "enrage": false
+        }
+      ]
+    },
+    {
+      "name": "Faithless Subjugator",
+      "npcId": 134364,
+      "abilities": [
+        {
+          "spellId": 1293307,
+          "name": null,
+          "interruptible": true,
+          "dispelType": "curse",
+          "enrage": false
+        },
+        {
+          "spellId": 1314082,
+          "name": null,
+          "interruptible": true,
+          "dispelType": "curse",
+          "enrage": false
+        }
+      ]
+    },
+    {
+      "name": "Brood Tender",
+      "npcId": 139425,
+      "abilities": [
+        {
+          "spellId": 1310683,
+          "name": null,
+          "interruptible": true,
+          "dispelType": "none",
+          "enrage": false
+        }
+      ]
+    },
+    {
+      "name": "Agitated Nimbus",
+      "npcId": 136076,
+      "abilities": [
+        {
+          "spellId": 1293464,
+          "name": null,
+          "interruptible": false,
+          "dispelType": "magic",
+          "enrage": false
+        },
+        {
+          "spellId": 1310739,
+          "name": null,
+          "interruptible": false,
+          "dispelType": "magic",
+          "enrage": false
+        }
+      ]
+    },
+    {
+      "name": "Imbued Stormcaller",
+      "npcId": 134599,
+      "abilities": [
+        {
+          "spellId": 1291262,
+          "name": null,
+          "interruptible": true,
+          "dispelType": "none",
+          "enrage": false
+        },
+        {
+          "spellId": 1296052,
+          "name": null,
+          "interruptible": false,
+          "dispelType": "magic",
+          "enrage": false
+        },
+        {
+          "spellId": 1310739,
+          "name": null,
+          "interruptible": false,
+          "dispelType": "magic",
+          "enrage": false
+        }
+      ]
+    },
+    {
+      "name": "Twisted Hexxer",
+      "npcId": 136250,
+      "abilities": [
+        {
+          "spellId": 268013,
+          "name": null,
+          "interruptible": true,
+          "dispelType": "none",
+          "enrage": false
+        }
+      ]
+    },
+    {
+      "name": "Toxic Viper",
+      "npcId": 134389,
+      "abilities": [
+        {
+          "spellId": 267027,
+          "name": null,
+          "interruptible": true,
+          "dispelType": "poison",
+          "enrage": false
+        }
+      ]
+    },
+    {
+      "name": "Twisted Hexxer",
+      "npcId": 268491,
+      "abilities": [
+        {
+          "spellId": 1302158,
+          "name": null,
+          "interruptible": true,
+          "dispelType": "none",
+          "enrage": false
+        }
+      ]
+    }
+  ],
+  "provenance": [
+    {
+      "kind": "game-data",
+      "description": "Ability flags extracted by WHELP from Mythic Dungeon Tools 6.2.10; names remain null until independently corroborated.",
+      "url": "https://github.com/Nnoggie/MythicDungeonTools",
+      "retrievedAt": "2026-09-02T11:15:00+02:00"
+    }
+  ]
+}

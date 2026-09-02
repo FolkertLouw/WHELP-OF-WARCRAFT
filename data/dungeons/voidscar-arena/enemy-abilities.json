@@ -1,0 +1,293 @@
+{
+  "$schema": "../../../schemas/enemy-abilities.schema.json",
+  "schemaVersion": 1,
+  "recordType": "enemy-abilities",
+  "id": "voidscar-arena/enemy-abilities",
+  "status": "draft",
+  "validity": {
+    "fromBuild": "12.1.0.69587",
+    "untilBuild": null,
+    "seasonId": null,
+    "seasonSlug": "midnight-season-2"
+  },
+  "instanceMapId": 2923,
+  "enemies": [
+    {
+      "name": "Feral Saberon",
+      "npcId": 243988,
+      "abilities": [
+        {
+          "spellId": 1249661,
+          "name": null,
+          "interruptible": false,
+          "dispelType": "none",
+          "enrage": true
+        }
+      ]
+    },
+    {
+      "name": "Sycophantic Tarasek",
+      "npcId": 243983,
+      "abilities": [
+        {
+          "spellId": 1249661,
+          "name": null,
+          "interruptible": false,
+          "dispelType": "none",
+          "enrage": true
+        },
+        {
+          "spellId": 1250043,
+          "name": null,
+          "interruptible": false,
+          "dispelType": "magic",
+          "enrage": false
+        }
+      ]
+    },
+    {
+      "name": "Longtooth Tuskarr",
+      "npcId": 243985,
+      "abilities": [
+        {
+          "spellId": 1249661,
+          "name": null,
+          "interruptible": false,
+          "dispelType": "none",
+          "enrage": true
+        },
+        {
+          "spellId": 1310319,
+          "name": null,
+          "interruptible": false,
+          "dispelType": "none",
+          "enrage": true
+        }
+      ]
+    },
+    {
+      "name": "Dominated Brawler",
+      "npcId": 238883,
+      "abilities": [
+        {
+          "spellId": 1254826,
+          "name": null,
+          "interruptible": false,
+          "dispelType": "none",
+          "enrage": true
+        },
+        {
+          "spellId": 1298899,
+          "name": null,
+          "interruptible": true,
+          "dispelType": "none",
+          "enrage": false
+        }
+      ]
+    },
+    {
+      "name": "Enthralled Shaman",
+      "npcId": 241496,
+      "abilities": [
+        {
+          "spellId": 1228176,
+          "name": null,
+          "interruptible": true,
+          "dispelType": "none",
+          "enrage": false
+        }
+      ]
+    },
+    {
+      "name": "Voidtouched Magi",
+      "npcId": 252072,
+      "abilities": [
+        {
+          "spellId": 1299938,
+          "name": null,
+          "interruptible": true,
+          "dispelType": "none",
+          "enrage": false
+        }
+      ]
+    },
+    {
+      "name": "Chitigoth",
+      "npcId": 244260,
+      "abilities": [
+        {
+          "spellId": 1249661,
+          "name": null,
+          "interruptible": false,
+          "dispelType": "none",
+          "enrage": true
+        }
+      ]
+    },
+    {
+      "name": "Raging Raptor",
+      "npcId": 249608,
+      "abilities": [
+        {
+          "spellId": 1249661,
+          "name": null,
+          "interruptible": false,
+          "dispelType": "none",
+          "enrage": true
+        }
+      ]
+    },
+    {
+      "name": "Protective Turtle",
+      "npcId": 249603,
+      "abilities": [
+        {
+          "spellId": 1249661,
+          "name": null,
+          "interruptible": false,
+          "dispelType": "none",
+          "enrage": true
+        }
+      ]
+    },
+    {
+      "name": "Brutok",
+      "npcId": 244309,
+      "abilities": [
+        {
+          "spellId": 1249661,
+          "name": null,
+          "interruptible": false,
+          "dispelType": "none",
+          "enrage": true
+        }
+      ]
+    },
+    {
+      "name": "Abducted Drakonid",
+      "npcId": 249461,
+      "abilities": [
+        {
+          "spellId": 1249238,
+          "name": null,
+          "interruptible": false,
+          "dispelType": "magic",
+          "enrage": false
+        },
+        {
+          "spellId": 1249661,
+          "name": null,
+          "interruptible": false,
+          "dispelType": "none",
+          "enrage": true
+        }
+      ]
+    },
+    {
+      "name": "Angry Krolusk",
+      "npcId": 249590,
+      "abilities": [
+        {
+          "spellId": 1249621,
+          "name": null,
+          "interruptible": true,
+          "dispelType": "none",
+          "enrage": false
+        }
+      ]
+    },
+    {
+      "name": "Kilivore Screamer",
+      "npcId": 243766,
+      "abilities": [
+        {
+          "spellId": 1233398,
+          "name": null,
+          "interruptible": true,
+          "dispelType": "none",
+          "enrage": false
+        }
+      ]
+    },
+    {
+      "name": "Agitated Voidscythe",
+      "npcId": 263228,
+      "abilities": [
+        {
+          "spellId": 1289258,
+          "name": null,
+          "interruptible": false,
+          "dispelType": "poison",
+          "enrage": false
+        }
+      ]
+    },
+    {
+      "name": "Watchful Harrower",
+      "npcId": 245950,
+      "abilities": [
+        {
+          "spellId": 1239855,
+          "name": null,
+          "interruptible": false,
+          "dispelType": "magic",
+          "enrage": false
+        }
+      ]
+    },
+    {
+      "name": "Devouring Brutalizer",
+      "npcId": 268184,
+      "abilities": [
+        {
+          "spellId": 1310324,
+          "name": null,
+          "interruptible": true,
+          "dispelType": "none",
+          "enrage": false
+        }
+      ]
+    },
+    {
+      "name": "Voidminder",
+      "npcId": 244708,
+      "abilities": [
+        {
+          "spellId": 1310324,
+          "name": null,
+          "interruptible": true,
+          "dispelType": "none",
+          "enrage": false
+        }
+      ]
+    },
+    {
+      "name": "Atroxus",
+      "npcId": 239008,
+      "abilities": [
+        {
+          "spellId": 1226031,
+          "name": null,
+          "interruptible": false,
+          "dispelType": "poison",
+          "enrage": false
+        },
+        {
+          "spellId": 1263971,
+          "name": null,
+          "interruptible": false,
+          "dispelType": "poison",
+          "enrage": false
+        }
+      ]
+    }
+  ],
+  "provenance": [
+    {
+      "kind": "game-data",
+      "description": "Ability flags extracted by WHELP from Mythic Dungeon Tools 6.2.10; names remain null until independently corroborated.",
+      "url": "https://github.com/Nnoggie/MythicDungeonTools",
+      "retrievedAt": "2026-09-02T11:15:00+02:00"
+    }
+  ]
+}

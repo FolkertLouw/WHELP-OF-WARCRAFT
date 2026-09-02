@@ -23,7 +23,7 @@ This is the initial foundation. It includes:
 - a minimal Retail addon, **WHELP Collector**;
 - a build manifest for the locally verified Retail build `12.1.0.69587`.
 
-The first populated slice covers the current Midnight Season 2 rotation and Altar of Fangs. It now includes targeted Wowhead-corroborated dungeon facts, priority utility, route gates, Zul'jan coordination, and Restoration/Enhancement Shaman notes. Canonical IDs are versioned and sourced; uncorroborated discoveries remain drafts. The examples under `examples/` are synthetic and must never be treated as game facts.
+The current dataset covers all eight Midnight Season 2 Mythic+ dungeons with dungeon IDs, instance maps, teleports, zones, encounters, enemy-forces values, enemy NPCs, and flagged interrupt/dispel/enrage abilities. Altar of Fangs additionally includes targeted Wowhead-corroborated facts, priority utility, route gates, Zul'jan coordination, and Restoration/Enhancement Shaman notes. Canonical IDs are versioned and sourced; uncorroborated discoveries remain drafts. The examples under `examples/` are synthetic and must never be treated as game facts.
 
 WHELP does not mirror third-party guides. It stores compact original records, stable identifiers, validity ranges, retrieval timestamps, and links back to the source so updates can be reviewed.
 
@@ -42,6 +42,12 @@ npm run import:mdt -- --input "/path/to/MythicDungeonTools/Expansion/Dungeon.lua
 ```
 
 The importer emits normalized dungeon, enemy, enemy-forces, and spell-flag facts. Imported output is evidence requiring review; it does not become verified strategy automatically.
+
+To regenerate the seven season-wide dungeon packages described by the checked-in import manifest:
+
+```bash
+npm run import:season-mdt -- --mdt-root "/path/to/MythicDungeonTools/Midnight"
+```
 
 ## Repository map
 

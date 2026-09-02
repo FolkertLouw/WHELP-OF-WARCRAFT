@@ -1,0 +1,265 @@
+{
+  "$schema": "../../../schemas/dungeon.schema.json",
+  "schemaVersion": 1,
+  "recordType": "dungeon",
+  "id": "kings-rest",
+  "status": "corroborated",
+  "name": "King's Rest",
+  "expansion": "Battle for Azeroth",
+  "validity": {
+    "fromBuild": "12.1.0.69587",
+    "untilBuild": null,
+    "seasonId": null,
+    "seasonSlug": "midnight-season-2"
+  },
+  "challengeMapId": 249,
+  "instanceMapId": 1762,
+  "teleportSpellId": 1286831,
+  "uiMapId": null,
+  "zoneIds": [
+    1004
+  ],
+  "enemyForcesTotal": 608,
+  "mythicPlusTimerSeconds": null,
+  "requiredLevel": null,
+  "location": null,
+  "entrance": null,
+  "encounters": [
+    {
+      "name": "The Golden Serpent",
+      "encounterId": 2139,
+      "npcId": 135322
+    },
+    {
+      "name": "Council of Tribes",
+      "encounterId": 2140,
+      "npcId": 135475
+    },
+    {
+      "name": "Mchimba the Embalmer",
+      "encounterId": 2142,
+      "npcId": 134993
+    },
+    {
+      "name": "King Dazar",
+      "encounterId": 2143,
+      "npcId": 136160
+    }
+  ],
+  "enemies": [
+    {
+      "name": "Animated Guardian",
+      "npcId": 133935,
+      "enemyForces": 22
+    },
+    {
+      "name": "Minion of Zul",
+      "npcId": 133943,
+      "enemyForces": 0
+    },
+    {
+      "name": "Risen Hexer",
+      "npcId": 134174,
+      "enemyForces": 20
+    },
+    {
+      "name": "Shadow-Borne Champion",
+      "npcId": 134158,
+      "enemyForces": 25
+    },
+    {
+      "name": "Umbral Warrior",
+      "npcId": 134157,
+      "enemyForces": 5
+    },
+    {
+      "name": "The Golden Serpent",
+      "npcId": 135322,
+      "enemyForces": 0
+    },
+    {
+      "name": "Skeletal Hunting Raptor",
+      "npcId": 137487,
+      "enemyForces": 10
+    },
+    {
+      "name": "Queen Patlaa",
+      "npcId": 137486,
+      "enemyForces": 25
+    },
+    {
+      "name": "King A'akul",
+      "npcId": 137484,
+      "enemyForces": 25
+    },
+    {
+      "name": "Bloodsworn Assassin",
+      "npcId": 137485,
+      "enemyForces": 7
+    },
+    {
+      "name": "Seneschal M'bara",
+      "npcId": 134251,
+      "enemyForces": 10
+    },
+    {
+      "name": "Guard Captain Atu",
+      "npcId": 137473,
+      "enemyForces": 10
+    },
+    {
+      "name": "King Rahu'ai",
+      "npcId": 134331,
+      "enemyForces": 25
+    },
+    {
+      "name": "King Timalji",
+      "npcId": 137474,
+      "enemyForces": 25
+    },
+    {
+      "name": "Queen Wasi",
+      "npcId": 137478,
+      "enemyForces": 25
+    },
+    {
+      "name": "Purification Construct",
+      "npcId": 134739,
+      "enemyForces": 25
+    },
+    {
+      "name": "Interment Construct",
+      "npcId": 137969,
+      "enemyForces": 15
+    },
+    {
+      "name": "Mchimba the Embalmer",
+      "npcId": 134993,
+      "enemyForces": 0
+    },
+    {
+      "name": "Phantom Hex Priest",
+      "npcId": 135204,
+      "enemyForces": 7
+    },
+    {
+      "name": "Royal Berserker",
+      "npcId": 135167,
+      "enemyForces": 22
+    },
+    {
+      "name": "Spectral Shaman",
+      "npcId": 135239,
+      "enemyForces": 7
+    },
+    {
+      "name": "Ghostly Brute",
+      "npcId": 135231,
+      "enemyForces": 25
+    },
+    {
+      "name": "Honored Raptor",
+      "npcId": 135192,
+      "enemyForces": 5
+    },
+    {
+      "name": "Shadow of Zul",
+      "npcId": 138489,
+      "enemyForces": 30
+    },
+    {
+      "name": "King Dazar",
+      "npcId": 136160,
+      "enemyForces": 0
+    },
+    {
+      "name": "Embalming Fluid",
+      "npcId": 137989,
+      "enemyForces": 1
+    },
+    {
+      "name": "Thundering Totem",
+      "npcId": 135761,
+      "enemyForces": 0
+    },
+    {
+      "name": "Explosive Totem",
+      "npcId": 135764,
+      "enemyForces": 0
+    },
+    {
+      "name": "Torrent Totem",
+      "npcId": 135765,
+      "enemyForces": 0
+    },
+    {
+      "name": "Coffin",
+      "npcId": 136256,
+      "enemyForces": 0
+    },
+    {
+      "name": "T'zala",
+      "npcId": 136976,
+      "enemyForces": 0
+    },
+    {
+      "name": "Reban",
+      "npcId": 136984,
+      "enemyForces": 0
+    },
+    {
+      "name": "Minion of Zul",
+      "npcId": 138493,
+      "enemyForces": 0
+    },
+    {
+      "name": "Aka'ali the Conqueror",
+      "npcId": 269808,
+      "enemyForces": 0
+    },
+    {
+      "name": "Zanazal the Wise",
+      "npcId": 269810,
+      "enemyForces": 0
+    },
+    {
+      "name": "Kula the Butcher",
+      "npcId": 269811,
+      "enemyForces": 0
+    },
+    {
+      "name": "Half-Finished Mummy",
+      "npcId": 270502,
+      "enemyForces": 7
+    },
+    {
+      "name": "Animated Gold",
+      "npcId": 135406,
+      "enemyForces": 0
+    },
+    {
+      "name": "Healing Tide Totem",
+      "npcId": 137591,
+      "enemyForces": 0
+    },
+    {
+      "name": "Council of Tribes",
+      "npcId": 135475,
+      "enemyForces": 0
+    }
+  ],
+  "provenance": [
+    {
+      "kind": "game-data",
+      "description": "Dungeon, NPC, enemy-forces, map, teleport, zone, and spell-flag facts derived from Mythic Dungeon Tools 6.2.10.",
+      "url": "https://github.com/Nnoggie/MythicDungeonTools",
+      "retrievedAt": "2026-09-02T11:15:00+02:00"
+    },
+    {
+      "kind": "external-reference",
+      "description": "Instance, encounter, and boss NPC identifiers corroborated against DBM Dungeons r261.",
+      "url": "https://github.com/DeadlyBossMods/DBM-Dungeons",
+      "retrievedAt": "2026-09-02T11:15:00+02:00"
+    }
+  ]
+}

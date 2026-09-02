@@ -12,6 +12,12 @@ MDT.dungeonEnemies[dungeonIndex] = {
     ["name"] = "Synthetic Caster",
     ["id"] = 900001,
     ["count"] = 7,
+    ["clones"] = {
+      [1] = {
+        ["encounterID"] = 7654,
+        ["instanceID"] = 8765,
+      },
+    },
     ["spells"] = {
       [800001] = {
         ["interruptible"] = true,

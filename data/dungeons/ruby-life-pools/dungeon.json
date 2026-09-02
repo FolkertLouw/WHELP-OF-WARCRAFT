@@ -1,0 +1,181 @@
+{
+  "$schema": "../../../schemas/dungeon.schema.json",
+  "schemaVersion": 1,
+  "recordType": "dungeon",
+  "id": "ruby-life-pools",
+  "status": "corroborated",
+  "name": "Ruby Life Pools",
+  "expansion": "Dragonflight",
+  "validity": {
+    "fromBuild": "12.1.0.69587",
+    "untilBuild": null,
+    "seasonId": null,
+    "seasonSlug": "midnight-season-2"
+  },
+  "challengeMapId": 399,
+  "instanceMapId": 2521,
+  "teleportSpellId": 393256,
+  "uiMapId": null,
+  "zoneIds": [
+    2094,
+    2095
+  ],
+  "enemyForcesTotal": 551,
+  "mythicPlusTimerSeconds": null,
+  "requiredLevel": null,
+  "location": null,
+  "entrance": null,
+  "encounters": [
+    {
+      "name": "Melidrussa Chillworn",
+      "encounterId": 2609,
+      "npcId": 188252
+    },
+    {
+      "name": "Kokia Blazehoof",
+      "encounterId": 2606,
+      "npcId": 189232
+    },
+    {
+      "name": "Kyrakka and Erkhart Stormvein",
+      "encounterId": 2623,
+      "npcId": 190484
+    }
+  ],
+  "enemies": [
+    {
+      "name": "Primal Juggernaut",
+      "npcId": 188244,
+      "enemyForces": 25
+    },
+    {
+      "name": "Deepstone Earthshaper",
+      "npcId": 187969,
+      "enemyForces": 5
+    },
+    {
+      "name": "Earthbound Guardian",
+      "npcId": 188011,
+      "enemyForces": 5
+    },
+    {
+      "name": "Flashfrost Chillweaver",
+      "npcId": 188067,
+      "enemyForces": 7
+    },
+    {
+      "name": "Infused Whelp",
+      "npcId": 187894,
+      "enemyForces": 0
+    },
+    {
+      "name": "Defier Draghar",
+      "npcId": 187897,
+      "enemyForces": 30
+    },
+    {
+      "name": "Melidrussa Chillworn",
+      "npcId": 188252,
+      "enemyForces": 0
+    },
+    {
+      "name": "Scorchling",
+      "npcId": 190205,
+      "enemyForces": 0
+    },
+    {
+      "name": "Thunderhead",
+      "npcId": 197698,
+      "enemyForces": 48
+    },
+    {
+      "name": "Primalist Cinderweaver",
+      "npcId": 190207,
+      "enemyForces": 7
+    },
+    {
+      "name": "Blazebound Destroyer",
+      "npcId": 190034,
+      "enemyForces": 25
+    },
+    {
+      "name": "Ashseer Flamelasher",
+      "npcId": 190206,
+      "enemyForces": 7
+    },
+    {
+      "name": "Ruinous Stormbringer",
+      "npcId": 195119,
+      "enemyForces": 10
+    },
+    {
+      "name": "Flamegullet",
+      "npcId": 197697,
+      "enemyForces": 40
+    },
+    {
+      "name": "Kokia Blazehoof",
+      "npcId": 189232,
+      "enemyForces": 0
+    },
+    {
+      "name": "Storm Warrior",
+      "npcId": 197982,
+      "enemyForces": 5
+    },
+    {
+      "name": "Primal Thundercloud",
+      "npcId": 197509,
+      "enemyForces": 0
+    },
+    {
+      "name": "Tempest Channeler",
+      "npcId": 198047,
+      "enemyForces": 25
+    },
+    {
+      "name": "High Channeler Ryvati",
+      "npcId": 197535,
+      "enemyForces": 30
+    },
+    {
+      "name": "Erkhart Stormvein",
+      "npcId": 190485,
+      "enemyForces": 0
+    },
+    {
+      "name": "Kyrakka",
+      "npcId": 190484,
+      "enemyForces": 0
+    },
+    {
+      "name": "Blazebound Firestorm",
+      "npcId": 189886,
+      "enemyForces": 0
+    },
+    {
+      "name": "Infused Whelp",
+      "npcId": 189893,
+      "enemyForces": 0
+    },
+    {
+      "name": "Scorchling",
+      "npcId": 194622,
+      "enemyForces": 0
+    }
+  ],
+  "provenance": [
+    {
+      "kind": "game-data",
+      "description": "Dungeon, NPC, enemy-forces, map, teleport, zone, and spell-flag facts derived from Mythic Dungeon Tools 6.2.10.",
+      "url": "https://github.com/Nnoggie/MythicDungeonTools",
+      "retrievedAt": "2026-09-02T11:15:00+02:00"
+    },
+    {
+      "kind": "external-reference",
+      "description": "Instance, encounter, and boss NPC identifiers corroborated against DBM Dungeons r261.",
+      "url": "https://github.com/DeadlyBossMods/DBM-Dungeons",
+      "retrievedAt": "2026-09-02T11:15:00+02:00"
+    }
+  ]
+}

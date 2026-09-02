@@ -8,7 +8,8 @@
     "validate": "node tools/validate.mjs",
     "lint:lua": "node tools/check-lua.mjs",
     "test:tools": "node --test tools/tests/*.test.mjs",
-    "import:mdt": "node tools/import-mdt.mjs"
+    "import:mdt": "node tools/import-mdt.mjs",
+    "import:season-mdt": "node tools/import-season-mdt.mjs"
   },
   "engines": {
     "node": ">=20"

@@ -1,0 +1,240 @@
+{
+  "$schema": "../../../schemas/enemy-abilities.schema.json",
+  "schemaVersion": 1,
+  "recordType": "enemy-abilities",
+  "id": "den-of-nalorakk/enemy-abilities",
+  "status": "draft",
+  "validity": {
+    "fromBuild": "12.1.0.69587",
+    "untilBuild": null,
+    "seasonId": null,
+    "seasonSlug": "midnight-season-2"
+  },
+  "instanceMapId": 2825,
+  "enemies": [
+    {
+      "name": "Earthwhisper Tender",
+      "npcId": 241814,
+      "abilities": [
+        {
+          "spellId": 1241214,
+          "name": null,
+          "interruptible": true,
+          "dispelType": "none",
+          "enrage": false
+        },
+        {
+          "spellId": 1297696,
+          "name": null,
+          "interruptible": true,
+          "dispelType": "magic",
+          "enrage": false
+        }
+      ]
+    },
+    {
+      "name": "Thornclaw Gatherer",
+      "npcId": 241813,
+      "abilities": [
+        {
+          "spellId": 1297699,
+          "name": null,
+          "interruptible": false,
+          "dispelType": "disease",
+          "enrage": false
+        }
+      ]
+    },
+    {
+      "name": "Territorial Matriarch",
+      "npcId": 241808,
+      "abilities": [
+        {
+          "spellId": 1238053,
+          "name": null,
+          "interruptible": false,
+          "dispelType": "none",
+          "enrage": true
+        }
+      ]
+    },
+    {
+      "name": "Frigid Mauler",
+      "npcId": 241872,
+      "abilities": [
+        {
+          "spellId": 1309919,
+          "name": null,
+          "interruptible": true,
+          "dispelType": "none",
+          "enrage": false
+        }
+      ]
+    },
+    {
+      "name": "Glacial Revenant",
+      "npcId": 241876,
+      "abilities": [
+        {
+          "spellId": 1239860,
+          "name": null,
+          "interruptible": false,
+          "dispelType": "magic",
+          "enrage": false
+        }
+      ]
+    },
+    {
+      "name": "Stormbound Mystic",
+      "npcId": 245139,
+      "abilities": [
+        {
+          "spellId": 1246687,
+          "name": null,
+          "interruptible": true,
+          "dispelType": "none",
+          "enrage": false
+        },
+        {
+          "spellId": 1297778,
+          "name": null,
+          "interruptible": true,
+          "dispelType": "none",
+          "enrage": false
+        }
+      ]
+    },
+    {
+      "name": "Bonded Beasttamer",
+      "npcId": 245145,
+      "abilities": [
+        {
+          "spellId": 1246847,
+          "name": null,
+          "interruptible": true,
+          "dispelType": "none",
+          "enrage": false
+        },
+        {
+          "spellId": 1246865,
+          "name": null,
+          "interruptible": false,
+          "dispelType": "none",
+          "enrage": true
+        }
+      ]
+    },
+    {
+      "name": "Curious Yearling",
+      "npcId": 241809,
+      "abilities": [
+        {
+          "spellId": 1238053,
+          "name": null,
+          "interruptible": false,
+          "dispelType": "none",
+          "enrage": true
+        }
+      ]
+    },
+    {
+      "name": "The Hoardmonger",
+      "npcId": 241812,
+      "abilities": [
+        {
+          "spellId": 1234846,
+          "name": null,
+          "interruptible": false,
+          "dispelType": "poison",
+          "enrage": false
+        }
+      ]
+    },
+    {
+      "name": "Sentinel of Winter",
+      "npcId": 244100,
+      "abilities": [
+        {
+          "spellId": 1235549,
+          "name": null,
+          "interruptible": false,
+          "dispelType": "magic",
+          "enrage": false
+        }
+      ]
+    },
+    {
+      "name": "Fractured Shivercore",
+      "npcId": 244759,
+      "abilities": [
+        {
+          "spellId": 1235829,
+          "name": null,
+          "interruptible": true,
+          "dispelType": "none",
+          "enrage": false
+        }
+      ]
+    },
+    {
+      "name": "Loa Speaker Nanea",
+      "npcId": 244889,
+      "abilities": [
+        {
+          "spellId": 1290205,
+          "name": null,
+          "interruptible": true,
+          "dispelType": "none",
+          "enrage": false
+        }
+      ]
+    },
+    {
+      "name": "Loyal Saberfang",
+      "npcId": 245190,
+      "abilities": [
+        {
+          "spellId": 1246865,
+          "name": null,
+          "interruptible": false,
+          "dispelType": "none",
+          "enrage": true
+        }
+      ]
+    },
+    {
+      "name": "Starvation Effigy",
+      "npcId": 245567,
+      "abilities": [
+        {
+          "spellId": 1238801,
+          "name": null,
+          "interruptible": false,
+          "dispelType": "curse",
+          "enrage": false
+        }
+      ]
+    },
+    {
+      "name": "Keen-Eyed Striker",
+      "npcId": 245752,
+      "abilities": [
+        {
+          "spellId": 1239394,
+          "name": null,
+          "interruptible": true,
+          "dispelType": "none",
+          "enrage": false
+        }
+      ]
+    }
+  ],
+  "provenance": [
+    {
+      "kind": "game-data",
+      "description": "Ability flags extracted by WHELP from Mythic Dungeon Tools 6.2.10; names remain null until independently corroborated.",
+      "url": "https://github.com/Nnoggie/MythicDungeonTools",
+      "retrievedAt": "2026-09-02T11:15:00+02:00"
+    }
+  ]
+}

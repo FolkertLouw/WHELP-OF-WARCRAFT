@@ -14,6 +14,48 @@
       "record": "dungeons/altar-of-fangs/dungeon.json",
       "enemyAbilities": "dungeons/altar-of-fangs/enemy-abilities.json",
       "status": "corroborated"
+    },
+    {
+      "id": "den-of-nalorakk",
+      "record": "dungeons/den-of-nalorakk/dungeon.json",
+      "enemyAbilities": "dungeons/den-of-nalorakk/enemy-abilities.json",
+      "status": "corroborated"
+    },
+    {
+      "id": "murder-row",
+      "record": "dungeons/murder-row/dungeon.json",
+      "enemyAbilities": "dungeons/murder-row/enemy-abilities.json",
+      "status": "corroborated"
+    },
+    {
+      "id": "the-blinding-vale",
+      "record": "dungeons/the-blinding-vale/dungeon.json",
+      "enemyAbilities": "dungeons/the-blinding-vale/enemy-abilities.json",
+      "status": "corroborated"
+    },
+    {
+      "id": "voidscar-arena",
+      "record": "dungeons/voidscar-arena/dungeon.json",
+      "enemyAbilities": "dungeons/voidscar-arena/enemy-abilities.json",
+      "status": "corroborated"
+    },
+    {
+      "id": "kings-rest",
+      "record": "dungeons/kings-rest/dungeon.json",
+      "enemyAbilities": "dungeons/kings-rest/enemy-abilities.json",
+      "status": "corroborated"
+    },
+    {
+      "id": "ruby-life-pools",
+      "record": "dungeons/ruby-life-pools/dungeon.json",
+      "enemyAbilities": "dungeons/ruby-life-pools/enemy-abilities.json",
+      "status": "corroborated"
+    },
+    {
+      "id": "temple-of-sethraliss",
+      "record": "dungeons/temple-of-sethraliss/dungeon.json",
+      "enemyAbilities": "dungeons/temple-of-sethraliss/enemy-abilities.json",
+      "status": "corroborated"
     }
   ],
   "builds": [

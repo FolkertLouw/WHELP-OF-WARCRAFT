@@ -1,0 +1,267 @@
+{
+  "$schema": "../../../schemas/enemy-abilities.schema.json",
+  "schemaVersion": 1,
+  "recordType": "enemy-abilities",
+  "id": "kings-rest/enemy-abilities",
+  "status": "draft",
+  "validity": {
+    "fromBuild": "12.1.0.69587",
+    "untilBuild": null,
+    "seasonId": null,
+    "seasonSlug": "midnight-season-2"
+  },
+  "instanceMapId": 1762,
+  "enemies": [
+    {
+      "name": "Minion of Zul",
+      "npcId": 133943,
+      "abilities": [
+        {
+          "spellId": 269935,
+          "name": null,
+          "interruptible": false,
+          "dispelType": "magic",
+          "enrage": false
+        }
+      ]
+    },
+    {
+      "name": "Risen Hexer",
+      "npcId": 134174,
+      "abilities": [
+        {
+          "spellId": 269972,
+          "name": null,
+          "interruptible": true,
+          "dispelType": "curse",
+          "enrage": false
+        },
+        {
+          "spellId": 1294815,
+          "name": null,
+          "interruptible": true,
+          "dispelType": "magic",
+          "enrage": false
+        }
+      ]
+    },
+    {
+      "name": "Shadow-Borne Champion",
+      "npcId": 134158,
+      "abilities": [
+        {
+          "spellId": 269976,
+          "name": null,
+          "interruptible": false,
+          "dispelType": "none",
+          "enrage": true
+        }
+      ]
+    },
+    {
+      "name": "Skeletal Hunting Raptor",
+      "npcId": 137487,
+      "abilities": [
+        {
+          "spellId": 1297763,
+          "name": null,
+          "interruptible": false,
+          "dispelType": "none",
+          "enrage": true
+        }
+      ]
+    },
+    {
+      "name": "Queen Patlaa",
+      "npcId": 137486,
+      "abilities": [
+        {
+          "spellId": 1297763,
+          "name": null,
+          "interruptible": false,
+          "dispelType": "none",
+          "enrage": true
+        },
+        {
+          "spellId": 1306763,
+          "name": null,
+          "interruptible": false,
+          "dispelType": "poison",
+          "enrage": false
+        }
+      ]
+    },
+    {
+      "name": "Seneschal M'bara",
+      "npcId": 134251,
+      "abilities": [
+        {
+          "spellId": 270901,
+          "name": null,
+          "interruptible": true,
+          "dispelType": "magic",
+          "enrage": false
+        },
+        {
+          "spellId": 1296671,
+          "name": null,
+          "interruptible": false,
+          "dispelType": "magic",
+          "enrage": false
+        }
+      ]
+    },
+    {
+      "name": "Guard Captain Atu",
+      "npcId": 137473,
+      "abilities": [
+        {
+          "spellId": 1296671,
+          "name": null,
+          "interruptible": false,
+          "dispelType": "magic",
+          "enrage": false
+        }
+      ]
+    },
+    {
+      "name": "King Rahu'ai",
+      "npcId": 134331,
+      "abilities": [
+        {
+          "spellId": 1296671,
+          "name": null,
+          "interruptible": false,
+          "dispelType": "magic",
+          "enrage": false
+        }
+      ]
+    },
+    {
+      "name": "Queen Wasi",
+      "npcId": 137478,
+      "abilities": [
+        {
+          "spellId": 270920,
+          "name": null,
+          "interruptible": true,
+          "dispelType": "magic",
+          "enrage": false
+        },
+        {
+          "spellId": 1294972,
+          "name": null,
+          "interruptible": true,
+          "dispelType": "magic",
+          "enrage": false
+        }
+      ]
+    },
+    {
+      "name": "Phantom Hex Priest",
+      "npcId": 135204,
+      "abilities": [
+        {
+          "spellId": 270492,
+          "name": null,
+          "interruptible": true,
+          "dispelType": "curse",
+          "enrage": false
+        },
+        {
+          "spellId": 1295125,
+          "name": null,
+          "interruptible": true,
+          "dispelType": "magic",
+          "enrage": false
+        }
+      ]
+    },
+    {
+      "name": "Spectral Shaman",
+      "npcId": 135239,
+      "abilities": [
+        {
+          "spellId": 270499,
+          "name": null,
+          "interruptible": false,
+          "dispelType": "magic",
+          "enrage": false
+        }
+      ]
+    },
+    {
+      "name": "Embalming Fluid",
+      "npcId": 137989,
+      "abilities": [
+        {
+          "spellId": 1298104,
+          "name": null,
+          "interruptible": false,
+          "dispelType": "poison",
+          "enrage": false
+        }
+      ]
+    },
+    {
+      "name": "Reban",
+      "npcId": 136984,
+      "abilities": [
+        {
+          "spellId": 269369,
+          "name": null,
+          "interruptible": true,
+          "dispelType": "none",
+          "enrage": false
+        }
+      ]
+    },
+    {
+      "name": "Minion of Zul",
+      "npcId": 138493,
+      "abilities": [
+        {
+          "spellId": 269935,
+          "name": null,
+          "interruptible": false,
+          "dispelType": "magic",
+          "enrage": false
+        }
+      ]
+    },
+    {
+      "name": "Zanazal the Wise",
+      "npcId": 269810,
+      "abilities": [
+        {
+          "spellId": 267273,
+          "name": null,
+          "interruptible": true,
+          "dispelType": "poison",
+          "enrage": false
+        }
+      ]
+    },
+    {
+      "name": "Half-Finished Mummy",
+      "npcId": 270502,
+      "abilities": [
+        {
+          "spellId": 267763,
+          "name": null,
+          "interruptible": true,
+          "dispelType": "disease",
+          "enrage": false
+        }
+      ]
+    }
+  ],
+  "provenance": [
+    {
+      "kind": "game-data",
+      "description": "Ability flags extracted by WHELP from Mythic Dungeon Tools 6.2.10; names remain null until independently corroborated.",
+      "url": "https://github.com/Nnoggie/MythicDungeonTools",
+      "retrievedAt": "2026-09-02T11:15:00+02:00"
+    }
+  ]
+}

@@ -1,0 +1,227 @@
+{
+  "$schema": "../../../schemas/dungeon.schema.json",
+  "schemaVersion": 1,
+  "recordType": "dungeon",
+  "id": "voidscar-arena",
+  "status": "corroborated",
+  "name": "Voidscar Arena",
+  "expansion": "Midnight",
+  "validity": {
+    "fromBuild": "12.1.0.69587",
+    "untilBuild": null,
+    "seasonId": null,
+    "seasonSlug": "midnight-season-2"
+  },
+  "challengeMapId": 585,
+  "instanceMapId": 2923,
+  "teleportSpellId": 1286804,
+  "uiMapId": null,
+  "zoneIds": [
+    2574,
+    2572,
+    2573
+  ],
+  "enemyForcesTotal": 738,
+  "mythicPlusTimerSeconds": null,
+  "requiredLevel": null,
+  "location": null,
+  "entrance": null,
+  "encounters": [
+    {
+      "name": "Taz'Rah",
+      "encounterId": 3285,
+      "npcId": 238887
+    },
+    {
+      "name": "Atroxus",
+      "encounterId": 3286,
+      "npcId": 239008
+    },
+    {
+      "name": "Charonus",
+      "encounterId": 3287,
+      "npcId": 248015
+    }
+  ],
+  "enemies": [
+    {
+      "name": "Lost Sethrak",
+      "npcId": 243996,
+      "enemyForces": 4
+    },
+    {
+      "name": "Feral Saberon",
+      "npcId": 243988,
+      "enemyForces": 4
+    },
+    {
+      "name": "Sycophantic Tarasek",
+      "npcId": 243983,
+      "enemyForces": 4
+    },
+    {
+      "name": "Longtooth Tuskarr",
+      "npcId": 243985,
+      "enemyForces": 5
+    },
+    {
+      "name": "Dominated Brawler",
+      "npcId": 238883,
+      "enemyForces": 7
+    },
+    {
+      "name": "Enthralled Shaman",
+      "npcId": 241496,
+      "enemyForces": 7
+    },
+    {
+      "name": "Voidtouched Magi",
+      "npcId": 252072,
+      "enemyForces": 25
+    },
+    {
+      "name": "Brutal Overseer",
+      "npcId": 252053,
+      "enemyForces": 25
+    },
+    {
+      "name": "Aegyra the Unyielding",
+      "npcId": 267545,
+      "enemyForces": 40
+    },
+    {
+      "name": "Raj'kess the Spellstorm",
+      "npcId": 267546,
+      "enemyForces": 40
+    },
+    {
+      "name": "Chitigoth",
+      "npcId": 244260,
+      "enemyForces": 25
+    },
+    {
+      "name": "Raging Raptor",
+      "npcId": 249608,
+      "enemyForces": 5
+    },
+    {
+      "name": "Protective Turtle",
+      "npcId": 249603,
+      "enemyForces": 5
+    },
+    {
+      "name": "Brutok",
+      "npcId": 244309,
+      "enemyForces": 25
+    },
+    {
+      "name": "Abducted Drakonid",
+      "npcId": 249461,
+      "enemyForces": 5
+    },
+    {
+      "name": "Angry Krolusk",
+      "npcId": 249590,
+      "enemyForces": 8
+    },
+    {
+      "name": "Savage Shredclaw",
+      "npcId": 243835,
+      "enemyForces": 5
+    },
+    {
+      "name": "Kilivore Screamer",
+      "npcId": 243766,
+      "enemyForces": 7
+    },
+    {
+      "name": "Agitated Voidscythe",
+      "npcId": 263228,
+      "enemyForces": 25
+    },
+    {
+      "name": "Blistercreep",
+      "npcId": 243736,
+      "enemyForces": 1
+    },
+    {
+      "name": "Watchful Harrower",
+      "npcId": 245950,
+      "enemyForces": 65
+    },
+    {
+      "name": "Devouring Brutalizer",
+      "npcId": 268184,
+      "enemyForces": 30
+    },
+    {
+      "name": "Scavenging Siphoid",
+      "npcId": 252508,
+      "enemyForces": 1
+    },
+    {
+      "name": "Voidminder",
+      "npcId": 244708,
+      "enemyForces": 7
+    },
+    {
+      "name": "Taz'Rah",
+      "npcId": 238887,
+      "enemyForces": 0
+    },
+    {
+      "name": "Atroxus",
+      "npcId": 239008,
+      "enemyForces": 0
+    },
+    {
+      "name": "Charonus",
+      "npcId": 239167,
+      "enemyForces": 0
+    },
+    {
+      "name": "Toxic Creeper",
+      "npcId": 239070,
+      "enemyForces": 0
+    },
+    {
+      "name": "Magma Totem",
+      "npcId": 248666,
+      "enemyForces": 0
+    },
+    {
+      "name": "Ethereal Shade",
+      "npcId": 254677,
+      "enemyForces": 0
+    },
+    {
+      "name": "Targeting Stalker",
+      "npcId": 255000,
+      "enemyForces": 0
+    },
+    {
+      "name": "Gravitic Orb",
+      "npcId": 255001,
+      "enemyForces": 0
+    },
+    {
+      "name": "Charonus",
+      "npcId": 248015,
+      "enemyForces": 0
+    }
+  ],
+  "provenance": [
+    {
+      "kind": "game-data",
+      "description": "Dungeon, NPC, enemy-forces, map, teleport, zone, and spell-flag facts derived from Mythic Dungeon Tools 6.2.10.",
+      "url": "https://github.com/Nnoggie/MythicDungeonTools",
+      "retrievedAt": "2026-09-02T11:15:00+02:00"
+    },
+    {
+      "kind": "external-reference",
+      "description": "Instance, encounter, and boss NPC identifiers corroborated against DBM Dungeons r261.",
+      "url": "https://github.com/DeadlyBossMods/DBM-Dungeons",
+      "retrievedAt": "2026-09-02T11:15:00+02:00"
+    }
+  ]
+}

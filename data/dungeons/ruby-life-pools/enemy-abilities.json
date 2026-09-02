@@ -1,0 +1,220 @@
+{
+  "$schema": "../../../schemas/enemy-abilities.schema.json",
+  "schemaVersion": 1,
+  "recordType": "enemy-abilities",
+  "id": "ruby-life-pools/enemy-abilities",
+  "status": "draft",
+  "validity": {
+    "fromBuild": "12.1.0.69587",
+    "untilBuild": null,
+    "seasonId": null,
+    "seasonSlug": "midnight-season-2"
+  },
+  "instanceMapId": 2521,
+  "enemies": [
+    {
+      "name": "Earthbound Guardian",
+      "npcId": 188011,
+      "abilities": [
+        {
+          "spellId": 384933,
+          "name": null,
+          "interruptible": true,
+          "dispelType": "none",
+          "enrage": false
+        }
+      ]
+    },
+    {
+      "name": "Flashfrost Chillweaver",
+      "npcId": 188067,
+      "abilities": [
+        {
+          "spellId": 371984,
+          "name": null,
+          "interruptible": true,
+          "dispelType": "none",
+          "enrage": false
+        },
+        {
+          "spellId": 372743,
+          "name": null,
+          "interruptible": true,
+          "dispelType": "none",
+          "enrage": false
+        },
+        {
+          "spellId": 384933,
+          "name": null,
+          "interruptible": true,
+          "dispelType": "none",
+          "enrage": false
+        }
+      ]
+    },
+    {
+      "name": "Infused Whelp",
+      "npcId": 187894,
+      "abilities": [
+        {
+          "spellId": 1305234,
+          "name": null,
+          "interruptible": false,
+          "dispelType": "magic",
+          "enrage": false
+        }
+      ]
+    },
+    {
+      "name": "Melidrussa Chillworn",
+      "npcId": 188252,
+      "abilities": [
+        {
+          "spellId": 372808,
+          "name": null,
+          "interruptible": true,
+          "dispelType": "none",
+          "enrage": false
+        }
+      ]
+    },
+    {
+      "name": "Thunderhead",
+      "npcId": 197698,
+      "abilities": [
+        {
+          "spellId": 392641,
+          "name": null,
+          "interruptible": false,
+          "dispelType": "magic",
+          "enrage": false
+        }
+      ]
+    },
+    {
+      "name": "Primalist Cinderweaver",
+      "npcId": 190207,
+      "abilities": [
+        {
+          "spellId": 384194,
+          "name": null,
+          "interruptible": true,
+          "dispelType": "none",
+          "enrage": false
+        }
+      ]
+    },
+    {
+      "name": "Blazebound Destroyer",
+      "npcId": 190034,
+      "abilities": [
+        {
+          "spellId": 1305955,
+          "name": null,
+          "interruptible": true,
+          "dispelType": "none",
+          "enrage": false
+        }
+      ]
+    },
+    {
+      "name": "Ashseer Flamelasher",
+      "npcId": 190206,
+      "abilities": [
+        {
+          "spellId": 373972,
+          "name": null,
+          "interruptible": false,
+          "dispelType": "magic",
+          "enrage": false
+        }
+      ]
+    },
+    {
+      "name": "Ruinous Stormbringer",
+      "npcId": 195119,
+      "abilities": [
+        {
+          "spellId": 385310,
+          "name": null,
+          "interruptible": true,
+          "dispelType": "none",
+          "enrage": false
+        }
+      ]
+    },
+    {
+      "name": "Primal Thundercloud",
+      "npcId": 197509,
+      "abilities": [
+        {
+          "spellId": 391031,
+          "name": null,
+          "interruptible": false,
+          "dispelType": "magic",
+          "enrage": false
+        }
+      ]
+    },
+    {
+      "name": "Tempest Channeler",
+      "npcId": 198047,
+      "abilities": [
+        {
+          "spellId": 392576,
+          "name": null,
+          "interruptible": true,
+          "dispelType": "none",
+          "enrage": false
+        }
+      ]
+    },
+    {
+      "name": "Erkhart Stormvein",
+      "npcId": 190485,
+      "abilities": [
+        {
+          "spellId": 381515,
+          "name": null,
+          "interruptible": false,
+          "dispelType": "magic",
+          "enrage": false
+        }
+      ]
+    },
+    {
+      "name": "Blazebound Firestorm",
+      "npcId": 189886,
+      "abilities": [
+        {
+          "spellId": 373017,
+          "name": null,
+          "interruptible": true,
+          "dispelType": "none",
+          "enrage": false
+        }
+      ]
+    },
+    {
+      "name": "Infused Whelp",
+      "npcId": 189893,
+      "abilities": [
+        {
+          "spellId": 1305234,
+          "name": null,
+          "interruptible": false,
+          "dispelType": "magic",
+          "enrage": false
+        }
+      ]
+    }
+  ],
+  "provenance": [
+    {
+      "kind": "game-data",
+      "description": "Ability flags extracted by WHELP from Mythic Dungeon Tools 6.2.10; names remain null until independently corroborated.",
+      "url": "https://github.com/Nnoggie/MythicDungeonTools",
+      "retrievedAt": "2026-09-02T11:15:00+02:00"
+    }
+  ]
+}

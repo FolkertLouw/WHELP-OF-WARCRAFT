@@ -16,6 +16,8 @@ test("extracts normalized dungeon facts from an MDT Lua module", async () => {
     name: "Synthetic Caster",
     npcId: 900001,
     enemyForces: 7,
+    sourceEncounterId: 7654,
+    sourceInstanceId: 8765,
     spells: [{
       spellId: 800001,
       interruptible: true,

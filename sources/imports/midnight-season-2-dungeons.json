@@ -1,0 +1,69 @@
+{
+  "schemaVersion": 1,
+  "build": "12.1.0.69587",
+  "seasonSlug": "midnight-season-2",
+  "mdtVersion": "6.2.10",
+  "dbmVersion": "r261",
+  "dungeons": [
+    {
+      "slug": "den-of-nalorakk", "expansion": "Midnight", "mdtFile": "DenOfNalorakk.lua", "instanceMapId": 2825,
+      "encounters": [
+        { "name": "The Hoardmonger", "encounterId": 3207, "npcId": 248710 },
+        { "name": "Sentinel of Winter", "encounterId": 3208, "npcId": 244100 },
+        { "name": "Nalorakk", "encounterId": 3209, "npcId": 246404 }
+      ]
+    },
+    {
+      "slug": "murder-row", "expansion": "Midnight", "mdtFile": "MurderRow.lua", "instanceMapId": 2813,
+      "encounters": [
+        { "name": "Kystia Manaheart", "encounterId": 3101, "npcId": 252458 },
+        { "name": "Zaen Bladesorrow", "encounterId": 3102, "npcId": 234649 },
+        { "name": "Xathuux the Annihilator", "encounterId": 3103, "npcId": 234647 },
+        { "name": "Lithiel Cinderfury", "encounterId": 3105, "npcId": 237415 }
+      ]
+    },
+    {
+      "slug": "the-blinding-vale", "expansion": "Midnight", "mdtFile": "TheBlindingVale.lua", "instanceMapId": 2859,
+      "encounters": [
+        { "name": "Lightblossom Trinity", "encounterId": 3199, "npcId": 243028 },
+        { "name": "Ikuzz the Light Hunter", "encounterId": 3200, "npcId": 244887 },
+        { "name": "Lightwarden Ruia", "encounterId": 3201, "npcId": 245912 },
+        { "name": "Ziekket", "encounterId": 3202, "npcId": 247676 }
+      ]
+    },
+    {
+      "slug": "voidscar-arena", "expansion": "Midnight", "mdtFile": "VoidscarArena.lua", "instanceMapId": 2923,
+      "encounters": [
+        { "name": "Taz'Rah", "encounterId": 3285, "npcId": 238887 },
+        { "name": "Atroxus", "encounterId": 3286, "npcId": 239008 },
+        { "name": "Charonus", "encounterId": 3287, "npcId": 248015 }
+      ]
+    },
+    {
+      "slug": "kings-rest", "expansion": "Battle for Azeroth", "mdtFile": "KingsRest.lua", "instanceMapId": 1762,
+      "encounters": [
+        { "name": "The Golden Serpent", "encounterId": 2139, "npcId": 135322 },
+        { "name": "Council of Tribes", "encounterId": 2140, "npcId": 135475 },
+        { "name": "Mchimba the Embalmer", "encounterId": 2142, "npcId": 134993 },
+        { "name": "King Dazar", "encounterId": 2143, "npcId": 136160 }
+      ]
+    },
+    {
+      "slug": "ruby-life-pools", "expansion": "Dragonflight", "mdtFile": "RubyLifePools.lua", "instanceMapId": 2521,
+      "encounters": [
+        { "name": "Melidrussa Chillworn", "encounterId": 2609, "npcId": 188252 },
+        { "name": "Kokia Blazehoof", "encounterId": 2606, "npcId": 189232 },
+        { "name": "Kyrakka and Erkhart Stormvein", "encounterId": 2623, "npcId": 190484 }
+      ]
+    },
+    {
+      "slug": "temple-of-sethraliss", "expansion": "Battle for Azeroth", "mdtFile": "TempleOfSethraliss.lua", "instanceMapId": 1877,
+      "encounters": [
+        { "name": "Adderis and Aspix", "encounterId": 2124, "npcId": 133379 },
+        { "name": "Merektha", "encounterId": 2125, "npcId": 133384 },
+        { "name": "Galvazzt", "encounterId": 2126, "npcId": 133389 },
+        { "name": "Avatar of Sethraliss", "encounterId": 2127, "npcId": 133392 }
+      ]
+    }
+  ]
+}

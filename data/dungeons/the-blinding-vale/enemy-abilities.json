@@ -1,0 +1,181 @@
+{
+  "$schema": "../../../schemas/enemy-abilities.schema.json",
+  "schemaVersion": 1,
+  "recordType": "enemy-abilities",
+  "id": "the-blinding-vale/enemy-abilities",
+  "status": "draft",
+  "validity": {
+    "fromBuild": "12.1.0.69587",
+    "untilBuild": null,
+    "seasonId": null,
+    "seasonSlug": "midnight-season-2"
+  },
+  "instanceMapId": 2859,
+  "enemies": [
+    {
+      "name": "Lightgorged Lasher",
+      "npcId": 245345,
+      "abilities": [
+        {
+          "spellId": 1238158,
+          "name": null,
+          "interruptible": true,
+          "dispelType": "none",
+          "enrage": false
+        }
+      ]
+    },
+    {
+      "name": "Lasher",
+      "npcId": 245410,
+      "abilities": [
+        {
+          "spellId": 1238084,
+          "name": null,
+          "interruptible": false,
+          "dispelType": "magic",
+          "enrage": false
+        }
+      ]
+    },
+    {
+      "name": "Radiant Spellsower",
+      "npcId": 245336,
+      "abilities": [
+        {
+          "spellId": 1238063,
+          "name": null,
+          "interruptible": true,
+          "dispelType": "none",
+          "enrage": false
+        },
+        {
+          "spellId": 1238200,
+          "name": null,
+          "interruptible": true,
+          "dispelType": "none",
+          "enrage": false
+        },
+        {
+          "spellId": 1301834,
+          "name": null,
+          "interruptible": true,
+          "dispelType": "none",
+          "enrage": false
+        }
+      ]
+    },
+    {
+      "name": "Lightfeather Petalwing",
+      "npcId": 245484,
+      "abilities": [
+        {
+          "spellId": 1238294,
+          "name": null,
+          "interruptible": true,
+          "dispelType": "none",
+          "enrage": false
+        }
+      ]
+    },
+    {
+      "name": "Spineshield Beetle",
+      "npcId": 245527,
+      "abilities": [
+        {
+          "spellId": 1238581,
+          "name": null,
+          "interruptible": false,
+          "dispelType": "magic",
+          "enrage": false
+        }
+      ]
+    },
+    {
+      "name": "Leafy Grovecrawler",
+      "npcId": 245460,
+      "abilities": [
+        {
+          "spellId": 1238232,
+          "name": null,
+          "interruptible": true,
+          "dispelType": "none",
+          "enrage": false
+        }
+      ]
+    },
+    {
+      "name": "Kezkitt",
+      "npcId": 243029,
+      "abilities": [
+        {
+          "spellId": 1235616,
+          "name": null,
+          "interruptible": true,
+          "dispelType": "none",
+          "enrage": false
+        }
+      ]
+    },
+    {
+      "name": "Lightwarden Ruia",
+      "npcId": 245912,
+      "abilities": [
+        {
+          "spellId": 1239821,
+          "name": null,
+          "interruptible": true,
+          "dispelType": "none",
+          "enrage": false
+        }
+      ]
+    },
+    {
+      "name": "Lightspawn Lasher",
+      "npcId": 247755,
+      "abilities": [
+        {
+          "spellId": 1247669,
+          "name": null,
+          "interruptible": true,
+          "dispelType": "none",
+          "enrage": false
+        }
+      ]
+    },
+    {
+      "name": "Potatoad Matriarch",
+      "npcId": 249756,
+      "abilities": [
+        {
+          "spellId": 1250937,
+          "name": null,
+          "interruptible": false,
+          "dispelType": "poison",
+          "enrage": false
+        }
+      ]
+    },
+    {
+      "name": "Bloodthorn Roots",
+      "npcId": 253571,
+      "abilities": [
+        {
+          "spellId": 1259365,
+          "name": null,
+          "interruptible": false,
+          "dispelType": "magic",
+          "enrage": false
+        }
+      ]
+    }
+  ],
+  "provenance": [
+    {
+      "kind": "game-data",
+      "description": "Ability flags extracted by WHELP from Mythic Dungeon Tools 6.2.10; names remain null until independently corroborated.",
+      "url": "https://github.com/Nnoggie/MythicDungeonTools",
+      "retrievedAt": "2026-09-02T11:15:00+02:00"
+    }
+  ]
+}

@@ -1,0 +1,195 @@
+{
+  "$schema": "../../../schemas/dungeon.schema.json",
+  "schemaVersion": 1,
+  "recordType": "dungeon",
+  "id": "the-blinding-vale",
+  "status": "corroborated",
+  "name": "The Blinding Vale",
+  "expansion": "Midnight",
+  "validity": {
+    "fromBuild": "12.1.0.69587",
+    "untilBuild": null,
+    "seasonId": null,
+    "seasonSlug": "midnight-season-2"
+  },
+  "challengeMapId": 584,
+  "instanceMapId": 2859,
+  "teleportSpellId": 1286801,
+  "uiMapId": null,
+  "zoneIds": [
+    2500
+  ],
+  "enemyForcesTotal": 686,
+  "mythicPlusTimerSeconds": null,
+  "requiredLevel": null,
+  "location": null,
+  "entrance": null,
+  "encounters": [
+    {
+      "name": "Lightblossom Trinity",
+      "encounterId": 3199,
+      "npcId": 243028
+    },
+    {
+      "name": "Ikuzz the Light Hunter",
+      "encounterId": 3200,
+      "npcId": 244887
+    },
+    {
+      "name": "Lightwarden Ruia",
+      "encounterId": 3201,
+      "npcId": 245912
+    },
+    {
+      "name": "Ziekket",
+      "encounterId": 3202,
+      "npcId": 247676
+    }
+  ],
+  "enemies": [
+    {
+      "name": "Lightgorged Lasher",
+      "npcId": 245345,
+      "enemyForces": 7
+    },
+    {
+      "name": "Lasher",
+      "npcId": 245410,
+      "enemyForces": 1
+    },
+    {
+      "name": "Underbrush Stalker",
+      "npcId": 245339,
+      "enemyForces": 6
+    },
+    {
+      "name": "Virid Grovekeeper",
+      "npcId": 245346,
+      "enemyForces": 20
+    },
+    {
+      "name": "Sporeblight Belcher",
+      "npcId": 254850,
+      "enemyForces": 25
+    },
+    {
+      "name": "Radiant Spellsower",
+      "npcId": 245336,
+      "enemyForces": 7
+    },
+    {
+      "name": "Lightfeather Petalwing",
+      "npcId": 245484,
+      "enemyForces": 7
+    },
+    {
+      "name": "Thorny Saptor",
+      "npcId": 245473,
+      "enemyForces": 5
+    },
+    {
+      "name": "Spineshield Beetle",
+      "npcId": 245527,
+      "enemyForces": 1
+    },
+    {
+      "name": "Leafy Grovecrawler",
+      "npcId": 245460,
+      "enemyForces": 7
+    },
+    {
+      "name": "Overgrown Hydra",
+      "npcId": 245513,
+      "enemyForces": 25
+    },
+    {
+      "name": "Luminous Thornmaw",
+      "npcId": 246871,
+      "enemyForces": 22
+    },
+    {
+      "name": "Meittik",
+      "npcId": 243028,
+      "enemyForces": 0
+    },
+    {
+      "name": "Kezkitt",
+      "npcId": 243029,
+      "enemyForces": 0
+    },
+    {
+      "name": "Lekshi",
+      "npcId": 243030,
+      "enemyForces": 0
+    },
+    {
+      "name": "Lightwarden Ruia",
+      "npcId": 245912,
+      "enemyForces": 0
+    },
+    {
+      "name": "Ziekket",
+      "npcId": 247676,
+      "enemyForces": 0
+    },
+    {
+      "name": "Ikuzz the Light Hunter",
+      "npcId": 244887,
+      "enemyForces": 0
+    },
+    {
+      "name": "Lightblossom",
+      "npcId": 244528,
+      "enemyForces": 0
+    },
+    {
+      "name": "Spirit Bear",
+      "npcId": 246367,
+      "enemyForces": 0
+    },
+    {
+      "name": "Spirit Moonkin",
+      "npcId": 246371,
+      "enemyForces": 0
+    },
+    {
+      "name": "Lightspawn Lasher",
+      "npcId": 247755,
+      "enemyForces": 0
+    },
+    {
+      "name": "Potatoad Matriarch",
+      "npcId": 249756,
+      "enemyForces": 60
+    },
+    {
+      "name": "Potadpole Egg",
+      "npcId": 249783,
+      "enemyForces": 0
+    },
+    {
+      "name": "Newborn Potadpole",
+      "npcId": 250202,
+      "enemyForces": 0
+    },
+    {
+      "name": "Bloodthorn Roots",
+      "npcId": 253571,
+      "enemyForces": 0
+    }
+  ],
+  "provenance": [
+    {
+      "kind": "game-data",
+      "description": "Dungeon, NPC, enemy-forces, map, teleport, zone, and spell-flag facts derived from Mythic Dungeon Tools 6.2.10.",
+      "url": "https://github.com/Nnoggie/MythicDungeonTools",
+      "retrievedAt": "2026-09-02T11:15:00+02:00"
+    },
+    {
+      "kind": "external-reference",
+      "description": "Instance, encounter, and boss NPC identifiers corroborated against DBM Dungeons r261.",
+      "url": "https://github.com/DeadlyBossMods/DBM-Dungeons",
+      "retrievedAt": "2026-09-02T11:15:00+02:00"
+    }
+  ]
+}

@@ -88,6 +88,8 @@ export function parseMdtDungeon(source) {
     name: stringValue(body, /\["name"\]\s*=\s*"([^"]+)"/, "enemy name"),
     npcId: integer(body, /\["id"\]\s*=\s*(\d+)/, "enemy id"),
     enemyForces: integer(body, /\["count"\]\s*=\s*(\d+)/, "enemy forces"),
+    sourceEncounterId: integer(body, /\["encounterID"\]\s*=\s*(\d+)/, "encounterID", true),
+    sourceInstanceId: integer(body, /\["instanceID"\]\s*=\s*(\d+)/, "instanceID", true),
     spells: parseSpells(body),
   }));
 

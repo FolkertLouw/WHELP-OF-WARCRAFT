@@ -1,0 +1,282 @@
+{
+  "$schema": "../../../schemas/dungeon.schema.json",
+  "schemaVersion": 1,
+  "recordType": "dungeon",
+  "id": "murder-row",
+  "status": "corroborated",
+  "name": "Murder Row",
+  "expansion": "Midnight",
+  "validity": {
+    "fromBuild": "12.1.0.69587",
+    "untilBuild": null,
+    "seasonId": null,
+    "seasonSlug": "midnight-season-2"
+  },
+  "challengeMapId": 587,
+  "instanceMapId": 2813,
+  "teleportSpellId": 1286809,
+  "uiMapId": null,
+  "zoneIds": [
+    2433,
+    2435,
+    2434
+  ],
+  "enemyForcesTotal": 655,
+  "mythicPlusTimerSeconds": null,
+  "requiredLevel": null,
+  "location": null,
+  "entrance": null,
+  "encounters": [
+    {
+      "name": "Kystia Manaheart",
+      "encounterId": 3101,
+      "npcId": 252458
+    },
+    {
+      "name": "Zaen Bladesorrow",
+      "encounterId": 3102,
+      "npcId": 234649
+    },
+    {
+      "name": "Xathuux the Annihilator",
+      "encounterId": 3103,
+      "npcId": 234647
+    },
+    {
+      "name": "Lithiel Cinderfury",
+      "encounterId": 3105,
+      "npcId": 237415
+    }
+  ],
+  "enemies": [
+    {
+      "name": "Felwyrm",
+      "npcId": 236085,
+      "enemyForces": 1
+    },
+    {
+      "name": "Row Hooligan",
+      "npcId": 236073,
+      "enemyForces": 3
+    },
+    {
+      "name": "Felonious Mage",
+      "npcId": 236084,
+      "enemyForces": 7
+    },
+    {
+      "name": "Bribed Guard",
+      "npcId": 236071,
+      "enemyForces": 25
+    },
+    {
+      "name": "Bribed Captain",
+      "npcId": 252529,
+      "enemyForces": 35
+    },
+    {
+      "name": "Seductive Sayaad",
+      "npcId": 236082,
+      "enemyForces": 6
+    },
+    {
+      "name": "Massive Felwyrm",
+      "npcId": 236902,
+      "enemyForces": 12
+    },
+    {
+      "name": "Street Sneak",
+      "npcId": 236091,
+      "enemyForces": 3
+    },
+    {
+      "name": "Warehouse Worker",
+      "npcId": 236893,
+      "enemyForces": 2
+    },
+    {
+      "name": "Keen Taskmaster",
+      "npcId": 236897,
+      "enemyForces": 7
+    },
+    {
+      "name": "Unleashed Imp",
+      "npcId": 234849,
+      "enemyForces": 2
+    },
+    {
+      "name": "Trained Felhunter",
+      "npcId": 235261,
+      "enemyForces": 5
+    },
+    {
+      "name": "Fel Invoker",
+      "npcId": 235268,
+      "enemyForces": 7
+    },
+    {
+      "name": "Wrathguard Flayer",
+      "npcId": 235267,
+      "enemyForces": 5
+    },
+    {
+      "name": "Corrupted Warlock",
+      "npcId": 235265,
+      "enemyForces": 25
+    },
+    {
+      "name": "Demon Fly",
+      "npcId": 235257,
+      "enemyForces": 1
+    },
+    {
+      "name": "Shivan Punisher",
+      "npcId": 235465,
+      "enemyForces": 25
+    },
+    {
+      "name": "Felmaster Lucsei",
+      "npcId": 236905,
+      "enemyForces": 30
+    },
+    {
+      "name": "Defiled Golem",
+      "npcId": 235322,
+      "enemyForces": 35
+    },
+    {
+      "name": "Xathuux the Annihilator",
+      "npcId": 234647,
+      "enemyForces": 0
+    },
+    {
+      "name": "Kystia Manaheart",
+      "npcId": 234648,
+      "enemyForces": 0
+    },
+    {
+      "name": "Zaen Bladesorrow",
+      "npcId": 234649,
+      "enemyForces": 0
+    },
+    {
+      "name": "Nibbles",
+      "npcId": 234660,
+      "enemyForces": 0
+    },
+    {
+      "name": "Lithiel Cinderfury",
+      "npcId": 234763,
+      "enemyForces": 0
+    },
+    {
+      "name": "Furious Vilefiend",
+      "npcId": 234799,
+      "enemyForces": 0
+    },
+    {
+      "name": "Forbidden Freight",
+      "npcId": 234852,
+      "enemyForces": 0
+    },
+    {
+      "name": "Crate Loader",
+      "npcId": 234860,
+      "enemyForces": 0
+    },
+    {
+      "name": "Silvermoon Patron",
+      "npcId": 234984,
+      "enemyForces": 0
+    },
+    {
+      "name": "Legion Axe",
+      "npcId": 235520,
+      "enemyForces": 0
+    },
+    {
+      "name": "Selenar Sunshy",
+      "npcId": 235841,
+      "enemyForces": 0
+    },
+    {
+      "name": "Masked Noble",
+      "npcId": 236088,
+      "enemyForces": 0
+    },
+    {
+      "name": "Rowdy Patron",
+      "npcId": 236525,
+      "enemyForces": 0
+    },
+    {
+      "name": "Wild Imp",
+      "npcId": 237626,
+      "enemyForces": 0
+    },
+    {
+      "name": "Infernal",
+      "npcId": 238414,
+      "enemyForces": 0
+    },
+    {
+      "name": "Nauseous Patron",
+      "npcId": 240289,
+      "enemyForces": 0
+    },
+    {
+      "name": "Influentual Reviewer",
+      "npcId": 253081,
+      "enemyForces": 0
+    },
+    {
+      "name": "Tiny Felwyrm",
+      "npcId": 253324,
+      "enemyForces": 0
+    },
+    {
+      "name": "Kystia Manaheart",
+      "npcId": 255050,
+      "enemyForces": 0
+    },
+    {
+      "name": "Seductive Sayaad",
+      "npcId": 255604,
+      "enemyForces": 6
+    },
+    {
+      "name": "Belath Dawnblade",
+      "npcId": 263940,
+      "enemyForces": 0
+    },
+    {
+      "name": "Trained Felhunter",
+      "npcId": 272246,
+      "enemyForces": 0
+    },
+    {
+      "name": "Kystia Manaheart",
+      "npcId": 252458,
+      "enemyForces": 0
+    },
+    {
+      "name": "Lithiel Cinderfury",
+      "npcId": 237415,
+      "enemyForces": 0
+    }
+  ],
+  "provenance": [
+    {
+      "kind": "game-data",
+      "description": "Dungeon, NPC, enemy-forces, map, teleport, zone, and spell-flag facts derived from Mythic Dungeon Tools 6.2.10.",
+      "url": "https://github.com/Nnoggie/MythicDungeonTools",
+      "retrievedAt": "2026-09-02T11:15:00+02:00"
+    },
+    {
+      "kind": "external-reference",
+      "description": "Instance, encounter, and boss NPC identifiers corroborated against DBM Dungeons r261.",
+      "url": "https://github.com/DeadlyBossMods/DBM-Dungeons",
+      "retrievedAt": "2026-09-02T11:15:00+02:00"
+    }
+  ]
+}

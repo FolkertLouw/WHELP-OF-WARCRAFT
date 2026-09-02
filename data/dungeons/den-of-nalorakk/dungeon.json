@@ -1,0 +1,227 @@
+{
+  "$schema": "../../../schemas/dungeon.schema.json",
+  "schemaVersion": 1,
+  "recordType": "dungeon",
+  "id": "den-of-nalorakk",
+  "status": "corroborated",
+  "name": "Den of Nalorakk",
+  "expansion": "Midnight",
+  "validity": {
+    "fromBuild": "12.1.0.69587",
+    "untilBuild": null,
+    "seasonId": null,
+    "seasonSlug": "midnight-season-2"
+  },
+  "challengeMapId": 586,
+  "instanceMapId": 2825,
+  "teleportSpellId": 1286807,
+  "uiMapId": null,
+  "zoneIds": [
+    2513,
+    2514,
+    2564
+  ],
+  "enemyForcesTotal": 729,
+  "mythicPlusTimerSeconds": null,
+  "requiredLevel": null,
+  "location": null,
+  "entrance": null,
+  "encounters": [
+    {
+      "name": "The Hoardmonger",
+      "encounterId": 3207,
+      "npcId": 248710
+    },
+    {
+      "name": "Sentinel of Winter",
+      "encounterId": 3208,
+      "npcId": 244100
+    },
+    {
+      "name": "Nalorakk",
+      "encounterId": 3209,
+      "npcId": 246404
+    }
+  ],
+  "enemies": [
+    {
+      "name": "Spirit of Hunger",
+      "npcId": 245855,
+      "enemyForces": 25
+    },
+    {
+      "name": "Earthwhisper Tender",
+      "npcId": 241814,
+      "enemyForces": 7
+    },
+    {
+      "name": "Thornclaw Gatherer",
+      "npcId": 241813,
+      "enemyForces": 5
+    },
+    {
+      "name": "Territorial Matriarch",
+      "npcId": 241808,
+      "enemyForces": 8
+    },
+    {
+      "name": "The Winter Squall",
+      "npcId": 250478,
+      "enemyForces": 50
+    },
+    {
+      "name": "Frostfang",
+      "npcId": 241874,
+      "enemyForces": 5
+    },
+    {
+      "name": "Terra Rumbler",
+      "npcId": 241911,
+      "enemyForces": 7
+    },
+    {
+      "name": "Frigid Mauler",
+      "npcId": 241872,
+      "enemyForces": 9
+    },
+    {
+      "name": "Glacial Revenant",
+      "npcId": 241876,
+      "enemyForces": 7
+    },
+    {
+      "name": "Avatar of Determination",
+      "npcId": 241869,
+      "enemyForces": 28
+    },
+    {
+      "name": "Ruthless Totemcaller",
+      "npcId": 245143,
+      "enemyForces": 5
+    },
+    {
+      "name": "Stormbound Mystic",
+      "npcId": 245139,
+      "enemyForces": 7
+    },
+    {
+      "name": "Grizzled Warbringer",
+      "npcId": 245146,
+      "enemyForces": 25
+    },
+    {
+      "name": "Bonded Beasttamer",
+      "npcId": 245145,
+      "enemyForces": 6
+    },
+    {
+      "name": "Curious Yearling",
+      "npcId": 241809,
+      "enemyForces": 0
+    },
+    {
+      "name": "The Hoardmonger",
+      "npcId": 241812,
+      "enemyForces": 0
+    },
+    {
+      "name": "Keen-Eyed Striker",
+      "npcId": 241816,
+      "enemyForces": 7
+    },
+    {
+      "name": "Sentinel of Winter",
+      "npcId": 244100,
+      "enemyForces": 0
+    },
+    {
+      "name": "Raging Squall",
+      "npcId": 244696,
+      "enemyForces": 0
+    },
+    {
+      "name": "Fractured Shivercore",
+      "npcId": 244759,
+      "enemyForces": 0
+    },
+    {
+      "name": "Loa Speaker Nanea",
+      "npcId": 244889,
+      "enemyForces": 35
+    },
+    {
+      "name": "Grizzled Warbringer",
+      "npcId": 245148,
+      "enemyForces": 0
+    },
+    {
+      "name": "Loyal Saberfang",
+      "npcId": 245190,
+      "enemyForces": 5
+    },
+    {
+      "name": "Starvation Effigy",
+      "npcId": 245567,
+      "enemyForces": 0
+    },
+    {
+      "name": "Nalorakk",
+      "npcId": 246404,
+      "enemyForces": 0
+    },
+    {
+      "name": "Zul'jarra",
+      "npcId": 246409,
+      "enemyForces": 0
+    },
+    {
+      "name": "Echo of Nalorakk",
+      "npcId": 247301,
+      "enemyForces": 0
+    },
+    {
+      "name": "Snow Orb Stalker",
+      "npcId": 251189,
+      "enemyForces": 0
+    },
+    {
+      "name": "Volatile Totem",
+      "npcId": 272074,
+      "enemyForces": 0
+    },
+    {
+      "name": "The Pale Eye",
+      "npcId": 245076,
+      "enemyForces": 0
+    },
+    {
+      "name": "Keen-Eyed Striker",
+      "npcId": 245752,
+      "enemyForces": 7
+    },
+    {
+      "name": "Magma Totem",
+      "npcId": 248666,
+      "enemyForces": 0
+    },
+    {
+      "name": "The Hoardmonger",
+      "npcId": 248710,
+      "enemyForces": 0
+    }
+  ],
+  "provenance": [
+    {
+      "kind": "game-data",
+      "description": "Dungeon, NPC, enemy-forces, map, teleport, zone, and spell-flag facts derived from Mythic Dungeon Tools 6.2.10.",
+      "url": "https://github.com/Nnoggie/MythicDungeonTools",
+      "retrievedAt": "2026-09-02T11:15:00+02:00"
+    },
+    {
+      "kind": "external-reference",
+      "description": "Instance, encounter, and boss NPC identifiers corroborated against DBM Dungeons r261.",
+      "url": "https://github.com/DeadlyBossMods/DBM-Dungeons",
+      "retrievedAt": "2026-09-02T11:15:00+02:00"
+    }
+  ]
+}

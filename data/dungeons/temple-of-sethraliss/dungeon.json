@@ -1,0 +1,301 @@
+{
+  "$schema": "../../../schemas/dungeon.schema.json",
+  "schemaVersion": 1,
+  "recordType": "dungeon",
+  "id": "temple-of-sethraliss",
+  "status": "corroborated",
+  "name": "Temple of Sethraliss",
+  "expansion": "Battle for Azeroth",
+  "validity": {
+    "fromBuild": "12.1.0.69587",
+    "untilBuild": null,
+    "seasonId": null,
+    "seasonSlug": "midnight-season-2"
+  },
+  "challengeMapId": 250,
+  "instanceMapId": 1877,
+  "teleportSpellId": 1286828,
+  "uiMapId": null,
+  "zoneIds": [
+    1038,
+    1043
+  ],
+  "enemyForcesTotal": 687,
+  "mythicPlusTimerSeconds": null,
+  "requiredLevel": null,
+  "location": null,
+  "entrance": null,
+  "encounters": [
+    {
+      "name": "Adderis and Aspix",
+      "encounterId": 2124,
+      "npcId": 133379
+    },
+    {
+      "name": "Merektha",
+      "encounterId": 2125,
+      "npcId": 133384
+    },
+    {
+      "name": "Galvazzt",
+      "encounterId": 2126,
+      "npcId": 133389
+    },
+    {
+      "name": "Avatar of Sethraliss",
+      "encounterId": 2127,
+      "npcId": 133392
+    }
+  ],
+  "enemies": [
+    {
+      "name": "Sandswept Hunter",
+      "npcId": 134600,
+      "enemyForces": 7
+    },
+    {
+      "name": "Barbed Krolusk",
+      "npcId": 134616,
+      "enemyForces": 5
+    },
+    {
+      "name": "Storm Adept",
+      "npcId": 134990,
+      "enemyForces": 7
+    },
+    {
+      "name": "Sandfury Stonefist",
+      "npcId": 134991,
+      "enemyForces": 25
+    },
+    {
+      "name": "Shrouded Fang",
+      "npcId": 134602,
+      "enemyForces": 7
+    },
+    {
+      "name": "Sand-Sworn Rider",
+      "npcId": 134629,
+      "enemyForces": 25
+    },
+    {
+      "name": "Poisonous Viper",
+      "npcId": 135562,
+      "enemyForces": 7
+    },
+    {
+      "name": "Lightning Serpent",
+      "npcId": 135846,
+      "enemyForces": 5
+    },
+    {
+      "name": "Dutiful Tamer",
+      "npcId": 139422,
+      "enemyForces": 7
+    },
+    {
+      "name": "Krolusk Matriarch",
+      "npcId": 134686,
+      "enemyForces": 16
+    },
+    {
+      "name": "Faithless Subjugator",
+      "npcId": 134364,
+      "enemyForces": 7
+    },
+    {
+      "name": "Brood Tender",
+      "npcId": 139425,
+      "enemyForces": 7
+    },
+    {
+      "name": "Merektha",
+      "npcId": 133384,
+      "enemyForces": 0
+    },
+    {
+      "name": "Agitated Nimbus",
+      "npcId": 136076,
+      "enemyForces": 25
+    },
+    {
+      "name": "Imbued Stormcaller",
+      "npcId": 134599,
+      "enemyForces": 7
+    },
+    {
+      "name": "Static Anomaly",
+      "npcId": 134691,
+      "enemyForces": 5
+    },
+    {
+      "name": "Twisted Hexxer",
+      "npcId": 136250,
+      "enemyForces": 25
+    },
+    {
+      "name": "Avatar of Sethraliss",
+      "npcId": 133392,
+      "enemyForces": 0
+    },
+    {
+      "name": "Spark Channeler",
+      "npcId": 265057,
+      "enemyForces": 5
+    },
+    {
+      "name": "A Knot of Snakes",
+      "npcId": 134388,
+      "enemyForces": 0
+    },
+    {
+      "name": "Toxic Viper",
+      "npcId": 134389,
+      "enemyForces": 0
+    },
+    {
+      "name": "Storm Serpent",
+      "npcId": 134390,
+      "enemyForces": 0
+    },
+    {
+      "name": "Merektha",
+      "npcId": 134487,
+      "enemyForces": 0
+    },
+    {
+      "name": "Orb Watcher",
+      "npcId": 135007,
+      "enemyForces": 25
+    },
+    {
+      "name": "Lightning Spire",
+      "npcId": 135445,
+      "enemyForces": 0
+    },
+    {
+      "name": "Sandswept Marksman",
+      "npcId": 139097,
+      "enemyForces": 0
+    },
+    {
+      "name": "Loose Spark",
+      "npcId": 139108,
+      "enemyForces": 0
+    },
+    {
+      "name": "Polarized Spire",
+      "npcId": 139131,
+      "enemyForces": 0
+    },
+    {
+      "name": "Eye of Sethraliss",
+      "npcId": 240681,
+      "enemyForces": 0
+    },
+    {
+      "name": "Adderis",
+      "npcId": 262530,
+      "enemyForces": 0
+    },
+    {
+      "name": "Aspix",
+      "npcId": 262822,
+      "enemyForces": 0
+    },
+    {
+      "name": "Egg",
+      "npcId": 263181,
+      "enemyForces": 0
+    },
+    {
+      "name": "Galvazzt",
+      "npcId": 263658,
+      "enemyForces": 0
+    },
+    {
+      "name": "Swarming Krolusk",
+      "npcId": 264785,
+      "enemyForces": 0
+    },
+    {
+      "name": "Faithless Tormentor",
+      "npcId": 268317,
+      "enemyForces": 5
+    },
+    {
+      "name": "Corrupted Guardian",
+      "npcId": 268344,
+      "enemyForces": 0
+    },
+    {
+      "name": "Lifeforce",
+      "npcId": 268364,
+      "enemyForces": 0
+    },
+    {
+      "name": "Essence Defiler",
+      "npcId": 268427,
+      "enemyForces": 0
+    },
+    {
+      "name": "Twisted Hexxer",
+      "npcId": 268491,
+      "enemyForces": 0
+    },
+    {
+      "name": "Faithless Tormentor",
+      "npcId": 268729,
+      "enemyForces": 0
+    },
+    {
+      "name": "Spark Channeler",
+      "npcId": 139110,
+      "enemyForces": 5
+    },
+    {
+      "name": "Faithless Conscript",
+      "npcId": 135971,
+      "enemyForces": 0
+    },
+    {
+      "name": "Snake",
+      "npcId": 263383,
+      "enemyForces": 0
+    },
+    {
+      "name": "Lesser Lifeforce",
+      "npcId": 268747,
+      "enemyForces": 0
+    },
+    {
+      "name": "Temple Disruptor",
+      "npcId": 269227,
+      "enemyForces": 5
+    },
+    {
+      "name": "Adderis and Aspix",
+      "npcId": 133379,
+      "enemyForces": 0
+    },
+    {
+      "name": "Galvazzt",
+      "npcId": 133389,
+      "enemyForces": 0
+    }
+  ],
+  "provenance": [
+    {
+      "kind": "game-data",
+      "description": "Dungeon, NPC, enemy-forces, map, teleport, zone, and spell-flag facts derived from Mythic Dungeon Tools 6.2.10.",
+      "url": "https://github.com/Nnoggie/MythicDungeonTools",
+      "retrievedAt": "2026-09-02T11:15:00+02:00"
+    },
+    {
+      "kind": "external-reference",
+      "description": "Instance, encounter, and boss NPC identifiers corroborated against DBM Dungeons r261.",
+      "url": "https://github.com/DeadlyBossMods/DBM-Dungeons",
+      "retrievedAt": "2026-09-02T11:15:00+02:00"
+    }
+  ]
+}

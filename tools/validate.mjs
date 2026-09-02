@@ -42,6 +42,7 @@ function validateRecord(file, value) {
   } else if (value.recordType === "dungeon") {
     requireFields(file, value, ["id", "status", "name", "validity", "challengeMapId", "instanceMapId", "encounters", "enemies", "provenance"]);
     const npcIds = (value.enemies ?? []).map((enemy) => enemy.npcId);
+    if (new Set(npcIds).size !== npcIds.length) fail(file, "dungeon enemy NPC IDs must be unique");
     for (const encounter of value.encounters ?? []) {
       if (!npcIds.includes(encounter.npcId)) fail(file, `encounter NPC ${encounter.npcId} is absent from enemies`);
     }
@@ -140,6 +141,32 @@ for (const { file, value } of records.filter(({ value }) => ["spec-note", "strat
 
 const indexPath = path.join(root, "data", "index.json");
 const index = JSON.parse(await readFile(indexPath, "utf8"));
+for (const season of index.seasons ?? []) {
+  const manifestPath = path.join(root, "data", season.manifest);
+  try {
+    const record = JSON.parse(await readFile(manifestPath, "utf8"));
+    if (record.id !== season.id) fail(indexPath, `${season.manifest} has id ${record.id}, expected ${season.id}`);
+    if (record.status !== season.status) fail(indexPath, `${season.manifest} has status ${record.status}, expected ${season.status}`);
+  } catch (error) {
+    fail(indexPath, `cannot read season ${season.manifest}: ${error.message}`);
+  }
+}
+for (const dungeon of index.dungeons ?? []) {
+  for (const field of ["record", "enemyAbilities"]) {
+    const recordPath = path.join(root, "data", dungeon[field]);
+    try {
+      const record = JSON.parse(await readFile(recordPath, "utf8"));
+      if (record.id !== (field === "record" ? dungeon.id : `${dungeon.id}/enemy-abilities`)) {
+        fail(indexPath, `${dungeon[field]} has unexpected id ${record.id}`);
+      }
+      if (field === "record" && record.status !== dungeon.status) {
+        fail(indexPath, `${dungeon[field]} has status ${record.status}, expected ${dungeon.status}`);
+      }
+    } catch (error) {
+      fail(indexPath, `cannot read dungeon ${dungeon[field]}: ${error.message}`);
+    }
+  }
+}
 for (const build of index.builds ?? []) {
   const manifestPath = path.join(root, "data", build.manifest);
   try {

@@ -1,0 +1,365 @@
+{
+  "$schema": "../../../schemas/enemy-abilities.schema.json",
+  "schemaVersion": 1,
+  "recordType": "enemy-abilities",
+  "id": "murder-row/enemy-abilities",
+  "status": "draft",
+  "validity": {
+    "fromBuild": "12.1.0.69587",
+    "untilBuild": null,
+    "seasonId": null,
+    "seasonSlug": "midnight-season-2"
+  },
+  "instanceMapId": 2813,
+  "enemies": [
+    {
+      "name": "Felwyrm",
+      "npcId": 236085,
+      "abilities": [
+        {
+          "spellId": 1216538,
+          "name": null,
+          "interruptible": false,
+          "dispelType": "magic",
+          "enrage": false
+        }
+      ]
+    },
+    {
+      "name": "Felonious Mage",
+      "npcId": 236084,
+      "abilities": [
+        {
+          "spellId": 1216571,
+          "name": null,
+          "interruptible": true,
+          "dispelType": "none",
+          "enrage": false
+        },
+        {
+          "spellId": 1229433,
+          "name": null,
+          "interruptible": false,
+          "dispelType": "magic",
+          "enrage": false
+        }
+      ]
+    },
+    {
+      "name": "Seductive Sayaad",
+      "npcId": 236082,
+      "abilities": [
+        {
+          "spellId": 1201554,
+          "name": null,
+          "interruptible": true,
+          "dispelType": "magic",
+          "enrage": false
+        }
+      ]
+    },
+    {
+      "name": "Massive Felwyrm",
+      "npcId": 236902,
+      "abilities": [
+        {
+          "spellId": 1217633,
+          "name": null,
+          "interruptible": false,
+          "dispelType": "magic",
+          "enrage": false
+        },
+        {
+          "spellId": 1256300,
+          "name": null,
+          "interruptible": false,
+          "dispelType": "magic",
+          "enrage": false
+        }
+      ]
+    },
+    {
+      "name": "Street Sneak",
+      "npcId": 236091,
+      "abilities": [
+        {
+          "spellId": 1216590,
+          "name": null,
+          "interruptible": false,
+          "dispelType": "poison",
+          "enrage": false
+        }
+      ]
+    },
+    {
+      "name": "Warehouse Worker",
+      "npcId": 236893,
+      "abilities": [
+        {
+          "spellId": 1216970,
+          "name": null,
+          "interruptible": false,
+          "dispelType": "none",
+          "enrage": true
+        }
+      ]
+    },
+    {
+      "name": "Keen Taskmaster",
+      "npcId": 236897,
+      "abilities": [
+        {
+          "spellId": 1216970,
+          "name": null,
+          "interruptible": false,
+          "dispelType": "none",
+          "enrage": true
+        }
+      ]
+    },
+    {
+      "name": "Unleashed Imp",
+      "npcId": 234849,
+      "abilities": [
+        {
+          "spellId": 1223204,
+          "name": null,
+          "interruptible": true,
+          "dispelType": "none",
+          "enrage": false
+        }
+      ]
+    },
+    {
+      "name": "Trained Felhunter",
+      "npcId": 235261,
+      "abilities": [
+        {
+          "spellId": 1217930,
+          "name": null,
+          "interruptible": false,
+          "dispelType": "magic",
+          "enrage": false
+        }
+      ]
+    },
+    {
+      "name": "Fel Invoker",
+      "npcId": 235268,
+      "abilities": [
+        {
+          "spellId": 1214980,
+          "name": null,
+          "interruptible": true,
+          "dispelType": "none",
+          "enrage": false
+        }
+      ]
+    },
+    {
+      "name": "Wrathguard Flayer",
+      "npcId": 235267,
+      "abilities": [
+        {
+          "spellId": 1214922,
+          "name": null,
+          "interruptible": true,
+          "dispelType": "none",
+          "enrage": true
+        }
+      ]
+    },
+    {
+      "name": "Corrupted Warlock",
+      "npcId": 235265,
+      "abilities": [
+        {
+          "spellId": 1217973,
+          "name": null,
+          "interruptible": false,
+          "dispelType": "curse",
+          "enrage": false
+        }
+      ]
+    },
+    {
+      "name": "Felmaster Lucsei",
+      "npcId": 236905,
+      "abilities": [
+        {
+          "spellId": 1217930,
+          "name": null,
+          "interruptible": false,
+          "dispelType": "magic",
+          "enrage": false
+        }
+      ]
+    },
+    {
+      "name": "Zaen Bladesorrow",
+      "npcId": 234649,
+      "abilities": [
+        {
+          "spellId": 474515,
+          "name": null,
+          "interruptible": false,
+          "dispelType": "poison",
+          "enrage": false
+        },
+        {
+          "spellId": 734276,
+          "name": null,
+          "interruptible": true,
+          "dispelType": "none",
+          "enrage": false
+        },
+        {
+          "spellId": 1223939,
+          "name": null,
+          "interruptible": false,
+          "dispelType": "poison",
+          "enrage": false
+        }
+      ]
+    },
+    {
+      "name": "Nibbles",
+      "npcId": 234660,
+      "abilities": [
+        {
+          "spellId": 1228198,
+          "name": null,
+          "interruptible": false,
+          "dispelType": "magic",
+          "enrage": false
+        }
+      ]
+    },
+    {
+      "name": "Lithiel Cinderfury",
+      "npcId": 234763,
+      "abilities": [
+        {
+          "spellId": 474375,
+          "name": null,
+          "interruptible": true,
+          "dispelType": "none",
+          "enrage": false
+        },
+        {
+          "spellId": 1216945,
+          "name": null,
+          "interruptible": true,
+          "dispelType": "none",
+          "enrage": false
+        }
+      ]
+    },
+    {
+      "name": "Forbidden Freight",
+      "npcId": 234852,
+      "abilities": [
+        {
+          "spellId": 1217099,
+          "name": null,
+          "interruptible": true,
+          "dispelType": "none",
+          "enrage": false
+        }
+      ]
+    },
+    {
+      "name": "Rowdy Patron",
+      "npcId": 236525,
+      "abilities": [
+        {
+          "spellId": 1213658,
+          "name": null,
+          "interruptible": true,
+          "dispelType": "none",
+          "enrage": true
+        }
+      ]
+    },
+    {
+      "name": "Wild Imp",
+      "npcId": 237626,
+      "abilities": [
+        {
+          "spellId": 1223204,
+          "name": null,
+          "interruptible": true,
+          "dispelType": "none",
+          "enrage": false
+        }
+      ]
+    },
+    {
+      "name": "Influentual Reviewer",
+      "npcId": 253081,
+      "abilities": [
+        {
+          "spellId": 1257877,
+          "name": null,
+          "interruptible": true,
+          "dispelType": "none",
+          "enrage": false
+        }
+      ]
+    },
+    {
+      "name": "Tiny Felwyrm",
+      "npcId": 253324,
+      "abilities": [
+        {
+          "spellId": 1216538,
+          "name": null,
+          "interruptible": false,
+          "dispelType": "magic",
+          "enrage": false
+        }
+      ]
+    },
+    {
+      "name": "Kystia Manaheart",
+      "npcId": 255050,
+      "abilities": [
+        {
+          "spellId": 1264106,
+          "name": null,
+          "interruptible": true,
+          "dispelType": "none",
+          "enrage": false
+        },
+        {
+          "spellId": 1264110,
+          "name": null,
+          "interruptible": true,
+          "dispelType": "none",
+          "enrage": false
+        }
+      ]
+    },
+    {
+      "name": "Seductive Sayaad",
+      "npcId": 255604,
+      "abilities": [
+        {
+          "spellId": 1201554,
+          "name": null,
+          "interruptible": true,
+          "dispelType": "magic",
+          "enrage": false
+        }
+      ]
+    }
+  ],
+  "provenance": [
+    {
+      "kind": "game-data",
+      "description": "Ability flags extracted by WHELP from Mythic Dungeon Tools 6.2.10; names remain null until independently corroborated.",
+      "url": "https://github.com/Nnoggie/MythicDungeonTools",
+      "retrievedAt": "2026-09-02T11:15:00+02:00"
+    }
+  ]
+}
