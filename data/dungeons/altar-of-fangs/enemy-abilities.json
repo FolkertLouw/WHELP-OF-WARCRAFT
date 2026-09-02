@@ -8,12 +8,12 @@
   "instanceMapId": 2993,
   "enemies": [
     { "name": "High Evolutionist", "npcId": 261557, "abilities": [
-      { "spellId": 1289416, "name": null, "interruptible": true, "dispelType": "poison", "enrage": false },
+      { "spellId": 1289416, "name": "Envenom", "interruptible": true, "dispelType": "poison", "enrage": false },
       { "spellId": 1307567, "name": "Mass Envenom", "interruptible": true, "dispelType": "none", "enrage": false },
       { "spellId": 1307571, "name": "Envenom", "interruptible": false, "dispelType": "poison", "enrage": false }
     ] },
     { "name": "Living Venom", "npcId": 263112, "abilities": [
-      { "spellId": 1306230, "name": null, "interruptible": false, "dispelType": "poison", "enrage": false }
+      { "spellId": 1306230, "name": "Venom Burst", "interruptible": false, "dispelType": "poison", "enrage": false }
     ] },
     { "name": "Primal Serpent", "npcId": 261560, "abilities": [
       { "spellId": 1294557, "name": "Piercing Hiss", "interruptible": true, "dispelType": "none", "enrage": false }
@@ -22,7 +22,7 @@
       { "spellId": 1306308, "name": "Ravenous Claws (enrage aura)", "interruptible": false, "dispelType": "none", "enrage": true }
     ] },
     { "name": "Ula'tek's Chosen", "npcId": 263109, "abilities": [
-      { "spellId": 1289416, "name": null, "interruptible": true, "dispelType": "poison", "enrage": false },
+      { "spellId": 1289416, "name": "Envenom", "interruptible": true, "dispelType": "poison", "enrage": false },
       { "spellId": 1307567, "name": "Mass Envenom", "interruptible": true, "dispelType": "none", "enrage": false },
       { "spellId": 1307571, "name": "Envenom", "interruptible": false, "dispelType": "poison", "enrage": false }
     ] },
@@ -33,19 +33,19 @@
       { "spellId": 1294845, "name": "Corrosive Fangs", "interruptible": false, "dispelType": "poison", "enrage": false }
     ] },
     { "name": "Rav'i", "npcId": 259445, "abilities": [
-      { "spellId": 1296069, "name": null, "interruptible": false, "dispelType": "disease", "enrage": false }
+      { "spellId": 1296069, "name": "Regurgitate", "interruptible": false, "dispelType": "disease", "enrage": false }
     ] },
     { "name": "The Writhing Coil", "npcId": 259446, "abilities": [
-      { "spellId": 1305368, "name": null, "interruptible": false, "dispelType": "poison", "enrage": false }
+      { "spellId": 1305368, "name": "Spiteful Venom", "interruptible": false, "dispelType": "poison", "enrage": false }
     ] },
     { "name": "Uncoiled Writhe", "npcId": 262398, "abilities": [
-      { "spellId": 1305368, "name": null, "interruptible": false, "dispelType": "poison", "enrage": false },
-      { "spellId": 1310666, "name": null, "interruptible": true, "dispelType": "none", "enrage": false }
+      { "spellId": 1305368, "name": "Spiteful Venom", "interruptible": false, "dispelType": "poison", "enrage": false },
+      { "spellId": 1310666, "name": "Toxic Atrophy", "interruptible": true, "dispelType": "none", "enrage": false }
     ] }
   ],
   "provenance": [{
     "kind": "game-data",
-    "description": "Ability flags extracted by WHELP from Mythic Dungeon Tools 6.2.10. Names are included only when separately corroborated by DBM Dungeons r261 or targeted Wowhead spell and dungeon records; null names remain unresolved.",
+    "description": "Ability flags extracted by WHELP from Mythic Dungeon Tools 6.2.10. Names are included only when separately corroborated by DBM Dungeons r261 or targeted Wowhead spell and dungeon records.",
     "url": "https://github.com/Nnoggie/MythicDungeonTools",
     "retrievedAt": "2026-09-02T10:45:00+02:00"
   }, {
@@ -53,5 +53,10 @@
     "description": "Targeted spell-name and mechanic corroboration for Mass Envenom, Envenom, Paralyzing Shots, Piercing Hiss, and Ravenous Claws. No guide prose is redistributed.",
     "url": "https://www.wowhead.com/guide/midnight/altar-of-fangs-dungeon-overview-location-rewards",
     "retrievedAt": "2026-09-02T14:30:00+02:00"
-  }]
+  },
+  { "kind": "external-reference", "description": "Spell 1289416 name corroborated against Wowhead's Envenom record.", "url": "https://www.wowhead.com/spell=1289416/envenom", "retrievedAt": "2026-09-02T14:27:00+02:00" },
+  { "kind": "external-reference", "description": "Spell 1306230 name corroborated against Wowhead's Venom Burst record.", "url": "https://www.wowhead.com/spell=1306230/venom-burst", "retrievedAt": "2026-09-02T14:27:00+02:00" },
+  { "kind": "external-reference", "description": "Spell 1296069 name corroborated against Wowhead's Regurgitate record.", "url": "https://www.wowhead.com/spell=1296069/regurgitate", "retrievedAt": "2026-09-02T14:27:00+02:00" },
+  { "kind": "external-reference", "description": "Spell 1305368 name corroborated against Wowhead's Spiteful Venom record.", "url": "https://www.wowhead.com/spell=1305368/spiteful-venom", "retrievedAt": "2026-09-02T14:27:00+02:00" },
+  { "kind": "external-reference", "description": "Spell 1310666 name corroborated against Wowhead's Toxic Atrophy record.", "url": "https://www.wowhead.com/spell=1310666/toxic-atrophy", "retrievedAt": "2026-09-02T14:27:00+02:00" }]
 }
