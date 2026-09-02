@@ -65,6 +65,13 @@
       "status": "corroborated"
     }
   ],
+  "abilityIndexes": [
+    {
+      "id": "midnight-season-2/flagged-abilities",
+      "record": "abilities/midnight-season-2.json",
+      "status": "draft"
+    }
+  ],
   "builds": [
     {
       "version": "12.1.0.69587",

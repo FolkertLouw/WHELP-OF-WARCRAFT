@@ -1,0 +1,2517 @@
+{
+  "$schema": "../../schemas/ability-index.schema.json",
+  "schemaVersion": 1,
+  "recordType": "ability-index",
+  "id": "midnight-season-2/flagged-abilities",
+  "status": "draft",
+  "validity": {
+    "fromBuild": "12.1.0.69587",
+    "untilBuild": null,
+    "seasonId": null,
+    "seasonSlug": "midnight-season-2"
+  },
+  "seasonSlug": "midnight-season-2",
+  "abilityRowCount": 149,
+  "abilities": [
+    {
+      "spellId": 267027,
+      "name": "Poison Spit",
+      "responseTags": [
+        "interrupt",
+        "cleanse-poison"
+      ],
+      "contexts": [
+        {
+          "dungeonId": "temple-of-sethraliss",
+          "instanceMapId": 1877,
+          "npcId": 134389,
+          "npcName": "Toxic Viper",
+          "interruptible": true,
+          "dispelType": "poison",
+          "enrage": false
+        }
+      ]
+    },
+    {
+      "spellId": 267273,
+      "name": "Poison Nova",
+      "responseTags": [
+        "interrupt",
+        "cleanse-poison"
+      ],
+      "contexts": [
+        {
+          "dungeonId": "kings-rest",
+          "instanceMapId": 1762,
+          "npcId": 269810,
+          "npcName": "Zanazal the Wise",
+          "interruptible": true,
+          "dispelType": "poison",
+          "enrage": false
+        }
+      ]
+    },
+    {
+      "spellId": 267763,
+      "name": "Wretched Discharge",
+      "responseTags": [
+        "interrupt",
+        "cleanse-disease"
+      ],
+      "contexts": [
+        {
+          "dungeonId": "kings-rest",
+          "instanceMapId": 1762,
+          "npcId": 270502,
+          "npcName": "Half-Finished Mummy",
+          "interruptible": true,
+          "dispelType": "disease",
+          "enrage": false
+        }
+      ]
+    },
+    {
+      "spellId": 268013,
+      "name": "Flame Shock",
+      "responseTags": [
+        "interrupt"
+      ],
+      "contexts": [
+        {
+          "dungeonId": "temple-of-sethraliss",
+          "instanceMapId": 1877,
+          "npcId": 136250,
+          "npcName": "Twisted Hexxer",
+          "interruptible": true,
+          "dispelType": "none",
+          "enrage": false
+        }
+      ]
+    },
+    {
+      "spellId": 269369,
+      "name": "Deathly Roar",
+      "responseTags": [
+        "interrupt"
+      ],
+      "contexts": [
+        {
+          "dungeonId": "kings-rest",
+          "instanceMapId": 1762,
+          "npcId": 136984,
+          "npcName": "Reban",
+          "interruptible": true,
+          "dispelType": "none",
+          "enrage": false
+        }
+      ]
+    },
+    {
+      "spellId": 269935,
+      "name": "Bound by Shadow",
+      "responseTags": [
+        "dispel-magic"
+      ],
+      "contexts": [
+        {
+          "dungeonId": "kings-rest",
+          "instanceMapId": 1762,
+          "npcId": 133943,
+          "npcName": "Minion of Zul",
+          "interruptible": false,
+          "dispelType": "magic",
+          "enrage": false
+        },
+        {
+          "dungeonId": "kings-rest",
+          "instanceMapId": 1762,
+          "npcId": 138493,
+          "npcName": "Minion of Zul",
+          "interruptible": false,
+          "dispelType": "magic",
+          "enrage": false
+        }
+      ]
+    },
+    {
+      "spellId": 269972,
+      "name": "Hex Volley",
+      "responseTags": [
+        "interrupt",
+        "cleanse-curse"
+      ],
+      "contexts": [
+        {
+          "dungeonId": "kings-rest",
+          "instanceMapId": 1762,
+          "npcId": 134174,
+          "npcName": "Risen Hexer",
+          "interruptible": true,
+          "dispelType": "curse",
+          "enrage": false
+        }
+      ]
+    },
+    {
+      "spellId": 269976,
+      "name": "Ancestral Fury",
+      "responseTags": [
+        "soothe"
+      ],
+      "contexts": [
+        {
+          "dungeonId": "kings-rest",
+          "instanceMapId": 1762,
+          "npcId": 134158,
+          "npcName": "Shadow-Borne Champion",
+          "interruptible": false,
+          "dispelType": "none",
+          "enrage": true
+        }
+      ]
+    },
+    {
+      "spellId": 270492,
+      "name": "Hex",
+      "responseTags": [
+        "interrupt",
+        "cleanse-curse"
+      ],
+      "contexts": [
+        {
+          "dungeonId": "kings-rest",
+          "instanceMapId": 1762,
+          "npcId": 135204,
+          "npcName": "Phantom Hex Priest",
+          "interruptible": true,
+          "dispelType": "curse",
+          "enrage": false
+        }
+      ]
+    },
+    {
+      "spellId": 270499,
+      "name": "Frost Shock",
+      "responseTags": [
+        "dispel-magic"
+      ],
+      "contexts": [
+        {
+          "dungeonId": "kings-rest",
+          "instanceMapId": 1762,
+          "npcId": 135239,
+          "npcName": "Spectral Shaman",
+          "interruptible": false,
+          "dispelType": "magic",
+          "enrage": false
+        }
+      ]
+    },
+    {
+      "spellId": 270901,
+      "name": "Unholy Mending",
+      "responseTags": [
+        "interrupt",
+        "dispel-magic"
+      ],
+      "contexts": [
+        {
+          "dungeonId": "kings-rest",
+          "instanceMapId": 1762,
+          "npcId": 134251,
+          "npcName": "Seneschal M'bara",
+          "interruptible": true,
+          "dispelType": "magic",
+          "enrage": false
+        }
+      ]
+    },
+    {
+      "spellId": 270920,
+      "name": "Bind Soul",
+      "responseTags": [
+        "interrupt",
+        "dispel-magic"
+      ],
+      "contexts": [
+        {
+          "dungeonId": "kings-rest",
+          "instanceMapId": 1762,
+          "npcId": 137478,
+          "npcName": "Queen Wasi",
+          "interruptible": true,
+          "dispelType": "magic",
+          "enrage": false
+        }
+      ]
+    },
+    {
+      "spellId": 371984,
+      "name": "Frostbolt",
+      "responseTags": [
+        "interrupt"
+      ],
+      "contexts": [
+        {
+          "dungeonId": "ruby-life-pools",
+          "instanceMapId": 2521,
+          "npcId": 188067,
+          "npcName": "Flashfrost Chillweaver",
+          "interruptible": true,
+          "dispelType": "none",
+          "enrage": false
+        }
+      ]
+    },
+    {
+      "spellId": 372743,
+      "name": "Ice Shield",
+      "responseTags": [
+        "interrupt"
+      ],
+      "contexts": [
+        {
+          "dungeonId": "ruby-life-pools",
+          "instanceMapId": 2521,
+          "npcId": 188067,
+          "npcName": "Flashfrost Chillweaver",
+          "interruptible": true,
+          "dispelType": "none",
+          "enrage": false
+        }
+      ]
+    },
+    {
+      "spellId": 372808,
+      "name": "Frigid Shard",
+      "responseTags": [
+        "interrupt"
+      ],
+      "contexts": [
+        {
+          "dungeonId": "ruby-life-pools",
+          "instanceMapId": 2521,
+          "npcId": 188252,
+          "npcName": "Melidrussa Chillworn",
+          "interruptible": true,
+          "dispelType": "none",
+          "enrage": false
+        }
+      ]
+    },
+    {
+      "spellId": 373017,
+      "name": "Blaze Volley",
+      "responseTags": [
+        "interrupt"
+      ],
+      "contexts": [
+        {
+          "dungeonId": "ruby-life-pools",
+          "instanceMapId": 2521,
+          "npcId": 189886,
+          "npcName": "Blazebound Firestorm",
+          "interruptible": true,
+          "dispelType": "none",
+          "enrage": false
+        }
+      ]
+    },
+    {
+      "spellId": 373972,
+      "name": "Blaze of Glory",
+      "responseTags": [
+        "dispel-magic"
+      ],
+      "contexts": [
+        {
+          "dungeonId": "ruby-life-pools",
+          "instanceMapId": 2521,
+          "npcId": 190206,
+          "npcName": "Ashseer Flamelasher",
+          "interruptible": false,
+          "dispelType": "magic",
+          "enrage": false
+        }
+      ]
+    },
+    {
+      "spellId": 381515,
+      "name": "Stormslam",
+      "responseTags": [
+        "dispel-magic"
+      ],
+      "contexts": [
+        {
+          "dungeonId": "ruby-life-pools",
+          "instanceMapId": 2521,
+          "npcId": 190485,
+          "npcName": "Erkhart Stormvein",
+          "interruptible": false,
+          "dispelType": "magic",
+          "enrage": false
+        }
+      ]
+    },
+    {
+      "spellId": 384194,
+      "name": "Cinderbolt",
+      "responseTags": [
+        "interrupt"
+      ],
+      "contexts": [
+        {
+          "dungeonId": "ruby-life-pools",
+          "instanceMapId": 2521,
+          "npcId": 190207,
+          "npcName": "Primalist Cinderweaver",
+          "interruptible": true,
+          "dispelType": "none",
+          "enrage": false
+        }
+      ]
+    },
+    {
+      "spellId": 384933,
+      "name": "Ice Shield",
+      "responseTags": [
+        "interrupt"
+      ],
+      "contexts": [
+        {
+          "dungeonId": "ruby-life-pools",
+          "instanceMapId": 2521,
+          "npcId": 188011,
+          "npcName": "Earthbound Guardian",
+          "interruptible": true,
+          "dispelType": "none",
+          "enrage": false
+        },
+        {
+          "dungeonId": "ruby-life-pools",
+          "instanceMapId": 2521,
+          "npcId": 188067,
+          "npcName": "Flashfrost Chillweaver",
+          "interruptible": true,
+          "dispelType": "none",
+          "enrage": false
+        }
+      ]
+    },
+    {
+      "spellId": 385310,
+      "name": "Storm Bolt",
+      "responseTags": [
+        "interrupt"
+      ],
+      "contexts": [
+        {
+          "dungeonId": "ruby-life-pools",
+          "instanceMapId": 2521,
+          "npcId": 195119,
+          "npcName": "Ruinous Stormbringer",
+          "interruptible": true,
+          "dispelType": "none",
+          "enrage": false
+        }
+      ]
+    },
+    {
+      "spellId": 391031,
+      "name": "Stormcloud Barrier",
+      "responseTags": [
+        "dispel-magic"
+      ],
+      "contexts": [
+        {
+          "dungeonId": "ruby-life-pools",
+          "instanceMapId": 2521,
+          "npcId": 197509,
+          "npcName": "Primal Thundercloud",
+          "interruptible": false,
+          "dispelType": "magic",
+          "enrage": false
+        }
+      ]
+    },
+    {
+      "spellId": 392576,
+      "name": "Thunder Blast",
+      "responseTags": [
+        "interrupt"
+      ],
+      "contexts": [
+        {
+          "dungeonId": "ruby-life-pools",
+          "instanceMapId": 2521,
+          "npcId": 198047,
+          "npcName": "Tempest Channeler",
+          "interruptible": true,
+          "dispelType": "none",
+          "enrage": false
+        }
+      ]
+    },
+    {
+      "spellId": 392641,
+      "name": "Rolling Thunder",
+      "responseTags": [
+        "dispel-magic"
+      ],
+      "contexts": [
+        {
+          "dungeonId": "ruby-life-pools",
+          "instanceMapId": 2521,
+          "npcId": 197698,
+          "npcName": "Thunderhead",
+          "interruptible": false,
+          "dispelType": "magic",
+          "enrage": false
+        }
+      ]
+    },
+    {
+      "spellId": 474375,
+      "name": "Chaos Bolt",
+      "responseTags": [
+        "interrupt"
+      ],
+      "contexts": [
+        {
+          "dungeonId": "murder-row",
+          "instanceMapId": 2813,
+          "npcId": 234763,
+          "npcName": "Lithiel Cinderfury",
+          "interruptible": true,
+          "dispelType": "none",
+          "enrage": false
+        }
+      ]
+    },
+    {
+      "spellId": 474515,
+      "name": "Heartstop Poison",
+      "responseTags": [
+        "cleanse-poison"
+      ],
+      "contexts": [
+        {
+          "dungeonId": "murder-row",
+          "instanceMapId": 2813,
+          "npcId": 234649,
+          "npcName": "Zaen Bladesorrow",
+          "interruptible": false,
+          "dispelType": "poison",
+          "enrage": false
+        }
+      ]
+    },
+    {
+      "spellId": 734276,
+      "name": "Murder in a Row",
+      "responseTags": [
+        "interrupt"
+      ],
+      "contexts": [
+        {
+          "dungeonId": "murder-row",
+          "instanceMapId": 2813,
+          "npcId": 234649,
+          "npcName": "Zaen Bladesorrow",
+          "interruptible": true,
+          "dispelType": "none",
+          "enrage": false
+        }
+      ]
+    },
+    {
+      "spellId": 1201554,
+      "name": "Seduction",
+      "responseTags": [
+        "interrupt",
+        "dispel-magic"
+      ],
+      "contexts": [
+        {
+          "dungeonId": "murder-row",
+          "instanceMapId": 2813,
+          "npcId": 236082,
+          "npcName": "Seductive Sayaad",
+          "interruptible": true,
+          "dispelType": "magic",
+          "enrage": false
+        },
+        {
+          "dungeonId": "murder-row",
+          "instanceMapId": 2813,
+          "npcId": 255604,
+          "npcName": "Seductive Sayaad",
+          "interruptible": true,
+          "dispelType": "magic",
+          "enrage": false
+        }
+      ]
+    },
+    {
+      "spellId": 1213658,
+      "name": "Unsatisfied Customer",
+      "responseTags": [
+        "interrupt",
+        "soothe"
+      ],
+      "contexts": [
+        {
+          "dungeonId": "murder-row",
+          "instanceMapId": 2813,
+          "npcId": 236525,
+          "npcName": "Rowdy Patron",
+          "interruptible": true,
+          "dispelType": "none",
+          "enrage": true
+        }
+      ]
+    },
+    {
+      "spellId": 1214922,
+      "name": "Fel Rage",
+      "responseTags": [
+        "interrupt",
+        "soothe"
+      ],
+      "contexts": [
+        {
+          "dungeonId": "murder-row",
+          "instanceMapId": 2813,
+          "npcId": 235267,
+          "npcName": "Wrathguard Flayer",
+          "interruptible": true,
+          "dispelType": "none",
+          "enrage": true
+        }
+      ]
+    },
+    {
+      "spellId": 1214980,
+      "name": "Health Funnel",
+      "responseTags": [
+        "interrupt"
+      ],
+      "contexts": [
+        {
+          "dungeonId": "murder-row",
+          "instanceMapId": 2813,
+          "npcId": 235268,
+          "npcName": "Fel Invoker",
+          "interruptible": true,
+          "dispelType": "none",
+          "enrage": false
+        }
+      ]
+    },
+    {
+      "spellId": 1216538,
+      "name": "Fel Detonation",
+      "responseTags": [
+        "dispel-magic"
+      ],
+      "contexts": [
+        {
+          "dungeonId": "murder-row",
+          "instanceMapId": 2813,
+          "npcId": 236085,
+          "npcName": "Felwyrm",
+          "interruptible": false,
+          "dispelType": "magic",
+          "enrage": false
+        },
+        {
+          "dungeonId": "murder-row",
+          "instanceMapId": 2813,
+          "npcId": 253324,
+          "npcName": "Tiny Felwyrm",
+          "interruptible": false,
+          "dispelType": "magic",
+          "enrage": false
+        }
+      ]
+    },
+    {
+      "spellId": 1216571,
+      "name": "Fel Missiles",
+      "responseTags": [
+        "interrupt"
+      ],
+      "contexts": [
+        {
+          "dungeonId": "murder-row",
+          "instanceMapId": 2813,
+          "npcId": 236084,
+          "npcName": "Felonious Mage",
+          "interruptible": true,
+          "dispelType": "none",
+          "enrage": false
+        }
+      ]
+    },
+    {
+      "spellId": 1216590,
+      "name": "Heartstop Poison",
+      "responseTags": [
+        "cleanse-poison"
+      ],
+      "contexts": [
+        {
+          "dungeonId": "murder-row",
+          "instanceMapId": 2813,
+          "npcId": 236091,
+          "npcName": "Street Sneak",
+          "interruptible": false,
+          "dispelType": "poison",
+          "enrage": false
+        }
+      ]
+    },
+    {
+      "spellId": 1216945,
+      "name": "Searing Fel Flame",
+      "responseTags": [
+        "interrupt"
+      ],
+      "contexts": [
+        {
+          "dungeonId": "murder-row",
+          "instanceMapId": 2813,
+          "npcId": 234763,
+          "npcName": "Lithiel Cinderfury",
+          "interruptible": true,
+          "dispelType": "none",
+          "enrage": false
+        }
+      ]
+    },
+    {
+      "spellId": 1216970,
+      "name": "Back to Work!",
+      "responseTags": [
+        "soothe"
+      ],
+      "contexts": [
+        {
+          "dungeonId": "murder-row",
+          "instanceMapId": 2813,
+          "npcId": 236893,
+          "npcName": "Warehouse Worker",
+          "interruptible": false,
+          "dispelType": "none",
+          "enrage": true
+        },
+        {
+          "dungeonId": "murder-row",
+          "instanceMapId": 2813,
+          "npcId": 236897,
+          "npcName": "Keen Taskmaster",
+          "interruptible": false,
+          "dispelType": "none",
+          "enrage": true
+        }
+      ]
+    },
+    {
+      "spellId": 1217099,
+      "name": "Fel-Infused Freight",
+      "responseTags": [
+        "interrupt"
+      ],
+      "contexts": [
+        {
+          "dungeonId": "murder-row",
+          "instanceMapId": 2813,
+          "npcId": 234852,
+          "npcName": "Forbidden Freight",
+          "interruptible": true,
+          "dispelType": "none",
+          "enrage": false
+        }
+      ]
+    },
+    {
+      "spellId": 1217633,
+      "name": "Corroding Spittle",
+      "responseTags": [
+        "dispel-magic"
+      ],
+      "contexts": [
+        {
+          "dungeonId": "murder-row",
+          "instanceMapId": 2813,
+          "npcId": 236902,
+          "npcName": "Massive Felwyrm",
+          "interruptible": false,
+          "dispelType": "magic",
+          "enrage": false
+        }
+      ]
+    },
+    {
+      "spellId": 1217930,
+      "name": "Imprison",
+      "responseTags": [
+        "dispel-magic"
+      ],
+      "contexts": [
+        {
+          "dungeonId": "murder-row",
+          "instanceMapId": 2813,
+          "npcId": 235261,
+          "npcName": "Trained Felhunter",
+          "interruptible": false,
+          "dispelType": "magic",
+          "enrage": false
+        },
+        {
+          "dungeonId": "murder-row",
+          "instanceMapId": 2813,
+          "npcId": 236905,
+          "npcName": "Felmaster Lucsei",
+          "interruptible": false,
+          "dispelType": "magic",
+          "enrage": false
+        }
+      ]
+    },
+    {
+      "spellId": 1217973,
+      "name": "Curse of Doom",
+      "responseTags": [
+        "cleanse-curse"
+      ],
+      "contexts": [
+        {
+          "dungeonId": "murder-row",
+          "instanceMapId": 2813,
+          "npcId": 235265,
+          "npcName": "Corrupted Warlock",
+          "interruptible": false,
+          "dispelType": "curse",
+          "enrage": false
+        }
+      ]
+    },
+    {
+      "spellId": 1223204,
+      "name": "Felfire Burst",
+      "responseTags": [
+        "interrupt"
+      ],
+      "contexts": [
+        {
+          "dungeonId": "murder-row",
+          "instanceMapId": 2813,
+          "npcId": 234849,
+          "npcName": "Unleashed Imp",
+          "interruptible": true,
+          "dispelType": "none",
+          "enrage": false
+        },
+        {
+          "dungeonId": "murder-row",
+          "instanceMapId": 2813,
+          "npcId": 237626,
+          "npcName": "Wild Imp",
+          "interruptible": true,
+          "dispelType": "none",
+          "enrage": false
+        }
+      ]
+    },
+    {
+      "spellId": 1223939,
+      "name": "Envenom",
+      "responseTags": [
+        "cleanse-poison"
+      ],
+      "contexts": [
+        {
+          "dungeonId": "murder-row",
+          "instanceMapId": 2813,
+          "npcId": 234649,
+          "npcName": "Zaen Bladesorrow",
+          "interruptible": false,
+          "dispelType": "poison",
+          "enrage": false
+        }
+      ]
+    },
+    {
+      "spellId": 1226031,
+      "name": "Poison Splash",
+      "responseTags": [
+        "cleanse-poison"
+      ],
+      "contexts": [
+        {
+          "dungeonId": "voidscar-arena",
+          "instanceMapId": 2923,
+          "npcId": 239008,
+          "npcName": "Atroxus",
+          "interruptible": false,
+          "dispelType": "poison",
+          "enrage": false
+        }
+      ]
+    },
+    {
+      "spellId": 1228176,
+      "name": "Lava Bolt",
+      "responseTags": [
+        "interrupt"
+      ],
+      "contexts": [
+        {
+          "dungeonId": "voidscar-arena",
+          "instanceMapId": 2923,
+          "npcId": 241496,
+          "npcName": "Enthralled Shaman",
+          "interruptible": true,
+          "dispelType": "none",
+          "enrage": false
+        }
+      ]
+    },
+    {
+      "spellId": 1228198,
+      "name": "Corroding Spittle",
+      "responseTags": [
+        "dispel-magic"
+      ],
+      "contexts": [
+        {
+          "dungeonId": "murder-row",
+          "instanceMapId": 2813,
+          "npcId": 234660,
+          "npcName": "Nibbles",
+          "interruptible": false,
+          "dispelType": "magic",
+          "enrage": false
+        }
+      ]
+    },
+    {
+      "spellId": 1229433,
+      "name": "Fel Crazed",
+      "responseTags": [
+        "dispel-magic"
+      ],
+      "contexts": [
+        {
+          "dungeonId": "murder-row",
+          "instanceMapId": 2813,
+          "npcId": 236084,
+          "npcName": "Felonious Mage",
+          "interruptible": false,
+          "dispelType": "magic",
+          "enrage": false
+        }
+      ]
+    },
+    {
+      "spellId": 1233398,
+      "name": "Mad Shriek",
+      "responseTags": [
+        "interrupt"
+      ],
+      "contexts": [
+        {
+          "dungeonId": "voidscar-arena",
+          "instanceMapId": 2923,
+          "npcId": 243766,
+          "npcName": "Kilivore Screamer",
+          "interruptible": true,
+          "dispelType": "none",
+          "enrage": false
+        }
+      ]
+    },
+    {
+      "spellId": 1234846,
+      "name": "Toxic Spores",
+      "responseTags": [
+        "cleanse-poison"
+      ],
+      "contexts": [
+        {
+          "dungeonId": "den-of-nalorakk",
+          "instanceMapId": 2825,
+          "npcId": 241812,
+          "npcName": "The Hoardmonger",
+          "interruptible": false,
+          "dispelType": "poison",
+          "enrage": false
+        }
+      ]
+    },
+    {
+      "spellId": 1235549,
+      "name": "Glacial Torment",
+      "responseTags": [
+        "dispel-magic"
+      ],
+      "contexts": [
+        {
+          "dungeonId": "den-of-nalorakk",
+          "instanceMapId": 2825,
+          "npcId": 244100,
+          "npcName": "Sentinel of Winter",
+          "interruptible": false,
+          "dispelType": "magic",
+          "enrage": false
+        }
+      ]
+    },
+    {
+      "spellId": 1235616,
+      "name": "Light Bolt",
+      "responseTags": [
+        "interrupt"
+      ],
+      "contexts": [
+        {
+          "dungeonId": "the-blinding-vale",
+          "instanceMapId": 2859,
+          "npcId": 243029,
+          "npcName": "Kezkitt",
+          "interruptible": true,
+          "dispelType": "none",
+          "enrage": false
+        }
+      ]
+    },
+    {
+      "spellId": 1235829,
+      "name": "Winter's Shroud",
+      "responseTags": [
+        "interrupt"
+      ],
+      "contexts": [
+        {
+          "dungeonId": "den-of-nalorakk",
+          "instanceMapId": 2825,
+          "npcId": 244759,
+          "npcName": "Fractured Shivercore",
+          "interruptible": true,
+          "dispelType": "none",
+          "enrage": false
+        }
+      ]
+    },
+    {
+      "spellId": 1238053,
+      "name": "Mother's Wrath",
+      "responseTags": [
+        "soothe"
+      ],
+      "contexts": [
+        {
+          "dungeonId": "den-of-nalorakk",
+          "instanceMapId": 2825,
+          "npcId": 241808,
+          "npcName": "Territorial Matriarch",
+          "interruptible": false,
+          "dispelType": "none",
+          "enrage": true
+        },
+        {
+          "dungeonId": "den-of-nalorakk",
+          "instanceMapId": 2825,
+          "npcId": 241809,
+          "npcName": "Curious Yearling",
+          "interruptible": false,
+          "dispelType": "none",
+          "enrage": true
+        }
+      ]
+    },
+    {
+      "spellId": 1238063,
+      "name": "Light Bolt",
+      "responseTags": [
+        "interrupt"
+      ],
+      "contexts": [
+        {
+          "dungeonId": "the-blinding-vale",
+          "instanceMapId": 2859,
+          "npcId": 245336,
+          "npcName": "Radiant Spellsower",
+          "interruptible": true,
+          "dispelType": "none",
+          "enrage": false
+        }
+      ]
+    },
+    {
+      "spellId": 1238084,
+      "name": "Spore Spines",
+      "responseTags": [
+        "dispel-magic"
+      ],
+      "contexts": [
+        {
+          "dungeonId": "the-blinding-vale",
+          "instanceMapId": 2859,
+          "npcId": 245410,
+          "npcName": "Lasher",
+          "interruptible": false,
+          "dispelType": "magic",
+          "enrage": false
+        }
+      ]
+    },
+    {
+      "spellId": 1238158,
+      "name": "Lightbloom Pollination",
+      "responseTags": [
+        "interrupt"
+      ],
+      "contexts": [
+        {
+          "dungeonId": "the-blinding-vale",
+          "instanceMapId": 2859,
+          "npcId": 245345,
+          "npcName": "Lightgorged Lasher",
+          "interruptible": true,
+          "dispelType": "none",
+          "enrage": false
+        }
+      ]
+    },
+    {
+      "spellId": 1238200,
+      "name": "Frantic Blooming",
+      "responseTags": [
+        "interrupt"
+      ],
+      "contexts": [
+        {
+          "dungeonId": "the-blinding-vale",
+          "instanceMapId": 2859,
+          "npcId": 245336,
+          "npcName": "Radiant Spellsower",
+          "interruptible": true,
+          "dispelType": "none",
+          "enrage": false
+        }
+      ]
+    },
+    {
+      "spellId": 1238232,
+      "name": "Seed Shot",
+      "responseTags": [
+        "interrupt"
+      ],
+      "contexts": [
+        {
+          "dungeonId": "the-blinding-vale",
+          "instanceMapId": 2859,
+          "npcId": 245460,
+          "npcName": "Leafy Grovecrawler",
+          "interruptible": true,
+          "dispelType": "none",
+          "enrage": false
+        }
+      ]
+    },
+    {
+      "spellId": 1238294,
+      "name": "Disorienting Screech",
+      "responseTags": [
+        "interrupt"
+      ],
+      "contexts": [
+        {
+          "dungeonId": "the-blinding-vale",
+          "instanceMapId": 2859,
+          "npcId": 245484,
+          "npcName": "Lightfeather Petalwing",
+          "interruptible": true,
+          "dispelType": "none",
+          "enrage": false
+        }
+      ]
+    },
+    {
+      "spellId": 1238581,
+      "name": "Spiny Shield",
+      "responseTags": [
+        "dispel-magic"
+      ],
+      "contexts": [
+        {
+          "dungeonId": "the-blinding-vale",
+          "instanceMapId": 2859,
+          "npcId": 245527,
+          "npcName": "Spineshield Beetle",
+          "interruptible": false,
+          "dispelType": "magic",
+          "enrage": false
+        }
+      ]
+    },
+    {
+      "spellId": 1238801,
+      "name": "Insatiable Hunger",
+      "responseTags": [
+        "cleanse-curse"
+      ],
+      "contexts": [
+        {
+          "dungeonId": "den-of-nalorakk",
+          "instanceMapId": 2825,
+          "npcId": 245567,
+          "npcName": "Starvation Effigy",
+          "interruptible": false,
+          "dispelType": "curse",
+          "enrage": false
+        }
+      ]
+    },
+    {
+      "spellId": 1239394,
+      "name": "Scavenge",
+      "responseTags": [
+        "interrupt"
+      ],
+      "contexts": [
+        {
+          "dungeonId": "den-of-nalorakk",
+          "instanceMapId": 2825,
+          "npcId": 245752,
+          "npcName": "Keen-Eyed Striker",
+          "interruptible": true,
+          "dispelType": "none",
+          "enrage": false
+        }
+      ]
+    },
+    {
+      "spellId": 1239821,
+      "name": "Warden's Wrath",
+      "responseTags": [
+        "interrupt"
+      ],
+      "contexts": [
+        {
+          "dungeonId": "the-blinding-vale",
+          "instanceMapId": 2859,
+          "npcId": 245912,
+          "npcName": "Lightwarden Ruia",
+          "interruptible": true,
+          "dispelType": "none",
+          "enrage": false
+        }
+      ]
+    },
+    {
+      "spellId": 1239855,
+      "name": "Sky Strike",
+      "responseTags": [
+        "dispel-magic"
+      ],
+      "contexts": [
+        {
+          "dungeonId": "voidscar-arena",
+          "instanceMapId": 2923,
+          "npcId": 245950,
+          "npcName": "Watchful Harrower",
+          "interruptible": false,
+          "dispelType": "magic",
+          "enrage": false
+        }
+      ]
+    },
+    {
+      "spellId": 1239860,
+      "name": "Cryo Surge",
+      "responseTags": [
+        "dispel-magic"
+      ],
+      "contexts": [
+        {
+          "dungeonId": "den-of-nalorakk",
+          "instanceMapId": 2825,
+          "npcId": 241876,
+          "npcName": "Glacial Revenant",
+          "interruptible": false,
+          "dispelType": "magic",
+          "enrage": false
+        }
+      ]
+    },
+    {
+      "spellId": 1241214,
+      "name": "Earth Bolt",
+      "responseTags": [
+        "interrupt"
+      ],
+      "contexts": [
+        {
+          "dungeonId": "den-of-nalorakk",
+          "instanceMapId": 2825,
+          "npcId": 241814,
+          "npcName": "Earthwhisper Tender",
+          "interruptible": true,
+          "dispelType": "none",
+          "enrage": false
+        }
+      ]
+    },
+    {
+      "spellId": 1246687,
+      "name": "Lightning Bolt",
+      "responseTags": [
+        "interrupt"
+      ],
+      "contexts": [
+        {
+          "dungeonId": "den-of-nalorakk",
+          "instanceMapId": 2825,
+          "npcId": 245139,
+          "npcName": "Stormbound Mystic",
+          "interruptible": true,
+          "dispelType": "none",
+          "enrage": false
+        }
+      ]
+    },
+    {
+      "spellId": 1246847,
+      "name": "Shoot",
+      "responseTags": [
+        "interrupt"
+      ],
+      "contexts": [
+        {
+          "dungeonId": "den-of-nalorakk",
+          "instanceMapId": 2825,
+          "npcId": 245145,
+          "npcName": "Bonded Beasttamer",
+          "interruptible": true,
+          "dispelType": "none",
+          "enrage": false
+        }
+      ]
+    },
+    {
+      "spellId": 1246865,
+      "name": "Bestial Wrath",
+      "responseTags": [
+        "soothe"
+      ],
+      "contexts": [
+        {
+          "dungeonId": "den-of-nalorakk",
+          "instanceMapId": 2825,
+          "npcId": 245145,
+          "npcName": "Bonded Beasttamer",
+          "interruptible": false,
+          "dispelType": "none",
+          "enrage": true
+        },
+        {
+          "dungeonId": "den-of-nalorakk",
+          "instanceMapId": 2825,
+          "npcId": 245190,
+          "npcName": "Loyal Saberfang",
+          "interruptible": false,
+          "dispelType": "none",
+          "enrage": true
+        }
+      ]
+    },
+    {
+      "spellId": 1247669,
+      "name": "Lightspore Shot",
+      "responseTags": [
+        "interrupt"
+      ],
+      "contexts": [
+        {
+          "dungeonId": "the-blinding-vale",
+          "instanceMapId": 2859,
+          "npcId": 247755,
+          "npcName": "Lightspawn Lasher",
+          "interruptible": true,
+          "dispelType": "none",
+          "enrage": false
+        }
+      ]
+    },
+    {
+      "spellId": 1249238,
+      "name": "Fire Spit",
+      "responseTags": [
+        "dispel-magic"
+      ],
+      "contexts": [
+        {
+          "dungeonId": "voidscar-arena",
+          "instanceMapId": 2923,
+          "npcId": 249461,
+          "npcName": "Abducted Drakonid",
+          "interruptible": false,
+          "dispelType": "magic",
+          "enrage": false
+        }
+      ]
+    },
+    {
+      "spellId": 1249621,
+      "name": "Violent Sand",
+      "responseTags": [
+        "interrupt"
+      ],
+      "contexts": [
+        {
+          "dungeonId": "voidscar-arena",
+          "instanceMapId": 2923,
+          "npcId": 249590,
+          "npcName": "Angry Krolusk",
+          "interruptible": true,
+          "dispelType": "none",
+          "enrage": false
+        }
+      ]
+    },
+    {
+      "spellId": 1249661,
+      "name": "Feral Rage",
+      "responseTags": [
+        "soothe"
+      ],
+      "contexts": [
+        {
+          "dungeonId": "voidscar-arena",
+          "instanceMapId": 2923,
+          "npcId": 243983,
+          "npcName": "Sycophantic Tarasek",
+          "interruptible": false,
+          "dispelType": "none",
+          "enrage": true
+        },
+        {
+          "dungeonId": "voidscar-arena",
+          "instanceMapId": 2923,
+          "npcId": 243985,
+          "npcName": "Longtooth Tuskarr",
+          "interruptible": false,
+          "dispelType": "none",
+          "enrage": true
+        },
+        {
+          "dungeonId": "voidscar-arena",
+          "instanceMapId": 2923,
+          "npcId": 243988,
+          "npcName": "Feral Saberon",
+          "interruptible": false,
+          "dispelType": "none",
+          "enrage": true
+        },
+        {
+          "dungeonId": "voidscar-arena",
+          "instanceMapId": 2923,
+          "npcId": 244260,
+          "npcName": "Chitigoth",
+          "interruptible": false,
+          "dispelType": "none",
+          "enrage": true
+        },
+        {
+          "dungeonId": "voidscar-arena",
+          "instanceMapId": 2923,
+          "npcId": 244309,
+          "npcName": "Brutok",
+          "interruptible": false,
+          "dispelType": "none",
+          "enrage": true
+        },
+        {
+          "dungeonId": "voidscar-arena",
+          "instanceMapId": 2923,
+          "npcId": 249461,
+          "npcName": "Abducted Drakonid",
+          "interruptible": false,
+          "dispelType": "none",
+          "enrage": true
+        },
+        {
+          "dungeonId": "voidscar-arena",
+          "instanceMapId": 2923,
+          "npcId": 249603,
+          "npcName": "Protective Turtle",
+          "interruptible": false,
+          "dispelType": "none",
+          "enrage": true
+        },
+        {
+          "dungeonId": "voidscar-arena",
+          "instanceMapId": 2923,
+          "npcId": 249608,
+          "npcName": "Raging Raptor",
+          "interruptible": false,
+          "dispelType": "none",
+          "enrage": true
+        }
+      ]
+    },
+    {
+      "spellId": 1250043,
+      "name": "Melt Armor",
+      "responseTags": [
+        "dispel-magic"
+      ],
+      "contexts": [
+        {
+          "dungeonId": "voidscar-arena",
+          "instanceMapId": 2923,
+          "npcId": 243983,
+          "npcName": "Sycophantic Tarasek",
+          "interruptible": false,
+          "dispelType": "magic",
+          "enrage": false
+        }
+      ]
+    },
+    {
+      "spellId": 1250937,
+      "name": "Toxic Spew",
+      "responseTags": [
+        "cleanse-poison"
+      ],
+      "contexts": [
+        {
+          "dungeonId": "the-blinding-vale",
+          "instanceMapId": 2859,
+          "npcId": 249756,
+          "npcName": "Potatoad Matriarch",
+          "interruptible": false,
+          "dispelType": "poison",
+          "enrage": false
+        }
+      ]
+    },
+    {
+      "spellId": 1254826,
+      "name": "Bloodsurge",
+      "responseTags": [
+        "soothe"
+      ],
+      "contexts": [
+        {
+          "dungeonId": "voidscar-arena",
+          "instanceMapId": 2923,
+          "npcId": 238883,
+          "npcName": "Dominated Brawler",
+          "interruptible": false,
+          "dispelType": "none",
+          "enrage": true
+        }
+      ]
+    },
+    {
+      "spellId": 1256300,
+      "name": "Massive Fel Detonation",
+      "responseTags": [
+        "dispel-magic"
+      ],
+      "contexts": [
+        {
+          "dungeonId": "murder-row",
+          "instanceMapId": 2813,
+          "npcId": 236902,
+          "npcName": "Massive Felwyrm",
+          "interruptible": false,
+          "dispelType": "magic",
+          "enrage": false
+        }
+      ]
+    },
+    {
+      "spellId": 1257877,
+      "name": "Scathing Review",
+      "responseTags": [
+        "interrupt"
+      ],
+      "contexts": [
+        {
+          "dungeonId": "murder-row",
+          "instanceMapId": 2813,
+          "npcId": 253081,
+          "npcName": "Influentual Reviewer",
+          "interruptible": true,
+          "dispelType": "none",
+          "enrage": false
+        }
+      ]
+    },
+    {
+      "spellId": 1259365,
+      "name": "Bloodthorn Roots",
+      "responseTags": [
+        "dispel-magic"
+      ],
+      "contexts": [
+        {
+          "dungeonId": "the-blinding-vale",
+          "instanceMapId": 2859,
+          "npcId": 253571,
+          "npcName": "Bloodthorn Roots",
+          "interruptible": false,
+          "dispelType": "magic",
+          "enrage": false
+        }
+      ]
+    },
+    {
+      "spellId": 1263971,
+      "name": "Mind-Numbing Poison",
+      "responseTags": [
+        "cleanse-poison"
+      ],
+      "contexts": [
+        {
+          "dungeonId": "voidscar-arena",
+          "instanceMapId": 2923,
+          "npcId": 239008,
+          "npcName": "Atroxus",
+          "interruptible": false,
+          "dispelType": "poison",
+          "enrage": false
+        }
+      ]
+    },
+    {
+      "spellId": 1264106,
+      "name": "Felstorm",
+      "responseTags": [
+        "interrupt"
+      ],
+      "contexts": [
+        {
+          "dungeonId": "murder-row",
+          "instanceMapId": 2813,
+          "npcId": 255050,
+          "npcName": "Kystia Manaheart",
+          "interruptible": true,
+          "dispelType": "none",
+          "enrage": false
+        }
+      ]
+    },
+    {
+      "spellId": 1264110,
+      "name": "Felstorm",
+      "responseTags": [
+        "interrupt"
+      ],
+      "contexts": [
+        {
+          "dungeonId": "murder-row",
+          "instanceMapId": 2813,
+          "npcId": 255050,
+          "npcName": "Kystia Manaheart",
+          "interruptible": true,
+          "dispelType": "none",
+          "enrage": false
+        }
+      ]
+    },
+    {
+      "spellId": 1289258,
+      "name": "Corrosive Essence",
+      "responseTags": [
+        "cleanse-poison"
+      ],
+      "contexts": [
+        {
+          "dungeonId": "voidscar-arena",
+          "instanceMapId": 2923,
+          "npcId": 263228,
+          "npcName": "Agitated Voidscythe",
+          "interruptible": false,
+          "dispelType": "poison",
+          "enrage": false
+        }
+      ]
+    },
+    {
+      "spellId": 1289416,
+      "name": "Envenom",
+      "responseTags": [
+        "interrupt",
+        "cleanse-poison"
+      ],
+      "contexts": [
+        {
+          "dungeonId": "altar-of-fangs",
+          "instanceMapId": 2993,
+          "npcId": 261557,
+          "npcName": "High Evolutionist",
+          "interruptible": true,
+          "dispelType": "poison",
+          "enrage": false
+        },
+        {
+          "dungeonId": "altar-of-fangs",
+          "instanceMapId": 2993,
+          "npcId": 263109,
+          "npcName": "Ula'tek's Chosen",
+          "interruptible": true,
+          "dispelType": "poison",
+          "enrage": false
+        }
+      ]
+    },
+    {
+      "spellId": 1290205,
+      "name": "Lightning Bolt",
+      "responseTags": [
+        "interrupt"
+      ],
+      "contexts": [
+        {
+          "dungeonId": "den-of-nalorakk",
+          "instanceMapId": 2825,
+          "npcId": 244889,
+          "npcName": "Loa Speaker Nanea",
+          "interruptible": true,
+          "dispelType": "none",
+          "enrage": false
+        }
+      ]
+    },
+    {
+      "spellId": 1291262,
+      "name": "Lightning Bolt",
+      "responseTags": [
+        "interrupt"
+      ],
+      "contexts": [
+        {
+          "dungeonId": "temple-of-sethraliss",
+          "instanceMapId": 1877,
+          "npcId": 134599,
+          "npcName": "Imbued Stormcaller",
+          "interruptible": true,
+          "dispelType": "none",
+          "enrage": false
+        },
+        {
+          "dungeonId": "temple-of-sethraliss",
+          "instanceMapId": 1877,
+          "npcId": 134990,
+          "npcName": "Storm Adept",
+          "interruptible": true,
+          "dispelType": "none",
+          "enrage": false
+        }
+      ]
+    },
+    {
+      "spellId": 1293307,
+      "name": "Addle Mind",
+      "responseTags": [
+        "interrupt",
+        "cleanse-curse"
+      ],
+      "contexts": [
+        {
+          "dungeonId": "temple-of-sethraliss",
+          "instanceMapId": 1877,
+          "npcId": 134364,
+          "npcName": "Faithless Subjugator",
+          "interruptible": true,
+          "dispelType": "curse",
+          "enrage": false
+        }
+      ]
+    },
+    {
+      "spellId": 1293464,
+      "name": "Accumulate Charge",
+      "responseTags": [
+        "dispel-magic"
+      ],
+      "contexts": [
+        {
+          "dungeonId": "temple-of-sethraliss",
+          "instanceMapId": 1877,
+          "npcId": 136076,
+          "npcName": "Agitated Nimbus",
+          "interruptible": false,
+          "dispelType": "magic",
+          "enrage": false
+        }
+      ]
+    },
+    {
+      "spellId": 1294557,
+      "name": "Piercing Hiss",
+      "responseTags": [
+        "interrupt"
+      ],
+      "contexts": [
+        {
+          "dungeonId": "altar-of-fangs",
+          "instanceMapId": 2993,
+          "npcId": 261560,
+          "npcName": "Primal Serpent",
+          "interruptible": true,
+          "dispelType": "none",
+          "enrage": false
+        }
+      ]
+    },
+    {
+      "spellId": 1294569,
+      "name": "Paralyzing Shots",
+      "responseTags": [
+        "dispel-magic"
+      ],
+      "contexts": [
+        {
+          "dungeonId": "altar-of-fangs",
+          "instanceMapId": 2993,
+          "npcId": 261554,
+          "npcName": "Twinfang Harrower",
+          "interruptible": false,
+          "dispelType": "magic",
+          "enrage": false
+        }
+      ]
+    },
+    {
+      "spellId": 1294815,
+      "name": "Shadowfrost Bolt",
+      "responseTags": [
+        "interrupt",
+        "dispel-magic"
+      ],
+      "contexts": [
+        {
+          "dungeonId": "kings-rest",
+          "instanceMapId": 1762,
+          "npcId": 134174,
+          "npcName": "Risen Hexer",
+          "interruptible": true,
+          "dispelType": "magic",
+          "enrage": false
+        }
+      ]
+    },
+    {
+      "spellId": 1294845,
+      "name": "Corrosive Fangs",
+      "responseTags": [
+        "cleanse-poison"
+      ],
+      "contexts": [
+        {
+          "dungeonId": "altar-of-fangs",
+          "instanceMapId": 2993,
+          "npcId": 262011,
+          "npcName": "Rattling Writhe",
+          "interruptible": false,
+          "dispelType": "poison",
+          "enrage": false
+        }
+      ]
+    },
+    {
+      "spellId": 1294972,
+      "name": "Soul Bolt",
+      "responseTags": [
+        "interrupt",
+        "dispel-magic"
+      ],
+      "contexts": [
+        {
+          "dungeonId": "kings-rest",
+          "instanceMapId": 1762,
+          "npcId": 137478,
+          "npcName": "Queen Wasi",
+          "interruptible": true,
+          "dispelType": "magic",
+          "enrage": false
+        }
+      ]
+    },
+    {
+      "spellId": 1295125,
+      "name": "Spectral Bolt",
+      "responseTags": [
+        "interrupt",
+        "dispel-magic"
+      ],
+      "contexts": [
+        {
+          "dungeonId": "kings-rest",
+          "instanceMapId": 1762,
+          "npcId": 135204,
+          "npcName": "Phantom Hex Priest",
+          "interruptible": true,
+          "dispelType": "magic",
+          "enrage": false
+        }
+      ]
+    },
+    {
+      "spellId": 1296052,
+      "name": "Imbued Conduction",
+      "responseTags": [
+        "dispel-magic"
+      ],
+      "contexts": [
+        {
+          "dungeonId": "temple-of-sethraliss",
+          "instanceMapId": 1877,
+          "npcId": 134599,
+          "npcName": "Imbued Stormcaller",
+          "interruptible": false,
+          "dispelType": "magic",
+          "enrage": false
+        }
+      ]
+    },
+    {
+      "spellId": 1296069,
+      "name": "Regurgitate",
+      "responseTags": [
+        "cleanse-disease"
+      ],
+      "contexts": [
+        {
+          "dungeonId": "altar-of-fangs",
+          "instanceMapId": 2993,
+          "npcId": 259445,
+          "npcName": "Rav'i",
+          "interruptible": false,
+          "dispelType": "disease",
+          "enrage": false
+        }
+      ]
+    },
+    {
+      "spellId": 1296671,
+      "name": "Captain's Bulwark",
+      "responseTags": [
+        "dispel-magic"
+      ],
+      "contexts": [
+        {
+          "dungeonId": "kings-rest",
+          "instanceMapId": 1762,
+          "npcId": 134251,
+          "npcName": "Seneschal M'bara",
+          "interruptible": false,
+          "dispelType": "magic",
+          "enrage": false
+        },
+        {
+          "dungeonId": "kings-rest",
+          "instanceMapId": 1762,
+          "npcId": 134331,
+          "npcName": "King Rahu'ai",
+          "interruptible": false,
+          "dispelType": "magic",
+          "enrage": false
+        },
+        {
+          "dungeonId": "kings-rest",
+          "instanceMapId": 1762,
+          "npcId": 137473,
+          "npcName": "Guard Captain Atu",
+          "interruptible": false,
+          "dispelType": "magic",
+          "enrage": false
+        }
+      ]
+    },
+    {
+      "spellId": 1297696,
+      "name": "Healing Breeze",
+      "responseTags": [
+        "interrupt",
+        "dispel-magic"
+      ],
+      "contexts": [
+        {
+          "dungeonId": "den-of-nalorakk",
+          "instanceMapId": 2825,
+          "npcId": 241814,
+          "npcName": "Earthwhisper Tender",
+          "interruptible": true,
+          "dispelType": "magic",
+          "enrage": false
+        }
+      ]
+    },
+    {
+      "spellId": 1297699,
+      "name": "Rotten Supplies",
+      "responseTags": [
+        "cleanse-disease"
+      ],
+      "contexts": [
+        {
+          "dungeonId": "den-of-nalorakk",
+          "instanceMapId": 2825,
+          "npcId": 241813,
+          "npcName": "Thornclaw Gatherer",
+          "interruptible": false,
+          "dispelType": "disease",
+          "enrage": false
+        }
+      ]
+    },
+    {
+      "spellId": 1297763,
+      "name": "Bestial Berserk",
+      "responseTags": [
+        "soothe"
+      ],
+      "contexts": [
+        {
+          "dungeonId": "kings-rest",
+          "instanceMapId": 1762,
+          "npcId": 137486,
+          "npcName": "Queen Patlaa",
+          "interruptible": false,
+          "dispelType": "none",
+          "enrage": true
+        },
+        {
+          "dungeonId": "kings-rest",
+          "instanceMapId": 1762,
+          "npcId": 137487,
+          "npcName": "Skeletal Hunting Raptor",
+          "interruptible": false,
+          "dispelType": "none",
+          "enrage": true
+        }
+      ]
+    },
+    {
+      "spellId": 1297778,
+      "name": "Arc Lightning",
+      "responseTags": [
+        "interrupt"
+      ],
+      "contexts": [
+        {
+          "dungeonId": "den-of-nalorakk",
+          "instanceMapId": 2825,
+          "npcId": 245139,
+          "npcName": "Stormbound Mystic",
+          "interruptible": true,
+          "dispelType": "none",
+          "enrage": false
+        }
+      ]
+    },
+    {
+      "spellId": 1298104,
+      "name": "Putrid Seekers",
+      "responseTags": [
+        "cleanse-poison"
+      ],
+      "contexts": [
+        {
+          "dungeonId": "kings-rest",
+          "instanceMapId": 1762,
+          "npcId": 137989,
+          "npcName": "Embalming Fluid",
+          "interruptible": false,
+          "dispelType": "poison",
+          "enrage": false
+        }
+      ]
+    },
+    {
+      "spellId": 1298899,
+      "name": "Demoralizing Shout",
+      "responseTags": [
+        "interrupt"
+      ],
+      "contexts": [
+        {
+          "dungeonId": "voidscar-arena",
+          "instanceMapId": 2923,
+          "npcId": 238883,
+          "npcName": "Dominated Brawler",
+          "interruptible": true,
+          "dispelType": "none",
+          "enrage": false
+        }
+      ]
+    },
+    {
+      "spellId": 1299938,
+      "name": "Shadowbolt Volley",
+      "responseTags": [
+        "interrupt"
+      ],
+      "contexts": [
+        {
+          "dungeonId": "voidscar-arena",
+          "instanceMapId": 2923,
+          "npcId": 252072,
+          "npcName": "Voidtouched Magi",
+          "interruptible": true,
+          "dispelType": "none",
+          "enrage": false
+        }
+      ]
+    },
+    {
+      "spellId": 1301834,
+      "name": "Light Bolt Volley",
+      "responseTags": [
+        "interrupt"
+      ],
+      "contexts": [
+        {
+          "dungeonId": "the-blinding-vale",
+          "instanceMapId": 2859,
+          "npcId": 245336,
+          "npcName": "Radiant Spellsower",
+          "interruptible": true,
+          "dispelType": "none",
+          "enrage": false
+        }
+      ]
+    },
+    {
+      "spellId": 1302158,
+      "name": "Flame Shock",
+      "responseTags": [
+        "interrupt"
+      ],
+      "contexts": [
+        {
+          "dungeonId": "temple-of-sethraliss",
+          "instanceMapId": 1877,
+          "npcId": 268491,
+          "npcName": "Twisted Hexxer",
+          "interruptible": true,
+          "dispelType": "none",
+          "enrage": false
+        }
+      ]
+    },
+    {
+      "spellId": 1305234,
+      "name": "Cold Claws",
+      "responseTags": [
+        "dispel-magic"
+      ],
+      "contexts": [
+        {
+          "dungeonId": "ruby-life-pools",
+          "instanceMapId": 2521,
+          "npcId": 187894,
+          "npcName": "Infused Whelp",
+          "interruptible": false,
+          "dispelType": "magic",
+          "enrage": false
+        },
+        {
+          "dungeonId": "ruby-life-pools",
+          "instanceMapId": 2521,
+          "npcId": 189893,
+          "npcName": "Infused Whelp",
+          "interruptible": false,
+          "dispelType": "magic",
+          "enrage": false
+        }
+      ]
+    },
+    {
+      "spellId": 1305368,
+      "name": "Spiteful Venom",
+      "responseTags": [
+        "cleanse-poison"
+      ],
+      "contexts": [
+        {
+          "dungeonId": "altar-of-fangs",
+          "instanceMapId": 2993,
+          "npcId": 259446,
+          "npcName": "The Writhing Coil",
+          "interruptible": false,
+          "dispelType": "poison",
+          "enrage": false
+        },
+        {
+          "dungeonId": "altar-of-fangs",
+          "instanceMapId": 2993,
+          "npcId": 262398,
+          "npcName": "Uncoiled Writhe",
+          "interruptible": false,
+          "dispelType": "poison",
+          "enrage": false
+        }
+      ]
+    },
+    {
+      "spellId": 1305955,
+      "name": "Fiery Blast",
+      "responseTags": [
+        "interrupt"
+      ],
+      "contexts": [
+        {
+          "dungeonId": "ruby-life-pools",
+          "instanceMapId": 2521,
+          "npcId": 190034,
+          "npcName": "Blazebound Destroyer",
+          "interruptible": true,
+          "dispelType": "none",
+          "enrage": false
+        }
+      ]
+    },
+    {
+      "spellId": 1306230,
+      "name": "Venom Burst",
+      "responseTags": [
+        "cleanse-poison"
+      ],
+      "contexts": [
+        {
+          "dungeonId": "altar-of-fangs",
+          "instanceMapId": 2993,
+          "npcId": 263112,
+          "npcName": "Living Venom",
+          "interruptible": false,
+          "dispelType": "poison",
+          "enrage": false
+        }
+      ]
+    },
+    {
+      "spellId": 1306308,
+      "name": "Ravenous Claws (enrage aura)",
+      "responseTags": [
+        "soothe"
+      ],
+      "contexts": [
+        {
+          "dungeonId": "altar-of-fangs",
+          "instanceMapId": 2993,
+          "npcId": 261553,
+          "npcName": "Ravenous Descendant",
+          "interruptible": false,
+          "dispelType": "none",
+          "enrage": true
+        }
+      ]
+    },
+    {
+      "spellId": 1306763,
+      "name": "Serpent Strike",
+      "responseTags": [
+        "cleanse-poison"
+      ],
+      "contexts": [
+        {
+          "dungeonId": "kings-rest",
+          "instanceMapId": 1762,
+          "npcId": 137486,
+          "npcName": "Queen Patlaa",
+          "interruptible": false,
+          "dispelType": "poison",
+          "enrage": false
+        }
+      ]
+    },
+    {
+      "spellId": 1307567,
+      "name": "Mass Envenom",
+      "responseTags": [
+        "interrupt"
+      ],
+      "contexts": [
+        {
+          "dungeonId": "altar-of-fangs",
+          "instanceMapId": 2993,
+          "npcId": 261557,
+          "npcName": "High Evolutionist",
+          "interruptible": true,
+          "dispelType": "none",
+          "enrage": false
+        },
+        {
+          "dungeonId": "altar-of-fangs",
+          "instanceMapId": 2993,
+          "npcId": 263109,
+          "npcName": "Ula'tek's Chosen",
+          "interruptible": true,
+          "dispelType": "none",
+          "enrage": false
+        }
+      ]
+    },
+    {
+      "spellId": 1307571,
+      "name": "Envenom",
+      "responseTags": [
+        "cleanse-poison"
+      ],
+      "contexts": [
+        {
+          "dungeonId": "altar-of-fangs",
+          "instanceMapId": 2993,
+          "npcId": 261557,
+          "npcName": "High Evolutionist",
+          "interruptible": false,
+          "dispelType": "poison",
+          "enrage": false
+        },
+        {
+          "dungeonId": "altar-of-fangs",
+          "instanceMapId": 2993,
+          "npcId": 263109,
+          "npcName": "Ula'tek's Chosen",
+          "interruptible": false,
+          "dispelType": "poison",
+          "enrage": false
+        }
+      ]
+    },
+    {
+      "spellId": 1308100,
+      "name": "Poisoned Cheap Shot",
+      "responseTags": [
+        "interrupt",
+        "cleanse-poison"
+      ],
+      "contexts": [
+        {
+          "dungeonId": "temple-of-sethraliss",
+          "instanceMapId": 1877,
+          "npcId": 134602,
+          "npcName": "Shrouded Fang",
+          "interruptible": true,
+          "dispelType": "poison",
+          "enrage": false
+        }
+      ]
+    },
+    {
+      "spellId": 1308148,
+      "name": "Cytotoxin",
+      "responseTags": [
+        "interrupt",
+        "cleanse-poison"
+      ],
+      "contexts": [
+        {
+          "dungeonId": "temple-of-sethraliss",
+          "instanceMapId": 1877,
+          "npcId": 135562,
+          "npcName": "Poisonous Viper",
+          "interruptible": true,
+          "dispelType": "poison",
+          "enrage": false
+        }
+      ]
+    },
+    {
+      "spellId": 1309919,
+      "name": "Frigid Roar",
+      "responseTags": [
+        "interrupt"
+      ],
+      "contexts": [
+        {
+          "dungeonId": "den-of-nalorakk",
+          "instanceMapId": 2825,
+          "npcId": 241872,
+          "npcName": "Frigid Mauler",
+          "interruptible": true,
+          "dispelType": "none",
+          "enrage": false
+        }
+      ]
+    },
+    {
+      "spellId": 1310319,
+      "name": "Bolster",
+      "responseTags": [
+        "soothe"
+      ],
+      "contexts": [
+        {
+          "dungeonId": "voidscar-arena",
+          "instanceMapId": 2923,
+          "npcId": 243985,
+          "npcName": "Longtooth Tuskarr",
+          "interruptible": false,
+          "dispelType": "none",
+          "enrage": true
+        }
+      ]
+    },
+    {
+      "spellId": 1310324,
+      "name": "Mending Void",
+      "responseTags": [
+        "interrupt"
+      ],
+      "contexts": [
+        {
+          "dungeonId": "voidscar-arena",
+          "instanceMapId": 2923,
+          "npcId": 244708,
+          "npcName": "Voidminder",
+          "interruptible": true,
+          "dispelType": "none",
+          "enrage": false
+        },
+        {
+          "dungeonId": "voidscar-arena",
+          "instanceMapId": 2923,
+          "npcId": 268184,
+          "npcName": "Devouring Brutalizer",
+          "interruptible": true,
+          "dispelType": "none",
+          "enrage": false
+        }
+      ]
+    },
+    {
+      "spellId": 1310666,
+      "name": "Toxic Atrophy",
+      "responseTags": [
+        "interrupt"
+      ],
+      "contexts": [
+        {
+          "dungeonId": "altar-of-fangs",
+          "instanceMapId": 2993,
+          "npcId": 262398,
+          "npcName": "Uncoiled Writhe",
+          "interruptible": true,
+          "dispelType": "none",
+          "enrage": false
+        }
+      ]
+    },
+    {
+      "spellId": 1310683,
+      "name": "Venom Bolt",
+      "responseTags": [
+        "interrupt"
+      ],
+      "contexts": [
+        {
+          "dungeonId": "temple-of-sethraliss",
+          "instanceMapId": 1877,
+          "npcId": 139425,
+          "npcName": "Brood Tender",
+          "interruptible": true,
+          "dispelType": "none",
+          "enrage": false
+        }
+      ]
+    },
+    {
+      "spellId": 1310739,
+      "name": "Accumulate Charge",
+      "responseTags": [
+        "dispel-magic"
+      ],
+      "contexts": [
+        {
+          "dungeonId": "temple-of-sethraliss",
+          "instanceMapId": 1877,
+          "npcId": 134599,
+          "npcName": "Imbued Stormcaller",
+          "interruptible": false,
+          "dispelType": "magic",
+          "enrage": false
+        },
+        {
+          "dungeonId": "temple-of-sethraliss",
+          "instanceMapId": 1877,
+          "npcId": 136076,
+          "npcName": "Agitated Nimbus",
+          "interruptible": false,
+          "dispelType": "magic",
+          "enrage": false
+        }
+      ]
+    },
+    {
+      "spellId": 1314082,
+      "name": "Addle Mind",
+      "responseTags": [
+        "interrupt",
+        "cleanse-curse"
+      ],
+      "contexts": [
+        {
+          "dungeonId": "temple-of-sethraliss",
+          "instanceMapId": 1877,
+          "npcId": 134364,
+          "npcName": "Faithless Subjugator",
+          "interruptible": true,
+          "dispelType": "curse",
+          "enrage": false
+        }
+      ]
+    }
+  ],
+  "provenance": [
+    {
+      "kind": "curated",
+      "description": "Lossless generated index of flagged ability facts from altar-of-fangs.",
+      "recordId": "altar-of-fangs/enemy-abilities"
+    },
+    {
+      "kind": "curated",
+      "description": "Lossless generated index of flagged ability facts from murder-row.",
+      "recordId": "murder-row/enemy-abilities"
+    },
+    {
+      "kind": "curated",
+      "description": "Lossless generated index of flagged ability facts from den-of-nalorakk.",
+      "recordId": "den-of-nalorakk/enemy-abilities"
+    },
+    {
+      "kind": "curated",
+      "description": "Lossless generated index of flagged ability facts from the-blinding-vale.",
+      "recordId": "the-blinding-vale/enemy-abilities"
+    },
+    {
+      "kind": "curated",
+      "description": "Lossless generated index of flagged ability facts from voidscar-arena.",
+      "recordId": "voidscar-arena/enemy-abilities"
+    },
+    {
+      "kind": "curated",
+      "description": "Lossless generated index of flagged ability facts from kings-rest.",
+      "recordId": "kings-rest/enemy-abilities"
+    },
+    {
+      "kind": "curated",
+      "description": "Lossless generated index of flagged ability facts from ruby-life-pools.",
+      "recordId": "ruby-life-pools/enemy-abilities"
+    },
+    {
+      "kind": "curated",
+      "description": "Lossless generated index of flagged ability facts from temple-of-sethraliss.",
+      "recordId": "temple-of-sethraliss/enemy-abilities"
+    }
+  ]
+}

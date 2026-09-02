@@ -56,6 +56,16 @@ function validateRecord(file, value) {
       const spellIds = (enemy.abilities ?? []).map((ability) => ability.spellId);
       if (new Set(spellIds).size !== spellIds.length) fail(file, `duplicate ability for NPC ${enemy.npcId}`);
     }
+  } else if (value.recordType === "ability-index") {
+    requireFields(file, value, ["id", "status", "validity", "seasonSlug", "abilityRowCount", "abilities", "provenance"]);
+    const spellIds = (value.abilities ?? []).map((ability) => ability.spellId);
+    if (new Set(spellIds).size !== spellIds.length) fail(file, "ability index spell IDs must be unique");
+    for (const ability of value.abilities ?? []) {
+      if (!ability.name?.trim()) fail(file, `indexed spell ${ability.spellId} is unnamed`);
+      if (!(ability.responseTags ?? []).length) fail(file, `indexed spell ${ability.spellId} has no response tags`);
+      const contexts = (ability.contexts ?? []).map((context) => `${context.dungeonId}:${context.npcId}`);
+      if (new Set(contexts).size !== contexts.length) fail(file, `indexed spell ${ability.spellId} has duplicate NPC contexts`);
+    }
   } else if (value.recordType === "spec-note") {
     requireFields(file, value, ["id", "status", "validity", "context", "specIds", "summary", "recommendations", "provenance"]);
   } else if (value.recordType === "spec-dungeon-matrix") {
@@ -350,6 +360,16 @@ for (const affixSet of index.affixSets ?? []) {
     if (record.status !== affixSet.status) fail(indexPath, `${affixSet.record} has status ${record.status}, expected ${affixSet.status}`);
   } catch (error) {
     fail(indexPath, `cannot read affix set ${affixSet.record}: ${error.message}`);
+  }
+}
+for (const abilityIndex of index.abilityIndexes ?? []) {
+  const recordPath = path.join(root, "data", abilityIndex.record);
+  try {
+    const record = JSON.parse(await readFile(recordPath, "utf8"));
+    if (record.id !== abilityIndex.id) fail(indexPath, `${abilityIndex.record} has id ${record.id}, expected ${abilityIndex.id}`);
+    if (record.status !== abilityIndex.status) fail(indexPath, `${abilityIndex.record} has status ${record.status}, expected ${abilityIndex.status}`);
+  } catch (error) {
+    fail(indexPath, `cannot read ability index ${abilityIndex.record}: ${error.message}`);
   }
 }
 const indexedDungeons = new Map((index.dungeons ?? []).map((entry) => [entry.id, entry]));

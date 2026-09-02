@@ -1,0 +1,56 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://whelp.dev/schemas/ability-index.schema.json",
+  "title": "WHELP season flagged-ability index",
+  "type": "object",
+  "required": ["schemaVersion", "recordType", "id", "status", "validity", "seasonSlug", "abilityRowCount", "abilities", "provenance"],
+  "properties": {
+    "$schema": { "type": "string" },
+    "schemaVersion": { "const": 1 },
+    "recordType": { "const": "ability-index" },
+    "id": { "type": "string", "pattern": "^[a-z0-9][a-z0-9./_-]+$" },
+    "status": { "enum": ["draft", "corroborated", "verified", "deprecated"] },
+    "validity": { "$ref": "validity.schema.json" },
+    "seasonSlug": { "type": "string", "pattern": "^[a-z0-9][a-z0-9-]+$" },
+    "abilityRowCount": { "type": "integer", "minimum": 1 },
+    "abilities": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["spellId", "name", "responseTags", "contexts"],
+        "properties": {
+          "spellId": { "type": "integer", "minimum": 1 },
+          "name": { "type": "string", "minLength": 1 },
+          "responseTags": {
+            "type": "array",
+            "minItems": 1,
+            "items": { "enum": ["interrupt", "dispel-magic", "cleanse-curse", "cleanse-disease", "cleanse-poison", "soothe"] },
+            "uniqueItems": true
+          },
+          "contexts": {
+            "type": "array",
+            "minItems": 1,
+            "items": {
+              "type": "object",
+              "required": ["dungeonId", "instanceMapId", "npcId", "npcName", "interruptible", "dispelType", "enrage"],
+              "properties": {
+                "dungeonId": { "type": "string", "minLength": 1 },
+                "instanceMapId": { "type": "integer", "minimum": 1 },
+                "npcId": { "type": "integer", "minimum": 1 },
+                "npcName": { "type": "string", "minLength": 1 },
+                "interruptible": { "type": "boolean" },
+                "dispelType": { "enum": ["poison", "disease", "curse", "magic", "none"] },
+                "enrage": { "type": "boolean" }
+              },
+              "additionalProperties": false
+            }
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "provenance": { "type": "array", "minItems": 1, "items": { "$ref": "provenance.schema.json" } }
+  },
+  "additionalProperties": false
+}

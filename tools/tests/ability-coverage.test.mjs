@@ -2,6 +2,7 @@ import assert from "node:assert/strict";
 import { readFile } from "node:fs/promises";
 import path from "node:path";
 import test from "node:test";
+import { compileAbilityIndex } from "../lib/ability-index.mjs";
 
 const root = path.resolve(import.meta.dirname, "..", "..");
 
@@ -30,4 +31,38 @@ test("keeps every flagged season ability human-readable and internally consisten
     }
   }
   assert.ok(abilityRows > 0);
+});
+
+test("keeps the checked-in season ability index reproducible and lossless", async () => {
+  const season = JSON.parse(await readFile(path.join(root, "data", "seasons", "midnight-season-2.json"), "utf8"));
+  const index = JSON.parse(await readFile(path.join(root, "data", "index.json"), "utf8"));
+  const wanted = new Set(season.dungeons.map((dungeon) => dungeon.id));
+  const entries = index.dungeons.filter((entry) => wanted.has(entry.id));
+  const dungeons = await Promise.all(entries.map((entry) => readFile(path.join(root, "data", entry.record), "utf8").then(JSON.parse)));
+  const abilityRecords = await Promise.all(entries.map((entry) => readFile(path.join(root, "data", entry.enemyAbilities), "utf8").then(JSON.parse)));
+  const generated = compileAbilityIndex({ season, dungeons, abilityRecords });
+  const checkedIn = JSON.parse(await readFile(path.join(root, "data", "abilities", "midnight-season-2.json"), "utf8"));
+  assert.deepEqual(checkedIn, generated);
+  assert.equal(checkedIn.abilityRowCount, 149);
+  assert.equal(checkedIn.abilities.length, 122);
+});
+
+test("rejects unnamed and conflicting ability evidence during index generation", async () => {
+  const season = JSON.parse(await readFile(path.join(root, "data", "seasons", "midnight-season-2.json"), "utf8"));
+  const index = JSON.parse(await readFile(path.join(root, "data", "index.json"), "utf8"));
+  const wanted = new Set(season.dungeons.map((dungeon) => dungeon.id));
+  const entries = index.dungeons.filter((entry) => wanted.has(entry.id));
+  const dungeons = await Promise.all(entries.map((entry) => readFile(path.join(root, "data", entry.record), "utf8").then(JSON.parse)));
+  const abilityRecords = await Promise.all(entries.map((entry) => readFile(path.join(root, "data", entry.enemyAbilities), "utf8").then(JSON.parse)));
+
+  const unnamed = structuredClone(abilityRecords);
+  unnamed[0].enemies[0].abilities[0].name = null;
+  assert.throws(() => compileAbilityIndex({ season, dungeons, abilityRecords: unnamed }), /unnamed spell/);
+
+  const conflicting = structuredClone(abilityRecords);
+  const occurrences = conflicting.flatMap((record) => record.enemies.flatMap((enemy) => enemy.abilities))
+    .filter((ability) => ability.spellId === 1307567);
+  assert.ok(occurrences.length > 1);
+  occurrences[1].name = "Conflicting Name";
+  assert.throws(() => compileAbilityIndex({ season, dungeons, abilityRecords: conflicting }), /conflicting names/);
 });
