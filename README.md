@@ -60,6 +60,14 @@ npm run compare:route -- --route <route.json> --observation <run-observation.jso
 
 The JSON report keeps exact pull-ID matches separate from order-based inference and exposes count drift, missing or extra pulls, deaths, durations, and boss checkpoints. See `docs/ROUTES.md` for its trust boundary.
 
+To sanitize local WHELP Collector SavedVariables without executing Lua:
+
+```text
+npm run import:savedvariables -- --input <WHELPCollector.lua> [--output <sanitized-bundle.json>]
+```
+
+The importer strips unknown fields, excludes active state, quarantines malformed runs, and hashes sanitized observations for duplicate detection. Raw SavedVariables stay private; see `docs/SAVEDVARIABLES_IMPORT.md`.
+
 To regenerate the seven season-wide dungeon packages described by the checked-in import manifest:
 
 ```bash

@@ -1,0 +1,75 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://whelp.dev/schemas/sanitized-observation-bundle.schema.json",
+  "title": "WHELP sanitized observation bundle",
+  "type": "object",
+  "required": ["$schema", "schemaVersion", "recordType", "bundleVersion", "bundleType", "source", "audit", "runs", "rejections", "duplicates"],
+  "properties": {
+    "$schema": { "const": "https://whelp.dev/schemas/sanitized-observation-bundle.schema.json" },
+    "schemaVersion": { "const": 1 },
+    "recordType": { "const": "sanitized-observation-bundle" },
+    "bundleVersion": { "const": 1 },
+    "bundleType": { "const": "sanitized-run-observations" },
+    "source": {
+      "type": "object",
+      "required": ["databaseSchemaVersion", "collectorVersion"],
+      "properties": {
+        "databaseSchemaVersion": { "const": 1 },
+        "collectorVersion": { "type": ["string", "null"] }
+      },
+      "additionalProperties": false
+    },
+    "audit": {
+      "type": "object",
+      "required": ["inputRunCount", "exportedRunCount", "rejectedRunCount", "duplicateRunCount", "strippedFieldCount", "activeRunExcluded"],
+      "properties": {
+        "inputRunCount": { "type": "integer", "minimum": 0 },
+        "exportedRunCount": { "type": "integer", "minimum": 0 },
+        "rejectedRunCount": { "type": "integer", "minimum": 0 },
+        "duplicateRunCount": { "type": "integer", "minimum": 0 },
+        "strippedFieldCount": { "type": "integer", "minimum": 0 },
+        "activeRunExcluded": { "type": "boolean" }
+      },
+      "additionalProperties": false
+    },
+    "runs": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["sourceIndex", "sha256", "observation"],
+        "properties": {
+          "sourceIndex": { "type": "integer", "minimum": 1 },
+          "sha256": { "type": "string", "pattern": "^[a-f0-9]{64}$" },
+          "observation": { "$ref": "run-observation.schema.json" }
+        },
+        "additionalProperties": false
+      }
+    },
+    "rejections": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["index", "code"],
+        "properties": {
+          "index": { "type": "integer", "minimum": 1 },
+          "code": { "type": "string" }
+        },
+        "additionalProperties": false
+      }
+    },
+    "duplicates": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["index", "duplicateOf", "sha256"],
+        "properties": {
+          "index": { "type": "integer", "minimum": 1 },
+          "duplicateOf": { "type": "integer", "minimum": 1 },
+          "sha256": { "type": "string", "pattern": "^[a-f0-9]{64}$" }
+        },
+        "additionalProperties": false
+      }
+    }
+  },
+  "additionalProperties": false
+}

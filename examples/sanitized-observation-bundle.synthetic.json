@@ -1,0 +1,55 @@
+{
+  "$schema": "../schemas/sanitized-observation-bundle.schema.json",
+  "schemaVersion": 1,
+  "recordType": "sanitized-observation-bundle",
+  "bundleVersion": 1,
+  "bundleType": "sanitized-run-observations",
+  "source": {
+    "databaseSchemaVersion": 1,
+    "collectorVersion": "0.2.0"
+  },
+  "audit": {
+    "inputRunCount": 2,
+    "exportedRunCount": 1,
+    "rejectedRunCount": 0,
+    "duplicateRunCount": 1,
+    "strippedFieldCount": 7,
+    "activeRunExcluded": true
+  },
+  "runs": [
+    {
+      "sourceIndex": 1,
+      "sha256": "d22fdcdec5bf44f97e2595a91d4041f5d195677a4570bbb4100fe90bcb155d84",
+      "observation": {
+        "$schema": "https://whelp.dev/schemas/run-observation.schema.json",
+        "schemaVersion": 1,
+        "recordType": "run-observation",
+        "collector": { "name": "WHELP Collector", "version": "0.2.0" },
+        "game": { "version": "12.1.0", "build": "69587", "interfaceVersion": 120100 },
+        "run": {
+          "challengeMapId": 999001,
+          "keystoneLevel": 10,
+          "affixIds": [9],
+          "startedAt": 1788300000,
+          "deathCount": 1,
+          "deathTimeLostMs": 15000,
+          "status": "completed",
+          "completedAt": 1788300060,
+          "durationMs": 60000
+        },
+        "encounters": [],
+        "player": { "classId": 7, "specId": 264, "role": "HEALER" },
+        "group": [],
+        "privacy": { "containsNames": false, "containsChat": false }
+      }
+    }
+  ],
+  "rejections": [],
+  "duplicates": [
+    {
+      "index": 2,
+      "duplicateOf": 1,
+      "sha256": "d22fdcdec5bf44f97e2595a91d4041f5d195677a4570bbb4100fe90bcb155d84"
+    }
+  ]
+}

@@ -16,3 +16,5 @@ An LLM connector should resolve the current build, retrieve a small relevant rec
 A knowledge compiler will eventually turn verified records into compact Lua tables under `addon/WHELPCollector/GeneratedKnowledge`. Generated files must identify their dataset revision and build range.
 
 Route plans and run observations meet through stable route and pull identifiers. The route remains curated knowledge; an observed pull is evidence of what happened. Importers may compare the two, but telemetry cannot mutate a route or promote it from draft without review. See `docs/ROUTES.md` for the route invariants and MDT import boundary.
+
+Raw SavedVariables cross from collection into ingestion through a non-executing literal parser and an explicit privacy allowlist. Sanitized bundles carry deterministic payload hashes for local duplicate detection, but no signature or hash can prove an edited local file is truthful. See `docs/SAVEDVARIABLES_IMPORT.md`.

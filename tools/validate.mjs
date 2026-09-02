@@ -1,6 +1,7 @@
 import { readdir, readFile, stat } from "node:fs/promises";
 import path from "node:path";
 import process from "node:process";
+import { hashSanitizedObservation } from "./lib/savedvariables-import.mjs";
 
 const root = path.resolve(import.meta.dirname, "..");
 const failures = [];
@@ -147,6 +148,37 @@ function validateRecord(file, value) {
       if (encounter.completedAt < encounter.startedAt) fail(file, `encounter ${encounter.encounterId} completes before it starts`);
       if (encounter.durationMs !== (encounter.completedAt - encounter.startedAt) * 1000) fail(file, `encounter ${encounter.encounterId} duration does not match timestamps`);
       if (completedAt !== null && completedAt !== undefined && encounter.completedAt > completedAt) fail(file, `encounter ${encounter.encounterId} completes after the run`);
+    }
+  } else if (value.recordType === "sanitized-observation-bundle") {
+    requireFields(file, value, ["bundleVersion", "bundleType", "source", "audit", "runs", "rejections", "duplicates"]);
+    if (value.bundleVersion !== 1 || value.bundleType !== "sanitized-run-observations") fail(file, "unsupported sanitized observation bundle");
+    const audit = value.audit ?? {};
+    const runs = value.runs ?? [];
+    const rejections = value.rejections ?? [];
+    const duplicates = value.duplicates ?? [];
+    if (audit.exportedRunCount !== runs.length) fail(file, "bundle exportedRunCount does not match runs");
+    if (audit.rejectedRunCount !== rejections.length) fail(file, "bundle rejectedRunCount does not match rejections");
+    if (audit.duplicateRunCount !== duplicates.length) fail(file, "bundle duplicateRunCount does not match duplicates");
+    if (audit.inputRunCount !== runs.length + rejections.length + duplicates.length) fail(file, "bundle audit counts do not partition the input");
+    const usedIndices = [];
+    const exportedByIndex = new Map();
+    for (const entry of runs) {
+      requireFields(file, entry, ["sourceIndex", "sha256", "observation"]);
+      usedIndices.push(entry.sourceIndex);
+      exportedByIndex.set(entry.sourceIndex, entry);
+      if (hashSanitizedObservation(entry.observation) !== entry.sha256) fail(file, `bundle run ${entry.sourceIndex} has an incorrect payload hash`);
+      validateRecord(file, entry.observation);
+    }
+    for (const rejection of rejections) usedIndices.push(rejection.index);
+    for (const duplicate of duplicates) {
+      usedIndices.push(duplicate.index);
+      const original = exportedByIndex.get(duplicate.duplicateOf);
+      if (!original || original.sha256 !== duplicate.sha256) fail(file, `bundle duplicate ${duplicate.index} does not resolve to its exported payload`);
+      if (duplicate.duplicateOf >= duplicate.index) fail(file, `bundle duplicate ${duplicate.index} must reference an earlier input`);
+    }
+    if (new Set(usedIndices).size !== usedIndices.length) fail(file, "bundle source indices must be unique");
+    for (let index = 1; index <= audit.inputRunCount; index += 1) {
+      if (!usedIndices.includes(index)) fail(file, `bundle does not account for input run ${index}`);
     }
   } else {
     fail(file, `unknown recordType ${value.recordType}`);

@@ -11,7 +11,7 @@
 ## Phase 2 — local evidence loop
 
 - Complete the WHELP Collector run summary.
-- Build a SavedVariables importer and sanitizer.
+- Build a SavedVariables importer and sanitizer. The private-file parser, allowlist, quarantine audit, and duplicate hashes are implemented; ingestion-service submission remains.
 - Import MDT routes without treating them as verified automatically.
 - Parse optional combat logs for deaths, casts, interrupts, dispels, and encounter timing.
 - Produce local comparison reports. The first route-to-run report is implemented; aggregation and combat-event comparisons remain.
