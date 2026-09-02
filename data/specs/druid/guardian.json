@@ -1,0 +1,23 @@
+{
+  "$schema": "../../../schemas/spec-capabilities.schema.json",
+  "schemaVersion": 1,
+  "recordType": "spec-capabilities",
+  "id": "druid/guardian/capabilities",
+  "status": "corroborated",
+  "validity": { "fromBuild": "12.1.0.69587", "untilBuild": null, "seasonId": null, "seasonSlug": "midnight-season-2" },
+  "spec": { "classId": 11, "className": "Druid", "specId": 104, "specName": "Guardian", "slug": "guardian-druid" },
+  "tools": [
+    { "id": "skull-bash", "name": "Skull Bash", "spellId": 106839, "actions": ["interrupt"], "availability": "talent", "scope": "enemy", "limitations": ["Requires Cat Form or Bear Form", "Thirteen-yard range", "Fifteen-second cooldown"] },
+    { "id": "remove-corruption", "name": "Remove Corruption", "spellId": 2782, "actions": ["cleanse-curse", "cleanse-poison"], "availability": "talent", "scope": "friendly-single", "limitations": ["Does not remove harmful Magic effects", "Eight-second cooldown"] },
+    { "id": "soothe", "name": "Soothe", "spellId": 2908, "actions": ["soothe"], "availability": "talent", "scope": "enemy", "limitations": ["Enrage effects only", "Ten-second cooldown"] },
+    { "id": "incapacitating-roar", "name": "Incapacitating Roar", "spellId": 99, "actions": ["crowd-control"], "availability": "talent", "scope": "area-enemy", "limitations": ["Choice node with Mighty Bash", "Only affects susceptible enemies"] },
+    { "id": "rebirth", "name": "Rebirth", "spellId": 20484, "actions": ["battle-resurrection"], "availability": "baseline", "scope": "friendly-single", "limitations": ["Requires a dead ally", "Uses the shared combat-resurrection limit"] },
+    { "id": "mark-of-the-wild", "name": "Mark of the Wild", "spellId": 1126, "actions": ["group-buff"], "availability": "baseline", "scope": "friendly-area", "limitations": ["Does not stack with another Druid's Mark of the Wild"] },
+    { "id": "barkskin", "name": "Barkskin", "spellId": 22812, "actions": ["defensive"], "availability": "baseline", "scope": "self", "limitations": ["Personal mitigation only"] }
+  ],
+  "provenance": [
+    { "kind": "external-reference", "description": "Current Guardian Druid ability guide identifies Skull Bash, Soothe, Rebirth, Mark of the Wild, and bear-form utility.", "url": "https://www.wowhead.com/guide/classes/druid/guardian/abilities-talents-pve-tank", "retrievedAt": "2026-09-02T19:30:00+02:00" },
+    { "kind": "external-reference", "description": "Current Guardian Mythic+ guide confirms dungeon use of Remove Corruption and Soothe.", "url": "https://www.wowhead.com/guide/classes/druid/guardian/mythic-plus-dungeon-tips", "retrievedAt": "2026-09-02T19:30:00+02:00" },
+    { "kind": "external-reference", "description": "Current Soothe record confirms ranged Enrage removal and its cooldown.", "url": "https://www.wowhead.com/spell=2908/soothe", "retrievedAt": "2026-09-02T19:30:00+02:00" }
+  ]
+}

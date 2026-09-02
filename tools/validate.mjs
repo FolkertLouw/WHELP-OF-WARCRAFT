@@ -93,7 +93,7 @@ function validateRecord(file, value) {
     const spellIds = (value.tools ?? []).flatMap((tool) => [tool.spellId, ...(tool.alternateSpellIds ?? [])]);
     if (new Set(toolIds).size !== toolIds.length) fail(file, "spec capability tool IDs must be unique");
     if (new Set(spellIds).size !== spellIds.length) fail(file, "spec capability spell IDs must be unique");
-    const allowedCapabilityActions = new Set(["interrupt", "purge", "cleanse-magic", "cleanse-curse", "cleanse-disease", "cleanse-poison", "soothe", "defensive", "crowd-control", "external-defensive", "battle-resurrection", "party-damage-reduction", "bloodlust"]);
+    const allowedCapabilityActions = new Set(["interrupt", "purge", "cleanse-magic", "cleanse-curse", "cleanse-disease", "cleanse-poison", "soothe", "defensive", "crowd-control", "external-defensive", "battle-resurrection", "party-damage-reduction", "bloodlust", "group-buff"]);
     const allowedAvailability = new Set(["baseline", "specialization", "talent"]);
     const allowedScopes = new Set(["enemy", "friendly-single", "friendly-periodic-area", "friendly-area", "self", "area-enemy"]);
     for (const tool of value.tools ?? []) {

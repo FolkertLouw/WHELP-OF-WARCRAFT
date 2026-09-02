@@ -80,7 +80,11 @@
     { "id": "hunter/survival/capabilities", "record": "specs/hunter/survival.json", "status": "corroborated" },
     { "id": "paladin/holy/capabilities", "record": "specs/paladin/holy.json", "status": "corroborated" },
     { "id": "paladin/protection/capabilities", "record": "specs/paladin/protection.json", "status": "corroborated" },
-    { "id": "paladin/retribution/capabilities", "record": "specs/paladin/retribution.json", "status": "corroborated" }
+    { "id": "paladin/retribution/capabilities", "record": "specs/paladin/retribution.json", "status": "corroborated" },
+    { "id": "druid/balance/capabilities", "record": "specs/druid/balance.json", "status": "corroborated" },
+    { "id": "druid/feral/capabilities", "record": "specs/druid/feral.json", "status": "corroborated" },
+    { "id": "druid/guardian/capabilities", "record": "specs/druid/guardian.json", "status": "corroborated" },
+    { "id": "druid/restoration/capabilities", "record": "specs/druid/restoration.json", "status": "corroborated" }
   ],
   "builds": [
     {

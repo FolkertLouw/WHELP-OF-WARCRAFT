@@ -39,6 +39,16 @@ test("distinguishes unconditional and configuration-dependent Bloodlust access",
   assert.equal(marksmanship.tool.availabilityByAction.bloodlust, "specialization");
 });
 
+test("queries shared Druid group buffs and combat resurrection", () => {
+  const specs = ["balance-druid", "feral-druid", "guardian-druid", "restoration-druid"];
+  const buffs = queryCapabilities(capabilities, { specs, action: "group-buff" });
+  const resurrections = queryCapabilities(capabilities, { specs, action: "battle-resurrection" });
+  assert.equal(buffs.resultCount, 4);
+  assert.equal(resurrections.resultCount, 4);
+  assert.ok(buffs.results.every((entry) => entry.tool.name === "Mark of the Wild"));
+  assert.ok(resurrections.results.every((entry) => entry.tool.name === "Rebirth"));
+});
+
 test("rejects unknown specialization slugs", () => {
   assert.throws(() => queryCapabilities(capabilities, { specs: ["not-a-real-spec"] }), /unknown spec/);
 });

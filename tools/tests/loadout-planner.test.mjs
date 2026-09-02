@@ -15,6 +15,8 @@ const survival = capabilities.find((record) => record.spec.slug === "survival-hu
 const holyPaladin = capabilities.find((record) => record.spec.slug === "holy-paladin");
 const protectionPaladin = capabilities.find((record) => record.spec.slug === "protection-paladin");
 const retributionPaladin = capabilities.find((record) => record.spec.slug === "retribution-paladin");
+const balanceDruid = capabilities.find((record) => record.spec.slug === "balance-druid");
+const restorationDruid = capabilities.find((record) => record.spec.slug === "restoration-druid");
 
 test("builds a deduplicated spec loadout with mechanic references", () => {
   const loadout = buildSpecLoadout(responses, restoration, "ruby-life-pools");
@@ -72,4 +74,18 @@ test("uses Cleanse Toxins for disease recovery without claiming Magic removal", 
   const cleanse = loadout.recommendedTools.find((tool) => tool.name === "Cleanse Toxins");
   assert.ok(cleanse.mechanicReferences.some((entry) => entry.name === "Wretched Discharge" && entry.action === "cleanse-disease"));
   assert.equal(cleanse.availability, "talent");
+});
+
+test("preserves the Midnight Restoration Druid interrupt gap", () => {
+  const balance = buildSpecLoadout(responses, balanceDruid, "ruby-life-pools");
+  const restorationDruidLoadout = buildSpecLoadout(responses, restorationDruid, "ruby-life-pools");
+  assert.ok(balance.recommendedTools.some((tool) => tool.name === "Solar Beam"));
+  assert.ok(restorationDruidLoadout.unsupportedActions.some((entry) => entry.name === "Blaze Volley" && entry.action === "interrupt"));
+  assert.ok(restorationDruidLoadout.recommendedTools.some((tool) => tool.name === "Nature's Cure"));
+});
+
+test("uses Druid Soothe for curated Enrage responses", () => {
+  const loadout = buildSpecLoadout(responses, restorationDruid, "voidscar-arena");
+  assert.ok(loadout.recommendedTools.some((tool) => tool.name === "Soothe"));
+  assert.ok(!loadout.unsupportedActions.some((entry) => entry.action === "soothe"));
 });

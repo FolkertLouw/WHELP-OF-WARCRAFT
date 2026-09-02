@@ -20,6 +20,6 @@ For questions about what a particular specialization can personally handle, use 
 
 For dungeon preparation, use `npm run query:loadout --` to obtain deduplicated tool recommendations and `npm run query:party-gaps --` to find utility the listed specializations do not cover. Party-gap output intentionally excludes universal movement and personal defensives from group utility.
 
-For party-composition questions such as Bloodlust, combat resurrection, external defenses, or party-wide mitigation, use `npm run query:capabilities --`. Preserve `availabilityByAction`, `requirements`, and `alternateSpellIds`; one spell can provide baseline behavior while a talent adds another response type, and some utility depends on faction or character configuration.
+For party-composition questions such as Bloodlust, combat resurrection, external defenses, persistent group buffs, or party-wide mitigation, use `npm run query:capabilities --`. Preserve `availabilityByAction`, `requirements`, and `alternateSpellIds`; one spell can provide baseline behavior while a talent adds another response type, and some utility depends on faction or character configuration.
 
 The repository validator is run with `npm test`.

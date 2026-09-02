@@ -1,0 +1,23 @@
+{
+  "$schema": "../../../schemas/spec-capabilities.schema.json",
+  "schemaVersion": 1,
+  "recordType": "spec-capabilities",
+  "id": "druid/balance/capabilities",
+  "status": "corroborated",
+  "validity": { "fromBuild": "12.1.0.69587", "untilBuild": null, "seasonId": null, "seasonSlug": "midnight-season-2" },
+  "spec": { "classId": 11, "className": "Druid", "specId": 102, "specName": "Balance", "slug": "balance-druid" },
+  "tools": [
+    { "id": "solar-beam", "name": "Solar Beam", "spellId": 78675, "actions": ["interrupt"], "availability": "talent", "scope": "area-enemy", "limitations": ["One-minute cooldown", "Initial target is interrupted; other enemies must remain inside the silence area"] },
+    { "id": "remove-corruption", "name": "Remove Corruption", "spellId": 2782, "actions": ["cleanse-curse", "cleanse-poison"], "availability": "talent", "scope": "friendly-single", "limitations": ["Does not remove harmful Magic effects", "Eight-second cooldown"] },
+    { "id": "soothe", "name": "Soothe", "spellId": 2908, "actions": ["soothe"], "availability": "talent", "scope": "enemy", "limitations": ["Enrage effects only", "Ten-second cooldown"] },
+    { "id": "incapacitating-roar", "name": "Incapacitating Roar", "spellId": 99, "actions": ["crowd-control"], "availability": "talent", "scope": "area-enemy", "limitations": ["Shifts the Druid into Bear Form", "Only affects susceptible enemies"] },
+    { "id": "rebirth", "name": "Rebirth", "spellId": 20484, "actions": ["battle-resurrection"], "availability": "baseline", "scope": "friendly-single", "limitations": ["Requires a dead ally", "Uses the shared combat-resurrection limit"] },
+    { "id": "mark-of-the-wild", "name": "Mark of the Wild", "spellId": 1126, "actions": ["group-buff"], "availability": "baseline", "scope": "friendly-area", "limitations": ["Does not stack with another Druid's Mark of the Wild"] },
+    { "id": "barkskin", "name": "Barkskin", "spellId": 22812, "actions": ["defensive"], "availability": "baseline", "scope": "self", "limitations": ["Personal mitigation only"] }
+  ],
+  "provenance": [
+    { "kind": "external-reference", "description": "Current Balance Druid ability guide identifies Solar Beam, Remove Corruption, Soothe, and class utility.", "url": "https://www.wowhead.com/guide/classes/druid/balance/abilities-talents-pve-dps", "retrievedAt": "2026-09-02T19:30:00+02:00" },
+    { "kind": "external-reference", "description": "Current Solar Beam record confirms its initial interrupt, persistent area silence, range, and cooldown.", "url": "https://www.wowhead.com/spell=78675/solar-beam", "retrievedAt": "2026-09-02T19:30:00+02:00" },
+    { "kind": "external-reference", "description": "Current Rebirth record confirms in-combat resurrection and the enforced encounter limit.", "url": "https://www.wowhead.com/spell=20484/rebirth", "retrievedAt": "2026-09-02T19:30:00+02:00" }
+  ]
+}
