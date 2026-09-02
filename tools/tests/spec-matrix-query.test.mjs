@@ -69,3 +69,11 @@ test("joins Marksmanship self-cleanse without claiming group dispel coverage", (
   assert.match(cleanse.limitations.join(" "), /Self-only/);
   assert.ok(report.dungeons[0].mechanicSpellIds.includes(1263971));
 });
+
+test("joins Survival's Murder Row-only stealth revelation", () => {
+  const report = querySpecMatrix(matrices, capabilities, { spec: "survival-hunter", dungeon: "murder-row", rating: "always" });
+  const reveal = report.dungeons[0].utilities.find((entry) => entry.axisId === "reveal-stealth");
+  assert.equal(reveal.tools[0].id, "flare");
+  assert.deepEqual(reveal.tools[0].actions, ["reveal-stealth"]);
+  assert.ok(report.dungeons[0].mechanicSpellIds.includes(1216970));
+});
