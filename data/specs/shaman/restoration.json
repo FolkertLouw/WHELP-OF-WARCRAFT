@@ -19,6 +19,6 @@
   "provenance": [
     { "kind": "external-reference", "description": "Current Restoration Shaman dungeon utility recommendations and tool selection.", "url": "https://www.wowhead.com/guide/classes/shaman/restoration/mythic-plus-dungeon-tips", "retrievedAt": "2026-09-02T15:40:00+02:00" },
     { "kind": "external-reference", "description": "Current Purify Spirit record confirms friendly Curse and Magic removal.", "url": "https://www.wowhead.com/spell=254420/purify-spirit", "retrievedAt": "2026-09-02T15:40:00+02:00" },
-    { "kind": "external-reference", "description": "Current Bloodlust and Heroism records confirm the faction variants and shared raid-wide haste lockout.", "url": "https://www.wowhead.com/spell=2825/bloodlust", "retrievedAt": "2026-09-02T18:50:00+02:00" }
+    { "kind": "external-reference", "description": "Current Bloodlust and Heroism records confirm the faction variants and shared raid-wide haste lockout.", "url": "https://www.wowhead.com/spell=2825/bloodlust", "retrievedAt": "2026-09-02T16:30:00+02:00" }
   ]
 }

@@ -17,8 +17,8 @@
     { "id": "desperate-prayer", "name": "Desperate Prayer", "spellId": 19236, "actions": ["defensive"], "availability": "baseline", "scope": "self", "limitations": ["Personal defensive only"] }
   ],
   "provenance": [
-    { "kind": "external-reference", "description": "Current Midnight Holy guide identifies Purify, Improved Purify, Dispel Magic, Mass Dispel, Power Infusion, Fortitude, Psychic Scream, and Guardian Spirit.", "url": "https://www.wowhead.com/guide/classes/priest/holy/abilities-talents-pve-healer", "retrievedAt": "2026-09-02T21:15:00+02:00" },
-    { "kind": "external-reference", "description": "Current Purify record confirms healer Magic removal and Disease removal from Improved Purify.", "url": "https://www.wowhead.com/spell=527/purify", "retrievedAt": "2026-09-02T21:15:00+02:00" },
-    { "kind": "external-reference", "description": "Current Guardian Spirit record confirms its friendly target, healing increase, death-prevention behavior, and cooldown.", "url": "https://www.wowhead.com/spell=47788/guardian-spirit", "retrievedAt": "2026-09-02T21:15:00+02:00" }
+    { "kind": "external-reference", "description": "Current Midnight Holy guide identifies Purify, Improved Purify, Dispel Magic, Mass Dispel, Power Infusion, Fortitude, Psychic Scream, and Guardian Spirit.", "url": "https://www.wowhead.com/guide/classes/priest/holy/abilities-talents-pve-healer", "retrievedAt": "2026-09-02T16:30:00+02:00" },
+    { "kind": "external-reference", "description": "Current Purify record confirms healer Magic removal and Disease removal from Improved Purify.", "url": "https://www.wowhead.com/spell=527/purify", "retrievedAt": "2026-09-02T16:30:00+02:00" },
+    { "kind": "external-reference", "description": "Current Guardian Spirit record confirms its friendly target, healing increase, death-prevention behavior, and cooldown.", "url": "https://www.wowhead.com/spell=47788/guardian-spirit", "retrievedAt": "2026-09-02T16:30:00+02:00" }
   ]
 }

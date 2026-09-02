@@ -16,8 +16,8 @@
     { "id": "ice-barrier", "name": "Ice Barrier", "spellId": 11426, "actions": ["defensive"], "availability": "talent", "scope": "self", "limitations": ["Personal absorb only"] }
   ],
   "provenance": [
-    { "kind": "external-reference", "description": "Current Midnight Frost guide identifies Time Warp, Counterspell, Arcane Intellect, Spellsteal, Remove Curse, Polymorph, and Ice Barrier.", "url": "https://www.wowhead.com/guide/classes/mage/frost/abilities-talents-pve-dps", "retrievedAt": "2026-09-02T22:00:00+02:00" },
-    { "kind": "external-reference", "description": "Current Counterspell record confirms its forty-yard interrupt, lockout, and base cooldown.", "url": "https://www.wowhead.com/spell=2139/counterspell", "retrievedAt": "2026-09-02T22:00:00+02:00" },
-    { "kind": "external-reference", "description": "Current Remove Curse record confirms its friendly Curse removal, range, and cooldown.", "url": "https://www.wowhead.com/spell=475/remove-curse", "retrievedAt": "2026-09-02T22:00:00+02:00" }
+    { "kind": "external-reference", "description": "Current Midnight Frost guide identifies Time Warp, Counterspell, Arcane Intellect, Spellsteal, Remove Curse, Polymorph, and Ice Barrier.", "url": "https://www.wowhead.com/guide/classes/mage/frost/abilities-talents-pve-dps", "retrievedAt": "2026-09-02T16:30:00+02:00" },
+    { "kind": "external-reference", "description": "Current Counterspell record confirms its forty-yard interrupt, lockout, and base cooldown.", "url": "https://www.wowhead.com/spell=2139/counterspell", "retrievedAt": "2026-09-02T16:30:00+02:00" },
+    { "kind": "external-reference", "description": "Current Remove Curse record confirms its friendly Curse removal, range, and cooldown.", "url": "https://www.wowhead.com/spell=475/remove-curse", "retrievedAt": "2026-09-02T16:30:00+02:00" }
   ]
 }

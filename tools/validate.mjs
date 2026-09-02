@@ -179,6 +179,19 @@ function validateRecord(file, value) {
         fail(file, `${entry.dungeonId} has invalid normalizationStatus`);
       }
     }
+  } else if (value.recordType === "source-freshness-policy") {
+    requireFields(file, value, ["id", "status", "evaluatedRoots", "agingAtFraction", "maxAgeDaysByKind", "timestampRequiredKinds", "timestampFallbackFields", "provenance"]);
+    if (!(value.agingAtFraction > 0 && value.agingAtFraction < 1)) fail(file, "agingAtFraction must be between zero and one");
+    if (!(value.evaluatedRoots ?? []).length || new Set(value.evaluatedRoots).size !== value.evaluatedRoots.length) fail(file, "evaluatedRoots must be non-empty and unique");
+    const sourceKinds = new Set(["official-api", "official-publisher", "game-data", "local-client", "addon-observation", "combat-log", "curated", "external-reference"]);
+    for (const [kind, days] of Object.entries(value.maxAgeDaysByKind ?? {})) {
+      if (!sourceKinds.has(kind)) fail(file, `freshness policy has unknown source kind ${kind}`);
+      if (!Number.isInteger(days) || days < 1) fail(file, `freshness policy age for ${kind} must be a positive integer`);
+    }
+    for (const kind of value.timestampRequiredKinds ?? []) {
+      if (!sourceKinds.has(kind)) fail(file, `freshness policy requires timestamp for unknown source kind ${kind}`);
+      if (value.maxAgeDaysByKind?.[kind] === undefined) fail(file, `timestamp-required source kind ${kind} has no maximum age`);
+    }
   } else if (value.recordType === "run-observation") {
     requireFields(file, value, ["collector", "game", "run", "player", "group", "privacy"]);
     if (value.privacy?.containsNames !== false || value.privacy?.containsChat !== false) {
@@ -279,6 +292,17 @@ function validateRecord(file, value) {
     }
   } else {
     fail(file, `unknown recordType ${value.recordType}`);
+  }
+
+  const allowedProvenanceKinds = new Set(["official-api", "official-publisher", "game-data", "local-client", "addon-observation", "combat-log", "curated", "external-reference"]);
+  for (const source of value.provenance ?? []) {
+    requireFields(file, source, ["kind", "description"]);
+    if (!allowedProvenanceKinds.has(source.kind)) fail(file, `unknown provenance kind ${source.kind}`);
+    if (source.retrievedAt) {
+      const retrievedAt = Date.parse(source.retrievedAt);
+      if (Number.isNaN(retrievedAt)) fail(file, `invalid provenance retrievedAt ${source.retrievedAt}`);
+      else if (retrievedAt > Date.now() + 300_000) fail(file, `provenance retrievedAt is future-dated: ${source.retrievedAt}`);
+    }
   }
 
   if (value.id) {
@@ -561,6 +585,25 @@ if (index.specCapabilityCoverage) {
     }
   } catch (error) {
     fail(indexPath, `cannot read spec capability coverage ${index.specCapabilityCoverage.record}: ${error.message}`);
+  }
+}
+if (index.sourceFreshnessPolicy) {
+  const policyPath = path.join(root, "data", index.sourceFreshnessPolicy.record);
+  try {
+    const policy = JSON.parse(await readFile(policyPath, "utf8"));
+    if (policy.id !== index.sourceFreshnessPolicy.id) fail(indexPath, `${index.sourceFreshnessPolicy.record} has id ${policy.id}, expected ${index.sourceFreshnessPolicy.id}`);
+    if (policy.status !== index.sourceFreshnessPolicy.status) fail(indexPath, `${index.sourceFreshnessPolicy.record} has status ${policy.status}, expected ${index.sourceFreshnessPolicy.status}`);
+    const required = new Set(policy.timestampRequiredKinds ?? []);
+    for (const { file, value } of records) {
+      if (!policy.evaluatedRoots.some((entry) => file.startsWith(path.join(root, entry) + path.sep))) continue;
+      for (const source of value.provenance ?? []) {
+        if (!required.has(source.kind) || source.retrievedAt) continue;
+        const hasFallback = (policy.timestampFallbackFields ?? []).some((field) => value[field]);
+        if (!hasFallback) fail(file, `provenance kind ${source.kind} requires retrievedAt or a declared record timestamp fallback`);
+      }
+    }
+  } catch (error) {
+    fail(indexPath, `cannot read source freshness policy ${index.sourceFreshnessPolicy.record}: ${error.message}`);
   }
 }
 const indexedDungeons = new Map((index.dungeons ?? []).map((entry) => [entry.id, entry]));

@@ -17,8 +17,8 @@
     { "id": "dispersion", "name": "Dispersion", "spellId": 47585, "actions": ["defensive"], "availability": "specialization", "scope": "self", "limitations": ["Personal mitigation only", "Cannot attack or cast during its six-second duration", "Two-minute cooldown"] }
   ],
   "provenance": [
-    { "kind": "external-reference", "description": "Current Midnight Shadow guide identifies Silence, Purify Disease, Dispel Magic, Mass Dispel, Power Infusion, Fortitude, Psychic Scream, and Dispersion.", "url": "https://www.wowhead.com/guide/classes/priest/shadow/abilities-talents-pve-dps", "retrievedAt": "2026-09-02T21:15:00+02:00" },
-    { "kind": "external-reference", "description": "Current Silence record confirms its ranged interrupt behavior and thirty-second cooldown.", "url": "https://www.wowhead.com/spell=15487/silence", "retrievedAt": "2026-09-02T21:15:00+02:00" },
-    { "kind": "external-reference", "description": "Current Purify Disease record confirms Shadow's Disease-only friendly dispel and cooldown.", "url": "https://www.wowhead.com/spell=213634/purify-disease", "retrievedAt": "2026-09-02T21:15:00+02:00" }
+    { "kind": "external-reference", "description": "Current Midnight Shadow guide identifies Silence, Purify Disease, Dispel Magic, Mass Dispel, Power Infusion, Fortitude, Psychic Scream, and Dispersion.", "url": "https://www.wowhead.com/guide/classes/priest/shadow/abilities-talents-pve-dps", "retrievedAt": "2026-09-02T16:30:00+02:00" },
+    { "kind": "external-reference", "description": "Current Silence record confirms its ranged interrupt behavior and thirty-second cooldown.", "url": "https://www.wowhead.com/spell=15487/silence", "retrievedAt": "2026-09-02T16:30:00+02:00" },
+    { "kind": "external-reference", "description": "Current Purify Disease record confirms Shadow's Disease-only friendly dispel and cooldown.", "url": "https://www.wowhead.com/spell=213634/purify-disease", "retrievedAt": "2026-09-02T16:30:00+02:00" }
   ]
 }

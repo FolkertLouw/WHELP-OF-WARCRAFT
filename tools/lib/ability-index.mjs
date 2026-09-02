@@ -67,10 +67,16 @@ export function compileAbilityIndex({ season, dungeons, abilityRecords }) {
     seasonSlug: season.id,
     abilityRowCount,
     abilities: normalized,
-    provenance: season.dungeons.map((entry) => ({
-      kind: "curated",
-      description: `Lossless generated index of flagged ability facts from ${entry.id}.`,
-      recordId: `${entry.id}/enemy-abilities`,
-    })),
+    provenance: season.dungeons.map((entry) => {
+      const dungeon = dungeonsById.get(entry.id);
+      const source = abilitiesByInstance.get(dungeon.instanceMapId);
+      const retrievedAt = (source.provenance ?? []).map((item) => item.retrievedAt).filter(Boolean).sort().at(-1);
+      return {
+        kind: "curated",
+        description: `Lossless generated index of flagged ability facts from ${entry.id}.`,
+        recordId: `${entry.id}/enemy-abilities`,
+        ...(retrievedAt ? { retrievedAt } : {}),
+      };
+    }),
   };
 }

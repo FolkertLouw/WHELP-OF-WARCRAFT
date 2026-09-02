@@ -15,9 +15,9 @@
     { "id": "survival-of-the-fittest", "name": "Survival of the Fittest", "spellId": 281195, "actions": ["defensive"], "availability": "talent", "scope": "self", "limitations": ["Personal mitigation only", "Brief duration"] }
   ],
   "provenance": [
-    { "kind": "external-reference", "description": "Current Survival Hunter ability guide identifies the specialization's melee play style and utility kit.", "url": "https://www.wowhead.com/guide/classes/hunter/survival/abilities-talents-pve-dps", "retrievedAt": "2026-09-02T17:35:00+02:00" },
-    { "kind": "external-reference", "description": "Current Survival Hunter Season 2 guide confirms a melee interrupt plus Tranquilizing Shot for enemy dispel and Enrage removal.", "url": "https://www.wowhead.com/guide/classes/hunter/survival/midnight-season-2", "retrievedAt": "2026-09-02T17:35:00+02:00" },
-    { "kind": "external-reference", "description": "Current Muzzle spell record confirms its melee interrupt, school lockout, and cooldown.", "url": "https://www.wowhead.com/spell=187707/muzzle", "retrievedAt": "2026-09-02T17:35:00+02:00" },
-    { "kind": "external-reference", "description": "Current Primal Rage record confirms the Hunter Bloodlust equivalent and its Ferocity-pet access condition.", "url": "https://www.wowhead.com/spell=264667/primal-rage", "retrievedAt": "2026-09-02T18:50:00+02:00" }
+    { "kind": "external-reference", "description": "Current Survival Hunter ability guide identifies the specialization's melee play style and utility kit.", "url": "https://www.wowhead.com/guide/classes/hunter/survival/abilities-talents-pve-dps", "retrievedAt": "2026-09-02T16:30:00+02:00" },
+    { "kind": "external-reference", "description": "Current Survival Hunter Season 2 guide confirms a melee interrupt plus Tranquilizing Shot for enemy dispel and Enrage removal.", "url": "https://www.wowhead.com/guide/classes/hunter/survival/midnight-season-2", "retrievedAt": "2026-09-02T16:30:00+02:00" },
+    { "kind": "external-reference", "description": "Current Muzzle spell record confirms its melee interrupt, school lockout, and cooldown.", "url": "https://www.wowhead.com/spell=187707/muzzle", "retrievedAt": "2026-09-02T16:30:00+02:00" },
+    { "kind": "external-reference", "description": "Current Primal Rage record confirms the Hunter Bloodlust equivalent and its Ferocity-pet access condition.", "url": "https://www.wowhead.com/spell=264667/primal-rage", "retrievedAt": "2026-09-02T16:30:00+02:00" }
   ]
 }

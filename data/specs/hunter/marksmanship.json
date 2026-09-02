@@ -15,9 +15,9 @@
     { "id": "survival-of-the-fittest", "name": "Survival of the Fittest", "spellId": 281195, "actions": ["defensive"], "availability": "talent", "scope": "self", "limitations": ["Personal mitigation only", "Brief duration"] }
   ],
   "provenance": [
-    { "kind": "external-reference", "description": "Current Marksmanship Hunter ability guide identifies the specialization's interrupt, enemy Magic and Enrage removal, control, and defensive tools.", "url": "https://www.wowhead.com/guide/classes/hunter/marksmanship/abilities-talents-pve-dps", "retrievedAt": "2026-09-02T17:35:00+02:00" },
-    { "kind": "external-reference", "description": "Current Counter Shot spell record confirms its interrupt, range, lockout, and cooldown.", "url": "https://www.wowhead.com/spell=147362/counter-shot", "retrievedAt": "2026-09-02T17:35:00+02:00" },
-    { "kind": "external-reference", "description": "Current Intimidation spell record confirms the single-target stun and cooldown; the Marksmanship guide documents its Spotting Eagle implementation.", "url": "https://www.wowhead.com/spell=19577/intimidation", "retrievedAt": "2026-09-02T17:35:00+02:00" },
-    { "kind": "external-reference", "description": "Current Harrier's Cry record confirms Marksmanship's innate Bloodlust equivalent and shared Sated lockout.", "url": "https://www.wowhead.com/spell=466904/harriers-cry", "retrievedAt": "2026-09-02T18:50:00+02:00" }
+    { "kind": "external-reference", "description": "Current Marksmanship Hunter ability guide identifies the specialization's interrupt, enemy Magic and Enrage removal, control, and defensive tools.", "url": "https://www.wowhead.com/guide/classes/hunter/marksmanship/abilities-talents-pve-dps", "retrievedAt": "2026-09-02T16:30:00+02:00" },
+    { "kind": "external-reference", "description": "Current Counter Shot spell record confirms its interrupt, range, lockout, and cooldown.", "url": "https://www.wowhead.com/spell=147362/counter-shot", "retrievedAt": "2026-09-02T16:30:00+02:00" },
+    { "kind": "external-reference", "description": "Current Intimidation spell record confirms the single-target stun and cooldown; the Marksmanship guide documents its Spotting Eagle implementation.", "url": "https://www.wowhead.com/spell=19577/intimidation", "retrievedAt": "2026-09-02T16:30:00+02:00" },
+    { "kind": "external-reference", "description": "Current Harrier's Cry record confirms Marksmanship's innate Bloodlust equivalent and shared Sated lockout.", "url": "https://www.wowhead.com/spell=466904/harriers-cry", "retrievedAt": "2026-09-02T16:30:00+02:00" }
   ]
 }

@@ -16,8 +16,8 @@
     { "id": "prismatic-barrier", "name": "Prismatic Barrier", "spellId": 235450, "actions": ["defensive"], "availability": "talent", "scope": "self", "limitations": ["Personal absorb and Magic mitigation only"] }
   ],
   "provenance": [
-    { "kind": "external-reference", "description": "Current Midnight Arcane guide identifies Time Warp, Counterspell, Arcane Intellect, Spellsteal, Remove Curse, Polymorph, and Prismatic Barrier.", "url": "https://www.wowhead.com/guide/classes/mage/arcane/abilities-talents-pve-dps", "retrievedAt": "2026-09-02T22:00:00+02:00" },
-    { "kind": "external-reference", "description": "Current Time Warp record confirms Mage Bloodlust-equivalent behavior, duration, shared lockout, and spell identifier.", "url": "https://www.wowhead.com/spell=80353/time-warp", "retrievedAt": "2026-09-02T22:00:00+02:00" },
-    { "kind": "external-reference", "description": "Current Arcane Intellect record confirms the party-wide three-percent Intellect effect.", "url": "https://www.wowhead.com/spell=1459/arcane-intellect", "retrievedAt": "2026-09-02T22:00:00+02:00" }
+    { "kind": "external-reference", "description": "Current Midnight Arcane guide identifies Time Warp, Counterspell, Arcane Intellect, Spellsteal, Remove Curse, Polymorph, and Prismatic Barrier.", "url": "https://www.wowhead.com/guide/classes/mage/arcane/abilities-talents-pve-dps", "retrievedAt": "2026-09-02T16:30:00+02:00" },
+    { "kind": "external-reference", "description": "Current Time Warp record confirms Mage Bloodlust-equivalent behavior, duration, shared lockout, and spell identifier.", "url": "https://www.wowhead.com/spell=80353/time-warp", "retrievedAt": "2026-09-02T16:30:00+02:00" },
+    { "kind": "external-reference", "description": "Current Arcane Intellect record confirms the party-wide three-percent Intellect effect.", "url": "https://www.wowhead.com/spell=1459/arcane-intellect", "retrievedAt": "2026-09-02T16:30:00+02:00" }
   ]
 }

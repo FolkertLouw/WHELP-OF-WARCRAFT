@@ -18,8 +18,8 @@
     { "id": "divine-shield", "name": "Divine Shield", "spellId": 642, "actions": ["defensive"], "availability": "baseline", "scope": "self", "limitations": ["Personal immunity only", "Causes Forbearance", "May require cancellation or coordination while actively tanking"] }
   ],
   "provenance": [
-    { "kind": "external-reference", "description": "Current Protection Paladin ability guide identifies Rebuke, Cleanse Toxins, control, auras, and blessing utility.", "url": "https://www.wowhead.com/guide/classes/paladin/protection/abilities-talents-pve-tank", "retrievedAt": "2026-09-02T18:15:00+02:00" },
-    { "kind": "external-reference", "description": "Current Cleanse Toxins record confirms friendly Poison and Disease removal and its cooldown.", "url": "https://www.wowhead.com/spell=426184/cleanse-toxins", "retrievedAt": "2026-09-02T18:15:00+02:00" },
-    { "kind": "external-reference", "description": "Current Blessing of Sacrifice record confirms the external damage reduction, transfer, range, and stop condition.", "url": "https://www.wowhead.com/spell=6940/blessing-of-sacrifice", "retrievedAt": "2026-09-02T18:15:00+02:00" }
+    { "kind": "external-reference", "description": "Current Protection Paladin ability guide identifies Rebuke, Cleanse Toxins, control, auras, and blessing utility.", "url": "https://www.wowhead.com/guide/classes/paladin/protection/abilities-talents-pve-tank", "retrievedAt": "2026-09-02T16:30:00+02:00" },
+    { "kind": "external-reference", "description": "Current Cleanse Toxins record confirms friendly Poison and Disease removal and its cooldown.", "url": "https://www.wowhead.com/spell=426184/cleanse-toxins", "retrievedAt": "2026-09-02T16:30:00+02:00" },
+    { "kind": "external-reference", "description": "Current Blessing of Sacrifice record confirms the external damage reduction, transfer, range, and stop condition.", "url": "https://www.wowhead.com/spell=6940/blessing-of-sacrifice", "retrievedAt": "2026-09-02T16:30:00+02:00" }
   ]
 }

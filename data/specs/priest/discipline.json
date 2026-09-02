@@ -18,8 +18,8 @@
     { "id": "desperate-prayer", "name": "Desperate Prayer", "spellId": 19236, "actions": ["defensive"], "availability": "baseline", "scope": "self", "limitations": ["Personal defensive only"] }
   ],
   "provenance": [
-    { "kind": "external-reference", "description": "Current Midnight Discipline guide identifies Purify, Improved Purify, Dispel Magic, Mass Dispel, Power Infusion, Fortitude, Psychic Scream, Pain Suppression, and Power Word: Barrier.", "url": "https://www.wowhead.com/guide/classes/priest/discipline/abilities-talents-pve-healer", "retrievedAt": "2026-09-02T21:15:00+02:00" },
-    { "kind": "external-reference", "description": "Current Mass Dispel record confirms its mixed friendly-and-enemy area behavior, target caps, cast time, and cooldown.", "url": "https://www.wowhead.com/spell=32375/mass-dispel", "retrievedAt": "2026-09-02T21:15:00+02:00" },
-    { "kind": "external-reference", "description": "Current Pain Suppression record confirms its target, mitigation, duration, and cast-while-stunned behavior.", "url": "https://www.wowhead.com/spell=33206/pain-suppression", "retrievedAt": "2026-09-02T21:15:00+02:00" }
+    { "kind": "external-reference", "description": "Current Midnight Discipline guide identifies Purify, Improved Purify, Dispel Magic, Mass Dispel, Power Infusion, Fortitude, Psychic Scream, Pain Suppression, and Power Word: Barrier.", "url": "https://www.wowhead.com/guide/classes/priest/discipline/abilities-talents-pve-healer", "retrievedAt": "2026-09-02T16:30:00+02:00" },
+    { "kind": "external-reference", "description": "Current Mass Dispel record confirms its mixed friendly-and-enemy area behavior, target caps, cast time, and cooldown.", "url": "https://www.wowhead.com/spell=32375/mass-dispel", "retrievedAt": "2026-09-02T16:30:00+02:00" },
+    { "kind": "external-reference", "description": "Current Pain Suppression record confirms its target, mitigation, duration, and cast-while-stunned behavior.", "url": "https://www.wowhead.com/spell=33206/pain-suppression", "retrievedAt": "2026-09-02T16:30:00+02:00" }
   ]
 }

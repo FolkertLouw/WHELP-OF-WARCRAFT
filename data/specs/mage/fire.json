@@ -16,8 +16,8 @@
     { "id": "blazing-barrier", "name": "Blazing Barrier", "spellId": 235313, "actions": ["defensive"], "availability": "talent", "scope": "self", "limitations": ["Personal absorb only"] }
   ],
   "provenance": [
-    { "kind": "external-reference", "description": "Current Midnight Fire Mythic+ build guidance explicitly includes Remove Curse and Spellsteal and describes the configurable Mage class utility tree.", "url": "https://www.wowhead.com/guide/classes/mage/fire/talent-builds-pve-dps", "retrievedAt": "2026-09-02T22:00:00+02:00" },
-    { "kind": "external-reference", "description": "Current Fire overview confirms the Midnight specialization and its Blazing Barrier defensive support.", "url": "https://www.wowhead.com/guide/classes/mage/fire/overview-pve-dps", "retrievedAt": "2026-09-02T22:00:00+02:00" },
-    { "kind": "external-reference", "description": "Current Spellsteal record confirms its enemy Magic theft behavior and spell identifier.", "url": "https://www.wowhead.com/spell=30449/spellsteal", "retrievedAt": "2026-09-02T22:00:00+02:00" }
+    { "kind": "external-reference", "description": "Current Midnight Fire Mythic+ build guidance explicitly includes Remove Curse and Spellsteal and describes the configurable Mage class utility tree.", "url": "https://www.wowhead.com/guide/classes/mage/fire/talent-builds-pve-dps", "retrievedAt": "2026-09-02T16:30:00+02:00" },
+    { "kind": "external-reference", "description": "Current Fire overview confirms the Midnight specialization and its Blazing Barrier defensive support.", "url": "https://www.wowhead.com/guide/classes/mage/fire/overview-pve-dps", "retrievedAt": "2026-09-02T16:30:00+02:00" },
+    { "kind": "external-reference", "description": "Current Spellsteal record confirms its enemy Magic theft behavior and spell identifier.", "url": "https://www.wowhead.com/spell=30449/spellsteal", "retrievedAt": "2026-09-02T16:30:00+02:00" }
   ]
 }

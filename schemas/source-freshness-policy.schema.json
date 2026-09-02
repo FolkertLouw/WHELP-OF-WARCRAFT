@@ -1,0 +1,21 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://whelp.dev/schemas/source-freshness-policy.schema.json",
+  "title": "WHELP source freshness policy",
+  "type": "object",
+  "required": ["schemaVersion", "recordType", "id", "status", "evaluatedRoots", "agingAtFraction", "maxAgeDaysByKind", "timestampRequiredKinds", "timestampFallbackFields", "provenance"],
+  "properties": {
+    "$schema": { "type": "string" },
+    "schemaVersion": { "const": 1 },
+    "recordType": { "const": "source-freshness-policy" },
+    "id": { "type": "string", "minLength": 1 },
+    "status": { "enum": ["draft", "corroborated", "verified", "deprecated"] },
+    "evaluatedRoots": { "type": "array", "minItems": 1, "uniqueItems": true, "items": { "type": "string", "minLength": 1 } },
+    "agingAtFraction": { "type": "number", "exclusiveMinimum": 0, "exclusiveMaximum": 1 },
+    "maxAgeDaysByKind": { "type": "object", "additionalProperties": { "type": "integer", "minimum": 1 } },
+    "timestampRequiredKinds": { "type": "array", "uniqueItems": true, "items": { "type": "string", "minLength": 1 } },
+    "timestampFallbackFields": { "type": "array", "uniqueItems": true, "items": { "type": "string", "minLength": 1 } },
+    "provenance": { "type": "array", "minItems": 1, "items": { "$ref": "provenance.schema.json" } }
+  },
+  "additionalProperties": false
+}

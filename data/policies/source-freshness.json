@@ -1,0 +1,24 @@
+{
+  "$schema": "../../schemas/source-freshness-policy.schema.json",
+  "schemaVersion": 1,
+  "recordType": "source-freshness-policy",
+  "id": "whelp/source-freshness-policy",
+  "status": "verified",
+  "evaluatedRoots": ["data", "content"],
+  "agingAtFraction": 0.75,
+  "maxAgeDaysByKind": {
+    "official-api": 7,
+    "official-publisher": 30,
+    "game-data": 30,
+    "local-client": 14,
+    "addon-observation": 30,
+    "combat-log": 30,
+    "curated": 90,
+    "external-reference": 30
+  },
+  "timestampRequiredKinds": ["official-api", "official-publisher", "game-data", "local-client", "addon-observation", "combat-log", "external-reference"],
+  "timestampFallbackFields": ["observedAt"],
+  "provenance": [
+    { "kind": "curated", "description": "WHELP maintenance policy: short-lived machine and client evidence expires faster than reviewed editorial records.", "retrievedAt": "2026-09-02T16:30:00+02:00" }
+  ]
+}

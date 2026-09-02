@@ -45,6 +45,7 @@ test("keeps the checked-in season ability index reproducible and lossless", asyn
   assert.deepEqual(checkedIn, generated);
   assert.equal(checkedIn.abilityRowCount, 149);
   assert.equal(checkedIn.abilities.length, 122);
+  assert.ok(checkedIn.provenance.every((source) => source.retrievedAt), "generated provenance must carry input freshness timestamps");
 });
 
 test("rejects unnamed and conflicting ability evidence during index generation", async () => {

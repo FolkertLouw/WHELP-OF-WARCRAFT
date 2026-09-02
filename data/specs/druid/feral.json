@@ -16,8 +16,8 @@
     { "id": "barkskin", "name": "Barkskin", "spellId": 22812, "actions": ["defensive"], "availability": "baseline", "scope": "self", "limitations": ["Personal mitigation only"] }
   ],
   "provenance": [
-    { "kind": "external-reference", "description": "Current Feral Druid ability guide identifies Skull Bash, Remove Corruption, Soothe, Rebirth, Mark of the Wild, and defensive utility.", "url": "https://www.wowhead.com/guide/classes/druid/feral/abilities-talents-pve-dps", "retrievedAt": "2026-09-02T19:30:00+02:00" },
-    { "kind": "external-reference", "description": "Current Skull Bash record confirms its form requirement, interrupt, range, and cooldown.", "url": "https://www.wowhead.com/spell=106839/skull-bash", "retrievedAt": "2026-09-02T19:30:00+02:00" },
-    { "kind": "external-reference", "description": "Current Remove Corruption record confirms friendly Curse and Poison removal.", "url": "https://www.wowhead.com/spell=2782/remove-corruption", "retrievedAt": "2026-09-02T19:30:00+02:00" }
+    { "kind": "external-reference", "description": "Current Feral Druid ability guide identifies Skull Bash, Remove Corruption, Soothe, Rebirth, Mark of the Wild, and defensive utility.", "url": "https://www.wowhead.com/guide/classes/druid/feral/abilities-talents-pve-dps", "retrievedAt": "2026-09-02T16:30:00+02:00" },
+    { "kind": "external-reference", "description": "Current Skull Bash record confirms its form requirement, interrupt, range, and cooldown.", "url": "https://www.wowhead.com/spell=106839/skull-bash", "retrievedAt": "2026-09-02T16:30:00+02:00" },
+    { "kind": "external-reference", "description": "Current Remove Corruption record confirms friendly Curse and Poison removal.", "url": "https://www.wowhead.com/spell=2782/remove-corruption", "retrievedAt": "2026-09-02T16:30:00+02:00" }
   ]
 }

@@ -16,8 +16,8 @@
     { "id": "barkskin", "name": "Barkskin", "spellId": 22812, "actions": ["defensive"], "availability": "baseline", "scope": "self", "limitations": ["Personal mitigation only"] }
   ],
   "provenance": [
-    { "kind": "external-reference", "description": "Current Guardian Druid ability guide identifies Skull Bash, Soothe, Rebirth, Mark of the Wild, and bear-form utility.", "url": "https://www.wowhead.com/guide/classes/druid/guardian/abilities-talents-pve-tank", "retrievedAt": "2026-09-02T19:30:00+02:00" },
-    { "kind": "external-reference", "description": "Current Guardian Mythic+ guide confirms dungeon use of Remove Corruption and Soothe.", "url": "https://www.wowhead.com/guide/classes/druid/guardian/mythic-plus-dungeon-tips", "retrievedAt": "2026-09-02T19:30:00+02:00" },
-    { "kind": "external-reference", "description": "Current Soothe record confirms ranged Enrage removal and its cooldown.", "url": "https://www.wowhead.com/spell=2908/soothe", "retrievedAt": "2026-09-02T19:30:00+02:00" }
+    { "kind": "external-reference", "description": "Current Guardian Druid ability guide identifies Skull Bash, Soothe, Rebirth, Mark of the Wild, and bear-form utility.", "url": "https://www.wowhead.com/guide/classes/druid/guardian/abilities-talents-pve-tank", "retrievedAt": "2026-09-02T16:30:00+02:00" },
+    { "kind": "external-reference", "description": "Current Guardian Mythic+ guide confirms dungeon use of Remove Corruption and Soothe.", "url": "https://www.wowhead.com/guide/classes/druid/guardian/mythic-plus-dungeon-tips", "retrievedAt": "2026-09-02T16:30:00+02:00" },
+    { "kind": "external-reference", "description": "Current Soothe record confirms ranged Enrage removal and its cooldown.", "url": "https://www.wowhead.com/spell=2908/soothe", "retrievedAt": "2026-09-02T16:30:00+02:00" }
   ]
 }

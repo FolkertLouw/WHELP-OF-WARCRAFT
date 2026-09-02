@@ -16,8 +16,8 @@
     { "id": "barkskin", "name": "Barkskin", "spellId": 22812, "actions": ["defensive"], "availability": "baseline", "scope": "self", "limitations": ["Personal mitigation only"] }
   ],
   "provenance": [
-    { "kind": "external-reference", "description": "Current Balance Druid ability guide identifies Solar Beam, Remove Corruption, Soothe, and class utility.", "url": "https://www.wowhead.com/guide/classes/druid/balance/abilities-talents-pve-dps", "retrievedAt": "2026-09-02T19:30:00+02:00" },
-    { "kind": "external-reference", "description": "Current Solar Beam record confirms its initial interrupt, persistent area silence, range, and cooldown.", "url": "https://www.wowhead.com/spell=78675/solar-beam", "retrievedAt": "2026-09-02T19:30:00+02:00" },
-    { "kind": "external-reference", "description": "Current Rebirth record confirms in-combat resurrection and the enforced encounter limit.", "url": "https://www.wowhead.com/spell=20484/rebirth", "retrievedAt": "2026-09-02T19:30:00+02:00" }
+    { "kind": "external-reference", "description": "Current Balance Druid ability guide identifies Solar Beam, Remove Corruption, Soothe, and class utility.", "url": "https://www.wowhead.com/guide/classes/druid/balance/abilities-talents-pve-dps", "retrievedAt": "2026-09-02T16:30:00+02:00" },
+    { "kind": "external-reference", "description": "Current Solar Beam record confirms its initial interrupt, persistent area silence, range, and cooldown.", "url": "https://www.wowhead.com/spell=78675/solar-beam", "retrievedAt": "2026-09-02T16:30:00+02:00" },
+    { "kind": "external-reference", "description": "Current Rebirth record confirms in-combat resurrection and the enforced encounter limit.", "url": "https://www.wowhead.com/spell=20484/rebirth", "retrievedAt": "2026-09-02T16:30:00+02:00" }
   ]
 }

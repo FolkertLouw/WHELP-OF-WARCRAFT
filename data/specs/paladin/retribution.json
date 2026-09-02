@@ -17,8 +17,8 @@
     { "id": "divine-shield", "name": "Divine Shield", "spellId": 642, "actions": ["defensive"], "availability": "baseline", "scope": "self", "limitations": ["Personal immunity only", "Causes Forbearance"] }
   ],
   "provenance": [
-    { "kind": "external-reference", "description": "Current Retribution Paladin ability guide identifies Cleanse Toxins, Rebuke, auras, blessings, and personal defensive utility.", "url": "https://www.wowhead.com/guide/classes/paladin/retribution/abilities-talents-pve-dps", "retrievedAt": "2026-09-02T18:15:00+02:00" },
-    { "kind": "external-reference", "description": "Current Rebuke record confirms its melee interrupt, lockout, and cooldown.", "url": "https://www.wowhead.com/spell=96231/rebuke", "retrievedAt": "2026-09-02T18:15:00+02:00" },
-    { "kind": "external-reference", "description": "Current Blessing of Protection record confirms friendly physical protection and Forbearance behavior.", "url": "https://www.wowhead.com/spell=1022/blessing-of-protection", "retrievedAt": "2026-09-02T18:15:00+02:00" }
+    { "kind": "external-reference", "description": "Current Retribution Paladin ability guide identifies Cleanse Toxins, Rebuke, auras, blessings, and personal defensive utility.", "url": "https://www.wowhead.com/guide/classes/paladin/retribution/abilities-talents-pve-dps", "retrievedAt": "2026-09-02T16:30:00+02:00" },
+    { "kind": "external-reference", "description": "Current Rebuke record confirms its melee interrupt, lockout, and cooldown.", "url": "https://www.wowhead.com/spell=96231/rebuke", "retrievedAt": "2026-09-02T16:30:00+02:00" },
+    { "kind": "external-reference", "description": "Current Blessing of Protection record confirms friendly physical protection and Forbearance behavior.", "url": "https://www.wowhead.com/spell=1022/blessing-of-protection", "retrievedAt": "2026-09-02T16:30:00+02:00" }
   ]
 }

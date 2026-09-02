@@ -16,8 +16,8 @@
     { "id": "barkskin", "name": "Barkskin", "spellId": 22812, "actions": ["defensive"], "availability": "baseline", "scope": "self", "limitations": ["Personal mitigation only"] }
   ],
   "provenance": [
-    { "kind": "external-reference", "description": "Current Restoration Druid ability guide identifies Nature's Cure, Ironbark, Mark of the Wild, and defensive utility; it also confirms Improved Nature's Cure is granted free.", "url": "https://www.wowhead.com/guide/classes/druid/restoration/abilities-talents-pve-healer", "retrievedAt": "2026-09-02T19:30:00+02:00" },
-    { "kind": "external-reference", "description": "Current Nature's Cure record distinguishes base Magic removal from its Improved Curse and Poison effects.", "url": "https://www.wowhead.com/spell=88423/natures-cure", "retrievedAt": "2026-09-02T19:30:00+02:00" },
-    { "kind": "external-reference", "description": "Current Ironbark record confirms single-target external mitigation, duration, range, and cooldown.", "url": "https://www.wowhead.com/spell=102342/ironbark", "retrievedAt": "2026-09-02T19:30:00+02:00" }
+    { "kind": "external-reference", "description": "Current Restoration Druid ability guide identifies Nature's Cure, Ironbark, Mark of the Wild, and defensive utility; it also confirms Improved Nature's Cure is granted free.", "url": "https://www.wowhead.com/guide/classes/druid/restoration/abilities-talents-pve-healer", "retrievedAt": "2026-09-02T16:30:00+02:00" },
+    { "kind": "external-reference", "description": "Current Nature's Cure record distinguishes base Magic removal from its Improved Curse and Poison effects.", "url": "https://www.wowhead.com/spell=88423/natures-cure", "retrievedAt": "2026-09-02T16:30:00+02:00" },
+    { "kind": "external-reference", "description": "Current Ironbark record confirms single-target external mitigation, duration, range, and cooldown.", "url": "https://www.wowhead.com/spell=102342/ironbark", "retrievedAt": "2026-09-02T16:30:00+02:00" }
   ]
 }

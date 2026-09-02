@@ -19,6 +19,6 @@
   "provenance": [
     { "kind": "external-reference", "description": "Current Enhancement Shaman dungeon utility recommendations and tool selection.", "url": "https://www.wowhead.com/guide/classes/shaman/enhancement/mythic-plus-dungeon-tips", "retrievedAt": "2026-09-02T15:40:00+02:00" },
     { "kind": "external-reference", "description": "Current Cleanse Spirit record confirms curse-only friendly removal for Enhancement.", "url": "https://www.wowhead.com/spell=51886/cleanse-spirit", "retrievedAt": "2026-09-02T15:40:00+02:00" },
-    { "kind": "external-reference", "description": "Current Bloodlust and Heroism records confirm the faction variants and shared raid-wide haste lockout.", "url": "https://www.wowhead.com/spell=2825/bloodlust", "retrievedAt": "2026-09-02T18:50:00+02:00" }
+    { "kind": "external-reference", "description": "Current Bloodlust and Heroism records confirm the faction variants and shared raid-wide haste lockout.", "url": "https://www.wowhead.com/spell=2825/bloodlust", "retrievedAt": "2026-09-02T16:30:00+02:00" }
   ]
 }

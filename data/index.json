@@ -97,6 +97,11 @@
     "record": "specs/coverage.json",
     "status": "verified"
   },
+  "sourceFreshnessPolicy": {
+    "id": "whelp/source-freshness-policy",
+    "record": "policies/source-freshness.json",
+    "status": "verified"
+  },
   "builds": [
     {
       "version": "12.1.0.69587",

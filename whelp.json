@@ -3,7 +3,7 @@
   "schemaVersion": 1,
   "name": "WHELP-OF-WARCRAFT",
   "acronym": "World-data Hub for Encounters, Loadouts & Progression",
-  "datasetVersion": "0.3.9",
+  "datasetVersion": "0.4.0",
   "currentBuild": "12.1.0.69587",
   "currentSeason": "midnight-season-2",
   "entrypoints": {
@@ -14,6 +14,7 @@
     "curatedAbilityResponses": "content/mythic-plus/midnight-season-2/abilities/response-index.json",
     "specCapabilities": "data/index.json",
     "specCapabilityCoverage": "data/specs/coverage.json",
+    "sourceFreshnessPolicy": "data/policies/source-freshness.json",
     "pugRoutes": "content/mythic-plus/midnight-season-2/routes/catalog.json",
     "trustModel": "docs/TRUST_MODEL.md"
   },
@@ -25,6 +26,7 @@
     "queryCapabilities": "npm run query:capabilities -- --specs <spec-slug,spec-slug> --action <action>",
     "queryLoadout": "npm run query:loadout -- --spec <spec-slug> --dungeon <id>",
     "queryPartyGaps": "npm run query:party-gaps -- --specs <spec-slug,spec-slug> --dungeon <id>",
+    "queryFreshness": "npm run query:freshness -- --as-of <ISO-date> --include <review|all>",
     "regenerateAbilityIndex": "npm run generate:ability-index"
   }
 }

@@ -2476,42 +2476,50 @@
     {
       "kind": "curated",
       "description": "Lossless generated index of flagged ability facts from altar-of-fangs.",
-      "recordId": "altar-of-fangs/enemy-abilities"
+      "recordId": "altar-of-fangs/enemy-abilities",
+      "retrievedAt": "2026-09-02T14:30:00+02:00"
     },
     {
       "kind": "curated",
       "description": "Lossless generated index of flagged ability facts from murder-row.",
-      "recordId": "murder-row/enemy-abilities"
+      "recordId": "murder-row/enemy-abilities",
+      "retrievedAt": "2026-09-02T14:14:22+02:00"
     },
     {
       "kind": "curated",
       "description": "Lossless generated index of flagged ability facts from den-of-nalorakk.",
-      "recordId": "den-of-nalorakk/enemy-abilities"
+      "recordId": "den-of-nalorakk/enemy-abilities",
+      "retrievedAt": "2026-09-02T14:12:00+02:00"
     },
     {
       "kind": "curated",
       "description": "Lossless generated index of flagged ability facts from the-blinding-vale.",
-      "recordId": "the-blinding-vale/enemy-abilities"
+      "recordId": "the-blinding-vale/enemy-abilities",
+      "retrievedAt": "2026-09-02T14:08:00+02:00"
     },
     {
       "kind": "curated",
       "description": "Lossless generated index of flagged ability facts from voidscar-arena.",
-      "recordId": "voidscar-arena/enemy-abilities"
+      "recordId": "voidscar-arena/enemy-abilities",
+      "retrievedAt": "2026-09-02T14:24:00+02:00"
     },
     {
       "kind": "curated",
       "description": "Lossless generated index of flagged ability facts from kings-rest.",
-      "recordId": "kings-rest/enemy-abilities"
+      "recordId": "kings-rest/enemy-abilities",
+      "retrievedAt": "2026-09-02T14:16:00+02:00"
     },
     {
       "kind": "curated",
       "description": "Lossless generated index of flagged ability facts from ruby-life-pools.",
-      "recordId": "ruby-life-pools/enemy-abilities"
+      "recordId": "ruby-life-pools/enemy-abilities",
+      "retrievedAt": "2026-09-02T14:18:00+02:00"
     },
     {
       "kind": "curated",
       "description": "Lossless generated index of flagged ability facts from temple-of-sethraliss.",
-      "recordId": "temple-of-sethraliss/enemy-abilities"
+      "recordId": "temple-of-sethraliss/enemy-abilities",
+      "retrievedAt": "2026-09-02T14:21:00+02:00"
     }
   ]
 }

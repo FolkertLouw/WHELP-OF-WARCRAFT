@@ -17,8 +17,8 @@
     { "id": "divine-shield", "name": "Divine Shield", "spellId": 642, "actions": ["defensive"], "availability": "baseline", "scope": "self", "limitations": ["Personal immunity only", "Causes Forbearance"] }
   ],
   "provenance": [
-    { "kind": "external-reference", "description": "Current Holy Paladin ability guide identifies Cleanse, Intercession, Divine Shield, Hammer of Justice, auras, and blessing utility.", "url": "https://www.wowhead.com/guide/classes/paladin/holy/abilities-talents-pve-healer", "retrievedAt": "2026-09-02T18:15:00+02:00" },
-    { "kind": "external-reference", "description": "Current Cleanse record distinguishes baseline Magic removal from Poison and Disease removal granted by Improved Cleanse.", "url": "https://www.wowhead.com/spell=4987/cleanse", "retrievedAt": "2026-09-02T18:15:00+02:00" },
-    { "kind": "external-reference", "description": "Current Intercession record confirms Paladin combat resurrection and the enforced encounter limit.", "url": "https://www.wowhead.com/spell=391054/intercession", "retrievedAt": "2026-09-02T18:15:00+02:00" }
+    { "kind": "external-reference", "description": "Current Holy Paladin ability guide identifies Cleanse, Intercession, Divine Shield, Hammer of Justice, auras, and blessing utility.", "url": "https://www.wowhead.com/guide/classes/paladin/holy/abilities-talents-pve-healer", "retrievedAt": "2026-09-02T16:30:00+02:00" },
+    { "kind": "external-reference", "description": "Current Cleanse record distinguishes baseline Magic removal from Poison and Disease removal granted by Improved Cleanse.", "url": "https://www.wowhead.com/spell=4987/cleanse", "retrievedAt": "2026-09-02T16:30:00+02:00" },
+    { "kind": "external-reference", "description": "Current Intercession record confirms Paladin combat resurrection and the enforced encounter limit.", "url": "https://www.wowhead.com/spell=391054/intercession", "retrievedAt": "2026-09-02T16:30:00+02:00" }
   ]
 }
