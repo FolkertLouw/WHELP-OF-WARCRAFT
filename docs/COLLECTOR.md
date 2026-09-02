@@ -35,3 +35,9 @@ At runtime, scenario-progress collection is enabled only when the game version a
 Combat-state events are a segmentation heuristic, not proof of route intent. Scenario progress is client-observed evidence, not proof that a SavedVariables file was not edited. Pull observations therefore remain separate from canonical dungeon facts and reviewed strategy, and comparison reports label order matching as inferred.
 
 API behavior was reviewed on 2026-09-02 against Blizzard's generated ScenarioInfo API definitions and the installed Retail 12.1 client/addons. Recheck these assumptions whenever the interface version or secret-value behavior changes.
+
+## Automated runtime test
+
+`npm test` loads the exact addon `.toc` order into a pinned Fengari Lua VM with a minimal mocked WoW API. The lifecycle test exercises addon initialization, an enabled +10 run, scenario progress, combat boundaries, death penalties, a boss encounter, completion, stale-build fallback, unavailable criteria, reset, and collection opt-out. It also asserts that expected identifying fields are absent.
+
+The mock proves WHELP's state transitions and serialized values. It cannot prove that Blizzard fires an event at the expected moment or returns a field unmodified on a live client, so an actual key remains the final integration check after installation.

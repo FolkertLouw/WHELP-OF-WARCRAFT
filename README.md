@@ -70,6 +70,8 @@ The importer strips unknown fields, excludes active state, quarantines malformed
 
 The addon now compiles build-stamped dungeon totals from canonical JSON and records Patch 12-safe pull segments using banked scenario progress. It explicitly does not collect secret enemy identities or use the protected combat log. See `docs/COLLECTOR.md`.
 
+The test suite executes a complete collector lifecycle in a mocked Lua/WoW runtime, in the exact file order declared by the addon manifest. Live-client event timing still requires an in-game integration run.
+
 To regenerate the seven season-wide dungeon packages described by the checked-in import manifest:
 
 ```bash
