@@ -3,6 +3,7 @@
   "schemaVersion": 1,
   "recordType": "spec-capabilities",
   "id": "death-knight/frost/capabilities",
+  "matrixRecordId": "midnight-season-2/frost-death-knight-utility-matrix",
   "status": "corroborated",
   "validity": { "fromBuild": "12.1.0.69587", "untilBuild": null, "seasonId": null, "seasonSlug": "midnight-season-2" },
   "spec": { "classId": 6, "className": "Death Knight", "specId": 251, "specName": "Frost", "slug": "frost-death-knight" },
@@ -15,11 +16,15 @@
     { "id": "raise-ally", "name": "Raise Ally", "spellId": 61999, "actions": ["battle-resurrection"], "availability": "baseline", "scope": "friendly-single", "limitations": ["Requires a dead ally", "Costs Runic Power", "Uses the shared combat-resurrection limit"] },
     { "id": "anti-magic-zone", "name": "Anti-Magic Zone", "spellId": 51052, "actions": ["party-damage-reduction"], "availability": "talent", "scope": "friendly-area", "limitations": ["Reduces magical damage only", "Allies must remain inside the stationary zone", "Does not stack with another Anti-Magic Zone"] },
     { "id": "anti-magic-shell", "name": "Anti-Magic Shell", "spellId": 48707, "actions": ["defensive"], "availability": "baseline", "scope": "self", "limitations": ["Personal magic absorb and debuff prevention only", "Does not remove existing effects without Unyielding Will"] },
+    { "id": "deaths-advance", "name": "Death's Advance", "spellId": 48265, "actions": ["defensive"], "availability": "baseline", "scope": "self", "limitations": ["Personal forced-movement and knockback immunity while active", "Does not remove an existing root"] },
+    { "id": "wraith-walk", "name": "Wraith Walk", "spellId": 212552, "actions": ["defensive"], "availability": "talent", "scope": "self", "limitations": ["Personal root removal and movement only", "Taking another action cancels the channel"] },
     { "id": "icebound-fortitude", "name": "Icebound Fortitude", "spellId": 48792, "actions": ["defensive"], "availability": "specialization", "scope": "self", "limitations": ["Personal mitigation and stun immunity only"] }
   ],
   "provenance": [
     { "kind": "external-reference", "description": "Current Midnight Frost guide identifies Raise Ally, Death Grip, Anti-Magic Shell, Mind Freeze, control talents, Anti-Magic Zone, and Icebound Fortitude.", "url": "https://www.wowhead.com/guide/classes/death-knight/frost/abilities-talents-pve-dps", "retrievedAt": "2026-09-02T16:38:00+02:00" },
     { "kind": "external-reference", "description": "Current Death Grip record identifies the displacement spell and confirms its spell identifier.", "url": "https://www.wowhead.com/spell=49576/death-grip", "retrievedAt": "2026-09-02T16:38:00+02:00" },
-    { "kind": "external-reference", "description": "Current Anti-Magic Zone record confirms party or raid protection against spell damage.", "url": "https://www.wowhead.com/spell=51052/anti-magic-zone", "retrievedAt": "2026-09-02T16:38:00+02:00" }
+    { "kind": "external-reference", "description": "Current Anti-Magic Zone record confirms party or raid protection against spell damage.", "url": "https://www.wowhead.com/spell=51052/anti-magic-zone", "retrievedAt": "2026-09-02T16:38:00+02:00" },
+    { "kind": "external-reference", "description": "Current Frost Mythic+ guide identifies dungeon-specific Death's Advance and Wraith Walk interactions.", "url": "https://www.wowhead.com/guide/classes/death-knight/frost/mythic-plus-dungeon-tips", "retrievedAt": "2026-09-02T17:02:00+02:00" },
+    { "kind": "external-reference", "description": "Current Wraith Walk record confirms root removal and channel cancellation on another action.", "url": "https://www.wowhead.com/spell=212552/wraith-walk", "retrievedAt": "2026-09-02T17:02:00+02:00" }
   ]
 }

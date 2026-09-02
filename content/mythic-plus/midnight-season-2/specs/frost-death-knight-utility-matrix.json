@@ -1,0 +1,78 @@
+{
+  "$schema": "../../../../schemas/spec-dungeon-matrix.schema.json",
+  "schemaVersion": 1,
+  "recordType": "spec-dungeon-matrix",
+  "id": "midnight-season-2/frost-death-knight-utility-matrix",
+  "status": "corroborated",
+  "validity": { "fromBuild": "12.1.0.69587", "untilBuild": null, "seasonId": null, "seasonSlug": "midnight-season-2" },
+  "spec": { "classId": 6, "className": "Death Knight", "specId": 251, "specName": "Frost" },
+  "axes": [
+    { "id": "cast-control", "label": "Cast control", "abilityNames": ["Mind Freeze", "Death Grip", "Blinding Sleet"], "spellIds": [47528, 49576, 207167], "toolIds": ["mind-freeze", "death-grip", "blinding-sleet"] },
+    { "id": "enemy-reposition", "label": "Enemy repositioning", "abilityNames": ["Death Grip"], "spellIds": [49576], "toolIds": ["death-grip"] },
+    { "id": "personal-magic", "label": "Personal magic prevention", "abilityNames": ["Anti-Magic Shell"], "spellIds": [48707], "toolIds": ["anti-magic-shell"] },
+    { "id": "movement-control", "label": "Forced-movement immunity and root escape", "abilityNames": ["Death's Advance", "Wraith Walk"], "spellIds": [48265, 212552], "toolIds": ["deaths-advance", "wraith-walk"] },
+    { "id": "party-magic", "label": "Party magic mitigation", "abilityNames": ["Anti-Magic Zone"], "spellIds": [51052], "toolIds": ["anti-magic-zone"] },
+    { "id": "control-undead", "label": "Undead enemy control", "abilityNames": ["Control Undead"], "spellIds": [111673], "toolIds": ["control-undead"] },
+    { "id": "battle-resurrection", "label": "Combat resurrection", "abilityNames": ["Raise Ally"], "spellIds": [61999], "toolIds": ["raise-ally"] }
+  ],
+  "dungeons": [
+    {
+      "dungeonId": "altar-of-fangs", "instanceMapId": 2993,
+      "ratings": { "cast-control": "always", "enemy-reposition": "niche", "personal-magic": "always", "movement-control": "none", "party-magic": "always", "control-undead": "none", "battle-resurrection": "always" },
+      "mechanicSpellIds": [1307567],
+      "notes": ["Use Anti-Magic Shell aggressively against poison applications.", "Anti-Magic Zone is especially valuable for Synchronized Venom and Mass Envenom; interrupt Mass Envenom first when possible."]
+    },
+    {
+      "dungeonId": "the-blinding-vale", "instanceMapId": 2859,
+      "ratings": { "cast-control": "always", "enemy-reposition": "niche", "personal-magic": "always", "movement-control": "always", "party-magic": "always", "control-undead": "none", "battle-resurrection": "always" },
+      "mechanicSpellIds": [1235564, 1259365],
+      "notes": ["Use Wraith Walk to break Bloodthorn Roots and Anti-Magic Shell while soaking Lightblossom Beam.", "Anti-Magic Zone can cover Bedrock Surge when the group is stacked closely enough to remain inside it."]
+    },
+    {
+      "dungeonId": "den-of-nalorakk", "instanceMapId": 2825,
+      "ratings": { "cast-control": "always", "enemy-reposition": "niche", "personal-magic": "always", "movement-control": "none", "party-magic": "always", "control-undead": "none", "battle-resurrection": "always" },
+      "mechanicSpellIds": [1235656],
+      "notes": ["Use Anti-Magic Shell when clearing a Rotten Mushroom and plan Anti-Magic Zone for Sentinel of Winter's sustained group damage."]
+    },
+    {
+      "dungeonId": "murder-row", "instanceMapId": 2813,
+      "ratings": { "cast-control": "always", "enemy-reposition": "niche", "personal-magic": "always", "movement-control": "none", "party-magic": "always", "control-undead": "none", "battle-resurrection": "always" },
+      "mechanicSpellIds": [1217384],
+      "notes": ["Every boss has group-wide magic damage and close positioning, making Anti-Magic Zone consistently valuable.", "Anti-Magic Shell can cross Malefic Wave without losing uptime, but it does not replace the encounter gateway for the rest of the party."]
+    },
+    {
+      "dungeonId": "voidscar-arena", "instanceMapId": 2923,
+      "ratings": { "cast-control": "always", "enemy-reposition": "niche", "personal-magic": "niche", "movement-control": "always", "party-magic": "niche", "control-undead": "none", "battle-resurrection": "always" },
+      "mechanicSpellIds": [1264191],
+      "notes": ["Death's Advance can resist Unstable Singularity's pull.", "Use Anti-Magic Zone as a targeted external when a full-party stack is impractical rather than waiting indefinitely."]
+    },
+    {
+      "dungeonId": "temple-of-sethraliss", "instanceMapId": 1877,
+      "ratings": { "cast-control": "always", "enemy-reposition": "niche", "personal-magic": "always", "movement-control": "always", "party-magic": "niche", "control-undead": "none", "battle-resurrection": "always" },
+      "mechanicSpellIds": [1289062, 274006],
+      "notes": ["Death's Advance prevents Gale Force's push, while Anti-Magic Shell extends the time Frost can safely intercept a Lightning Spire beam."]
+    },
+    {
+      "dungeonId": "kings-rest", "instanceMapId": 1762,
+      "ratings": { "cast-control": "always", "enemy-reposition": "niche", "personal-magic": "always", "movement-control": "none", "party-magic": "niche", "control-undead": "always", "battle-resurrection": "always" },
+      "mechanicSpellIds": [1303267],
+      "notes": ["Anti-Magic Shell can block Gilded Destruction's damage.", "Control Undead has a real dungeon target here, but coordinate its five-minute refresh and remember that death breaks control."]
+    },
+    {
+      "dungeonId": "ruby-life-pools", "instanceMapId": 2521,
+      "ratings": { "cast-control": "always", "enemy-reposition": "niche", "personal-magic": "niche", "movement-control": "always", "party-magic": "always", "control-undead": "none", "battle-resurrection": "always" },
+      "mechanicSpellIds": [],
+      "notes": ["Death's Advance can prevent the guide's named Source of Magic push; no spell ID is asserted because the guide link resolves to an unrelated homonymous player ability.", "Use Anti-Magic Zone during Kokia Blazehoof's best close-stack group-damage window."]
+    }
+  ],
+  "affixes": [
+    { "affixSlug": "xalataths-bargain-ascendant", "recommendations": ["Use Blinding Sleet for the group stop, then Mind Freeze and Death Grip on remaining susceptible casts."] },
+    { "affixSlug": "xalataths-bargain-voidbound", "recommendations": ["Frost has no dedicated utility interaction; swap and kill the emissary quickly."] },
+    { "affixSlug": "xalataths-bargain-pulsar", "recommendations": ["Collapse toward allies and intercept assigned orbs; the guide identifies no Frost talent that changes this response."] },
+    { "affixSlug": "xalataths-bargain-devour", "recommendations": ["Pre-casting Anti-Magic Shell blocks the debuff but also denies Rift Essence; with Unyielding Will, remove it after application to preserve the benefit."] }
+  ],
+  "provenance": [
+    { "kind": "external-reference", "description": "Original structured summary of current Frost Death Knight utility, eight dungeon-specific interactions, and affix advice. Placeholder talent text and guide prose are intentionally excluded.", "url": "https://www.wowhead.com/guide/classes/death-knight/frost/mythic-plus-dungeon-tips", "retrievedAt": "2026-09-02T17:02:00+02:00" },
+    { "kind": "curated", "description": "Every asserted mechanicSpellId is cross-linked to WHELP's versioned dungeon mechanics, routes, or ability-response data for Midnight Season 2.", "recordId": "midnight-season-2/flagged-abilities" }
+  ]
+}

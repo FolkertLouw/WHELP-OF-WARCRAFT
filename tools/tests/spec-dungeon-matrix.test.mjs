@@ -7,6 +7,8 @@ const root = path.resolve(import.meta.dirname, "..", "..");
 const loadJson = async (...segments) => JSON.parse(await readFile(path.join(root, ...segments), "utf8"));
 const matrix = await loadJson("content", "mythic-plus", "midnight-season-2", "specs", "unholy-death-knight-utility-matrix.json");
 const capabilities = await loadJson("data", "specs", "death-knight", "unholy.json");
+const frostMatrix = await loadJson("content", "mythic-plus", "midnight-season-2", "specs", "frost-death-knight-utility-matrix.json");
+const frostCapabilities = await loadJson("data", "specs", "death-knight", "frost.json");
 const season = await loadJson("data", "seasons", "midnight-season-2.json");
 
 test("Unholy matrix covers every Midnight Season 2 dungeon exactly once", () => {
@@ -41,4 +43,24 @@ test("Unholy matrix does not mislabel Death Grip as an interrupt", () => {
   const grip = capabilities.tools.find((tool) => tool.id === "death-grip");
   assert.deepEqual(grip.actions, ["enemy-reposition"]);
   assert.match(matrix.dungeons.find((entry) => entry.dungeonId === "voidscar-arena").notes.join(" "), /not as a normal spell-school interrupt/);
+});
+
+test("Frost matrix covers the season and resolves every modeled utility axis", () => {
+  assert.deepEqual(new Set(frostMatrix.dungeons.map((entry) => entry.dungeonId)), new Set(season.dungeons.map((entry) => entry.id)));
+  const tools = new Map(frostCapabilities.tools.map((tool) => [tool.id, tool]));
+  for (const axis of frostMatrix.axes) {
+    for (const toolId of axis.toolIds) assert.ok(tools.has(toolId), `${axis.id} should resolve ${toolId}`);
+  }
+});
+
+test("Frost matrix limits Control Undead to its sourced King's Rest niche", () => {
+  for (const dungeon of frostMatrix.dungeons) {
+    assert.equal(dungeon.ratings["control-undead"], dungeon.dungeonId === "kings-rest" ? "always" : "none");
+  }
+});
+
+test("Frost matrix preserves the unresolved Ruby Life Pools spell-ID caveat", () => {
+  const ruby = frostMatrix.dungeons.find((entry) => entry.dungeonId === "ruby-life-pools");
+  assert.deepEqual(ruby.mechanicSpellIds, []);
+  assert.match(ruby.notes.join(" "), /no spell ID is asserted/);
 });
