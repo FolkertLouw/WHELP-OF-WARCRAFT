@@ -84,7 +84,10 @@
     { "id": "druid/balance/capabilities", "record": "specs/druid/balance.json", "status": "corroborated" },
     { "id": "druid/feral/capabilities", "record": "specs/druid/feral.json", "status": "corroborated" },
     { "id": "druid/guardian/capabilities", "record": "specs/druid/guardian.json", "status": "corroborated" },
-    { "id": "druid/restoration/capabilities", "record": "specs/druid/restoration.json", "status": "corroborated" }
+    { "id": "druid/restoration/capabilities", "record": "specs/druid/restoration.json", "status": "corroborated" },
+    { "id": "priest/discipline/capabilities", "record": "specs/priest/discipline.json", "status": "corroborated" },
+    { "id": "priest/holy/capabilities", "record": "specs/priest/holy.json", "status": "corroborated" },
+    { "id": "priest/shadow/capabilities", "record": "specs/priest/shadow.json", "status": "corroborated" }
   ],
   "specCapabilityCoverage": {
     "id": "retail/spec-capability-coverage",

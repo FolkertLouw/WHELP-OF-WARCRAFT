@@ -60,6 +60,13 @@ npm run query:capabilities -- --specs restoration-shaman,beast-mastery-hunter,ma
 npm run query:capabilities -- --specs balance-druid,restoration-druid --action group-buff
 ```
 
+Priest records distinguish healer `Purify` from Shadow's Disease-only dispel, represent `Mass Dispel` as mixed friendly/enemy area utility, and expose `Power Infusion` as an external offensive cooldown:
+
+```powershell
+npm run query:capabilities -- --specs discipline-priest,holy-priest,shadow-priest --action external-offensive
+npm run query:capabilities -- --specs discipline-priest,holy-priest,shadow-priest --scope mixed-area
+```
+
 Capability results preserve action-specific availability, alternate faction spell IDs, and configuration requirements, so a talent-gated extension or pet-dependent group tool remains visible.
 
 The capability catalog is intentionally marked partial in `data/specs/coverage.json`. Query output includes that completeness state and the number of modeled specs; an absent spec means “not modeled yet,” never “has no utility.”

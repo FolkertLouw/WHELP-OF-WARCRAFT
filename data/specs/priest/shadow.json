@@ -1,0 +1,24 @@
+{
+  "$schema": "../../../schemas/spec-capabilities.schema.json",
+  "schemaVersion": 1,
+  "recordType": "spec-capabilities",
+  "id": "priest/shadow/capabilities",
+  "status": "corroborated",
+  "validity": { "fromBuild": "12.1.0.69587", "untilBuild": null, "seasonId": null, "seasonSlug": "midnight-season-2" },
+  "spec": { "classId": 5, "className": "Priest", "specId": 258, "specName": "Shadow", "slug": "shadow-priest" },
+  "tools": [
+    { "id": "silence", "name": "Silence", "spellId": 15487, "actions": ["interrupt"], "availability": "specialization", "scope": "enemy", "limitations": ["Single target", "Thirty-second cooldown", "Forty-yard range"] },
+    { "id": "purify-disease", "name": "Purify Disease", "spellId": 213634, "actions": ["cleanse-disease"], "availability": "talent", "scope": "friendly-single", "limitations": ["Disease effects only", "Eight-second cooldown"] },
+    { "id": "dispel-magic", "name": "Dispel Magic", "spellId": 528, "actions": ["purge"], "availability": "talent", "scope": "enemy", "limitations": ["Removes one beneficial Magic effect", "No cooldown"] },
+    { "id": "mass-dispel", "name": "Mass Dispel", "spellId": 32375, "actions": ["cleanse-magic", "purge"], "availability": "talent", "scope": "mixed-area", "limitations": ["Removes harmful Magic from up to five friendly targets", "Removes one beneficial Magic effect from up to five enemy targets", "One-and-a-half-second cast", "Two-minute cooldown"] },
+    { "id": "psychic-scream", "name": "Psychic Scream", "spellId": 8122, "actions": ["crowd-control"], "availability": "talent", "scope": "area-enemy", "limitations": ["Fear can break from damage", "Only affects susceptible enemies"] },
+    { "id": "power-infusion", "name": "Power Infusion", "spellId": 10060, "actions": ["external-offensive"], "availability": "talent", "scope": "friendly-single", "limitations": ["Twenty percent Haste for fifteen seconds", "Two-minute cooldown", "Can only target players"] },
+    { "id": "power-word-fortitude", "name": "Power Word: Fortitude", "spellId": 21562, "actions": ["group-buff"], "availability": "baseline", "scope": "friendly-area", "limitations": ["Five percent Stamina", "Does not stack with an equivalent Fortitude effect"] },
+    { "id": "dispersion", "name": "Dispersion", "spellId": 47585, "actions": ["defensive"], "availability": "specialization", "scope": "self", "limitations": ["Personal mitigation only", "Cannot attack or cast during its six-second duration", "Two-minute cooldown"] }
+  ],
+  "provenance": [
+    { "kind": "external-reference", "description": "Current Midnight Shadow guide identifies Silence, Purify Disease, Dispel Magic, Mass Dispel, Power Infusion, Fortitude, Psychic Scream, and Dispersion.", "url": "https://www.wowhead.com/guide/classes/priest/shadow/abilities-talents-pve-dps", "retrievedAt": "2026-09-02T21:15:00+02:00" },
+    { "kind": "external-reference", "description": "Current Silence record confirms its ranged interrupt behavior and thirty-second cooldown.", "url": "https://www.wowhead.com/spell=15487/silence", "retrievedAt": "2026-09-02T21:15:00+02:00" },
+    { "kind": "external-reference", "description": "Current Purify Disease record confirms Shadow's Disease-only friendly dispel and cooldown.", "url": "https://www.wowhead.com/spell=213634/purify-disease", "retrievedAt": "2026-09-02T21:15:00+02:00" }
+  ]
+}

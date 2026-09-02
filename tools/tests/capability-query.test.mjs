@@ -57,6 +57,36 @@ test("queries shared Druid group buffs and combat resurrection", () => {
   assert.ok(resurrections.results.every((entry) => entry.tool.name === "Rebirth"));
 });
 
+test("distinguishes Priest healer dispels from Shadow dispels", () => {
+  const healerMagic = queryCapabilities(capabilities, { specs: ["discipline-priest", "holy-priest"], action: "cleanse-magic" });
+  const shadowMagic = queryCapabilities(capabilities, { specs: ["shadow-priest"], action: "cleanse-magic" });
+  const disease = queryCapabilities(capabilities, { specs: ["discipline-priest", "holy-priest", "shadow-priest"], action: "cleanse-disease" });
+  assert.ok(healerMagic.results.some((entry) => entry.tool.name === "Purify"));
+  assert.equal(shadowMagic.resultCount, 1);
+  assert.equal(shadowMagic.results[0].tool.name, "Mass Dispel");
+  assert.equal(shadowMagic.results[0].tool.scope, "mixed-area");
+  assert.equal(disease.resultCount, 3);
+  assert.equal(disease.results.find((entry) => entry.spec.slug === "shadow-priest").tool.name, "Purify Disease");
+});
+
+test("models Mass Dispel as mixed friendly and enemy area utility", () => {
+  const cleanses = queryCapabilities(capabilities, { specs: ["discipline-priest", "holy-priest", "shadow-priest"], action: "cleanse-magic", scope: "mixed-area" });
+  const purges = queryCapabilities(capabilities, { specs: ["discipline-priest", "holy-priest", "shadow-priest"], action: "purge", scope: "mixed-area" });
+  assert.equal(cleanses.resultCount, 3);
+  assert.equal(purges.resultCount, 3);
+  assert.ok(cleanses.results.every((entry) => entry.tool.name === "Mass Dispel"));
+});
+
+test("preserves Priest interrupt and external cooldown distinctions", () => {
+  const interrupts = queryCapabilities(capabilities, { specs: ["discipline-priest", "holy-priest", "shadow-priest"], action: "interrupt" });
+  const offensive = queryCapabilities(capabilities, { specs: ["discipline-priest", "holy-priest", "shadow-priest"], action: "external-offensive" });
+  assert.equal(interrupts.resultCount, 1);
+  assert.equal(interrupts.results[0].spec.slug, "shadow-priest");
+  assert.equal(interrupts.results[0].tool.name, "Silence");
+  assert.equal(offensive.resultCount, 3);
+  assert.ok(offensive.results.every((entry) => entry.tool.name === "Power Infusion"));
+});
+
 test("rejects unknown specialization slugs", () => {
   assert.throws(() => queryCapabilities(capabilities, { specs: ["not-a-real-spec"] }), /unknown spec/);
 });

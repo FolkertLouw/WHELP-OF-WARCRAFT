@@ -1,0 +1,24 @@
+{
+  "$schema": "../../../schemas/spec-capabilities.schema.json",
+  "schemaVersion": 1,
+  "recordType": "spec-capabilities",
+  "id": "priest/holy/capabilities",
+  "status": "corroborated",
+  "validity": { "fromBuild": "12.1.0.69587", "untilBuild": null, "seasonId": null, "seasonSlug": "midnight-season-2" },
+  "spec": { "classId": 5, "className": "Priest", "specId": 257, "specName": "Holy", "slug": "holy-priest" },
+  "tools": [
+    { "id": "purify", "name": "Purify", "spellId": 527, "actions": ["cleanse-magic", "cleanse-disease"], "availability": "specialization", "actionAvailability": { "cleanse-disease": "talent" }, "scope": "friendly-single", "limitations": ["Disease removal requires Improved Purify", "Eight-second cooldown"] },
+    { "id": "dispel-magic", "name": "Dispel Magic", "spellId": 528, "actions": ["purge"], "availability": "talent", "scope": "enemy", "limitations": ["Removes one beneficial Magic effect", "No cooldown"] },
+    { "id": "mass-dispel", "name": "Mass Dispel", "spellId": 32375, "actions": ["cleanse-magic", "purge"], "availability": "talent", "scope": "mixed-area", "limitations": ["Removes harmful Magic from up to five friendly targets", "Removes one beneficial Magic effect from up to five enemy targets", "One-and-a-half-second cast", "Two-minute cooldown"] },
+    { "id": "psychic-scream", "name": "Psychic Scream", "spellId": 8122, "actions": ["crowd-control"], "availability": "talent", "scope": "area-enemy", "limitations": ["Fear can break from damage", "Only affects susceptible enemies"] },
+    { "id": "power-infusion", "name": "Power Infusion", "spellId": 10060, "actions": ["external-offensive"], "availability": "talent", "scope": "friendly-single", "limitations": ["Twenty percent Haste for fifteen seconds", "Two-minute cooldown", "Can only target players"] },
+    { "id": "guardian-spirit", "name": "Guardian Spirit", "spellId": 47788, "actions": ["external-defensive"], "availability": "talent", "scope": "friendly-single", "limitations": ["Increases healing received", "Prevents one otherwise-fatal hit unless the damage is too large", "Three-minute cooldown"] },
+    { "id": "power-word-fortitude", "name": "Power Word: Fortitude", "spellId": 21562, "actions": ["group-buff"], "availability": "baseline", "scope": "friendly-area", "limitations": ["Five percent Stamina", "Does not stack with an equivalent Fortitude effect"] },
+    { "id": "desperate-prayer", "name": "Desperate Prayer", "spellId": 19236, "actions": ["defensive"], "availability": "baseline", "scope": "self", "limitations": ["Personal defensive only"] }
+  ],
+  "provenance": [
+    { "kind": "external-reference", "description": "Current Midnight Holy guide identifies Purify, Improved Purify, Dispel Magic, Mass Dispel, Power Infusion, Fortitude, Psychic Scream, and Guardian Spirit.", "url": "https://www.wowhead.com/guide/classes/priest/holy/abilities-talents-pve-healer", "retrievedAt": "2026-09-02T21:15:00+02:00" },
+    { "kind": "external-reference", "description": "Current Purify record confirms healer Magic removal and Disease removal from Improved Purify.", "url": "https://www.wowhead.com/spell=527/purify", "retrievedAt": "2026-09-02T21:15:00+02:00" },
+    { "kind": "external-reference", "description": "Current Guardian Spirit record confirms its friendly target, healing increase, death-prevention behavior, and cooldown.", "url": "https://www.wowhead.com/spell=47788/guardian-spirit", "retrievedAt": "2026-09-02T21:15:00+02:00" }
+  ]
+}
