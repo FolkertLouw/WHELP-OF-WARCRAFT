@@ -150,6 +150,10 @@
     { "id": "midnight-season-2/holy-paladin-utility-matrix", "path": "mythic-plus/midnight-season-2/specs/holy-paladin-utility-matrix.json", "status": "corroborated" },
     { "id": "midnight-season-2/discipline-priest-utility-matrix", "path": "mythic-plus/midnight-season-2/specs/discipline-priest-utility-matrix.json", "status": "corroborated" },
     { "id": "midnight-season-2/holy-priest-utility-matrix", "path": "mythic-plus/midnight-season-2/specs/holy-priest-utility-matrix.json", "status": "corroborated" },
-    { "id": "midnight-season-2/shadow-priest-utility-matrix", "path": "mythic-plus/midnight-season-2/specs/shadow-priest-utility-matrix.json", "status": "corroborated" }
+    { "id": "midnight-season-2/shadow-priest-utility-matrix", "path": "mythic-plus/midnight-season-2/specs/shadow-priest-utility-matrix.json", "status": "corroborated" },
+    { "id": "midnight-season-2/balance-druid-utility-matrix", "path": "mythic-plus/midnight-season-2/specs/balance-druid-utility-matrix.json", "status": "corroborated" },
+    { "id": "midnight-season-2/feral-druid-utility-matrix", "path": "mythic-plus/midnight-season-2/specs/feral-druid-utility-matrix.json", "status": "corroborated" },
+    { "id": "midnight-season-2/guardian-druid-utility-matrix", "path": "mythic-plus/midnight-season-2/specs/guardian-druid-utility-matrix.json", "status": "corroborated" },
+    { "id": "midnight-season-2/restoration-druid-utility-matrix", "path": "mythic-plus/midnight-season-2/specs/restoration-druid-utility-matrix.json", "status": "corroborated" }
   ]
 }

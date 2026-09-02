@@ -1,0 +1,33 @@
+{
+  "$schema": "../../../../schemas/spec-dungeon-matrix.schema.json",
+  "schemaVersion": 1,
+  "recordType": "spec-dungeon-matrix",
+  "id": "midnight-season-2/feral-druid-utility-matrix",
+  "status": "corroborated",
+  "validity": { "fromBuild": "12.1.0.69587", "untilBuild": null, "seasonId": null, "seasonSlug": "midnight-season-2" },
+  "spec": { "classId": 11, "className": "Druid", "specId": 103, "specName": "Feral" },
+  "axes": [
+    { "id": "interrupt", "label": "Short-cooldown interrupt", "abilityNames": ["Skull Bash"], "spellIds": [106839], "toolIds": ["skull-bash"] },
+    { "id": "toxin-curse-cleanse", "label": "Friendly Curse and Poison removal", "abilityNames": ["Remove Corruption"], "spellIds": [2782], "toolIds": ["remove-corruption"] },
+    { "id": "soothe", "label": "Enemy Enrage removal", "abilityNames": ["Soothe"], "spellIds": [2908], "toolIds": ["soothe"] },
+    { "id": "area-control", "label": "Area stops and enemy repositioning", "abilityNames": ["Incapacitating Roar", "Typhoon", "Ursol's Vortex"], "spellIds": [99, 132469, 102793], "toolIds": ["incapacitating-roar", "typhoon", "ursols-vortex"] },
+    { "id": "self-shapeshift-cleanse", "label": "Self root and snare removal by shapeshifting", "abilityNames": ["Cat Form"], "spellIds": [768], "toolIds": ["cat-form"] }
+  ],
+  "dungeons": [
+    { "dungeonId": "altar-of-fangs", "instanceMapId": 2993, "ratings": { "interrupt": "always", "toxin-curse-cleanse": "always", "soothe": "niche", "area-control": "always", "self-shapeshift-cleanse": "always" }, "mechanicSpellIds": [1294569, 1307567], "notes": ["Shapeshift Paralyzing Shots, cleanse Mass Envenom, and use Vortex to help the tank kite Ravenous Descendants.", "Typhoon and Incapacitating Roar are stops, while Skull Bash supplies the actual spell-school interrupt."] },
+    { "dungeonId": "the-blinding-vale", "instanceMapId": 2859, "ratings": { "interrupt": "always", "toxin-curse-cleanse": "always", "soothe": "none", "area-control": "niche", "self-shapeshift-cleanse": "always" }, "mechanicSpellIds": [1250937, 1259365], "notes": ["Remove Corruption covers Toxic Spew and shapeshifting removes Bloodthorn Roots from the Druid.", "The self cleanse does not free other players; cleanse or external control remains group coverage."] },
+    { "dungeonId": "den-of-nalorakk", "instanceMapId": 2825, "ratings": { "interrupt": "always", "toxin-curse-cleanse": "always", "soothe": "niche", "area-control": "niche", "self-shapeshift-cleanse": "always" }, "mechanicSpellIds": [1309919, 1235549], "notes": ["Shapeshifting clears eligible Frigid Roar and Glacial effects on the Druid; Remove Corruption handles Curse or Poison applications.", "Bear Form is also used for the dungeon's Druid interaction, but that interaction is not represented as a combat capability."] },
+    { "dungeonId": "murder-row", "instanceMapId": 2813, "ratings": { "interrupt": "always", "toxin-curse-cleanse": "always", "soothe": "always", "area-control": "niche", "self-shapeshift-cleanse": "none" }, "mechanicSpellIds": [1217973], "notes": ["Remove Corruption handles Curse of Doom and Soothe removes Fel Rage.", "No guide-backed shapeshift-removable effect is asserted for this dungeon."] },
+    { "dungeonId": "voidscar-arena", "instanceMapId": 2923, "ratings": { "interrupt": "always", "toxin-curse-cleanse": "always", "soothe": "always", "area-control": "always", "self-shapeshift-cleanse": "always" }, "mechanicSpellIds": [1226031, 1263971, 1289258, 1249621], "notes": ["Cleanse Poison Splash, Mind-Numbing Poison, or Corrosive Essence; shapeshift Violent Sand.", "Typhoon and Vortex can disrupt eligible Shell Guard or Mending Void enemies; Soothe is situational and can be wrong if an Enrage increases damage taken."] },
+    { "dungeonId": "temple-of-sethraliss", "instanceMapId": 1877, "ratings": { "interrupt": "always", "toxin-curse-cleanse": "always", "soothe": "none", "area-control": "always", "self-shapeshift-cleanse": "none" }, "mechanicSpellIds": [1290031], "notes": ["Remove Corruption covers named Poison and Curse effects; Typhoon can stop A Knot of Snakes and Vortex can contain eligible tormentors.", "No guide-backed Enrage or shapeshift-removable effect is asserted."] },
+    { "dungeonId": "kings-rest", "instanceMapId": 1762, "ratings": { "interrupt": "always", "toxin-curse-cleanse": "always", "soothe": "always", "area-control": "always", "self-shapeshift-cleanse": "always" }, "mechanicSpellIds": [267273, 269976, 271564, 1306763], "notes": ["Cleanse Poison Nova, Hex, Lingering Fluid, or Serpent Strike and use Typhoon or Vortex on Animated Gold.", "Do not Soothe Ancestral Fury because its downside benefits the party; use Soothe on Bestial Berserk instead."] },
+    { "dungeonId": "ruby-life-pools", "instanceMapId": 2521, "ratings": { "interrupt": "always", "toxin-curse-cleanse": "none", "soothe": "none", "area-control": "always", "self-shapeshift-cleanse": "niche" }, "mechanicSpellIds": [1305234], "notes": ["Typhoon can disrupt Flaming Barrage or Ice Shield; the guide does not list a Curse, Poison, or Enrage answer here.", "Cold Claws is a possible self shapeshift target, but the guide treats it as unlikely to select the Druid."] }
+  ],
+  "affixes": [
+    { "affixSlug": "xalataths-bargain-ascendant", "recommendations": ["Typhoon and Incapacitating Roar can control multiple orbs; Skull Bash can cover one orb, while area control handles clusters."] },
+    { "affixSlug": "xalataths-bargain-voidbound", "recommendations": ["Swap immediately to the priority enemy and contribute burst damage."] },
+    { "affixSlug": "xalataths-bargain-pulsar", "recommendations": ["Use Druid mobility to collect another player's orb without crossing the group unpredictably."] },
+    { "affixSlug": "xalataths-bargain-devour", "recommendations": ["Remove Corruption can dispel two eligible applications during the duration; shapeshifting can remove the Druid's own eligible application, with healing as fallback."] }
+  ],
+  "provenance": [{ "kind": "external-reference", "description": "Original structured summary of Guiltyas's Patch 12.1.0 Feral Druid dungeon utility guidance. It stores compact recommendations and spell IDs, not guide prose, rankings, talent strings, or comments.", "url": "https://www.wowhead.com/guide/classes/druid/feral/mythic-plus-dungeon-tips", "retrievedAt": "2026-09-02T19:00:00+02:00" }]
+}

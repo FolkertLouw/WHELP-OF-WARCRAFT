@@ -1,0 +1,29 @@
+{
+  "$schema": "../../../../schemas/spec-dungeon-matrix.schema.json", "schemaVersion": 1, "recordType": "spec-dungeon-matrix",
+  "id": "midnight-season-2/guardian-druid-utility-matrix", "status": "corroborated",
+  "validity": { "fromBuild": "12.1.0.69587", "untilBuild": null, "seasonId": null, "seasonSlug": "midnight-season-2" },
+  "spec": { "classId": 11, "className": "Druid", "specId": 104, "specName": "Guardian" },
+  "axes": [
+    { "id": "interrupt", "label": "Short-cooldown interrupt", "abilityNames": ["Skull Bash"], "spellIds": [106839], "toolIds": ["skull-bash"] },
+    { "id": "toxin-curse-cleanse", "label": "Friendly Curse and Poison removal", "abilityNames": ["Remove Corruption"], "spellIds": [2782], "toolIds": ["remove-corruption"] },
+    { "id": "soothe", "label": "Enemy Enrage removal", "abilityNames": ["Soothe"], "spellIds": [2908], "toolIds": ["soothe"] },
+    { "id": "area-control", "label": "Area stops and enemy repositioning", "abilityNames": ["Incapacitating Roar", "Typhoon", "Ursol's Vortex"], "spellIds": [99, 132469, 102793], "toolIds": ["incapacitating-roar", "typhoon", "ursols-vortex"] }
+  ],
+  "dungeons": [
+    { "dungeonId": "altar-of-fangs", "instanceMapId": 2993, "ratings": { "interrupt": "always", "toxin-curse-cleanse": "always", "soothe": "niche", "area-control": "always" }, "mechanicSpellIds": [1307567], "notes": ["The guide confirms the reusable Guardian toolkit but does not name a dungeon-specific trick; Mass Envenom is canonical Poison evidence for Remove Corruption.", "Typhoon and Incapacitating Roar are stops, not spell-school lockouts."] },
+    { "dungeonId": "the-blinding-vale", "instanceMapId": 2859, "ratings": { "interrupt": "always", "toxin-curse-cleanse": "always", "soothe": "none", "area-control": "niche" }, "mechanicSpellIds": [1250937], "notes": ["Toxic Spew is canonical Poison evidence; the current Guardian guide supplies no more specific dungeon advice.", "Ratings combine the sourced class toolkit with canonical WHELP mechanic typing."] },
+    { "dungeonId": "den-of-nalorakk", "instanceMapId": 2825, "ratings": { "interrupt": "always", "toxin-curse-cleanse": "always", "soothe": "always", "area-control": "niche" }, "mechanicSpellIds": [1234846, 1246865, 1238053], "notes": ["Remove Corruption covers Toxic Spores; Soothe covers Bestial Wrath or Mother's Wrath.", "The guide itself labels every dungeon section as having no special Guardian trick."] },
+    { "dungeonId": "murder-row", "instanceMapId": 2813, "ratings": { "interrupt": "always", "toxin-curse-cleanse": "always", "soothe": "always", "area-control": "always" }, "mechanicSpellIds": [1216590, 1217973, 1201554], "notes": ["Cleanse Heartstop Poison or Curse of Doom and Soothe Fel Rage; Typhoon can interrupt eligible Seduction channelers.", "Typhoon displacement can reduce group damage if it un-stacks enemies, so use it deliberately."] },
+    { "dungeonId": "voidscar-arena", "instanceMapId": 2923, "ratings": { "interrupt": "always", "toxin-curse-cleanse": "always", "soothe": "always", "area-control": "always" }, "mechanicSpellIds": [1226031, 1263971, 1289258], "notes": ["Remove Corruption covers the named Poisons and Soothe is situational on enraged enemies.", "Vortex can preserve enemy stacking after Typhoon and help the tank control eligible packs."] },
+    { "dungeonId": "temple-of-sethraliss", "instanceMapId": 1877, "ratings": { "interrupt": "always", "toxin-curse-cleanse": "always", "soothe": "none", "area-control": "always" }, "mechanicSpellIds": [1290031], "notes": ["Remove Corruption covers Poison and Curse applications; area control can stop A Knot of Snakes or contain eligible tormentors.", "No guide-backed Enrage target is asserted."] },
+    { "dungeonId": "kings-rest", "instanceMapId": 1762, "ratings": { "interrupt": "always", "toxin-curse-cleanse": "always", "soothe": "always", "area-control": "always" }, "mechanicSpellIds": [267273, 269976, 271564, 1306763], "notes": ["Cleanse Poison Nova, Hex, Lingering Fluid, or Serpent Strike and control Animated Gold.", "Do not remove Ancestral Fury; its downside increases party damage. Soothe Bestial Berserk instead."] },
+    { "dungeonId": "ruby-life-pools", "instanceMapId": 2521, "ratings": { "interrupt": "always", "toxin-curse-cleanse": "none", "soothe": "none", "area-control": "always" }, "mechanicSpellIds": [], "notes": ["Typhoon can disrupt eligible Flaming Barrage or Ice Shield casters; the guide names no cleanse or Soothe target.", "No mechanic spell ID is asserted because the guide's Guardian section does not provide one."] }
+  ],
+  "affixes": [
+    { "affixSlug": "xalataths-bargain-ascendant", "recommendations": ["Incapacitating Roar and Typhoon can control clustered orbs; Skull Bash covers one orb."] },
+    { "affixSlug": "xalataths-bargain-voidbound", "recommendations": ["Save offensive cooldown value when practical and swap immediately to the priority enemy."] },
+    { "affixSlug": "xalataths-bargain-pulsar", "recommendations": ["Use normal Druid mobility and coordinate orb collection without dragging enemies through the group."] },
+    { "affixSlug": "xalataths-bargain-devour", "recommendations": ["Remove Corruption can dispel two eligible applications during the duration; healing is the fallback."] }
+  ],
+  "provenance": [{ "kind": "external-reference", "description": "Original structured summary of Pumps's Patch 12.1.0 Guardian Druid utility guidance. The guide repeats generic utility and states that its dungeon sections have no special tricks; canonical mechanic records therefore support the ratings without being presented as guide quotations.", "url": "https://www.wowhead.com/guide/classes/druid/guardian/mythic-plus-dungeon-tips", "retrievedAt": "2026-09-02T19:00:00+02:00" }]
+}

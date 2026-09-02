@@ -13,9 +13,9 @@ const season = JSON.parse(await readFile(path.join(root, "data", "seasons", "mid
 test("reports explicit full-matrix and capability-only coverage", () => {
   const report = queryMatrixCoverage(capabilities, matrices, season);
   assert.equal(report.summary.modeledSpecCount, 21);
-  assert.equal(report.summary.matrixSpecCount, 17);
-  assert.equal(report.summary.fullMatrixSpecCount, 17);
-  assert.equal(report.summary.capabilityOnlySpecCount, 4);
+  assert.equal(report.summary.matrixSpecCount, 21);
+  assert.equal(report.summary.fullMatrixSpecCount, 21);
+  assert.equal(report.summary.capabilityOnlySpecCount, 0);
   const beastMastery = report.entries.find((entry) => entry.spec.slug === "beast-mastery-hunter");
   assert.equal(beastMastery.completeSeasonCoverage, true);
   assert.deepEqual(beastMastery.missingDungeonIds, []);
@@ -45,6 +45,11 @@ test("reports explicit full-matrix and capability-only coverage", () => {
   const shadowPriest = report.entries.find((entry) => entry.spec.slug === "shadow-priest");
   assert.equal(shadowPriest.completeSeasonCoverage, true);
   assert.deepEqual(shadowPriest.missingDungeonIds, []);
+  for (const slug of ["balance-druid", "feral-druid", "guardian-druid", "restoration-druid"]) {
+    const druid = report.entries.find((entry) => entry.spec.slug === slug);
+    assert.equal(druid.completeSeasonCoverage, true);
+    assert.deepEqual(druid.missingDungeonIds, []);
+  }
 });
 
 test("rejects malformed coverage inputs", () => {

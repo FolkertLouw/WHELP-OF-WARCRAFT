@@ -3,6 +3,7 @@
   "schemaVersion": 1,
   "recordType": "spec-capabilities",
   "id": "druid/restoration/capabilities",
+  "matrixRecordId": "midnight-season-2/restoration-druid-utility-matrix",
   "status": "corroborated",
   "validity": { "fromBuild": "12.1.0.69587", "untilBuild": null, "seasonId": null, "seasonSlug": "midnight-season-2" },
   "spec": { "classId": 11, "className": "Druid", "specId": 105, "specName": "Restoration", "slug": "restoration-druid" },
@@ -10,6 +11,8 @@
     { "id": "natures-cure", "name": "Nature's Cure", "spellId": 88423, "actions": ["cleanse-magic", "cleanse-curse", "cleanse-poison"], "availability": "specialization", "scope": "friendly-single", "limitations": ["Eight-second cooldown", "Curse and Poison removal come from the free Improved Nature's Cure specialization point"] },
     { "id": "soothe", "name": "Soothe", "spellId": 2908, "actions": ["soothe"], "availability": "talent", "scope": "enemy", "limitations": ["Enrage effects only", "Ten-second cooldown"] },
     { "id": "incapacitating-roar", "name": "Incapacitating Roar", "spellId": 99, "actions": ["crowd-control"], "availability": "talent", "scope": "area-enemy", "limitations": ["Shifts the Druid into Bear Form", "Only affects susceptible enemies"] },
+    { "id": "typhoon", "name": "Typhoon", "spellId": 132469, "actions": ["crowd-control", "enemy-reposition"], "availability": "talent", "scope": "area-enemy", "limitations": ["Knockback can unstack enemies", "Only interrupts or repositions susceptible non-boss enemies"] },
+    { "id": "ursols-vortex", "name": "Ursol's Vortex", "spellId": 102793, "actions": ["crowd-control", "enemy-reposition"], "availability": "talent", "scope": "area-enemy", "limitations": ["Slows and pulls back eligible enemies", "Does not provide a spell-school lockout"] },
     { "id": "ironbark", "name": "Ironbark", "spellId": 102342, "actions": ["external-defensive"], "availability": "talent", "scope": "friendly-single", "limitations": ["Single-target external mitigation", "Ninety-second cooldown"] },
     { "id": "rebirth", "name": "Rebirth", "spellId": 20484, "actions": ["battle-resurrection"], "availability": "baseline", "scope": "friendly-single", "limitations": ["Requires a dead ally", "Uses the shared combat-resurrection limit"] },
     { "id": "mark-of-the-wild", "name": "Mark of the Wild", "spellId": 1126, "actions": ["group-buff"], "availability": "baseline", "scope": "friendly-area", "limitations": ["Does not stack with another Druid's Mark of the Wild"] },
@@ -18,6 +21,7 @@
   "provenance": [
     { "kind": "external-reference", "description": "Current Restoration Druid ability guide identifies Nature's Cure, Ironbark, Mark of the Wild, and defensive utility; it also confirms Improved Nature's Cure is granted free.", "url": "https://www.wowhead.com/guide/classes/druid/restoration/abilities-talents-pve-healer", "retrievedAt": "2026-09-02T16:30:00+02:00" },
     { "kind": "external-reference", "description": "Current Nature's Cure record distinguishes base Magic removal from its Improved Curse and Poison effects.", "url": "https://www.wowhead.com/spell=88423/natures-cure", "retrievedAt": "2026-09-02T16:30:00+02:00" },
-    { "kind": "external-reference", "description": "Current Ironbark record confirms single-target external mitigation, duration, range, and cooldown.", "url": "https://www.wowhead.com/spell=102342/ironbark", "retrievedAt": "2026-09-02T16:30:00+02:00" }
+    { "kind": "external-reference", "description": "Current Ironbark record confirms single-target external mitigation, duration, range, and cooldown.", "url": "https://www.wowhead.com/spell=102342/ironbark", "retrievedAt": "2026-09-02T16:30:00+02:00" },
+    { "kind": "external-reference", "description": "Patch 12.1.0 Restoration dungeon guide confirms Nature's Cure, Ursol's Vortex, Incapacitating Roar, and Typhoon, while explicitly leaving dungeon-by-dungeon tips pending.", "url": "https://www.wowhead.com/guide/classes/druid/restoration/mythic-plus-dungeon-tips", "retrievedAt": "2026-09-02T19:00:00+02:00" }
   ]
 }

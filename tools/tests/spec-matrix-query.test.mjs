@@ -32,7 +32,8 @@ test("returns one requested affix with provenance", () => {
 });
 
 test("rejects absent matrices and invalid filters explicitly", () => {
-  assert.throws(() => querySpecMatrix(matrices, capabilities, { spec: "balance-druid" }), /has no seasonal utility matrix/);
+  const withoutMatrix = capabilities.map((record) => record.spec.slug === "balance-druid" ? { ...record, matrixRecordId: undefined } : record);
+  assert.throws(() => querySpecMatrix(matrices, withoutMatrix, { spec: "balance-druid" }), /has no seasonal utility matrix/);
   assert.throws(() => querySpecMatrix(matrices, capabilities, { spec: "frost-death-knight", dungeon: "not-a-dungeon" }), /has no dungeon/);
   assert.throws(() => querySpecMatrix(matrices, capabilities, { spec: "frost-death-knight", rating: "best" }), /unknown utility rating/);
 });
@@ -158,4 +159,28 @@ test("joins Survival's Murder Row-only stealth revelation", () => {
   assert.equal(reveal.tools[0].id, "flare");
   assert.deepEqual(reveal.tools[0].actions, ["reveal-stealth"]);
   assert.ok(report.dungeons[0].mechanicSpellIds.includes(1216970));
+});
+
+test("joins Feral shapeshifting as self-only removal and preserves Soothe cautions", () => {
+  const vale = querySpecMatrix(matrices, capabilities, { spec: "feral-druid", dungeon: "the-blinding-vale", rating: "always" });
+  const shapeshift = vale.dungeons[0].utilities.find((entry) => entry.axisId === "self-shapeshift-cleanse").tools[0];
+  assert.equal(shapeshift.id, "cat-form");
+  assert.equal(shapeshift.scope, "self");
+  assert.deepEqual(shapeshift.actions, ["cleanse-snare", "cleanse-root"]);
+  const kingsRest = querySpecMatrix(matrices, capabilities, { spec: "feral-druid", dungeon: "kings-rest" });
+  assert.match(kingsRest.dungeons[0].notes.join(" "), /Do not Soothe Ancestral Fury/);
+});
+
+test("keeps Restoration Druid healer cleansing distinct from DPS Druid cleansing", () => {
+  const resto = querySpecMatrix(matrices, capabilities, { spec: "restoration-druid", dungeon: "murder-row", rating: "always" });
+  assert.ok(resto.dungeons[0].utilities.find((entry) => entry.axisId === "magic-toxin-cleanse").tools[0].actions.includes("cleanse-magic"));
+  const balance = querySpecMatrix(matrices, capabilities, { spec: "balance-druid", dungeon: "murder-row", rating: "always" });
+  assert.ok(!balance.dungeons[0].utilities.find((entry) => entry.axisId === "toxin-curse-cleanse").tools[0].actions.includes("cleanse-magic"));
+});
+
+test("surfaces Guardian positional stops without calling them school interrupts", () => {
+  const report = querySpecMatrix(matrices, capabilities, { spec: "guardian-druid", dungeon: "altar-of-fangs", rating: "always" });
+  const control = report.dungeons[0].utilities.find((entry) => entry.axisId === "area-control");
+  assert.ok(control.tools.find((tool) => tool.id === "typhoon").actions.includes("enemy-reposition"));
+  assert.match(report.dungeons[0].notes.join(" "), /not spell-school lockouts/);
 });

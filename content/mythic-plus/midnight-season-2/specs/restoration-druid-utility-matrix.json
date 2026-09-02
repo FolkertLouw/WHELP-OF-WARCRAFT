@@ -1,0 +1,28 @@
+{
+  "$schema": "../../../../schemas/spec-dungeon-matrix.schema.json", "schemaVersion": 1, "recordType": "spec-dungeon-matrix",
+  "id": "midnight-season-2/restoration-druid-utility-matrix", "status": "corroborated",
+  "validity": { "fromBuild": "12.1.0.69587", "untilBuild": null, "seasonId": null, "seasonSlug": "midnight-season-2" },
+  "spec": { "classId": 11, "className": "Druid", "specId": 105, "specName": "Restoration" },
+  "axes": [
+    { "id": "magic-toxin-cleanse", "label": "Friendly Magic, Curse, and Poison removal", "abilityNames": ["Nature's Cure"], "spellIds": [88423], "toolIds": ["natures-cure"] },
+    { "id": "area-control", "label": "Area stops and enemy repositioning", "abilityNames": ["Incapacitating Roar", "Typhoon", "Ursol's Vortex"], "spellIds": [99, 132469, 102793], "toolIds": ["incapacitating-roar", "typhoon", "ursols-vortex"] },
+    { "id": "external-defensive", "label": "Single-target external mitigation", "abilityNames": ["Ironbark"], "spellIds": [102342], "toolIds": ["ironbark"] }
+  ],
+  "dungeons": [
+    { "dungeonId": "altar-of-fangs", "instanceMapId": 2993, "ratings": { "magic-toxin-cleanse": "always", "area-control": "always", "external-defensive": "always" }, "mechanicSpellIds": [1294569, 1307567], "notes": ["Nature's Cure has broad healer dispel coverage and area-control tools can stop eligible packs or help the tank kite.", "The source explicitly leaves dungeon-specific tips pending, so the rating is toolkit coverage rather than a claimed authored mechanic recommendation."] },
+    { "dungeonId": "the-blinding-vale", "instanceMapId": 2859, "ratings": { "magic-toxin-cleanse": "always", "area-control": "niche", "external-defensive": "always" }, "mechanicSpellIds": [1250937, 1259365], "notes": ["Nature's Cure covers canonical Poison and Magic applications; Ironbark is single-target mitigation.", "Typhoon can unstack enemies and should be paired with Vortex when displacement would cost group damage."] },
+    { "dungeonId": "den-of-nalorakk", "instanceMapId": 2825, "ratings": { "magic-toxin-cleanse": "always", "area-control": "niche", "external-defensive": "always" }, "mechanicSpellIds": [1234846, 1235549], "notes": ["Nature's Cure covers canonical Poison and Magic applications while Ironbark supports targeted damage windows.", "No dungeon-specific healer trick is asserted beyond the reusable toolkit."] },
+    { "dungeonId": "murder-row", "instanceMapId": 2813, "ratings": { "magic-toxin-cleanse": "always", "area-control": "always", "external-defensive": "always" }, "mechanicSpellIds": [1216590, 1217973, 1201554], "notes": ["Nature's Cure covers canonical Poison, Curse, and Magic applications; area stops can rescue missed casts.", "Incapacitating Roar requires Bear Form and many stopped enemies immediately recast."] },
+    { "dungeonId": "voidscar-arena", "instanceMapId": 2923, "ratings": { "magic-toxin-cleanse": "always", "area-control": "always", "external-defensive": "always" }, "mechanicSpellIds": [1226031, 1263971, 1289258], "notes": ["Nature's Cure covers the named Poison applications and general Magic dispels.", "Ursol's Vortex supplies kiting and snap-back control but no spell-school lockout."] },
+    { "dungeonId": "temple-of-sethraliss", "instanceMapId": 1877, "ratings": { "magic-toxin-cleanse": "always", "area-control": "always", "external-defensive": "always" }, "mechanicSpellIds": [1290031, 1302153], "notes": ["Nature's Cure covers canonical Poison, Curse, and Magic applications; area control can stop susceptible enemies.", "Ironbark remains targeted mitigation, not a party-wide defensive."] },
+    { "dungeonId": "kings-rest", "instanceMapId": 1762, "ratings": { "magic-toxin-cleanse": "always", "area-control": "always", "external-defensive": "always" }, "mechanicSpellIds": [267273, 271564, 1306763], "notes": ["Nature's Cure covers Poison Nova, Hex, Lingering Fluid, and Serpent Strike; area control can contain Animated Gold.", "These specifics come from canonical mechanics and shared Druid coverage because the Restoration guide's dungeon tips are pending."] },
+    { "dungeonId": "ruby-life-pools", "instanceMapId": 2521, "ratings": { "magic-toxin-cleanse": "always", "area-control": "always", "external-defensive": "always" }, "mechanicSpellIds": [381512, 391031, 1305234], "notes": ["Nature's Cure handles harmful Magic while Typhoon can disrupt susceptible casters.", "Ironbark supports a selected ally through a dangerous damage event."] }
+  ],
+  "affixes": [
+    { "affixSlug": "xalataths-bargain-ascendant", "recommendations": ["Typhoon and Incapacitating Roar can control multiple orbs, but both require talent access and Typhoon changes enemy positioning."] },
+    { "affixSlug": "xalataths-bargain-voidbound", "recommendations": ["Contribute priority damage only when group healing permits."] },
+    { "affixSlug": "xalataths-bargain-pulsar", "recommendations": ["High mobility and healing while moving make orb collection practical."] },
+    { "affixSlug": "xalataths-bargain-devour", "recommendations": ["The guide recommends dispelling one application and healing the rest; additional group dispels can improve coverage."] }
+  ],
+  "provenance": [{ "kind": "external-reference", "description": "Original structured summary of Voulk's Patch 12.1.0 Restoration Druid utility and affix guidance. The source explicitly says dungeon-by-dungeon tips are pending, so canonical WHELP mechanic typing supplies examples without attributing them to the author.", "url": "https://www.wowhead.com/guide/classes/druid/restoration/mythic-plus-dungeon-tips", "retrievedAt": "2026-09-02T19:00:00+02:00" }]
+}

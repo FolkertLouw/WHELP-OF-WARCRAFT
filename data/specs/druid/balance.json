@@ -3,6 +3,7 @@
   "schemaVersion": 1,
   "recordType": "spec-capabilities",
   "id": "druid/balance/capabilities",
+  "matrixRecordId": "midnight-season-2/balance-druid-utility-matrix",
   "status": "corroborated",
   "validity": { "fromBuild": "12.1.0.69587", "untilBuild": null, "seasonId": null, "seasonSlug": "midnight-season-2" },
   "spec": { "classId": 11, "className": "Druid", "specId": 102, "specName": "Balance", "slug": "balance-druid" },
@@ -11,6 +12,9 @@
     { "id": "remove-corruption", "name": "Remove Corruption", "spellId": 2782, "actions": ["cleanse-curse", "cleanse-poison"], "availability": "talent", "scope": "friendly-single", "limitations": ["Does not remove harmful Magic effects", "Eight-second cooldown"] },
     { "id": "soothe", "name": "Soothe", "spellId": 2908, "actions": ["soothe"], "availability": "talent", "scope": "enemy", "limitations": ["Enrage effects only", "Ten-second cooldown"] },
     { "id": "incapacitating-roar", "name": "Incapacitating Roar", "spellId": 99, "actions": ["crowd-control"], "availability": "talent", "scope": "area-enemy", "limitations": ["Shifts the Druid into Bear Form", "Only affects susceptible enemies"] },
+    { "id": "typhoon", "name": "Typhoon", "spellId": 132469, "actions": ["crowd-control", "enemy-reposition"], "availability": "talent", "scope": "area-enemy", "limitations": ["Knockback can unstack enemies", "Only interrupts or repositions susceptible non-boss enemies"] },
+    { "id": "ursols-vortex", "name": "Ursol's Vortex", "spellId": 102793, "actions": ["crowd-control", "enemy-reposition"], "availability": "talent", "scope": "area-enemy", "limitations": ["Slows and pulls back eligible enemies", "Does not provide a spell-school lockout"] },
+    { "id": "cat-form", "name": "Cat Form", "spellId": 768, "actions": ["cleanse-snare", "cleanse-root"], "availability": "baseline", "scope": "self", "limitations": ["Self-only", "Requires changing form", "Does not remove effects that cannot be cleared by shapeshifting"] },
     { "id": "rebirth", "name": "Rebirth", "spellId": 20484, "actions": ["battle-resurrection"], "availability": "baseline", "scope": "friendly-single", "limitations": ["Requires a dead ally", "Uses the shared combat-resurrection limit"] },
     { "id": "mark-of-the-wild", "name": "Mark of the Wild", "spellId": 1126, "actions": ["group-buff"], "availability": "baseline", "scope": "friendly-area", "limitations": ["Does not stack with another Druid's Mark of the Wild"] },
     { "id": "barkskin", "name": "Barkskin", "spellId": 22812, "actions": ["defensive"], "availability": "baseline", "scope": "self", "limitations": ["Personal mitigation only"] }
@@ -18,6 +22,7 @@
   "provenance": [
     { "kind": "external-reference", "description": "Current Balance Druid ability guide identifies Solar Beam, Remove Corruption, Soothe, and class utility.", "url": "https://www.wowhead.com/guide/classes/druid/balance/abilities-talents-pve-dps", "retrievedAt": "2026-09-02T16:30:00+02:00" },
     { "kind": "external-reference", "description": "Current Solar Beam record confirms its initial interrupt, persistent area silence, range, and cooldown.", "url": "https://www.wowhead.com/spell=78675/solar-beam", "retrievedAt": "2026-09-02T16:30:00+02:00" },
-    { "kind": "external-reference", "description": "Current Rebirth record confirms in-combat resurrection and the enforced encounter limit.", "url": "https://www.wowhead.com/spell=20484/rebirth", "retrievedAt": "2026-09-02T16:30:00+02:00" }
+    { "kind": "external-reference", "description": "Current Rebirth record confirms in-combat resurrection and the enforced encounter limit.", "url": "https://www.wowhead.com/spell=20484/rebirth", "retrievedAt": "2026-09-02T16:30:00+02:00" },
+    { "kind": "external-reference", "description": "Patch 12.1.0 Balance dungeon guide confirms Cat Form root and snare removal plus Typhoon and Ursol's Vortex control use.", "url": "https://www.wowhead.com/guide/classes/druid/balance/mythic-plus-dungeon-tips", "retrievedAt": "2026-09-02T19:00:00+02:00" }
   ]
 }

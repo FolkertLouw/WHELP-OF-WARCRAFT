@@ -57,6 +57,14 @@ test("queries shared Druid group buffs and combat resurrection", () => {
   assert.ok(resurrections.results.every((entry) => entry.tool.name === "Rebirth"));
 });
 
+test("keeps Druid shapeshifting self-only and positional control distinct", () => {
+  const forms = queryCapabilities(capabilities, { specs: ["balance-druid", "feral-druid"], action: "cleanse-root" });
+  assert.equal(forms.resultCount, 2);
+  assert.ok(forms.results.every((entry) => entry.tool.name === "Cat Form" && entry.tool.scope === "self"));
+  const reposition = queryCapabilities(capabilities, { specs: ["balance-druid", "feral-druid", "guardian-druid", "restoration-druid"], action: "enemy-reposition" });
+  assert.equal(reposition.resultCount, 8);
+});
+
 test("distinguishes Priest healer dispels from Shadow dispels", () => {
   const healerMagic = queryCapabilities(capabilities, { specs: ["discipline-priest", "holy-priest"], action: "cleanse-magic" });
   const shadowMagic = queryCapabilities(capabilities, { specs: ["shadow-priest"], action: "cleanse-magic" });

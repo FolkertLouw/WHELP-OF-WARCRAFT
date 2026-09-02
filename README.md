@@ -14,7 +14,7 @@ The repository is the reviewable public knowledge layer. Raw high-volume telemet
 
 ## Current status
 
-This is the initial foundation. It includes:
+Version 1.0 is a validated, queryable foundation. It includes:
 
 - the WHELP data and trust model;
 - JSON schemas and synthetic examples;
@@ -35,6 +35,8 @@ All three Paladin specializations now have complete seasonal utility matrices as
 Discipline Priest now has a complete seasonal matrix covering single and area Magic removal, offensive purges, self-only snare removal, route-oriented detection reduction, talent-dependent Disease cleansing, and creature-type-limited Shackle Horror control. Matrix query results retain tool scope and requirements so downstream agents do not mistake personal utility for party coverage.
 
 All three Priest specializations now have complete seasonal matrices. Holy retains the healer Purify model; Shadow instead has Disease-only single-target removal plus Mass Dispel, Silence, Dominate Mind, and Dispersion. Creature restrictions are encoded as negative coverage, preventing Mind Soothe or Dominate Mind from being recommended against ineligible Undead or Aberration targets.
+
+All four Druid specializations now have complete seasonal matrices, bringing the modeled catalog to 21 of 21 full matrices. The records distinguish Restoration's harmful-Magic dispel from non-healer Curse and Poison removal, keep shapeshifting as self-only root or snare removal, and classify Typhoon and Ursol's Vortex as positional stops rather than spell-school interrupts. Guide omissions remain explicit: the current Guardian and Restoration sources provide generic utility but little or no dungeon-specific advice, so WHELP labels canonical mechanic joins instead of attributing invented tips to those authors.
 
 Source maintenance is machine-readable. `npm run query:freshness` compares every canonical provenance-bearing record with the current build and the checked-in freshness policy. It reports source age separately from build validity and returns an actionable review queue; use `--as-of <ISO-date> --include all` for a reproducible full audit. See `docs/FRESHNESS.md`.
 
