@@ -17,6 +17,8 @@ const enhancementMatrix = await loadJson("content", "mythic-plus", "midnight-sea
 const enhancementCapabilities = await loadJson("data", "specs", "shaman", "enhancement.json");
 const beastMasteryMatrix = await loadJson("content", "mythic-plus", "midnight-season-2", "specs", "beast-mastery-hunter-utility-matrix.json");
 const beastMasteryCapabilities = await loadJson("data", "specs", "hunter", "beast-mastery.json");
+const marksmanshipMatrix = await loadJson("content", "mythic-plus", "midnight-season-2", "specs", "marksmanship-hunter-utility-matrix.json");
+const marksmanshipCapabilities = await loadJson("data", "specs", "hunter", "marksmanship.json");
 const season = await loadJson("data", "seasons", "midnight-season-2.json");
 
 test("Unholy matrix covers every Midnight Season 2 dungeon exactly once", () => {
@@ -148,4 +150,25 @@ test("Beast Mastery keeps target drops, cleanses, and enemy removal distinct", (
   assert.deepEqual(tools.get("emergency-salve").actions, ["cleanse-disease", "cleanse-poison"]);
   assert.deepEqual(tools.get("tranquilizing-shot").actions, ["purge", "soothe"]);
   assert.match(beastMasteryMatrix.dungeons.find((entry) => entry.dungeonId === "altar-of-fangs").notes.join(" "), /not a general interrupt/);
+});
+
+test("Marksmanship Hunter matrix covers the season and resolves every utility axis", () => {
+  assert.deepEqual(new Set(marksmanshipMatrix.dungeons.map((entry) => entry.dungeonId)), new Set(season.dungeons.map((entry) => entry.id)));
+  const tools = new Map(marksmanshipCapabilities.tools.map((tool) => [tool.id, tool]));
+  for (const axis of marksmanshipMatrix.axes) {
+    for (const toolId of axis.toolIds) {
+      const tool = tools.get(toolId);
+      assert.ok(tool, `${axis.id} should resolve ${toolId}`);
+      assert.ok(axis.abilityNames.includes(tool.name));
+      assert.ok(axis.spellIds.includes(tool.spellId));
+    }
+  }
+});
+
+test("Marksmanship does not inherit Beast Mastery's ally movement removal", () => {
+  const movement = marksmanshipMatrix.axes.find((axis) => axis.id === "movement-removal");
+  assert.deepEqual(movement.toolIds, ["posthaste"]);
+  const posthaste = marksmanshipCapabilities.tools.find((tool) => tool.id === "posthaste");
+  assert.equal(posthaste.scope, "self");
+  assert.ok(!marksmanshipCapabilities.tools.some((tool) => tool.id === "masters-call"));
 });

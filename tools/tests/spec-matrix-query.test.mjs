@@ -60,3 +60,12 @@ test("joins Beast Mastery target manipulation to the exact dungeon evidence", ()
   assert.deepEqual(targetDrop.tools[0].actions, ["target-drop"]);
   assert.ok(report.dungeons[0].mechanicSpellIds.includes(391031));
 });
+
+test("joins Marksmanship self-cleanse without claiming group dispel coverage", () => {
+  const report = querySpecMatrix(matrices, capabilities, { spec: "marksmanship-hunter", dungeon: "voidscar-arena", rating: "always" });
+  const cleanse = report.dungeons[0].utilities.find((entry) => entry.axisId === "self-cleanse").tools[0];
+  assert.equal(cleanse.id, "emergency-salve");
+  assert.deepEqual(cleanse.actions, ["cleanse-disease", "cleanse-poison"]);
+  assert.match(cleanse.limitations.join(" "), /Self-only/);
+  assert.ok(report.dungeons[0].mechanicSpellIds.includes(1263971));
+});

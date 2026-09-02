@@ -1,0 +1,34 @@
+{
+  "$schema": "../../../../schemas/spec-dungeon-matrix.schema.json",
+  "schemaVersion": 1,
+  "recordType": "spec-dungeon-matrix",
+  "id": "midnight-season-2/marksmanship-hunter-utility-matrix",
+  "status": "corroborated",
+  "validity": { "fromBuild": "12.1.0.69587", "untilBuild": null, "seasonId": null, "seasonSlug": "midnight-season-2" },
+  "spec": { "classId": 3, "className": "Hunter", "specId": 254, "specName": "Marksmanship" },
+  "axes": [
+    { "id": "target-drop", "label": "Targeted-cast cancellation", "abilityNames": ["Feign Death"], "spellIds": [5384], "toolIds": ["feign-death"] },
+    { "id": "self-cleanse", "label": "Personal poison and disease removal", "abilityNames": ["Emergency Salve"], "spellIds": [459517], "toolIds": ["emergency-salve"] },
+    { "id": "movement-removal", "label": "Personal snare and root removal", "abilityNames": ["Posthaste"], "spellIds": [109215], "toolIds": ["posthaste"] },
+    { "id": "enemy-removal", "label": "Enemy Magic and Enrage removal", "abilityNames": ["Tranquilizing Shot", "Kodo Tranquilizer", "Devilsaur Tranquilizer"], "spellIds": [19801, 459983, 459991], "toolIds": ["tranquilizing-shot", "kodo-tranquilizer", "devilsaur-tranquilizer"] },
+    { "id": "control", "label": "Stops, roots, and slows", "abilityNames": ["Intimidation", "Binding Shot", "Tar Trap", "Freezing Trap"], "spellIds": [19577, 109248, 187698, 187650], "toolIds": ["intimidation", "binding-shot", "tar-trap", "freezing-trap"] },
+    { "id": "turtle", "label": "Aspect of the Turtle immunity usage", "abilityNames": ["Aspect of the Turtle"], "spellIds": [186265], "toolIds": ["aspect-of-the-turtle"] }
+  ],
+  "dungeons": [
+    { "dungeonId": "altar-of-fangs", "instanceMapId": 2993, "ratings": { "target-drop": "always", "self-cleanse": "none", "movement-removal": "none", "enemy-removal": "always", "control": "always", "turtle": "none" }, "mechanicSpellIds": [1306308], "notes": ["Tranquilizing Shot removes Ravenous Claws from Ravenous Descendants.", "Binding Shot controls Uncoiled Writhes, while Feign Death can cancel the Spiteful Hunt fixate."] },
+    { "dungeonId": "the-blinding-vale", "instanceMapId": 2859, "ratings": { "target-drop": "none", "self-cleanse": "none", "movement-removal": "none", "enemy-removal": "none", "control": "always", "turtle": "none" }, "mechanicSpellIds": [], "notes": ["Binding Shot or Tar Trap controls low-health Lashers before they flee into dormant enemies; no dungeon-specific use is asserted for the other tracked axes."] },
+    { "dungeonId": "den-of-nalorakk", "instanceMapId": 2825, "ratings": { "target-drop": "none", "self-cleanse": "always", "movement-removal": "none", "enemy-removal": "always", "control": "niche", "turtle": "always" }, "mechanicSpellIds": [1234846, 1238053, 1246865], "notes": ["Feign Death or Turtle with Emergency Salve removes Toxic Spores from the Hunter; this is modeled as a self-cleanse rather than a target drop.", "Tranquilizing Shot removes Bestial Wrath and Mother's Wrath."] },
+    { "dungeonId": "murder-row", "instanceMapId": 2813, "ratings": { "target-drop": "none", "self-cleanse": "always", "movement-removal": "none", "enemy-removal": "always", "control": "always", "turtle": "none" }, "mechanicSpellIds": [1214922, 1216590, 1216970, 1229433], "notes": ["Tranquilizing Shot removes Back to Work!, Fel Rage, and Fel Crazed; Kodo Tranquilizer can widen Fel Crazed removal.", "Feign Death with Emergency Salve removes Heartstop Poison from the Hunter.", "Use Counter Shot and Intimidation on separate Mirror Images, and Binding Shot or Tar Trap on fleeing Warehouse Workers."] },
+    { "dungeonId": "voidscar-arena", "instanceMapId": 2923, "ratings": { "target-drop": "none", "self-cleanse": "always", "movement-removal": "always", "enemy-removal": "always", "control": "always", "turtle": "none" }, "mechanicSpellIds": [1249661, 1263971], "notes": ["Feign Death with Emergency Salve removes Mind-Numbing Poison from the Hunter.", "Posthaste through Disengage removes the Condensed Mass slow; Tar Trap controls the tank-fixating Toxic Creeper.", "Tranquilizing Shot removes Feral Rage, and Binding Shot controls Ethereal Shades."] },
+    { "dungeonId": "temple-of-sethraliss", "instanceMapId": 1877, "ratings": { "target-drop": "none", "self-cleanse": "always", "movement-removal": "none", "enemy-removal": "always", "control": "always", "turtle": "none" }, "mechanicSpellIds": [1290031, 1293464, 1308148], "notes": ["Feign Death with Emergency Salve removes Cytotoxin from the Hunter.", "Tranquilizing Shot removes Accumulate Charge before release.", "Intimidation or Binding Shot breaks A Knot of Snakes when targets are positioned together; Tar Trap slows healer-fixating Tormentors."] },
+    { "dungeonId": "kings-rest", "instanceMapId": 1762, "ratings": { "target-drop": "none", "self-cleanse": "always", "movement-removal": "none", "enemy-removal": "always", "control": "always", "turtle": "none" }, "mechanicSpellIds": [267763, 269935, 269976, 1296671], "notes": ["Tranquilizing Shot removes Bound by Shadow, Captain's Bulwark, and Ancestral Fury.", "Feign Death with Emergency Salve removes Wretched Discharge from the Hunter.", "Tar Trap and Binding Shot hold Animated Gold away from the Golden Serpent."] },
+    { "dungeonId": "ruby-life-pools", "instanceMapId": 2521, "ratings": { "target-drop": "none", "self-cleanse": "none", "movement-removal": "none", "enemy-removal": "always", "control": "always", "turtle": "none" }, "mechanicSpellIds": [373972, 391031], "notes": ["Tranquilizing Shot removes Blaze of Glory and Stormcloud Barrier.", "Binding Shot and Tar Trap reduce Infused Whelp melee pressure; no dungeon-specific use is asserted for the other tracked axes."] }
+  ],
+  "affixes": [
+    { "affixSlug": "xalataths-bargain-ascendant", "recommendations": ["Intimidation with Guttural Roar handles a cluster of casts; Freezing Trap handles only one."] },
+    { "affixSlug": "xalataths-bargain-voidbound", "recommendations": ["No dedicated utility swap is required; swap to and kill the emissary quickly."] },
+    { "affixSlug": "xalataths-bargain-pulsar", "recommendations": ["Use Aspect of the Cheetah to collect partner orbs and aim your own orb at an ally."] },
+    { "affixSlug": "xalataths-bargain-devour", "recommendations": ["Feign Death or Aspect of the Turtle with Emergency Salve removes the eligible effect from the Hunter; Exhilaration can heal it off instead."] }
+  ],
+  "provenance": [{ "kind": "external-reference", "description": "Original structured summary of TheAzortharion's Patch 12.1.0 Marksmanship Hunter dungeon and affix recommendations. Talent strings and performance rankings are intentionally excluded.", "url": "https://www.wowhead.com/guide/classes/hunter/marksmanship/mythic-plus-dungeon-tips", "retrievedAt": "2026-09-02T17:40:00+02:00" }]
+}
