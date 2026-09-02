@@ -18,7 +18,7 @@
       "abilities": [
         {
           "spellId": 1249661,
-          "name": null,
+          "name": "Feral Rage",
           "interruptible": false,
           "dispelType": "none",
           "enrage": true
@@ -31,14 +31,14 @@
       "abilities": [
         {
           "spellId": 1249661,
-          "name": null,
+          "name": "Feral Rage",
           "interruptible": false,
           "dispelType": "none",
           "enrage": true
         },
         {
           "spellId": 1250043,
-          "name": null,
+          "name": "Melt Armor",
           "interruptible": false,
           "dispelType": "magic",
           "enrage": false
@@ -51,14 +51,14 @@
       "abilities": [
         {
           "spellId": 1249661,
-          "name": null,
+          "name": "Feral Rage",
           "interruptible": false,
           "dispelType": "none",
           "enrage": true
         },
         {
           "spellId": 1310319,
-          "name": null,
+          "name": "Bolster",
           "interruptible": false,
           "dispelType": "none",
           "enrage": true
@@ -71,14 +71,14 @@
       "abilities": [
         {
           "spellId": 1254826,
-          "name": null,
+          "name": "Bloodsurge",
           "interruptible": false,
           "dispelType": "none",
           "enrage": true
         },
         {
           "spellId": 1298899,
-          "name": null,
+          "name": "Demoralizing Shout",
           "interruptible": true,
           "dispelType": "none",
           "enrage": false
@@ -91,7 +91,7 @@
       "abilities": [
         {
           "spellId": 1228176,
-          "name": null,
+          "name": "Lava Bolt",
           "interruptible": true,
           "dispelType": "none",
           "enrage": false
@@ -104,7 +104,7 @@
       "abilities": [
         {
           "spellId": 1299938,
-          "name": null,
+          "name": "Shadowbolt Volley",
           "interruptible": true,
           "dispelType": "none",
           "enrage": false
@@ -117,7 +117,7 @@
       "abilities": [
         {
           "spellId": 1249661,
-          "name": null,
+          "name": "Feral Rage",
           "interruptible": false,
           "dispelType": "none",
           "enrage": true
@@ -130,7 +130,7 @@
       "abilities": [
         {
           "spellId": 1249661,
-          "name": null,
+          "name": "Feral Rage",
           "interruptible": false,
           "dispelType": "none",
           "enrage": true
@@ -143,7 +143,7 @@
       "abilities": [
         {
           "spellId": 1249661,
-          "name": null,
+          "name": "Feral Rage",
           "interruptible": false,
           "dispelType": "none",
           "enrage": true
@@ -156,7 +156,7 @@
       "abilities": [
         {
           "spellId": 1249661,
-          "name": null,
+          "name": "Feral Rage",
           "interruptible": false,
           "dispelType": "none",
           "enrage": true
@@ -169,14 +169,14 @@
       "abilities": [
         {
           "spellId": 1249238,
-          "name": null,
+          "name": "Fire Spit",
           "interruptible": false,
           "dispelType": "magic",
           "enrage": false
         },
         {
           "spellId": 1249661,
-          "name": null,
+          "name": "Feral Rage",
           "interruptible": false,
           "dispelType": "none",
           "enrage": true
@@ -189,7 +189,7 @@
       "abilities": [
         {
           "spellId": 1249621,
-          "name": null,
+          "name": "Violent Sand",
           "interruptible": true,
           "dispelType": "none",
           "enrage": false
@@ -202,7 +202,7 @@
       "abilities": [
         {
           "spellId": 1233398,
-          "name": null,
+          "name": "Mad Shriek",
           "interruptible": true,
           "dispelType": "none",
           "enrage": false
@@ -215,7 +215,7 @@
       "abilities": [
         {
           "spellId": 1289258,
-          "name": null,
+          "name": "Corrosive Essence",
           "interruptible": false,
           "dispelType": "poison",
           "enrage": false
@@ -228,7 +228,7 @@
       "abilities": [
         {
           "spellId": 1239855,
-          "name": null,
+          "name": "Sky Strike",
           "interruptible": false,
           "dispelType": "magic",
           "enrage": false
@@ -241,7 +241,7 @@
       "abilities": [
         {
           "spellId": 1310324,
-          "name": null,
+          "name": "Mending Void",
           "interruptible": true,
           "dispelType": "none",
           "enrage": false
@@ -254,7 +254,7 @@
       "abilities": [
         {
           "spellId": 1310324,
-          "name": null,
+          "name": "Mending Void",
           "interruptible": true,
           "dispelType": "none",
           "enrage": false
@@ -267,14 +267,14 @@
       "abilities": [
         {
           "spellId": 1226031,
-          "name": null,
+          "name": "Poison Splash",
           "interruptible": false,
           "dispelType": "poison",
           "enrage": false
         },
         {
           "spellId": 1263971,
-          "name": null,
+          "name": "Mind-Numbing Poison",
           "interruptible": false,
           "dispelType": "poison",
           "enrage": false
@@ -285,9 +285,24 @@
   "provenance": [
     {
       "kind": "game-data",
-      "description": "Ability flags extracted by WHELP from Mythic Dungeon Tools 6.2.10; names remain null until independently corroborated.",
+      "description": "Ability flags extracted by WHELP from Mythic Dungeon Tools 6.2.10; names are independently corroborated below.",
       "url": "https://github.com/Nnoggie/MythicDungeonTools",
       "retrievedAt": "2026-09-02T11:15:00+02:00"
-    }
+    },
+    { "kind": "external-reference", "description": "Spell 1249661 name corroborated against Wowhead's Feral Rage record.", "url": "https://www.wowhead.com/spell=1249661/feral-rage", "retrievedAt": "2026-09-02T14:24:00+02:00" },
+    { "kind": "external-reference", "description": "Spell 1250043 name corroborated against Wowhead's Melt Armor record.", "url": "https://www.wowhead.com/spell=1250043/melt-armor", "retrievedAt": "2026-09-02T14:24:00+02:00" },
+    { "kind": "external-reference", "description": "Spell 1310319 name corroborated against Wowhead's Bolster record.", "url": "https://www.wowhead.com/spell=1310319/bolster", "retrievedAt": "2026-09-02T14:24:00+02:00" },
+    { "kind": "external-reference", "description": "Spell 1254826 name corroborated against Wowhead's Bloodsurge record.", "url": "https://www.wowhead.com/spell=1254826/bloodsurge", "retrievedAt": "2026-09-02T14:24:00+02:00" },
+    { "kind": "external-reference", "description": "Spell 1298899 name corroborated against Wowhead's Demoralizing Shout record.", "url": "https://www.wowhead.com/spell=1298899/demoralizing-shout", "retrievedAt": "2026-09-02T14:24:00+02:00" },
+    { "kind": "external-reference", "description": "Spell 1228176 name corroborated against Wowhead's Lava Bolt record.", "url": "https://www.wowhead.com/spell=1228176/lava-bolt", "retrievedAt": "2026-09-02T14:24:00+02:00" },
+    { "kind": "external-reference", "description": "Spell 1299938 name corroborated against Wowhead's Shadowbolt Volley record.", "url": "https://www.wowhead.com/spell=1299938/shadowbolt-volley", "retrievedAt": "2026-09-02T14:24:00+02:00" },
+    { "kind": "external-reference", "description": "Spell 1249238 name corroborated against Wowhead's Fire Spit record.", "url": "https://www.wowhead.com/spell=1249238/fire-spit", "retrievedAt": "2026-09-02T14:24:00+02:00" },
+    { "kind": "external-reference", "description": "Spell 1249621 name corroborated against Wowhead's Violent Sand record.", "url": "https://www.wowhead.com/spell=1249621/violent-sand", "retrievedAt": "2026-09-02T14:24:00+02:00" },
+    { "kind": "external-reference", "description": "Spell 1233398 name corroborated against Wowhead's Mad Shriek record.", "url": "https://www.wowhead.com/spell=1233398/mad-shriek", "retrievedAt": "2026-09-02T14:24:00+02:00" },
+    { "kind": "external-reference", "description": "Spell 1289258 name corroborated against Wowhead's Corrosive Essence record.", "url": "https://www.wowhead.com/spell=1289258/corrosive-essence", "retrievedAt": "2026-09-02T14:24:00+02:00" },
+    { "kind": "external-reference", "description": "Spell 1239855 name corroborated against Wowhead's Sky Strike record.", "url": "https://www.wowhead.com/spell=1239855/sky-strike", "retrievedAt": "2026-09-02T14:24:00+02:00" },
+    { "kind": "external-reference", "description": "Spell 1310324 name corroborated against Wowhead's Mending Void record.", "url": "https://www.wowhead.com/spell=1310324/mending-void", "retrievedAt": "2026-09-02T14:24:00+02:00" },
+    { "kind": "external-reference", "description": "Spell 1226031 name corroborated against Wowhead's Poison Splash record.", "url": "https://www.wowhead.com/spell=1226031/poison-splash", "retrievedAt": "2026-09-02T14:24:00+02:00" },
+    { "kind": "external-reference", "description": "Spell 1263971 name corroborated against Wowhead's Mind-Numbing Poison record.", "url": "https://www.wowhead.com/spell=1263971/mind-numbing-poison", "retrievedAt": "2026-09-02T14:24:00+02:00" }
   ]
 }
