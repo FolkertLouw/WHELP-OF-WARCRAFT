@@ -1,0 +1,34 @@
+{
+  "$schema": "../../../../schemas/spec-dungeon-matrix.schema.json",
+  "schemaVersion": 1,
+  "recordType": "spec-dungeon-matrix",
+  "id": "midnight-season-2/fire-mage-utility-matrix",
+  "status": "corroborated",
+  "validity": { "fromBuild": "12.1.0.69587", "untilBuild": null, "seasonId": null, "seasonSlug": "midnight-season-2" },
+  "spec": { "classId": 8, "className": "Mage", "specId": 63, "specName": "Fire" },
+  "axes": [
+    { "id": "target-drop", "label": "Target and channel cancellation", "abilityNames": ["Greater Invisibility"], "spellIds": [110959], "toolIds": ["greater-invisibility"] },
+    { "id": "snare-removal", "label": "Personal snare removal", "abilityNames": ["Energized Barriers"], "spellIds": [386828], "toolIds": ["energized-barriers"] },
+    { "id": "root-escape", "label": "Personal root and bond escape", "abilityNames": ["Blink"], "spellIds": [1953], "toolIds": ["blink"] },
+    { "id": "decurse", "label": "Friendly Curse removal", "abilityNames": ["Remove Curse"], "spellIds": [475], "toolIds": ["remove-curse"] },
+    { "id": "enemy-removal", "label": "Enemy Magic theft", "abilityNames": ["Spellsteal"], "spellIds": [30449], "toolIds": ["spellsteal"] },
+    { "id": "control", "label": "Disorient, incapacitate, and knock-up control", "abilityNames": ["Polymorph", "Supernova", "Dragon's Breath", "Ring of Frost"], "spellIds": [118, 157980, 31661, 113724], "toolIds": ["polymorph", "supernova", "dragons-breath", "ring-of-frost"] }
+  ],
+  "dungeons": [
+    { "dungeonId": "altar-of-fangs", "instanceMapId": 2993, "ratings": { "target-drop": "always", "snare-removal": "always", "root-escape": "none", "decurse": "none", "enemy-removal": "none", "control": "niche" }, "mechanicSpellIds": [1294569, 1301413, 1307571], "notes": ["Energized Barriers removes Paralyzing Shots' snare component from the Mage.", "Greater Invisibility avoids selected Hatchling debuffs and disjoints Zul'jan's Boneslicer, causing the boss to skip it; line of sight Blood Sacrifice."] },
+    { "dungeonId": "the-blinding-vale", "instanceMapId": 2859, "ratings": { "target-drop": "always", "snare-removal": "none", "root-escape": "always", "decurse": "none", "enemy-removal": "niche", "control": "none" }, "mechanicSpellIds": [1238581, 1259365], "notes": ["Spellsteal can take the beetles' small absorb shield.", "Greater Invisibility or Blink breaks Bloodthorn Roots; Slow Fall can bypass trash during the large jump after the first area."] },
+    { "dungeonId": "den-of-nalorakk", "instanceMapId": 2825, "ratings": { "target-drop": "always", "snare-removal": "none", "root-escape": "none", "decurse": "always", "enemy-removal": "none", "control": "none" }, "mechanicSpellIds": [1238801, 1309919], "notes": ["Remove Curse dispels Insatiable Hunger from an ally.", "Greater Invisibility stops Feast of Misery when the Mage is selected; double-tap Alter Time to stop momentum on the ice."] },
+    { "dungeonId": "murder-row", "instanceMapId": 2813, "ratings": { "target-drop": "always", "snare-removal": "none", "root-escape": "none", "decurse": "always", "enemy-removal": "none", "control": "none" }, "mechanicSpellIds": [1214922, 1217973], "notes": ["Remove Curse answers Curse of Doom on the Mage or an ally.", "Greater Invisibility stops selected Drain Life channels; Shimmer can carry the restaurant objective and cross Malefic Waves."] },
+    { "dungeonId": "voidscar-arena", "instanceMapId": 2923, "ratings": { "target-drop": "always", "snare-removal": "none", "root-escape": "none", "decurse": "none", "enemy-removal": "none", "control": "always" }, "mechanicSpellIds": [1227197, 1263971], "notes": ["Greater Invisibility stops the final boss's Void Cascade when the Mage is selected.", "Polymorph controls the Protective Turtle that grants enemies damage reduction."] },
+    { "dungeonId": "temple-of-sethraliss", "instanceMapId": 1877, "ratings": { "target-drop": "always", "snare-removal": "always", "root-escape": "always", "decurse": "none", "enemy-removal": "always", "control": "always" }, "mechanicSpellIds": [267027, 1290031, 1293307, 1293464], "notes": ["Spellsteal removes Accumulate Charge; Energized Barriers removes Slither Strike's snare.", "Dragon's Breath or Blink breaks A Knot of Snakes. Greater Invisibility breaks Arrow Barrage and the first boss's Gust, while Ring of Frost and Polymorph provide additional channel stops."] },
+    { "dungeonId": "kings-rest", "instanceMapId": 1762, "ratings": { "target-drop": "always", "snare-removal": "always", "root-escape": "none", "decurse": "always", "enemy-removal": "always", "control": "always" }, "mechanicSpellIds": [269935, 270492, 1296671, 1298104], "notes": ["Spellsteal Captain's Bulwark, but do not steal Bound by Shadow unless deliberately accepting its dangerous damage amplification; Remove Curse answers Hex.", "Energized Barriers removes Frost Shock. Greater Invisibility removes Dark Revelations and cancels selected casts, channels, or leaps; Ring of Frost stops susceptible raptor leaps."] },
+    { "dungeonId": "ruby-life-pools", "instanceMapId": 2521, "ratings": { "target-drop": "always", "snare-removal": "none", "root-escape": "none", "decurse": "none", "enemy-removal": "always", "control": "none" }, "mechanicSpellIds": [373972, 391031], "notes": ["Spellsteal removes Blaze of Glory and Stormcloud Barrier; Greater Invisibility is especially useful against selected Cinderbolt casts.", "Alter Time can return the Mage to the ground and restore health after the red-circle knock-up."] }
+  ],
+  "affixes": [
+    { "affixSlug": "xalataths-bargain-ascendant", "recommendations": ["Wait for the cluster to spawn, then use Supernova or Dragon's Breath to interrupt multiple casts."] },
+    { "affixSlug": "xalataths-bargain-voidbound", "recommendations": ["Swap immediately and attack the Voidbound Emissary if passive cleave will not kill it in time."] },
+    { "affixSlug": "xalataths-bargain-pulsar", "recommendations": ["Use Mage mobility to collide partner orbs and aim your own toward an ally."] },
+    { "affixSlug": "xalataths-bargain-devour", "recommendations": ["Remove Curse clears the eligible effect from the Mage or an ally; Energized Barriers clears the Mage's own effect through its snare component."] }
+  ],
+  "provenance": [{ "kind": "external-reference", "description": "Original structured summary of Preheat's Patch 12.1.0 Fire Mage dungeon utility and affix recommendations. Talent strings, gear, and performance rankings are intentionally excluded.", "url": "https://www.wowhead.com/guide/classes/mage/fire/mythic-plus-dungeon-tips", "retrievedAt": "2026-09-02T18:12:00+02:00" }]
+}

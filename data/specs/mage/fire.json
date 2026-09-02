@@ -3,6 +3,7 @@
   "schemaVersion": 1,
   "recordType": "spec-capabilities",
   "id": "mage/fire/capabilities",
+  "matrixRecordId": "midnight-season-2/fire-mage-utility-matrix",
   "status": "corroborated",
   "validity": { "fromBuild": "12.1.0.69587", "untilBuild": null, "seasonId": null, "seasonSlug": "midnight-season-2" },
   "spec": { "classId": 8, "className": "Mage", "specId": 63, "specName": "Fire", "slug": "fire-mage" },
@@ -13,11 +14,18 @@
     { "id": "polymorph", "name": "Polymorph", "spellId": 118, "actions": ["crowd-control"], "availability": "baseline", "scope": "enemy", "limitations": ["Damage breaks the effect", "Only affects susceptible creature types"] },
     { "id": "time-warp", "name": "Time Warp", "spellId": 80353, "actions": ["bloodlust"], "availability": "baseline", "scope": "friendly-area", "limitations": ["Thirty percent Haste for forty seconds", "Applies the shared ten-minute exhaustion effect", "Five-minute cooldown"] },
     { "id": "arcane-intellect", "name": "Arcane Intellect", "spellId": 1459, "actions": ["group-buff"], "availability": "baseline", "scope": "friendly-area", "limitations": ["Three percent Intellect for one hour", "Does not stack with an equivalent Arcane Intellect effect"] },
-    { "id": "blazing-barrier", "name": "Blazing Barrier", "spellId": 235313, "actions": ["defensive"], "availability": "talent", "scope": "self", "limitations": ["Personal absorb only"] }
+    { "id": "blazing-barrier", "name": "Blazing Barrier", "spellId": 235313, "actions": ["defensive"], "availability": "talent", "scope": "self", "limitations": ["Personal absorb only"] },
+    { "id": "greater-invisibility", "name": "Greater Invisibility", "spellId": 110959, "actions": ["target-drop", "defensive"], "availability": "talent", "scope": "self", "limitations": ["Personal only", "Only cancels mechanics that stop or retarget when the Mage becomes untargetable", "Actions cancel invisibility"] },
+    { "id": "energized-barriers", "name": "Energized Barriers", "spellId": 386828, "actions": ["cleanse-snare"], "availability": "talent", "scope": "self", "requirements": [{ "kind": "configuration", "value": "Cast Blazing Barrier to trigger the passive" }], "limitations": ["Self-only", "Removes snares rather than roots"] },
+    { "id": "blink", "name": "Blink", "spellId": 1953, "actions": ["cleanse-root"], "availability": "baseline", "scope": "self", "limitations": ["Self-only", "Replaced by Shimmer when that talent is selected", "Encounter-specific bonds may differ from ordinary roots"] },
+    { "id": "supernova", "name": "Supernova", "spellId": 157980, "actions": ["crowd-control"], "availability": "talent", "scope": "area-enemy", "limitations": ["Knock-up only affects susceptible enemies", "Forty-five-second cooldown"] },
+    { "id": "dragons-breath", "name": "Dragon's Breath", "spellId": 31661, "actions": ["crowd-control"], "availability": "talent", "scope": "area-enemy", "limitations": ["Short frontal range", "Disorient breaks on damage", "Only affects susceptible enemies"] },
+    { "id": "ring-of-frost", "name": "Ring of Frost", "spellId": 113724, "actions": ["crowd-control"], "availability": "talent", "scope": "area-enemy", "limitations": ["Incapacitate breaks on damage", "Requires placement and activation time", "Only affects susceptible enemies"] }
   ],
   "provenance": [
     { "kind": "external-reference", "description": "Current Midnight Fire Mythic+ build guidance explicitly includes Remove Curse and Spellsteal and describes the configurable Mage class utility tree.", "url": "https://www.wowhead.com/guide/classes/mage/fire/talent-builds-pve-dps", "retrievedAt": "2026-09-02T16:30:00+02:00" },
     { "kind": "external-reference", "description": "Current Fire overview confirms the Midnight specialization and its Blazing Barrier defensive support.", "url": "https://www.wowhead.com/guide/classes/mage/fire/overview-pve-dps", "retrievedAt": "2026-09-02T16:30:00+02:00" },
-    { "kind": "external-reference", "description": "Current Spellsteal record confirms its enemy Magic theft behavior and spell identifier.", "url": "https://www.wowhead.com/spell=30449/spellsteal", "retrievedAt": "2026-09-02T16:30:00+02:00" }
+    { "kind": "external-reference", "description": "Current Spellsteal record confirms its enemy Magic theft behavior and spell identifier.", "url": "https://www.wowhead.com/spell=30449/spellsteal", "retrievedAt": "2026-09-02T16:30:00+02:00" },
+    { "kind": "external-reference", "description": "Current Patch 12.1.0 Fire dungeon guide identifies Greater Invisibility, Energized Barriers, Blink, Remove Curse, Spellsteal, Dragon's Breath, Supernova, and Ring of Frost uses across the season.", "url": "https://www.wowhead.com/guide/classes/mage/fire/mythic-plus-dungeon-tips", "retrievedAt": "2026-09-02T18:12:00+02:00" }
   ]
 }

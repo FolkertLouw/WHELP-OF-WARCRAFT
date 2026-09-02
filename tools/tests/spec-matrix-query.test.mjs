@@ -32,7 +32,7 @@ test("returns one requested affix with provenance", () => {
 });
 
 test("rejects absent matrices and invalid filters explicitly", () => {
-  assert.throws(() => querySpecMatrix(matrices, capabilities, { spec: "fire-mage" }), /has no seasonal utility matrix/);
+  assert.throws(() => querySpecMatrix(matrices, capabilities, { spec: "frost-mage" }), /has no seasonal utility matrix/);
   assert.throws(() => querySpecMatrix(matrices, capabilities, { spec: "frost-death-knight", dungeon: "not-a-dungeon" }), /has no dungeon/);
   assert.throws(() => querySpecMatrix(matrices, capabilities, { spec: "frost-death-knight", rating: "best" }), /unknown utility rating/);
 });
