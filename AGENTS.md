@@ -28,6 +28,8 @@ For specialization-specific dungeon advice, prefer a matching `spec-dungeon-matr
 
 Use `npm run query:spec-matrix -- --spec <spec-slug> --dungeon <id>` to retrieve a compact joined view of the matrix, exact class tools, mechanic spell IDs, affix advice, validity, and provenance.
 
+Before comparing specialization matrices, run `npm run query:matrix-coverage`. It explicitly distinguishes full seasonal matrices from capability-only records and lists missing or extra dungeon IDs; do not infer matrix completeness from the presence of a capability record.
+
 Capability coverage is partial until `data/specs/coverage.json` says `isComplete: true`. An unknown or absent specialization means WHELP has not modeled it yet; it never proves that the specialization lacks the requested utility.
 
 Before relying on time-sensitive records, run `npm run query:freshness --`. Preserve its separate `evidenceStatus` and `buildStatus`: recent retrieval does not revive an expired build range, and a carried-forward build does not prove its sources are still fresh. Review `needsReview` records before presenting them as current.

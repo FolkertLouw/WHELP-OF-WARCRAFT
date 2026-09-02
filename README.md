@@ -88,6 +88,7 @@ Query the joined seasonal matrix for exact dungeon tools, ratings, mechanic spel
 ```powershell
 npm run query:spec-matrix -- --spec blood-death-knight --dungeon ruby-life-pools
 npm run query:spec-matrix -- --spec frost-death-knight --dungeon kings-rest --rating always
+npm run query:matrix-coverage
 ```
 
 Capability results preserve action-specific availability, alternate faction spell IDs, and configuration requirements, so a talent-gated extension or pet-dependent group tool remains visible.

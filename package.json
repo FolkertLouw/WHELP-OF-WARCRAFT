@@ -1,6 +1,6 @@
 {
   "name": "whelp-of-warcraft",
-  "version": "0.4.7",
+  "version": "0.4.8",
   "private": true,
   "description": "World-data Hub for Encounters, Loadouts & Progression",
   "scripts": {
@@ -18,6 +18,7 @@
     "query:spec-responses": "node tools/query-spec-responses.mjs",
     "query:capabilities": "node tools/query-capabilities.mjs",
     "query:spec-matrix": "node tools/query-spec-matrix.mjs",
+    "query:matrix-coverage": "node tools/query-matrix-coverage.mjs",
     "query:loadout": "node tools/query-loadout.mjs",
     "query:party-gaps": "node tools/query-party-gaps.mjs",
     "query:freshness": "node tools/query-source-freshness.mjs",
