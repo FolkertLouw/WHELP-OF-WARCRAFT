@@ -145,7 +145,11 @@ for (const { file, value } of records.filter(({ value }) => value.recordType ===
   }
   const encounter = dungeon.value.encounters.find((candidate) => candidate.encounterId === value.encounter.encounterId);
   if (!encounter) fail(file, `unknown encounterId ${value.encounter.encounterId} for ${dungeon.value.id}`);
-  else if (encounter.npcId !== value.encounter.npcId) fail(file, "mechanic NPC does not match its encounter");
+  else if (value.encounter.npcId !== undefined && encounter.npcId !== value.encounter.npcId) fail(file, "mechanic NPC does not match its encounter");
+  if (value.encounter.actorNpcId !== undefined) {
+    const knownNpcIds = new Set(dungeon.value.enemies.map((enemy) => enemy.npcId));
+    if (!knownNpcIds.has(value.encounter.actorNpcId)) fail(file, `unknown mechanic actor NPC ${value.encounter.actorNpcId} for ${dungeon.value.id}`);
+  }
 }
 for (const { file, value } of records.filter(({ value }) => value.recordType === "enemy-abilities")) {
   const dungeon = dungeons.find(({ value: candidate }) => candidate.instanceMapId === value.instanceMapId);

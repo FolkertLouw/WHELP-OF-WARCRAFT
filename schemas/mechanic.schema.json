@@ -16,7 +16,8 @@
       "properties": {
         "instanceId": { "type": "integer", "minimum": 1 },
         "encounterId": { "type": "integer", "minimum": 1 },
-        "npcId": { "type": "integer", "minimum": 1 }
+        "npcId": { "type": "integer", "minimum": 1 },
+        "actorNpcId": { "type": "integer", "minimum": 1 }
       },
       "additionalProperties": false
     },
