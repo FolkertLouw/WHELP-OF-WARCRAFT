@@ -1,0 +1,24 @@
+{
+  "$schema": "../../../../schemas/route-catalog.schema.json",
+  "schemaVersion": 1,
+  "recordType": "route-catalog",
+  "id": "midnight-season-2/pug-route-catalog",
+  "status": "draft",
+  "validity": { "fromBuild": "12.1.0.69587", "untilBuild": null, "seasonId": null, "seasonSlug": "midnight-season-2" },
+  "seasonSlug": "midnight-season-2",
+  "scope": { "routeKind": "pug", "minimumKey": 10, "maximumKey": 15 },
+  "entries": [
+    { "dungeonId": "altar-of-fangs", "routeId": "altar-of-fangs/pug-10-15-baseline", "routeStatus": "draft", "requiredEnemyForces": 817, "plannedEnemyForces": 832, "surplusEnemyForces": 15, "pullCount": 14, "bossCheckpointCount": 3, "sourceMappingStatus": "older", "normalizationStatus": "conflicted", "caveats": ["The rendered route counts three High Evolutionists in one pull while its MDT2 export contains two clone references; WHELP preserves the rendered 832-force composition."] },
+    { "dungeonId": "den-of-nalorakk", "routeId": "den-of-nalorakk/pug-10-15-baseline", "routeStatus": "draft", "requiredEnemyForces": 729, "plannedEnemyForces": 734, "surplusEnemyForces": 5, "pullCount": 14, "bossCheckpointCount": 3, "sourceMappingStatus": "not-flagged", "normalizationStatus": "direct", "caveats": ["Spirit of Hunger and Avatar patrol positions make exact pull boundaries sensitive to live movement."] },
+    { "dungeonId": "kings-rest", "routeId": "kings-rest/pug-10-15-baseline", "routeStatus": "draft", "requiredEnemyForces": 608, "plannedEnemyForces": 617, "surplusEnemyForces": 9, "pullCount": 16, "bossCheckpointCount": 4, "sourceMappingStatus": "not-flagged", "normalizationStatus": "direct", "caveats": ["The optional opening-guardian skip discussed by the source is not encoded in this baseline."] },
+    { "dungeonId": "murder-row", "routeId": "murder-row/pug-10-15-baseline", "routeStatus": "draft", "requiredEnemyForces": 655, "plannedEnemyForces": 663, "surplusEnemyForces": 8, "pullCount": 15, "bossCheckpointCount": 4, "sourceMappingStatus": "older", "normalizationStatus": "conflicted", "caveats": ["The export includes Felmaster Lucsei while a source annotation says to skip it.", "WHELP adds the current Lithiel Cinderfury checkpoint omitted by the source route."] },
+    { "dungeonId": "ruby-life-pools", "routeId": "ruby-life-pools/pug-10-15-baseline", "routeStatus": "draft", "requiredEnemyForces": 551, "plannedEnemyForces": 552, "surplusEnemyForces": 1, "pullCount": 13, "bossCheckpointCount": 3, "sourceMappingStatus": "not-flagged", "normalizationStatus": "direct", "caveats": [] },
+    { "dungeonId": "temple-of-sethraliss", "routeId": "temple-of-sethraliss/pug-10-15-baseline", "routeStatus": "draft", "requiredEnemyForces": 687, "plannedEnemyForces": 693, "surplusEnemyForces": 6, "pullCount": 17, "bossCheckpointCount": 4, "sourceMappingStatus": "not-flagged", "normalizationStatus": "direct", "caveats": [] },
+    { "dungeonId": "the-blinding-vale", "routeId": "the-blinding-vale/pug-10-15-baseline", "routeStatus": "draft", "requiredEnemyForces": 686, "plannedEnemyForces": 697, "surplusEnemyForces": 11, "pullCount": 13, "bossCheckpointCount": 4, "sourceMappingStatus": "older", "normalizationStatus": "conflicted", "caveats": ["The source warns that its count is incorrect even though the non-empty export currently recomputes to its rendered 697 forces.", "WHELP omits empty source pull slot thirteen and renumbers the final boss checkpoint contiguously."] },
+    { "dungeonId": "voidscar-arena", "routeId": "voidscar-arena/pug-10-15-baseline", "routeStatus": "draft", "requiredEnemyForces": 738, "plannedEnemyForces": 738, "surplusEnemyForces": 0, "pullCount": 14, "bossCheckpointCount": 3, "sourceMappingStatus": "not-flagged", "normalizationStatus": "reconciled", "caveats": ["WHELP inserts explicit boss checkpoints around the source's twelve enemy-forces pulls."] }
+  ],
+  "provenance": [
+    { "kind": "curated", "description": "Route counts, checkpoint counts, required forces, planned forces, and surpluses are derived from the eight indexed WHELP route and canonical dungeon records and are cross-validated by the repository validator.", "url": "https://github.com/FolkertLouw/WHELP-OF-WARCRAFT", "retrievedAt": "2026-09-02T14:02:17+02:00" },
+    { "kind": "external-reference", "description": "Mapping and normalization labels summarize the source-specific evidence and caveats retained in each route's provenance; not-flagged means WHELP observed no mapping warning, not that the mapping was independently certified current.", "url": "https://keystone.guru/routes/retail", "retrievedAt": "2026-09-02T14:02:17+02:00" }
+  ]
+}

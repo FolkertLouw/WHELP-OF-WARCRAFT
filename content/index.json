@@ -1,6 +1,7 @@
 {
   "schemaVersion": 1,
   "records": [
+    { "id": "midnight-season-2/pug-route-catalog", "path": "mythic-plus/midnight-season-2/routes/catalog.json", "status": "draft" },
     { "id": "altar-of-fangs/pug-10-15-baseline", "path": "mythic-plus/midnight-season-2/altar-of-fangs/routes/pug-10-15.json", "status": "draft" },
     { "id": "altar-of-fangs/ravi/triple-shot-1296220", "path": "mythic-plus/midnight-season-2/altar-of-fangs/mechanics/ravi-triple-shot.json", "status": "draft" },
     { "id": "altar-of-fangs/ravi/regurgitate-1296050", "path": "mythic-plus/midnight-season-2/altar-of-fangs/mechanics/ravi-regurgitate.json", "status": "draft" },

@@ -102,6 +102,21 @@ function validateRecord(file, value) {
     for (let index = 0; index < orders.length; index += 1) {
       if (orders[index] !== index + 1) fail(file, "pull order must be contiguous and match array order");
     }
+  } else if (value.recordType === "route-catalog") {
+    requireFields(file, value, ["id", "status", "validity", "seasonSlug", "scope", "entries", "provenance"]);
+    if (value.scope?.maximumKey < value.scope?.minimumKey) fail(file, "scope.maximumKey is below scope.minimumKey");
+    const dungeonIds = (value.entries ?? []).map((entry) => entry.dungeonId);
+    const routeIds = (value.entries ?? []).map((entry) => entry.routeId);
+    if (new Set(dungeonIds).size !== dungeonIds.length) fail(file, "catalog dungeon IDs must be unique");
+    if (new Set(routeIds).size !== routeIds.length) fail(file, "catalog route IDs must be unique");
+    for (const entry of value.entries ?? []) {
+      if (!["not-flagged", "older", "unknown"].includes(entry.sourceMappingStatus)) {
+        fail(file, `${entry.dungeonId} has invalid sourceMappingStatus`);
+      }
+      if (!["direct", "reconciled", "conflicted"].includes(entry.normalizationStatus)) {
+        fail(file, `${entry.dungeonId} has invalid normalizationStatus`);
+      }
+    }
   } else if (value.recordType === "run-observation") {
     requireFields(file, value, ["collector", "game", "run", "player", "group", "privacy"]);
     if (value.privacy?.containsNames !== false || value.privacy?.containsChat !== false) {
@@ -421,6 +436,43 @@ for (const { file, value } of records.filter(({ value }) => value.recordType ===
   }
 }
 const routesById = new Map(records.filter(({ value }) => value.recordType === "route").map(({ value }) => [value.id, value]));
+for (const { file, value } of records.filter(({ value }) => value.recordType === "route-catalog")) {
+  if (file.includes(`${path.sep}examples${path.sep}`)) continue;
+  if (value.validity?.seasonSlug !== value.seasonSlug) fail(file, "catalog seasonSlug does not match validity");
+  const catalogRouteIds = new Set((value.entries ?? []).map((entry) => entry.routeId));
+  const scopedRoutes = [...routesById.values()].filter((route) => route.validity?.seasonSlug === value.seasonSlug
+    && route.routeKind === value.scope?.routeKind
+    && route.keyLevel?.minimum === value.scope?.minimumKey
+    && route.keyLevel?.maximum === value.scope?.maximumKey);
+  for (const route of scopedRoutes) {
+    if (!catalogRouteIds.has(route.id)) fail(file, `catalog omits scoped route ${route.id}`);
+  }
+  for (const entry of value.entries ?? []) {
+    const route = routesById.get(entry.routeId);
+    const dungeon = dungeons.find(({ value: candidate }) => candidate.id === entry.dungeonId)?.value;
+    if (!route) {
+      fail(file, `${entry.dungeonId} references unknown route ${entry.routeId}`);
+      continue;
+    }
+    if (!dungeon) {
+      fail(file, `catalog references unknown dungeon ${entry.dungeonId}`);
+      continue;
+    }
+    if (route.dungeonId !== entry.dungeonId) fail(file, `${entry.routeId} belongs to ${route.dungeonId}, not ${entry.dungeonId}`);
+    if (route.validity?.seasonSlug !== value.seasonSlug) fail(file, `${entry.routeId} is outside catalog season ${value.seasonSlug}`);
+    if (route.routeKind !== value.scope?.routeKind) fail(file, `${entry.routeId} routeKind is outside catalog scope`);
+    if (route.keyLevel?.minimum !== value.scope?.minimumKey || route.keyLevel?.maximum !== value.scope?.maximumKey) {
+      fail(file, `${entry.routeId} key range is outside catalog scope`);
+    }
+    if (entry.routeStatus !== route.status) fail(file, `${entry.routeId} routeStatus is stale`);
+    if (entry.requiredEnemyForces !== dungeon.enemyForcesTotal) fail(file, `${entry.routeId} requiredEnemyForces is stale`);
+    if (entry.plannedEnemyForces !== route.targetEnemyForces) fail(file, `${entry.routeId} plannedEnemyForces is stale`);
+    if (entry.surplusEnemyForces !== route.targetEnemyForces - dungeon.enemyForcesTotal) fail(file, `${entry.routeId} surplusEnemyForces is stale`);
+    if (entry.pullCount !== route.pulls.length) fail(file, `${entry.routeId} pullCount is stale`);
+    const bossCheckpointCount = route.pulls.filter((pull) => pull.afterEncounterId != null).length;
+    if (entry.bossCheckpointCount !== bossCheckpointCount) fail(file, `${entry.routeId} bossCheckpointCount is stale`);
+  }
+}
 for (const { file, value } of records.filter(({ value }) => value.recordType === "run-observation")) {
   if (file.includes(`${path.sep}examples${path.sep}`)) continue;
   const dungeon = dungeons.find(({ value: candidate }) => candidate.challengeMapId === value.run?.challengeMapId);
